@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
         <p className="text-xs">
           You can view the source code and contribute to the project on{' '}
           <a
-            href="https://github.com/juddisjudd/d4builder"
+            href="https://github.com/juddisjudd/d4-builder"
             target="_blank"
             rel="noopener noreferrer"
             className="text-red-500 underline"

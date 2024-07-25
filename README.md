@@ -10,3 +10,6 @@ A <strong>Diablo IV</strong> Class "Builder" Desktop Application.<br>
 <img src="https://img.shields.io/badge/Bun-000000.svg?style=for-the-badge&logo=Bun&logoColor=white"</img>
 </p>
 <hr>
+
+https://github.com/user-attachments/assets/7a7f629a-fa8b-4acc-85b0-21290feca113
+

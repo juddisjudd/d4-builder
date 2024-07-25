@@ -10,14 +10,19 @@ interface GearSlotDialogProps {
   label: string;
   slotType: string;
   selectedClass: string | null;
-  onSelect: (item: AspectData | UniqueData, isUnique: boolean) => void;
+  onSelect: (item: AspectData | UniqueData | null) => void;
+  selections: (AspectData | UniqueData | null)[];
+  currentIndex: number;
 }
 
-const GearSlotDialog: React.FC<GearSlotDialogProps> = ({ label, slotType, selectedClass, onSelect }) => {
-  const handleSelect = (item: AspectData | UniqueData, isUnique: boolean) => {
-    onSelect(item, isUnique);
-  };
-
+const GearSlotDialog: React.FC<GearSlotDialogProps> = ({ 
+  label, 
+  slotType, 
+  selectedClass, 
+  onSelect,
+  selections,
+  currentIndex
+}) => {
   return (
     <DialogContent className="max-w-3xl">
       <h2 className="text-xl font-semibold mb-4">{label}</h2>
@@ -27,7 +32,13 @@ const GearSlotDialog: React.FC<GearSlotDialogProps> = ({ label, slotType, select
           <TabsTrigger value="stats">Item Stats</TabsTrigger>
         </TabsList>
         <TabsContent value="aspects">
-          <AspectsList slotType={slotType} selectedClass={selectedClass} onSelect={handleSelect} />
+          <AspectsList 
+            slotType={slotType} 
+            selectedClass={selectedClass} 
+            onSelect={onSelect}
+            selections={selections}
+            currentIndex={currentIndex}
+          />
         </TabsContent>
         <TabsContent value="stats">
           <ItemStats />

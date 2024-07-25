@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogTrigger } from '@/components/ui/dialog';
 import GearSlotDialog from './GearSlotDialog';
@@ -12,15 +11,26 @@ interface GearSlotProps {
   isPlaceholder?: boolean;
   isRightSide?: boolean;
   selectedClass: string | null;
+  index: number;
+  selections: (AspectData | UniqueData | null)[];
+  onSelectionChange: (index: number, item: AspectData | UniqueData | null) => void;
 }
 
-const GearSlot: React.FC<GearSlotProps> = ({ label, imageSrc, isPlaceholder = false, isRightSide = false, selectedClass }) => {
-  const [selectedItem, setSelectedItem] = useState<AspectData | UniqueData | null>(null);
-  const [isUnique, setIsUnique] = useState(false);
+const GearSlot: React.FC<GearSlotProps> = ({ 
+  label, 
+  imageSrc, 
+  isPlaceholder = false, 
+  isRightSide = false, 
+  selectedClass,
+  index,
+  selections,
+  onSelectionChange
+}) => {
+  const selectedItem = selections[index];
+  const isUnique = selectedItem && 'mythic' in selectedItem;
 
-  const handleSelect = (item: AspectData | UniqueData, itemIsUnique: boolean) => {
-    setSelectedItem(item);
-    setIsUnique(itemIsUnique);
+  const handleSelect = (item: AspectData | UniqueData | null) => {
+    onSelectionChange(index, item);
   };
 
   const getItemImage = () => {
@@ -75,6 +85,8 @@ const GearSlot: React.FC<GearSlotProps> = ({ label, imageSrc, isPlaceholder = fa
         slotType={label || 'Gear slot'} 
         selectedClass={selectedClass} 
         onSelect={handleSelect}
+        selections={selections}
+        currentIndex={index}
       />
     </Dialog>
   );

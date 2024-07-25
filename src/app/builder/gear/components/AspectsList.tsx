@@ -11,19 +11,25 @@ interface AspectsListProps {
   slotType: string;
   selectedClass: string | null;
   onSelect: (item: AspectData | UniqueData, isUnique: boolean) => void;
+  selections: (AspectData | UniqueData | null)[];
+  currentIndex: number;
 }
 
-const AspectsList: React.FC<AspectsListProps> = ({ slotType, selectedClass, onSelect }) => {
+const AspectsList: React.FC<AspectsListProps> = ({ slotType, selectedClass, onSelect, selections, currentIndex }) => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const allowedAspectTypes = getAllowedAspectTypes(slotType);
   const allowedWeaponTypes = selectedClass ? getWeaponTypes(slotType, selectedClass) : [];
   const allowedJewelryTypes = getJewelryTypes(slotType);
 
+  const isItemSelected = (item: AspectData | UniqueData) => 
+    selections.some((selection, index) => index !== currentIndex && selection && selection.name === item.name);
+
   const filteredAspects = codex.filter(aspect =>
     aspect.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
     (!aspect.class || aspect.class === selectedClass) &&
-    allowedAspectTypes.includes(aspect.type)
+    allowedAspectTypes.includes(aspect.type) &&
+    !isItemSelected(aspect)
   );
 
   const filteredUniques = uniques.filter(unique =>
@@ -31,7 +37,8 @@ const AspectsList: React.FC<AspectsListProps> = ({ slotType, selectedClass, onSe
     (allowedWeaponTypes.includes(unique.type) || 
      allowedJewelryTypes.includes(unique.type) ||
      unique.type.toLowerCase() === slotType.toLowerCase()) &&
-    (!unique.class || unique.class === selectedClass)
+    (!unique.class || unique.class === selectedClass) &&
+    !isItemSelected(unique)
   );
 
   const getAspectImageSrc = (type: string) => {
@@ -57,7 +64,7 @@ const AspectsList: React.FC<AspectsListProps> = ({ slotType, selectedClass, onSe
   const renderItem = (item: AspectData | UniqueData, isUnique: boolean) => (
     <div 
       key={item.name} 
-      className="flex items-center p-2 border-b cursor-pointer hover:bg-[#141414]"
+      className="flex items-center p-2 border-b cursor-pointer hover:bg-gray-100"
       onClick={() => onSelect(item, isUnique)}
     >
       <div className="w-12 h-12 mr-4 flex items-center justify-center">

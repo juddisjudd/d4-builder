@@ -15,26 +15,26 @@ interface GearSlotDialogProps {
   currentIndex: number;
 }
 
-const GearSlotDialog: React.FC<GearSlotDialogProps> = ({ 
-  label, 
-  slotType, 
-  selectedClass, 
+const GearSlotDialog: React.FC<GearSlotDialogProps> = ({
+  label,
+  slotType,
+  selectedClass,
   onSelect,
   selections,
-  currentIndex
+  currentIndex,
 }) => {
   return (
     <DialogContent className="max-w-3xl">
-      <h2 className="text-xl font-semibold mb-4">{label}</h2>
+      <h2 className="mb-4 text-xl font-semibold">{label}</h2>
       <Tabs defaultValue="aspects">
         <TabsList>
           <TabsTrigger value="aspects">Aspects & Uniques</TabsTrigger>
           <TabsTrigger value="stats">Item Stats</TabsTrigger>
         </TabsList>
         <TabsContent value="aspects">
-          <AspectsList 
-            slotType={slotType} 
-            selectedClass={selectedClass} 
+          <AspectsList
+            slotType={slotType}
+            selectedClass={selectedClass}
             onSelect={onSelect}
             selections={selections}
             currentIndex={currentIndex}

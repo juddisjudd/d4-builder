@@ -1,18 +1,7 @@
 import * as React from 'react';
 import { Button } from '@/components/ui/button';
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from '@/components/ui/dialog';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
 interface Gem {
   name: string;
@@ -36,9 +25,7 @@ const GemSlot: React.FC<GemSlotProps> = ({ label, slotType, gems }) => {
     <div className="flex justify-between space-x-4">
       <div>
         <h4 className="text-sm font-semibold">{gem.name}</h4>
-        <p className="text-sm">
-          {gem[slotType]}
-        </p>
+        <p className="text-sm">{gem[slotType]}</p>
       </div>
     </div>
   );
@@ -50,23 +37,16 @@ const GemSlot: React.FC<GemSlotProps> = ({ label, slotType, gems }) => {
           <Tooltip>
             <TooltipTrigger asChild>
               <DialogTrigger asChild>
-                <Button 
-                  variant="outline" 
-                  className="relative p-2 w-20 h-20"
-                >
+                <Button variant="outline" className="relative h-20 w-20 p-2">
                   <img
                     src={selectedGem ? `/images/gems/${selectedGem.name.toLowerCase()}.png` : placeholderImage}
                     alt={selectedGem ? selectedGem.name : label}
-                    className="w-12 h-12"
+                    className="h-12 w-12"
                   />
                 </Button>
               </DialogTrigger>
             </TooltipTrigger>
-            {selectedGem && !isDialogOpen && (
-              <TooltipContent>
-                {renderGemContent(selectedGem)}
-              </TooltipContent>
-            )}
+            {selectedGem && !isDialogOpen && <TooltipContent>{renderGemContent(selectedGem)}</TooltipContent>}
           </Tooltip>
         </TooltipProvider>
         <DialogContent className="sm:max-w-[425px]">
@@ -80,22 +60,16 @@ const GemSlot: React.FC<GemSlotProps> = ({ label, slotType, gems }) => {
                   <TooltipTrigger asChild>
                     <Button
                       variant="outline"
-                      className="w-full h-full"
+                      className="h-full w-full"
                       onClick={() => {
                         setSelectedGem(gem);
                         setIsDialogOpen(false);
                       }}
                     >
-                      <img
-                        src={`/images/gems/${gem.name.toLowerCase()}.png`}
-                        alt={gem.name}
-                        className="w-8 h-8"
-                      />
+                      <img src={`/images/gems/${gem.name.toLowerCase()}.png`} alt={gem.name} className="h-8 w-8" />
                     </Button>
                   </TooltipTrigger>
-                  <TooltipContent>
-                    {renderGemContent(gem)}
-                  </TooltipContent>
+                  <TooltipContent>{renderGemContent(gem)}</TooltipContent>
                 </Tooltip>
               </TooltipProvider>
             ))}

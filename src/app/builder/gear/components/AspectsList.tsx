@@ -16,36 +16,32 @@ interface AspectsListProps {
   currentIndex: number;
 }
 
-const AspectsList: React.FC<AspectsListProps> = ({ 
-  slotType, 
-  selectedClass, 
-  onSelect, 
-  selections, 
-  currentIndex 
-}) => {
+const AspectsList: React.FC<AspectsListProps> = ({ slotType, selectedClass, onSelect, selections, currentIndex }) => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const allowedAspectTypes = getAllowedAspectTypes(slotType);
   const allowedWeaponTypes = selectedClass ? getWeaponTypes(slotType, selectedClass) : [];
   const allowedJewelryTypes = getJewelryTypes(slotType);
 
-  const isItemSelected = (item: AspectData | UniqueData) => 
+  const isItemSelected = (item: AspectData | UniqueData) =>
     selections.some((selection, index) => index !== currentIndex && selection && selection.name === item.name);
 
-  const filteredAspects = codex.filter(aspect =>
-    aspect.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
-    (!aspect.class || aspect.class === selectedClass) &&
-    allowedAspectTypes.includes(aspect.type) &&
-    !isItemSelected(aspect)
+  const filteredAspects = codex.filter(
+    (aspect) =>
+      aspect.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
+      (!aspect.class || aspect.class === selectedClass) &&
+      allowedAspectTypes.includes(aspect.type) &&
+      !isItemSelected(aspect)
   );
 
-  const filteredUniques = uniques.filter(unique =>
-    unique.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
-    (allowedWeaponTypes.includes(unique.type) || 
-     allowedJewelryTypes.includes(unique.type) ||
-     unique.type.toLowerCase() === slotType.toLowerCase()) &&
-    (!unique.class || unique.class === selectedClass) &&
-    !isItemSelected(unique)
+  const filteredUniques = uniques.filter(
+    (unique) =>
+      unique.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
+      (allowedWeaponTypes.includes(unique.type) ||
+        allowedJewelryTypes.includes(unique.type) ||
+        unique.type.toLowerCase() === slotType.toLowerCase()) &&
+      (!unique.class || unique.class === selectedClass) &&
+      !isItemSelected(unique)
   );
 
   const getAspectImageSrc = (type: string) => {
@@ -64,16 +60,16 @@ const AspectsList: React.FC<AspectsListProps> = ({
   );
 
   const renderItem = (item: AspectData | UniqueData, isUnique: boolean) => (
-    <div 
-      key={item.name} 
-      className="flex items-center p-2 border-b cursor-pointer hover:bg-gray-100"
+    <div
+      key={item.name}
+      className="flex cursor-pointer items-center border-b p-2 hover:bg-gray-100"
       onClick={() => onSelect(item, isUnique)}
     >
-      <div className="w-12 h-12 mr-4 flex items-center justify-center">
-        <img 
+      <div className="mr-4 flex h-12 w-12 items-center justify-center">
+        <img
           src={isUnique ? getUniqueImageSrc(item.name, item.type) : getAspectImageSrc(item.type)}
-          alt={item.name} 
-          className="w-12 h-12 object-contain"
+          alt={item.name}
+          className="h-12 w-12 object-contain"
           onError={(e) => {
             const imgElement = e.currentTarget as HTMLImageElement;
             imgElement.style.display = 'none';
@@ -83,7 +79,7 @@ const AspectsList: React.FC<AspectsListProps> = ({
             }
           }}
         />
-        <div style={{display: 'none'}}>{redXSvg}</div>
+        <div style={{ display: 'none' }}>{redXSvg}</div>
       </div>
       <div>
         <h3 className="font-semibold">{item.name}</h3>
@@ -105,8 +101,8 @@ const AspectsList: React.FC<AspectsListProps> = ({
         className="mb-4"
       />
       <div className="max-h-96 overflow-y-auto">
-        {filteredAspects.map(aspect => renderItem(aspect, false))}
-        {filteredUniques.map(unique => renderItem(unique, true))}
+        {filteredAspects.map((aspect) => renderItem(aspect, false))}
+        {filteredUniques.map((unique) => renderItem(unique, true))}
       </div>
     </div>
   );

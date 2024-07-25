@@ -17,10 +17,8 @@ const Aspects: React.FC<AspectsProps> = ({ selectedClass }) => {
 
   if (!selectedClass) {
     return (
-      <div className="flex items-center justify-center h-full">
-        <div className="text-center text-white text-lg">
-          Please select a class to view gear slots.
-        </div>
+      <div className="flex h-full items-center justify-center">
+        <div className="text-center text-lg text-white">Please select a class to view gear slots.</div>
       </div>
     );
   }
@@ -30,7 +28,7 @@ const Aspects: React.FC<AspectsProps> = ({ selectedClass }) => {
   const rightSlots = slots.slice(7, 14);
 
   const handleSelectionChange = (index: number, item: AspectData | UniqueData | null) => {
-    setSelections(prev => {
+    setSelections((prev) => {
       const newSelections = [...prev];
       newSelections[index] = item;
       return newSelections;
@@ -38,16 +36,16 @@ const Aspects: React.FC<AspectsProps> = ({ selectedClass }) => {
   };
 
   return (
-    <div className="flex justify-between px-10 mt-4">
+    <div className="mt-4 flex justify-between px-10">
       <Toaster />
       <div className="flex flex-col space-y-4">
         {leftSlots.map((slot, index) => (
-          <GearSlot 
-            key={index} 
-            label={slot.label} 
-            imageSrc={slot.imageSrc} 
-            isPlaceholder={slot.isPlaceholder} 
-            selectedClass={selectedClass} 
+          <GearSlot
+            key={index}
+            label={slot.label}
+            imageSrc={slot.imageSrc}
+            isPlaceholder={slot.isPlaceholder}
+            selectedClass={selectedClass}
             index={index}
             selections={selections}
             onSelectionChange={handleSelectionChange}
@@ -56,13 +54,13 @@ const Aspects: React.FC<AspectsProps> = ({ selectedClass }) => {
       </div>
       <div className="flex flex-col space-y-4">
         {rightSlots.map((slot, index) => (
-          <GearSlot 
-            key={index + 7} 
-            label={slot.label} 
-            imageSrc={slot.imageSrc} 
-            isPlaceholder={slot.isPlaceholder} 
-            isRightSide 
-            selectedClass={selectedClass} 
+          <GearSlot
+            key={index + 7}
+            label={slot.label}
+            imageSrc={slot.imageSrc}
+            isPlaceholder={slot.isPlaceholder}
+            isRightSide
+            selectedClass={selectedClass}
             index={index + 7}
             selections={selections}
             onSelectionChange={handleSelectionChange}

@@ -31,12 +31,12 @@ const Header: FC<HeaderProps> = ({ selectedClass, setSelectedClass }) => {
             style={{ width: '60px', height: '60px' }}
           />
           <Select onValueChange={setSelectedClass}>
-            <SelectTrigger className="w-[180px] border-none outline-none text-lg font-semibold text-[#d1a781] uppercase">
+            <SelectTrigger className="w-[180px] border-none text-lg font-semibold uppercase text-[#d1a781] outline-none">
               <SelectValue placeholder="Select Class" />
             </SelectTrigger>
             <SelectContent>
               {classOptions.map((classOption) => (
-                <SelectItem key={classOption} value={classOption} className='text-sm uppercase'>
+                <SelectItem key={classOption} value={classOption} className="text-sm uppercase">
                   {classOption}
                 </SelectItem>
               ))}

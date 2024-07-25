@@ -17,27 +17,27 @@ const BuilderTabs: FC<BuilderTabsProps> = ({ selectedClass }) => {
     <Tabs defaultValue="gear-skills" className="mt-4">
       <TabsList className="flex space-x-4">
         <TabsTrigger value="gear-skills" className="flex items-center space-x-1">
-          <Hammer className="w-4 h-4" />
+          <Hammer className="h-4 w-4" />
           <span>Gear & Skills</span>
         </TabsTrigger>
         <TabsTrigger value="skill-tree" className="flex items-center space-x-1">
-          <Book className="w-4 h-4" />
+          <Book className="h-4 w-4" />
           <span>Skill Tree</span>
         </TabsTrigger>
         <TabsTrigger value="paragon" className="flex items-center space-x-1">
-          <Diamond className="w-4 h-4" />
+          <Diamond className="h-4 w-4" />
           <span>Paragon</span>
         </TabsTrigger>
         <TabsTrigger value="notes" className="flex items-center space-x-1">
-          <NotebookText className="w-4 h-4" />
+          <NotebookText className="h-4 w-4" />
           <span>Notes</span>
         </TabsTrigger>
         <TabsTrigger value="showcase" className="flex items-center space-x-1">
-          <Youtube className="w-4 h-4" />
+          <Youtube className="h-4 w-4" />
           <span>Showcase</span>
         </TabsTrigger>
         <TabsTrigger value="stats" className="flex items-center space-x-1">
-          <ChartBar className="w-4 h-4" />
+          <ChartBar className="h-4 w-4" />
           <span>Stats</span>
         </TabsTrigger>
       </TabsList>

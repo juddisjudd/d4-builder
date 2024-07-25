@@ -57,8 +57,8 @@ const GearSlot: React.FC<GearSlotProps> = ({
 
   const getItemNameColor = () => {
     if (!selectedItem) return 'text-white';
-    if (!isUnique(selectedItem)) return 'text-orange-500'; // Aspect color
-    return selectedItem.mythic ? 'text-purple-500' : 'text-yellow-500'; // Mythic or regular Unique color
+    if (!isUnique(selectedItem)) return 'text-orange-500';
+    return selectedItem.mythic ? 'text-purple-500' : 'text-yellow-500';
   };
 
   if (isPlaceholder) {

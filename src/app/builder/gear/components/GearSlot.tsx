@@ -26,7 +26,7 @@ const GearSlot: React.FC<GearSlotProps> = ({ label, imageSrc, isPlaceholder = fa
   const getItemImage = () => {
     if (selectedItem) {
       return isUnique 
-        ? `/images/uniques/${selectedItem.type.toLowerCase().replace(/\s+/g, '_')}s/${encodeURIComponent(selectedItem.name)}.png`
+        ? `/images/uniques/${selectedItem.type.toLowerCase().replace(/\s+/g, '_')}/${encodeURIComponent(selectedItem.name)}.png`
         : `/images/aspects/${selectedItem.type.toLowerCase()}.png`;
     }
     return imageSrc;
@@ -34,8 +34,8 @@ const GearSlot: React.FC<GearSlotProps> = ({ label, imageSrc, isPlaceholder = fa
 
   const getItemNameColor = () => {
     if (!selectedItem) return 'text-white';
-    if (!isUnique) return 'text-orange-500'; // Aspect color
-    return (selectedItem as UniqueData).mythic ? 'text-purple-500' : 'text-yellow-500'; // Mythic or regular Unique color
+    if (!isUnique) return 'text-orange-500';
+    return (selectedItem as UniqueData).mythic ? 'text-purple-500' : 'text-yellow-500';
   };
 
   if (isPlaceholder) {

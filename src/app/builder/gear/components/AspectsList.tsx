@@ -45,7 +45,7 @@ const AspectsList: React.FC<AspectsListProps> = ({ slotType, selectedClass, onSe
     const regex = /([^\\]+\.png)$/;
     const match = fileName.match(regex);
     const processedFileName = match ? match[1] : fileName;
-    return `/images/uniques/${lowerType}s/${encodeURIComponent(processedFileName)}`;
+    return `/images/uniques/${lowerType}/${encodeURIComponent(processedFileName)}`;
   };
 
   const redXSvg = (

@@ -8,10 +8,11 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog';
 import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from '@/components/ui/hover-card';
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 interface Gem {
   name: string;
@@ -29,7 +30,6 @@ interface GemSlotProps {
 const GemSlot: React.FC<GemSlotProps> = ({ label, slotType, gems }) => {
   const [selectedGem, setSelectedGem] = React.useState<Gem | null>(null);
   const [isDialogOpen, setIsDialogOpen] = React.useState(false);
-  const [showHoverCard, setShowHoverCard] = React.useState(false);
   const placeholderImage = '/images/gems/gems.png';
 
   const renderGemContent = (gem: Gem) => (
@@ -43,71 +43,61 @@ const GemSlot: React.FC<GemSlotProps> = ({ label, slotType, gems }) => {
     </div>
   );
 
-  React.useEffect(() => {
-    if (selectedGem) {
-      const timer = setTimeout(() => setShowHoverCard(true), 500);
-      return () => clearTimeout(timer);
-    }
-  }, [selectedGem]);
-
   return (
     <div className="flex flex-col items-center">
-      <Dialog open={isDialogOpen} onOpenChange={(open) => {
-        setIsDialogOpen(open);
-        if (!open) setShowHoverCard(false);
-      }}>
-        <HoverCard open={showHoverCard && !isDialogOpen}>
-          <HoverCardTrigger asChild>
-            <DialogTrigger asChild>
-              <Button 
-                variant="outline" 
-                className="relative p-2 w-20 h-20"
-                onClick={() => setIsDialogOpen(true)}
-                onMouseEnter={() => setShowHoverCard(true)}
-                onMouseLeave={() => setShowHoverCard(false)}
-              >
-                <img
-                  src={selectedGem ? `/images/gems/${selectedGem.name.toLowerCase()}.png` : placeholderImage}
-                  alt={selectedGem ? selectedGem.name : label}
-                  className="w-12 h-12"
-                />
-              </Button>
-            </DialogTrigger>
-          </HoverCardTrigger>
-          {selectedGem && (
-            <HoverCardContent className="w-80">
-              {renderGemContent(selectedGem)}
-            </HoverCardContent>
-          )}
-        </HoverCard>
-        <DialogContent className="sm:max-w-[425px]" onInteractOutside={() => setShowHoverCard(false)}>
+      <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <DialogTrigger asChild>
+                <Button 
+                  variant="outline" 
+                  className="relative p-2 w-20 h-20"
+                >
+                  <img
+                    src={selectedGem ? `/images/gems/${selectedGem.name.toLowerCase()}.png` : placeholderImage}
+                    alt={selectedGem ? selectedGem.name : label}
+                    className="w-12 h-12"
+                  />
+                </Button>
+              </DialogTrigger>
+            </TooltipTrigger>
+            {selectedGem && !isDialogOpen && (
+              <TooltipContent>
+                {renderGemContent(selectedGem)}
+              </TooltipContent>
+            )}
+          </Tooltip>
+        </TooltipProvider>
+        <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
             <DialogTitle>Select a Gem for {label}</DialogTitle>
           </DialogHeader>
           <div className="grid grid-cols-3 gap-4">
             {gems.map((gem) => (
-              <HoverCard key={gem.name}>
-                <HoverCardTrigger asChild>
-                  <Button
-                    variant="outline"
-                    className="w-full h-full"
-                    onClick={() => {
-                      setSelectedGem(gem);
-                      setIsDialogOpen(false);
-                      setShowHoverCard(false);
-                    }}
-                  >
-                    <img
-                      src={`/images/gems/${gem.name.toLowerCase()}.png`}
-                      alt={gem.name}
-                      className="w-8 h-8"
-                    />
-                  </Button>
-                </HoverCardTrigger>
-                <HoverCardContent className="w-80">
-                  {renderGemContent(gem)}
-                </HoverCardContent>
-              </HoverCard>
+              <TooltipProvider key={gem.name}>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+                      variant="outline"
+                      className="w-full h-full"
+                      onClick={() => {
+                        setSelectedGem(gem);
+                        setIsDialogOpen(false);
+                      }}
+                    >
+                      <img
+                        src={`/images/gems/${gem.name.toLowerCase()}.png`}
+                        alt={gem.name}
+                        className="w-8 h-8"
+                      />
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    {renderGemContent(gem)}
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
             ))}
           </div>
         </DialogContent>

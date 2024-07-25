@@ -1,17 +1,17 @@
-'use client';
-
 import * as React from 'react';
 import { Button } from '@/components/ui/button';
-import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+import { Dialog, DialogTrigger } from '@/components/ui/dialog';
+import GearSlotDialog from './GearSlotDialog';
 
 interface GearSlotProps {
   label?: string;
   imageSrc?: string;
   isPlaceholder?: boolean;
   isRightSide?: boolean;
+  selectedClass: string | null;
 }
 
-const GearSlot: React.FC<GearSlotProps> = ({ label, imageSrc, isPlaceholder = false, isRightSide = false }) => {
+const GearSlot: React.FC<GearSlotProps> = ({ label, imageSrc, isPlaceholder = false, isRightSide = false, selectedClass }) => {
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -30,12 +30,7 @@ const GearSlot: React.FC<GearSlotProps> = ({ label, imageSrc, isPlaceholder = fa
         </div>
       </DialogTrigger>
       {!isPlaceholder && (
-        <DialogContent>
-          <div className="p-4">
-            <h2 className="text-xl font-semibold mb-4">{label}</h2>
-            <p>Content for {label} goes here.</p>
-          </div>
-        </DialogContent>
+        <GearSlotDialog label={label || ''} slotType={label || ''} selectedClass={selectedClass} />
       )}
     </Dialog>
   );

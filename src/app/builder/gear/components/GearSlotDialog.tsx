@@ -1,29 +1,32 @@
-'use client';
-
 import * as React from 'react';
-import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
-import { Button } from '@/components/ui/button';
+import { DialogContent } from '@/components/ui/dialog';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import AspectsList from './AspectsList';
+import ItemStats from './ItemStats';
 
 interface GearSlotDialogProps {
   label: string;
-  children: React.ReactNode;
+  slotType: string;
+  selectedClass: string | null;
 }
 
-const GearSlotDialog: React.FC<GearSlotDialogProps> = ({ label, children }) => {
+const GearSlotDialog: React.FC<GearSlotDialogProps> = ({ label, slotType, selectedClass }) => {
   return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button variant="outline" className="flex flex-col items-center p-2">
-          <span>{label}</span>
-        </Button>
-      </DialogTrigger>
-      <DialogContent>
-        <div className="p-4">
-          <h2 className="text-xl font-semibold mb-4">{label}</h2>
-          {children}
-        </div>
-      </DialogContent>
-    </Dialog>
+    <DialogContent className="max-w-3xl">
+      <h2 className="text-xl font-semibold mb-4">{label}</h2>
+      <Tabs defaultValue="aspects">
+        <TabsList>
+          <TabsTrigger value="aspects">Aspects & Uniques</TabsTrigger>
+          <TabsTrigger value="stats">Item Stats</TabsTrigger>
+        </TabsList>
+        <TabsContent value="aspects">
+          <AspectsList slotType={slotType} selectedClass={selectedClass} />
+        </TabsContent>
+        <TabsContent value="stats">
+          <ItemStats />
+        </TabsContent>
+      </Tabs>
+    </DialogContent>
   );
 };
 

@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input';
 import { codex, AspectData } from '../data/codex';
 import { uniques, UniqueData } from '../data/uniques';
 import { getAllowedAspectTypes, getWeaponTypes, getJewelryTypes } from '../utils/aspectUtils';
+import { getUniqueImagePath } from '../utils/imagePathUtils';
 
 interface AspectsListProps {
   slotType: string;
@@ -15,7 +16,13 @@ interface AspectsListProps {
   currentIndex: number;
 }
 
-const AspectsList: React.FC<AspectsListProps> = ({ slotType, selectedClass, onSelect, selections, currentIndex }) => {
+const AspectsList: React.FC<AspectsListProps> = ({ 
+  slotType, 
+  selectedClass, 
+  onSelect, 
+  selections, 
+  currentIndex 
+}) => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const allowedAspectTypes = getAllowedAspectTypes(slotType);
@@ -47,12 +54,7 @@ const AspectsList: React.FC<AspectsListProps> = ({ slotType, selectedClass, onSe
   };
 
   const getUniqueImageSrc = (name: string, type: string) => {
-    const lowerType = type.toLowerCase().replace(/\s+/g, '_');
-    const fileName = `${name}.png`;
-    const regex = /([^\\]+\.png)$/;
-    const match = fileName.match(regex);
-    const processedFileName = match ? match[1] : fileName;
-    return `/images/uniques/${lowerType}/${encodeURIComponent(processedFileName)}`;
+    return getUniqueImagePath(type, name);
   };
 
   const redXSvg = (
@@ -69,7 +71,7 @@ const AspectsList: React.FC<AspectsListProps> = ({ slotType, selectedClass, onSe
     >
       <div className="w-12 h-12 mr-4 flex items-center justify-center">
         <img 
-          src={isUnique ? getUniqueImageSrc((item as UniqueData).name, (item as UniqueData).type) : getAspectImageSrc((item as AspectData).type)}
+          src={isUnique ? getUniqueImageSrc(item.name, item.type) : getAspectImageSrc(item.type)}
           alt={item.name} 
           className="w-12 h-12 object-contain"
           onError={(e) => {
@@ -86,7 +88,7 @@ const AspectsList: React.FC<AspectsListProps> = ({ slotType, selectedClass, onSe
       <div>
         <h3 className="font-semibold">{item.name}</h3>
         <p className="text-sm text-gray-500">
-          {isUnique ? (item as UniqueData).type : (item as AspectData).type}
+          {item.type}
           {item.class && ` - ${item.class}`}
         </p>
       </div>

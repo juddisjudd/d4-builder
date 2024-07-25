@@ -10,9 +10,10 @@ import { getAllowedAspectTypes, getWeaponTypes, getJewelryTypes } from '../utils
 interface AspectsListProps {
   slotType: string;
   selectedClass: string | null;
+  onSelect: (item: AspectData | UniqueData, isUnique: boolean) => void;
 }
 
-const AspectsList: React.FC<AspectsListProps> = ({ slotType, selectedClass }) => {
+const AspectsList: React.FC<AspectsListProps> = ({ slotType, selectedClass, onSelect }) => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const allowedAspectTypes = getAllowedAspectTypes(slotType);
@@ -54,7 +55,11 @@ const AspectsList: React.FC<AspectsListProps> = ({ slotType, selectedClass }) =>
   );
 
   const renderItem = (item: AspectData | UniqueData, isUnique: boolean) => (
-    <div key={item.name} className="flex items-center p-2 border-b">
+    <div 
+      key={item.name} 
+      className="flex items-center p-2 border-b cursor-pointer hover:bg-[#141414]"
+      onClick={() => onSelect(item, isUnique)}
+    >
       <div className="w-12 h-12 mr-4 flex items-center justify-center">
         <img 
           src={isUnique ? getUniqueImageSrc((item as UniqueData).name, (item as UniqueData).type) : getAspectImageSrc((item as AspectData).type)}

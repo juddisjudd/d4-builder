@@ -2,26 +2,21 @@ import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
-
-interface Gem {
-  name: string;
-  weapon: string;
-  armor: string;
-  jewelry: string;
-}
+import { GemData } from '../data/gems';
 
 interface GemSlotProps {
   label: string;
   slotType: 'weapon' | 'armor' | 'jewelry';
-  gems: Gem[];
+  gems: GemData[];
+  selectedGem: GemData | null;
+  onSelectGem: (gem: GemData | null) => void;
 }
 
-const GemSlot: React.FC<GemSlotProps> = ({ label, slotType, gems }) => {
-  const [selectedGem, setSelectedGem] = React.useState<Gem | null>(null);
+const GemSlot: React.FC<GemSlotProps> = ({ label, slotType, gems, selectedGem, onSelectGem }) => {
   const [isDialogOpen, setIsDialogOpen] = React.useState(false);
   const placeholderImage = '/images/gems/gems.png';
 
-  const renderGemContent = (gem: Gem) => (
+  const renderGemContent = (gem: GemData) => (
     <div className="flex justify-between space-x-4">
       <div>
         <h4 className="text-sm font-semibold">{gem.name}</h4>
@@ -62,7 +57,7 @@ const GemSlot: React.FC<GemSlotProps> = ({ label, slotType, gems }) => {
                       variant="outline"
                       className="h-full w-full"
                       onClick={() => {
-                        setSelectedGem(gem);
+                        onSelectGem(gem);
                         setIsDialogOpen(false);
                       }}
                     >

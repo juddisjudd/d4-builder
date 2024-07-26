@@ -7,12 +7,16 @@ import Notes from '@/app/builder/Notes';
 import Showcase from '@/app/builder/Showcase';
 import Aspects from '@/app/builder/gear/Aspects';
 import GemSection from '@/app/builder/gear/Gems';
+import { useBuildContext } from '@/contexts/BuildContext';
 
-interface BuilderTabsProps {
-  selectedClass: string | null;
-}
+const BuilderTabs: FC = () => {
+  const { buildState } = useBuildContext();
+  const { selectedClass } = buildState;
 
-const BuilderTabs: FC<BuilderTabsProps> = ({ selectedClass }) => {
+  if (!selectedClass) {
+    return null;
+  }
+
   return (
     <Tabs defaultValue="gear-skills" className="mt-4">
       <TabsList className="flex space-x-4">
@@ -42,8 +46,8 @@ const BuilderTabs: FC<BuilderTabsProps> = ({ selectedClass }) => {
         </TabsTrigger>
       </TabsList>
       <TabsContent value="gear-skills">
-        <Aspects selectedClass={selectedClass} />
-        <GemSection selectedClass={selectedClass} />
+        <Aspects />
+        <GemSection />
       </TabsContent>
       <TabsContent value="skill-tree">
         <div>Content specific to Skill Tree for {selectedClass}</div>

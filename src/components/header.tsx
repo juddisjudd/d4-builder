@@ -1,6 +1,6 @@
 'use client';
 
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import {
   DropdownMenu,
@@ -10,27 +10,31 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { Button } from '@/components/ui/button';
 import { Menu } from 'lucide-react';
-
-interface HeaderProps {
-  selectedClass: string | null;
-  setSelectedClass: (selectedClass: string | null) => void;
-}
+import { useBuildContext } from '@/contexts/BuildContext';
 
 const classOptions = ['Barbarian', 'Druid', 'Necromancer', 'Rogue', 'Sorcerer', 'Spiritborn'];
 const placeholderImage = '/images/classes/placeholder.png';
 
-const Header: FC<HeaderProps> = ({ selectedClass, setSelectedClass }) => {
+const Header: FC = () => {
+  const { buildState, setSelectedClass, resetBuild } = useBuildContext();
+  const [selectKey, setSelectKey] = useState(0);
+
+  const handleReset = () => {
+    resetBuild();
+    setSelectKey(prev => prev + 1); // Force re-render of Select component
+  };
+
   return (
     <header className="flex flex-col bg-black p-4 text-white">
       <div className="flex items-center justify-between">
         <div className="flex items-center">
           <img
-            src={selectedClass ? `/images/classes/${selectedClass.toLowerCase()}.png` : placeholderImage}
-            alt={selectedClass || 'Placeholder'}
+            src={buildState.selectedClass ? `/images/classes/${buildState.selectedClass.toLowerCase()}.png` : placeholderImage}
+            alt={buildState.selectedClass || 'Placeholder'}
             className="w-15 h-15 mr-2"
             style={{ width: '60px', height: '60px' }}
           />
-          <Select onValueChange={setSelectedClass}>
+          <Select key={selectKey} onValueChange={setSelectedClass}>
             <SelectTrigger className="w-[180px] border-none text-lg font-semibold uppercase text-[#d1a781] outline-none">
               <SelectValue placeholder="Select Class" />
             </SelectTrigger>
@@ -50,7 +54,7 @@ const Header: FC<HeaderProps> = ({ selectedClass, setSelectedClass }) => {
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent>
-            <DropdownMenuItem>New</DropdownMenuItem>
+            <DropdownMenuItem onClick={handleReset}>New</DropdownMenuItem>
             <DropdownMenuItem>Save</DropdownMenuItem>
             <DropdownMenuItem>Import</DropdownMenuItem>
             <DropdownMenuItem>Share</DropdownMenuItem>

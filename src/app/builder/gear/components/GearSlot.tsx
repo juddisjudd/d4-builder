@@ -6,6 +6,7 @@ import { AspectData } from '../data/codex';
 import { UniqueData } from '../data/uniques';
 import { getUniqueImagePath, getAspectImagePath } from '../utils/imagePathUtils';
 import AspectHoverCard from './AspectHoverCard';
+import UniqueHoverCard from './UniqueHoverCard';
 
 interface GearSlotProps {
   label?: string;
@@ -102,11 +103,9 @@ const GearSlot: React.FC<GearSlotProps> = ({
       </Button>
     );
 
-    return isUnique(selectedItem) ? content : (
-      <AspectHoverCard aspect={selectedItem}>
-        {content}
-      </AspectHoverCard>
-    );
+    return isUnique(selectedItem) 
+      ? <UniqueHoverCard unique={selectedItem}>{content}</UniqueHoverCard>
+      : <AspectHoverCard aspect={selectedItem}>{content}</AspectHoverCard>;
   };
 
   return (

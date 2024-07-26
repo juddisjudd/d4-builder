@@ -8,6 +8,7 @@ import { uniques, UniqueData } from '../data/uniques';
 import { getAllowedAspectTypes, getWeaponTypes, getJewelryTypes } from '../utils/aspectUtils';
 import { getUniqueImagePath } from '../utils/imagePathUtils';
 import AspectHoverCard from './AspectHoverCard';
+import UniqueHoverCard from './UniqueHoverCard';
 
 interface AspectsListProps {
   slotType: string;
@@ -67,35 +68,36 @@ const AspectsList: React.FC<AspectsListProps> = ({
   const renderItem = (item: AspectData | UniqueData, isUnique: boolean) => {
     if (isUnique) {
       return (
-        <div 
-          key={item.name} 
-          className="flex items-center p-2 border-b cursor-pointer hover:bg-gray-100"
-          onClick={() => onSelect(item, isUnique)}
-        >
-          <div className="w-12 h-12 mr-4 flex items-center justify-center">
-            <img 
-              src={getUniqueImageSrc(item.name, item.type)}
-              alt={item.name} 
-              className="w-12 h-12 object-contain"
-              onError={(e) => {
-                const imgElement = e.currentTarget as HTMLImageElement;
-                imgElement.style.display = 'none';
-                const nextElement = imgElement.nextElementSibling as HTMLElement;
-                if (nextElement) {
-                  nextElement.style.display = 'block';
-                }
-              }}
-            />
-            <div style={{display: 'none'}}>{redXSvg}</div>
+        <UniqueHoverCard key={item.name} unique={item as UniqueData}>
+          <div 
+            className="flex items-center p-2 border-b cursor-pointer hover:bg-[#141414]"
+            onClick={() => onSelect(item, isUnique)}
+          >
+            <div className="w-12 h-12 mr-4 flex items-center justify-center">
+              <img 
+                src={getUniqueImageSrc(item.name, item.type)}
+                alt={item.name} 
+                className="w-12 h-12 object-contain"
+                onError={(e) => {
+                  const imgElement = e.currentTarget as HTMLImageElement;
+                  imgElement.style.display = 'none';
+                  const nextElement = imgElement.nextElementSibling as HTMLElement;
+                  if (nextElement) {
+                    nextElement.style.display = 'block';
+                  }
+                }}
+              />
+              <div style={{display: 'none'}}>{redXSvg}</div>
+            </div>
+            <div>
+              <h3 className="font-semibold">{item.name}</h3>
+              <p className="text-sm text-gray-500">
+                {item.type}
+                {(item as UniqueData).class && ` - ${(item as UniqueData).class}`}
+              </p>
+            </div>
           </div>
-          <div>
-            <h3 className="font-semibold">{item.name}</h3>
-            <p className="text-sm text-gray-500">
-              {item.type}
-              {(item as UniqueData).class && ` - ${(item as UniqueData).class}`}
-            </p>
-          </div>
-        </div>
+        </UniqueHoverCard>
       );
     } else {
       return (

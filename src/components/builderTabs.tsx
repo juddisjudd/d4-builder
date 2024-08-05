@@ -7,6 +7,7 @@ import Notes from '@/app/builder/Notes';
 import Showcase from '@/app/builder/Showcase';
 import Aspects from '@/app/builder/gear/Aspects';
 import GemSection from '@/app/builder/gear/Gems';
+import SkillsAndMechanics from '@/app/builder/skills-and-mechanics';
 import { useBuildContext } from '@/contexts/BuildContext';
 
 const BuilderTabs: FC = () => {
@@ -48,6 +49,7 @@ const BuilderTabs: FC = () => {
       <TabsContent value="gear-skills">
         <Aspects />
         <GemSection />
+        <SkillsAndMechanics />
       </TabsContent>
       <TabsContent value="skill-tree">
         <div>Content specific to Skill Tree for {selectedClass}</div>

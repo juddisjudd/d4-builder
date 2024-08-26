@@ -2,7 +2,7 @@
 
 import { FC } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Hammer, Book, Diamond, NotebookText, Youtube, ChartBar } from 'lucide-react';
+import { Hammer, Book, Diamond, NotebookText, Youtube, ChartBar, Shield } from 'lucide-react';
 import Notes from '@/app/builder/Notes';
 import Showcase from '@/app/builder/Showcase';
 import Aspects from '@/app/builder/gear/Aspects';
@@ -32,6 +32,10 @@ const BuilderTabs: FC = () => {
         <TabsTrigger value="paragon" className="flex items-center space-x-1">
           <Diamond className="h-4 w-4" />
           <span>Paragon</span>
+        </TabsTrigger>
+        <TabsTrigger value="mercenary" className="flex items-center space-x-1">
+          <Shield className="h-4 w-4" />
+          <span>Mercenary</span>
         </TabsTrigger>
         <TabsTrigger value="notes" className="flex items-center space-x-1">
           <NotebookText className="h-4 w-4" />

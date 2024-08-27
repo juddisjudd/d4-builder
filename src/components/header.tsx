@@ -21,7 +21,7 @@ const Header: FC = () => {
 
   const handleReset = () => {
     resetBuild();
-    setSelectKey(prev => prev + 1); // Force re-render of Select component
+    setSelectKey((prev) => prev + 1);
   };
 
   return (
@@ -29,7 +29,11 @@ const Header: FC = () => {
       <div className="flex items-center justify-between">
         <div className="flex items-center">
           <img
-            src={buildState.selectedClass ? `/images/classes/${buildState.selectedClass.toLowerCase()}.png` : placeholderImage}
+            src={
+              buildState.selectedClass
+                ? `/images/classes/${buildState.selectedClass.toLowerCase()}.png`
+                : placeholderImage
+            }
             alt={buildState.selectedClass || 'Placeholder'}
             className="w-15 h-15 mr-2"
             style={{ width: '60px', height: '60px' }}

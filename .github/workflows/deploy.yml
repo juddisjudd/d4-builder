@@ -25,7 +25,7 @@ jobs:
           override: true
 
       - name: Install Tauri dependencies
-        run: bun run tauri install-deps
+        run: bun install
 
       - name: Build Tauri app
         run: bunx tauri build  # Build the Tauri app

@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input';
 import { codex, AspectData } from '../../../data/codex';
 import { uniques, UniqueData } from '../../../data/uniques';
 import { getAllowedAspectTypes, getWeaponTypes, getJewelryTypes } from '../utils/aspectUtils';
-import { getUniqueImagePath } from '../utils/imagePathUtils';
+import { getUniqueImagePath, getAspectImagePath } from '../utils/imagePathUtils';
 import AspectHoverCard from './AspectHoverCard';
 import UniqueHoverCard from './UniqueHoverCard';
 
@@ -50,9 +50,8 @@ const AspectsList: React.FC<AspectsListProps> = ({
     !isItemSelected(unique)
   );
 
-  const getAspectImageSrc = (type: string) => {
-    const lowerType = type.toLowerCase();
-    return `/images/aspects/${lowerType}.png`;
+  const getAspectImageSrc = (aspect: AspectData) => {
+    return getAspectImagePath(aspect.name, aspect.class, aspect.type);
   };
 
   const getUniqueImageSrc = (name: string, type: string) => {
@@ -108,10 +107,19 @@ const AspectsList: React.FC<AspectsListProps> = ({
           >
             <div className="w-12 h-12 mr-4 flex items-center justify-center">
               <img 
-                src={getAspectImageSrc((item as AspectData).type)}
+                src={getAspectImageSrc(item as AspectData)}
                 alt={item.name} 
                 className="w-12 h-12 object-contain"
+                onError={(e) => {
+                  const imgElement = e.currentTarget as HTMLImageElement;
+                  imgElement.style.display = 'none';
+                  const nextElement = imgElement.nextElementSibling as HTMLElement;
+                  if (nextElement) {
+                    nextElement.style.display = 'block';
+                  }
+                }}
               />
+              <div style={{display: 'none'}}>{redXSvg}</div>
             </div>
             <div>
               <h3 className="font-semibold">{item.name}</h3>

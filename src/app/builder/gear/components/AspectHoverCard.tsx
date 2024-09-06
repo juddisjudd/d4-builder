@@ -5,6 +5,7 @@ import {
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
 import { AspectData } from '../../../data/codex';
+import { getAspectImagePath } from '../utils/imagePathUtils';
 
 interface AspectHoverCardProps {
   aspect: AspectData;
@@ -12,6 +13,8 @@ interface AspectHoverCardProps {
 }
 
 const AspectHoverCard: React.FC<AspectHoverCardProps> = ({ aspect, children }) => {
+  const imageSrc = getAspectImagePath(aspect.name, aspect.class, aspect.type);
+
   return (
     <HoverCard>
       <HoverCardTrigger asChild>
@@ -21,9 +24,13 @@ const AspectHoverCard: React.FC<AspectHoverCardProps> = ({ aspect, children }) =
         <div className="flex space-x-4">
           <div className="flex-shrink-0">
             <img 
-              src={`/images/aspects/${aspect.type.toLowerCase()}.png`}
+              src={imageSrc}
               alt={aspect.name}
               className="w-[62px] h-[62px] object-contain"
+              onError={(e) => {
+                const imgElement = e.currentTarget as HTMLImageElement;
+                imgElement.style.display = 'none';
+              }}
             />
           </div>
           <div className="space-y-1">

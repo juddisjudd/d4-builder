@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { gearSlots } from './data/gearSlots';
+import { gearSlots } from '../../data/gearSlots';
 import GearSlot from './components/GearSlot';
 import { useBuildContext } from '@/contexts/BuildContext';
 

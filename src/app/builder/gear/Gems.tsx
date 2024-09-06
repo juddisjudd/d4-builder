@@ -3,7 +3,7 @@
 import * as React from 'react';
 import GemSlot from './components/GemSlot';
 import { useBuildContext } from '@/contexts/BuildContext';
-import { gems } from './data/gems';
+import { gems } from '../../data/gems';
 
 const GemSection: React.FC = () => {
   const { buildState, updateGem } = useBuildContext();

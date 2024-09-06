@@ -3,8 +3,8 @@ import { DialogContent, DialogClose } from '@/components/ui/dialog';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import AspectsList from './AspectsList';
 import ItemStats from './ItemStats';
-import { AspectData } from '../data/codex';
-import { UniqueData } from '../data/uniques';
+import { AspectData } from '../../../data/codex';
+import { UniqueData } from '../../../data/uniques';
 
 interface GearSlotDialogProps {
   label: string;

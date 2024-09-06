@@ -4,7 +4,7 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
-import { AspectData } from '../data/codex';
+import { AspectData } from '../../../data/codex';
 
 interface AspectHoverCardProps {
   aspect: AspectData;

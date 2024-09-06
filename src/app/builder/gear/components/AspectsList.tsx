@@ -3,8 +3,8 @@
 import * as React from 'react';
 import { useState } from 'react';
 import { Input } from '@/components/ui/input';
-import { codex, AspectData } from '../data/codex';
-import { uniques, UniqueData } from '../data/uniques';
+import { codex, AspectData } from '../../../data/codex';
+import { uniques, UniqueData } from '../../../data/uniques';
 import { getAllowedAspectTypes, getWeaponTypes, getJewelryTypes } from '../utils/aspectUtils';
 import { getUniqueImagePath } from '../utils/imagePathUtils';
 import AspectHoverCard from './AspectHoverCard';

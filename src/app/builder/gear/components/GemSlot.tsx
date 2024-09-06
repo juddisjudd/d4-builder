@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
-import { GemData } from '../data/gems';
+import { GemData } from '../../../data/gems';
 
 interface GemSlotProps {
   label: string;

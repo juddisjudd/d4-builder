@@ -1,6 +1,6 @@
 import React from 'react';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/hover-card';
-import { UniqueData } from '../data/uniques';
+import { UniqueData } from '../../../data/uniques';
 
 interface UniqueHoverCardProps {
   unique: UniqueData;

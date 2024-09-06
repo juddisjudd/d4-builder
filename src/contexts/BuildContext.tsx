@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
-import { AspectData } from '@/app/builder/gear/data/codex';
-import { UniqueData } from '@/app/builder/gear/data/uniques';
-import { GemData } from '@/app/builder/gear/data/gems';
+import { AspectData } from '@/app/data/codex';
+import { UniqueData } from '@/app/data/uniques';
+import { GemData } from '@/app/data/gems';
 
 interface BuildState {
   selectedClass: string | null;

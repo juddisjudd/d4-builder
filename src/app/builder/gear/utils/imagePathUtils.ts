@@ -4,56 +4,69 @@ export const getUniqueImagePath = (type: string, name: string): string => {
     case 'Amulet':
       folder = 'amulets';
       break;
+    case 'Ring':
+      folder = 'rings';
+      break;
     case 'Boots':
       folder = 'boots';
-      break;
-    case 'Chest Armor':
-      folder = 'chest%20armor';
-      break;
-    case 'Gloves':
-      folder = 'gloves';
       break;
     case 'Helm':
       folder = 'helms';
       break;
-    case 'Shield':
-      folder = 'offhand';
-      break;
     case 'Pants':
       folder = 'pants';
       break;
-    case 'Ring':
-      folder = 'rings';
+    case 'Chest Armor':
+      folder = 'chestarmor';
+      break;
+    case 'Gloves':
+      folder = 'gloves';
+      break;
+    case 'Shield':
+      folder = 'offhand';
+      break;
+    case 'Bow':
+    case 'Staff':
+    case '2h Axe':
+    case '1h Dagger':
+    case '1h Sword':
+    case '1h Scythe':
+    case '2h Scythe':
+    case '2h Sword':
+    case 'Wand':
+    case '1h Mace':
+    case '2h Mace':
+    case 'Quarterstaff':
+    case '1h Axe':
+      folder = 'weapons';
       break;
     default:
       folder = 'weapons';
   }
 
-  const encodedName = encodeURIComponent(name);
+  const fileName = name
+    .toLowerCase()
+    .replace(/'/g, '')
+    .replace(/\s+/g, '_')
+    .replace(/[^a-z0-9_-]/g, '');
 
-  return `/images/uniques/${folder}/${encodedName}.png`;
+  return `/images/uniques/${folder}/${fileName}.png`;
 };
 
 export const getAspectImagePath = (aspectName: string, aspectClass: string | undefined, aspectType: string): string => {
   const folder = aspectClass ? aspectClass.toLowerCase() : 'generic';
-  
-  // Remove any apostrophes and replace spaces with underscores
+
   let fileName = aspectName.toLowerCase().replace(/'/g, '').replace(/\s+/g, '_');
-  
-  // Handle cases where the aspect name starts with "Aspect of"
+
   if (fileName.startsWith('aspect_of_')) {
-    // Keep the existing format
   } else if (fileName.endsWith('_aspect')) {
-    // For cases like "Accelerating Aspect"
     fileName = `${fileName}`;
   } else {
-    // For cases that don't start with "Aspect of" or end with "Aspect"
     fileName = `aspect_of_${fileName}`;
   }
-  
-  // Keep hyphens intact
+
   fileName = fileName.replace(/_-_/g, '-');
-  
+
   return `/images/aspects/${folder}/${fileName}.png`;
 };
 

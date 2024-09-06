@@ -31,34 +31,41 @@ const GearSlot: React.FC<GearSlotProps> = ({
 }) => {
   const selectedItem = selections[index];
   
-  const isUnique = (item: AspectData | UniqueData | null): item is UniqueData => {
-    return item !== null && 'mythic' in item;
-  };
+  const isUnique = React.useCallback((item: AspectData | UniqueData | null): item is UniqueData => {
+    const result = item !== null && 'mythic' in item;
+    console.log(`isUnique check for ${item?.name}: ${result}, Item type: ${(item as any)?.type}, Is right side: ${isRightSide}`);
+    return result;
+  }, [isRightSide]);
 
   const handleSelect = (item: AspectData | UniqueData | null) => {
-    console.log('Selected item:', item);
+    console.log('Selected item:', item, 'Is right side:', isRightSide, 'Index:', index);
     onSelectionChange(index, item);
   };
 
-  const getItemImage = () => {
+  const getItemImage = React.useCallback(() => {
     if (selectedItem) {
-      console.log('Getting image for item:', selectedItem);
+      console.log('Getting image for item:', selectedItem, 'Is right side:', isRightSide, 'Index:', index);
+      console.log('Item type:', typeof selectedItem, 'Is unique:', isUnique(selectedItem));
       if (isUnique(selectedItem)) {
         console.log('Item is a Unique');
-        return getUniqueImagePath(selectedItem.type, selectedItem.name);
+        const path = getUniqueImagePath(selectedItem.type, selectedItem.name);
+        console.log('Unique image path:', path);
+        return path;
       } else {
         console.log('Item is an Aspect');
-        return getAspectImagePath(selectedItem.type);
+        const path = getAspectImagePath(selectedItem.name, selectedItem.class, selectedItem.type);
+        console.log('Aspect image path:', path);
+        return path;
       }
     }
     console.log('No item selected, using default image');
     return imageSrc;
-  };
+  }, [selectedItem, isRightSide, index, isUnique, imageSrc]);
 
   const getItemNameColor = () => {
     if (!selectedItem) return 'text-white';
-    if (!isUnique(selectedItem)) return 'text-orange-500'; // Aspect color
-    return selectedItem.mythic ? 'text-purple-500' : 'text-yellow-500'; // Mythic or regular Unique color
+    if (!isUnique(selectedItem)) return 'text-orange-500';
+    return selectedItem.mythic ? 'text-purple-500' : 'text-yellow-500';
   };
 
   if (isPlaceholder) {
@@ -74,16 +81,7 @@ const GearSlot: React.FC<GearSlotProps> = ({
   }
 
   const renderSlotContent = () => {
-    if (!selectedItem) {
-      return (
-        <Button
-          variant="outline"
-          className="flex items-center justify-center p-2 w-20 h-20 hover:bg-[#171717]"
-        >
-          <img src={imageSrc} alt={label || 'Gear slot'} className="w-12 h-12 object-contain" />
-        </Button>
-      );
-    }
+    const imageSource = selectedItem ? getItemImage() : imageSrc;
 
     const content = (
       <Button
@@ -91,17 +89,19 @@ const GearSlot: React.FC<GearSlotProps> = ({
         className="flex items-center justify-center p-2 w-20 h-20 hover:bg-[#171717]"
       >
         <img 
-          src={getItemImage()}
-          alt={selectedItem.name} 
+          src={imageSource}
+          alt={selectedItem ? selectedItem.name : (label || 'Gear slot')}
           className="w-12 h-12 object-contain"
           onError={(e) => {
             console.error('Failed to load image:', (e.target as HTMLImageElement).src);
-            console.error('For item:', selectedItem);
+            console.error('For item:', selectedItem, 'Is right side:', isRightSide, 'Index:', index);
             (e.target as HTMLImageElement).style.display = 'none';
           }}
         />
       </Button>
     );
+
+    if (!selectedItem) return content;
 
     return isUnique(selectedItem) 
       ? <UniqueHoverCard unique={selectedItem}>{content}</UniqueHoverCard>

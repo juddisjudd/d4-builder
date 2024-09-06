@@ -1,6 +1,7 @@
 import React from 'react';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/hover-card';
 import { UniqueData } from '../../../data/uniques';
+import { getUniqueImagePath } from '../utils/imagePathUtils';
 
 interface UniqueHoverCardProps {
   unique: UniqueData;
@@ -8,6 +9,8 @@ interface UniqueHoverCardProps {
 }
 
 const UniqueHoverCard: React.FC<UniqueHoverCardProps> = ({ unique, children }) => {
+  const imageSrc = getUniqueImagePath(unique.type, unique.name);
+
   return (
     <HoverCard>
       <HoverCardTrigger asChild>{children}</HoverCardTrigger>
@@ -18,9 +21,13 @@ const UniqueHoverCard: React.FC<UniqueHoverCardProps> = ({ unique, children }) =
               {unique.name}
             </h4>
             <img
-              src={`/images/uniques/${unique.type.toLowerCase().replace(/\s+/g, '_')}s/${encodeURIComponent(unique.name)}.png`}
+              src={imageSrc}
               alt={unique.name}
               className="h-[75px] w-[75px] object-contain"
+              onError={(e) => {
+                console.error('Failed to load image:', (e.target as HTMLImageElement).src);
+                (e.target as HTMLImageElement).style.display = 'none';
+              }}
             />
           </div>
           <p className={`text-sm ${unique.mythic ? 'text-purple-300' : 'text-yellow-300'}`}>

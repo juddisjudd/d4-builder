@@ -1,0 +1,81 @@
+{
+    "One-Handed Axe Expertise": {
+      "description": [
+        "{value1} increased Critical Strike Chance against Injured enemies. Double this amount when using two axes.",
+        "Lucky Hit: Critical Strikes have up to a {value2} chance to grant {value3} increased Attack Speed for {value4} seconds. Double the Attack Speed bonus when using two axes."
+      ],
+      "values": {
+        "value1": "10.0%",
+        "value2": "55%",
+        "value3": "6%",
+        "value4": "2"
+      }
+    },
+    "One-Handed Mace Expertise": {
+      "description": [
+        "{value1} increased damage to Stunned enemies. Double this amount when using two maces.",
+        "Lucky Hit: Up to a {value2} chance to gain Berserking for {value3} seconds when you hit a Stunned enemy. Double this chance when using two maces."
+      ],
+      "values": {
+        "value1": "10%",
+        "value2": "10%",
+        "value3": "1.5"
+      }
+    },
+    "One-Handed Sword Expertise": {
+      "description": [
+        "Lucky Hit: Up to a {value1} chance to gain {value2} Fury when hitting a Crowd Controlled enemy. Double this chance when using two swords.",
+        "Killing a Crowd Controlled enemy grants {value3} increased Attack Speed for {value4} seconds. Double this amount when using two swords."
+      ],
+      "values": {
+        "value1": "10%",
+        "value2": "5",
+        "value3": "15%",
+        "value4": "3"
+      }
+    },
+    "Two-Handed Axe Expertise": {
+      "description": [
+        "{value1} increased damage to Vulnerable enemies.",
+        "{value2} increased Critical Strike Chance against Vulnerable enemies."
+      ],
+      "values": {
+        "value1": "10.0%",
+        "value2": "10%"
+      }
+    },
+    "Polearm Expertise": {
+      "description": [
+        "{value1} increased Lucky Hit Chance.",
+        "You deal {value2} increased damage while Healthy."
+      ],
+      "values": {
+        "value1": "15.0%",
+        "value2": "15.0%"
+      }
+    },
+    "Two-Handed Sword Expertise": {
+      "description": [
+        "{value1} of direct damage you deal is inflicted as Bleeding damage over {value2} seconds.",
+        "You deal {value3} increased Bleeding damage for {value4} seconds after killing an enemy."
+      ],
+      "values": {
+        "value1": "20%",
+        "value2": "5",
+        "value3": "30%",
+        "value4": "5"
+      }
+    },
+    "Two-Handed Mace Expertise": {
+      "description": [
+        "Lucky Hit: Up to {value1} chance to gain {value2} Fury when hitting an enemy. Double the amount of Fury gained while Berserking.",
+        "You deal {value3} increased Critical Strike Damage while Berserking."
+      ],
+      "values": {
+        "value1": "10%",
+        "value2": "5",
+        "value3": "15%"
+      }
+    }
+  }
+  

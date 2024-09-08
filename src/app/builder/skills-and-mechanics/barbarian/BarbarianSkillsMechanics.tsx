@@ -1,23 +1,20 @@
 import React from 'react';
-import SkillButton from './components/SkillButton';
+import SkillSelection from '../components/SkillSelection';
 import TechniqueButton from './components/TechniqueButton';
+import { Separator } from "@/components/ui/separator";
 
 const BarbarianSkillsMechanics: React.FC = () => {
   const skillNames = ['Skill 1', 'Skill 2', 'Skill 3', 'Skill 4', 'Skill 5', 'Skill 6'];
 
   return (
-    <div className="mt-8">
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xl font-bold">Skills</h2>
-        <h2 className="text-xl font-bold">Technique</h2>
-      </div>
-      <div className="flex justify-between">
-        <div className="flex space-x-2">
-          {skillNames.map((skillName, index) => (
-            <SkillButton key={index} skillName={skillName} />
-          ))}
+    <div className="mt-8 flex flex-col items-center">
+      <div className="flex items-end space-x-4">
+        <SkillSelection skillNames={skillNames} />
+        <Separator orientation="vertical" className="h-16" />
+        <div>
+          <h2 className="text-xl font-bold mb-2">Technique</h2>
+          <TechniqueButton />
         </div>
-        <TechniqueButton />
       </div>
     </div>
   );

@@ -24,6 +24,13 @@ const Header: FC = () => {
     setSelectKey((prev) => prev + 1);
   };
 
+  const handleClassChange = (newClass: string) => {
+    if (newClass !== buildState.selectedClass) {
+      resetBuild();
+      setSelectedClass(newClass);
+    }
+  };
+
   return (
     <header className="flex flex-col bg-black p-4 text-white">
       <div className="flex items-center justify-between">
@@ -38,7 +45,7 @@ const Header: FC = () => {
             className="w-15 h-15 mr-2"
             style={{ width: '60px', height: '60px' }}
           />
-          <Select key={selectKey} onValueChange={setSelectedClass}>
+          <Select key={selectKey} onValueChange={handleClassChange}>
             <SelectTrigger className="w-[180px] border-none text-lg font-semibold uppercase text-[#d1a781] outline-none">
               <SelectValue placeholder="Select Class" />
             </SelectTrigger>

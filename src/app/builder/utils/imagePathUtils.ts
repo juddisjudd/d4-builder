@@ -74,3 +74,14 @@ export const logImagePath = (type: string, name: string, isAspect: boolean = fal
   const path = isAspect ? getAspectImagePath(name, undefined, type) : getUniqueImagePath(type, name);
   console.log(`Image path for ${name} (${type}):`, path);
 };
+
+export const getSkillImagePath = (className: string, skillName: string): string => {
+  const formattedClassName = className.toLowerCase();
+  const formattedSkillName = skillName.toLowerCase().replace(/\s+/g, '_').replace(/'/g, '');
+  return `/images/skills/${formattedClassName}/${formattedSkillName}.png`;
+};
+
+export const getCategoryImagePath = (category: string): string => {
+  const formattedCategory = category.toLowerCase().replace(/\s+/g, '_');
+  return `/images/skills/categories/${formattedCategory}.png`;
+};

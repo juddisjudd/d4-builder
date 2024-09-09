@@ -1,7 +1,11 @@
 import React from 'react';
 import { useBuildContext } from '@/contexts/BuildContext';
 import BarbarianSkillsMechanics from './barbarian/BarbarianSkillsMechanics';
-import SkillSelection from './components/SkillSelection';
+import DruidSkillsMechanics from './druid/DruidSkillsMechanics';
+import NecromancerSkillsMechanics from './necromancer/NecromancerSkillsMechanics';
+import RogueSkillsMechanics from './rogue/RogueSkillsMechanics';
+import SorcererSkillsMechanics from './sorcerer/SorcererSkillsMechanics';
+import SpiritbornSkillsMechanics from './spiritborn/SpiritbornSkillsMechanics';
 
 const SkillsAndMechanics: React.FC = () => {
   const { buildState } = useBuildContext();
@@ -11,15 +15,22 @@ const SkillsAndMechanics: React.FC = () => {
     return null;
   }
 
-  const skillNames = ['Skill 1', 'Skill 2', 'Skill 3', 'Skill 4', 'Skill 5', 'Skill 6'];
-
   const renderClassMechanic = () => {
     switch (selectedClass.toLowerCase()) {
       case 'barbarian':
         return <BarbarianSkillsMechanics />;
-      // Add other classes here as we implement them
+      case 'druid':
+        return <DruidSkillsMechanics />;
+      case 'necromancer':
+        return <NecromancerSkillsMechanics />;
+      case 'rogue':
+        return <RogueSkillsMechanics />;
+      case 'sorcerer':
+        return <SorcererSkillsMechanics />;
+      case 'spiritborn':
+        return <SpiritbornSkillsMechanics />;
       default:
-        return <SkillSelection skillNames={skillNames} />;
+        return null;
     }
   };
 

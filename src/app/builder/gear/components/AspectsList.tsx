@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input';
 import { codex, AspectData } from '../../../data/codex';
 import { uniques, UniqueData } from '../../../data/uniques';
 import { getAllowedAspectTypes, getWeaponTypes, getJewelryTypes } from '../utils/aspectUtils';
-import { getUniqueImagePath, getAspectImagePath } from '../utils/imagePathUtils';
+import { getUniqueImagePath, getAspectImagePath } from '../../utils/imagePathUtils';
 import AspectHoverCard from './AspectHoverCard';
 import UniqueHoverCard from './UniqueHoverCard';
 

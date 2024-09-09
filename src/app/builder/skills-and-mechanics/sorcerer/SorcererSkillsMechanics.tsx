@@ -1,21 +1,20 @@
 import React from 'react';
 import SkillSelection from '../components/SkillSelection';
-import TechniqueButton from './components/TechniqueButton';
 import { Separator } from "@/components/ui/separator";
 
-const BarbarianSkillsMechanics: React.FC = () => {
+const SorcererSkillsMechanics: React.FC = () => {
   return (
     <div className="mt-8 flex flex-col items-center">
       <div className="flex items-end space-x-4">
-        <SkillSelection selectedClass="Barbarian" />
+        <SkillSelection selectedClass="Sorcerer" />
         <Separator orientation="vertical" className="h-16" />
         <div>
-          <h2 className="text-xl font-bold mb-2">Technique</h2>
-          <TechniqueButton />
+          <h2 className="text-xl font-bold mb-2">Sorcerer Mechanic</h2>
+          {/* Placeholder for Sorcerer-specific mechanic */}
         </div>
       </div>
     </div>
   );
 };
 
-export default BarbarianSkillsMechanics;
+export default SorcererSkillsMechanics;

@@ -4,7 +4,7 @@ import { Dialog, DialogTrigger } from '@/components/ui/dialog';
 import GearSlotDialog from './GearSlotDialog';
 import { AspectData } from '../../../data/codex';
 import { UniqueData } from '../../../data/uniques';
-import { getUniqueImagePath, getAspectImagePath } from '../utils/imagePathUtils';
+import { getUniqueImagePath, getAspectImagePath } from '../../utils/imagePathUtils';
 import AspectHoverCard from './AspectHoverCard';
 import UniqueHoverCard from './UniqueHoverCard';
 

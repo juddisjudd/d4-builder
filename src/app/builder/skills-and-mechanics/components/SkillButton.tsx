@@ -1,34 +1,49 @@
-import React from 'react';
-import { Button } from '@/components/ui/button';
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from '@/components/ui/dialog';
+import React, { useState } from 'react';
+import { Button } from "@/components/ui/button";
+import SkillSelectionDialog from './SkillSelectionDialog';
 
 interface SkillButtonProps {
-  skillName: string;
+  selectedClass: string;
+  onSelectSkill: (skill: any) => void;
+  selectedSkills: string[];
+  index: number;
 }
 
-const SkillButton: React.FC<SkillButtonProps> = ({ skillName }) => {
+const SkillButton: React.FC<SkillButtonProps> = ({ selectedClass, onSelectSkill, selectedSkills, index }) => {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+  const handleSelectSkill = (skill: any) => {
+    onSelectSkill(skill);
+    setIsDialogOpen(false);
+  };
+
+  const selectedSkill = selectedSkills[index];
+
   return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button variant="outline" className="w-16 h-16 p-0">
-          {/* Placeholder for skill icon */}
-          <div className="w-12 h-12 rounded-md"></div>
-        </Button>
-      </DialogTrigger>
-      <DialogContent>
-        <DialogHeader>
-          <DialogTitle>Select {skillName}</DialogTitle>
-        </DialogHeader>
-        {/* Placeholder for skill selection content */}
-        <div>Skill selection options for {skillName} will go here.</div>
-      </DialogContent>
-    </Dialog>
+    <>
+      <Button
+        variant="outline"
+        className="w-16 h-16 p-0"
+        onClick={() => setIsDialogOpen(true)}
+      >
+        {selectedSkill ? (
+          <img
+            src={`/images/skills/${selectedClass.toLowerCase()}/${selectedSkill.toLowerCase().replace(/\s+/g, '_')}.png`}
+            alt={selectedSkill}
+            className="w-12 h-12 object-contain"
+          />
+        ) : (
+          <span>Skill {index + 1}</span>
+        )}
+      </Button>
+      <SkillSelectionDialog
+        isOpen={isDialogOpen}
+        onClose={() => setIsDialogOpen(false)}
+        selectedClass={selectedClass}
+        onSelectSkill={handleSelectSkill}
+        selectedSkills={selectedSkills}
+      />
+    </>
   );
 };
 

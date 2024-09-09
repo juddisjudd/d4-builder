@@ -51,14 +51,19 @@ const SkillSelectionDialog: React.FC<SkillSelectionDialogProps> = ({
                   .filter((skill) => skill.tags?.[0] === category)
                   .map((skill) => (
                     <SkillHoverCard key={skill.name} skill={skill}>
-                      <img
-                        src={getSkillImagePath(selectedClass, skill.name)}
-                        alt={skill.name}
-                        className={`h-[50px] w-[50px] cursor-pointer object-contain transition-all duration-200 ${
-                          selectedSkills.includes(skill.name) ? '' : 'grayscale filter hover:filter-none'
+                      <div
+                        className={`relative h-[50px] w-[50px] cursor-pointer transition-all duration-200 ${
+                          selectedSkills.includes(skill.name) ? 'ring-2 ring-blue-500' : ''
                         }`}
                         onClick={() => onSelectSkill(skill)}
-                      />
+                      >
+                        <img
+                          src={getSkillImagePath(selectedClass, skill.name)}
+                          alt={skill.name}
+                          className="h-full w-full object-contain"
+                        />
+                        <div className="absolute inset-0 opacity-0 transition-opacity duration-200 hover:opacity-100 hover:ring-2 hover:ring-red-500" />
+                      </div>
                     </SkillHoverCard>
                   ))}
               </div>

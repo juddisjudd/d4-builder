@@ -17,7 +17,10 @@ const TechniqueButton: React.FC = () => {
             {selectedTechnique ? (
               <img src={selectedTechnique.icon} alt={selectedTechnique.name} className="h-12 w-12" />
             ) : (
-              <div className="h-12 w-12 rounded-md"></div>
+              <div className="h-12 w-12 rounded-md">
+                {' '}
+                <img src="/images/skills/empty.png" alt="Empty Skill" className="h-12 w-12 object-contain" />
+              </div>
             )}
           </Button>
         </DialogTrigger>

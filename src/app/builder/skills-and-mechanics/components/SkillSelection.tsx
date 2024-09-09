@@ -16,7 +16,7 @@ const SkillSelection: React.FC<SkillSelectionProps> = ({ selectedClass }) => {
 
   return (
     <div>
-      <h2 className="text-xl font-bold mb-2">Skills</h2>
+      <h2 className="mb-2 text-xl font-bold">Skills</h2>
       <div className="flex space-x-2">
         {Array.from({ length: 6 }, (_, i) => (
           <SkillButton

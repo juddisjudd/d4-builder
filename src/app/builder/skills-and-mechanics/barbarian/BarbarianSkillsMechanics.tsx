@@ -1,7 +1,7 @@
 import React from 'react';
 import SkillSelection from '../components/SkillSelection';
 import TechniqueButton from './components/TechniqueButton';
-import { Separator } from "@/components/ui/separator";
+import { Separator } from '@/components/ui/separator';
 
 const BarbarianSkillsMechanics: React.FC = () => {
   return (
@@ -10,7 +10,7 @@ const BarbarianSkillsMechanics: React.FC = () => {
         <SkillSelection selectedClass="Barbarian" />
         <Separator orientation="vertical" className="h-16" />
         <div>
-          <h2 className="text-xl font-bold mb-2">Technique</h2>
+          <h2 className="mb-2 text-xl font-bold">Technique</h2>
           <TechniqueButton />
         </div>
       </div>

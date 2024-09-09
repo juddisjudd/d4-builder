@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
 import SkillSelectionDialog from './SkillSelectionDialog';
 
 interface SkillButtonProps {
@@ -21,19 +21,15 @@ const SkillButton: React.FC<SkillButtonProps> = ({ selectedClass, onSelectSkill,
 
   return (
     <>
-      <Button
-        variant="outline"
-        className="w-16 h-16 p-0"
-        onClick={() => setIsDialogOpen(true)}
-      >
+      <Button variant="outline" className="h-16 w-16 p-0" onClick={() => setIsDialogOpen(true)}>
         {selectedSkill ? (
           <img
             src={`/images/skills/${selectedClass.toLowerCase()}/${selectedSkill.toLowerCase().replace(/\s+/g, '_')}.png`}
             alt={selectedSkill}
-            className="w-12 h-12 object-contain"
+            className="h-12 w-12 object-contain"
           />
         ) : (
-          <span>Skill {index + 1}</span>
+          <img src="/images/skills/empty.png" alt="Empty Skill" className="h-12 w-12 object-contain" />
         )}
       </Button>
       <SkillSelectionDialog

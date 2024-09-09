@@ -1,6 +1,6 @@
 import React from 'react';
 import SkillSelection from '../components/SkillSelection';
-import { Separator } from "@/components/ui/separator";
+import { Separator } from '@/components/ui/separator';
 
 const RogueSkillsMechanics: React.FC = () => {
   return (
@@ -9,7 +9,7 @@ const RogueSkillsMechanics: React.FC = () => {
         <SkillSelection selectedClass="Rogue" />
         <Separator orientation="vertical" className="h-16" />
         <div>
-          <h2 className="text-xl font-bold mb-2">Rogue Mechanic</h2>
+          <h2 className="mb-2 text-xl font-bold">Rogue Mechanic</h2>
           {/* Placeholder for Rogue-specific mechanic */}
         </div>
       </div>

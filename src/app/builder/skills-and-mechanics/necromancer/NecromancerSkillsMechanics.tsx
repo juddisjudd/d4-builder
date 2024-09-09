@@ -1,6 +1,6 @@
 import React from 'react';
 import SkillSelection from '../components/SkillSelection';
-import { Separator } from "@/components/ui/separator";
+import { Separator } from '@/components/ui/separator';
 
 const NecromancerSkillsMechanics: React.FC = () => {
   return (
@@ -9,7 +9,7 @@ const NecromancerSkillsMechanics: React.FC = () => {
         <SkillSelection selectedClass="Necromancer" />
         <Separator orientation="vertical" className="h-16" />
         <div>
-          <h2 className="text-xl font-bold mb-2">Necromancer Mechanic</h2>
+          <h2 className="mb-2 text-xl font-bold">Necromancer Mechanic</h2>
           {/* Placeholder for Necromancer-specific mechanic */}
         </div>
       </div>

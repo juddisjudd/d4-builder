@@ -1,31 +1,33 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button } from '@/components/ui/button';
 import SkillSelectionDialog from './SkillSelectionDialog';
+import { getSkillImagePath } from '../../utils/imagePathUtils';
+
+interface SkillData {
+  name: string;
+  class: string;
+  tags?: string[];
+  description: string[];
+  [key: string]: any;
+}
 
 interface SkillButtonProps {
   selectedClass: string;
-  onSelectSkill: (skill: any) => void;
-  selectedSkills: string[];
+  onSelectSkill: (skill: SkillData | null) => void;
+  selectedSkill: SkillData | null;
   index: number;
 }
 
-const SkillButton: React.FC<SkillButtonProps> = ({ selectedClass, onSelectSkill, selectedSkills, index }) => {
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
-
-  const handleSelectSkill = (skill: any) => {
-    onSelectSkill(skill);
-    setIsDialogOpen(false);
-  };
-
-  const selectedSkill = selectedSkills[index];
+const SkillButton: React.FC<SkillButtonProps> = ({ selectedClass, onSelectSkill, selectedSkill, index }) => {
+  const [isDialogOpen, setIsDialogOpen] = React.useState(false);
 
   return (
     <>
       <Button variant="outline" className="h-16 w-16 p-0" onClick={() => setIsDialogOpen(true)}>
         {selectedSkill ? (
           <img
-            src={`/images/skills/${selectedClass.toLowerCase()}/${selectedSkill.toLowerCase().replace(/\s+/g, '_')}.png`}
-            alt={selectedSkill}
+            src={getSkillImagePath(selectedClass, selectedSkill.name)}
+            alt={selectedSkill.name}
             className="h-12 w-12 object-contain"
           />
         ) : (
@@ -36,8 +38,8 @@ const SkillButton: React.FC<SkillButtonProps> = ({ selectedClass, onSelectSkill,
         isOpen={isDialogOpen}
         onClose={() => setIsDialogOpen(false)}
         selectedClass={selectedClass}
-        onSelectSkill={handleSelectSkill}
-        selectedSkills={selectedSkills}
+        onSelectSkill={onSelectSkill}
+        selectedSkills={[]}
       />
     </>
   );

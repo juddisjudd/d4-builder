@@ -5,11 +5,19 @@ import skillsData from '@/app/data/skills.json';
 import { getSkillImagePath, getCategoryImagePath } from '../../utils/imagePathUtils';
 import SkillHoverCard from './SkillHoverCard';
 
+interface Skill {
+  name: string;
+  class: string;
+  tags?: string[];
+  description: string[];
+  [key: string]: any;
+}
+
 interface SkillSelectionDialogProps {
   isOpen: boolean;
   onClose: () => void;
   selectedClass: string;
-  onSelectSkill: (skill: any) => void;
+  onSelectSkill: (skill: Skill) => void;
   selectedSkills: string[];
 }
 
@@ -20,7 +28,7 @@ const SkillSelectionDialog: React.FC<SkillSelectionDialogProps> = ({
   onSelectSkill,
   selectedSkills,
 }) => {
-  const classSkills = skillsData.skills.filter((skill) => skill.class === selectedClass);
+  const classSkills = (skillsData.skills as Skill[]).filter((skill) => skill.class === selectedClass);
   const categories = Array.from(
     new Set(
       classSkills.map((skill) => skill.tags?.[0]).filter((category): category is string => category !== undefined)
@@ -42,13 +50,16 @@ const SkillSelectionDialog: React.FC<SkillSelectionDialogProps> = ({
                 {classSkills
                   .filter((skill) => skill.tags?.[0] === category)
                   .map((skill) => (
-                    <img
-                      key={skill.name}
-                      src={getSkillImagePath(selectedClass, skill.name)}
-                      alt={skill.name}
-                      className={`h-[50px] w-[50px] cursor-pointer object-contain transition-all duration-200 ${selectedSkills.includes(skill.name) ? '' : 'grayscale filter hover:filter-none'}`}
-                      onClick={() => onSelectSkill(skill)}
-                    />
+                    <SkillHoverCard key={skill.name} skill={skill}>
+                      <img
+                        src={getSkillImagePath(selectedClass, skill.name)}
+                        alt={skill.name}
+                        className={`h-[50px] w-[50px] cursor-pointer object-contain transition-all duration-200 ${
+                          selectedSkills.includes(skill.name) ? '' : 'grayscale filter hover:filter-none'
+                        }`}
+                        onClick={() => onSelectSkill(skill)}
+                      />
+                    </SkillHoverCard>
                   ))}
               </div>
             </div>

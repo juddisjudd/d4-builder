@@ -1,30 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
 import SkillButton from './SkillButton';
+import { useBuildContext } from '@/contexts/BuildContext';
 
-interface SkillSelectionProps {
-  selectedClass: string;
-}
+const SkillSelection: React.FC = () => {
+  const { buildState, updateSkill } = useBuildContext();
+  const { selectedClass, selectedSkills } = buildState;
 
-const SkillSelection: React.FC<SkillSelectionProps> = ({ selectedClass }) => {
-  const [selectedSkills, setSelectedSkills] = useState<string[]>(Array(6).fill(null));
-
-  const handleSelectSkill = (skill: any, index: number) => {
-    const newSelectedSkills = [...selectedSkills];
-    newSelectedSkills[index] = skill.name;
-    setSelectedSkills(newSelectedSkills);
-  };
+  if (!selectedClass) return null;
 
   return (
     <div>
       <h2 className="mb-2 text-xl font-bold">Skills</h2>
       <div className="flex space-x-2">
-        {Array.from({ length: 6 }, (_, i) => (
+        {[...Array(6)].map((_, index) => (
           <SkillButton
-            key={i}
+            key={index}
             selectedClass={selectedClass}
-            onSelectSkill={(skill) => handleSelectSkill(skill, i)}
-            selectedSkills={selectedSkills}
-            index={i}
+            onSelectSkill={(skill) => updateSkill(index, skill)}
+            selectedSkill={selectedSkills[index]}
+            index={index}
           />
         ))}
       </div>

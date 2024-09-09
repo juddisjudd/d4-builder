@@ -3,10 +3,21 @@ import { AspectData } from '@/app/data/codex';
 import { UniqueData } from '@/app/data/uniques';
 import { GemData } from '@/app/data/gems';
 
+export interface SkillData {
+  name: string;
+  class: string;
+  tags?: string[];
+  description: string[];
+  extra?: string[];
+  [key: string]: any;
+}
+
 interface BuildState {
   selectedClass: string | null;
   aspects: (AspectData | UniqueData | null)[];
   gems: (GemData | null)[];
+  selectedSkills: (SkillData | null)[];
+  technique?: string | null; // For Barbarian class
 }
 
 interface BuildContextType {
@@ -14,6 +25,8 @@ interface BuildContextType {
   setSelectedClass: (className: string | null) => void;
   updateAspect: (index: number, item: AspectData | UniqueData | null) => void;
   updateGem: (index: number, gem: GemData | null) => void;
+  updateSkill: (index: number, skill: SkillData | null) => void;
+  updateTechnique: (technique: string | null) => void; // For Barbarian class
   resetBuild: () => void;
 }
 
@@ -24,10 +37,17 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
     selectedClass: null,
     aspects: Array(14).fill(null),
     gems: Array(5).fill(null),
+    selectedSkills: Array(6).fill(null),
+    technique: null,
   });
 
   const setSelectedClass = (className: string | null) => {
-    setBuildState(prev => ({ ...prev, selectedClass: className }));
+    setBuildState(prev => ({
+      ...prev,
+      selectedClass: className,
+      selectedSkills: Array(6).fill(null),
+      technique: null,
+    }));
   };
 
   const updateAspect = (index: number, item: AspectData | UniqueData | null) => {
@@ -46,16 +66,38 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
     });
   };
 
+  const updateSkill = (index: number, skill: SkillData | null) => {
+    setBuildState(prev => {
+      const newSkills = [...prev.selectedSkills];
+      newSkills[index] = skill;
+      return { ...prev, selectedSkills: newSkills };
+    });
+  };
+
+  const updateTechnique = (technique: string | null) => {
+    setBuildState(prev => ({ ...prev, technique }));
+  };
+
   const resetBuild = () => {
     setBuildState({
       selectedClass: null,
       aspects: Array(14).fill(null),
       gems: Array(5).fill(null),
+      selectedSkills: Array(6).fill(null),
+      technique: null,
     });
   };
 
   return (
-    <BuildContext.Provider value={{ buildState, setSelectedClass, updateAspect, updateGem, resetBuild }}>
+    <BuildContext.Provider value={{
+      buildState,
+      setSelectedClass,
+      updateAspect,
+      updateGem,
+      updateSkill,
+      updateTechnique,
+      resetBuild
+    }}>
       {children}
     </BuildContext.Provider>
   );

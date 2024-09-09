@@ -5,16 +5,10 @@ import { getSkillImagePath } from '../../utils/imagePathUtils';
 interface SkillData {
   name: string;
   class: string;
-  tags: string[];
-  fury_generate?: number;
-  lucky_hit?: string;
+  tags?: string[];
   description: string[];
   extra?: string[];
-  value1?: string[];
-  runes?: {
-    name: string;
-    description: string[];
-  }[];
+  [key: string]: any;
 }
 
 interface SkillHoverCardProps {
@@ -23,40 +17,57 @@ interface SkillHoverCardProps {
 }
 
 const SkillHoverCard: React.FC<SkillHoverCardProps> = ({ skill, children }) => {
+  const renderSkillProperties = () => {
+    const excludedKeys = ['name', 'class', 'tags', 'description', 'extra', 'runes', 'filters'];
+    return Object.entries(skill)
+      .filter(([key, value]) => !excludedKeys.includes(key) && typeof value !== 'object')
+      .map(([key, value]) => (
+        <p key={key} className="mb-1 text-sm">
+          <span className="font-bold">{key.replace(/_/g, ' ').replace(/\b\w/g, (l) => l.toUpperCase())}:</span>
+          {value && <span className="ml-1 text-yellow-400">{value}</span>}
+        </p>
+      ));
+  };
+
+  const renderDescription = (description: string) => {
+    let renderedDescription = description;
+    Object.keys(skill).forEach((key) => {
+      if (key.startsWith('value') && Array.isArray(skill[key])) {
+        const regex = new RegExp(`{${key}}`, 'g');
+        renderedDescription = renderedDescription.replace(
+          regex,
+          `<span class="text-yellow-400">${skill[key][0]}</span>`
+        );
+      }
+    });
+    return <p className="mb-2 text-sm" dangerouslySetInnerHTML={{ __html: renderedDescription }} />;
+  };
+
   return (
     <HoverCard>
       <HoverCardTrigger asChild>{children}</HoverCardTrigger>
-      <HoverCardContent className="w-80 border-gray-700 bg-gray-900">
+      <HoverCardContent className="w-96 border-zinc-600">
         <div className="mb-2 flex items-center space-x-2">
           <img src={getSkillImagePath(skill.class, skill.name)} alt={skill.name} className="h-10 w-10" />
           <h3 className="text-lg font-semibold">{skill.name}</h3>
         </div>
-        <div className="mb-2 grid grid-cols-2 gap-1 text-sm">
-          {skill.tags.map((tag) => (
-            <span key={tag} className="rounded bg-gray-800 px-2 py-1">
-              {tag}
-            </span>
-          ))}
-        </div>
-        {skill.fury_generate && <p className="mb-1 text-sm">Fury Generate: {skill.fury_generate}</p>}
-        {skill.lucky_hit && <p className="mb-1 text-sm">Lucky Hit: {skill.lucky_hit}</p>}
-        <p className="mb-2 text-sm">{skill.description[0]}</p>
-        {skill.extra && (
-          <div className="mb-2 text-sm">
-            {skill.extra.map((extra, index) => (
-              <span key={index} className="mr-1 rounded bg-gray-800 px-2 py-1">
-                {extra}
+        {skill.tags && (
+          <div className="mb-2 grid grid-cols-2 gap-1 text-sm">
+            {skill.tags.map((tag) => (
+              <span key={tag} className="rounded bg-zinc-800 px-2 py-1">
+                {tag}
               </span>
             ))}
           </div>
         )}
-        {skill.runes && (
-          <div className="mt-2">
-            <h4 className="mb-1 font-semibold">Runes:</h4>
-            {skill.runes.map((rune) => (
-              <div key={rune.name} className="mb-1">
-                <span className="font-medium">{rune.name}:</span> {rune.description[0]}
-              </div>
+        {renderSkillProperties()}
+        {renderDescription(skill.description[0])}
+        {skill.extra && (
+          <div className="mt-2 flex flex-wrap gap-1 text-sm">
+            {skill.extra.map((extra, index) => (
+              <span key={index} className="rounded bg-zinc-800 px-2 py-1">
+                {extra}
+              </span>
             ))}
           </div>
         )}

@@ -16,7 +16,7 @@ const TechniqueHoverContent: React.FC<{ technique: Technique }> = ({ technique }
           if (part.startsWith('{') && part.endsWith('}')) {
             const key = part.slice(1, -1);
             return (
-              <span key={i} className="text-yellow-500">
+              <span key={i} className="text-yellow-400">
                 {technique.values[key]}
               </span>
             );

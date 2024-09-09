@@ -8,9 +8,15 @@ interface TechniqueDialogProps {
   isOpen: boolean;
   onOpenChange: (open: boolean) => void;
   onSelectTechnique: (technique: Technique) => void;
+  selectedTechniqueName: string | null;
 }
 
-const TechniqueDialog: React.FC<TechniqueDialogProps> = ({ isOpen, onOpenChange, onSelectTechnique }) => (
+const TechniqueDialog: React.FC<TechniqueDialogProps> = ({
+  isOpen,
+  onOpenChange,
+  onSelectTechnique,
+  selectedTechniqueName,
+}) => (
   <Dialog open={isOpen} onOpenChange={onOpenChange}>
     <DialogContent className="sm:max-w-[425px]">
       <DialogHeader>
@@ -21,7 +27,9 @@ const TechniqueDialog: React.FC<TechniqueDialogProps> = ({ isOpen, onOpenChange,
           <TechniqueHoverCard key={technique.name} technique={technique}>
             <Button
               variant="outline"
-              className="flex w-full items-center justify-start p-2"
+              className={`flex w-full items-center justify-start p-2 ${
+                technique.name === selectedTechniqueName ? 'ring-2 ring-blue-500' : ''
+              }`}
               onClick={() => {
                 onSelectTechnique(technique);
                 onOpenChange(false);

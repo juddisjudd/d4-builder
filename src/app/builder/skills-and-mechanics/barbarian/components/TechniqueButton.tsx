@@ -1,13 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogTrigger } from '@/components/ui/dialog';
-import { Technique } from '../data/techniques';
+import { Technique, techniques } from '../data/techniques';
 import TechniqueHoverCard from './TechniqueHoverCard';
 import TechniqueDialog from './TechniqueDialog';
+import { useBuildContext } from '@/contexts/BuildContext';
 
 const TechniqueButton: React.FC = () => {
-  const [selectedTechnique, setSelectedTechnique] = useState<Technique | null>(null);
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const { buildState, updateTechnique } = useBuildContext();
+  const { technique: selectedTechniqueName } = buildState;
+  const [isDialogOpen, setIsDialogOpen] = React.useState(false);
+
+  const selectedTechnique = techniques.find((tech) => tech.name === selectedTechniqueName) || null;
+
+  const handleSelectTechnique = (technique: Technique) => {
+    updateTechnique(technique.name);
+    setIsDialogOpen(false);
+  };
 
   return (
     <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
@@ -18,14 +27,18 @@ const TechniqueButton: React.FC = () => {
               <img src={selectedTechnique.icon} alt={selectedTechnique.name} className="h-12 w-12" />
             ) : (
               <div className="h-12 w-12 rounded-md">
-                {' '}
                 <img src="/images/skills/empty.png" alt="Empty Skill" className="h-12 w-12 object-contain" />
               </div>
             )}
           </Button>
         </DialogTrigger>
       </TechniqueHoverCard>
-      <TechniqueDialog isOpen={isDialogOpen} onOpenChange={setIsDialogOpen} onSelectTechnique={setSelectedTechnique} />
+      <TechniqueDialog
+        isOpen={isDialogOpen}
+        onOpenChange={setIsDialogOpen}
+        onSelectTechnique={handleSelectTechnique}
+        selectedTechniqueName={selectedTechniqueName ?? null}
+      />
     </Dialog>
   );
 };

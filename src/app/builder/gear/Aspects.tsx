@@ -39,6 +39,15 @@ const Aspects: React.FC = () => {
           />
         ))}
       </div>
+      <div className="flex flex-col items-center justify-center flex-grow">
+        <div className="w-[600px] h-[600px] flex items-center justify-center">
+          <img
+            src={`/images/misc/${selectedClass.toLowerCase()}.png`}
+            alt={`${selectedClass} image`}
+            className="max-w-full max-h-full object-contain"
+          />
+        </div>
+      </div>
       <div className="flex flex-col space-y-4">
         {rightSlots.map((slot, index) => (
           <GearSlot 

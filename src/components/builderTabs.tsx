@@ -18,7 +18,7 @@ const BuilderTabs: FC = () => {
   }
 
   return (
-    <Tabs defaultValue="gear-skills" className="mt-4">
+    <Tabs defaultValue="gear-skills" className="">
       <TabsList className="flex space-x-4">
         <TabsTrigger value="gear-skills" className="flex items-center space-x-1">
           <Hammer className="h-4 w-4" />

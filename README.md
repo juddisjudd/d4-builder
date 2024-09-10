@@ -14,5 +14,4 @@ A <strong>Diablo IV</strong> Class "Builder" Desktop Application.<br><br>
 </p>
 <hr>
 
-https://github.com/user-attachments/assets/8ff16658-6a59-462c-aa9b-61d7aa3d7b37
-
+https://github.com/user-attachments/assets/d63cf539-f64a-4365-9d3f-182db9d1d3e3

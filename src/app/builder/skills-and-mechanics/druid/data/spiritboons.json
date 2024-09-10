@@ -1,0 +1,80 @@
+{
+  "Deer": {
+    "Prickleskin": {
+      "description": "Gain {value} Thorns.",
+      "value": 480
+    },
+    "Gift of the Stag": {
+      "description": "Gain {value} Maximum Spirit.",
+      "value": 40
+    },
+    "Wariness": {
+      "description": "Take {value}% reduced damage from Elites.",
+      "value": 15
+    },
+    "Advantageous Beast": {
+      "description": "Gain {value}% Movement Speed and {value2}% Impairment Reduction.",
+      "value": 15,
+      "value2": 15
+    }
+  },
+  "Eagle": {
+    "Scythe Talons": {
+      "description": "Gain {value}% increased Critical Strike Chance.",
+      "value": 10
+    },
+    "Iron Feather": {
+      "description": "Gain {value}% Maximum Life.",
+      "value": 20
+    },
+    "Swooping Attacks": {
+      "description": "Gain {value}% Attack Speed.",
+      "value": 15
+    },
+    "Avian Wrath": {
+      "description": "Gain {value}% Critical Strike Damage.",
+      "value": 30
+    }
+  },
+  "Wolf": {
+    "Pack Leader": {
+      "description": "Lucky Hit: Critical Strikes have up to a {value}% chance to reset the Cooldowns of your Companion Skills.",
+      "value": 25.0
+    },
+    "Energize": {
+      "description": "Lucky Hit: Dealing damage has up to a {value}% chance to restore {value2} Spirit.",
+      "value": 15,
+      "value2": 30
+    },
+    "Bolster": {
+      "description": "Fortify for {value}% of your Maximum Life when you use a Defensive Skill.",
+      "value": 25
+    },
+    "Calamity": {
+      "description": "Extend the duration of Ultimate Skills by {value}%.",
+      "value": 25
+    }
+  },
+  "Snake": {
+    "Obsidian Slam": {
+      "description": "Every {value}th kill will cause your next Earth Skill to Overpower.",
+      "value": 10
+    },
+    "Overload": {
+      "description": "Lucky Hit: Dealing Lightning damage has up to a {value}% chance to cause the target to emit a static discharge, dealing {value2} Lightning damage to surrounding enemies.",
+      "value": 40,
+      "value2": 875
+    },
+    "Masochistic": {
+      "description": "Lucky Hit: Critical Strikes with Shapeshifting Skills have up to a {value}% chance to Heal you for {value2}% Maximum Life ({value3}).",
+      "value": 75,
+      "value2": 5,
+      "value3": 58
+    },
+    "Calm Before the Storm": {
+      "description": "Lucky Hit: Nature Magic Skills have up to a {value}% chance to reduce the Cooldown of your Ultimate Skill by {value2} seconds.",
+      "value": 10,
+      "value2": 2
+    }
+  }
+}

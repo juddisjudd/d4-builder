@@ -17,7 +17,8 @@ interface BuildState {
   aspects: (AspectData | UniqueData | null)[];
   gems: (GemData | null)[];
   selectedSkills: (SkillData | null)[];
-  technique?: string | null; // For Barbarian class
+  technique?: string | null;
+  spiritBoons: { [spirit: string]: string[] };
 }
 
 interface BuildContextType {
@@ -26,7 +27,8 @@ interface BuildContextType {
   updateAspect: (index: number, item: AspectData | UniqueData | null) => void;
   updateGem: (index: number, gem: GemData | null) => void;
   updateSkill: (index: number, skill: SkillData | null) => void;
-  updateTechnique: (technique: string | null) => void; // For Barbarian class
+  updateTechnique: (technique: string | null) => void;
+  updateSpiritBoon: (spirit: string, boonName: string) => void;
   resetBuild: () => void;
 }
 
@@ -39,6 +41,7 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
     gems: Array(5).fill(null),
     selectedSkills: Array(6).fill(null),
     technique: null,
+    spiritBoons: { Deer: [], Eagle: [], Wolf: [], Snake: [] },
   });
 
   const setSelectedClass = (className: string | null) => {
@@ -47,6 +50,7 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
       selectedClass: className,
       selectedSkills: Array(6).fill(null),
       technique: null,
+      spiritBoons: { Deer: [], Eagle: [], Wolf: [], Snake: [] },
     }));
   };
 
@@ -78,6 +82,28 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
     setBuildState(prev => ({ ...prev, technique }));
   };
 
+  const updateSpiritBoon = (spirit: string, boonName: string) => {
+    setBuildState((prev) => {
+      const newSpiritBoons = { ...prev.spiritBoons };
+      
+      if (newSpiritBoons[spirit].includes(boonName)) {
+        // Remove the boon if it's already selected
+        newSpiritBoons[spirit] = newSpiritBoons[spirit].filter(boon => boon !== boonName);
+      } else {
+        // Add the boon
+        if (newSpiritBoons[spirit].length < 1 || 
+            (newSpiritBoons[spirit].length === 1 && Object.values(newSpiritBoons).every(boons => boons.length <= 1))) {
+          newSpiritBoons[spirit] = [...newSpiritBoons[spirit], boonName].slice(0, 2);
+        } else {
+          // Replace the existing boon if there's already one selected
+          newSpiritBoons[spirit] = [boonName];
+        }
+      }
+
+      return { ...prev, spiritBoons: newSpiritBoons };
+    });
+  };
+
   const resetBuild = () => {
     setBuildState({
       selectedClass: null,
@@ -85,6 +111,7 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
       gems: Array(5).fill(null),
       selectedSkills: Array(6).fill(null),
       technique: null,
+      spiritBoons: { Deer: [], Eagle: [], Wolf: [], Snake: [] },
     });
   };
 
@@ -96,6 +123,7 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
       updateGem,
       updateSkill,
       updateTechnique,
+      updateSpiritBoon,
       resetBuild
     }}>
       {children}

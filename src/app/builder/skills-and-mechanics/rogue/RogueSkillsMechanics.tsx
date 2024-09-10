@@ -1,16 +1,31 @@
+// src/app/builder/skills-and-mechanics/rogue/RogueSkillsMechanics.tsx
+
 import React from 'react';
 import SkillSelection from '../components/SkillSelection';
-import { Separator } from '@/components/ui/separator';
+import { useBuildContext } from '@/contexts/BuildContext';
+import { specializations } from './data/specializations';
+import SpecializationButton from './components/SpecializationButton';
 
 const RogueSkillsMechanics: React.FC = () => {
+  const { buildState, updateSpecialization } = useBuildContext();
+  const { selectedClass, specialization: selectedSpecialization } = buildState;
+
+  if (selectedClass !== 'Rogue') return null;
+
   return (
     <div className="mt-8 flex flex-col items-center">
-      <div className="flex items-end space-x-4">
-        <SkillSelection selectedClass="Rogue" />
-        <Separator orientation="vertical" className="h-16" />
-        <div>
-          <h2 className="mb-2 text-xl font-bold">Rogue Mechanic</h2>
-          {/* Placeholder for Rogue-specific mechanic */}
+      <SkillSelection />
+      <div className="mt-8 w-full max-w-2xl">
+        <h2 className="mb-4 text-center text-xl font-bold">Specialization</h2>
+        <div className="flex justify-center space-x-4">
+          {specializations.map((spec) => (
+            <SpecializationButton
+              key={spec.name}
+              specialization={spec}
+              isSelected={selectedSpecialization === spec.name}
+              onSelect={() => updateSpecialization(spec.name)}
+            />
+          ))}
         </div>
       </div>
     </div>

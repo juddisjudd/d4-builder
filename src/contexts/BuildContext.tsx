@@ -19,6 +19,7 @@ interface BuildState {
   selectedSkills: (SkillData | null)[];
   technique?: string | null;
   spiritBoons: { [spirit: string]: string[] };
+  specialization: string | null; // New field for Rogue specialization
 }
 
 interface BuildContextType {
@@ -29,6 +30,7 @@ interface BuildContextType {
   updateSkill: (index: number, skill: SkillData | null) => void;
   updateTechnique: (technique: string | null) => void;
   updateSpiritBoon: (spirit: string, boonName: string) => void;
+  updateSpecialization: (specialization: string | null) => void; // New function for updating Rogue specialization
   resetBuild: () => void;
 }
 
@@ -42,6 +44,7 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
     selectedSkills: Array(6).fill(null),
     technique: null,
     spiritBoons: { Deer: [], Eagle: [], Wolf: [], Snake: [] },
+    specialization: null, // Initialize Rogue specialization as null
   });
 
   const setSelectedClass = (className: string | null) => {
@@ -51,6 +54,7 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
       selectedSkills: Array(6).fill(null),
       technique: null,
       spiritBoons: { Deer: [], Eagle: [], Wolf: [], Snake: [] },
+      specialization: null, // Reset specialization when changing class
     }));
   };
 
@@ -87,21 +91,22 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
       const newSpiritBoons = { ...prev.spiritBoons };
       
       if (newSpiritBoons[spirit].includes(boonName)) {
-        // Remove the boon if it's already selected
         newSpiritBoons[spirit] = newSpiritBoons[spirit].filter(boon => boon !== boonName);
       } else {
-        // Add the boon
         if (newSpiritBoons[spirit].length < 1 || 
             (newSpiritBoons[spirit].length === 1 && Object.values(newSpiritBoons).every(boons => boons.length <= 1))) {
           newSpiritBoons[spirit] = [...newSpiritBoons[spirit], boonName].slice(0, 2);
         } else {
-          // Replace the existing boon if there's already one selected
           newSpiritBoons[spirit] = [boonName];
         }
       }
 
       return { ...prev, spiritBoons: newSpiritBoons };
     });
+  };
+
+  const updateSpecialization = (specialization: string | null) => {
+    setBuildState(prev => ({ ...prev, specialization }));
   };
 
   const resetBuild = () => {
@@ -112,6 +117,7 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
       selectedSkills: Array(6).fill(null),
       technique: null,
       spiritBoons: { Deer: [], Eagle: [], Wolf: [], Snake: [] },
+      specialization: null, // Reset specialization
     });
   };
 
@@ -124,6 +130,7 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
       updateSkill,
       updateTechnique,
       updateSpiritBoon,
+      updateSpecialization, // Add the new function to the context
       resetBuild
     }}>
       {children}

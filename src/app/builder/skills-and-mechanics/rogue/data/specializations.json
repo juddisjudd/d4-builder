@@ -1,0 +1,17 @@
+{
+  "Combo Points": {
+    "Description": "Your Basic Skills now generate Combo Points. Core Skills consume Combo Points for additional effects."
+  },
+  "Inner Sight": {
+    "Description": "Attack enemies to fill your Inner Sight gauge. Marked enemies fill it faster. When full, gain unlimited Energy and {value}% Critical Strike Chance for {value2} seconds.",
+    "value": 25,
+    "value2": 4
+  },
+  "Preparation": {
+    "Description": "Spend {value} Energy to reduce your Ultimate Skill's Cooldown by {value2} seconds. Ultimate Skills reset other Cooldowns and grant {value3}% Damage Reduction for {value4} seconds.",
+    "value": 75,
+    "value2": 5,
+    "value3": 15,
+    "value4": 10
+  }
+}

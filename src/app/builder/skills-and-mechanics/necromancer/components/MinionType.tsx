@@ -1,5 +1,3 @@
-// src/app/builder/skills-and-mechanics/necromancer/components/MinionType.tsx
-
 import React from 'react';
 import MinionOption from './MinionOption';
 import { useBuildContext } from '@/contexts/BuildContext';

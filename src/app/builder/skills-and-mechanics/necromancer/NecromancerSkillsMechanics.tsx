@@ -1,5 +1,3 @@
-// src/app/builder/skills-and-mechanics/necromancer/NecromancerSkillsMechanics.tsx
-
 import React from 'react';
 import SkillSelection from '../components/SkillSelection';
 import BookOfTheDead from './components/BookOfTheDead';

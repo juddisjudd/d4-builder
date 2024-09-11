@@ -1,5 +1,3 @@
-// src/app/builder/skills-and-mechanics/necromancer/components/MinionOption.tsx
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/hover-card';

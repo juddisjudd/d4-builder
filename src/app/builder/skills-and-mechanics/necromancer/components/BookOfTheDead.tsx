@@ -1,5 +1,3 @@
-// src/app/builder/skills-and-mechanics/necromancer/components/BookOfTheDead.tsx
-
 import React from 'react';
 import MinionType from './MinionType';
 import bookOfTheDeadData from '../data/bookofthedead.json';

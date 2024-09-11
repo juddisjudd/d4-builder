@@ -29,11 +29,11 @@ const EnchantmentSelectionDialog: React.FC<EnchantmentSelectionDialogProps> = ({
       </DialogHeader>
       <div className="grid grid-cols-4 gap-4">
         {filteredSkills.map((skill) => (
-          <EnchantmentHoverCard key={skill.name} skill={skill}>
+          <EnchantmentHoverCard key={skill.name} skill={{ ...skill, description: [] }}>
             <Button
               variant="outline"
               className={`h-16 w-16 p-0 ${selectedEnchantment?.name === skill.name ? 'ring-2 ring-blue-500' : ''}`}
-              onClick={() => onSelectEnchantment(skill)}
+              onClick={() => onSelectEnchantment({ ...skill, description: [] })}
             >
               <img src={getSkillImagePath('Sorcerer', skill.name)} alt={skill.name} className="h-14 w-14" />
             </Button>

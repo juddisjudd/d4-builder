@@ -13,7 +13,9 @@ const SorcererSkillsMechanics: React.FC = () => {
   return (
     <div className="mt-8 flex flex-col items-center">
       <div className="flex items-end space-x-4">
+        <Separator className="my-4" orientation="horizontal" />
         <SkillSelection />
+        <Separator className="my-4" orientation="horizontal" />
         <Separator orientation="vertical" className="h-16" />
         <div>
           <h2 className="mb-2 text-xl font-bold">Enchantments</h2>

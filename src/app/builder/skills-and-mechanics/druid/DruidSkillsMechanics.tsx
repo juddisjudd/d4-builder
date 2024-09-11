@@ -3,6 +3,7 @@ import SkillSelection from '../components/SkillSelection';
 import { useBuildContext } from '@/contexts/BuildContext';
 import { spiritboons } from './data/spiritboons';
 import SpiritBoonButton from './components/SpiritBoonButton';
+import { Separator } from '@/components/ui/separator';
 
 const DruidSkillsMechanics: React.FC = () => {
   const { buildState, updateSpiritBoon } = useBuildContext();

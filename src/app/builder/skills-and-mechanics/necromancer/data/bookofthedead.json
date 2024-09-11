@@ -1,0 +1,152 @@
+{
+  "Skeletal Warriors": {
+    "Skirmishers": {
+      "description": "Sword-wielding skeletal minions that deal {value}% increased damage but have {value2}% reduced Life.",
+      "value": 30,
+      "value2": 15,
+      "Upgrade #1": {
+        "description": "You can raise one additional Skirmisher Warrior."
+      },
+      "Upgrade #2": {
+        "description": "Each time you Critically Strike, your Skirmishers' next attack Critically Strikes and deals {value}% bonus Critical Strike damage.",
+        "value": 50
+      },
+      "Sacrifice": {
+        "description": "Your Critical Strike Chance is increased by {value}%, but you can no longer raise Skeletal Warriors.",
+        "value": 5
+      }
+    },
+    "Defenders": {
+      "description": "Durable shield-bearers with {value}% increased Life.",
+      "value": 15,
+      "Upgrade #1": {
+        "description": "Every {value} seconds your Skeletal Defenders Taunt enemies.",
+        "value": 6
+      },
+      "Upgrade #2": {
+        "description": "Skeletal Defenders take {value}% reduced damage.",
+        "value": 50
+      },
+      "Sacrifice": {
+        "description": "You gain {value}% Resistance to All Elements, but you can no longer raise Skeletal Warriors.",
+        "value": 15
+      }
+    },
+    "Reapers": {
+      "description": "Wields a powerful scythe that has a special wind-up attack, dealing heavy damage every {value} seconds.",
+      "value": 10,
+      "Upgrade #1": {
+        "description": "Reapers' wind-up attacks now reduce one of your active Cooldowns by {value} second.",
+        "value": 1
+      },
+      "Upgrade #2": {
+        "description": "Reapers have a {value}% chance to carve the flesh off enemies, forming a Corpse.",
+        "value": 15
+      },
+      "Sacrifice": {
+        "description": "You deal {value}% increased Shadow damage, but you can no longer raise Skeletal Warriors.",
+        "value": 10
+      }
+    }
+  },
+  "Skeletal Mages": {
+    "Shadow": {
+      "description": "Shadow Mages wield power from the beyond, firing piercing shadow bolts.",
+      "Upgrade #1": {
+        "description": "You deal {value}% increased damage for each active Shadow Mage.",
+        "value": 10
+      },
+      "Upgrade #2": {
+        "description": "Shadow Mages fire an additional shadow bolt every {value} attacks.",
+        "value": 6
+      },
+      "Sacrifice": {
+        "description": "Your Essence Regeneration is increased by {value}% and your maximum Essence is increased by {value2}, but you can no longer raise Skeletal Mages.",
+        "value": 20,
+        "value2": 20
+      }
+    },
+    "Cold": {
+      "description": "Cold Mages assault enemies with chilling attacks that eventually freeze their targets.",
+      "Upgrade #1": {
+        "description": "Each time your Cold Mages damage enemies with their primary attack, you gain {value} Essence.",
+        "value": 5
+      },
+      "Upgrade #2": {
+        "description": "Cold Mages' attacks apply Vulnerable for {value} seconds.",
+        "value": 4
+      },
+      "Sacrifice": {
+        "description": "You deal {value}% increased damage to Vulnerable enemies, but you can no longer raise Skeletal Mages.",
+        "value": 10
+      }
+    },
+    "Bone": {
+      "description": "Bone Mages use their own bodies as projectiles, dealing heavy damage at the cost of their own Life.",
+      "Upgrade #1": {
+        "description": "Every {value}th attack from your Bone Mages makes enemies Vulnerable for {value2} seconds.",
+        "value": 6,
+        "value2": 3
+      },
+      "Upgrade #2": {
+        "description": "Each time a Bone Mage dies from its own attack, they leave behind a Corpse and Fortify you for {value}% of your Maximum Life.",
+        "value": 5
+      },
+      "Sacrifice": {
+        "description": "Your Overpower damage is increased by {value}%, but you can no longer raise Skeletal Mages.",
+        "value": 30
+      }
+    }
+  },
+  "Golems": {
+    "Bone": {
+      "description": "A horrid protector that taunts enemies, forcing them to attack the Golem.",
+      "Upgrade #1": {
+        "description": "Activating your Golem's ability causes it to shed {value} Corpses.",
+        "value": 5
+      },
+      "Upgrade #2": {
+        "description": "When your Bone Golem takes damage, it unleashes Bone Spikes dealing {value}-{value2} damage and makes enemies Vulnerable for {value3} seconds. This effect can only happen once every {value4} seconds.",
+        "value": 40,
+        "value2": 50,
+        "value3": 3,
+        "value4": 3
+      },
+      "Sacrifice": {
+        "description": "You gain {value}% increased Attack Speed, but you lose the ability to summon a Golem.",
+        "value": 10
+      }
+    },
+    "Blood": {
+      "description": "Drains Life from nearby enemies to heal and bolster itself.",
+      "Upgrade #1": {
+        "description": "Your Blood Golem absorbs {value}% of damage you would take.",
+        "value": 15
+      },
+      "Upgrade #2": {
+        "description": "When Blood Golem heals itself using its active ability, its next attack deals {value}% increased damage.",
+        "value": 30
+      },
+      "Sacrifice": {
+        "description": "Your Maximum Life is increased by {value}%, but you lose the ability to summon a Golem.",
+        "value": 10
+      }
+    },
+    "Iron": {
+      "description": "An amalgamation of steel that slams the ground and stuns enemies.",
+      "Upgrade #1": {
+        "description": "Every {value}th Iron Golem attack causes a shockwave, dealing {value2}-{value3} damage to the primary enemy and enemies behind them.",
+        "value": 5,
+        "value2": 16,
+        "value3": 20
+      },
+      "Upgrade #2": {
+        "description": "Your Iron Golem's slam attack also pulls in enemies."
+      },
+      "Sacrifice": {
+        "description": "You deal {value}% increased Critical Strike Damage, but you lose the ability to summon a Golem.",
+        "value": 10
+      }
+    }
+  }
+}

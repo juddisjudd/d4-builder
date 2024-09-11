@@ -9,6 +9,7 @@ export interface SkillData {
   tags?: string[];
   description: string[];
   extra?: string[];
+  enchantment?: string;
   [key: string]: any;
 }
 
@@ -19,7 +20,8 @@ interface BuildState {
   selectedSkills: (SkillData | null)[];
   technique?: string | null;
   spiritBoons: { [spirit: string]: string[] };
-  specialization: string | null; // New field for Rogue specialization
+  specialization: string | null;
+  enchantments: (SkillData | null)[];
 }
 
 interface BuildContextType {
@@ -30,7 +32,8 @@ interface BuildContextType {
   updateSkill: (index: number, skill: SkillData | null) => void;
   updateTechnique: (technique: string | null) => void;
   updateSpiritBoon: (spirit: string, boonName: string) => void;
-  updateSpecialization: (specialization: string | null) => void; // New function for updating Rogue specialization
+  updateSpecialization: (specialization: string | null) => void;
+  updateEnchantment: (index: number, skill: SkillData | null) => void;
   resetBuild: () => void;
 }
 
@@ -44,22 +47,24 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
     selectedSkills: Array(6).fill(null),
     technique: null,
     spiritBoons: { Deer: [], Eagle: [], Wolf: [], Snake: [] },
-    specialization: null, // Initialize Rogue specialization as null
+    specialization: null,
+    enchantments: [null, null],
   });
 
   const setSelectedClass = (className: string | null) => {
-    setBuildState(prev => ({
+    setBuildState((prev) => ({
       ...prev,
       selectedClass: className,
       selectedSkills: Array(6).fill(null),
       technique: null,
       spiritBoons: { Deer: [], Eagle: [], Wolf: [], Snake: [] },
-      specialization: null, // Reset specialization when changing class
+      specialization: null,
+      enchantments: [null, null],
     }));
   };
 
   const updateAspect = (index: number, item: AspectData | UniqueData | null) => {
-    setBuildState(prev => {
+    setBuildState((prev) => {
       const newAspects = [...prev.aspects];
       newAspects[index] = item;
       return { ...prev, aspects: newAspects };
@@ -67,7 +72,7 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
   };
 
   const updateGem = (index: number, gem: GemData | null) => {
-    setBuildState(prev => {
+    setBuildState((prev) => {
       const newGems = [...prev.gems];
       newGems[index] = gem;
       return { ...prev, gems: newGems };
@@ -75,7 +80,7 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
   };
 
   const updateSkill = (index: number, skill: SkillData | null) => {
-    setBuildState(prev => {
+    setBuildState((prev) => {
       const newSkills = [...prev.selectedSkills];
       newSkills[index] = skill;
       return { ...prev, selectedSkills: newSkills };
@@ -83,18 +88,20 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
   };
 
   const updateTechnique = (technique: string | null) => {
-    setBuildState(prev => ({ ...prev, technique }));
+    setBuildState((prev) => ({ ...prev, technique }));
   };
 
   const updateSpiritBoon = (spirit: string, boonName: string) => {
     setBuildState((prev) => {
       const newSpiritBoons = { ...prev.spiritBoons };
-      
+
       if (newSpiritBoons[spirit].includes(boonName)) {
-        newSpiritBoons[spirit] = newSpiritBoons[spirit].filter(boon => boon !== boonName);
+        newSpiritBoons[spirit] = newSpiritBoons[spirit].filter((boon) => boon !== boonName);
       } else {
-        if (newSpiritBoons[spirit].length < 1 || 
-            (newSpiritBoons[spirit].length === 1 && Object.values(newSpiritBoons).every(boons => boons.length <= 1))) {
+        if (
+          newSpiritBoons[spirit].length < 1 ||
+          (newSpiritBoons[spirit].length === 1 && Object.values(newSpiritBoons).every((boons) => boons.length <= 1))
+        ) {
           newSpiritBoons[spirit] = [...newSpiritBoons[spirit], boonName].slice(0, 2);
         } else {
           newSpiritBoons[spirit] = [boonName];
@@ -106,7 +113,15 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
   };
 
   const updateSpecialization = (specialization: string | null) => {
-    setBuildState(prev => ({ ...prev, specialization }));
+    setBuildState((prev) => ({ ...prev, specialization }));
+  };
+
+  const updateEnchantment = (index: number, skill: SkillData | null) => {
+    setBuildState((prev) => {
+      const newEnchantments = [...prev.enchantments];
+      newEnchantments[index] = skill;
+      return { ...prev, enchantments: newEnchantments };
+    });
   };
 
   const resetBuild = () => {
@@ -117,22 +132,26 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
       selectedSkills: Array(6).fill(null),
       technique: null,
       spiritBoons: { Deer: [], Eagle: [], Wolf: [], Snake: [] },
-      specialization: null, // Reset specialization
+      specialization: null,
+      enchantments: [null, null],
     });
   };
 
   return (
-    <BuildContext.Provider value={{
-      buildState,
-      setSelectedClass,
-      updateAspect,
-      updateGem,
-      updateSkill,
-      updateTechnique,
-      updateSpiritBoon,
-      updateSpecialization, // Add the new function to the context
-      resetBuild
-    }}>
+    <BuildContext.Provider
+      value={{
+        buildState,
+        setSelectedClass,
+        updateAspect,
+        updateGem,
+        updateSkill,
+        updateTechnique,
+        updateSpiritBoon,
+        updateSpecialization,
+        updateEnchantment,
+        resetBuild,
+      }}
+    >
       {children}
     </BuildContext.Provider>
   );

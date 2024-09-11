@@ -1,18 +1,20 @@
+// src/app/builder/skills-and-mechanics/necromancer/NecromancerSkillsMechanics.tsx
+
 import React from 'react';
 import SkillSelection from '../components/SkillSelection';
-import { Separator } from '@/components/ui/separator';
+import BookOfTheDead from './components/BookOfTheDead';
+import { useBuildContext } from '@/contexts/BuildContext';
 
 const NecromancerSkillsMechanics: React.FC = () => {
+  const { buildState } = useBuildContext();
+  const { selectedClass } = buildState;
+
+  if (selectedClass !== 'Necromancer') return null;
+
   return (
     <div className="mt-8 flex flex-col items-center">
-      <div className="flex items-end space-x-4">
-        <SkillSelection selectedClass="Necromancer" />
-        <Separator orientation="vertical" className="h-16" />
-        <div>
-          <h2 className="mb-2 text-xl font-bold">Necromancer Mechanic</h2>
-          {/* Placeholder for Necromancer-specific mechanic */}
-        </div>
-      </div>
+      <SkillSelection />
+      <BookOfTheDead />
     </div>
   );
 };

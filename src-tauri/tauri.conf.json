@@ -7,7 +7,7 @@
     "distDir": "../out"
   },
   "package": {
-    "productName": "d4-builder",
+    "productName": "D4 Builder",
     "version": "1.0.0"
   },
   "tauri": {
@@ -48,7 +48,7 @@
       }
     },
     "security": {
-      "csp": null
+      "csp": "default-src 'self' data: filesystem:; script-src 'self' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; connect-src http: https: ws:;"
     },
     "updater": {
       "active": false

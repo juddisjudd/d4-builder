@@ -1,0 +1,19 @@
+{
+    "Jaguar": {
+      "Primary Passive": "Every 4th time you deal direct damage to an enemy with a Jaguar Skill, unleash additional slashes dealing 100% of the damage of the 4 hits. All Skills are now also Jaguar Skills.",
+      "Secondary Passive": "Maximum Ferocity is increased by 1. Gain 1 stack of Ferocity whenever you kill an enemy or damage a Boss."
+    },
+    "Eagle": {
+      "Primary Passive": "Casting an Eagle Skill grants 2 Storm Feathers, up to a maximum of 8. When you Evade, all Storm Feathers are fired dealing 100 - 122 [100%] Lightning damage and making targets Vulnerable for 3 seconds. All Skills are now also Eagle Skills.",
+      "Secondary Passive": "For every 4 meters you move, your Critical Strike Chance increases by 4% [+]. This bonus is reset 2 seconds after you Critically Strike."
+    },
+    "Gorilla": {
+      "Primary Passive": "Casting a Gorilla Skill deals 100% Thorns to enemies you hit and grants a Barrier for 10% of Maximum Life (10), up to 40%, for 3 seconds. All Skills are now also Gorilla Skills.",
+      "Secondary Passive": "Maximum Resolve increased by 2. When you have at least 5 stacks of Resolve, you are Unstoppable."
+    },
+    "Centipede": {
+      "Primary Passive": "Hitting an enemy with a Centipede Skill reduces their Damage by 2.5% and Slows them by 10% for 3 seconds, stacking up to a maximum of 8 times. All Skills are now also Centipede Skills.",
+      "Secondary Passive": "Heal for 1% of your Maximum Life, for every Nearby enemy you've Poisoned in the last 3 seconds, up to 5%."
+    }
+  }
+  

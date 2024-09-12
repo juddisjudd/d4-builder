@@ -20,6 +20,11 @@ interface BookOfTheDeadState {
   } | null;
 }
 
+interface SpiritHallState {
+  primary: string | null;
+  secondary: string | null;
+}
+
 interface BuildState {
   selectedClass: string | null;
   aspects: (AspectData | UniqueData | null)[];
@@ -30,6 +35,7 @@ interface BuildState {
   specialization: string | null;
   enchantments: (SkillData | null)[];
   bookOfTheDead: BookOfTheDeadState;
+  spiritHall: SpiritHallState;
 }
 
 interface BuildContextType {
@@ -43,6 +49,7 @@ interface BuildContextType {
   updateSpecialization: (specialization: string | null) => void;
   updateEnchantment: (index: number, skill: SkillData | null) => void;
   updateBookOfTheDead: (type: string, name: string, upgrade: string | null) => void;
+  updateSpiritHall: (spirit: string, isPrimary: boolean) => void;
   resetBuild: () => void;
 }
 
@@ -63,6 +70,10 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
       'Skeletal Mages': null,
       'Golems': null,
     },
+    spiritHall: {
+      primary: null,
+      secondary: null,
+    },
   });
 
   const setSelectedClass = (className: string | null) => {
@@ -78,6 +89,10 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
         'Skeletal Warriors': null,
         'Skeletal Mages': null,
         'Golems': null,
+      },
+      spiritHall: {
+        primary: null,
+        secondary: null,
       },
     }));
   };
@@ -151,6 +166,16 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
     }));
   };
 
+  const updateSpiritHall = (spirit: string, isPrimary: boolean) => {
+    setBuildState((prev) => ({
+      ...prev,
+      spiritHall: {
+        ...prev.spiritHall,
+        [isPrimary ? 'primary' : 'secondary']: spirit,
+      },
+    }));
+  };
+
   const resetBuild = () => {
     setBuildState({
       selectedClass: null,
@@ -165,6 +190,10 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
         'Skeletal Warriors': null,
         'Skeletal Mages': null,
         'Golems': null,
+      },
+      spiritHall: {
+        primary: null,
+        secondary: null,
       },
     });
   };
@@ -181,6 +210,7 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
       updateSpecialization,
       updateEnchantment,
       updateBookOfTheDead,
+      updateSpiritHall,
       resetBuild
     }}>
       {children}

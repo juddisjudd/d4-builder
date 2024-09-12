@@ -6,6 +6,7 @@ import { Hammer, Book, Diamond, NotebookText, ChartBar, Shield } from 'lucide-re
 import Notes from '@/app/builder/Notes';
 import Aspects from '@/app/builder/gear/Aspects';
 import SkillsAndMechanics from '@/app/builder/skills-and-mechanics';
+import ItemStats from '@/app/builder/gear/components/ItemStats';
 import { useBuildContext } from '@/contexts/BuildContext';
 
 const BuilderTabs: FC = () => {
@@ -47,6 +48,7 @@ const BuilderTabs: FC = () => {
          <TabsContent value="gear-skills">
         <Aspects />
         <SkillsAndMechanics />
+        <div className="mt-8"><ItemStats /></div>
       </TabsContent>
       <TabsContent value="skill-tree">
         <div>Content specific to Skill Tree for {selectedClass}</div>

@@ -41,7 +41,7 @@ const GearSlotDialog: React.FC<GearSlotDialogProps> = ({
           />
         </TabsContent>
         <TabsContent value="stats">
-          <ItemStats />
+          <ItemStats slot={slotType} />
         </TabsContent>
       </Tabs>
       <DialogClose />

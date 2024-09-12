@@ -43,6 +43,9 @@ interface BuildState {
   enchantments: (SkillData | null)[];
   bookOfTheDead: BookOfTheDeadState;
   spiritHall: SpiritHallState;
+  itemStats: {
+    [slot: string]: string[];
+  };
 }
 
 interface BuildContextType {
@@ -57,6 +60,7 @@ interface BuildContextType {
   updateEnchantment: (index: number, skill: SkillData | null) => void;
   updateBookOfTheDead: (type: string, name: string, upgrade: string | null) => void;
   updateSpiritHall: (spirit: string, isPrimary: boolean) => void;
+  updateItemStat: (slot: string, index: number, value: string) => void;
   resetBuild: () => void;
 }
 
@@ -110,6 +114,7 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
       primary: null,
       secondary: null,
     },
+    itemStats: {},
   });
 
   const setSelectedClass = (className: string | null) => {
@@ -131,6 +136,7 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
         secondary: null,
       },
       sockets: getInitialSockets(className),
+      itemStats: {},
     }));
   };
 
@@ -230,6 +236,20 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
     }));
   };
 
+  const updateItemStat = (slot: string, index: number, value: string) => {
+    setBuildState(prev => ({
+      ...prev,
+      itemStats: {
+        ...prev.itemStats,
+        [slot]: [
+          ...(prev.itemStats[slot] || []).slice(0, index),
+          value,
+          ...(prev.itemStats[slot] || []).slice(index + 1),
+        ],
+      },
+    }));
+  };
+
   const resetBuild = () => {
     setBuildState({
       selectedClass: null,
@@ -249,6 +269,7 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
         primary: null,
         secondary: null,
       },
+      itemStats: {},
     });
   };
 
@@ -265,6 +286,7 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
       updateEnchantment,
       updateBookOfTheDead,
       updateSpiritHall,
+      updateItemStat,
       resetBuild
     }}>
       {children}

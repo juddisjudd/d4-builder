@@ -65,7 +65,7 @@ const Aspects: React.FC = () => {
           <img
             src={`/images/misc/${selectedClass.toLowerCase()}.png`}
             alt={`${selectedClass} image`}
-            className="max-h-full max-w-full object-contain"
+            className="max-h-lg max-w-lg object-contain"
           />
         </div>
       </div>

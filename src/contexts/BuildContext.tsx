@@ -2,6 +2,8 @@ import React, { createContext, useContext, useState, ReactNode } from 'react';
 import { AspectData } from '@/app/data/codex';
 import { UniqueData } from '@/app/data/uniques';
 import { GemData } from '@/app/data/gems';
+import { RuneData } from '@/app/data/runes';
+import { gearSlots } from '@/app/data/gearSlots';
 
 export interface SkillData {
   name: string;
@@ -25,10 +27,15 @@ interface SpiritHallState {
   secondary: string | null;
 }
 
+interface SocketItem {
+  type: 'gem' | 'rune';
+  item: GemData | RuneData | null;
+}
+
 interface BuildState {
   selectedClass: string | null;
   aspects: (AspectData | UniqueData | null)[];
-  gems: (GemData | null)[];
+  sockets: SocketItem[][];
   selectedSkills: (SkillData | null)[];
   technique?: string | null;
   spiritBoons: { [spirit: string]: string[] };
@@ -42,7 +49,7 @@ interface BuildContextType {
   buildState: BuildState;
   setSelectedClass: (className: string | null) => void;
   updateAspect: (index: number, item: AspectData | UniqueData | null) => void;
-  updateGem: (index: number, gem: GemData | null) => void;
+  updateSocket: (slotIndex: number, socketIndex: number, item: SocketItem) => void;
   updateSkill: (index: number, skill: SkillData | null) => void;
   updateTechnique: (technique: string | null) => void;
   updateSpiritBoon: (spirit: string, boonName: string) => void;
@@ -55,11 +62,40 @@ interface BuildContextType {
 
 const BuildContext = createContext<BuildContextType | undefined>(undefined);
 
+const getInitialSockets = (className: string | null) => {
+  const initialSockets: SocketItem[][] = [];
+  
+  for (let i = 0; i < 14; i++) {
+    const numSockets = getNumSockets(className, i);
+    initialSockets.push(Array(numSockets).fill({ type: 'gem', item: null }));
+  }
+
+  return initialSockets;
+};
+
+const getNumSockets = (className: string | null, slotIndex: number): number => {
+  if (!className) return 2;
+
+  const slots = gearSlots[className.toLowerCase()];
+  const slotLabel = slots[slotIndex].label;
+
+  if (slotLabel && ['Amulet', 'Ring 1', 'Ring 2'].includes(slotLabel)) {
+    return 1;
+  }
+
+  if ((className === 'Barbarian' || className === 'Rogue') && 
+      (slotLabel === 'Dual-Wield Weapon 1' || slotLabel === 'Dual-Wield Weapon 2')) {
+    return 1;
+  }
+
+  return 2;
+};
+
 export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [buildState, setBuildState] = useState<BuildState>({
     selectedClass: null,
     aspects: Array(14).fill(null),
-    gems: Array(5).fill(null),
+    sockets: getInitialSockets(null),
     selectedSkills: Array(6).fill(null),
     technique: null,
     spiritBoons: { Deer: [], Eagle: [], Wolf: [], Snake: [] },
@@ -94,6 +130,7 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
         primary: null,
         secondary: null,
       },
+      sockets: getInitialSockets(className),
     }));
   };
 
@@ -105,11 +142,28 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
     });
   };
 
-  const updateGem = (index: number, gem: GemData | null) => {
+  const updateSocket = (slotIndex: number, socketIndex: number, item: SocketItem) => {
     setBuildState(prev => {
-      const newGems = [...prev.gems];
-      newGems[index] = gem;
-      return { ...prev, gems: newGems };
+      const newSockets = [...prev.sockets];
+      const currentSlotSockets = [...newSockets[slotIndex]];
+
+      if (item.type === 'rune') {
+        const otherSocketIndex = socketIndex === 0 ? 1 : 0;
+        const otherSocket = currentSlotSockets[otherSocketIndex];
+
+        if (otherSocket.type === 'rune' && otherSocket.item) {
+          const otherRune = otherSocket.item as RuneData;
+          if (otherRune.type === (item.item as RuneData).type) {
+            // Can't place two runes of the same type in one slot
+            return prev;
+          }
+        }
+      }
+
+      currentSlotSockets[socketIndex] = item;
+      newSockets[slotIndex] = currentSlotSockets;
+
+      return { ...prev, sockets: newSockets };
     });
   };
 
@@ -180,7 +234,7 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
     setBuildState({
       selectedClass: null,
       aspects: Array(14).fill(null),
-      gems: Array(5).fill(null),
+      sockets: getInitialSockets(null),
       selectedSkills: Array(6).fill(null),
       technique: null,
       spiritBoons: { Deer: [], Eagle: [], Wolf: [], Snake: [] },
@@ -203,7 +257,7 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
       buildState,
       setSelectedClass,
       updateAspect,
-      updateGem,
+      updateSocket,
       updateSkill,
       updateTechnique,
       updateSpiritBoon,

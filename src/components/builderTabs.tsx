@@ -5,7 +5,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Hammer, Book, Diamond, NotebookText, ChartBar, Shield } from 'lucide-react';
 import Notes from '@/app/builder/Notes';
 import Aspects from '@/app/builder/gear/Aspects';
-import GemSection from '@/app/builder/gear/Gems';
 import SkillsAndMechanics from '@/app/builder/skills-and-mechanics';
 import { useBuildContext } from '@/contexts/BuildContext';
 
@@ -45,9 +44,8 @@ const BuilderTabs: FC = () => {
           <span>Stats</span>
         </TabsTrigger>
       </TabsList>
-      <TabsContent value="gear-skills">
+         <TabsContent value="gear-skills">
         <Aspects />
-        <GemSection />
         <SkillsAndMechanics />
       </TabsContent>
       <TabsContent value="skill-tree">

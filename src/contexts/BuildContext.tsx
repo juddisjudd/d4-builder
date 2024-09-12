@@ -4,6 +4,8 @@ import { UniqueData } from '@/app/data/uniques';
 import { GemData } from '@/app/data/gems';
 import { RuneData } from '@/app/data/runes';
 import { gearSlots } from '@/app/data/gearSlots';
+import { encodeBuildState, decodeBuildState } from '@/utils/buildUtils';
+import { toast } from 'sonner';
 
 export interface SkillData {
   name: string;
@@ -32,7 +34,7 @@ interface SocketItem {
   item: GemData | RuneData | null;
 }
 
-interface BuildState {
+export interface BuildState {
   selectedClass: string | null;
   aspects: (AspectData | UniqueData | null)[];
   sockets: SocketItem[][];
@@ -62,13 +64,15 @@ interface BuildContextType {
   updateSpiritHall: (spirit: string, isPrimary: boolean) => void;
   updateItemStat: (slot: string, index: number, value: string) => void;
   resetBuild: () => void;
+  saveBuild: () => string;
+  loadBuild: (encodedState: string) => void;
 }
 
 const BuildContext = createContext<BuildContextType | undefined>(undefined);
 
 const getInitialSockets = (className: string | null) => {
   const initialSockets: SocketItem[][] = [];
-  
+
   for (let i = 0; i < 14; i++) {
     const numSockets = getNumSockets(className, i);
     initialSockets.push(Array(numSockets).fill({ type: 'gem', item: null }));
@@ -87,8 +91,10 @@ const getNumSockets = (className: string | null, slotIndex: number): number => {
     return 1;
   }
 
-  if ((className === 'Barbarian' || className === 'Rogue') && 
-      (slotLabel === 'Dual-Wield Weapon 1' || slotLabel === 'Dual-Wield Weapon 2')) {
+  if (
+    (className === 'Barbarian' || className === 'Rogue') &&
+    (slotLabel === 'Dual-Wield Weapon 1' || slotLabel === 'Dual-Wield Weapon 2')
+  ) {
     return 1;
   }
 
@@ -108,7 +114,7 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
     bookOfTheDead: {
       'Skeletal Warriors': null,
       'Skeletal Mages': null,
-      'Golems': null,
+      Golems: null,
     },
     spiritHall: {
       primary: null,
@@ -118,7 +124,7 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
   });
 
   const setSelectedClass = (className: string | null) => {
-    setBuildState(prev => ({
+    setBuildState((prev) => ({
       ...prev,
       selectedClass: className,
       selectedSkills: Array(6).fill(null),
@@ -129,7 +135,7 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
       bookOfTheDead: {
         'Skeletal Warriors': null,
         'Skeletal Mages': null,
-        'Golems': null,
+        Golems: null,
       },
       spiritHall: {
         primary: null,
@@ -141,7 +147,7 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
   };
 
   const updateAspect = (index: number, item: AspectData | UniqueData | null) => {
-    setBuildState(prev => {
+    setBuildState((prev) => {
       const newAspects = [...prev.aspects];
       newAspects[index] = item;
       return { ...prev, aspects: newAspects };
@@ -149,7 +155,7 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
   };
 
   const updateSocket = (slotIndex: number, socketIndex: number, item: SocketItem) => {
-    setBuildState(prev => {
+    setBuildState((prev) => {
       const newSockets = [...prev.sockets];
       const currentSlotSockets = [...newSockets[slotIndex]];
 
@@ -160,7 +166,7 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
         if (otherSocket.type === 'rune' && otherSocket.item) {
           const otherRune = otherSocket.item as RuneData;
           if (otherRune.type === (item.item as RuneData).type) {
-            // Can't place two runes of the same type in one slot
+            toast.error('You can only socket one rune of each type in a single item.');
             return prev;
           }
         }
@@ -174,7 +180,7 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
   };
 
   const updateSkill = (index: number, skill: SkillData | null) => {
-    setBuildState(prev => {
+    setBuildState((prev) => {
       const newSkills = [...prev.selectedSkills];
       newSkills[index] = skill;
       return { ...prev, selectedSkills: newSkills };
@@ -182,18 +188,20 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
   };
 
   const updateTechnique = (technique: string | null) => {
-    setBuildState(prev => ({ ...prev, technique }));
+    setBuildState((prev) => ({ ...prev, technique }));
   };
 
   const updateSpiritBoon = (spirit: string, boonName: string) => {
     setBuildState((prev) => {
       const newSpiritBoons = { ...prev.spiritBoons };
-      
+
       if (newSpiritBoons[spirit].includes(boonName)) {
-        newSpiritBoons[spirit] = newSpiritBoons[spirit].filter(boon => boon !== boonName);
+        newSpiritBoons[spirit] = newSpiritBoons[spirit].filter((boon) => boon !== boonName);
       } else {
-        if (newSpiritBoons[spirit].length < 1 || 
-            (newSpiritBoons[spirit].length === 1 && Object.values(newSpiritBoons).every(boons => boons.length <= 1))) {
+        if (
+          newSpiritBoons[spirit].length < 1 ||
+          (newSpiritBoons[spirit].length === 1 && Object.values(newSpiritBoons).every((boons) => boons.length <= 1))
+        ) {
           newSpiritBoons[spirit] = [...newSpiritBoons[spirit], boonName].slice(0, 2);
         } else {
           newSpiritBoons[spirit] = [boonName];
@@ -205,7 +213,7 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
   };
 
   const updateSpecialization = (specialization: string | null) => {
-    setBuildState(prev => ({ ...prev, specialization }));
+    setBuildState((prev) => ({ ...prev, specialization }));
   };
 
   const updateEnchantment = (index: number, skill: SkillData | null) => {
@@ -237,7 +245,7 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
   };
 
   const updateItemStat = (slot: string, index: number, value: string) => {
-    setBuildState(prev => ({
+    setBuildState((prev) => ({
       ...prev,
       itemStats: {
         ...prev.itemStats,
@@ -263,7 +271,7 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
       bookOfTheDead: {
         'Skeletal Warriors': null,
         'Skeletal Mages': null,
-        'Golems': null,
+        Golems: null,
       },
       spiritHall: {
         primary: null,
@@ -273,22 +281,40 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
     });
   };
 
+  const saveBuild = (): string => {
+    return encodeBuildState(buildState);
+  };
+
+  const loadBuild = (encodedState: string) => {
+    try {
+      const decodedState = decodeBuildState(encodedState);
+      setBuildState(decodedState);
+    } catch (error) {
+      console.error('Failed to load build:', error);
+      toast.error('Failed to load build. Please check the code and try again.');
+    }
+  };
+
   return (
-    <BuildContext.Provider value={{
-      buildState,
-      setSelectedClass,
-      updateAspect,
-      updateSocket,
-      updateSkill,
-      updateTechnique,
-      updateSpiritBoon,
-      updateSpecialization,
-      updateEnchantment,
-      updateBookOfTheDead,
-      updateSpiritHall,
-      updateItemStat,
-      resetBuild
-    }}>
+    <BuildContext.Provider
+      value={{
+        buildState,
+        setSelectedClass,
+        updateAspect,
+        updateSocket,
+        updateSkill,
+        updateTechnique,
+        updateSpiritBoon,
+        updateSpecialization,
+        updateEnchantment,
+        updateBookOfTheDead,
+        updateSpiritHall,
+        updateItemStat,
+        resetBuild,
+        saveBuild,
+        loadBuild,
+      }}
+    >
       {children}
     </BuildContext.Provider>
   );

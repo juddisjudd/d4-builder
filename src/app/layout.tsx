@@ -8,6 +8,7 @@ import Footer from '@/components/footer';
 import Header from "@/components/header";
 import BuilderTabs from "@/components/builderTabs";
 import { BuildProvider } from '@/contexts/BuildContext';
+import { Toaster } from 'sonner';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -24,6 +25,7 @@ export default function RootLayout({
             <Header />
             <BuilderTabs />
             <main className="flex-grow pt-20">{children}</main>
+            <Toaster />
             <Footer />
           </BuildProvider>
         </ThemeProvider>

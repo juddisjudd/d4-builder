@@ -7,8 +7,8 @@
     "distDir": "../out"
   },
   "package": {
-    "productName": "D4 Builder (Beta1)",
-    "version": "1.0.0-beta1"
+    "productName": "D4 Builder (Beta)",
+    "version": "0.9.0"
   },
   "tauri": {
     "allowlist": {
@@ -57,7 +57,7 @@
         "fullscreen": false,
         "height": 860,
         "resizable": true,
-        "title": "D4 Builder (Beta1)",
+        "title": "D4 Builder (Beta)",
         "width": 1200
       }
     ]

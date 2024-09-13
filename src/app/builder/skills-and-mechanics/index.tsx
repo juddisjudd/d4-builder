@@ -37,7 +37,7 @@ const SkillsAndMechanics: React.FC = () => {
   };
 
   return (
-    <div className="mt-8 flex flex-col items-center">
+    <div className="mt-0 flex flex-col items-center">
       {renderClassMechanic()}
     </div>
   );

@@ -14,10 +14,8 @@ const RogueSkillsMechanics: React.FC = () => {
   if (selectedClass !== 'Rogue') return null;
 
   return (
-    <div className="mt-8 flex flex-col items-center">
-      <Separator className="my-4" orientation="horizontal" />
+    <div className="mt-0 flex flex-col items-center">
       <SkillSelection />
-      <Separator className="my-4" orientation="horizontal" />
       <div className="mt-8 w-full max-w-2xl">
         <h2 className="mb-4 text-center text-xl font-bold">Specialization</h2>
         <div className="flex justify-center space-x-4">

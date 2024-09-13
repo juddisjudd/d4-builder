@@ -29,6 +29,7 @@ const GearSlot: React.FC<GearSlotProps> = ({
   selections,
   onSelectionChange,
 }) => {
+  const [isDialogOpen, setIsDialogOpen] = React.useState(false);
   const selectedItem = selections[index];
 
   const isUnique = React.useCallback((item: AspectData | UniqueData | null): item is UniqueData => {
@@ -38,6 +39,7 @@ const GearSlot: React.FC<GearSlotProps> = ({
   const handleSelect = (item: AspectData | UniqueData | null) => {
     console.log('Selected item:', item, 'Is right side:', isRightSide, 'Index:', index);
     onSelectionChange(index, item);
+    setIsDialogOpen(false);
   };
 
   const getItemImage = React.useCallback(() => {
@@ -100,7 +102,7 @@ const GearSlot: React.FC<GearSlotProps> = ({
   };
 
   return (
-    <Dialog>
+    <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
       <DialogTrigger asChild>
         <div className={`flex items-center ${isRightSide ? 'flex-row-reverse' : ''}`}>
           {renderSlotContent()}
@@ -119,6 +121,7 @@ const GearSlot: React.FC<GearSlotProps> = ({
         onSelect={handleSelect}
         selections={selections}
         currentIndex={index}
+        onClose={() => setIsDialogOpen(false)}
       />
     </Dialog>
   );

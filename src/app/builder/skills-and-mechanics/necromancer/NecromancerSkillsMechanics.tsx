@@ -11,10 +11,8 @@ const NecromancerSkillsMechanics: React.FC = () => {
   if (selectedClass !== 'Necromancer') return null;
 
   return (
-    <div className="mt-8 flex flex-col items-center">
-      <Separator className="my-4" orientation="horizontal" />
+    <div className="mt-0 flex flex-col items-center">
       <SkillSelection />
-      <Separator className="my-4" orientation="horizontal" />
       <BookOfTheDead />
     </div>
   );

@@ -13,6 +13,7 @@ interface GearSlotDialogProps {
   onSelect: (item: AspectData | UniqueData | null) => void;
   selections: (AspectData | UniqueData | null)[];
   currentIndex: number;
+  onClose: () => void;
 }
 
 const GearSlotDialog: React.FC<GearSlotDialogProps> = ({
@@ -22,7 +23,13 @@ const GearSlotDialog: React.FC<GearSlotDialogProps> = ({
   onSelect,
   selections,
   currentIndex,
+  onClose,
 }) => {
+  const handleSelect = (item: AspectData | UniqueData | null) => {
+    onSelect(item);
+    onClose();
+  };
+
   return (
     <DialogContent className="max-w-3xl">
       <h2 className="mb-4 text-xl font-semibold">{label}</h2>
@@ -35,7 +42,7 @@ const GearSlotDialog: React.FC<GearSlotDialogProps> = ({
           <AspectsList
             slotType={slotType}
             selectedClass={selectedClass}
-            onSelect={onSelect}
+            onSelect={handleSelect}
             selections={selections}
             currentIndex={currentIndex}
           />

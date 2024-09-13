@@ -18,11 +18,9 @@ const SpiritbornSkillsMechanics: React.FC = () => {
   };
 
   return (
-    <div className="mt-8 flex flex-col items-center">
-      <Separator className="my-4" orientation="horizontal" />
+    <div className="mt-0 flex flex-col items-center">
       <SkillSelection />
-      <Separator className="my-4" orientation="horizontal" />
-      <div className="mt- w-full max-w-3xl">
+      <div className="mt-4 w-full max-w-3xl">
         <div className="flex items-center justify-between">
           <div className="flex-1">
             <h3 className="mb-2 text-center text-lg font-semibold">Primary Spirit</h3>

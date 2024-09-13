@@ -35,6 +35,11 @@ const SkillSelectionDialog: React.FC<SkillSelectionDialogProps> = ({
     )
   );
 
+  const handleSelectSkill = (skill: Skill) => {
+    onSelectSkill(skill);
+    onClose();
+  };
+
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-[725px]">
@@ -55,7 +60,7 @@ const SkillSelectionDialog: React.FC<SkillSelectionDialogProps> = ({
                         className={`relative h-[50px] w-[50px] cursor-pointer transition-all duration-200 ${
                           selectedSkills.includes(skill.name) ? 'ring-2 ring-blue-500' : ''
                         }`}
-                        onClick={() => onSelectSkill(skill)}
+                        onClick={() => handleSelectSkill(skill)}
                       >
                         <img
                           src={getSkillImagePath(selectedClass, skill.name)}

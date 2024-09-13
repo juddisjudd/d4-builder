@@ -8,7 +8,7 @@
   },
   "package": {
     "productName": "D4 Builder",
-    "version": "1.0.0"
+    "version": "1.0.0-beta1"
   },
   "tauri": {
     "allowlist": {

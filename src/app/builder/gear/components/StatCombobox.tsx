@@ -24,7 +24,6 @@ const StatCombobox: React.FC<StatComboboxProps> = ({ options, value, onChange, p
 
   const selectedOption = options.find((option) => option.value === value);
 
-  // Remove the categorization of options
   const allOptions = options;
 
   return (

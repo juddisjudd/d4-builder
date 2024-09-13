@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import StatCombobox from './StatCombobox';
 import { useBuildContext } from '@/contexts/BuildContext';
-import { getStatsForSlot, getTemperingStatsForSlot, getImplicitForSlot, hasImplicit, getOffhandTypes } from '../utils/statUtils';
+import {
+  getStatsForSlot,
+  getTemperingStatsForSlot,
+  getImplicitForSlot,
+  hasImplicit,
+  getOffhandTypes,
+} from '../utils/statUtils';
 import { getWeaponTypesForClass, getWeaponAttribute } from '../utils/weaponUtils';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
@@ -27,10 +33,12 @@ const StatCard: React.FC<StatCardProps> = ({ slot }) => {
   const regularStats = getStatsForSlot(currentSlot, buildState.selectedClass, offhandType);
   const temperingStats = getTemperingStatsForSlot(currentSlot, buildState.selectedClass);
   const implicitStats = getImplicitForSlot(currentSlot, offhandType);
-  const weaponTypes = buildState.selectedClass ? getWeaponTypesForClass(buildState.selectedClass, slot).map(type => ({
-    value: type,
-    label: `${type}: ${getWeaponAttribute(type)}`
-  })) : [];
+  const weaponTypes = buildState.selectedClass
+    ? getWeaponTypesForClass(buildState.selectedClass, slot).map((type) => ({
+        value: type,
+        label: `${type}: ${getWeaponAttribute(type)}`,
+      }))
+    : [];
   const slotHasImplicit = hasImplicit(currentSlot, offhandType);
 
   const renderStatComboboxes = (type: string) => (
@@ -43,7 +51,7 @@ const StatCard: React.FC<StatCardProps> = ({ slot }) => {
                 options={implicitStats}
                 value={buildState.itemStats[`${slot}-${type}`]?.[0] || ''}
                 onChange={(value) => updateItemStat(`${slot}-${type}`, 0, value)}
-                placeholder={isRingSlot ? "Ring Implicit" : "Boots Implicit"}
+                placeholder={isRingSlot ? 'Ring Implicit' : 'Boots Implicit'}
               />
             </div>
           )}
@@ -62,9 +70,11 @@ const StatCard: React.FC<StatCardProps> = ({ slot }) => {
             <div className="mb-2">
               <StatCombobox
                 options={isWeaponSlot ? weaponTypes : implicitStats}
-                value={buildState.itemStats[`${slot}-${type}`]?.[0] || (isOffhandSlot ? implicitStats[0]?.value : '') || ''}
+                value={
+                  buildState.itemStats[`${slot}-${type}`]?.[0] || (isOffhandSlot ? implicitStats[0]?.value : '') || ''
+                }
                 onChange={(value) => updateItemStat(`${slot}-${type}`, 0, value)}
-                placeholder={isWeaponSlot ? "Weapon Type" : "Implicit"}
+                placeholder={isWeaponSlot ? 'Weapon Type' : 'Implicit'}
                 disabled={isOffhandSlot}
               />
             </div>

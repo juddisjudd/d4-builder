@@ -57,9 +57,9 @@ export function getStatsForSlot(slot: string, className: string | null, offhandT
 
 export function getWeaponTypesForSlot(slot: string, className: string | null): StatOption[] {
   if (!className) return [];
-  
+
   const weaponTypes = getWeaponTypes(slot, className);
-  return weaponTypes.map(type => ({ value: type, label: type }));
+  return weaponTypes.map((type) => ({ value: type, label: type }));
 }
 
 export function getTemperingStatsForSlot(slot: string, className: string | null): StatOption[] {
@@ -81,7 +81,8 @@ export function getTemperingStatsForSlot(slot: string, className: string | null)
 
 function getAllowedTemperTypes(slot: string): string[] {
   const lowerSlot = slot.toLowerCase();
-  if (lowerSlot.includes('weapon') || lowerSlot === 'offhand' || lowerSlot === 'shield') return ['Weapons', 'Offensive'];
+  if (lowerSlot.includes('weapon') || lowerSlot === 'offhand' || lowerSlot === 'shield')
+    return ['Weapons', 'Offensive'];
   if (['amulet'].includes(lowerSlot)) return ['Offensive', 'Defensive', 'Utility', 'Mobility', 'Resource'];
   if (['gloves'].includes(lowerSlot)) return ['Offensive', 'Utility'];
   if (['ring 1', 'ring 2'].includes(lowerSlot)) return ['Offensive', 'Resource'];

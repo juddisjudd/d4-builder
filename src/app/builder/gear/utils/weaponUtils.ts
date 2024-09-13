@@ -1,10 +1,8 @@
-// src/app/builder/gear/utils/weaponUtils.ts
-
 import weaponTypesData from '@/app/data/weaponTypes.json';
 
 export function getWeaponTypesForClass(className: string, slotType?: string): string[] {
   const classData = weaponTypesData.classes[className as keyof typeof weaponTypesData.classes];
-  
+
   if (!classData) return [];
 
   if (typeof classData.weaponTypes === 'object' && !Array.isArray(classData.weaponTypes)) {

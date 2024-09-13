@@ -1,7 +1,7 @@
 import React from 'react';
 import { useBuildContext } from '@/contexts/BuildContext';
 import StatCard from './StatCard';
-import { gearSlots } from '@/app/data/gearSlots';
+import { gearSlots } from '@/app/builder/gear/utils/gearSlots';
 
 interface ItemStatsProps {
   slot?: string;

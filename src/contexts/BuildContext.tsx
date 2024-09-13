@@ -3,7 +3,7 @@ import { AspectData } from '@/app/data/codex';
 import { UniqueData } from '@/app/data/uniques';
 import { GemData } from '@/app/data/gems';
 import { RuneData } from '@/app/data/runes';
-import { gearSlots } from '@/app/data/gearSlots';
+import { gearSlots } from '@/app/builder/gear/utils/gearSlots';
 import { encodeBuildState, decodeBuildState } from '@/utils/buildUtils';
 import { toast } from 'sonner';
 

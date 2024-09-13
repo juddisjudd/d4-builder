@@ -58,18 +58,21 @@ const Aspects: React.FC = () => {
   );
 
   return (
-    <div className="mt-4 flex justify-between px-10">
-      <div className="flex flex-col space-y-4">{leftSlots.map((slot, index) => renderSlot(slot, index, false))}</div>
-      <div className="flex flex-grow flex-col items-center justify-center">
-        <div className="flex h-[600px] w-[600px] items-center justify-center">
-          <img
-            src={`/images/misc/${selectedClass.toLowerCase()}.png`}
-            alt={`${selectedClass} image`}
-            className="max-h-lg max-w-lg object-contain"
-          />
-        </div>
+    <div className="relative mt-4 flex justify-between px-10">
+      <div 
+        className="absolute inset-0 z-0" 
+        style={{
+          backgroundImage: `url(/images/misc/${selectedClass.toLowerCase()}.png)`,
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'auto 60%',
+          opacity: 0.5
+        }}
+      />
+      <div className="relative z-10 flex flex-col space-y-4">
+        {leftSlots.map((slot, index) => renderSlot(slot, index, false))}
       </div>
-      <div className="flex flex-col items-end space-y-4">
+      <div className="relative z-10 flex flex-col items-end space-y-4">
         {rightSlots.map((slot, index) => renderSlot(slot, index, true))}
       </div>
     </div>

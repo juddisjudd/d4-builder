@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/hover-card';
 import { UniqueData } from '../../../data/uniques';
 import { getUniqueImagePath } from '../../utils/imagePathUtils';
@@ -9,10 +9,24 @@ interface UniqueHoverCardProps {
 }
 
 const UniqueHoverCard: React.FC<UniqueHoverCardProps> = ({ unique, children }) => {
+  const [isOpen, setIsOpen] = useState(false);
   const imageSrc = getUniqueImagePath(unique.type, unique.name);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (isOpen) {
+        setIsOpen(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, true);
+    return () => {
+      window.removeEventListener('scroll', handleScroll, true);
+    };
+  }, [isOpen]);
+
   return (
-    <HoverCard>
+    <HoverCard open={isOpen} onOpenChange={setIsOpen}>
       <HoverCardTrigger asChild>{children}</HoverCardTrigger>
       <HoverCardContent className="w-80 border-[#424242] bg-[#141414] text-white">
         <div className="space-y-2">

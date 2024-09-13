@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/hover-card';
 import { Technique } from '../data/techniques';
 
@@ -28,15 +28,32 @@ const TechniqueHoverContent: React.FC<{ technique: Technique }> = ({ technique }
   </div>
 );
 
-const TechniqueHoverCard: React.FC<TechniqueHoverCardProps> = ({ technique, children }) => (
-  <HoverCard>
-    <HoverCardTrigger asChild>{children}</HoverCardTrigger>
-    {technique && (
-      <HoverCardContent className="w-[500px] max-w-[600px]">
-        <TechniqueHoverContent technique={technique} />
-      </HoverCardContent>
-    )}
-  </HoverCard>
-);
+const TechniqueHoverCard: React.FC<TechniqueHoverCardProps> = ({ technique, children }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (isOpen) {
+        setIsOpen(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, true);
+    return () => {
+      window.removeEventListener('scroll', handleScroll, true);
+    };
+  }, [isOpen]);
+
+  return (
+    <HoverCard open={isOpen} onOpenChange={setIsOpen}>
+      <HoverCardTrigger asChild>{children}</HoverCardTrigger>
+      {technique && (
+        <HoverCardContent className="w-[500px] max-w-[600px]">
+          <TechniqueHoverContent technique={technique} />
+        </HoverCardContent>
+      )}
+    </HoverCard>
+  );
+};
 
 export default TechniqueHoverCard;

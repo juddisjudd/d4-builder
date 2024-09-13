@@ -3,7 +3,7 @@ import { BuildState } from '@/contexts/BuildContext';
 export function encodeBuildState(state: BuildState): string {
   const json = JSON.stringify(state);
   const utf8Bytes = new TextEncoder().encode(json);
-  return btoa(String.fromCharCode.apply(null, Array.from(utf8Bytes))); // Convert to a binary string
+  return btoa(String.fromCharCode.apply(null, Array.from(utf8Bytes)));
 }
 
 export function decodeBuildState(encoded: string): BuildState {

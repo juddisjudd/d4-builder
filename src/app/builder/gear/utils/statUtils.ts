@@ -1,5 +1,6 @@
 import statsData from '@/app/data/stats.json';
 import temperStatsData from '@/app/data/temperstats.json';
+import { getWeaponTypes } from './aspectUtils';
 
 interface StatOption {
   value: string;
@@ -18,8 +19,11 @@ interface SlotStat {
   implicit?: string[];
 }
 
-function normalizeSlotName(slot: string): string {
-  if (slot.toLowerCase().includes('weapon') || slot.toLowerCase() === 'offhand') {
+function normalizeSlotName(slot: string, offhandType?: string): string {
+  if (slot.toLowerCase() === 'offhand') {
+    return offhandType || 'Offhand';
+  }
+  if (slot.toLowerCase().includes('weapon')) {
     return 'Weapon';
   }
   if (slot.toLowerCase().includes('ring')) {
@@ -28,8 +32,15 @@ function normalizeSlotName(slot: string): string {
   return slot;
 }
 
-export function getStatsForSlot(slot: string, className: string | null): StatOption[] {
-  const normalizedSlot = normalizeSlotName(slot);
+export function getOffhandTypes(className: string | null): string[] {
+  if (className === 'Necromancer') {
+    return ['Offhand', 'Shield'];
+  }
+  return ['Offhand'];
+}
+
+export function getStatsForSlot(slot: string, className: string | null, offhandType?: string): StatOption[] {
+  const normalizedSlot = normalizeSlotName(slot, offhandType);
   const slotStats = statsData.stats.find((s) => s.slot.toLowerCase() === normalizedSlot.toLowerCase());
   if (!slotStats) return [];
 
@@ -42,6 +53,13 @@ export function getStatsForSlot(slot: string, className: string | null): StatOpt
   }
 
   return allStats.map((stat) => ({ value: stat, label: stat }));
+}
+
+export function getWeaponTypesForSlot(slot: string, className: string | null): StatOption[] {
+  if (!className) return [];
+  
+  const weaponTypes = getWeaponTypes(slot, className);
+  return weaponTypes.map(type => ({ value: type, label: type }));
 }
 
 export function getTemperingStatsForSlot(slot: string, className: string | null): StatOption[] {
@@ -63,7 +81,7 @@ export function getTemperingStatsForSlot(slot: string, className: string | null)
 
 function getAllowedTemperTypes(slot: string): string[] {
   const lowerSlot = slot.toLowerCase();
-  if (lowerSlot.includes('weapon')) return ['Weapons', 'Offensive'];
+  if (lowerSlot.includes('weapon') || lowerSlot === 'offhand' || lowerSlot === 'shield') return ['Weapons', 'Offensive'];
   if (['amulet'].includes(lowerSlot)) return ['Offensive', 'Defensive', 'Utility', 'Mobility', 'Resource'];
   if (['gloves'].includes(lowerSlot)) return ['Offensive', 'Utility'];
   if (['ring 1', 'ring 2'].includes(lowerSlot)) return ['Offensive', 'Resource'];
@@ -72,16 +90,16 @@ function getAllowedTemperTypes(slot: string): string[] {
   return [];
 }
 
-export function getImplicitForSlot(slot: string): StatOption[] {
-  const normalizedSlot = normalizeSlotName(slot);
+export function getImplicitForSlot(slot: string, offhandType?: string): StatOption[] {
+  const normalizedSlot = normalizeSlotName(slot, offhandType);
   const slotStats = statsData.stats.find((s) => s.slot.toLowerCase() === normalizedSlot.toLowerCase());
   if (!slotStats || !slotStats.implicit) return [];
 
   return slotStats.implicit.map((stat) => ({ value: stat, label: stat }));
 }
 
-export function hasImplicit(slot: string): boolean {
-  const normalizedSlot = normalizeSlotName(slot);
+export function hasImplicit(slot: string, offhandType?: string): boolean {
+  const normalizedSlot = normalizeSlotName(slot, offhandType);
   const slotStats = statsData.stats.find((s) => s.slot.toLowerCase() === normalizedSlot.toLowerCase());
   return !!slotStats?.implicit;
 }

@@ -25,7 +25,7 @@ const MinionOption: React.FC<MinionOptionProps> = ({ type, name, data, selectedU
         <HoverCardTrigger asChild>
           <Button
             variant="link"
-            size="icon"
+            size="sm"
             className={`p-0 ${selectedUpgrade ? '' : ''}`}
             onClick={() => onSelect(null)}
           >

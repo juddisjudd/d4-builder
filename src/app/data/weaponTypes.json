@@ -1,0 +1,69 @@
+{
+    "classes": {
+      "Barbarian": {
+        "weaponTypes": {
+          "Bludgeoning Weapon": ["2h Mace"],
+          "Slashing Weapon": ["2h Axe", "2h Sword", "Polearm"],
+          "Dual-Wield Weapon 1": ["1h Axe", "1h Mace", "1h Sword"],
+          "Dual-Wield Weapon 2": ["1h Axe", "1h Mace", "1h Sword"]
+        }
+      },
+      "Druid": {
+        "weaponTypes": [
+          "1h Axe",
+          "1h Mace",
+          "1h Sword",
+          "2h Axe",
+          "2h Mace",
+          "Dagger",
+          "Polearm",
+          "Staff"
+        ]
+      },
+      "Necromancer": {
+        "weaponTypes": [
+          "1h Axe",
+          "1h Mace",
+          "1h Scythe",
+          "1h Sword",
+          "2h Axe",
+          "2h Mace",
+          "2h Scythe",
+          "2h Sword",
+          "Wand"
+        ]
+      },
+      "Rogue": {
+        "weaponTypes": {
+          "Ranged Weapon": ["Bow", "Crossbow"],
+          "Dual-Wield Weapon 1": ["1h Sword", "Dagger"],
+          "Dual-Wield Weapon 2": ["1h Sword", "Dagger"]
+        }
+      },
+      "Sorcerer": {
+        "weaponTypes": ["1h Mace", "1h Sword", "Dagger", "Staff", "Wand"]
+      },
+      "Spiritborn": {
+        "weaponTypes": ["Glaive", "Polearm", "Quarterstaff"]
+      }
+    },
+    "weaponAttributes": {
+      "1h Sword": "58.7% Critical Strike Damage",
+      "2h Sword": "117.3% Critical Strike Damage",
+      "1h Axe": "74% Damage Over Time",
+      "2h Axe": "147.9% Damage Over Time",
+      "1h Mace": "196.3% Overpower Damage",
+      "2h Mace": "392.7% Overpower Damage",
+      "Polearm": "114.8% Vulnerable Damage",
+      "Dagger": "74% Damage to Close Enemies",
+      "Bow": "117.3% Critical Strike Damage",
+      "Crossbow": "114.8% Vulnerable Damage",
+      "1h Scythe": "74% Summoning Damage",
+      "2h Scythe": "147.9% Summoning Damage",
+      "Wand": "57.4% Vulnerable Damage",
+      "Staff": "147.9% Damage Over Time",
+      "Quarterstaff": "80% Block Chance & 50% Blocked Damage Reduction",
+      "Glaive": "223% Damage to Elites"
+    }
+  }
+  

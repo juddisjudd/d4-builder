@@ -245,17 +245,28 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
   };
 
   const updateItemStat = (slot: string, index: number, value: string) => {
-    setBuildState((prev) => ({
-      ...prev,
-      itemStats: {
-        ...prev.itemStats,
-        [slot]: [
-          ...(prev.itemStats[slot] || []).slice(0, index),
-          value,
-          ...(prev.itemStats[slot] || []).slice(index + 1),
-        ],
-      },
-    }));
+    setBuildState((prev) => {
+      const currentSlotStats = prev.itemStats[slot] || [];
+      const newSlotStats = [...currentSlotStats];
+
+      if (value === '') {
+        newSlotStats[index] = '';
+      } else {
+        newSlotStats[index] = value;
+      }
+
+      while (newSlotStats.length > 0 && newSlotStats[newSlotStats.length - 1] === '') {
+        newSlotStats.pop();
+      }
+
+      return {
+        ...prev,
+        itemStats: {
+          ...prev.itemStats,
+          [slot]: newSlotStats,
+        },
+      };
+    });
   };
 
   const resetBuild = () => {

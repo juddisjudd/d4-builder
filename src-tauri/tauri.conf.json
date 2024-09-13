@@ -7,7 +7,7 @@
     "distDir": "../out"
   },
   "package": {
-    "productName": "D4 Builder",
+    "productName": "D4 Builder (Beta1)",
     "version": "1.0.0-beta1"
   },
   "tauri": {
@@ -17,13 +17,12 @@
     "bundle": {
       "active": true,
       "category": "DeveloperTool",
-      "copyright": "d4builder © 2024",
+      "copyright": "D4builder © 2024",
       "deb": {
         "depends": []
       },
       "externalBin": [],
       "icon": [
-        "icons/32x32.png",
         "icons/128x128.png",
         "icons/128x128@2x.png",
         "icons/icon.icns",
@@ -58,7 +57,7 @@
         "fullscreen": false,
         "height": 860,
         "resizable": true,
-        "title": "D4 Builder",
+        "title": "D4 Builder (Beta1)",
         "width": 1200
       }
     ]

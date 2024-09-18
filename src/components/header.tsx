@@ -82,7 +82,7 @@ const Header: FC = () => {
             className="w-15 h-15 mr-2"
             style={{ width: '60px', height: '60px' }}
           />
-          <Select key={selectKey} onValueChange={handleClassChange}>
+          <Select key={selectKey} onValueChange={handleClassChange} value={buildState.selectedClass || undefined}>
             <SelectTrigger className="w-[180px] border-none text-lg font-semibold uppercase text-[#d1a781] outline-none">
               <SelectValue placeholder="Select Class" />
             </SelectTrigger>

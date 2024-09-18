@@ -9,7 +9,7 @@ export const getAllowedAspectTypes = (slotType: string): string[] => {
     case 'gloves':
       return ['Offensive', 'Utility'];
     case 'pants':
-      return ['Defensive'];
+      return ['Defensive', 'Utility'];
     case 'boots':
       return ['Utility', 'Mobility'];
     case 'amulet':

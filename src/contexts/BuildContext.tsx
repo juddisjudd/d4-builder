@@ -4,8 +4,10 @@ import { UniqueData } from '@/app/data/uniques';
 import { GemData } from '@/app/data/gems';
 import { RuneData } from '@/app/data/runes';
 import { gearSlots } from '@/app/builder/gear/utils/gearSlots';
-import { encodeBuildState, decodeBuildState } from '@/utils/buildUtils';
+import { encodeBuildState, safeDecodeBuildState } from '@/utils/buildUtils';
 import { toast } from 'sonner';
+import { BuildState as ZodBuildState } from '@/utils/buildStateSchema';
+import { z } from 'zod';
 
 export interface SkillData {
   name: string;
@@ -51,8 +53,8 @@ export interface BuildState {
 }
 
 interface BuildContextType {
-  buildState: BuildState;
-  setSelectedClass: (className: string | null) => void;
+  buildState: ZodBuildState;
+  setSelectedClass: (className: ZodBuildState['selectedClass']) => void;
   updateAspect: (index: number, item: AspectData | UniqueData | null) => void;
   updateSocket: (slotIndex: number, socketIndex: number, item: SocketItem) => void;
   updateSkill: (index: number, skill: SkillData | null) => void;
@@ -70,8 +72,8 @@ interface BuildContextType {
 
 const BuildContext = createContext<BuildContextType | undefined>(undefined);
 
-const getInitialSockets = (className: string | null) => {
-  const initialSockets: SocketItem[][] = [];
+const getInitialSockets = (className: ZodBuildState['selectedClass']): ZodBuildState['sockets'] => {
+  const initialSockets: ZodBuildState['sockets'] = [];
 
   for (let i = 0; i < 14; i++) {
     const numSockets = getNumSockets(className, i);
@@ -102,7 +104,7 @@ const getNumSockets = (className: string | null, slotIndex: number): number => {
 };
 
 export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [buildState, setBuildState] = useState<BuildState>({
+  const [buildState, setBuildState] = useState<ZodBuildState>({
     selectedClass: null,
     aspects: Array(14).fill(null),
     sockets: getInitialSockets(null),
@@ -123,7 +125,7 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
     itemStats: {},
   });
 
-  const setSelectedClass = (className: string | null) => {
+  const setSelectedClass = (className: ZodBuildState['selectedClass']) => {
     setBuildState((prev) => ({
       ...prev,
       selectedClass: className,
@@ -297,12 +299,18 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
   };
 
   const loadBuild = (encodedState: string) => {
-    try {
-      const decodedState = decodeBuildState(encodedState);
-      setBuildState(decodedState);
-    } catch (error) {
+    const { state, error } = safeDecodeBuildState(encodedState);
+
+    if (error) {
       console.error('Failed to load build:', error);
-      toast.error('Failed to load build. Please check the code and try again.');
+      if (error instanceof z.ZodError) {
+        toast.error(`Invalid build data: ${error.errors[0].message}`);
+      } else {
+        toast.error('Failed to load build. The build data may be corrupted or invalid.');
+      }
+    } else if (state) {
+      setBuildState(state);
+      toast.success('Build loaded successfully');
     }
   };
 

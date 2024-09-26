@@ -299,18 +299,22 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
   };
 
   const loadBuild = (encodedState: string) => {
-    const { state, error } = safeDecodeBuildState(encodedState);
+    try {
+      const { state, error } = safeDecodeBuildState(encodedState);
 
-    if (error) {
-      console.error('Failed to load build:', error);
-      if (error instanceof z.ZodError) {
-        toast.error(`Invalid build data: ${error.errors[0].message}`);
-      } else {
-        toast.error('Failed to load build. The build data may be corrupted or invalid.');
+      if (error) {
+        throw new Error(error);
+      } else if (state) {
+        setBuildState(state);
+        toast.success('Build loaded successfully');
       }
-    } else if (state) {
-      setBuildState(state);
-      toast.success('Build loaded successfully');
+    } catch (error: unknown) {
+      console.error('Failed to load build:', error);
+      if (error instanceof Error) {
+        toast.error(`Failed to load build: ${error.message}`);
+      } else {
+        toast.error('Failed to load build. An unexpected error occurred.');
+      }
     }
   };
 

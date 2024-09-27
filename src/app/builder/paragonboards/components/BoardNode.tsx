@@ -1,30 +1,46 @@
 import React from 'react';
-import { HoverCard, HoverCardTrigger, HoverCardContent } from '@/components/ui/hover-card';
+import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/hover-card';
 import { Node } from '../types';
 
 interface BoardNodeProps {
   node: Node;
   isSelected: boolean;
   canSelect: boolean;
-  isAdjacent: boolean;
+  isStartingNode: boolean;
+  selectedClass: string;
   onSelect: () => void;
 }
 
-const BoardNode: React.FC<BoardNodeProps> = ({ node, isSelected, canSelect, isAdjacent, onSelect }) => {
-  const getNodeColor = () => {
+const BoardNode: React.FC<BoardNodeProps> = ({
+  node,
+  isSelected,
+  canSelect,
+  isStartingNode,
+  selectedClass,
+  onSelect,
+}) => {
+  const getNodeImage = () => {
+    if (isStartingNode) {
+      return `/images/paragon/nodes/${selectedClass.toLowerCase()}/${selectedClass.toLowerCase()}_start_node.png`;
+    }
+
     switch (node.name) {
       case 'Normal Node':
-        return 'bg-gray-400';
+        if (node.strength) return '/images/paragon/nodes/normal_str.png';
+        if (node.dexterity) return '/images/paragon/nodes/normal_dex.png';
+        if (node.intelligence) return '/images/paragon/nodes/normal_int.png';
+        if (node.willpower) return '/images/paragon/nodes/normal_will.png';
+        return '/images/paragon/nodes/normal_str.png';
       case 'Magic Node':
-        return 'bg-blue-400';
+        return '/images/paragon/nodes/magic_node.png';
       case 'Rare Node':
-        return 'bg-yellow-400';
+        return '/images/paragon/nodes/rare_node.png';
       case 'Legendary Node':
-        return 'bg-orange-400';
+        return '/images/paragon/nodes/legendary_node.png';
       case 'Glyph Socket':
-        return 'bg-purple-400';
+        return '/images/paragon/nodes/glyph_socket.png';
       default:
-        return 'bg-gray-300';
+        return '/images/paragon/nodes/normal_str.png';
     }
   };
 
@@ -32,15 +48,27 @@ const BoardNode: React.FC<BoardNodeProps> = ({ node, isSelected, canSelect, isAd
     <HoverCard>
       <HoverCardTrigger>
         <div
-          onClick={(e) => {
-            e.stopPropagation();
-            if (canSelect) onSelect();
+          onClick={() => {
+            if (canSelect && !isStartingNode) onSelect();
           }}
-          className={`h-[30px] w-[30px] cursor-pointer rounded-full ${getNodeColor()} ${isSelected ? 'ring-2 ring-green-500' : ''} ${!isSelected && canSelect ? 'ring-2 ring-green-500' : ''} ${!isSelected && isAdjacent ? 'ring-2 ring-red-500' : ''} `}
-        />
+          className={`relative h-[45px] w-[45px] cursor-pointer rounded-full ${
+            isSelected ? 'ring-0 ring-zinc-400' : canSelect ? 'ring-2 ring-red-800' : ''
+          }`}
+        >
+          <div
+            className={`absolute inset-0 rounded-full bg-cover bg-center bg-no-repeat ${
+              !isSelected && !isStartingNode ? 'opacity-50' : ''
+            }`}
+            style={{ backgroundImage: `url(${getNodeImage()})` }}
+          />
+        </div>
       </HoverCardTrigger>
       <HoverCardContent>
         <h4>{node.name}</h4>
+        {node.strength && <p>Strength: {node.strength}</p>}
+        {node.dexterity && <p>Dexterity: {node.dexterity}</p>}
+        {node.intelligence && <p>Intelligence: {node.intelligence}</p>}
+        {node.willpower && <p>Willpower: {node.willpower}</p>}
         <p>{node.effects?.join(', ')}</p>
       </HoverCardContent>
     </HoverCard>

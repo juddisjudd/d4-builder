@@ -81,6 +81,7 @@ const ParagonBoard: React.FC = () => {
           selectedNodes={selectedNodes}
           onNodeSelect={handleNodeSelection}
           onGateClick={handleGateClick}
+          selectedClass={buildState.selectedClass || ''}
         />
       </div>
       <Dialog open={isGateDialogOpen} onOpenChange={setIsGateDialogOpen}>
@@ -93,7 +94,7 @@ const ParagonBoard: React.FC = () => {
                 <button
                   key={board.id}
                   onClick={() => handleBoardAttachment(board)}
-                  className="text-black rounded bg-zinc-200 p-2 hover:bg-zinc-300"
+                  className="rounded bg-zinc-200 p-2 text-black hover:bg-zinc-300"
                 >
                   {board.title}
                 </button>

@@ -34,7 +34,7 @@ export const BuildStateSchema = z.object({
     primary: z.string().nullable(),
     secondary: z.string().nullable(),
   }),
-  itemStats: z.record(z.array(z.string())),
+  itemStats: z.record(z.array(z.string().optional())),
 });
 
 export type BuildState = z.infer<typeof BuildStateSchema>;

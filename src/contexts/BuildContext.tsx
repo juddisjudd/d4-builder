@@ -7,7 +7,6 @@ import { gearSlots } from '@/app/builder/gear/utils/gearSlots';
 import { encodeBuildState, safeDecodeBuildState } from '@/utils/buildUtils';
 import { toast } from 'sonner';
 import { BuildState as ZodBuildState } from '@/utils/buildStateSchema';
-import { ParagonState } from '../types/paragon';
 
 export interface SkillData {
   name: string;
@@ -50,7 +49,6 @@ export interface BuildState {
   itemStats: {
     [slot: string]: string[];
   };
-  paragonState: ParagonState;
 }
 
 interface BuildContextType {
@@ -253,12 +251,12 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
       const newSlotStats = [...currentSlotStats];
 
       if (value === '') {
-        newSlotStats[index] = '';
+        newSlotStats[index] = undefined;
       } else {
         newSlotStats[index] = value;
       }
 
-      while (newSlotStats.length > 0 && newSlotStats[newSlotStats.length - 1] === '') {
+      while (newSlotStats.length > 0 && newSlotStats[newSlotStats.length - 1] === undefined) {
         newSlotStats.pop();
       }
 

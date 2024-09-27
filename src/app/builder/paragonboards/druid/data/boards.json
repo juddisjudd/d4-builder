@@ -717,7 +717,7 @@
       "id": "startingboard_r12c13",
       "glyph_radius": false,
       "row": 12,
-      "column": 13,
+      "column": 14,
       "requires": ["startingboard_r11c13", "startingboard_r13c13", "startingboard_r12c12", "startingboard_r12c14"],
       "effects": ["5% Damage"]
     },

@@ -42,6 +42,17 @@ const ParagonBoard: React.FC = () => {
     }
   };
 
+  const handleNodeDeselection = (nodeId: string) => {
+    setSelectedNodes((prev) => {
+      const index = prev.indexOf(nodeId);
+      if (index !== -1 && index === prev.length - 1) {
+        return prev.slice(0, -1);
+      }
+      return prev;
+    });
+    setRemainingPoints((prev) => prev + 1);
+  };
+
   const handleGateClick = (boardId: string, gatePosition: 'top' | 'right' | 'bottom' | 'left') => {
     setIsGateDialogOpen(true);
     setCurrentGate({ boardId, position: gatePosition });
@@ -80,6 +91,7 @@ const ParagonBoard: React.FC = () => {
           boards={boards}
           selectedNodes={selectedNodes}
           onNodeSelect={handleNodeSelection}
+          onNodeDeselect={handleNodeDeselection}
           onGateClick={handleGateClick}
           selectedClass={buildState.selectedClass || ''}
         />

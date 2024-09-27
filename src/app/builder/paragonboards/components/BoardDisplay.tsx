@@ -7,6 +7,7 @@ interface BoardDisplayProps {
   boards: Board[];
   selectedNodes: string[];
   onNodeSelect: (nodeId: string) => void;
+  onNodeDeselect: (nodeId: string) => void;
   onGateClick: (boardId: string, gatePosition: 'top' | 'right' | 'bottom' | 'left') => void;
   selectedClass: string;
 }
@@ -15,6 +16,7 @@ const BoardDisplay: React.FC<BoardDisplayProps> = ({
   boards,
   selectedNodes,
   onNodeSelect,
+  onNodeDeselect,
   onGateClick,
   selectedClass,
 }) => {
@@ -54,6 +56,20 @@ const BoardDisplay: React.FC<BoardDisplayProps> = ({
     }
 
     return !isStartingNode && isAdjacentToSelected(node) && !selectedNodes.includes(node.id);
+  };
+
+  const canDeselectNode = (node: Node) => {
+    const nodeIndex = selectedNodes.indexOf(node.id);
+    if (nodeIndex === -1) return false;
+
+    if (nodeIndex === selectedNodes.length - 1) return true;
+
+    const adjacentSelectedNodes = selectedNodes.filter((selectedId) => {
+      const selectedNode = boards.flatMap((b) => b.nodes).find((n) => n.id === selectedId);
+      return selectedNode && isAdjacentToSelected(selectedNode) && selectedId !== node.id;
+    });
+
+    return adjacentSelectedNodes.length >= 2;
   };
 
   const renderBoard = (board: Board, position: { x: number; y: number }) => {
@@ -135,6 +151,11 @@ const BoardDisplay: React.FC<BoardDisplayProps> = ({
                   isStartingNode={board.title === 'Starting Board' && node.row === 15 && node.column === 11}
                   selectedClass={selectedClass}
                   onSelect={() => onNodeSelect(node.id)}
+                  onDeselect={() => {
+                    if (canDeselectNode(node)) {
+                      onNodeDeselect(node.id);
+                    }
+                  }}
                 />
               )}
             </div>
@@ -172,7 +193,7 @@ const BoardDisplay: React.FC<BoardDisplayProps> = ({
 
   return (
     <TransformWrapper
-      initialScale={0.5}
+      initialScale={1.0}
       initialPositionX={100}
       initialPositionY={10}
       minScale={0.1}

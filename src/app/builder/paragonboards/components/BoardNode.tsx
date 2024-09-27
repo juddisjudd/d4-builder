@@ -9,6 +9,7 @@ interface BoardNodeProps {
   isStartingNode: boolean;
   selectedClass: string;
   onSelect: () => void;
+  onDeselect: () => void;
 }
 
 const BoardNode: React.FC<BoardNodeProps> = ({
@@ -18,6 +19,7 @@ const BoardNode: React.FC<BoardNodeProps> = ({
   isStartingNode,
   selectedClass,
   onSelect,
+  onDeselect,
 }) => {
   const getNodeImage = () => {
     if (isStartingNode) {
@@ -44,15 +46,26 @@ const BoardNode: React.FC<BoardNodeProps> = ({
     }
   };
 
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (isStartingNode) return;
+
+    if (e.button === 0) {
+      if (canSelect) onSelect();
+      else if (isSelected) onDeselect();
+    } else if (e.button === 2) {
+      if (isSelected) onDeselect();
+    }
+  };
+
   return (
     <HoverCard>
       <HoverCardTrigger>
         <div
-          onClick={() => {
-            if (canSelect && !isStartingNode) onSelect();
-          }}
+          onClick={handleClick}
+          onContextMenu={handleClick}
           className={`relative h-[45px] w-[45px] cursor-pointer rounded-full ${
-            isSelected ? 'ring-0 ring-zinc-400' : canSelect ? 'ring-2 ring-red-800' : ''
+            isSelected ? '' : canSelect ? 'ring-2 ring-red-800' : ''
           }`}
         >
           <div

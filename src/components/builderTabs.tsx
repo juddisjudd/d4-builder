@@ -7,6 +7,7 @@ import Notes from '@/app/builder/Notes';
 import Aspects from '@/app/builder/gear/Aspects';
 import SkillsAndMechanics from '@/app/builder/skills-and-mechanics';
 import ItemStats from '@/app/builder/gear/components/ItemStats';
+import ParagonBoard from '@/app/builder/paragonboards/ParagonBoard';
 import { useBuildContext } from '@/contexts/BuildContext';
 
 const BuilderTabs: FC = () => {
@@ -45,16 +46,18 @@ const BuilderTabs: FC = () => {
           <span>Stats</span>
         </TabsTrigger>
       </TabsList>
-         <TabsContent value="gear-skills">
+      <TabsContent value="gear-skills">
         <Aspects />
         <SkillsAndMechanics />
-        <div className="mt-8"><ItemStats /></div>
+        <div className="mt-8">
+          <ItemStats />
+        </div>
       </TabsContent>
       <TabsContent value="skill-tree">
         <div>Content specific to Skill Tree for {selectedClass}</div>
       </TabsContent>
       <TabsContent value="paragon">
-        <div>Content specific to Paragon for {selectedClass}</div>
+        <ParagonBoard />
       </TabsContent>
       <TabsContent value="notes">
         <Notes />

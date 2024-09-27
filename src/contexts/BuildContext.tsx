@@ -7,7 +7,7 @@ import { gearSlots } from '@/app/builder/gear/utils/gearSlots';
 import { encodeBuildState, safeDecodeBuildState } from '@/utils/buildUtils';
 import { toast } from 'sonner';
 import { BuildState as ZodBuildState } from '@/utils/buildStateSchema';
-import { z } from 'zod';
+import { ParagonState } from '../types/paragon';
 
 export interface SkillData {
   name: string;
@@ -50,6 +50,7 @@ export interface BuildState {
   itemStats: {
     [slot: string]: string[];
   };
+  paragonState: ParagonState;
 }
 
 interface BuildContextType {

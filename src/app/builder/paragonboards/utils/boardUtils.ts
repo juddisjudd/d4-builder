@@ -7,6 +7,9 @@ export const loadBoardData = async (className: string): Promise<Board[]> => {
       id: `${className.toLowerCase()}_${title.replace(/\s+/g, '_').toLowerCase()}`,
       title,
       nodes: Array.isArray(nodes) ? (nodes as Node[]) : [],
+      selectedNodes: [],
+      gates: { top: null, right: null, bottom: null, left: null },
+      rotation: 0,
       attachedTo: title === 'Starting Board' ? undefined : { parentId: '', position: 'top' as const },
     }));
   } catch (error) {

@@ -7,11 +7,13 @@ interface ParagonStatsProps {
 
 const ParagonStats: React.FC<ParagonStatsProps> = ({ usedPoints, remainingPoints }) => {
   return (
-    <div className="mb-4 flex justify-between">
+    <div className="mb-4 flex justify-between items-center">
       <div>
-        Points: {usedPoints} Remaining: {remainingPoints}
+        <span className="font-bold">Points Used:</span> {usedPoints}
       </div>
-      <input type="text" placeholder="Search by name, stat, or keyword..." className="rounded border px-2 py-1" />
+      <div>
+        <span className="font-bold">Points Remaining:</span> {remainingPoints}
+      </div>
     </div>
   );
 };

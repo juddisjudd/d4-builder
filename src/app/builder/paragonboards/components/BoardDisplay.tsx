@@ -5,16 +5,14 @@ import { Board, Node } from '../types';
 
 interface BoardDisplayProps {
   boards: Board[];
-  selectedNodes: string[];
-  onNodeSelect: (nodeId: string) => void;
-  onNodeDeselect: (nodeId: string) => void;
+  onNodeSelect: (boardId: string, nodeId: string) => void;
+  onNodeDeselect: (boardId: string, nodeId: string) => void;
   onGateClick: (boardId: string, gatePosition: 'top' | 'right' | 'bottom' | 'left') => void;
   selectedClass: string;
 }
 
 const BoardDisplay: React.FC<BoardDisplayProps> = ({
   boards,
-  selectedNodes,
   onNodeSelect,
   onNodeDeselect,
   onGateClick,
@@ -26,7 +24,7 @@ const BoardDisplay: React.FC<BoardDisplayProps> = ({
   const gridSize = 21;
   const gateSize = 60;
 
-  const isAdjacentToSelected = (node: Node) => {
+  const isAdjacentToSelected = (node: Node, board: Board) => {
     const adjacentPositions = [
       { row: node.row - 1, col: node.column },
       { row: node.row + 1, col: node.column },
@@ -34,8 +32,8 @@ const BoardDisplay: React.FC<BoardDisplayProps> = ({
       { row: node.row, col: node.column + 1 },
     ];
 
-    return selectedNodes.some((selectedId) => {
-      const selectedNode = boards.flatMap((b) => b.nodes).find((n) => n.id === selectedId);
+    return board.selectedNodes.some((selectedId) => {
+      const selectedNode = board.nodes.find((n) => n.id === selectedId);
       return (
         selectedNode && adjacentPositions.some((pos) => pos.row === selectedNode.row && pos.col === selectedNode.column)
       );
@@ -45,31 +43,47 @@ const BoardDisplay: React.FC<BoardDisplayProps> = ({
   const canSelectNode = (node: Node, board: Board) => {
     const isStartingNode = board.title === 'Starting Board' && node.row === 15 && node.column === 11;
 
-    if (selectedNodes.length === 0) {
-      return (
-        board.title === 'Starting Board' &&
-        ((node.row === 14 && node.column === 11) ||
-          (node.row === 16 && node.column === 11) ||
+    if (board.selectedNodes.length === 0) {
+      if (board.title === 'Starting Board') {
+        return (
           (node.row === 15 && node.column === 10) ||
-          (node.row === 15 && node.column === 12))
-      );
+          (node.row === 14 && node.column === 11) ||
+          (node.row === 15 && node.column === 12)
+        );
+      } else {
+        const connectedGate = Object.entries(board.gates).find(([_, value]) => value !== null);
+        if (connectedGate) {
+          const [gatePosition] = connectedGate;
+          return isNodeAdjacentToGate(node, gatePosition as 'top' | 'right' | 'bottom' | 'left');
+        }
+      }
     }
 
-    return !isStartingNode && isAdjacentToSelected(node) && !selectedNodes.includes(node.id);
+    return !isStartingNode && isAdjacentToSelected(node, board) && !board.selectedNodes.includes(node.id);
   };
 
-  const canDeselectNode = (node: Node) => {
-    const nodeIndex = selectedNodes.indexOf(node.id);
-    if (nodeIndex === -1) return false;
+  const isNodeAdjacentToGate = (node: Node, gatePosition: 'top' | 'right' | 'bottom' | 'left') => {
+    switch (gatePosition) {
+      case 'top':
+        return node.row === 2 && node.column === 11;
+      case 'right':
+        return node.row === 11 && node.column === 20;
+      case 'bottom':
+        return node.row === 20 && node.column === 11;
+      case 'left':
+        return node.row === 11 && node.column === 2;
+    }
+  };
 
-    if (nodeIndex === selectedNodes.length - 1) return true;
-
-    const adjacentSelectedNodes = selectedNodes.filter((selectedId) => {
-      const selectedNode = boards.flatMap((b) => b.nodes).find((n) => n.id === selectedId);
-      return selectedNode && isAdjacentToSelected(selectedNode) && selectedId !== node.id;
+  const canClickGate = (board: Board, gatePosition: 'top' | 'right' | 'bottom' | 'left') => {
+    const result = board.selectedNodes.some((nodeId) => {
+      const node = board.nodes.find((n) => n.id === nodeId);
+      const isAdjacent = node && isNodeAdjacentToGate(node, gatePosition);
+      console.log(`Node ${nodeId} adjacent to ${gatePosition} gate: ${isAdjacent}`);
+      return isAdjacent;
     });
-
-    return adjacentSelectedNodes.length >= 2;
+    console.log(`Can click ${gatePosition} gate: ${result}`);
+    return result;
   };
 
   const renderBoard = (board: Board, position: { x: number; y: number }) => {
@@ -91,9 +105,8 @@ const BoardDisplay: React.FC<BoardDisplayProps> = ({
         return null;
       }
 
-      const isActive =
-        board.attachedTo?.position === position ||
-        boards.some((b) => b.attachedTo?.parentId === board.id && b.attachedTo?.position === position);
+      const isActive = board.gates[position] !== null;
+      const canClick = canClickGate(board, position);
 
       const gatePositions = {
         top: { top: offset - gateSize / 2, left: boardSize / 2 - gateSize / 2 },
@@ -105,7 +118,7 @@ const BoardDisplay: React.FC<BoardDisplayProps> = ({
 
       return (
         <div
-          className="absolute cursor-pointer"
+          className={`absolute cursor-pointer ${!canClick && 'opacity-50'}`}
           style={{
             top: `${gatePos.top}px`,
             left: `${gatePos.left}px`,
@@ -113,8 +126,9 @@ const BoardDisplay: React.FC<BoardDisplayProps> = ({
             height: `${gateSize}px`,
             backgroundImage: `url('/images/paragon/nodes/${isActive ? 'gate_active' : 'gate_inactive'}.png')`,
             backgroundSize: 'cover',
+            pointerEvents: canClick ? 'auto' : 'none',
           }}
-          onClick={() => onGateClick(board.id, position)}
+          onClick={() => canClick && onGateClick(board.id, position)}
         />
       );
     };
@@ -128,6 +142,7 @@ const BoardDisplay: React.FC<BoardDisplayProps> = ({
           top: `${position.y}px`,
           left: `${position.x}px`,
           backgroundImage: `url('/images/paragon/board_bg.png')`,
+          transform: `rotate(${board.rotation}deg)`,
         }}
         key={board.id}
       >
@@ -146,16 +161,13 @@ const BoardDisplay: React.FC<BoardDisplayProps> = ({
               {node && (
                 <BoardNode
                   node={node}
-                  isSelected={selectedNodes.includes(node.id)}
+                  boardId={board.id}
+                  isSelected={board.selectedNodes.includes(node.id)}
                   canSelect={canSelectNode(node, board)}
                   isStartingNode={board.title === 'Starting Board' && node.row === 15 && node.column === 11}
                   selectedClass={selectedClass}
-                  onSelect={() => onNodeSelect(node.id)}
-                  onDeselect={() => {
-                    if (canDeselectNode(node)) {
-                      onNodeDeselect(node.id);
-                    }
-                  }}
+                  onSelect={() => onNodeSelect(board.id, node.id)}
+                  onDeselect={() => onNodeDeselect(board.id, node.id)}
                 />
               )}
             </div>
@@ -194,8 +206,8 @@ const BoardDisplay: React.FC<BoardDisplayProps> = ({
   return (
     <TransformWrapper
       initialScale={1.0}
-      initialPositionX={100}
-      initialPositionY={10}
+      initialPositionX={boardSize / 2}
+      initialPositionY={boardSize / 2}
       minScale={0.1}
       maxScale={2}
       wheel={{ step: 0.1 }}

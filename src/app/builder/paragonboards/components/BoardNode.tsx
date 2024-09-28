@@ -4,6 +4,7 @@ import { Node } from '../types';
 
 interface BoardNodeProps {
   node: Node;
+  boardId: string;
   isSelected: boolean;
   canSelect: boolean;
   isStartingNode: boolean;
@@ -14,6 +15,7 @@ interface BoardNodeProps {
 
 const BoardNode: React.FC<BoardNodeProps> = ({
   node,
+  boardId,
   isSelected,
   canSelect,
   isStartingNode,
@@ -82,7 +84,10 @@ const BoardNode: React.FC<BoardNodeProps> = ({
         {node.dexterity && <p>Dexterity: {node.dexterity}</p>}
         {node.intelligence && <p>Intelligence: {node.intelligence}</p>}
         {node.willpower && <p>Willpower: {node.willpower}</p>}
-        <p>{node.effects?.join(', ')}</p>
+        {node.effects && <p>Effects: {node.effects.join(', ')}</p>}
+        {node.radius_stat && <p>Radius Stat: {node.radius_stat}</p>}
+        {node.radius_value && <p>Radius Value: {node.radius_value}</p>}
+        {node.glyph_radius && <p>Glyph Radius: Yes</p>}
       </HoverCardContent>
     </HoverCard>
   );

@@ -8,6 +8,7 @@ import Aspects from '@/app/builder/gear/Aspects';
 import SkillsAndMechanics from '@/app/builder/skills-and-mechanics';
 import ItemStats from '@/app/builder/gear/components/ItemStats';
 import ParagonBoard from '@/app/builder/paragonboards/ParagonBoard';
+import { ParagonBoardProvider } from '@/app/builder/paragonboards/ParagonBoardContext';
 import { useBuildContext } from '@/contexts/BuildContext';
 
 const BuilderTabs: FC = () => {
@@ -57,7 +58,11 @@ const BuilderTabs: FC = () => {
         <div>Content specific to Skill Tree for {selectedClass}</div>
       </TabsContent>
       <TabsContent value="paragon">
-        <ParagonBoard />
+      <TabsContent value="paragon">
+  <ParagonBoardProvider>
+    <ParagonBoard />
+  </ParagonBoardProvider>
+</TabsContent>
       </TabsContent>
       <TabsContent value="notes">
         <Notes />

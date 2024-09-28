@@ -20,8 +20,30 @@ export interface Board {
   id: string;
   title: string;
   nodes: Node[];
+  selectedNodes: string[];
   attachedTo?: {
     parentId: string;
     position: 'top' | 'right' | 'bottom' | 'left';
   };
+  gates: {
+    top: string | null;
+    right: string | null;
+    bottom: string | null;
+    left: string | null;
+  };
+  rotation: 0 | 90 | 180 | 270;
+}
+
+export interface BoardConnection {
+  sourceBoardId: string;
+  targetBoardId: string;
+  sourceGate: 'top' | 'right' | 'bottom' | 'left';
+  targetGate: 'top' | 'right' | 'bottom' | 'left';
+}
+
+export interface ParagonBoardState {
+  boards: { [id: string]: Board };
+  connections: BoardConnection[];
+  totalPoints: number;
+  usedPoints: number;
 }

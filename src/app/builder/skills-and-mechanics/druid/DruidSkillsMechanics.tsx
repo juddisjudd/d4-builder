@@ -3,7 +3,6 @@ import SkillSelection from '../components/SkillSelection';
 import { useBuildContext } from '@/contexts/BuildContext';
 import { spiritboons } from './data/spiritboons';
 import SpiritBoonButton from './components/SpiritBoonButton';
-import { Separator } from '@/components/ui/separator';
 
 const DruidSkillsMechanics: React.FC = () => {
   const { buildState, updateSpiritBoon } = useBuildContext();
@@ -12,6 +11,8 @@ const DruidSkillsMechanics: React.FC = () => {
   if (selectedClass !== 'Druid') return null;
 
   const spirits = ['Deer', 'Eagle', 'Wolf', 'Snake'];
+
+  const currentSpiritBoons = spiritBoons || { Deer: [], Eagle: [], Wolf: [], Snake: [] };
 
   return (
     <div className="mt-8 flex flex-col items-center">
@@ -24,7 +25,7 @@ const DruidSkillsMechanics: React.FC = () => {
               <div className="mr-6 flex h-[92px] w-[80px] items-center justify-center">
                 <img
                   src={`/images/skills/druid/spiritboons/${spirit.toLowerCase()}_spirit${
-                    spiritBoons[spirit].length === 2 ? '_bond' : ''
+                    currentSpiritBoons[spirit].length === 2 ? '_bond' : ''
                   }.png`}
                   alt={`${spirit} Spirit`}
                   className="max-h-full max-w-full object-contain"
@@ -37,7 +38,7 @@ const DruidSkillsMechanics: React.FC = () => {
                     <SpiritBoonButton
                       key={boon.name}
                       boon={boon}
-                      isSelected={spiritBoons[spirit].includes(boon.name)}
+                      isSelected={currentSpiritBoons[spirit].includes(boon.name)}
                       onSelect={() => updateSpiritBoon(spirit, boon.name)}
                     />
                   ))}

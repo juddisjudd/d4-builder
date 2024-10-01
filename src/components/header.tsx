@@ -23,7 +23,7 @@ import { Menu } from 'lucide-react';
 import { useBuildContext } from '@/contexts/BuildContext';
 import { toast } from 'sonner';
 
-const classOptions = ['Barbarian', 'Druid', 'Necromancer', 'Rogue', 'Sorcerer', 'Spiritborn'];
+const classOptions = ['Barbarian', 'Druid', 'Necromancer', 'Rogue', 'Sorcerer', 'Spiritborn'] as const;
 const placeholderImage = '/images/classes/placeholder.png';
 
 const Header: FC = () => {
@@ -38,7 +38,9 @@ const Header: FC = () => {
     setSelectKey((prev) => prev + 1);
   };
 
-  const handleClassChange = (newClass: string) => {
+  type ClassOption = (typeof classOptions)[number];
+
+  const handleClassChange = (newClass: ClassOption) => {
     if (newClass !== buildState.selectedClass) {
       resetBuild();
       setSelectedClass(newClass);
@@ -82,7 +84,11 @@ const Header: FC = () => {
             className="w-15 h-15 mr-2"
             style={{ width: '60px', height: '60px' }}
           />
-          <Select key={selectKey} onValueChange={handleClassChange} value={buildState.selectedClass || undefined}>
+          <Select
+            key={selectKey}
+            onValueChange={(value: ClassOption) => handleClassChange(value)}
+            value={buildState.selectedClass || undefined}
+          >
             <SelectTrigger className="w-[180px] border-none text-lg font-semibold uppercase text-[#d1a781] outline-none">
               <SelectValue placeholder="Select Class" />
             </SelectTrigger>

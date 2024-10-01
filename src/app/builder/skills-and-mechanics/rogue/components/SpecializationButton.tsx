@@ -16,12 +16,7 @@ const SpecializationButton: React.FC<SpecializationButtonProps> = ({ specializat
 
   return (
     <SpecializationHoverCard specialization={specialization}>
-      <Button
-        variant="outline"
-        size="icon"
-        className={`h-16 w-16 p-0 ${isSelected ? '' : ''}`}
-        onClick={onSelect}
-      >
+      <Button variant="outline" size="icon" className={`h-16 w-16 p-0 ${isSelected ? '' : ''}`} onClick={onSelect}>
         <img src={imagePath} alt={specialization.name} className="h-full w-full object-contain" />
       </Button>
     </SpecializationHoverCard>

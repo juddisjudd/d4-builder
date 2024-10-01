@@ -21,20 +21,24 @@ export const BuildStateSchema = z.object({
   aspects: z.array(AspectOrUniqueSchema).length(14),
   sockets: z.array(z.array(SocketItemSchema)),
   selectedSkills: z.array(SkillDataSchema.nullable()).length(6),
-  technique: z.string().nullable(),
-  spiritBoons: z.record(z.array(z.string())),
-  specialization: z.string().nullable(),
+  technique: z.string().nullable().optional(),
+  spiritBoons: z.record(z.array(z.string())).optional(),
+  specialization: z.string().nullable().optional(),
   enchantments: z.array(SkillDataSchema.nullable()).length(2),
-  bookOfTheDead: z.object({
-    'Skeletal Warriors': z.object({ name: z.string(), upgrade: z.string().nullable() }).nullable(),
-    'Skeletal Mages': z.object({ name: z.string(), upgrade: z.string().nullable() }).nullable(),
-    Golems: z.object({ name: z.string(), upgrade: z.string().nullable() }).nullable(),
-  }),
-  spiritHall: z.object({
-    primary: z.string().nullable(),
-    secondary: z.string().nullable(),
-  }),
-  itemStats: z.record(z.array(z.string().optional())),
+  bookOfTheDead: z
+    .object({
+      'Skeletal Warriors': z.object({ name: z.string(), upgrade: z.string().nullable() }).nullable(),
+      'Skeletal Mages': z.object({ name: z.string(), upgrade: z.string().nullable() }).nullable(),
+      Golems: z.object({ name: z.string(), upgrade: z.string().nullable() }).nullable(),
+    })
+    .optional(),
+  spiritHall: z
+    .object({
+      primary: z.string().nullable(),
+      secondary: z.string().nullable(),
+    })
+    .optional(),
+  itemStats: z.record(z.array(z.string().nullable().optional())),
 });
 
 export type BuildState = z.infer<typeof BuildStateSchema>;

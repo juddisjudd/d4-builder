@@ -212,6 +212,7 @@ const BoardDisplay: React.FC<BoardDisplayProps> = ({
       maxScale={2}
       wheel={{ step: 0.1 }}
       limitToBounds={false}
+      panning={{ velocityDisabled: true }}
     >
       <TransformComponent>
         <div className="relative" style={{ width: `${boardSize * 3}px`, height: `${boardSize * 3}px` }}>

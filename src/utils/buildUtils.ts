@@ -2,11 +2,18 @@ import { BuildStateSchema, BuildState } from '@/utils/buildStateSchema';
 import { z } from 'zod';
 
 export function encodeBuildState(state: BuildState): string {
-  BuildStateSchema.parse(state);
-
-  const json = JSON.stringify(state);
-  const utf8Bytes = new TextEncoder().encode(json);
-  return btoa(String.fromCharCode.apply(null, Array.from(utf8Bytes)));
+  try {
+    BuildStateSchema.parse(state);
+    const json = JSON.stringify(state);
+    const utf8Bytes = new TextEncoder().encode(json);
+    return btoa(String.fromCharCode.apply(null, Array.from(utf8Bytes)));
+  } catch (error) {
+    if (error instanceof z.ZodError) {
+      console.error('Build state validation failed:', error.errors);
+      throw new Error('Failed to encode build: Invalid build state');
+    }
+    throw error;
+  }
 }
 
 export function decodeBuildState(encoded: string): BuildState {

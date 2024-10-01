@@ -38,13 +38,7 @@ const SkillButton: React.FC<SkillButtonProps> = ({ selectedClass, onSelectSkill,
 
   return (
     <>
-      {selectedSkill ? (
-        <SkillHoverCard skill={selectedSkill}>
-          {buttonContent}
-        </SkillHoverCard>
-      ) : (
-        buttonContent
-      )}
+      {selectedSkill ? <SkillHoverCard skill={selectedSkill}>{buttonContent}</SkillHoverCard> : buttonContent}
       <SkillSelectionDialog
         isOpen={isDialogOpen}
         onClose={() => setIsDialogOpen(false)}

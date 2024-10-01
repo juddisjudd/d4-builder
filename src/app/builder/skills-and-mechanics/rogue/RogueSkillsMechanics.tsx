@@ -1,11 +1,8 @@
-// src/app/builder/skills-and-mechanics/rogue/RogueSkillsMechanics.tsx
-
 import React from 'react';
 import SkillSelection from '../components/SkillSelection';
 import { useBuildContext } from '@/contexts/BuildContext';
 import { specializations } from './data/specializations';
 import SpecializationButton from './components/SpecializationButton';
-import { Separator } from '@/components/ui/separator';
 
 const RogueSkillsMechanics: React.FC = () => {
   const { buildState, updateSpecialization } = useBuildContext();

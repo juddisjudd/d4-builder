@@ -2,7 +2,6 @@ import React from 'react';
 import SkillSelection from '../components/SkillSelection';
 import BookOfTheDead from './components/BookOfTheDead';
 import { useBuildContext } from '@/contexts/BuildContext';
-import { Separator } from '@/components/ui/separator';
 
 const NecromancerSkillsMechanics: React.FC = () => {
   const { buildState } = useBuildContext();

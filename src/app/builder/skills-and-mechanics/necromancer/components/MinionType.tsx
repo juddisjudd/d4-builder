@@ -7,9 +7,21 @@ interface MinionTypeProps {
   data: any;
 }
 
+type ValidMinionType = 'Skeletal Warriors' | 'Skeletal Mages' | 'Golems';
+
 const MinionType: React.FC<MinionTypeProps> = ({ type, data }) => {
   const { buildState, updateBookOfTheDead } = useBuildContext();
-  const selectedOption = buildState.bookOfTheDead[type];
+
+  function isValidMinionType(type: string): type is ValidMinionType {
+    return ['Skeletal Warriors', 'Skeletal Mages', 'Golems'].includes(type);
+  }
+
+  if (!isValidMinionType(type)) {
+    console.error(`Invalid minion type: ${type}`);
+    return null;
+  }
+
+  const selectedOption = buildState.bookOfTheDead?.[type] || null;
 
   return (
     <div>

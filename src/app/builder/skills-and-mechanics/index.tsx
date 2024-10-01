@@ -1,5 +1,3 @@
-// src/app/builder/skills-and-mechanics/index.tsx
-
 import React from 'react';
 import { useBuildContext } from '@/contexts/BuildContext';
 import BarbarianSkillsMechanics from './barbarian/BarbarianSkillsMechanics';
@@ -36,11 +34,7 @@ const SkillsAndMechanics: React.FC = () => {
     }
   };
 
-  return (
-    <div className="mt-0 flex flex-col items-center">
-      {renderClassMechanic()}
-    </div>
-  );
+  return <div className="mt-0 flex flex-col items-center">{renderClassMechanic()}</div>;
 };
 
 export default SkillsAndMechanics;

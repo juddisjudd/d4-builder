@@ -8,6 +8,8 @@ import { encodeBuildState, safeDecodeBuildState } from '@/utils/buildUtils';
 import { toast } from 'sonner';
 import { BuildState as ZodBuildState } from '@/utils/buildStateSchema';
 
+type ValidMinionType = 'Skeletal Warriors' | 'Skeletal Mages' | 'Golems';
+
 export interface SkillData {
   name: string;
   class: string;
@@ -19,10 +21,9 @@ export interface SkillData {
 }
 
 interface BookOfTheDeadState {
-  [key: string]: {
-    name: string;
-    upgrade: string | null;
-  } | null;
+  'Skeletal Warriors': { name: string; upgrade: string | null } | null;
+  'Skeletal Mages': { name: string; upgrade: string | null } | null;
+  Golems: { name: string; upgrade: string | null } | null;
 }
 
 interface SpiritHallState {
@@ -41,13 +42,13 @@ export interface BuildState {
   sockets: SocketItem[][];
   selectedSkills: (SkillData | null)[];
   technique?: string | null;
-  spiritBoons: { [spirit: string]: string[] };
+  spiritBoons?: { [spirit: string]: string[] };
   specialization: string | null;
   enchantments: (SkillData | null)[];
-  bookOfTheDead: BookOfTheDeadState;
-  spiritHall: SpiritHallState;
+  bookOfTheDead?: BookOfTheDeadState;
+  spiritHall?: SpiritHallState;
   itemStats: {
-    [slot: string]: string[];
+    [slot: string]: (string | null)[];
   };
 }
 
@@ -61,7 +62,7 @@ interface BuildContextType {
   updateSpiritBoon: (spirit: string, boonName: string) => void;
   updateSpecialization: (specialization: string | null) => void;
   updateEnchantment: (index: number, skill: SkillData | null) => void;
-  updateBookOfTheDead: (type: string, name: string, upgrade: string | null) => void;
+  updateBookOfTheDead: (type: ValidMinionType, name: string, upgrade: string | null) => void;
   updateSpiritHall: (spirit: string, isPrimary: boolean) => void;
   updateItemStat: (slot: string, index: number, value: string) => void;
   resetBuild: () => void;
@@ -109,18 +110,11 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
     sockets: getInitialSockets(null),
     selectedSkills: Array(6).fill(null),
     technique: null,
-    spiritBoons: { Deer: [], Eagle: [], Wolf: [], Snake: [] },
+    spiritBoons: undefined,
     specialization: null,
     enchantments: [null, null],
-    bookOfTheDead: {
-      'Skeletal Warriors': null,
-      'Skeletal Mages': null,
-      Golems: null,
-    },
-    spiritHall: {
-      primary: null,
-      secondary: null,
-    },
+    bookOfTheDead: undefined,
+    spiritHall: undefined,
     itemStats: {},
   });
 
@@ -130,18 +124,24 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
       selectedClass: className,
       selectedSkills: Array(6).fill(null),
       technique: null,
-      spiritBoons: { Deer: [], Eagle: [], Wolf: [], Snake: [] },
+      spiritBoons: className ? { Deer: [], Eagle: [], Wolf: [], Snake: [] } : undefined,
       specialization: null,
       enchantments: [null, null],
-      bookOfTheDead: {
-        'Skeletal Warriors': null,
-        'Skeletal Mages': null,
-        Golems: null,
-      },
-      spiritHall: {
-        primary: null,
-        secondary: null,
-      },
+      bookOfTheDead:
+        className === 'Necromancer'
+          ? {
+              'Skeletal Warriors': null,
+              'Skeletal Mages': null,
+              Golems: null,
+            }
+          : undefined,
+      spiritHall:
+        className === 'Spiritborn'
+          ? {
+              primary: null,
+              secondary: null,
+            }
+          : undefined,
       sockets: getInitialSockets(className),
       itemStats: {},
     }));
@@ -194,7 +194,8 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
 
   const updateSpiritBoon = (spirit: string, boonName: string) => {
     setBuildState((prev) => {
-      const newSpiritBoons = { ...prev.spiritBoons };
+      const currentSpiritBoons = prev.spiritBoons || { Deer: [], Eagle: [], Wolf: [], Snake: [] };
+      const newSpiritBoons = { ...currentSpiritBoons };
 
       if (newSpiritBoons[spirit].includes(boonName)) {
         newSpiritBoons[spirit] = newSpiritBoons[spirit].filter((boon) => boon !== boonName);
@@ -225,23 +226,35 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
     });
   };
 
-  const updateBookOfTheDead = (type: string, name: string, upgrade: string | null) => {
-    setBuildState((prev) => ({
-      ...prev,
-      bookOfTheDead: {
-        ...prev.bookOfTheDead,
-        [type]: { name, upgrade },
-      },
-    }));
+  const updateBookOfTheDead = (type: ValidMinionType, name: string, upgrade: string | null) => {
+    setBuildState((prev) => {
+      const currentBookOfTheDead = prev.bookOfTheDead || {
+        'Skeletal Warriors': null,
+        'Skeletal Mages': null,
+        Golems: null,
+      };
+      return {
+        ...prev,
+        bookOfTheDead: {
+          ...currentBookOfTheDead,
+          [type]: { name, upgrade },
+        },
+      };
+    });
   };
 
   const updateSpiritHall = (spirit: string, isPrimary: boolean) => {
     setBuildState((prev) => ({
       ...prev,
-      spiritHall: {
-        ...prev.spiritHall,
-        [isPrimary ? 'primary' : 'secondary']: spirit,
-      },
+      spiritHall: prev.spiritHall
+        ? {
+            ...prev.spiritHall,
+            [isPrimary ? 'primary' : 'secondary']: spirit,
+          }
+        : {
+            primary: isPrimary ? spirit : null,
+            secondary: !isPrimary ? spirit : null,
+          },
     }));
   };
 
@@ -251,12 +264,12 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
       const newSlotStats = [...currentSlotStats];
 
       if (value === '') {
-        newSlotStats[index] = undefined;
+        newSlotStats[index] = null;
       } else {
         newSlotStats[index] = value;
       }
 
-      while (newSlotStats.length > 0 && newSlotStats[newSlotStats.length - 1] === undefined) {
+      while (newSlotStats.length > 0 && newSlotStats[newSlotStats.length - 1] === null) {
         newSlotStats.pop();
       }
 
@@ -277,23 +290,17 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
       sockets: getInitialSockets(null),
       selectedSkills: Array(6).fill(null),
       technique: null,
-      spiritBoons: { Deer: [], Eagle: [], Wolf: [], Snake: [] },
+      spiritBoons: undefined,
       specialization: null,
       enchantments: [null, null],
-      bookOfTheDead: {
-        'Skeletal Warriors': null,
-        'Skeletal Mages': null,
-        Golems: null,
-      },
-      spiritHall: {
-        primary: null,
-        secondary: null,
-      },
+      bookOfTheDead: undefined,
+      spiritHall: undefined,
       itemStats: {},
     });
   };
 
   const saveBuild = (): string => {
+    console.log('Saving build state:', buildState);
     return encodeBuildState(buildState);
   };
 
@@ -304,6 +311,7 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
       if (error) {
         throw new Error(error);
       } else if (state) {
+        console.log('Loading build state:', state);
         setBuildState(state);
         toast.success('Build loaded successfully');
       }

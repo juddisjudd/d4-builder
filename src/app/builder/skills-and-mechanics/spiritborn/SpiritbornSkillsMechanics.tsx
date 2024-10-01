@@ -30,7 +30,7 @@ const SpiritbornSkillsMechanics: React.FC = () => {
                   key={`primary-${spirit}`}
                   spirit={spirit}
                   data={spiritHall[spirit]}
-                  isSelected={selectedSpirits.primary === spirit}
+                  isSelected={selectedSpirits?.primary === spirit}
                   isPrimary={true}
                   onSelect={() => handleSpiritSelect(spirit, true)}
                 />
@@ -46,7 +46,7 @@ const SpiritbornSkillsMechanics: React.FC = () => {
                   key={`secondary-${spirit}`}
                   spirit={spirit}
                   data={spiritHall[spirit]}
-                  isSelected={selectedSpirits.secondary === spirit}
+                  isSelected={selectedSpirits?.secondary === spirit}
                   isPrimary={false}
                   onSelect={() => handleSpiritSelect(spirit, false)}
                 />

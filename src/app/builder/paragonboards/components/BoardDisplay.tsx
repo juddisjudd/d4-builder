@@ -1,5 +1,5 @@
-import React from 'react';
-import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
+import React, { useEffect, useRef, useState } from 'react';
+import { TransformWrapper, TransformComponent, ReactZoomPanPinchRef } from 'react-zoom-pan-pinch';
 import BoardNode from './BoardNode';
 import { Board, Node } from '../types';
 
@@ -18,11 +18,26 @@ const BoardDisplay: React.FC<BoardDisplayProps> = ({
   onGateClick,
   selectedClass,
 }) => {
+  const transformComponentRef = useRef<ReactZoomPanPinchRef | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const nodeSize = 45;
   const nodeSpacing = 1;
   const boardSize = 1201;
   const gridSize = 21;
   const gateSize = 60;
+
+  useEffect(() => {
+    if (containerRef.current && transformComponentRef.current) {
+      const { clientWidth, clientHeight } = containerRef.current;
+      const scale = Math.min(clientWidth / (boardSize * 1.2), clientHeight / (boardSize * 1.2));
+      const centerX = clientWidth / 2 - (boardSize * scale) / 2;
+      const centerY = clientHeight / 2 - (boardSize * scale) / 2;
+
+      setTimeout(() => {
+        transformComponentRef.current?.setTransform(centerX, centerY, scale);
+      }, 100);
+    }
+  }, [boards]);
 
   const isAdjacentToSelected = (node: Node, board: Board) => {
     const adjacentPositions = [
@@ -204,22 +219,27 @@ const BoardDisplay: React.FC<BoardDisplayProps> = ({
   };
 
   return (
-    <TransformWrapper
-      initialScale={1.0}
-      initialPositionX={boardSize / 2}
-      initialPositionY={boardSize / 2}
-      minScale={0.1}
-      maxScale={2}
-      wheel={{ step: 0.1 }}
-      limitToBounds={false}
-      panning={{ velocityDisabled: true }}
-    >
-      <TransformComponent>
-        <div className="relative" style={{ width: `${boardSize * 3}px`, height: `${boardSize * 3}px` }}>
-          {boards.map((board) => renderBoard(board, getBoardPosition(board)))}
-        </div>
-      </TransformComponent>
-    </TransformWrapper>
+    <div ref={containerRef} style={{ width: '100%', height: '100%' }}>
+      <TransformWrapper
+        initialScale={1}
+        minScale={0.1}
+        maxScale={2}
+        wheel={{ step: 0.1 }}
+        limitToBounds={false}
+        panning={{ velocityDisabled: true }}
+      >
+        {({ setTransform, ...rest }) => (
+          <TransformComponent
+            wrapperStyle={{ width: '100%', height: '100%' }}
+            contentStyle={{ width: `${boardSize * 3}px`, height: `${boardSize * 3}px` }}
+          >
+            <div className="relative" style={{ width: `${boardSize * 3}px`, height: `${boardSize * 3}px` }}>
+              {boards.map((board) => renderBoard(board, getBoardPosition(board)))}
+            </div>
+          </TransformComponent>
+        )}
+      </TransformWrapper>
+    </div>
   );
 };
 

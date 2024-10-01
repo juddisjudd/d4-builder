@@ -108,7 +108,7 @@ const ParagonBoard: React.FC = () => {
 
   return (
     <div className="h-full w-full">
-      <div className="mb-4 flex items-center justify-between p-4">
+      <div className="-mb-2 -mt-3 flex items-center justify-between p-4">
         <div>
           Points: {330 - remainingPoints} Remaining: {remainingPoints}
         </div>

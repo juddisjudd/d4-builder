@@ -4,12 +4,12 @@
       "slot": "Helm",
       "all": [
         "Maximum Life",
-        "Life per Second",
-        "Maximum Resource",
-        "Thorns",
+        "Life per 5 Seconds",
         "Healing Received",
-        "Lucky Hit Chance",
         "Armor",
+        "Maximum Resource",
+        "Cooldown Reduction",
+        "Lucky Hit Chance",
         "Resistance to All Elements",
         "Cold Resistance",
         "Fire Resistance",
@@ -17,9 +17,17 @@
         "Poison Resistance",
         "Shadow Resistance",
         "Impairment Reduction",
-        "Cooldown Reduction"
+        "Thorns"
       ],
-      "barbarian": ["Strength", "Fury per Second", "Ranks to Death Blow", "Ranks to Rupture", "Ranks to Steel Grasp"],
+      "barbarian": [
+        "Strength",
+        "Fury per Second",
+        "Ranks to Death Blow",
+        "Ranks to Rupture",
+        "Ranks to Steel Grasp",
+        "Ranks to Mighty Throw",
+        "Ranks to Weapon Mastery Skills"
+      ],
       "druid": [
         "Willpower",
         "Spirit per Second",
@@ -33,18 +41,16 @@
         "Essence per Second",
         "Ranks to Decrepify",
         "Ranks to Iron Maiden",
-        "Ranks to Skeletal Mage Mastery",
         "Ranks to Skeletal Warrior Mastery",
-        "Ranks to Golem Mastery",
         "Ranks to Curse Skills"
       ],
       "rogue": [
         "Dexterity",
         "Energy per Second",
-        "Ranks to Imbuement Skills",
         "Ranks to Cold Imbuement",
         "Ranks to Poison Imbuement",
-        "Ranks to Shadow Imbuement"
+        "Ranks to Shadow Imbuement",
+        "Ranks to Imbuement Skills"
       ],
       "sorcerer": [
         "Intelligence",
@@ -52,15 +58,24 @@
         "Ranks to Hydra",
         "Ranks to Ice Blades",
         "Ranks to Lightning Spear",
+        "Ranks to Familiar",
         "Ranks to Conjuration Skills"
+      ],
+      "spiritborn": [
+        "Dexterity",
+        "Vigor per Second",
+        "Ranks to Payback",
+        "Ranks to Razor Wings",
+        "Ranks to Rushing Claw",
+        "Ranks to Touch of Death",
+        "Ranks to Potency Skills"
       ]
     },
     {
       "slot": "Chest Armor",
       "all": [
         "Maximum Life",
-        "Life per Second",
-        "Thorns",
+        "Life per 5 Seconds",
         "Healing Received",
         "Armor",
         "Resistance to All Elements",
@@ -69,7 +84,8 @@
         "Lightning Resistance",
         "Poison Resistance",
         "Shadow Resistance",
-        "Impairment Reduction"
+        "Impairment Reduction",
+        "Thorns"
       ],
       "barbarian": [
         "Strength",
@@ -92,30 +108,37 @@
       "necromancer": [
         "Intelligence",
         "Essence per Second",
+        "Ranks to Blood Mist",
         "Ranks to Bone Prison",
         "Ranks to Corpse Explosion",
-        "Ranks to Blood Mist",
         "Ranks to Macabre Skills",
-        "Ranks to Skeletal Mage Mastery",
-        "Ranks to Skeletal Warrior Mastery",
         "Ranks to Golem Mastery"
       ],
       "rogue": [
         "Dexterity",
         "Energy per Second",
-        "Ranks to Subterfuge Skills",
-        "Ranks to Smoke Grenades",
         "Ranks to Concealment",
+        "Ranks to Dark Shroud",
         "Ranks to Poison Trap",
-        "Ranks to Dark Shroud"
+        "Ranks to Smoke Grenades",
+        "Ranks to Subterfuge Skills"
       ],
       "sorcerer": [
         "Intelligence",
         "Mana per Second",
+        "Ranks to Flame Shield",
         "Ranks to Frost Nova",
         "Ranks to Ice Armor",
         "Ranks to Teleport",
-        "Ranks to Flame Shield",
+        "Ranks to Defensive Skills"
+      ],
+      "spiritborn": [
+        "Dexterity",
+        "Vigor per Second",
+        "Ranks to Armored Hide",
+        "Ranks to Concussive Stomp",
+        "Ranks to Counterattack",
+        "Ranks to Scourge",
         "Ranks to Defensive Skills"
       ]
     },
@@ -123,17 +146,18 @@
       "slot": "Gloves",
       "all": [
         "Maximum Life",
-        "Life per Hit",
+        "Lucky Hit: Up to a 15% Chance to Heal",
+        "Armor",
+        "Resource Cost Reduction",
+        "Lucky Hit: Up to a 15% Chance to Restore Primary Resource",
         "Attack Speed",
         "Critical Strike Chance",
+        "Lucky Hit Chance",
         "Critical Strike Damage",
         "Overpower Damage",
         "Vulnerable Damage",
         "Damage Over Time",
-        "Lucky Hit Chance",
-        "Lucky Hit: Chance to Make Enemies Vulnerable for 2 Seconds",
-        "Lucky Hit: Up to a 5% Chance to Restore Primary Resource",
-        "Armor",
+        "Lucky Hit: Up to a Chance to Make Enemies Vulnerable for 2 Seconds",
         "Resistance to All Elements",
         "Cold Resistance",
         "Fire Resistance",
@@ -146,7 +170,7 @@
         "Strength",
         "Ranks to Double Swing",
         "Ranks to Hammer of the Ancients",
-        "Ranks to Rend",
+        "Ranks  to Rend",
         "Ranks to Upheaval",
         "Ranks to Whirlwind"
       ],
@@ -156,6 +180,7 @@
         "Ranks to Lightning Storm",
         "Ranks to Pulverize",
         "Ranks to Shred",
+        "Ranks to Stone Burst",
         "Ranks to Tornado"
       ],
       "necromancer": [
@@ -165,9 +190,7 @@
         "Ranks to Blood Surge",
         "Ranks to Bone Spear",
         "Ranks to Sever",
-        "Ranks to to Golem Mastery",
-        "Ranks to Skeletal Mage Mastery",
-        "Ranks to to Skeletal Warrior Mastery"
+        "Ranks to Skeletal Mage Mastery"
       ],
       "rogue": [
         "Dexterity",
@@ -185,14 +208,20 @@
         "Ranks to Charged Bolts",
         "Ranks to Incinerate",
         "Ranks to Frozen Orb"
+      ],
+      "spiritborn": [
+        "Dexterity",
+        "Ranks to Crushing Hand",
+        "Ranks to Quill Volley",
+        "Ranks to Rake",
+        "Ranks to Stinger"
       ]
     },
     {
       "slot": "Pants",
       "all": [
         "Maximum Life",
-        "Life per Second",
-        "Thorns",
+        "Life per 5 Seconds",
         "Healing Received",
         "Armor",
         "Dodge Chance",
@@ -203,49 +232,56 @@
         "Poison Resistance",
         "Shadow Resistance",
         "Impairment Reduction",
+        "Thorns",
         "Ranks to Basic Skills"
       ],
       "barbarian": ["Strength", "Ranks to Lunging Strike", "Ranks to Bash", "Ranks to Frenzy", "Ranks to Flay"],
       "druid": [
         "Willpower",
+        "Ranks to Claw",
         "Ranks to Earth Spike",
-        "Ranks to Wind Shear",
-        "Ranks to Storm Strike",
         "Ranks to Maul",
-        "Ranks to Claw"
+        "Ranks to Storm Strike",
+        "Ranks to Wind Shear"
       ],
       "necromancer": [
         "Intelligence",
-        "Ranks to Hemorrhage",
-        "Ranks to Decompose",
         "Ranks to Bone Splinters",
+        "Ranks to Decompose",
+        "Ranks to Hemorrhage",
         "Ranks to Reap",
-        "Ranks to Skeletal Mage Mastery",
-        "Ranks to Skeletal Warrior Mastery",
-        "Ranks to Golem Mastery"
+        "Ranks to Skeletal Mage Mastery"
       ],
       "rogue": [
         "Dexterity",
+        "Ranks to Blade Shift",
+        "Ranks to Forceful Arrow",
         "Ranks to Heartseeker",
         "Ranks to Invigorating Strike",
-        "Ranks to Puncture",
-        "Ranks to Blade Shift"
+        "Ranks to Puncture"
       ],
-      "sorcerer": ["Intelligence", "Ranks to Frost Bolt", "Ranks to Spark", "Ranks to Fire Bolt", "Ranks to Arc Lash"]
+      "sorcerer": ["Intelligence", "Ranks to Arc Lash", "Ranks to Fire Bolt", "Ranks to Frost Bolt", "Ranks to Spark"],
+      "spiritborn": [
+        "Dexterity",
+        "Ranks to Rock Splitter",
+        "Ranks to Thunderspike",
+        "Ranks to Thrash",
+        "Ranks to Withering Fist"
+      ]
     },
     {
       "slot": "Boots",
       "implicit": [
         "+3 Max Evade Charges",
-        "Evade Grants +125% Movement Speed for 1 Second",
+        "Evade Grants +125% Movement Speed for 1.5 Seconds",
         "Attacks Reduce Evade's Cooldown by 1.5 Seconds"
       ],
       "all": [
         "Maximum Life",
-        "Life per Second",
-        "Movement Speed",
+        "Life per 5 Seconds",
         "Armor",
         "Dodge Chance",
+        "Movement Speed",
         "Resistance to All Elements",
         "Cold Resistance",
         "Fire Resistance",
@@ -257,17 +293,17 @@
       "barbarian": [
         "Strength",
         "Fury per Second",
-        "Ranks to Leap",
         "Ranks to Charge",
-        "Ranks to War Cry",
         "Ranks to Kick",
-        "Ranks to Wrath Skills"
+        "Ranks to Leap",
+        "Ranks to War Cry",
+        "Ranks Brawling Skills"
       ],
       "druid": [
         "Willpower",
         "Spirit per Second",
-        "Ranks to Hurricane",
         "Ranks to Boulder",
+        "Ranks to Hurricane",
         "Ranks to Rabies",
         "Ranks to Trample",
         "Ranks to Wrath Skills"
@@ -277,46 +313,54 @@
         "Essence per Second",
         "Ranks to Bone Spirit",
         "Ranks to Corpse Tendrils",
-        "Ranks to Skeletal Mage Mastery",
         "Ranks to Skeletal Warrior Mastery",
-        "Ranks to Golem Mastery",
         "Ranks to Corpse Skills"
       ],
       "rogue": [
         "Dexterity",
         "Energy per Second",
+        "Ranks to Caltrops",
+        "Ranks to Dance of Knives",
         "Ranks to Dash",
         "Ranks to Shadow Step",
-        "Ranks to Caltrops",
         "Ranks to Agility Skills"
       ],
       "sorcerer": [
         "Intelligence",
         "Mana per Second",
-        "Ranks to Meteor",
+        "Ranks to Ball Lightning",
         "Ranks to Blizard",
         "Ranks to Firewall",
-        "Ranks to Ball Lightning",
+        "Ranks to Meteor",
         "Ranks to Mastery Skills"
+      ],
+      "spiritborn": [
+        "Dexterity",
+        "Vigor per Second",
+        "Ranks to Ravager",
+        "Ranks to Soar",
+        "Ranks to Toxic Skin",
+        "Ranks to Vortex",
+        "Ranks to Focus Skills"
       ]
     },
     {
       "slot": "Amulet",
-      "implicit": ["25% Resistance to All Elements"],
+      "implicit": ["30% Resistance to All Elements"],
       "all": [
         "Maximum Life",
-        "Life per Second",
-        "Life per Hit",
+        "Life per 5 Seconds",
+        "Lucky Hit: Up to a 15% Chance to Heal",
+        "Total Armor",
         "Maximum Resource",
+        "Resource Cost Reduction",
+        "Cooldown Reduction",
+        "Movement Speed",
         "Damage",
         "Attack Speed",
         "Critical Strike Chance",
         "Lucky Hit Chance",
-        "Lucky Hit: Chance to Make Enemies Vulnerable for 2 Seconds",
-        "Total Armor",
-        "Resource Cost Reduction",
-        "Cooldown Reduction",
-        "Movement Speed",
+        "Lucky Hit: Up to a Chance to Make Enemies Vulnerable for 2 Seconds",
         "Resistance to All Elements",
         "Cold Resistance",
         "Fire Resistance",
@@ -326,47 +370,42 @@
       ],
       "barbarian": [
         "Strength",
+        "% Strength",
         "Fury on Kill",
-        "Ranks to All Brawling Skills",
-        "Ranks to All Defensive Skills",
-        "Ranks to All Weapon Mastery Skills",
         "Ranks to Brute Force",
         "Ranks to Counteroffensive",
         "Ranks to Cut to the Bone",
+        "Ranks to Duelist",
         "Ranks to Heavy Handed",
         "Ranks to No Mercy",
-        "Ranks to Outburst",
-        "Ranks to Slaying Strike",
-        "Ranks to Tough as Nails",
-        "Ranks to Wallop",
-        "Ranks to Pit Fighter"
+        "Ranks to Pit Fighter",
+        "Ranks to Slaying Strike"
       ],
       "druid": [
         "Willpower",
+        "% Willpower",
         "Spirit on Kill",
-        "Ranks to Nature's Reach",
-        "Ranks to Wild Impulses",
-        "Ranks to Envenom",
-        "Ranks to Crushing Earth",
-        "Ranks to Resonance",
-        "Ranks to Defiance",
-        "Ranks to Natural Disaster",
-        "Ranks to Heightened Senses",
         "Ranks to Call of the Wild",
+        "Ranks to Clarity",
+        "Ranks to Crushing Earth",
+        "Ranks to Defiance",
+        "Ranks to Envenom",
+        "Ranks to Heightened Senses",
+        "Ranks to Natural Disaster",
+        "Ranks to Nature's Reach",
         "Ranks to Quickshift",
+        "Ranks to Resonance",
         "Ranks to Toxic Claws",
-        "Ranks to Clarity"
+        "Ranks to Wild Impulses"
       ],
       "necromancer": [
         "Intelligence",
+        "% Intelligence",
         "Essence on Kill",
-        "Ranks to All Corpse Skills",
-        "Ranks to All Curse Skills",
-        "Ranks to All Macabre Skills",
         "Ranks to Amplify Damage",
         "Ranks to Coalesced Blood",
         "Ranks to Compound Fracture",
-        "Ranks to Death's Reach",
+        "Ranks to Death's Embrace",
         "Ranks to Evulsion",
         "Ranks to Fueled by Death",
         "Ranks to Gloom",
@@ -377,124 +416,142 @@
       ],
       "rogue": [
         "Dexterity",
+        "% Dexterity",
         "Energy on Kill",
+        "Ranks to Alchemical Advantage",
+        "Ranks to Concussive",
         "Ranks to Deadly Venom",
         "Ranks to Exploit",
         "Ranks to Frigid Finesse",
+        "Ranks to Impetus",
         "Ranks to Malice",
         "Ranks to Precison Imbuement",
-        "Ranks to Weapon Mastery",
-        "Ranks to Impetus",
-        "Ranks to Alchemical Advantage",
         "Ranks to Trap Mastery",
-        "Ranks to Unstable Elixirs"
+        "Ranks to Weapon Mastery"
       ],
       "sorcerer": [
         "Intelligence",
+        "% Intelligence",
         "Mana on Kill",
-        "Ranks to Hoarfrost",
         "Ranks to Conjuration Mastery",
-        "Ranks to Permafrost",
-        "Ranks to Icy Touch",
-        "Ranks to Glass Cannon",
         "Ranks to Elemental Dominance",
-        "Ranks to Inner Flames",
         "Ranks to Endless Pyre",
         "Ranks to Devouring Blaze",
+        "Ranks to Glass Cannon",
+        "Ranks to Hoarfrost",
+        "Ranks to Icy Touch",
+        "Ranks to Inner Flames",
+        "Ranks to Permafrost",
         "Ranks to Shocking Impact"
+      ],
+      "spiritborn": [
+        "Dexterity",
+        "% Dexterity",
+        "Vigor on Kill",
+        "Ranks Apex",
+        "Ranks Brilliance",
+        "Ranks Dominant",
+        "Ranks Follow Through",
+        "Ranks Furnace",
+        "Ranks Mirage",
+        "Ranks Nourishment",
+        "Ranks Oppressive",
+        "Ranks Potent",
+        "Ranks Ravenous",
+        "Ranks Resolution",
+        "Ranks Unrestrained"
       ]
     },
     {
       "slot": "Ring",
       "implicit": [
-        "10% Cold Resistance",
-        "10% Fire Resistance",
-        "10% Lightning Resistance",
-        "10% Poison Resistance",
-        "10% Shadow Resistance"
+        "12.5% Cold Resistance",
+        "12.5% Fire Resistance",
+        "12.5% Lightning Resistance",
+        "12.5% Poison Resistance",
+        "12.5% Shadow Resistance"
       ],
       "all": [
         "Maximum Life",
-        "Life per Second",
-        "Life per Hit",
+        "Life per 5 Seconds",
+        "Lucky Hit: Up to a 15% Chance to Heal",
+        "Resource Cost Reduction",
         "Damage",
         "Attack Speed",
         "Critical Strike Chance",
+        "Lucky Hit Chance",
         "Critical Strike Damage",
         "Overpower Damage",
         "Vulnerable Damage",
         "Damage Over Time",
-        "Lucky Hit Chance",
-        "Lucky Hit: Chance to Make Enemies Vulnerable for 2 Seconds",
+        "Lucky Hit: Up to a Chance to Make Enemies Vulnerable for 2 Seconds",
         "Resistance to All Elements",
         "Cold Resistance",
         "Fire Resistance",
         "Lightning Resistance",
         "Poison Resistance",
-        "Shadow Resistance",
-        "Resource Cost Reduction"
+        "Shadow Resistance"
       ],
       "barbarian": ["Strength", "Fury on Kill"],
       "druid": ["Willpower", "Spirit on Kill"],
       "necromancer": ["Intelligence", "Essence on Kill"],
-      "rogue": ["Dexterity", "Energy on Kill", ""],
-      "sorcerer": ["Intelligence", "Mana on Kill", ""]
+      "rogue": ["Dexterity", "Energy on Kill"],
+      "sorcerer": ["Intelligence", "Mana on Kill"],
+      "spiritborn": ["Dexterity", "Vigor on Kill"]
     },
     {
       "slot": "Weapon",
       "implicit": [
-        "1h Sword: 15% Critical Strike Damage",
-        "2h Sword: 30% Critical Strike Damage",
-        "1h Axe: 20% Damage Over Time",
-        "2h Axe: 40% Damage Over Time",
-        "1h Mace: 52.5% Overpower Damage",
-        "2h Mace: 105% Overpower Damage",
-        "Polearm: 64% Vulnerable Damage",
-        "Dagger: 20% Damage to Close Enemies",
-        "Bow: 30% Critical Strike Damage",
-        "Crossbow: 32% Vulnerable Damage",
-        "1h Scythe: 20% Summoning Damage",
-        "2h Scythe: 40% Summoning Damage",
-        "Wand: 16% Vulnerable Damage",
-        "Staff: 40% Damage Over Time",
-        "Quarterstaff: 40% Block Chance",
-        "Glaive: 32% Damage to Elites"
+        "1h Sword: 58.7% Critical Strike Damage",
+        "2h Sword: 117.3% Critical Strike Damage",
+        "1h Axe: 74% Damage Over Time",
+        "2h Axe: 147.9% Damage Over Time",
+        "1h Mace: 196.3% Overpower Damage",
+        "2h Mace: 392.7% Overpower Damage",
+        "Polearm: 114.8% Vulnerable Damage",
+        "Dagger: 74% Damage to Close Enemies",
+        "Bow: 117.3% Critical Strike Damage",
+        "Crossbow: 114.8% Vulnerable Damage",
+        "1h Scythe: 74% Summoning Damage",
+        "2h Scythe: 147.9% Summoning Damage",
+        "Wand: 57.4% Vulnerable Damage",
+        "Staff: 147.9% Damage Over Time",
+        "Quarterstaff: 80% Block Chance & 50% Blocked Damage Reduction",
+        "Glaive: 223% Damage to Elites"
       ],
       "all": [
         "Maximum Life",
-        "Life per Hit",
-        "Lucky Hit: Up to a 5% Chance to Restore Primary Resource",
+        "Lucky Hit: Up to a 15% Chance to Heal",
+        "Lucky Hit: Up to a 15% Chance to Restore Primary Resource",
+        "Damage",
         "Critical Strike Damage",
         "Overpower Damage",
         "Vulnerable Damage",
-        "Damage Over Time",
-        "Damage",
-        "Resource Cost Reduction"
+        "Damage Over Time"
       ],
-      "barbarian": ["Strength", "Fury on Kill"],
-      "druid": ["Willpower", "Spirit on Kill"],
-      "necromancer": ["Intelligence", "Essence on Kill"],
-      "rogue": ["Dexterity", "Energy on Kill", ""],
-      "sorcerer": ["Intelligence", "Mana on Kill", ""]
+      "barbarian": ["Strength", "Fury on Kill (2H Only)", "Resource Cost Reduction (2H Only)"],
+      "druid": ["Willpower", "Spirit on Kill (2H Only)", "Resource Cost Reduction (2H Only)"],
+      "necromancer": ["Intelligence", "Essence on Kill (2H Only)", "Resource Cost Reduction (2H Only)"],
+      "rogue": ["Dexterity", "Energy on Kill (2H Only)", "Resource Cost Reduction (2H Only)"],
+      "sorcerer": ["Intelligence", "Mana on Kill (2H Only)", "Resource Cost Reduction (2H Only)"],
+      "spiritborn": ["Dexterity", "Vigor on Kill", "Resource Cost Reduction"]
     },
     {
       "slot": "Offhand",
-      "implicit": ["Offhand: 10% Lucky Hit Chance"],
+      "implicit": ["Offhand: 38.3% Lucky Hit Chance"],
       "all": [
         "Maximum Life",
-        "Life per Hit",
+        "Lucky Hit: Up to a 15% Chance to Heal",
         "Maximum Resource",
-        "Critical Strike Chance",
-        "Lucky Hit Chance",
-        "Lucky Hit: Up to a 5% Chance to Restore Primary Resource",
+        "Resource Cost Reduction",
+        "Lucky Hit: Up to a 15% Chance to Restore Primary Resource",
         "Cooldown Reduction",
         "Damage",
-        "Resource Cost Reduction"
+        "Critical Strike Chance",
+        "Lucky Hit Chance"
       ],
-      "barbarian": ["Strength"],
       "druid": ["Willpower", "Spirit on Kill"],
       "necromancer": ["Intelligence", "Essence on Kill"],
-      "rogue": ["Dexterity"],
       "sorcerer": ["Intelligence", "Mana on Kill"]
     },
     {
@@ -502,21 +559,20 @@
       "implicit": ["Shield: 80% Main Hand Weapon Damage"],
       "all": [
         "Maximum Life",
-        "Thorns",
-        "Life per Second",
+        "Life per 5 Seconds",
+        "Armor",
+        "Damage Reduction",
         "Damage",
         "Critical Strike Chance",
-        "Armor",
         "Resistance to All Elements",
         "Cold Resistance",
         "Fire Resistance",
         "Lightning Resistance",
         "Poison Resistance",
-        "Shadow Resistance",
-        "Damage Reduction",
-        "Impairment Reduction"
+        "Shadow Resistance\nImpairment Reduction",
+        "Thorns"
       ],
-      "necromancer": ["Intelligence"]
+      "necromancer": ["Intelligence", "Essence on Kill"]
     }
   ]
 }

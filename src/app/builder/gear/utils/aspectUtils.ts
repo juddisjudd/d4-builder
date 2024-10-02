@@ -73,7 +73,7 @@ export const getWeaponTypes = (slotType: string, className: string): string[] =>
       if (lowerSlotType === 'weapon') return ['Staff', '1h Sword', 'Wand'];
       return [];
     case 'spiritborn':
-      if (lowerSlotType === 'weapon') return ['Quarterstaff'];
+      if (lowerSlotType === 'weapon') return ['Quarterstaff', 'Glaive'];
       return [];
     default:
       return [];

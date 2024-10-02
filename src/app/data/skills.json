@@ -20,7 +20,7 @@
         "Fury"
       ],
       "description": [
-        "Bash the enemy with your weapon, dealing {value1} damage. After bashing enemies 4 times, your next Bash will Clobber, Stunning enemies for 1.5 seconds. Clobber twice as often while using a Two-Handed weapon."
+        "Bash the enemy with your weapon, dealing {value1} damage. After bashing enemies 4 times, your next Bash will clobber, Stunning enemies for 1.5 seconds. Clobber twice as often while using a Two-Handed weapon."
       ],
       "extra": ["Physical Damage"],
       "value1": ["33%", "36%", "40%", "43%", "46%"],
@@ -44,7 +44,7 @@
     {
       "name": "Flay",
       "class": "Barbarian",
-      "tags": ["Basic"],
+      "tags": ["Basic", "Slashing"],
       "fury_generate": 15,
       "lucky_hit": "50%",
       "filters": [
@@ -89,7 +89,7 @@
       "name": "Frenzy",
       "class": "Barbarian",
       "tags": ["Basic", "Dual Wield"],
-      "fury_generate": 4,
+      "fury_generate": 7,
       "lucky_hit": "30%",
       "filters": ["Berserking", "Damage Reduction", "Physical", "Basic", "Dual Wield", "Attack Speed", "Fury"],
       "description": [
@@ -97,21 +97,23 @@
         "If Frenzy hits an enemy, its Attack Speed is increased by +20% for 3 seconds, up to +60%."
       ],
       "extra": ["Physical Damage", "Requires Dual Wielded weapons"],
-      "value1": ["26%", "29%", "31%", "34%", "36%"],
+      "value1": ["30%", "33%", "36%", "39%", "42%"],
       "runes": [
         {
           "name": "Enhanced",
-          "description": ["While Frenzy is granting +60% bonus Attack Speed, it also generates 3 additional Fury."]
+          "description": [
+            "While Frenzy is granting +60% bonus Attack Speed, the Fury costs of your Core Skills are reduced by 25%."
+          ]
         },
         {
           "name": "Battle",
           "description": [
-            "While Berserking, your other skills gain +5% Attack Speed for each stack of Frenzy you have."
+            "While Berserking, your other skills gain +6% Attack Speed for each stack of Frenzy you have."
           ]
         },
         {
           "name": "Combat",
-          "description": ["You gain 8% Damage Reduction each stack of Frenzy you currently have."]
+          "description": ["You gain 5% Damage Reduction and 5% Movement Speed per stack of Frenzy you currently have."]
         }
       ]
     },
@@ -138,7 +140,7 @@
       ],
       "description": ["Lunge forward and strike an enemy for {value1} damage."],
       "extra": ["Physical Damage", "Requires any complete Arsenal weapon"],
-      "value1": ["33%", "36%", "39%", "42%", "45%"],
+      "value1": ["33%", "36%", "40%", "43%", "46%"],
       "runes": [
         {
           "name": "Enhanced",
@@ -167,7 +169,7 @@
         "Sweep your weapons from opposite directions, dealing {value1} damage with each weapon. Enemies caught in the center are damaged by both."
       ],
       "extra": ["Physical Damage", "Requires Dual Wielded weapons"],
-      "value1": ["50%", "54%", "58%", "62%", "66%"],
+      "value1": ["50%", "55%", "60%", "65%", "70%"],
       "runes": [
         {
           "name": "Enhanced",
@@ -209,7 +211,7 @@
         {
           "name": "Furious",
           "description": [
-            "Hammer of the Ancients gains x2% Critical Strike Chance for every 10 Fury you had when cast. Its Critical Strikes Knock Down enemies for 1.5 seconds."
+            "Hammer of the Ancients gains +2% Critical Strike Chance for every 10 Fury you had when cast. Its Critical Strikes Knock Down enemies for 2 seconds."
           ]
         }
       ]
@@ -217,7 +219,7 @@
     {
       "name": "Rend",
       "class": "Barbarian",
-      "tags": ["Core"],
+      "tags": ["Core", "Slashing"],
       "fury_cost": 35,
       "lucky_hit": "33%",
       "filters": ["Bleed", "Vulnerable", "Physical", "DoT", "Core", "Slashing", "Fury"],
@@ -292,7 +294,7 @@
       ],
       "description": ["Rapidly attack surrounding enemies for {value1} damage."],
       "extra": ["Physical Damage", "Requires any complete Arsenal weapon"],
-      "value1": ["18%", "20%", "22%", "24%", "25%"],
+      "value1": ["20%", "22%", "24%", "26%", "28%"],
       "runes": [
         {
           "name": "Enhanced",
@@ -346,21 +348,23 @@
       "filters": ["Stun", "Physical", "Defensive", "Cooldown", "Fury"],
       "description": ["Smash the ground, dealing {value2} damage and Stunning surrounding enemies for 3 seconds."],
       "extra": ["Physical Damage"],
-      "value1": [16, 15.2, 14.4, 13.6, 12.8],
-      "value2": ["10%", "10%", "11%", "12%", "13%"],
+      "value1": [16, 15.2, 14.4, 13.76, 13.12],
+      "value2": ["20%", "22%", "24%", "26%", "28%"],
       "runes": [
         {
           "name": "Enhanced",
-          "description": ["Increase Ground Stomp's duration by 1 second."]
+          "description": ["Ground Stomp generates 60 Fury and has a 1 second increased Stun duration."]
         },
         {
           "name": "Tactical",
-          "description": ["Ground Stomp generates 60 Fury."]
+          "description": [
+            "Ground Stomp is now a Brawling Skill and deals x800% increased damage. It also applies Vulnerable for 4 seconds."
+          ]
         },
         {
           "name": "Strategic",
           "description": [
-            "Reduce the Cooldown of your Ultimate Skill by 2 second for each enemy damaged by Ground Stomp."
+            "Reduce the Cooldown of your Ultimate Skill by 4 seconds per enemy damaged by Ground Stomp, up to 12 seconds."
           ]
         }
       ]
@@ -426,7 +430,7 @@
       "class": "Barbarian",
       "tags": ["Brawling", "Mobility"],
       "cooldown": "{value1}",
-      "lucky_hit": "33%",
+      "lucky_hit": "100%",
       "filters": [
         "Stun",
         "Knock Back",
@@ -442,7 +446,7 @@
         "Cooldown"
       ],
       "description": [
-        "Become Unstoppable and rush forward, pushing enemies with you and then swinging through them dealing {value2} damage and Knocking them back."
+        "Become Unstoppable and rush forward, pushing enemies with you and then swinging through them dealing {value2} damage and Knocking them Back."
       ],
       "extra": ["Physical Damage", "Requires any complete Arsenal weapon"],
       "value1": [17, 16.15, 15.3, 14.62, 13.94],
@@ -487,13 +491,13 @@
         {
           "name": "Mighty",
           "description": [
-            "Kicked enemies deal 70% damage to enemies they collide with while being Knocked Back. Enemies damaged this way are Knocked Down for 2 seconds."
+            "Kicked enemies deal 54% damage to enemies they collide with while being Knocked Back. Enemies damaged this way are Knocked Down for 2 seconds."
           ]
         },
         {
           "name": "Power",
           "description": [
-            "If Kick damages an enemy, it consumes all of your Fury and deals an additional 25% damage per 10 Fury spent. Kick no longer Knocks Back enemies."
+            "Kick is now also a Core Skill. If Kick damages an enemy, it consumes all of your Fury and deals an additional 25% damage per 10 Fury spent. Kick no longer Knocks Back enemies."
           ]
         }
       ]
@@ -568,7 +572,7 @@
     {
       "name": "Death Blow",
       "class": "Barbarian",
-      "tags": ["Weapon Mastery"],
+      "tags": ["Weapon Mastery", "Slashing"],
       "cooldown": 15,
       "lucky_hit": "50%",
       "filters": [
@@ -612,7 +616,7 @@
       "lucky_hit": "50%",
       "filters": ["Bleed", "Heal", "Physical", "Weapon Mastery", "Slashing", "Attack Speed", "Life"],
       "description": [
-        "Skewer enemies in front of you, dealing 13% damage which isguaranteed to Overpower. Then rip your weapon out, damaging enemies for their total Bleeding amount and removing all Bleeding damage from them."
+        "Skewer enemies in front of you, dealing 13% damage which is guaranteed to Overpower. Then rip your weapon out, damaging enemies for their total Bleeding amount and removing all Bleeding damage from them."
       ],
       "extra": ["Physical Damage", "Requires a Slashing weapon"],
       "value1": [10, 9.5, 9, 8.6, 8.2],
@@ -620,7 +624,7 @@
         {
           "name": "Enhanced",
           "description": [
-            "Ripping your weapon out of enemies during Rupture causes an explosion that deals 70% Bleeding damage over 5 seconds. This damage is increased by x10% for each 50 Strength you have."
+            "Ripping your weapon out of enemies during Rupture causes an explosion that deals 98% Bleeding damage over 5 seconds. This damage is increased by x20% for each 50 Strength you have."
           ]
         },
         {
@@ -643,7 +647,7 @@
       "filters": ["Berserking", "Vulnerable", "Pull", "Physical", "Weapon Mastery"],
       "description": ["Thow out a trio of chains that deal {value2} damage and Pull In enemies."],
       "extra": ["Physical Damage"],
-      "value1": [11, 10.45, 9.9, 9.35, 8.8],
+      "value1": [11, 10.45, 9.9, 9.46, 9.02],
       "value2": ["23%", "25%", "28%", "30%", "32%"],
       "runes": [
         {
@@ -661,17 +665,51 @@
       ]
     },
     {
+      "name": "Mighty Throw",
+      "class": "Barbarian",
+      "tags": ["Weapon Mastery"],
+      "cooldown": 12,
+      "filters": ["Attack Speed", "Barrier", "Maximum Life", "Stun"],
+      "description": [
+        "Hurl your weapon, dealing {value1} damage upon impact and sticking in the ground. While in the ground, your weapon pulses and deals {value2} damage every second for 4 seconds."
+      ],
+      "extra": ["Physical Damage", "Requires any complete Arsenal weapon"],
+      "value1": ["60%", "66%", "72%", "78%", "84%"],
+      "value2": ["20%", "22%", "24%", "26%", "28%"],
+      "runes": [
+        {
+          "name": "Enhanced",
+          "description": ["While a thrown weapon is out, gain +25% increased Attack Speed."]
+        },
+        {
+          "name": "Warrior's",
+          "description": ["Mighty Throw's impact deals x200% increased damage and Stuns enemies for 2 seconds."]
+        },
+        {
+          "name": "Fighter's",
+          "description": [
+            "Swapping weapons near any of your thrown weapons creates an additional pulse. Each extra pulse generates 5% of your Maximum Life as a Barrier for 5 seconds."
+          ]
+        }
+      ]
+    },
+    {
       "name": "Call of the Ancients",
       "class": "Barbarian",
       "tags": ["Ultimate"],
-      "cooldown": 50,
+      "cooldown": "{value5}",
       "filters": ["Stun", "Slow", "Ultimate", "Attack Speed", "Fury"],
       "description": ["Call upon 3 Ancients to aid you in battle for 6 seconds."],
       "description_list": [
-        "Korlic leaps at enemies, dealing 175% damage and swings his weapons in a frenzy, dealing 59% damage per hit.",
-        "Talic spins in a whirlwind rapidly attacking enemies for 117% damage.",
-        "Madawc upheaves the ground, dealing 332% damage."
+        "Korlic leaps at enemies, dealing {value1} damage and swings his weapons in a frenzy, dealing {value2} damage per hit.",
+        "Talic spins in a whirlwind rapidly attacking enemies for {value3} damage.",
+        "Madawc upheaves the ground, dealing {value4} damage."
       ],
+      "value1": ["110%", "121%", "132%", "143%", "154%"],
+      "value2": ["40%", "44%", "48%", "52%", "56%"],
+      "value3": ["80%", "88%", "96%", "104%", "112%"],
+      "value4": ["200%", "220%", "240%", "260%", "280%"],
+      "value5": [50, 47.5, 45, 42.5, 40],
       "runes": [
         {
           "name": "Prime",
@@ -694,7 +732,7 @@
       "name": "Iron Maelstrom",
       "class": "Barbarian",
       "tags": ["Ultimate"],
-      "cooldown": 45,
+      "cooldown": "{value5}",
       "lucky_hit": "24%",
       "filters": [
         "Bleed",
@@ -713,11 +751,16 @@
       ],
       "description": ["Activate three times to attach chains to each of your weapons and perform an attack:"],
       "description_list": [
-        "First your Two-Handed Bludgeoning weapon slams into the ground, dealing 60% damage and Stunning enemies for 2 seconds.",
-        "Next, your Two-Handed Slashing weapon swiped in front of you, dealing 20% damage and inflicting 120% Bleeding damage over 5 seconds.",
-        "Finally, your Dual Wield weapons swing around you, dealing 33% damage per hit."
+        "First your Two-Handed Bludgeoning weapon slams into the ground, dealing {value1} damage and Stunning enemies for 2 seconds.",
+        "Next, your Two-Handed Slashing weapon swiped in front of you, dealing {value2} damage and inflicting {value3} Bleeding damage over 5 seconds.",
+        "Finally, your Dual Wield weapons swing around you, dealing {value4} damage per hit."
       ],
       "extra": ["Physical Damage", "Requires a Full Arsenal of weapons"],
+      "value1": ["60%", "66%", "72%", "78%", "84%"],
+      "value2": ["20%", "22%", "24%", "26%", "28%"],
+      "value3": ["120%", "132%", "144%", "156%", "168%"],
+      "value4": ["33%", "36%", "39%", "42%", "46%"],
+      "value5": [45, 42.75, 40.5, 38.7, 36.9],
       "runes": [
         {
           "name": "Prime",
@@ -737,11 +780,12 @@
       "name": "Wrath of the Berserker",
       "class": "Barbarian",
       "tags": ["Ultimate"],
-      "cooldown": 60,
+      "cooldown": "{value1}",
       "filters": ["Berserking", "Unstoppable", "Movement Speed", "Basic", "Two-Handed", "Fury"],
       "description": [
         "Explode into rage, Knocking Back surrounding enemies and gaining Berserking and Unstoppable for 5 seconds. For the next 10 seconds, dealing direct damage with Basic Skills grants Berserking for 5 seconds."
       ],
+      "value1": [60, 57, 54, 51.6, 49.2],
       "runes": [
         {
           "name": "Prime",
@@ -815,7 +859,7 @@
       "name": "Defensive Stance",
       "class": "Barbarian",
       "filters": ["Fortify", "Damage Reduction"],
-      "description": ["Increase the Damage Reduction gained while you are Fortified by an additional + {value1} ."],
+      "description": ["Increase the Damage Reduction gained while you are Fortified by an additional {value1} ."],
       "value1": ["2%", "4%", "6%"]
     },
     {
@@ -853,7 +897,7 @@
       "class": "Barbarian",
       "filters": ["Bleed", "Overpower", "Critical Strike", "DoT"],
       "description": [
-        "When causing an enemy to Bleed, you have a chance equal to your Critical Strike Chance to increase the Bleed amount by 70%, then by 100% of your Critical Strike Damage.",
+        "When causing an enemy to Bleed, you have a chance equal to your Critical Strike Chance to increase the Bleed amount by x70%, and also increased by +100% of your Critical Strike Damage bonus.",
         "Overpowering a Bleeding enemy creates an explosion that inflicts 120% Bleeding damage over 5 seconds."
       ]
     },
@@ -868,8 +912,10 @@
       "name": "Hamstring",
       "class": "Barbarian",
       "filters": ["Bleed", "Slow"],
-      "description": ["Your Bleeding effects Slow Healthy enemies by {value1} ."],
-      "value1": ["20%", "40%", "60%"]
+      "description": [
+        "Your Bleeding effects have a {value1} chance to Slow Healthy and Injured enemies by 70% each time they deal damage."
+      ],
+      "value1": ["15%", "30%", "45%"]
     },
     {
       "name": "Heavy Handed",
@@ -912,7 +958,7 @@
       "name": "Outburst",
       "class": "Barbarian",
       "filters": ["Thorns", "Life"],
-      "description": ["Gain [X] Thorns. Also gain 10 Thorns for each 50 bonus Maximum Life you have."]
+      "description": ["Gain [X] Thorns. Also gain [X] Thorns for each 20 bonus Maximum Life you have."]
     },
     {
       "name": "Pit Fighter",
@@ -959,7 +1005,7 @@
       "class": "Barbarian",
       "filters": ["Injured"],
       "description": ["You deal x {value1} increased damage against Injured enemies."],
-      "value1": ["8%", "16%", "24%"]
+      "value1": ["5%", "10%", "15%"]
     },
     {
       "name": "Swiftness",
@@ -1001,7 +1047,9 @@
       "name": "Unconstrained",
       "class": "Barbarian",
       "filters": ["Berserking"],
-      "description": ["Increase Berserk's maximum duration by 5 seconds and increase its damage bonus to 35%."]
+      "description": [
+        "Berserking's damage bonus is increased to x60%. While below 65% Life, you are always Berserk and gain a x25% Physical Damage Reduction bonus."
+      ]
     },
     {
       "name": "Walking Arsenal",
@@ -1009,7 +1057,7 @@
       "filters": ["Dual Wield", "Slashing", "Bludgeoning", "Two-Handed", "One-Handed"],
       "description": [
         "Dealing direct damage with a Two-Handed Bludgeoning, Two-Handed Slashing, or Dual Wielded weapons grants x8% increased damage for 10 seconds.",
-        "While all three damage bonuses are active, you gain an additional x10% increased damage and x10% attack speed."
+        "While all three damage bonuses are active, you gain an additional x10% increased damage and Attack Speed."
       ]
     },
     {
@@ -1020,6 +1068,43 @@
         "Your Skills using Bludgeoning weapons deal x {value1} increased damage if the enemy is Stunned or Vulnerable."
       ],
       "value1": ["5%", "10%", "15%"]
+    },
+    {
+      "name": "Barbed Carapace",
+      "class": "Barbarian",
+      "filters": ["Fury", "Thorns", "Cooldown", "Unhindered", "Close"],
+      "description": [
+        "For every 25 Fury you spend, you gain +10% Thorns for 8 seconds, up to 120%.",
+        "Casting a Skill with a Cooldown grants you Unhindered for 5 seconds. During this time, you deal 100% of your Thorns as Physical damage to Close enemies every second."
+      ]
+    },
+    {
+      "name": "Heavy Hitter",
+      "class": "Barbarian",
+      "filters": ["Ultimate"],
+      "description": ["Your Ultimate Skills deal x {value1} more damage."],
+      "value1": ["15%", "30%", "45%"]
+    },
+    {
+      "name": "Irrepressible",
+      "class": "Barbarian",
+      "filters": ["Weapon Mastery", "Fortify", "Maximum Life"],
+      "description": ["Casting a Weapon Mastery Skill Fortifies you for {value1} of your Maximum Life."],
+      "value1": ["10%", "20%", "30%"]
+    },
+    {
+      "name": "Belligerence",
+      "class": "Barbarian",
+      "filters": ["Basic"],
+      "description": ["Damaging an enemy with a Basic Skill increases your damage by x {value1} for 4 seconds."],
+      "value1": ["3%", "6%", "9%"]
+    },
+    {
+      "name": "Warpath",
+      "class": "Barbarian",
+      "filters": ["Overpower"],
+      "description": ["After Overpowering, you deal x {value1} increased damage for 4 seconds."],
+      "value1": ["4%", "8%", "12%"]
     },
     {
       "name": "Claw",
@@ -1051,7 +1136,7 @@
       "class": "Druid",
       "tags": ["Basic", "Nature Magic", "Earth"],
       "spirit_generate": 16,
-      "lucky_hit": "35%",
+      "lucky_hit": "39%",
       "filters": ["Stun", "Fortify", "Immobilize", "Knock Back", "Physical", "Basic", "Nature Magic", "Earth", "Life"],
       "description": ["Sunder the earth, impaling the first enemy hit for {value1} damage."],
       "extra": ["Physical Damage"],
@@ -1078,7 +1163,7 @@
       "class": "Druid",
       "tags": ["Basic", "Werebear", "Shapeshifting"],
       "spirit_generate": 20,
-      "lucky_hit": "30%",
+      "lucky_hit": "34%",
       "filters": ["Fortify", "Knock Down", "Physical", "Basic", "Werebear", "Shapeshifting", "Life"],
       "description": ["Shapeshift into a Werebear and maul enemies in front of you, dealing {value1} damage."],
       "extra": ["Physical Damage"],
@@ -1157,7 +1242,7 @@
       "name": "Landslide",
       "class": "Druid",
       "tags": ["Core", "Nature Magic", "Earth"],
-      "spirit_cost": 30,
+      "spirit_cost": 33,
       "lucky_hit": "20%",
       "filters": ["Stun", "Immobilize", "Physical", "Core", "Nature Magic", "Earth", "Critical Strike"],
       "description": ["Crush enemies between 4 pillars of earth, dealing up to {value1} damage."],
@@ -1188,7 +1273,7 @@
       "name": "Lightning Storm",
       "class": "Druid",
       "tags": ["Core", "Storm", "Nature Magic", "Channeled"],
-      "spirit_cost": "15 per strike",
+      "spirit_cost": "16 per strike",
       "lucky_hit": "15%",
       "filters": ["Lightning", "Core", "Storm", "Nature Magic", "Channeled", "Immobilize"],
       "description": [
@@ -1215,7 +1300,7 @@
       "name": "Pulverize",
       "class": "Druid",
       "tags": ["Core", "Werebear", "Shapeshifting"],
-      "spirit_cost": 35,
+      "spirit_cost": 38,
       "lucky_hit": "25%",
       "filters": [
         "Stun",
@@ -1243,7 +1328,7 @@
         {
           "name": "Raging",
           "description": [
-            "Pulverize deals x30% increased Overpower Damage. Enemies Overpowered by Pulverize are Stunned for 3 seconds."
+            "Pulverize deals x75% increased Overpower Damage. Enemies Overpowered by Pulverize are Stunned for 3 seconds."
           ]
         },
         {
@@ -1256,7 +1341,7 @@
       "name": "Shred",
       "class": "Druid",
       "tags": ["Core", "Werewolf", "Shapeshifting", "Mobility"],
-      "spirit_cost": 35,
+      "spirit_cost": 38,
       "lucky_hit": "20%",
       "filters": ["Poison", "Heal", "Physical", "Core", "Werewolf", "Shapeshifting"],
       "description": ["Shapeshift into a Werewolf and perform a trio of combo attacks:"],
@@ -1277,7 +1362,7 @@
         {
           "name": "Raging",
           "description": [
-            "Shred's third combo attack is larger and applies an additional 28% Poisoning damage over 5 seconds."
+            "Shred's third combo attack is larger and applies an additional 143% Poisoning damage over 5 seconds."
           ]
         },
         {
@@ -1289,10 +1374,37 @@
       ]
     },
     {
+      "name": "Stone Burst",
+      "class": "Druid",
+      "tags": ["Core", "Nature Magic", "Earth", "Channeled"],
+      "spirit_cost": 33,
+      "filters": ["Attack Speed", "Spirit"],
+      "description": [
+        "Gather stones beneath your enemies then detonate them dealing {value1} damage.",
+        "Channeling deals 20% damage and increases the size of the affected area, up to a 400% increase after 01.0 seconds."
+      ],
+      "extra": ["Physical Damage"],
+      "value1": ["80%", "88%", "96%", "104%", "112%"],
+      "runes": [
+        {
+          "name": "Enhanced",
+          "description": ["Stone Burst's final explosion damage is increased by x25% within the initial radius."]
+        },
+        {
+          "name": "Raging",
+          "description": ["Stone Burst costs x66% more Spirit, and its final explosion deals x50% more damage."]
+        },
+        {
+          "name": "Primal",
+          "description": ["While Channeling Stone Burst, and for 2 seconds after it ends, gain +30% Attack Speed."]
+        }
+      ]
+    },
+    {
       "name": "Tornado",
       "class": "Druid",
       "tags": ["Core", "Storm", "Nature Magic"],
-      "spirit_cost": 40,
+      "spirit_cost": 44,
       "lucky_hit": "8%",
       "filters": ["Slow", "Vulnerable", "Physical", "Core", "Storm", "Nature Magic"],
       "description": ["Conjure a swirling tornado that deals {value1} damage."],
@@ -1364,8 +1476,8 @@
         "Nature Magic"
       ],
       "description": [
-        "\u003Cb\u003EPassive\u003C/b\u003E: Powerful winds surround you, granting {value1} Non-Physical Damage Reduction.",
-        "\u003Cb\u003EActive\u003C/b\u003E: The winds rapidly expand, Knocking Back enemies and dealing {value2} damage."
+        "<b>Passive</b>: Powerful winds surround you, granting {value1} Non-Physical Damage Reduction.",
+        "<b>Active</b>: The winds rapidly expand, Knocking Back enemies and dealing {value2} damage."
       ],
       "extra": ["Physical Damage"],
       "value1": ["15%", "16.4%", "17.7%", "19%", "20.3%"],
@@ -1396,7 +1508,7 @@
       "description": [
         "Shapeshift into a Werebear and bellow a mighty roar, reducing Nearby enemies' damage dealt by 40% for 4 seconds."
       ],
-      "value1": [22, 20.9, 19.8, 18.7, 17.6],
+      "value1": [22, 20.9, 19.8, 18.9, 18],
       "runes": [
         {
           "name": "Enhanced",
@@ -1404,11 +1516,11 @@
         },
         {
           "name": "Innate",
-          "description": ["Debilitating Roar also Slows enemies by 65% for its duration."]
+          "description": ["You deal x15% increased damage while Debilitating Roar is active."]
         },
         {
           "name": "Preserving",
-          "description": ["Debilitating Roar also Heals you for 4% of your Maximum Life each second for its duration."]
+          "description": ["Debilitating Roar also Heals you for 6% of your Maximum Life each second for its duration."]
         }
       ]
     },
@@ -1431,7 +1543,7 @@
         {
           "name": "Innate",
           "description": [
-            "Rock shrapnel flies outward when Earthen Bulwark is destroyed or expires, dealing 30% to surrounding enemies. This damage is increased by Barrier bonuses."
+            "Rock shrapnel flies outward when Earthen Bulwark is destroyed or expires, dealing 60% to surrounding enemies. This damage is increased by Barrier bonuses."
           ]
         },
         {
@@ -1448,12 +1560,12 @@
       "lucky_hit": "45%",
       "filters": ["Vulnerable", "Physical", "DoT", "Companion", "Critical Strike"],
       "description": [
-        "\u003Cb\u003EPassive\u003C/b\u003E: 1 Raven flies above you and periodically attacks your enemies for {value2} damage every 5 seconds.",
-        "\u003Cb\u003EActive\u003C/b\u003E: The target area is swarmed with ravens, dealing {value1} damage over 6 seconds."
+        "<b>Passive</b>: 1 Raven flies above you and periodically attacks your enemies for {value2} damage every 3 seconds.",
+        "<b>Active</b>: The target area is swarmed with ravens, dealing {value1} damage over 6 seconds."
       ],
       "extra": ["Physical Damage"],
       "value1": ["300%", "330%", "360%", "390%", "420%"],
-      "value2": ["31%", "34%", "37%", "40%", "43%"],
+      "value2": ["43%", "48%", "52%", "56%", "61%"],
       "runes": [
         {
           "name": "Enhanced",
@@ -1481,8 +1593,8 @@
       "lucky_hit": "28%",
       "filters": ["Immobilize", "Poison", "DoT", "Companion", "Critical Strike"],
       "description": [
-        "\u003Cb\u003EPassive\u003C/b\u003E: 1 poison creeper periodically emerges from the ground every 7 seconds, applying {value1} Poisoning damage over 6 seconds to an enemy in the area.",
-        "\u003Cb\u003EActive\u003C/b\u003E: Vines strangle all surrounding enemies, Immobilizing them for 2 seconds and Poisoning them for {value2} damage over 2 seconds."
+        "<b>Passive</b>: 1 poison creeper periodically emerges from the ground every 7 seconds, applying {value1} Poisoning damage over 6 seconds to an enemy in the area.",
+        "<b>Active</b>: Vines strangle all surrounding enemies, Immobilizing them for 2 seconds and Poisoning them for {value2} damage over 2 seconds."
       ],
       "extra": ["Poison Damage"],
       "value1": ["47%", "52%", "56%", "61%", "66%"],
@@ -1524,8 +1636,8 @@
         "Life"
       ],
       "description": [
-        "\u003Cb\u003EPassive\u003C/b\u003E: Summon 2 wolf companions that bite enemies for {value1} damage.",
-        "\u003Cb\u003EActive\u003C/b\u003E: Direct your wolves to focus an enemy, becoming Unstoppable, and leaping to them and striking for {value2} damage."
+        "<b>Passive</b>: Summon 2 wolf companions that bite enemies for {value1} damage.",
+        "<b>Active</b>: Direct your wolves to focus an enemy, becoming Unstoppable, and leaping to them and striking for {value2} damage."
       ],
       "extra": ["Physical Damage"],
       "value1": ["14%", "15%", "17%", "18%", "20%"],
@@ -1686,13 +1798,16 @@
       "name": "Cataclysm",
       "class": "Druid",
       "tags": ["Ultimate", "Storm", "Nature Magic"],
-      "cooldown": 60,
+      "cooldown": "{value1}",
       "lucky_hit": "62%",
       "filters": ["Knock Back", "Vulnerable", "Lightning", "Ultimate", "Storm", "Nature Magic"],
       "description": [
-        "A massive storm follows you for 10 seconds. Twisters Knock Back enemies, and lightning strikes wildly dealing 95% damage."
+        "A massive storm follows you for 10 seconds. Twisters Knock Back enemies dealing {value2} damage, and lightning strikes wildly dealing {value3} damage."
       ],
       "extra": ["Lightning Damage"],
+      "value1": [60, 57, 54, 51.6, 49.2],
+      "value2": ["46%", "51%", "55%", "60%", "64%"],
+      "value3": ["115.%", "126%", "138%", "149%", "161%"],
       "runes": [
         {
           "name": "Prime",
@@ -1708,11 +1823,12 @@
       "name": "Grizzly Rage",
       "class": "Druid",
       "tags": ["Ultimate", "Werebear", "Shapeshifting"],
-      "cooldown": 50,
+      "cooldown": "{value1}",
       "filters": ["Fortify", "Unstoppable", "Damage Reduction", "Ultimate", "Werebear", "Shapeshifting", "Life"],
       "description": [
-        "Shapeshift into a Dire Werebear for 10 seconds gaining x30% bonus damage and 20% Damage Reduction. Damage bonus is increased by 3% each second while in this form, up to a maximum of 75%. Kills extend the duration by 1 second, but the duration cannot go above 10 seconds."
+        "Shapeshift into a Dire Werebear for 10 seconds gaining x30% bonus damage and 20% Damage Reduction. Damage bonus is increased by 3% each second while in this form, up to a maximum of 75%. Kills extend the duration by 1 second, but the duration cannot go above 10 seconds. Overpowering Bosses now extends the duration by 5 seconds."
       ],
+      "value1": [50, 47.5, 45, 43, 41],
       "runes": [
         {
           "name": "Prime",
@@ -1728,12 +1844,14 @@
       "name": "Lacerate",
       "class": "Druid",
       "tags": ["Ultimate", "Werewolf", "Shapeshifting"],
-      "cooldown": 35,
+      "cooldown": "{value1}",
       "lucky_hit": "7%",
       "filters": ["Immune", "Heal", "Ultimate", "Werewolf", "Shapeshifting", "Critical Strike", "Life"],
       "description": [
-        "Shapeshift into a Werewolf, become Immune and quickly dash 10 times between enemies in the area dealing up to 560% damage."
+        "Shapeshift into a Werewolf, become Immune and quickly dash 10 times between enemies in the area dealing up to {value2} damage."
       ],
+      "value1": [35, 33.25, 31.5, 30.1, 28.7],
+      "value2": ["560%", "616%", "672%", "728%", "784%"],
       "runes": [
         {
           "name": "Prime",
@@ -1753,13 +1871,14 @@
       "name": "Petrify",
       "class": "Druid",
       "tags": ["Ultimate", "Nature Magic", "Earth"],
-      "cooldown": 50,
+      "cooldown": "{value1}",
       "filters": ["Stun", "Critical Strike", "Physical", "Ultimate", "Nature Magic", "Earth", "Spirit"],
       "description": [
-        "Encase all Nearby enemies in stone, Stunning them for 3.75 seconds. You deal x30% increased Critical Strike Damage to enemies affected by Petrify.",
-        "Against Bosses, the Critical Strike Damage bonus is increased to x50% and its duration is increased to 7.5 seconds."
+        "Encase all Nearby enemies in stone, Stunning them for 3 seconds. You deal x30% increased Critical Strike Damage to enemies affected by Petrify.",
+        "Against Bosses, the Critical Strike Damage bonus is increased to x50% and its duration is increased to 76 seconds."
       ],
       "extra": ["Physical Damage"],
+      "value1": [50, 47.5, 45, 43, 41],
       "runes": [
         {
           "name": "Prime",
@@ -1784,7 +1903,7 @@
       "name": "Ancestral Fortitude",
       "class": "Druid",
       "filters": ["Resistance"],
-      "description": ["You gain + {value1} Resistance to All Elements ."],
+      "description": ["Increases your Non-Physical Resistances by {value1} ."],
       "value1": ["5%", "10%", "15%"]
     },
     {
@@ -1801,8 +1920,8 @@
       "class": "Druid",
       "filters": ["Werewolf", "Werebear", "Attack Speed"],
       "description": [
-        "After being a Werewolf for 2 seconds, gain +30% Attack Speed for 15 seconds.",
-        "After being a Werebear for 2 seconds, deal x50% increased damage for 15 seconds."
+        "When Shapeshifting, Werebear grants x30% increases damage and Werewolf grants +20% Attack Speed.",
+        "Both bonuses persist as long as you are in either animal form, but are lost after 3 seconds in Human form."
       ]
     },
     {
@@ -1915,7 +2034,7 @@
       "name": "Envenom",
       "class": "Druid",
       "filters": ["Poison", "Critical Strike"],
-      "description": ["Poisoned enemies take x {value1} additional Critical Strike Damage."],
+      "description": ["You and your Companions gain {value1} bonus Critical Strike Damage against Poisoned enemies."],
       "value1": ["10%", "20%", "30%"]
     },
     {
@@ -1930,7 +2049,7 @@
       "class": "Druid",
       "filters": ["Damage Reduction", "Werewolf", "Werebear", "Elite"],
       "description": [
-        "When Shapeshifting into an animal form, Werebear grants {value1} Damage Reduction and Werewolf grants {value2} Movement Speed, each for 6 seconds. Bonuses are doubled while both are active."
+        "When Shapeshifting, Werebear grants {value1} Damage Reduction and Werewolf grants + {value2} Movement Speed. Both bonuses persist as long as you are in either animal form and are doubled while both are active. They are lost after 3 seconds in Human form."
       ],
       "value1": ["3%", "6%", "9%"],
       "value2": ["2%", "4%", "6%"]
@@ -1986,7 +2105,8 @@
       "class": "Druid",
       "filters": ["Earth", "Storm"],
       "description": [
-        "Casting an Earth Skill has a 35% chance to trigger a free Storm Skill of the same category, and vice versa. In addition, these free Skills count as both Earth and Storm Skills."
+        "Casting an Earth Skill has a 35% chance to trigger a free Storm Skill of the same category, and vice versa.",
+        "In addition, these free Skills count as both Earth and Storm Skills."
       ]
     },
     {
@@ -2011,6 +2131,14 @@
       "filters": ["Slow", "Poison"],
       "description": ["Poisoned enemies are slowed by {value1} ."],
       "value1": ["8%", "16%", "24%"]
+    },
+    {
+      "name": "One With Nature",
+      "class": "Druid",
+      "filters": ["Companion"],
+      "description": [
+        "Your Companion Skills each gain 1 additional companion and deal x50% increased damage.\n\nGain the Passive Effect of Ravens, Wolves, and Poison Creeper."
+      ]
     },
     {
       "name": "Perfect Storm",
@@ -2041,10 +2169,10 @@
       "class": "Druid",
       "filters": ["Shapeshifting"],
       "description": [
-        "When a Shapeshifting Skill transforms you into a different form, it deals x {value1} increased damage.\n\nWhen Shapeshifting into a new animal form, you deal {value1} increased damage for 3 seconds, up to {value2} ."
+        "Shapeshifting into a new animal form grants x {value1} increased damage, up to x {value2} . This bonus is lost after 3 seconds in Human form."
       ],
       "value1": ["1%", "2%", "3%"],
-      "value2": ["8%", "16%", "24%"]
+      "value2": ["6%", "12%", "18%"]
     },
     {
       "name": "Resonance",
@@ -2060,7 +2188,7 @@
       "class": "Druid",
       "filters": ["Fortify", "Critical Strike", "Earth", "Life"],
       "description": ["Critical Strikes with Earth Skills Fortify you for {value1} Maximum Life."],
-      "value1": ["2%", "4%", "7%"]
+      "value1": ["3%", "6%", "9%"]
     },
     {
       "name": "Stone Guard",
@@ -2101,8 +2229,8 @@
       "class": "Druid",
       "filters": ["Healthy", "Life", "Werebear", "Overpower"],
       "description": [
-        "Gain x20% additional Maximum Life while in Werebear form and for 3 seconds after leaving Werebear form.",
-        "While Healthy, deal x25% increased damage, and x30% increased Overpower damage."
+        "Gain x30% additional Maximum Life while in Werebear form and for 3 seconds after leaving Werebear form.",
+        "While Healthy, deal x15% increased damage, and x45% increased Overpower damage."
       ]
     },
     {
@@ -2121,17 +2249,48 @@
       "value2": ["5%", "10%", "15%"]
     },
     {
+      "name": "Feral Aptitude",
+      "class": "Druid",
+      "filters": ["Movement Speed", "Healthy"],
+      "description": [
+        "You deal x {value1} increased damage while Healthy and x {value2} increased damage while above 100% Movement Speed. These bonuses can stack."
+      ],
+      "value1": ["3%", "6%", "9%"],
+      "value2": ["3%", "6%", "9%"]
+    },
+    {
+      "name": "Humanity",
+      "class": "Druid",
+      "filters": ["Human"],
+      "description": ["You deal x {value1} increased damage while in Human form."],
+      "value1": ["5%", "10%", "15%"]
+    },
+    {
+      "name": "Catastrophe",
+      "class": "Druid",
+      "filters": ["Ultimate"],
+      "description": ["You deal x {value1} increased damage for 8 seconds after casting an Ultimate Skill."],
+      "value1": ["5%", "10%", "15%"]
+    },
+    {
+      "name": "Backlash",
+      "class": "Druid",
+      "filters": ["Defensive"],
+      "description": ["You deal x {value1} increased damage for 5 seconds after casting a Defensive Skill."],
+      "value1": ["4%", "8%", "12%"]
+    },
+    {
       "name": "Bone Splinters",
       "class": "Necromancer",
       "tags": ["Basic", "Bone"],
-      "essence_generate": 7,
+      "essence_generate": 6,
       "lucky_hit": "30%",
       "filters": ["Vulnerable", "Physical", "Basic", "Bone", "Essence", "Critical Strike"],
       "description": [
         "Fire 3 splinters of bone, dealing {value1} damage each. Each subsequent time an enemy is hit by the same cast of Bone Splinters, you gain 1 Essence."
       ],
       "extra": ["Physical Damage"],
-      "value1": ["9%", "10%", "11%", "12%", "13%"],
+      "value1": ["8%", "9%", "10%", "10%", "11%"],
       "runes": [
         {
           "name": "Enhanced",
@@ -2142,7 +2301,7 @@
         {
           "name": "Acolyte's",
           "description": [
-            "Hitting the same enemy at least 3 times with the same cast of Bone Splinters grants 8% Critical Strike Chance for 4 seconds."
+            "Hitting the same enemy at least 3 times with the same cast of Bone Splinters grants +8% Critical Strike Chance for 4 seconds."
           ]
         },
         {
@@ -2167,7 +2326,7 @@
         {
           "name": "Enhanced",
           "description": [
-            "Decompose now causes a small explosion x40% damage when creating a  Corpse or when the enemy dies, and you gain 10 Essence."
+            "Decompose now causes a small explosion dealing 40% damage when creating a  Corpse or when the enemy dies, and you gain 10 Essence."
           ]
         },
         {
@@ -2186,14 +2345,14 @@
       "name": "Hemorrhage",
       "class": "Necromancer",
       "tags": ["Basic", "Blood"],
-      "essence_generate": 9,
+      "essence_generate": 8,
       "lucky_hit": "50%",
       "filters": ["Fortify", "Healthy", "Physical", "Basic", "Blood", "Blood Orb", "Essence", "Attack Speed", "Life"],
       "description": [
         "Burst an enemy's blood, dealing {value1} damage. Hemorrhage has a 20% chance to form a Blood Orb."
       ],
       "extra": ["Physical Damage"],
-      "value1": ["27%", "30%", "32%", "35%", "38%"],
+      "value1": ["25%", "28%", "30%", "32%", "35%"],
       "runes": [
         {
           "name": "Enhanced",
@@ -2208,7 +2367,7 @@
         {
           "name": "Initiate's",
           "description": [
-            "Hemorrhage grants 1.6% Maximum Life as Fortify each time it hits an enemy, and has a 1.5% chance per enemy hit to Fortify you for 100% Maximum Life."
+            "Hemorrhage grants 1.6% Maximum Life as Fortify each time it hits an enemy, and has a 1.5% chance per enemy hit to Fortify you for 100% of your Maximum Life."
           ]
         }
       ]
@@ -2224,7 +2383,7 @@
         "Sweep an ethereal scythe in front of you, dealing {value1} damage. Hitting an enemy with Reap increases your Damage Reduction by 15% for 2 seconds."
       ],
       "extra": ["Shadow Damage"],
-      "value1": ["13%", "14%", "16%", "17%", "18%"],
+      "value1": ["12%", "13%", "14%", "16%", "17%"],
       "runes": [
         {
           "name": "Enhanced",
@@ -2232,7 +2391,7 @@
         },
         {
           "name": "Acolyte's",
-          "description": ["Reap forms a Corpse under the first enemy hit. Can only occur every 4 seconds."]
+          "description": ["Reap forms a Corpse under the first enemy hit. Can only occur every 5 seconds."]
         },
         {
           "name": "Initiate's",
@@ -2246,7 +2405,7 @@
       "tags": ["Core", "Darkness"],
       "essence_cost": 25,
       "lucky_hit": "40%",
-      "filters": ["Slow", "Immobilize", "Shadow", "DoT", "Core", "Darkness", "Minion"],
+      "filters": ["Shadow", "DoT", "Core", "Darkness", "Minion", "Chill"],
       "description": [
         "Unleash concentrated blight that deals {value1} damage and leaves behind a defiled area, dealing {value2} damage over 6 seconds."
       ],
@@ -2256,7 +2415,7 @@
       "runes": [
         {
           "name": "Enhanced",
-          "description": ["Blight Slows enemies by 25%."]
+          "description": ["Blight's radius is increased by 15%."]
         },
         {
           "name": "Supernatural",
@@ -2264,7 +2423,7 @@
         },
         {
           "name": "Paranormal",
-          "description": ["Blight has a 30% chance to Immobilize enemies for 2.5 seconds on impact."]
+          "description": ["Blight Chills enemies for 15% every second."]
         }
       ]
     },
@@ -2274,9 +2433,10 @@
       "tags": ["Core", "Blood"],
       "essence_cost": 15,
       "lucky_hit": "50%",
-      "filters": ["Overpower", "Physical", "Core", "Blood", "Attack Speed", "Essence", "Blood Orb"],
+      "filters": ["Overpower", "Physical", "Core", "Blood", "Attack Speed", "Essence", "Blood Orb", "Critical Strike"],
       "description": [
-        "Throw a blood lance that lingers in an enemy for 3 seconds, dealing {value1} damage to the enemy and all other lanced enemies."
+        "Throw a blood lance that lingers in an enemy for 3 seconds, dealing {value1} damage to the enemy and all other lanced enemies.",
+        "Blood Lance pierces through enemies who are currently lanced, dealing 10% reduced damage to subsequent enemies after the first."
       ],
       "extra": ["Physical Damage"],
       "value1": ["80%", "88%", "96%", "104%", "112%"],
@@ -2284,13 +2444,13 @@
         {
           "name": "Enhanced",
           "description": [
-            "Blood Lance pierces through enemies who are currently lanced, dealing 10% reduced damage to subsequent enemies after the first."
+            "After casting Blood Lance 8 times, your next cast of Blood Lance is guaranteed to Overpower and spawns a Blood Orb under the first enemy hit."
           ]
         },
         {
           "name": "Supernatural",
           "description": [
-            "After casting Blood Lance 6 times, your next cast of Blood Lance is guaranteed to Overpower and spawns a Blood Orb under the first enemy hit."
+            "Blood Lance deals x15% increased Critical Strike Damage and x15% increased Overpower damage."
           ]
         },
         {
@@ -2306,7 +2466,7 @@
       "class": "Necromancer",
       "tags": ["Core", "Blood"],
       "essence_cost": 30,
-      "lucky_hit": "20%",
+      "lucky_hit": "12%",
       "filters": ["Fortify", "Heal", "Healthy", "Overpower", "Physical", "Core", "Blood", "Life"],
       "description": [
         "Draw blood from enemies, dealing {value1} damage, and expel a blood nova, dealing {value2} damage. Blood Surge's nova damage is increased by x5% per enemy drained, up to x50%."
@@ -2318,7 +2478,7 @@
         {
           "name": "Enhanced",
           "description": [
-            "Blood Surge Heals you for 3% of your Maximum Life when drawing blood from enemies. If 4 or more enemies are drawn from, then Heal for an additional 2.5% of your Maximum Life."
+            "Blood Surge Heals you for 3% of your Maximum Life when drawing blood from enemies. If 4 or more enemies are drawn from, then Heal for an additional 3% of your Maximum Life."
           ]
         },
         {
@@ -2357,7 +2517,7 @@
         {
           "name": "Paranormal",
           "description": [
-            "Bone Spear has a 5% increased Critical Strike Chance. If Bone Spear's primary projectile Critically Strikes, it fires 2 additional bone shards upon being destroyed."
+            "Bone Spear has a +5% increased Critical Strike Chance. If Bone Spear's primary projectile Critically Strikes, it fires 2 additional bone shards upon being destroyed."
           ]
         }
       ]
@@ -2498,8 +2658,8 @@
         "Curse the target area. Enemies afflicted by Decrepify are Slowed by {value1} and deal {value2} less damage for 10 seconds."
       ],
       "extra": ["Physical Damage"],
-      "value1": ["40%", "43%", "46%", "49%", "51%"],
-      "value2": ["20%", "21%", "22%", "23%", "24%"],
+      "value1": ["40%", "43%", "45.8%", "48.5%", "51.1%"],
+      "value2": ["20%", "20.9%", "22%", "22.9%", "23.8%"],
       "runes": [
         {
           "name": "Enhanced",
@@ -2588,7 +2748,7 @@
         "Veins burst out of a Corpse, Pulling in enemies, Stunning them for 3 seconds, and dealing {value2} damage to them. Does not consume the Corpse."
       ],
       "extra": ["Physical Damage"],
-      "value1": [11, 10.45, 9.9, 9.35, 8.8],
+      "value1": [11, 10.45, 9.9, 9.46, 9.02],
       "value2": ["20%", "22%", "24%", "26%", "28%"],
       "runes": [
         {
@@ -2597,7 +2757,7 @@
         },
         {
           "name": "Blighted",
-          "description": ["Corpse Tendrils has a 35% chance to drop a Blood Orb when damaging enemies."]
+          "description": ["Corpse Tendrils has a 30% chance to drop a Blood Orb when damaging enemies."]
         },
         {
           "name": "Plagued",
@@ -2609,13 +2769,15 @@
       "name": "Army of the Dead",
       "class": "Necromancer",
       "tags": ["Ultimate", "Summoning"],
-      "cooldown": 70,
+      "cooldown": "{value1}",
       "lucky_hit": "64%",
       "filters": ["Physical", "Ultimate", "Corpse", "Minion"],
       "description": [
-        "Call forth the deep buried dead. Volatile Skeletons emerge over the next 7 seconds that explode when around enemies, dealing 45% damage."
+        "Call forth the deep buried dead. Volatile Skeletons emerge over the next 7 seconds that explode when around enemies, dealing {value2} damage."
       ],
       "extra": ["Physical Damage"],
+      "value1": [70, 66.5, 63, 60.2, 57.4],
+      "value2": ["45%", "50%", "54%", "58%", "63%"],
       "runes": [
         {
           "name": "Prime",
@@ -2633,19 +2795,21 @@
       "name": "Blood Wave",
       "class": "Necromancer",
       "tags": ["Ultimate", "Blood"],
-      "cooldown": 50,
+      "cooldown": "{value1}",
       "lucky_hit": "50%",
       "filters": ["Slow", "Knock Back", "Physical", "Ultimate", "Blood", "Blood Orb"],
-      "description": ["Conjure a tidal wave of blood that deals 450% damage and Knocks Back\nenemies."],
+      "description": ["Conjure a tidal wave of blood that deals {value2} damage and Knocks Back\nenemies."],
       "extra": ["Physical Damage"],
+      "value1": [50, 47.5, 45, 43, 41],
+      "value2": ["450%", "495%", "540%", "585%", "630%"],
       "runes": [
         {
           "name": "Prime",
-          "description": ["Blood Wave Slows enemies by 50% for 4 seconds."]
+          "description": ["Casting Blood Wave grants 20% Damage Reduction for 10 seconds."]
         },
         {
           "name": "Supreme",
-          "description": ["Blood Wave leaves behind 3 Blood Orbs as it travels."]
+          "description": ["Blood Wave leaves behind 6 Blood Orbs as it travels."]
         }
       ]
     },
@@ -2653,13 +2817,15 @@
       "name": "Bone Storm",
       "class": "Necromancer",
       "tags": ["Ultimate", "Bone"],
-      "cooldown": 60,
+      "cooldown": "{value1}",
       "lucky_hit": "40%",
       "filters": ["Damage Reduction", "Physical", "Ultimate", "Bone", "Critical Strike"],
       "description": [
-        "A swirling storm of bones appears around you and your Golem, dealing 180% to surrounding enemies over 10 seconds."
+        "A swirling storm of bones appears around you and your Golem, dealing {value2} to surrounding enemies over 10 seconds."
       ],
       "extra": ["Physical Damage"],
+      "value1": [60, 57, 54, 51.6, 49.2],
+      "value2": ["180%", "198%", "216%", "234%", "252%"],
       "runes": [
         {
           "name": "Prime",
@@ -2668,6 +2834,35 @@
         {
           "name": "Supreme",
           "description": ["Your Critical Strike Chance is increased by +20% while Bone Storm is active."]
+        }
+      ]
+    },
+    {
+      "name": "Soulrift",
+      "class": "Necromancer",
+      "tags": ["Ultimate", "Darkness"],
+      "cooldown": "{value1}",
+      "filters": ["Barrier", "Maximum Health", "Vulnerable"],
+      "description": [
+        "For 8 seconds, you corrupt surrounding enemies, dealing {value2} damage per second. Every 0.25 seconds of this duration, you absorb the souls of up to 3 enemies, gaining 2 Essence and a Barrier for 2% of your Maximum Life for 5 seconds.",
+        "You absorb 3 souls at a time from Bosses."
+      ],
+      "extra": ["Shadow Damage"],
+      "value1": [50, 47.5, 45, 43, 41],
+      "value2": ["65%", "71%", "78%", "84%", "91%"],
+      "runes": [
+        {
+          "name": "Prime",
+          "description": [
+            "Every soul absorbed increases your damage by x1%, up to x30%. This bonus persists for 5 seconds after Soulrift ends."
+          ]
+        },
+        {
+          "name": "Supreme",
+          "description": [
+            "Enemies with their souls absorbed become Vulnerable for 2 seconds.",
+            "When damaging enemies affected by Soulrift, you have a 5% chance to absorb their soul."
+          ]
         }
       ]
     },
@@ -2687,8 +2882,8 @@
       "cooldown": 16,
       "filters": ["Unstoppable", "Minion", "Taunt"],
       "description": [
-        "\u003Cb\u003EPassive:\u003C/b\u003E You are protected by a Golem with [X] Life that attacks for 77% damage.",
-        "\u003Cb\u003EActive:\u003C/b\u003E Your Golem becomes Unstoppable and Taunts Nearby enemies and takes 30% reduced damage for the next 6 seconds. It gains 70% of its Armor as Thorns for the duration. You become Unstoppable for 1.5 seconds.",
+        "<b>Passive:</b> You are protected by a Golem with [X] Life that attacks for 77% damage.",
+        "<b>Active:</b> Your Golem becomes Unstoppable and Taunts Nearby enemies and takes 30% reduced damage for the next 6 seconds. It gains 70% of its Armor as Thorns for the duration. You become Unstoppable for 1.5 seconds.",
         "When your Golem dies, it respawns after 20 seconds."
       ]
     },
@@ -2755,8 +2950,8 @@
       "name": "Death's Approach",
       "class": "Necromancer",
       "filters": ["Distant Enemies"],
-      "description": ["Gain {value1} Movement Speed."],
-      "value1": ["4%", "8%", "12%"]
+      "description": ["Gain + {value1} Movement Speed."],
+      "value1": ["5%", "10%", "15%"]
     },
     {
       "name": "Drain Vitality",
@@ -2765,7 +2960,7 @@
       "description": [
         "Lucky Hit: Hitting enemies with Blood Skills has up to a 30% chance to Fortify you for {value1} Maximum Life."
       ],
-      "value1": ["2%", "5%", "8%"]
+      "value1": ["2.5%", "5%", "7.5%"]
     },
     {
       "name": "Evulsion",
@@ -2815,7 +3010,7 @@
       "name": "Hellbent Commander",
       "class": "Necromancer",
       "filters": ["Close Enemies", "Minion"],
-      "description": ["While you control at least 7 Minions, they deal x {value1} increased damage."],
+      "description": ["While you control at least 7 Minions, your Minons deal x {value1} increased damage."],
       "value1": ["10%", "20%", "30%"]
     },
     {
@@ -2841,7 +3036,7 @@
       "class": "Necromancer",
       "filters": ["Healthy", "Minion", "Attack Speed"],
       "description": [
-        "While you are Healthy, you gain  {value1} increased critical chance and your Minions gain {value2} increased Critical Strike Chance."
+        "While you are Healthy, you gain  {value1} increased Critical Strike Chance and your Minions gain {value2} increased Critical Strike Chance."
       ],
       "value1": ["4%", "8%", "12%"],
       "value2": ["6%", "12%", "18%"]
@@ -2888,7 +3083,7 @@
       "class": "Necromancer",
       "filters": ["Healthy", "Overpower", "Life", "Blood"],
       "description": [
-        "After being Healthy for 12 seconds, your next Blood Skill Overpowers. This timer is reduced by 2 seconds each time Blood Orbs Heal or Overheal you for an amount greater than or equal to your base Life."
+        "After being Healthy for 15 seconds, your next Blood Skill Overpowers. This timer is reduced by 2 seconds each time Blood Orbs Heal or Overheal you for an amount greater than or equal to your base Life."
       ]
     },
     {
@@ -2905,7 +3100,7 @@
       "class": "Necromancer",
       "filters": ["Critical Strike", "Bone", "Essence"],
       "description": [
-        "Your Bone Skills have a + {value1} increased Critical Strike Chance for each 10 Essence you have upon cast."
+        "Your Bone Skills have a + {value1} increased Critical Strike Chance for each 30 Essence you have upon cast."
       ],
       "value1": ["0.3%", "0.6%", "0.9%"]
     },
@@ -2914,7 +3109,8 @@
       "class": "Necromancer",
       "filters": ["Shadow", "Minion"],
       "description": [
-        "Shadow damage infects enemies with Shadowblight for 2 seconds. Every 8th time an enemy receives Shadow damage from you or your Minions while they are affected by Shadowblight, they take an additional 44% Shadow damage. Shadowblight's damage is increased by x100% of your Shadow Damage over Time bonus."
+        "Shadow damage infects enemies with Shadowblight for 2 seconds. Every 8th time an enemy receives Shadow damage from you or your Minions while they are affected by Shadowblight, they take an additional 44% Shadow damage.",
+        "Shadowblight's damage is increased by x100% of your Shadow Damage over Time bonus."
       ]
     },
     {
@@ -2935,7 +3131,7 @@
       "name": "Spiked Armor",
       "class": "Necromancer",
       "filters": ["Thorns"],
-      "description": ["Gain [X] Thorns and {value1} additional Armor."],
+      "description": ["Gain [X] Thorns and x {value1} additional Armor."],
       "value1": ["5%", "10%", "15%"]
     },
     {
@@ -2971,7 +3167,8 @@
       "class": "Necromancer",
       "filters": ["Heal", "Blood Orb", "Minion"],
       "description": [
-        "Lucky Hit: Blood Skills have up to a {value1} chance to create a Blood Orb at the target's location. This can only occur once every 4 seconds. This chance is doubled against Bosses."
+        "Lucky Hit: Blood Skills have up to a {value1} chance to create a Blood Orb at the target's location. This can only occur once every 2 seconds.",
+        "This chance is doubled against Bosses."
       ],
       "value1": ["3%", "6%", "9%"]
     },
@@ -2981,6 +3178,45 @@
       "filters": ["Essence"],
       "description": ["Your maximum Essence is increased by {value1} ."],
       "value1": [3, 6, 9]
+    },
+    {
+      "name": "Necrotic Fortitude",
+      "class": "Necromancer",
+      "filters": ["Lucky Hit", "Barrier", "Maximum Life"],
+      "description": [
+        "Lucky Hit: Up to a {value1} chance to grant yourself a Barrier for 5% of your Maximum Life for 6 seconds."
+      ],
+      "value1": ["5%", "10%", "15%"]
+    },
+    {
+      "name": "Finality",
+      "class": "Necromancer",
+      "filters": ["Ultimate"],
+      "description": ["You deal x {value1} increased damage for 8 seconds after casting an Ultimate Skill."],
+      "value1": ["5%", "10%", "15%"]
+    },
+    {
+      "name": "Titan's Fall",
+      "class": "Necromancer",
+      "filters": ["Fortify", "Elite"],
+      "description": ["While Fortified you deal x {value1} increased damage to Elites."],
+      "value1": ["6%", "12%", "18%"]
+    },
+    {
+      "name": "Precision Decay",
+      "class": "Necromancer",
+      "filters": ["Lucky Hit"],
+      "description": ["Your Lucky Hit chance is increased by + {value1} ."],
+      "value1": ["5%", "10%", "15%"]
+    },
+    {
+      "name": "Affliction",
+      "class": "Necromancer",
+      "filters": ["Vulnerable", "Crowd Controlled", "Shadow", "Minion", "Curse"],
+      "description": [
+        "Enemies affected by Vulnerable, Crowd Control, or Shadow Damage over Time are Afflicted, taking x15% increased damage from you and your Minions.",
+        "Your Curse Skills deal 80% Shadow damage when applied to Afflicted enemies. This amount increases by x30% of your damage to Crowd Control, Vulnerable Damage, and Shadow Damage over Time bonuses combined."
+      ]
     },
     {
       "name": "Blade Shift",
@@ -2994,12 +3230,14 @@
       "runes": [
         {
           "name": "Enhanced",
-          "description": ["While Blade Shift is active, you gain +20% Movement Speed."]
+          "description": [
+            "While Blade Shift is active you gain +20% Movement speed. Moving through enemies refreshes its duration."
+          ]
         },
         {
           "name": "Fundamental",
           "description": [
-            "Moving through enemies while Blade Shift is active refreshes its duration. After moving through enemies 3 times, your next Blade Shift will Daze enemies for 2 seconds."
+            "Casting a skill other than Blade Shift empowers your next Blade Shift to deal x100% increased damage."
           ]
         },
         {
@@ -3026,19 +3264,19 @@
         "Knock Down"
       ],
       "description": [
-        "Fire a powerful arrow at an enemy, dealing {value1} damage. Every 3rd cast makes the enemy Vulnerable for 5 seconds."
+        "Fire a powerful arrow at an enemy, dealing {value1} damage. Every 3rd cast makes enemies hit Vulnerable for 5 seconds."
       ],
       "extra": ["Physical Damage", "Requires a Ranged weapon"],
       "value1": ["22%", "24%", "26%", "29%", "31%"],
       "runes": [
         {
           "name": "Enhanced",
-          "description": ["Every 3rd cast of Forceful Arrow additionally has a 15% increased Critical Strike Chance."]
+          "description": ["Every 3rd cast of Forceful Arrow additionally has a +15% increased Critical Strike Chance."]
         },
         {
           "name": "Fundamental",
           "description": [
-            "Forceful Arrow Knocks Back Non-Elite enemies if they are Close. If they collide with another enemy, both or Knocked Down for 1.5 seconds."
+            "Forceful Arrow Knocks Back Non-Elite enemies if they are Close. If they collide with another enemy, both are Knocked Down for 1.5 seconds."
           ]
         },
         {
@@ -3063,7 +3301,7 @@
         "Attack Speed"
       ],
       "description": [
-        "Fire an arrow that seeks an enemy, dealing {value1} damage and increasing your Critical Strike Chance against them by 5% for 4 seconds, up to 15%."
+        "Fire an arrow that seeks an enemy, dealing {value1} damage and increasing your Critical Strike Chance against them by +5% for 4 seconds, up to +15%."
       ],
       "extra": ["Physical Damage", "Requires a Ranged weapon"],
       "value1": ["24%", "26%", "29%", "31%", "34%"],
@@ -3093,7 +3331,7 @@
       "lucky_hit": "50%",
       "filters": ["Vulnerable", "Injured", "Lucky Hit", "Physical", "Basic", "Cutthroat", "Energy", "Crowd Control"],
       "description": [
-        "Melee attack an enemy, dealing {value1} damage and increasing Energy Regeneration by 20% for 3 seconds."
+        "Melee attack an enemy, dealing {value1} damage and increasing Energy Regeneration by x20% for 3 seconds."
       ],
       "extra": ["Physical Damage", "Requires Dual Wielded weapons"],
       "value1": ["30%", "33%", "36%", "39%", "42%"],
@@ -3101,7 +3339,7 @@
         {
           "name": "Enhanced",
           "description": [
-            "Damaging a Crowd Controlled or Injured enemy with Invigorating Strike increases its Energy Regeneration bonus to 30%."
+            "Damaging a Crowd Controlled or Injured enemy with Invigorating Strike increases its Energy Regeneration bonus to x30%."
           ]
         },
         {
@@ -3113,7 +3351,7 @@
         {
           "name": "Primary",
           "description": [
-            "Invigorating Strike additionally grants 8% Lucky Hit Chance. Hitting a Crowd Controlled or Injured enemy increases this bonus to 16% Lucky Hit Chance."
+            "Invigorating Strike additionally grants +8% Lucky Hit Chance. Hitting a Crowd Controlled or Injured enemy increases this bonus to +16% Lucky Hit Chance."
           ]
         }
       ]
@@ -3198,7 +3436,7 @@
         "Evade"
       ],
       "description": [
-        "Unleash a flurry of stabs and slashes, striking enemies in front of you 4 times and dealing {value1} damage to each."
+        "Unleash a flurry of stabs and slashes, striking enemies in front of you 4 times and dealing a total of {value1} damage to each."
       ],
       "extra": ["Physical Damage", "Requires Dual Wielded weapons"],
       "value1": ["130%", "143%", "156%", "169%", "182%"],
@@ -3206,13 +3444,13 @@
         {
           "name": "Enhanced",
           "description": [
-            "Each time Flurry damages an enemy, it has a 10% chance to apply Vulnerable for 3 seconds and deals 1% increased damage for 5 seconds after hitting a Vulnerable enemy, up to a total of 25%."
+            "Each time Flurry hits an enemy, it deals x1% increased damage for 8 seconds, up to x25%, and has a 10% chance to apply Vulnerable for 3 seconds."
           ]
         },
         {
           "name": "Advanced",
           "description": [
-            "Successive casts of Flurry increase its damage by 15% and reduce its Energy cost by 10%, up to 3 times."
+            "Successive casts of Flurry increase its damage by x10% and reduce its Energy cost by 10%, up to 3 times."
           ]
         },
         {
@@ -3239,7 +3477,7 @@
         "Critical Strike"
       ],
       "description": [
-        "Fire an arrow that pierces through all enemies in a line, dealing {value1} damage, increased by 10% per enemy it pierces."
+        "Fire an arrow that pierces through all enemies in a line, dealing {value1} damage, increased by x10% per enemy it pierces."
       ],
       "extra": ["Physical Damage", "Requires a Ranged weapon"],
       "value1": ["70%", "77%", "84%", "91%", "98%"],
@@ -3247,7 +3485,7 @@
         {
           "name": "Enhanced",
           "description": [
-            "Casting Penetrating Shot and hitting a Boss or Elite with it has a 25% Chance to fire an additional shot for free."
+            "Casting Penetrating Shot and hitting a Boss or Elite with it has a 25% Chance to fire it an additional time for free."
           ]
         },
         {
@@ -3258,7 +3496,9 @@
         },
         {
           "name": "Improved",
-          "description": ["Penetrating Shot deals an additional x10% increased damage per enemy it hits."]
+          "description": [
+            "Penetrating Shot has a +10% increased Critical Strike Chance. If Penetrating Shot damages at least 3 enemies, you gain +10% increased Critical Strike Chance for 5 seconds."
+          ]
         }
       ]
     },
@@ -3276,7 +3516,7 @@
         {
           "name": "Enhanced",
           "description": [
-            "Each subsequent arrow from Rapid Fire has 5% increased Critical Strike Chance, up to 40% for the 8th arrow."
+            "Each subsequent arrow from Rapid Fire has +5% increased Critical Strike Chance, up to +25% for the 5th arrow."
           ]
         },
         {
@@ -3297,7 +3537,7 @@
       "lucky_hit": "33%",
       "filters": ["Daze", "Physical", "Core", "Imbueable", "Cutthroat", "Cooldown"],
       "description": [
-        "Impale an enemy with your blades, dealing {value1} damage and making them take x8% increased damage from you while impaled. After 1.5 seconds, the blades return to you, piercing enemies for {value2} damage."
+        "Impale an enemy with your blades, dealing {value1} damage and making them take x8% increased damage from you for 1.5 seconds. After 1.5 seconds, the blades return to you, piercing enemies for {value2} damage."
       ],
       "extra": ["Physical Damage", "Requires Dual Wielded weapons"],
       "value1": ["54%", "59%", "65%", "70%", "76%"],
@@ -3315,7 +3555,7 @@
         },
         {
           "name": "Improved",
-          "description": ["Enemies are Dazed while impaled with Twisting Blade."]
+          "description": ["Enemies are Dazed for 1.5 seconds while impaled with Twisting Blade."]
         }
       ]
     },
@@ -3324,13 +3564,21 @@
       "class": "Rogue",
       "tags": ["Subterfuge"],
       "cooldown": "{value1}",
-      "filters": ["Vulnerable", "Unstoppable", "Movement Speed", "Stealth", "Subterfuge", "Energy\r\nCritical Strike"],
+      "filters": [
+        "Vulnerable",
+        "Unstoppable",
+        "Movement Speed",
+        "Stealth",
+        "Subterfuge",
+        "Energy\nCritical Strike",
+        "Unhindered"
+      ],
       "description": [
         "Vanishes from sight, gaining an advanced form of Stealth for 5 seconds that will not be removed by taking damage.",
-        "Concealment also makes you Unstoppable, grants +30% Movement Speed, and allows you to move freely through enemies for its duration.",
+        "Concealment also makes you Unstoppable and Unhindered, grants +30% Movement Speed, and Unhindered for its duration.",
         "Using an attack Skill during Concealment will break Concealment."
       ],
-      "value1": [20, 19, 18, 17, 16],
+      "value1": [20, 19, 18, 17.2, 16.4],
       "runes": [
         {
           "name": "Enhanced",
@@ -3338,11 +3586,15 @@
         },
         {
           "name": "Countering",
-          "description": ["The Skill that breaks Concealment will always be a guaranteed Critical Strike."]
+          "description": [
+            "Casting Concealment grants 10% Dodge Chance and increases the Movement Speed bonus to +60% for 5 seconds."
+          ]
         },
         {
           "name": "Subverting",
-          "description": ["The Skill that breaks Concealment always makes enemies Vulnerable for 6 seconds."]
+          "description": [
+            "The Skill that breaks Concealment will always be a guaranteed Critical Strike and makes enemies Vulnerable for 6 seconds."
+          ]
         }
       ]
     },
@@ -3360,12 +3612,12 @@
         {
           "name": "Enhanced",
           "description": [
-            "Each active Dark Shroud shadow grants you 5% increased Movement Speed and also has a 15% chance to not be Consumed."
+            "Each active Dark Shroud shadow grants you +5% increased Movement Speed and also has a 15% chance to not be Consumed."
           ]
         },
         {
           "name": "Countering",
-          "description": ["While you have at least 1 active shadow from Dark Shroud, gain 10% Critical Strike Chance."]
+          "description": ["While you have at least 1 active shadow from Dark Shroud, gain +10% Critical Strike Chance."]
         },
         {
           "name": "Subverting",
@@ -3397,7 +3649,7 @@
         },
         {
           "name": "Subverting",
-          "description": ["You deal 15% increased Poison Damage to enemies standing inside your Pọison Trap."]
+          "description": ["You deal x15% increased Poison Damage to enemies standing inside your Pọison Trap."]
         }
       ]
     },
@@ -3414,7 +3666,7 @@
       "runes": [
         {
           "name": "Enhanced",
-          "description": ["Enemies hit by Smoke Grenade take 25% increased damage from you for 5 seconds."]
+          "description": ["Enemies hit by Smoke Grenade take x25% increased damage from you for 5 seconds."]
         },
         {
           "name": "Countering",
@@ -3460,6 +3712,38 @@
       ]
     },
     {
+      "name": "Dance of Knives",
+      "class": "Rogue",
+      "tags": ["Agility", "Cutthroat", "Imbueable", "Channeled"],
+      "charge": 6,
+      "charge_cooldown": 1,
+      "lucky_hit": "20%",
+      "filters": ["Movement Speed", "Dodge", "Channeling", "Stun", "Grenade", "Slow"],
+      "description": [
+        "Channel to launch knives at surrounding enemies, consuming one Charge per second and each knife dealing {value1} damage.",
+        "You gain +20% Movement Speed and 10% Dodge Chance while Channeling Dance of Knives."
+      ],
+      "value1": ["42%", "46%", "50%", "55%", "59%"],
+      "runes": [
+        {
+          "name": "Enhanced",
+          "description": ["Every 30 meters you travel while Channeling Dance of Knives grants 4 Charges."]
+        },
+        {
+          "name": "Methodical",
+          "description": [
+            "When you stop Channeling Dance of Knives, drop up to 12 Stun Grenades, each dealing 20% damage. The Channeled duration determines how many are dropped."
+          ]
+        },
+        {
+          "name": "Disciplined",
+          "description": [
+            "Each Dance of Knives knife Slows enemies by 25% for 3 seconds and has a 20% chance to pierce."
+          ]
+        }
+      ]
+    },
+    {
       "name": "Dash",
       "class": "Rogue",
       "tags": ["Agility", "Imbueable", "Cutthroat", "Mobility"],
@@ -3471,21 +3755,21 @@
         "Dash forward and slash enemies for {value2} damage. Any enemies hit are Slowed by 30% for 3 seconds."
       ],
       "extra": ["Physical Damage", "Requires Dual Wielded weapons"],
-      "value1": [12, 11.4, 10.8, 10.3, 9.8],
+      "value1": [10, 9.5, 9, 8.6, 8.2],
       "value2": ["40%", "44%", "48%", "52%", "56%"],
       "runes": [
         {
           "name": "Enhanced",
-          "description": ["Casting Dash increases your Critical Strike Chance by 10% for 5 seconds."]
+          "description": ["Casting Dash increases your Critical Strike Chance by +10% for 5 seconds."]
         },
         {
           "name": "Methodical",
-          "description": ["Dash has 1 additional Charge and its Charge Cooldown is reduced by 2 seconds."]
+          "description": ["Dash has 1 additional Charge and its Charge Cooldown is reduced by 3 seconds."]
         },
         {
           "name": "Disciplined",
           "description": [
-            "At the end of Dash, Knock Down surrounding enemies for 2 seconds and deal 350% of its damage to them."
+            "At the end of Dash, Knock Down surrounding enemies for 2 seconds and deal x350% of its damage to them."
           ]
         }
       ]
@@ -3497,7 +3781,6 @@
       "cooldown": 9,
       "lucky_hit": "100%",
       "filters": [
-        "Stun",
         "Unstoppable",
         "Movement Speed",
         "Physical",
@@ -3508,7 +3791,7 @@
         "Cooldown"
       ],
       "description": [
-        "Become Unstoppable and quickly move through the shadows to stab your victim from behind for {value1} damage. Gain +50% increased Movement Speed for 2 seconds afterwards."
+        "Become Unstoppable and quickly move through the shadows to stab your victim from behind for {value1} damage. Gain 50% increased Movement Speed for 2 seconds afterwards."
       ],
       "extra": ["Physical Damage", "Requires Dual Wielded weapons"],
       "value1": ["80%", "88%", "96%", "104%", "112%"],
@@ -3523,9 +3806,7 @@
         },
         {
           "name": "Disciplined",
-          "description": [
-            "Damaging an enemy with Shadow Step Stuns them for 2 seconds and reduces its Cooldown by 3 seconds."
-          ]
+          "description": ["Shadow Step deals x200% more damage. Casting Shadow Step reduces its cooldown by 3 seconds."]
         }
       ]
     },
@@ -3564,7 +3845,7 @@
         {
           "name": "Mixed",
           "description": [
-            "Cold Imbued Skills deal 20% damage to Crowd Controlled enemies. Double this bonus against Frozen enemies."
+            "Cold Imbued Skills deal x20% damage to Crowd Controlled enemies. Double this bonus against Frozen enemies."
           ]
         }
       ]
@@ -3590,12 +3871,12 @@
         },
         {
           "name": "Blended",
-          "description": ["Critical Strikes with Poison Imbued Skills deal 75% increased Poisoning damage."]
+          "description": ["Critical Strikes with Poison Imbued Skills deal x75% increased Poisoning damage."]
         },
         {
           "name": "Mixed",
           "description": [
-            "Poison Imbued skills have up to a 30% chance to reduce Poison Imbuement's cooldown by 2 seconds."
+            "Lucky Hit: Poison Imbued skills have up to a 30% chance to reduce the cooldown of Poison Imbuement by 2 seconds."
           ]
         }
       ]
@@ -3618,7 +3899,7 @@
         {
           "name": "Enhanced",
           "description": [
-            "You have 15% increased Critical Strike Chance against Injured enemies infected by Shadow Imbuement."
+            "You have +15% increased Critical Strike Chance against Injured enemies infected by Shadow Imbuement."
           ]
         },
         {
@@ -3628,7 +3909,7 @@
         {
           "name": "Mixed",
           "description": [
-            "Enemies infected by Shadow Imbuement take 12% increased Non-Physical damage from you for 8 seconds."
+            "Enemies infected by Shadow Imbuement take x12% increased Non-Physical damage from you for 8 seconds."
           ]
         }
       ]
@@ -3637,13 +3918,16 @@
       "name": "Death Trap",
       "class": "Rogue",
       "tags": ["Ultimate", "Trap"],
-      "cooldown": 50,
+      "cooldown": "{value1}",
       "lucky_hit": "8%",
       "filters": ["Pull", "Shadow", "Ultimate", "Trap", "Cooldown"],
       "description": [
-        "Place a trap that arms after 1.25 seconds. It activates when an enemy moves within range, dealing 250% damage to each enemy in the area."
+        "Place a trap that arms after 1.25 seconds. It activates when an enemy moves within range, dealing a total of {value2} damage to each enemy in the area.",
+        "If Death Trap kills an enemy, its Cooldown is reduced by 10 seconds."
       ],
       "extra": ["Shadow Damage"],
+      "value1": [50, 47.5, 45, 43, 41],
+      "value2": ["250%", "275%", "300%", "325%", "350%"],
       "runes": [
         {
           "name": "Prime",
@@ -3651,7 +3935,7 @@
         },
         {
           "name": "Supreme",
-          "description": ["If Death Trap kills an enemy, its Cooldown is reduced by 12 seconds."]
+          "description": ["Enemies that resist Death Trap's Pull In are hit again for x120% of Death Trap's damage."]
         }
       ]
     },
@@ -3659,19 +3943,24 @@
       "name": "Rain of Arrows",
       "class": "Rogue",
       "tags": ["Ultimate", "Imbueable", "Marksman"],
-      "cooldown": 50,
+      "cooldown": "{value1}",
       "lucky_hit": "4%",
       "filters": ["Knock Down", "Physical", "Ultimate", "Imbueable", "Marksman", "Imbuement"],
-      "description": ["Arrows rain down over a large area 2 times, each wave dealing 110% damage."],
+      "description": [
+        "Arrows rain down over a large area 2 times, each wave dealing {value1} damage.",
+        "Rain of Arrows' first wave Knocks Down enemies for 3 seconds."
+      ],
       "extra": ["Physical Damage", "Requires a Ranged weapon"],
+      "value1": [50, 47.5, 45, 43, 41],
+      "value2": ["110%", "121%", "132%", "143%", "154%"],
       "runes": [
         {
           "name": "Prime",
-          "description": ["lmbuement Skill effects applied by Rain of Arrows have 30% increased potency."]
+          "description": ["lmbuement Skill effects applied by Rain of Arrows have x30% increased potency."]
         },
         {
           "name": "Supreme",
-          "description": ["Rain of Arrows' first wave Knocks Down enemies for 3 seconds."]
+          "description": ["Rain of Arrows deals x40% increased damage to Crowd Controlled enemies."]
         }
       ]
     },
@@ -3679,17 +3968,18 @@
       "name": "Shadow Clone",
       "class": "Rogue",
       "tags": ["Ultimate"],
-      "cooldown": 60,
+      "cooldown": "{value1}",
       "filters": ["Unstoppable", "Physical", "Ultimate"],
       "description": [
-        "Your shadow mimicks your actions for 15 seconds.",
-        "This Shadow Clone deals 60% of your damage."
+        "Your shadow mimicks your actions for 15 seconds. This Shadow Clone deals {value2} of your damage."
       ],
       "extra": ["Physical Damage"],
+      "value1": [60, 57, 54, 51.6, 49.2],
+      "value2": ["60%", "66%", "72%", "78%", "84%"],
       "runes": [
         {
           "name": "Prime",
-          "description": ["You are Unstoppable for 5 seconds after casting Shadow Clone."]
+          "description": ["You gain Stealth and Unstoppable for 5 seconds after casting Shadow Clone."]
         },
         {
           "name": "Supreme",
@@ -3701,8 +3991,8 @@
       "name": "Adrenaline Rush",
       "class": "Rogue",
       "filters": ["Energy"],
-      "description": ["While moving, you gain {value1} increased Energy Regeneration."],
-      "value1": ["5%", "10%", "15%"]
+      "description": ["While moving, you gain x {value1} increased Energy Regeneration."],
+      "value1": ["7%", "14%", "21%"]
     },
     {
       "name": "Aftermath",
@@ -3734,7 +4024,7 @@
       "name": "Alchemist's Fortune",
       "class": "Rogue",
       "filters": ["Lucky Hit", "Cold", "Poison", "Shadow"],
-      "description": ["Non-Physical damage you deal has a {value1} increased Lucky Hit Chance."],
+      "description": ["Non-Physical damage you deal has a + {value1} increased Lucky Hit Chance."],
       "value1": ["5%", "10%", "15%"]
     },
     {
@@ -3742,7 +4032,7 @@
       "class": "Rogue",
       "filters": ["Chill", "Movement Speed"],
       "description": [
-        "Chilled enemies have their movement speed further reduced by up to {value1} , and you gain x {value2} increased Chill effect."
+        "Chilled enemies have their Movement Speed further reduced by up to {value1} and you gain x {value2} increased Chill effect."
       ],
       "value1": ["10%", "20%", "30%"],
       "value2": ["5%", "10%", "15%"]
@@ -3753,7 +4043,7 @@
       "filters": ["Close Enemies", "Marksman", "Cutthroat", "Attack Speed", "Crowd Control"],
       "description": [
         "Damaging a Close enemy with Marksman or Cutthroat Skills each grant a +15% Attack Speed bonus for 8 seconds.",
-        "While both Attack Speed bonuses are active, your damage dealt is increased by x10% of the total amount of your Damage vs Crowd Controlled bonus."
+        "While both Attack Speed bonuses are active, you deal increased damage equal to x15% of of your Damage vs Close bonus."
       ]
     },
     {
@@ -3761,7 +4051,7 @@
       "class": "Rogue",
       "filters": ["Knock Down", "Critical Strike"],
       "description": [
-        "Using a Healing Potion Stuns surrounding enemies for 2 seconds and increases your damage by {value1} for 10 seconds."
+        "Using a Healing Potion Stuns surrounding enemies for 2 seconds and increases your damage by x {value1} for 10 seconds."
       ],
       "value1": ["6%", "12%", "18%"]
     },
@@ -3776,7 +4066,7 @@
       "name": "Deadly Venom",
       "class": "Rogue",
       "filters": ["Poison"],
-      "description": ["You deal {value1} increased Poisoning damage."],
+      "description": ["You deal x {value1} increased Poisoning damage."],
       "value1": ["3%", "6%", "9%"]
     },
     {
@@ -3800,7 +4090,7 @@
       "description": ["Lucky Hit: Dealing damage to an enemy affected by a Trap Skill has up to a 25% chance to:"],
       "description_list": [
         "Reduce the active Cooldowns of your Trap Skills by 20%",
-        "Drop a cluster of exploding Stun Grenades that deal 40% total Physical damage and Stun enemies for 0.50 seconds"
+        "Drop a cluster of exploding Stun Grenades that deal 40% of total Physical damage and Stun enemies for 1 second"
       ]
     },
     {
@@ -3826,7 +4116,8 @@
       "name": "Impetus",
       "class": "Rogue",
       "description": [
-        "After moving 15 meters, your next Core or Ultimate attack deals {value1} increased damage. While the damage bonus remains, your Agility and Subterfuge Skills deal {value2} increased damage."
+        "After moving 15 meters, your next Core or Ultimate Skill deals x {value1} increased damage.",
+        "While this damage bonus is ready, your Basic, Agility and Subterfuge Skills deal x {value2} increased damage."
       ],
       "value1": ["8%", "16%", "24%"],
       "value2": ["5%", "10%", "15%"]
@@ -3842,8 +4133,10 @@
       "name": "Malice",
       "class": "Rogue",
       "filters": ["Vulnerable"],
-      "description": ["You deal x {value1} increased damage to Vulnerable or Knocked Down enemies."],
-      "value1": ["4%", "8%", "12%"]
+      "description": [
+        "You deal x {value1} increased damage to Vulnerable and x {value1} increased damage to Knocked Down enemies. These bonuses can apply simultaneously."
+      ],
+      "value1": ["3%", "6%", "9%"]
     },
     {
       "name": "Mending Obscurity",
@@ -3857,31 +4150,32 @@
       "class": "Rogue",
       "filters": ["Stun", "Daze", "Freeze", "Damage Reduction", "Movement Speed", "Cutthroat", "Energy"],
       "description": [
-        "Casting a Cutthroat Skill grants a stack of Momentum. Casting a Non-Cutthroat Skill removes a stack of Momentum."
+        "Casting or Channeling a Cutthroat Skill grants a stack of Momentum. Casting a Marksman Skill removes a stack of Momentum."
       ],
       "description_list": ["For each stack of Momentum, you gain:"],
       "description2": [
         "3% Damage Reduction",
         "3% Maximum Energy",
-        "3% Energy Regeneration",
-        "3% Movement Speed",
-        "5% Damage"
+        "x3% Energy Regeneration",
+        "+3% Movement Speed",
+        "x5% Increased Damage"
       ],
-      "description_list2": ["This can stack up to 10 times."]
+      "description_list2": ["Maximum of 10 Stacks."]
     },
     {
       "name": "Precision",
       "class": "Rogue",
       "filters": ["Critical Strike", "Marksman"],
       "description": [
-        "Each Marksman skill cast grants 1 stack of Precision, or 2 if it has Critically Struck. When you reach 4 stacks, your next Marksman Core or Ultimate Skill is a guaranteed Critical Strike that deals x50% increased Critical Strike Damage, consuming all stacks of Precision. This damage is further increased by an amount equal to x15% of your Critical Strike Damage bonus."
+        "When you cast a Marksman Skill, you gain a stack of Precision. You gain an additional stack if that Skill Critically Strikes, once per cast.",
+        "When you reach 4 stacks of Precision, your next Marksman Ultimate or Core Skill is a guaranteed Critical Strike and deals x50% increased Critical Strike Damage, consuming all stacks of Precision. This damage is further increased by x15% of your Critical Strike Damage bonus."
       ]
     },
     {
       "name": "Precision Imbuement",
       "class": "Rogue",
       "filters": ["Critical Strike", "Imbuement"],
-      "description": ["Imbued Skills gains {value1} increased Critical Strike Chance."],
+      "description": ["Imbued Skills gain + {value1} increased Critical Strike Chance."],
       "value1": ["3%", "6%", "9%"]
     },
     {
@@ -3949,7 +4243,7 @@
       "class": "Rogue",
       "filters": ["Poison", "Vulnerable", "Critical Strike", "Trap", "Shadow", "Crowd Control"],
       "description": [
-        "When Pọison Trap or Death Trap activates, you gain {value1} increased Critical Strike Chance against Vulnerable and Crowd Controlled enemies for 4 seconds."
+        "When Pọison Trap or Death Trap activates, you gain + {value1} increased Critical Strike Chance against Vulnerable and Crowd Controlled enemies for 4 seconds."
       ],
       "value1": ["4%", "8%", "12%"]
     },
@@ -3958,7 +4252,7 @@
       "class": "Rogue",
       "filters": ["Knock Down", "Daze", "Critical Strike"],
       "description": [
-        "Dazing or Stunning an enemy increases your Critical Strike Chance by {value1} and Critical Strike Damage by {value2} for 5 seconds, both up to {value3} %."
+        "Dazing or Stunning an enemy increases your Critical Strike Chance by + {value1} and Critical Strike Damage by x {value2} for 5 seconds, both up to {value3} %."
       ],
       "value1": ["2%", "4%", "6%"],
       "value2": ["2%", "4%", "6%"],
@@ -3969,17 +4263,17 @@
       "class": "Rogue",
       "filters": ["Vulnerable", "Lucky Hit"],
       "description": [
-        "Lucky Hit: Dealing direct damage to a Vulnerable enemy has up to a 50% chance to cause an explosion, dealing 62% of the original damage to them and surrounding enemies.",
-        "Victimize's damage is increased by 120% of your Vulnerable Damage Bonus."
+        "Lucky Hit: Dealing direct damage to a Vulnerable enemy has up to a 50% chance to cause an explosion, dealing 80% damage of the same type to them and surrounding enemies.",
+        "Victimize's damage is increased by x120% of your Vulnerable Damage Bonus."
       ]
     },
     {
       "name": "Weapon Mastery",
       "class": "Rogue",
       "filters": ["Vulnerable", "Healthy", "Critical Strike", "Sword", "Dagger", "Bow", "Crossbow"],
-      "description": ["Gain a bonus when attacking based on weapon type:"],
+      "description": ["Gain a bonus based on the weapons used in your attack:"],
       "description_list": [
-        "Daggers: x {value1} increased damage to Healthy enemies.",
+        "Daggers: x {value1} increased damage to Healthy and Injured enemies.",
         "Swords: x {value2} increased damage.",
         "Bows: x {value3} increased damage to Vulnerable enemies.",
         "Crossbows: x {value4} increased Critical Strike Damage."
@@ -3990,18 +4284,54 @@
       "value4": ["5%", "10%", "15%"]
     },
     {
+      "name": "Target Practice",
+      "class": "Rogue",
+      "filters": ["Critical Strike", "Marksman", "Cutthroat"],
+      "description": ["Your Critical Strike Chance with Marksman and Cutthroat Skills is increased by + {value1} ."],
+      "value1": ["3%", "6%", "9%"]
+    },
+    {
+      "name": "Balestra",
+      "class": "Rogue",
+      "filters": ["Evade"],
+      "description": ["Gain x {value1} increased damage for 4 seconds after using Evade."],
+      "value1": ["4%", "8%", "12%"]
+    },
+    {
+      "name": "Evasive",
+      "class": "Rogue",
+      "filters": ["Dodge", "Damage Reduction"],
+      "description": ["After Dodging an attack, gain {value1} Damage Reduction for 4 seconds."],
+      "value1": ["2%", "4%", "6%"]
+    },
+    {
+      "name": "Unto Dawn",
+      "class": "Rogue",
+      "filters": ["Ultimate"],
+      "description": ["Your Ultimate skills deal x {value1} increased damage."],
+      "value1": ["15%", "30%", "45%"]
+    },
+    {
+      "name": "Alchemical Admixture",
+      "class": "Rogue",
+      "filters": ["Poison", "Shadow", "Cold", "Imbuement"],
+      "description": [
+        "Dealing 3 different types of Non-Physical damage increases the Potency of your Imbuement Skills by x40% for 5 seconds.",
+        "This Potency is further increased by 20% of the total amount of your Bonus damage to Poison, Shadow, and Cold."
+      ]
+    },
+    {
       "name": "Arc Lash",
       "class": "Sorcerer",
       "tags": ["Basic", "Shock"],
-      "lucky_hit": "14%",
+      "lucky_hit": "16%",
       "filters": ["Stun", "Movement Speed", "Lightning", "Basic", "Shock", "Critical Strike", "Cooldown"],
       "description": [
-        "Unleash arcing lightning that deals {value2} damage to enemies in front of you. Every 10 times Arc Lash swipes, it Stuns all enemies hit for 2 seconds."
+        "Unleash arcing lightning that deals {value1} damage to enemies in front of you. Every 10 times Arc Lash swipes, it Stuns all enemies hit for 2 seconds."
       ],
       "extra": ["Lightning Damage"],
-      "enchantment": "When you use a Cooldown, enemies around you are Stunned for {value1} seconds.",
-      "value1": [0.5, 0.6, 0.6, 0.7, 0.7],
-      "value2": ["42%", "46%", "50%", "55%", "59%"],
+      "enchantment": "When you use a Cooldown, enemies around you are Stunned for 1 second.",
+      "value1": ["42%", "46%", "50%", "55%", "59%"],
       "runes": [
         {
           "name": "Enhanced",
@@ -4023,13 +4353,12 @@
       "name": "Fire Bolt",
       "class": "Sorcerer",
       "tags": ["Basic", "Pyromancy"],
-      "lucky_hit": "35%",
+      "lucky_hit": "40%",
       "filters": ["Burn", "Fire", "Basic", "Pyromancy", "DoT", "Critical Strike", "Mana"],
-      "description": ["Hurl a flaming bolt, dealing {value2} damage and Burning for {value3} damage over 8 seconds."],
+      "description": ["Hurl a flaming bolt, dealing {value2} damage and Burning for {value3} damage over 6 seconds."],
       "extra": ["Fire Damage"],
-      "enchantment": "Direct damage from Skills applies additional {value1} Burning damage over 8 seconds.",
-      "value1": ["23%", "26%", "28%", "30%", "33%"],
-      "value2": ["18%", "19%", "20%", "21%", "22%"],
+      "enchantment": "Direct damage from Skills applies additional 23% Burning damage over 8 seconds.",
+      "value2": ["18%", "20%", "22%", "23%", "25%"],
       "value3": ["44%", "48%", "53%", "57%", "62%"],
       "runes": [
         {
@@ -4050,12 +4379,11 @@
       "name": "Frost Bolt",
       "class": "Sorcerer",
       "tags": ["Basic", "Frost"],
-      "lucky_hit": "40%",
+      "lucky_hit": "46%",
       "filters": ["Chill", "Freeze", "Vulnerable", "Cold", "Basic", "Frost", "Mana"],
       "description": ["Throw a bolt of frost at an enemy, dealing {value2} damage and Chilling them for 15%."],
       "extra": ["Cold Damage"],
-      "enchantment": "Direct damage from Skills applies up to {value1} Chill.",
-      "value1": ["18%", "20%", "22%", "23%", "25%"],
+      "enchantment": "Direct damage from Skills applies up to 18% Chill.",
       "value2": ["38%", "42%", "46%", "49%", "53%"],
       "runes": [
         {
@@ -4066,7 +4394,7 @@
         },
         {
           "name": "Glinting",
-          "description": ["Frost Bolt generates Mana when hitting Chilled or Frozen enemies."]
+          "description": ["Frost Bolt generates 4 Mana when hitting Chilled or Frozen enemies."]
         },
         {
           "name": "Flickering",
@@ -4078,7 +4406,7 @@
       "name": "Spark",
       "class": "Sorcerer",
       "tags": ["Basic", "Shock"],
-      "lucky_hit": "9%",
+      "lucky_hit": "10%",
       "filters": ["Crackling Energy", "Lightning", "Basic", "Shock", "Critical Strike"],
       "description": ["Launch a bolt of lightning that shocks an enemy 4 times, dealing {value1} damage each hit."],
       "extra": ["Lightning Damage"],
@@ -4088,7 +4416,7 @@
         {
           "name": "Enhanced",
           "description": [
-            "Each time Spark hits its primary target, it has a 40% chance to hit up to 3 additional enemies, dealing 10% damage. If there are no other enemies to hit, Spark instead deals x20% increased damage to its primary target."
+            "Each time Spark hits its primary target, it has a 40% chance to hit up to 3 additional enemies, dealing 9% damage. If there are no other enemies to hit, Spark instead deals x20% increased damage to its primary target."
           ]
         },
         {
@@ -4108,14 +4436,14 @@
       "class": "Sorcerer",
       "tags": ["Core", "Shock", "Chain"],
       "mana": 35,
-      "lucky_hit": "25%",
+      "lucky_hit": "29%",
       "filters": ["Crackling Energy", "Lightning", "Core", "Shock", "Core", "Shock", "Critical Strike", "Mana"],
       "description": [
         "Unleash a stream of lightning that deals {value1} damage and chains between Nearby enemies and you up to 5 times, prioritizing enemies."
       ],
       "extra": ["Lightning Damage"],
       "enchantment": "Chain Lightning forms automatically after spending 100 Mana.",
-      "value1": ["47%", "52%", "56%", "60%", "64%"],
+      "value1": ["43%", "47%", "52%", "56%", "60%"],
       "runes": [
         {
           "name": "Enhanced",
@@ -4138,7 +4466,7 @@
       "class": "Sorcerer",
       "tags": ["Core", "Shock"],
       "mana": 30,
-      "lucky_hit": "20%",
+      "lucky_hit": "23%",
       "filters": ["Stun", "Lightning", "Core", "Shock", "Damage Reduction"],
       "description": [
         "Release 5 bolts of lightning that course along the ground in an erratic pattern, dealing {value1} damage."
@@ -4150,7 +4478,7 @@
         {
           "name": "Enhanced",
           "description": [
-            "The 3rd time an enemy is hit by a single cast of Charged Bolts, that bolt surges upon impact, dealing 79% damage in an area."
+            "The 3rd time an enemy is hit by a single cast of Charged Bolts, that bolt surges upor impact, dealing x79% in an area."
           ]
         },
         {
@@ -4168,7 +4496,7 @@
       "class": "Sorcerer",
       "tags": ["Core", "Pyromancy"],
       "mana": 35,
-      "lucky_hit": "33%",
+      "lucky_hit": "38%",
       "filters": ["Burn", "Fire", "Core", "Pyromancy", "Critical Strike"],
       "description": ["Hurl an exploding ball offire, dealing {value1} damage to surrounding enemies."],
       "extra": ["Fire Damage"],
@@ -4177,7 +4505,9 @@
       "runes": [
         {
           "name": "Enhanced",
-          "description": ["Fireball's radius is increased based on distance traveled, up to 50%."]
+          "description": [
+            "Casting Fireball increases its radius by 50% and Burns enemies for 10% damage over 6 seconds."
+          ]
         },
         {
           "name": "Greater",
@@ -4188,7 +4518,7 @@
         {
           "name": "Destructive",
           "description": [
-            "Fireball's explosion's Critical Strike Damage is increased by +20%. increased to +30% when hitting at least 3 enemies."
+            "Fireball's Critical Strike Damage is increased by x20%. increased to x30% when hitting at least 3 enemies."
           ]
         }
       ]
@@ -4198,7 +4528,7 @@
       "class": "Sorcerer",
       "tags": ["Core", "Frost"],
       "mana": 40,
-      "lucky_hit": "4%",
+      "lucky_hit": "5%",
       "filters": ["Chill", "Freeze", "Vulnerable", "Cold", "Mana"],
       "description": [
         "Unleash an orb that Chills for 34% and expels piercing shards, dealing a total of {value1} damage. Upon expiration, Frọzen Orb explodes, dealing {value2} damage and Chilling enemies for 9%."
@@ -4229,7 +4559,7 @@
       "class": "Sorcerer",
       "tags": ["Core", "Frost"],
       "mana": 30,
-      "lucky_hit": "16%",
+      "lucky_hit": "18%",
       "filters": ["Barrier", "Freeze", "Vulnerable", "Cold", "Core", "Frost"],
       "description": ["Launch 5 shards that deal {value1} damage each. Deals x25% increased damage to Frozen enemies."],
       "extra": ["Cold Damage"],
@@ -4259,21 +4589,21 @@
       "class": "Sorcerer",
       "tags": ["Core", "Pyromancy", "Channeled"],
       "mana_per_second": 25,
-      "lucky_hit": "8.35%",
+      "lucky_hit": "10%",
       "filters": ["Burn", "Immobilize", "Fire", "Core", "Pyromancy", "Channeled", "Damage Reduction"],
       "description": [
         "Channel a beam of fire, Burning enemies for {value1} damage per second. Damage per second increases over 2 seconds, up to {value2} .",
         "You gain 20% Damage Reduction while channeling."
       ],
       "extra": ["Fire Damage"],
-      "enchantment": "Every 14 seconds, a serpent spawns and Incinerates enemies for 8 seconds.",
-      "value1": ["101%", "111%", "121%", "131%", "141%"],
+      "enchantment": "Every 8 seconds, a serpent spawns and Incinerates enemies for 8 seconds.",
+      "value1": ["101%", "111%", "121%", "131%", "144%"],
       "value2": ["136%", "154%", "172%", "191%", "211%"],
       "runes": [
         {
           "name": "Enhanced",
           "description": [
-            "While channeling lncinerate, you Burn\nenemies around you for 25% of the\ndamage per second."
+            "While channeling lncinerate, you Burn\nenemies around you for 50% of the\ndamage per second."
           ]
         },
         {
@@ -4291,7 +4621,7 @@
       "class": "Sorcerer",
       "tags": ["Defensive", "Pyromancy"],
       "cooldown": 20,
-      "lucky_hit": "35%",
+      "lucky_hit": "40%",
       "filters": ["Burn", "Immune", "Heal", "Movement Speed", "Fire", "Defensive", "Pyromancy", "Mana", "Life"],
       "description": [
         "Engulf yourself in flames for {value1} seconds, Burning surrounding enemies for {value2} damage per second.",
@@ -4341,7 +4671,8 @@
         {
           "name": "Shimmering",
           "description": [
-            "Frost Nova grants 3% Dodge Chance per enemy hit, up to 15%. Hitting a Boss gives the maximum amount. For the next 8 seconds, you keep this effect, and successful Dodges generate 20 Mana."
+            "Frost Nova grants 3% Dodge Chance per enemy hit for 8 seconds, up to 15%. Dodging while this effect is active restores 20 Mana.",
+            "Hitting a Boss with Frost Nova grants the maximun stacks of Dodge Chance bonus."
           ]
         }
       ]
@@ -4356,7 +4687,7 @@
         "A Barrier of ice forms around you for 6 seconds, absorbing {value1} of your Maximum Life in damage."
       ],
       "enchantment": "Upon getting hit, you have a 5% chance apply Ice Armor.",
-      "value1": ["40%", "44%", "48%", "52%", "56%"],
+      "value1": ["56%", "62%", "67%", "73%", "78%"],
       "runes": [
         {
           "name": "Enhanced",
@@ -4381,7 +4712,7 @@
       "class": "Sorcerer",
       "tags": ["Defensive", "Shock", "Mobility"],
       "cooldown": "{value1}",
-      "lucky_hit": "65%",
+      "lucky_hit": "75%",
       "filters": [
         "Unstoppable",
         "Crackling Energy",
@@ -4396,8 +4727,8 @@
         "Transform into lightning, becoming Unstoppable and surging to the target location, dealing {value2} damage around you upon arrival."
       ],
       "extra": ["Lightning Damage"],
-      "enchantment": "Evade is replaced with a short range Teleport on a 17 second Cooldown.",
-      "value1": [14, 13, 12, 11, 10],
+      "enchantment": "Evade is replaced with a short range Teleport on a 17 second Cooldown. This version of Teleport does not make you Unstoppable.",
+      "value1": [14, 13.3, 12.6, 12.04, 11.48],
       "value2": ["35%", "39%", "42%", "46%", "49%"],
       "runes": [
         {
@@ -4417,6 +4748,42 @@
       ]
     },
     {
+      "name": "Familiar",
+      "class": "Sorcerer",
+      "tags": ["Conjuration", "Pyromancy", "Frost", "Shock"],
+      "charge": 3,
+      "charge_cooldown": 12,
+      "lucky_hit": "11%",
+      "filters": ["Conjuration", "Burn", "Chill", "Stun", "Damage Reduction", "Fire", "Cold", "Lightning"],
+      "description": [
+        "Summon a Familiar of the element of your last cast Skill for 8 seconds. The Familiar chases enemies and periodically explodes, dealing {value1} of its element's damage in an area.\n\nYou may have 6 Familiars summoned at a time."
+      ],
+      "enchantment": "Each time you summon a non-Familiar Conjuration, you have a 25% chance to spawn a Familiar of the same element.",
+      "value1": ["40%", "44%", "48%", "52%", "56%"],
+      "runes": [
+        {
+          "name": "Enhanced",
+          "description": [
+            "Familiar passively applies an effect to nearby enemies, based on their element.",
+            "Fire Familiar: Applies 94% Burning damage to enemies.",
+            "Cold Familiar: Applies 15% Chill to enemies.",
+            "Lightning Familiar: Stuns enemies for 1 second."
+          ]
+        },
+        {
+          "name": "Invoked",
+          "description": ["While a Familiar is active, gain x10% increased damage to skills that deal its damage type."]
+        },
+        {
+          "name": "Summoned",
+          "description": [
+            "Your Familiars' Element no longer depends on your previous cast Skill, and instead follows a set sequence of Fire to Cold, Cold to Lightning and Lightning to Fire.",
+            "While you have at least two different element Familiars active, gain 3% Damage Reduction."
+          ]
+        }
+      ]
+    },
+    {
       "name": "Hydra",
       "class": "Sorcerer",
       "tags": ["Conjuration", "Pyromancy"],
@@ -4425,11 +4792,11 @@
       "filters": ["Burn", "Healthy", "Fire", "Conjuration", "Pyromancy", "Critical Strike", "Mana"],
       "description": [
         "Summon a 3-headed hydra for 10 seconds. Each head spits fire at enemies, dealing {value1} damage.",
-        "Maximum 2 active Hydras at a time."
+        "You may have up to 2 Hydras active at a time."
       ],
       "extra": ["Fire Damage"],
-      "enchantment": "After spending 200 Mana, a 5-headed Hydra spawns for 5 seconds.",
-      "value1": ["16%", "18%", "19%", "21%", "22%"],
+      "enchantment": "After spending 200 Mana, a 5-headed Hydra spawns for 10 seconds.",
+      "value1": ["18%", "20%", "22%", "23%", "25%"],
       "runes": [
         {
           "name": "Enhanced",
@@ -4450,7 +4817,7 @@
       "class": "Sorcerer",
       "tags": ["Conjuration", "Frost"],
       "cooldown": 16,
-      "lucky_hit": "15%",
+      "lucky_hit": "17%",
       "filters": ["Vulnerable", "Cold", "Conjuration", "Frost", "Cooldown\r\nAttack Speed"],
       "description": [
         "Conjure a pair of ice blades for 6.0 seconds that rapidly slash enemies for {value1} damage and have a 40% chance to make them Vulnerable for 2 seconds."
@@ -4478,7 +4845,7 @@
       "class": "Sorcerer",
       "tags": ["Conjuration", "Shock"],
       "cooldown": 20,
-      "lucky_hit": "5%",
+      "lucky_hit": "6%",
       "filters": ["Stun", "Crackling Energy", "Lightning", "Conjuration", "Shock", "Critical Strike", "Vulnerable"],
       "description": [
         "Conjure a spear of lightning that seeks out enemies for 6.0 seconds, dealing {value1} damage per hit. Critical Strikes apply Vulnerable for 3 seconds."
@@ -4490,7 +4857,7 @@
         {
           "name": "Enhanced",
           "description": [
-            "Casting Lightning Spear spawns an additional Lightning Spear and increases their Critical Strike Chance by 15%."
+            "Casting Lightning Spear spawns an additional Lightning Spear and increases their Critical Strike Chance by 5%."
           ]
         },
         {
@@ -4500,7 +4867,7 @@
         {
           "name": "Summoned",
           "description": [
-            "Collecting Crackling Energy increases the damage of your next Lightning Spear cast by 20%, up to 160%."
+            "Collecting Crackling Energy increases the damage of your next Lightning Spear cast by x20%, up to x160%."
           ]
         }
       ]
@@ -4510,7 +4877,7 @@
       "class": "Sorcerer",
       "tags": ["Mastery", "Frost", "Core"],
       "mana": 40,
-      "lucky_hit": "33%",
+      "lucky_hit": "38%",
       "filters": ["Chill", "Freeze", "Cold", "Mastery", "Frost", "Mana", "Core"],
       "description": [
         "Summon a frigid blizzard that deals {value1} damage and continually Chills enemies for 18% over 8 seconds."
@@ -4538,7 +4905,7 @@
       "class": "Sorcerer",
       "tags": ["Mastery", "Pyromancy", "Core"],
       "mana": 30,
-      "lucky_hit": "30%",
+      "lucky_hit": "34%",
       "filters": ["Burn", "Fire", "Mastery", "Pyromancy", "DoT", "Mana"],
       "description": ["Create a wall of flames that Burns enemies for {value1} damage over 8 seconds."],
       "extra": ["Fire Damage"],
@@ -4564,7 +4931,7 @@
       "class": "Sorcerer",
       "tags": ["Mastery", "Pyromancy", "Core"],
       "mana": 40,
-      "lucky_hit": "40%",
+      "lucky_hit": "46%",
       "filters": ["Burn", "Immobilize", "Fire", "Mastery", "Pyromancy", "DoT", "Lucky Hit"],
       "description": [
         "Summon a meteor that strikes the target location, dealing {value1} damage and Burning the ground for {value2} damage over 3 seconds."
@@ -4595,7 +4962,7 @@
       "class": "Sorcerer",
       "tags": ["Mastery", "Shock", "Core"],
       "mana": 50,
-      "lucky_hit": "5%",
+      "lucky_hit": "6%",
       "filters": [
         "Stun",
         "Slow",
@@ -4638,14 +5005,17 @@
       "name": "Deep Freeze",
       "class": "Sorcerer",
       "tags": ["Ultimate", "Frost"],
-      "cooldown": 60,
+      "cooldown": "{value3}",
       "lucky_hit": "2%",
       "filters": ["Barrier", "Chill", "Freeze", "Immune", "Cold", "Ultimate", "Frost", "Life", "Cooldown"],
       "description": [
-        "Encase yourself in ice, becoming Immune for 4 seconds, continually dealing 25% damage, and Chilling enemies for 14%. When Deep Freeze expires, it deals 100% additional damage.",
+        "Encase yourself in ice, becoming Immune for 4 seconds, continually dealing {value1} damage, and Chilling enemies for 14%. When Deep Freeze expires, it deals {value2} additional damage.",
         "Casting Deep Freeze again ends the effect early."
       ],
       "extra": ["Cold Damage"],
+      "value1": ["25%", "28%", "30%", "32%", "35%"],
+      "value2": ["100%", "110%", "120%", "130%", "140%"],
+      "value3": [60, 57, 54, 51.6, 49.2],
       "runes": [
         {
           "name": "Prime",
@@ -4665,13 +5035,14 @@
       "name": "Inferno",
       "class": "Sorcerer",
       "tags": ["Ultimate", "Pyromancy"],
-      "cooldown": 45,
-      "lucky_hit": "10%",
+      "cooldown": "{value1}",
+      "lucky_hit": "12%",
       "filters": ["Burn", "Pull", "Fire", "Ultimate", "Pyromancy", "DoT", "Mana"],
       "description": [
-        "Summon a fiery serpent that continually constricts the target area, Burning enemies for 295% damage over 8 seconds."
+        "Summon a fiery serpent that continually constricts the target area, Burning enemies for [X] damage over 8 seconds."
       ],
       "extra": ["Fire Damage"],
+      "value1": [45, 42.75, 40.5, 38.7, 36.9],
       "runes": [
         {
           "name": "Prime",
@@ -4687,11 +5058,12 @@
       "name": "Unstable Currents",
       "class": "Sorcerer",
       "tags": ["Ultimate", "Shock"],
-      "cooldown": 70,
+      "cooldown": "{value1}",
       "filters": ["Crackling Energy", "Lightning", "Shock\nCore", "Conjuration", "Mastery", "Ultimate", "Attack Speed"],
       "description": [
         "Lightning surges within you for 10 seconds. Whenever you cast a Shock Skill, a random Core, Conjuration, or Mastery Shock Skill is also cast."
       ],
+      "value1": [70, 66.5, 63, 60.2, 57.4],
       "runes": [
         {
           "name": "Prime",
@@ -4699,7 +5071,9 @@
         },
         {
           "name": "Supreme",
-          "description": ["While Unstable Currents is active, Crackling Energy pulses 25% faster and costs no charges."]
+          "description": [
+            "While Unstable Currents is active, you pulse Crackling Energy for free at a 25% faster rate."
+          ]
         }
       ]
     },
@@ -4747,7 +5121,10 @@
       "class": "Sorcerer",
       "filters": ["Conjuration"],
       "description": [
-        "You gain {value1} damage, {value2} Movement Speed, and {value3} Mana Regeneration for each active Conjuration."
+        "Gain a stacking bonus for each active Conjuration, up to 30 stacks:",
+        "{value1} Damage",
+        "{value2} Movement Speed",
+        "{value3} Mana Regeneration"
       ],
       "value1": ["1%", "2%", "3%"],
       "value2": ["1%", "2%", "3%"],
@@ -4817,7 +5194,7 @@
       "name": "Elemental Dominance",
       "class": "Sorcerer",
       "filters": ["Core", "Mana"],
-      "description": ["Your Core and Mastery Skills deal x {value1} increased damage when cast above 50 Mana."],
+      "description": ["Your Core Skills deal x {value1} increased damage when cast above 50 Mana."],
       "value1": ["4%", "8%", "12%"]
     },
     {
@@ -4825,9 +5202,10 @@
       "class": "Sorcerer",
       "filters": ["Burn"],
       "description": [
-        "You deal increased Burning damage to enemies for each second they remain Burning, up to {value1} after 5 seconds."
+        "You deal x {value1} increased Burning damage. This bonus is increased to x {value2} to enemies while they are affected by more Damage Over Time than their total Life."
       ],
-      "value1": ["5%", "10%", "15%"]
+      "value1": ["6%", "12%", "18%"],
+      "value2": ["25%", "50%", "75%"]
     },
     {
       "name": "Esu's Ferocity",
@@ -4835,8 +5213,7 @@
       "filters": ["Fire", "Critical Strike"],
       "description": [
         "Your Fire Critical Strike Damage is increased by x25% against enemies above 50% Life. Your Fire Critical Strike Chance is increased by +10% against enemies below 50% Life.",
-        "Critical Strikes that kill enemies or hit a Boss grant both bonuses against all enemies for 3 seconds.",
-        "Both bonuses are also granted for 3 seconds when hitting a Boss with a Critical Strike."
+        "Critical Strikes that kill enemies or hit a Boss grant both bonuses against all enemies for 3 seconds."
       ]
     },
     {
@@ -4927,7 +5304,7 @@
       "class": "Sorcerer",
       "filters": ["Resistance", "Basic"],
       "description": [
-        "After casting a Non-Basic Skill, you gain + {value1} Resistance and + {value2} Maximum Resistance to that Skill's element for 9 seconds."
+        "Casting a Skill grants + {value1} All Resistance and + {value2} Maximum Resistance to that Skill's element for 9 seconds."
       ],
       "value1": ["3%", "6%", "9%", ""],
       "value2": ["2%", "4%", "6%", ""]
@@ -4990,7 +5367,9 @@
       "class": "Sorcerer",
       "filters": ["Close Enemies", "Critical Strike", "Shock"],
       "description": [
-        "When you Critical Strike an enemy with a Shock Skill you become Charged and take 25% less damage for 5 seconds. While Charged, Critical Strikes have a 10% chance to causes the damage to arc as Lightning damage to another Nearby enemy, or if there are no other targets you hit the target again for 250% of the damage."
+        "When you Critical Strike an enemy with a Shock Skill you become Charged and take 25% less damage for 5 seconds.",
+        "While Charged:",
+        "Critical Strikes have a 10% chance to causes the damage to arc as Lightning damage to another Nearby enemy, or if there are no other targets you hit the target again for 250% of the damage."
       ]
     },
     {
@@ -5002,6 +5381,50 @@
       ],
       "value1": ["1%", "2%", "3%"],
       "value2": ["4%", "8%", "12%"]
+    },
+    {
+      "name": "Evocation",
+      "class": "Sorcerer",
+      "filters": ["Cooldown"],
+      "description": ["Gain {value1} Cooldown Reduction."],
+      "value1": ["4%", "8%", "12%"]
+    },
+    {
+      "name": "Energy Focus",
+      "class": "Sorcerer",
+      "filters": ["Barrier", "Maximum Life"],
+      "description": [
+        "You generate a 6 second Barrier for {value1} of your Maximum Life every second up to 30%. This effect is lost for 5 seconds after losing health."
+      ],
+      "value1": ["0.5%", "1.0%", "1.5%"]
+    },
+    {
+      "name": "Dampen Layer",
+      "class": "Sorcerer",
+      "filters": ["Damage Reduction", "Barrier"],
+      "description": ["You gain {value1} Damage Reduction while you have an active Barrier."],
+      "value1": ["2%", "4%", "6%"]
+    },
+    {
+      "name": "Elemental Synergies",
+      "class": "Sorcerer",
+      "filters": ["Frost", "Shock", "Pyromancy"],
+      "description": [
+        "Your Frost, Shock, and Pyromancy damage is increased by x {value1} for each skill you have equipped of that type."
+      ],
+      "value1": ["1%", "2%", "3%"]
+    },
+    {
+      "name": "Enlightenment",
+      "class": "Sorcerer",
+      "description": [
+        "Casting any Skill grants 1 stack of Enlightenment, or grants 15 if your previous cast Skill was a different Element.",
+        "After gaining 100 stacks, you become Enlightened, can no longer gain stacks, and lose 10 stacks per second."
+      ],
+      "description_list": [
+        "While Enlightened, your Bonus Damage with Fire, Lightning and Cold are equal to them combined and you gain:"
+      ],
+      "description2": ["x25% increased damage", "+45% Mana Regeneration", "+20% Attack Speed"]
     },
     {
       "name": "Skeletal Warriors",
@@ -5034,7 +5457,7 @@
           "name": "Defenders",
           "description": ["Durable shield-bearers with 15% increased Life."],
           "extra": [
-            "Every 6 seconds your Skeletal Defenders taunt enemies.",
+            "Every 6 seconds your Skeletal Defenders Taunt enemies.",
             "Skeletal Defenders take 99% reduced damage.",
             "You gain +25% Resistance to All Elements, but you can no longer raise Skeletal Warriors."
           ]
@@ -5075,7 +5498,7 @@
           "extra": [
             "You deal x3% increased damage for each active Shadow Mage.",
             "Shadow Mages fire an additional shadow bolt every 3 attacks.",
-            "Your maximum Essence is increased by 20 and your Essence Generation by 20%, but you can no longer raise Skeletal Mages."
+            "Your Essence Generation is increased by x20% and your maximum Essence is increased by 20, but you can no longer raise Skeletal Mages."
           ]
         },
         {
@@ -5083,7 +5506,7 @@
           "description": ["Cold Mages attacks will chill enemies eventually freezing them in their tracks."],
           "extra": [
             "Each time your Cold Mages damage enemies with their primary attack, you gain 3 Essence.",
-            "Cold Mage's attacks apply Vulnerable for 4 seconds.",
+            "Cold Mages' attacks apply Vulnerable for 4 seconds.",
             "You deal x20% increased damage to Vulnerable enemies, but you can no longer raise Skeletal Mages."
           ]
         },
@@ -5093,7 +5516,7 @@
             "Bone Mages use their own bodies as projectiles, dealing heavy damage at the cost of their own Life."
           ],
           "extra": [
-            "Bone Mages now cast Bone Splinters or Bone Spear every 6th attack if it is on your Action Bar.",
+            "Every 6th attack, your Bone Mages cast Bone Splinters or Bone Spear if it is on your Action Bar.",
             "Each time a Bone Mage dies, they leave behind a Corpse. Their attacks Fortify you for 3% of your Maximum Life.",
             "Your Overpower damage is increased by x30%, but you can no longer raise Skeletal Mages."
           ]
@@ -5132,7 +5555,7 @@
           "description": ["Drains Life from nearby enemies to heal and bolster itself."],
           "extra": [
             "Your Blood Golem absorbs 30% of damage you would take.",
-            "When Blood Golem heals itself with its active ability, you are healed for 5% of your Maximum Life for each enemy drained. While your Blood Golem is Healthy, they gain 25% Damage Reduction and 50% increased damage.",
+            "When Blood Golem heals itself with its active ability, you are healed for 5% of your Maximum Life for each enemy drained. While your Blood Golem is Healthy, they gain 25% Damage Reduction and x50% increased damage.",
             "Your Maximum Life is increased by x15%, but you lose the ability to summon a Golem."
           ]
         },
@@ -5160,7 +5583,7 @@
       "class": "Rogue",
       "filters": ["Energy"],
       "description": [
-        "Attack marked enemies to fill up your Inner Sight gauge. Attacking non-marked enemies fill it at 5% of the normal rate. When it's full, gain unlimited Energy and +25% Critical Strike Chance for 4 seconds."
+        "Attack marked enemies to fill up your Inner Sight gauge. When full, gain unlimited Energy and +25% Critical Strike Chance for 4 seconds."
       ]
     },
     {
@@ -5177,7 +5600,7 @@
       "filters": ["Injured", "Lucky Hit", "Critical Strike", "Axe", "Attack Speed"],
       "description": [
         "+ [10.0%] increased Critical Strike Chance against Injured enemies. Double this amount when using two Axes.",
-        "Rank 10: Lucky Hit: Critical Strikes have up to a 55% chance to grant +6% increased Attack Speed for 2 seconds. Double the Attack Speed bonus when using two Axes."
+        "Rank 10: Lucky Hit: Critical Strikes have up to a 55% chance to grant x6% increased Attack Speed for 2 seconds. Double the Attack Speed bonus when using two Axes."
       ],
       "display_name": "One-Handed Axe Expertise"
     },
@@ -5187,7 +5610,7 @@
       "filters": ["Berserking", "Stun", "Lucky Hit", "Mace"],
       "description": [
         "x [10%] increased damage to Stunned enemies. Double this amount when using two Maces.",
-        "Rank 10: Lucky Hit: Up to a 10% chance to gain Berserking for 1.50 seconds when you hit a Stunned enemy. Double this chance when using two Maces."
+        "Rank 10: Lucky Hit: Up to a 10% chance to gain Berserking for 1.5 seconds when you hit a Stunned enemy. Double this chance when using two Maces."
       ],
       "display_name": "One-Handed Mace Expertise"
     },
@@ -5215,7 +5638,7 @@
       "name": "Polearm",
       "class": "Barbarian",
       "filters": ["Healthy", "Lucky Hit"],
-      "description": ["+ [15%] increased Lucky Hit Chance.", "Rank 10: You deal x15% increased damage while Healthy."],
+      "description": ["x [15%] increased Lucky Hit Chance.", "Rank 10: You deal x15% increased damage while Healthy."],
       "display_name": "Polearm Expertise"
     },
     {
@@ -5223,7 +5646,7 @@
       "class": "Barbarian",
       "filters": ["Bleed", "DoT"],
       "description": [
-        "[20%] of direct damage you deal is inflicted as Bleeding damage over 5 seconds.",
+        "+ [20%] of direct damage you deal is inflicted as Bleeding damage over 5 seconds.",
         "Rank 10: You deal x30% increased Bleeding damage for 5 seconds after killing an enemy."
       ],
       "display_name": "Two-Handed Sword Expertise"
@@ -5297,7 +5720,7 @@
       "class": "Druid",
       "filters": ["Lucky Hit", "Lightning"],
       "description": [
-        "Lucky Hit: Dealing Lightning damage has up to a 40% chance to cause the target to emit a static discharge, dealing 20% Lightning damage to surrounding enemies."
+        "Lucky Hit: Dealing Lightning damage has up to a 40% chance to cause the target to emit a static discharge, dealing 25% Lightning damage to surrounding enemies."
       ]
     },
     {
@@ -5347,13 +5770,13 @@
       "class": "Spiritborn",
       "tags": ["Basic", "Centipede", "Mobility"],
       "vigor_generate": 9,
-      "lucky_hit": "26%",
+      "lucky_hit": "25%",
       "filters": ["Poison", "Slow"],
       "description": [
         "Dart at and jab an enemy, dealing {value1} damage and applying {value2} Poisoning damage over 6 seconds.",
         "Your 3rd attack bursts on your target, damaging surrounding enemies and Slowing them by 30% for 3 seconds."
       ],
-      "value1": ["5%", "6%", "7%", "8%", "9%"],
+      "value1": ["5%", "5.5%", "6%", "6.5%", "7%"],
       "value2": ["30%", "33%", "36%", "39%", "42%"],
       "runes": [
         {
@@ -5377,13 +5800,13 @@
       "class": "Spiritborn",
       "tags": ["Basic", "Jaguar", "Mobility"],
       "vigor_generate": 8,
-      "lucky_hit": "21%",
+      "lucky_hit": "20%",
       "description": [
         "Dive at an enemy and slash into it dealing {value1} damage.",
         "Your 3rd attack unleashes a rapid series of slashes around your target, dealing a total of {value2} damage."
       ],
-      "value1": ["10%", "11%", "12%", "13%", "14%"],
-      "value2": ["25%", "28%", "31%", "34%", "37%"],
+      "value1": ["18%", "20%", "22%", "23%", "25%"],
+      "value2": ["27%", "30%", "32%", "35%", "38%"],
       "runes": [
         {
           "name": "Enhanced",
@@ -5406,13 +5829,13 @@
       "class": "Spiritborn",
       "tags": ["Basic", "Eagle"],
       "vigor_generate": 9,
-      "lucky_hit": "23%",
+      "lucky_hit": "22%",
       "description": [
         "Quickly jab forward with a piercing strike dealing {value1} damage.",
         "Your 3rd attack pierces further, dealing {value2} damage and reducing your Evade Cooldown by 5 seconds."
       ],
-      "value1": ["15%", "17%", "19%", "21%", "23%"],
-      "value2": ["23%", "25%", "27%", "29%", "31%"],
+      "value1": ["15%", "17%", "18%", "20%", "21%"],
+      "value2": ["32%", "35%", "39%", "42%", "45%"],
       "runes": [
         {
           "name": "Enhanced",
@@ -5437,13 +5860,13 @@
       "class": "Spiritborn",
       "tags": ["Basic", "Gorilla", "Mobility"],
       "vigor_generate": 11,
-      "lucky_hit": "29%",
+      "lucky_hit": "28%",
       "description": [
         "Rush at a target and clobber enemies in front of you, dealing {value1} damage.",
         "Your 3rd attack strikes enemies around you, dealing {value2} damage."
       ],
-      "value1": ["15%", "17%", "19%", "21%", "23%"],
-      "value2": ["28%", "31%", "34%", "37%", "40%"],
+      "value1": ["20%", "22%", "24%", "26%", "28%"],
+      "value2": ["28%", "31%", "34%", "36%", "39%"],
       "runes": [
         {
           "name": "Enhanced",
@@ -5458,7 +5881,7 @@
         {
           "name": "Accelerated",
           "description": [
-            "Rock Splitter increases your Thorns by 13 for 5 seconds and your 3rd attack deals 100% of your Thorns to enemies."
+            "Rock Splitter increases your Thorns by 80 for 5 seconds and your 3rd attack deals 100% of your Thorns to enemies."
           ]
         }
       ]
@@ -5468,16 +5891,16 @@
       "class": "Spiritborn",
       "tags": ["Core", "Gorilla"],
       "vigor_cost": 30,
-      "lucky_hit": "31%",
+      "lucky_hit": "25%",
       "description": [
-        "Smash down next to you, creating 2 shockwaves on either side that overlap and each deal {value1} damage."
+        "Smash down next to you with devastating force, creating 2 shockwaves on either side that overlap and each deal {value1} damage."
       ],
-      "value1": ["25%", "28%", "31%", "34%", "37%"],
+      "value1": ["40%", "44%", "48%", "52%", "56%"],
       "runes": [
         {
           "name": "Enhanced",
           "description": [
-            "Crushing Hand grants a Barrier equal to 10% of the damage it deals for 2 seconds, up to 50% of your Maximum Life."
+            "Crushing Hand grants a Barrier equal to 10% of the damage it deals for 2 seconds, up to 30% of your Maximum Life."
           ]
         },
         {
@@ -5495,9 +5918,9 @@
       "class": "Spiritborn",
       "tags": ["Core", "Eagle"],
       "vigor_cost": 35,
-      "lucky_hit": "13%",
+      "lucky_hit": "15%",
       "description": ["Hurl 5 feathers that pierce through enemies, each dealing {value1} damage."],
-      "value1": ["14%", "15%", "16%", "17%", "18%"],
+      "value1": ["26%", "29%", "31%", "34%", "36%"],
       "runes": [
         {
           "name": "Enhanced",
@@ -5508,7 +5931,7 @@
         {
           "name": "Advantageous",
           "description": [
-            "Quill Volley hurls out 3 additonal feathers and deals 30% increased damage to each enemy per hit."
+            "Quill Volley hurls out 3 additonal feathers and deals 10% increased damage to each enemy per hit."
           ]
         },
         {
@@ -5524,12 +5947,12 @@
       "class": "Spiritborn",
       "tags": ["Core", "Jaguar"],
       "vigor_cost": 30,
-      "lucky_hit": "17%",
+      "lucky_hit": "18%",
       "description": [
         "Conjure claws that rake through enemies in front of you, dealing {value1} damage before exploding for an additional {value2} damage."
       ],
-      "value1": ["20%", "22%", "24%", "26%", "28%"],
-      "value2": ["40%", "44%", "48%", "52%", "56%"],
+      "value1": ["30%", "33%", "36%", "39%", "42%"],
+      "value2": ["45%", "50%", "54%", "59%", "63%"],
       "runes": [
         {
           "name": "Enhanced",
@@ -5550,7 +5973,7 @@
       "class": "Spiritborn",
       "tags": ["Core", "Centipede"],
       "vigor_cost": 40,
-      "lucky_hit": "21%",
+      "lucky_hit": "20%",
       "filters": ["Poison"],
       "description": [
         "Strike a small area, dealing {value1} damage to enemies within as well as all surrounding Poisoned enemies."
@@ -5569,7 +5992,9 @@
         },
         {
           "name": "Rampant",
-          "description": ["Stinger deals 5% increased Direct damage to Elites for every Neaby Poisoned enemy."]
+          "description": [
+            "Stinger does 40% increased damage if it only hits a single enemy. Instead of echoing to surrounding Poisoned enemies, Stinger now draws from each to hit enemies in the primary area again for an additional 10% of its Base damage."
+          ]
         }
       ]
     },
@@ -5577,21 +6002,21 @@
       "name": "Follow Through",
       "class": "Spiritborn",
       "filters": ["Basic"],
-      "description": ["Your Basic Skills deal {value1} increased damage. Double this bonus for 3rd attacks."],
-      "value1": ["10%", "20%", "30%"]
+      "description": ["Your Basic Skills deal x {value1} increased damage. Double this bonus for 3rd casts."],
+      "value1": ["5%", "10%", "15%"]
     },
     {
       "name": "Vigorous",
       "class": "Spiritborn",
       "filters": ["Core"],
-      "description": ["Casting a Core Skill increases all Vigor Generation by {value1} for 3 seconds."],
+      "description": ["Casting a Core Skill increases all Vigor Generation by x {value1} for 3 seconds."],
       "value1": ["5%", "10%", "15%"]
     },
     {
       "name": "Velocity",
       "class": "Spiritborn",
       "description": [
-        "Generates {value1} Vigor each second while moving if you have dealt damage in the last 5 seconds."
+        "Generate {value1} Vigor each second while moving if you have dealt damage in the last 5 seconds."
       ],
       "value1": [1, 2, 3]
     },
@@ -5600,11 +6025,11 @@
       "class": "Spiritborn",
       "tags": ["Focus", "Eagle"],
       "cooldown": 12,
-      "lucky_hit": "21%",
+      "lucky_hit": "20%",
       "description": [
         "Creates a cyclone that Pulls enemies inward followed by a crushing downdraft that deals {value1} damage to them."
       ],
-      "value1": ["35%", "39%", "43%", "47%", "51%"],
+      "value1": ["35%", "39%", "42%", "46%", "49%"],
       "runes": [
         {
           "name": "Enhanced",
@@ -5613,7 +6038,7 @@
         {
           "name": "Measured",
           "description": [
-            "While you have an active Barrier, your Vortex does 200% additional damage and Knocks enemies down for 3 seconds."
+            "While you have an active Barrier, your Vortex does 300% additional damage and Knocks enemies down for 3 seconds."
           ]
         },
         {
@@ -5627,7 +6052,7 @@
       "class": "Spiritborn",
       "tags": ["Focus", "Eagle", "Mobility"],
       "cooldown": 15,
-      "lucky_hit": "68%",
+      "lucky_hit": "25%",
       "filters": ["Vulnerable"],
       "description": [
         "Fly into the air, creating a cloud which makes enemies at your target location Vulnerable for 5 seconds before you crash down upon them dealing {value1} damage."
@@ -5642,12 +6067,12 @@
         },
         {
           "name": "Measured",
-          "description": ["Soar makes you Unstoppable for 3 seconds."]
+          "description": ["Soar makes you Unstoppable for 4 seconds."]
         },
         {
           "name": "Replenishing",
           "description": [
-            "Soar's cloud remains around you for 7 seconds after landing and continues to make enemies Vulnerable."
+            "Soar's cloud remains around you for 4 seconds after landing and continues to make enemies Vulnerable."
           ]
         }
       ]
@@ -5657,7 +6082,7 @@
       "class": "Spiritborn",
       "filters": ["Dodge Chance", "Critical Strike Chance"],
       "description": [
-        "Gain 100% increased Dodge Chance during Evade. Whenever you Dodge, you gain {value1} Critical Strike Chance for 3 seconds."
+        "Gain +50% increased Dodge Chance during Evade. Whenever you Dodge, you gain + {value1} Critical Strike Chance for 3 seconds."
       ],
       "value1": ["5%", "10%", "15%"]
     },
@@ -5665,8 +6090,8 @@
       "name": "Unrestrained-v2",
       "class": "Spiritborn",
       "filters": ["Unhindered", "Unstoppable"],
-      "description": ["You deal {value1} increased damage while Unhindered or Unstoppable."],
-      "value1": ["3%", "6%", "9%"]
+      "description": ["You deal x {value1} increased damage while Unhindered or Unstoppable."],
+      "value1": ["4%", "8%", "12%"]
     },
     {
       "name": "Swift",
@@ -5675,25 +6100,24 @@
       "description": [
         "Your Mobility Skill Cooldowns are reduced up to {value1} seconds based on how far you travel with them."
       ],
-      "value1": [2, 4, 6]
+      "value1": [1, 2, 3]
     },
     {
       "name": "Ravager",
       "class": "Spiritborn",
       "tags": ["Focus", "Jaguar", "Incarnate"],
-      "cooldown": 20,
-      "lucky_hit": "31%",
+      "cooldown": 25,
+      "lucky_hit": "30%",
       "description": [
-        "\u003Cb\u003EPassive\u003C/b\u003E: Minimum Ferocity increased by {value1} .",
-        "\u003Cb\u003EActive\u003C/b\u003E: Unleash a savage roar, causing all your attacks to trigger additional strikes dealing {value2} damage over 6 seconds."
+        "<b>Passive</b>: Minimum Ferocity increased by +2 .",
+        "<b>Active</b>: Unleash a savage roar, causing each of your attacks to trigger additional {value1} damage strike per enemy over 6 seconds."
       ],
-      "value1": [2, 3, 4],
-      "value2": ["60%", "66%", "72%", "78%", "84%"],
+      "value1": ["40%", "44%", "48%", "52%", "56%"],
       "runes": [
         {
           "name": "Enhanced",
           "description": [
-            "Ravager's duration is extended by 2 seconds per kill while active. This bonus is reduced by 0.25 each kill. to minimum of 0.5 seconds."
+            "Ravager's duration is extended by 2 seconds per kill while active. This bonus is reduced by 0.25 each kill. to minimum of 0.25 seconds."
           ]
         },
         {
@@ -5718,8 +6142,8 @@
       "lucky_hit": "10%",
       "filters": ["Poison", "Unhindered"],
       "description": [
-        "\u003Cb\u003EPassive\u003C/b\u003E: Enemies that attack you are Poisoned for {value1} damage over 3 seconds.",
-        "\u003Cb\u003EActive\u003C/b\u003E: Your toxins overflow, applying the Poisoning in a trail and making you Unhindered for {value2} seconds."
+        "<b>Passive</b>: Enemies that attack you are Poisoned for {value1} damage over 3 seconds.",
+        "<b>Active</b>: Your toxins overflow, applying the Poisoning in a trail and making you Unhindered for {value2} seconds."
       ],
       "value1": ["30%", "33%", "36%", "39%", "42%"],
       "value2": [5, 5.5, 6, 6.5, 7],
@@ -5744,7 +6168,7 @@
       "name": "Apex",
       "class": "Spiritborn",
       "filters": ["Vulnerable"],
-      "description": ["You deal {value1} increased Vulnerable damage. Double this bonus vs Elite enemies."],
+      "description": ["You deal x {value1} increased Vulnerable damage. Double this bonus vs Elite enemies."],
       "value1": ["3%", "6%", "9%"]
     },
     {
@@ -5766,7 +6190,7 @@
       "class": "Spiritborn",
       "filters": ["Damage Reduction", "Resolve"],
       "description": ["Gain {value1} additional Damage Reduction per stack of Resolve."],
-      "value1": ["1%", "2%", "3%"]
+      "value1": ["0.5%", "1%", "1.5%"]
     },
     {
       "name": "Fueled",
@@ -5782,14 +6206,13 @@
       "class": "Spiritborn",
       "tags": ["Defensive", "Gorilla", "Incarnate"],
       "cooldown": 25,
-      "lucky_hit": "31%",
+      "lucky_hit": "30%",
       "filters": ["Resolve", "Unstoppable", "Block Chance"],
       "description": [
-        "\u003Cb\u003EPassive\u003C/b\u003E: Gain {value1} Resolve every 5 seconds.",
-        "\u003Cb\u003EActive\u003C/b\u003E: Encase yourself, becoming Unstoppable and gaining 100% Block Chance for {value2} seconds."
+        "<b>Passive</b>: Gain 1 Resolve every 5 seconds.",
+        "<b>Active</b>: Encase yourself, becoming Unstoppable and gaining +100% Block Chance for {value1} seconds."
       ],
-      "value1": [1, 2, 3, 4, 5],
-      "value2": [3, 3.3, 3.6, 3.9, 4.2],
+      "value1": [3, 3.3, 3.6, 3.9, 4.2],
       "runes": [
         {
           "name": "Enhanced",
@@ -5805,7 +6228,9 @@
         },
         {
           "name": "Reinforced",
-          "description": ["While active, Armored Hide increases your Block Reduction by 5% for every Nearby enemy."]
+          "description": [
+            "While active, Armored Hide increases your Block Reduction by 5% for every Nearby enemy, up to 20%."
+          ]
         }
       ]
     },
@@ -5814,18 +6239,18 @@
       "class": "Spiritborn",
       "tags": ["Defensive", "Gorilla"],
       "cooldown": 10,
-      "lucky_hit": "21%",
+      "lucky_hit": "20%",
       "filters": ["Knock Down"],
       "description": [
         "Stomp in front of you, releasing a shockwave that deals {value1} damage and Knocks Down enemies for {value2} seconds."
       ],
-      "value1": ["15%", "17%", "19%", "21%", "23%"],
+      "value1": ["15%", "17%", "18%", "20%", "21%"],
       "value2": [3, 3.3, 3.6, 3.9, 4.2],
       "runes": [
         {
           "name": "Enhanced",
           "description": [
-            "Concussive Stomp grants a Barrier equal to 10% of your Maximum Life per enemy hit for 3 seconds, up to 100%."
+            "Concussive Stomp grants a Barrier equal to 10% of your Maximum Life per enemy hit for 3 seconds, up to 30%."
           ]
         },
         {
@@ -5835,7 +6260,7 @@
         {
           "name": "Reinforced",
           "description": [
-            "Concussive Stomp gains an additional Charge and does 500% increased damage to Unstoppable enemies and Bosses."
+            "Concussive Stomp gains an additional Charge and does 600% increased damage to Unstoppable enemies and Bosses."
           ]
         }
       ]
@@ -5845,15 +6270,14 @@
       "class": "Spiritborn",
       "tags": ["Defensive", "Jaguar", "Incarnate"],
       "charge": 2,
-      "charge_cooldown": 13,
-      "lucky_hit": "31%",
+      "charge_cooldown": 20,
+      "lucky_hit": "30%",
       "filters": ["Dodge Chance", "Close"],
       "description": [
-        "\u003Cb\u003EPassive\u003C/b\u003E: Gain {value1} Dodge Chance and automatically retaliate against Close enemies for {value2} damage when you Dodge their attacks.",
-        "\u003Cb\u003EActive\u003C/b\u003E: Dodge all direct attacks for 2 seconds."
+        "<b>Passive</b>: Gain 10% Dodge Chance and automatically retaliate against Close enemies for {value1} damage when you Dodge their attacks.",
+        "<b>Active</b>: Dodge all direct attacks for 3 seconds per cast, up to 6 seconds."
       ],
-      "value1": ["20%", "25%", "30%", "35%", "40%"],
-      "value2": ["80%", "88%", "96%", "104%", "112%"],
+      "value1": ["80%", "88%", "96%", "104%", "112%"],
       "runes": [
         {
           "name": "Enhanced",
@@ -5867,7 +6291,9 @@
         },
         {
           "name": "Reinforced",
-          "description": ["Counterattack passively increases your Critical Strike Damage by 10% for every Close enemy."]
+          "description": [
+            "Counterattack passively increases your Critical Strike Damage by 6% for every Close enemy, up to 30%."
+          ]
         }
       ]
     },
@@ -5876,10 +6302,10 @@
       "class": "Spiritborn",
       "tags": ["Defensive", "Centipede"],
       "cooldown": 12,
-      "lucky_hit": "21%",
+      "lucky_hit": "10%",
       "filters": ["Fear", "Slow", "Poison"],
       "description": [
-        "Call forth a wave of insects that bite enemies, Fearing and Slowing them for 3 seconds and applying {value1} Poisoning damage over 6 seconds."
+        "Call forth a wave of insects that bite enemies, Fearing and Slowing them by 50% for 3 seconds while applying {value1} Poisoning damage over 6 seconds."
       ],
       "value1": ["100%", "110%", "120%", "130%", "140%"],
       "runes": [
@@ -5906,37 +6332,35 @@
       "class": "Spiritborn",
       "filters": ["Poison Resistance"],
       "description": [
-        "You gain {value1} increased Poison Resistance and your Maximum Poison Resistance is increased by {value2} ."
+        "You gain + {value1} increased Poison Resistance and your Maximum Poison Resistance is increased by + {value2} ."
       ],
       "value1": ["15%", "30%", "45%"],
-      "value2": ["5%", "10%", "15%"]
+      "value2": ["3%", "6%", "9%"]
     },
     {
       "name": "Nourishment",
       "class": "Spiritborn",
       "filters": ["Heal", "Poison"],
       "description": [
-        "Your Healing is increased by 25%. Whenever you Heal your Poisoning Damage is increased by {value1} for 3 seconds, up to {value2} ."
+        "Your Healing is increased by +20%. Whenever you Heal, your Poisoning Damage is increased by x {value1} for 3 seconds."
       ],
-      "value1": ["2%", "4%", "6%"],
-      "value2": ["10%", "20%", "30%"]
+      "value1": ["3%", "6%", "9%"]
     },
     {
       "name": "Patient Guard",
       "class": "Spiritborn",
       "filters": ["Block Chance", "Block Damage Reduction"],
       "description": [
-        "Gain {value1} Block Chance. After standing still for 1 seconds, you gain {value2} Block Damage Reduction. Lasts for 2 seconds after your next move."
+        "Gain +10% Block Chance. After standing still for 0.5 seconds, you gain + {value1} Block Damage Reduction until you next move."
       ],
-      "value1": ["10%", "20%", "30%"],
-      "value2": ["10%", "20%", "30%"]
+      "value1": ["3%", "6%", "9%"]
     },
     {
       "name": "Bastion",
       "class": "Spiritborn",
       "filters": ["Thorns", "Barrier"],
-      "description": ["Gain [X] Thorns. While you have a Barrier your Thorns are increased by {value1} ."],
-      "value1": ["30%", "35%", "40%"]
+      "description": ["Gain {value1} Thorns. While you have a Barrier your Thorns are increased by x20%."],
+      "value1": [40, 80, 120]
     },
     {
       "name": "Auspicious",
@@ -5951,7 +6375,7 @@
       "name": "Resilient",
       "class": "Spiritborn",
       "filters": ["Gorilla", "Maximum Life"],
-      "description": ["Casting a Gorilla Skill grants {value1} increased Maximum Life for 10 seconds."],
+      "description": ["Casting a Gorilla Skill grants x {value1} increased Maximum Life for 10 seconds."],
       "value1": ["5%", "10%", "15%"]
     },
     {
@@ -5959,27 +6383,26 @@
       "class": "Spiritborn",
       "filters": ["Gorilla", "Knocked Down"],
       "description": [
-        "Gorilla Skills deal {value1} increased damage to Knocked Down enemies and have a {value2} chance to Execute them if they are not a boss."
+        "Gorilla Skills deal x {value1} increased damage to Knocked Down enemies and their first hits have a 5% chance to Execute Non-Bosses."
       ],
-      "value1": ["5%", "10%", "15%"],
-      "value2": ["5%", "10%", "15%"]
+      "value1": ["5%", "10%", "15%"]
     },
     {
       "name": "Payback",
       "class": "Spiritborn",
       "tags": ["Potency", "Gorilla"],
-      "cooldown": 12,
-      "lucky_hit": "31%",
+      "cooldown": 15,
+      "lucky_hit": "30%",
       "description": [
         "Smash enemies in front of you, dealing {value1} damage.",
         "When attacked, you have a 35% chance to reduce Payback's active Cooldown by 1 seconds."
       ],
-      "value1": ["100%", "110%", "120%", "130%", "140%"],
+      "value1": ["125%", "138%", "150%", "163%", "175%"],
       "runes": [
         {
           "name": "Enhanced",
           "description": [
-            "Each time an enemy attacks you the damage they take from Payback is increased by 5% for 60 seconds, up to 75%."
+            "Each time an enemy attacks you the damage they take from Payback is increased by 5% for 60 seconds, up to 100%."
           ]
         },
         {
@@ -6000,14 +6423,14 @@
       "name": "Brilliance",
       "class": "Spiritborn",
       "filters": ["Eagle", "Movement Speed"],
-      "description": ["Eagle Skills deal {value1} increased damage for each 20% Movement Speed you have."],
-      "value1": ["1%", "2%", "3%"]
+      "description": ["Your Eagle Skill damage is increased by x {value1} of your Movement Speed bonus."],
+      "value1": ["3%", "6%", "9%"]
     },
     {
       "name": "Acceleration",
       "class": "Spiritborn",
       "filters": ["Eagle", "Movement Speed"],
-      "description": ["Casting an Eagle Skill grants {value1} increased Movement Speed for 3 seconds."],
+      "description": ["Casting an Eagle Skill grants + {value1} increased Movement Speed for 4 seconds."],
       "value1": ["5%", "10%", "15%"]
     },
     {
@@ -6016,7 +6439,7 @@
       "tags": ["Potency", "Eagle"],
       "charge": 3,
       "charge_cooldown": 10,
-      "lucky_hit": "23%",
+      "lucky_hit": "22%",
       "description": [
         "Whirl out a cluster of razor sharp spirit feathers that rebound back, dealing {value1} damage each way."
       ],
@@ -6036,7 +6459,7 @@
         },
         {
           "name": "Invasive",
-          "description": ["Razor Wings consumes 3 Charges to send out a spiral of 3 wings at once."]
+          "description": ["Razor Wings lasts 300% longer and spiral outwards."]
         }
       ]
     },
@@ -6045,8 +6468,8 @@
       "class": "Spiritborn",
       "tags": ["Potency", "Jaguar", "Mobility"],
       "charge": 4,
-      "charge_cooldown": "4 per 20 seconds",
-      "lucky_hit": "26%",
+      "charge_cooldown": "4 per 20",
+      "lucky_hit": "25%",
       "description": [
         "Slash a short distance through an enemy, striking all enemies along the way twice for a total of {value1} damage."
       ],
@@ -6058,12 +6481,12 @@
         },
         {
           "name": "Poised",
-          "description": ["When Rushing Claw hits an Elite enemy you gain 25% increased Dodge Chance for 3 seconds."]
+          "description": ["When Rushing Claw hits an Elite enemy you gain 10% increased Dodge Chance for 3 seconds."]
         },
         {
           "name": "Invasive",
           "description": [
-            "Using Rushing Claw's last Charge will instantly refill all Charges by consuming 4 stacks of Ferocity."
+            "Using Rushing Claw's last Charge will instantly refill all Charges by consuming 4 stacks of Ferocity. Can only occur once every 20 seconds."
           ]
         }
       ]
@@ -6073,7 +6496,7 @@
       "class": "Spiritborn",
       "filters": ["Jaguar"],
       "description": [
-        "Hitting enemies with Jaguar Skills increases the damage they take from you by {value1} up to {value2} ."
+        "Hitting enemies with Jaguar Skills increases the damage they take from you by x {value1} up to x {value2} ."
       ],
       "value1": ["0.1%", "0.2%", "0.3%"],
       "value2": ["10%", "20%", "30%"]
@@ -6082,15 +6505,15 @@
       "name": "Furnace",
       "class": "Spiritborn",
       "filters": ["Jaguar", "Critical Strike Damage"],
-      "description": ["Jaguar Skills deal {value1} increased Critical Strike Damage per stack of Ferocity."],
-      "value1": ["2%", "4%", "6%"]
+      "description": ["Jaguar Skills deal x {value1} increased Critical Strike Damage per stack of Ferocity."],
+      "value1": ["1%", "2%", "3%"]
     },
     {
       "name": "Touch of Death",
       "class": "Spiritborn",
       "tags": ["Potency", "Centipede"],
       "cooldown": 15,
-      "lucky_hit": "21%",
+      "lucky_hit": "20%",
       "description": [
         "Strike an enemy and infect them, dealing 5% damage and applying {value1} Poisoning damage over 9 seconds.",
         "When the infection expires or the host dies, a swarm hatches and seeks enemies for 9 seconds, dealing {value2} damage per hit.",
@@ -6121,29 +6544,30 @@
       "name": "Ravenous",
       "class": "Spiritborn",
       "filters": ["Centipede", "Healthy"],
-      "description": ["Your Centipede Skills deal {value1} increased damage. Double this bonus vs Healthy enemies."],
-      "value1": ["5%", "10%", "15%"]
+      "description": ["Your Centipede Skills deal x {value1} increased damage. Double this bonus vs Healthy enemies."],
+      "value1": ["2.5%", "5%", "7.5%"]
     },
     {
       "name": "Oppressive",
       "class": "Spiritborn",
       "filters": ["Centipede", "Crowd Controlled"],
       "description": [
-        "Your Centipede Skills deal {value1} increased damage to Crowd Controlled enemies and gain {value2} increased Crowd Controll Durations."
+        "Your Centipede Skills deal x {value1} increased damage to Crowd Controlled enemies and gain +30% increased Crowd Control Durations."
       ],
-      "value1": ["10%", "20%", "30%"],
-      "value2": ["50%", "100%", "150%"]
+      "value1": ["4%", "8%", "12%"]
     },
     {
       "name": "The Protector",
       "class": "Spiritborn",
       "tags": ["Ultimate", "Gorilla"],
-      "cooldown": 45,
-      "lucky_hit": "16%",
+      "cooldown": "{value2}",
+      "lucky_hit": "15%",
       "filters": ["Barrier"],
       "description": [
-        "The Gorilla Spirit protects an area for 6 seconds, continuously smashing surrounding enemies for 80% damage and granting you Barrier for 15% of your Maximum Life every 1.5 seconds."
+        "The Gorilla Spirit protects an area for 6 seconds, continuously smashing surrounding enemies for {value1} damage and granting you Barrier for 15% of your Maximum Life every 1.5 seconds."
       ],
+      "value1": ["80%", "88%", "96%", "104%", "112%"],
+      "value2": [45, 43, 41, 39, 37],
       "runes": [
         {
           "name": "Harmonious",
@@ -6164,11 +6588,14 @@
       "class": "Spiritborn",
       "tags": ["Ultimate", "Eagle"],
       "charge": 3,
-      "charge_cooldown": 30,
-      "lucky_hit": "31%",
+      "charge_cooldown": "3.25 per {value3}",
+      "lucky_hit": "35%",
       "description": [
-        "The Eagle Spirit swoops down and deals 20% damage. After a short delay it blasts off dealing 300% damage."
+        "The Eagle Spirit swoops down and deals {value1} damage. After a short delay it blasts off dealing {value2} damage."
       ],
+      "value1": ["35%", "39%", "42%", "46%", "49%"],
+      "value2": ["300%", "330%", "360%", "390%", "420%"],
+      "value3": [45, 43, 41, 39, 37],
       "runes": [
         {
           "name": "Harmonious",
@@ -6183,14 +6610,67 @@
       ]
     },
     {
+      "name": "The Hunter",
+      "class": "Spiritborn",
+      "tags": ["Ultimate", "Jaguar"],
+      "cooldown": "{value3}",
+      "lucky_hit": "15%",
+      "description": [
+        "Bound across the battlefield with the Jaguar Spirit, dealing {value1} damage upon landing and the rapidily slashing enemies in the area for {value2} total damage over 7 strikes."
+      ],
+      "value1": ["50%", "55%", "60%", "65%", "70%"],
+      "value2": ["200%", "220%", "240%", "260%", "280%"],
+      "value3": [45, 43, 41, 39, 37],
+      "runes": [
+        {
+          "name": "Harmonious",
+          "description": [
+            "The Hunter overfills your Ferocity by 4 stacks and causes you to deal 100% increased damage to Injured enemies for 8 seconds."
+          ]
+        },
+        {
+          "name": "Exalted",
+          "description": [
+            "Killing an enemy while The Hunter is present has a 40% chance to instantly reset its Cooldown. This chance is halved after each consecutive reset."
+          ]
+        }
+      ]
+    },
+    {
+      "name": "The Devourer",
+      "class": "Spiritborn",
+      "tags": ["Ultimate", "Centipede"],
+      "cooldown": "{value3}",
+      "lucky_hit": "10%",
+      "description": [
+        "The Centipede Spirit emerges, blasting enemies in a line for {value1} damage and spitting at others for {value2} damage. Lasts for 15 seconds."
+      ],
+      "value1": ["140%", "154%", "168%", "182%", "196%"],
+      "value2": ["40%", "44%", "48%", "52%", "56%"],
+      "value3": [45, 43, 41, 39, 37],
+      "runes": [
+        {
+          "name": "Harmonious",
+          "description": [
+            "As it emerges, The Devourer launches 10 toxic globs that apply 210% Poisoning damage over 6 seconds wherever they land."
+          ]
+        },
+        {
+          "name": "Exalted",
+          "description": [
+            "While The Devourer is active, if a Non-Boss enemy's remaining Life becomes Poisoned they die instantly and unleash a Pestilent Swarm that deals 30% damage per hit to enemies it passes through."
+          ]
+        }
+      ]
+    },
+    {
       "name": "Resolution",
       "class": "Spiritborn",
       "filters": ["Ultimate"],
       "description": [
-        "Casting an Ultimate Skill grants {value1} increased damage to Elites for {value2} seconds. Double this bonus if you are only fighting one enemy."
+        "Casting an Ultimate Skill grants x {value1} increased damage to Elites for 3 seconds. Double this bonus if you are only fighting one enemy."
       ],
-      "value1": ["5%", "10%", "15%"],
-      "value2": [3, 6, 9]
+      "value1": ["5%", "10%", "15%"]
     },
     {
       "name": "Spiritual Attunement",
@@ -6204,25 +6684,24 @@
       "class": "Spiritborn",
       "filters": ["Ultimate"],
       "description": [
-        "Any enemies you kill while an Ultimate Skill is active grants a stack of Supremacy, each increasing your damage by {value1} , up to {value2} . When an Ultimate Skill ends, you gain {value3} stacks of Supremacy, but you begin to lose one stack every second."
+        "Any enemies you kill while an Ultimate Skill is active grants a stack of Supremacy, each increasing your damage by x {value1} , up to x {value2} . When an Ultimate Skill ends, you gain 5 stacks of Supremacy, but you begin to lose one stack every second."
       ],
       "value1": ["1%", "2%", "3%"],
-      "value2": ["10%", "20%", "30%"],
-      "value3": [5, 10, 15]
+      "value2": ["10%", "20%", "30%"]
     },
     {
       "name": "Initiative",
       "class": "Spiritborn",
       "filters": ["Ultimate", "Unstoppable"],
       "description": ["Casting an Ultimate Skill makes you Unstoppable for {value1} seconds."],
-      "value1": [1, 2, 3]
+      "value1": [2, 4, 6]
     },
     {
       "name": "Intricacy",
       "class": "Spiritborn",
       "filters": ["Ultimate", "Potency", "Defensive", "Focus"],
       "description": [
-        "Upon casting an Ultimate Skill, the last Potency, Defensive, or Focus Skill you cast prior becomes free to cast for {value1} seconds."
+        "Upon casting an Ultimate Skill, the last Potency, Defensive, or Focus Skill you cast prior is reset and can be cast for free up to {value1} time in the next 5 seconds."
       ],
       "value1": [1, 2, 3]
     },
@@ -6234,58 +6713,10 @@
       "value1": ["2%", "4%", "6%"]
     },
     {
-      "name": "The Hunter",
-      "class": "Spiritborn",
-      "tags": ["Ultimate", "Jaguar"],
-      "cooldown": 45,
-      "lucky_hit": "16%",
-      "description": [
-        "Bound across the battlefield with the Jaguar Spirit, dealing 50% damage upon landing and the rapidily slashing enemies in the area for 200% total damage over 7 strikes."
-      ],
-      "runes": [
-        {
-          "name": "Harmonious",
-          "description": [
-            "The Hunter overfills your Ferocity by 4 stacks and causes you to deal 100% increased damage to Injured enemies for 8 seconds."
-          ]
-        },
-        {
-          "name": "Exalted",
-          "description": [
-            "Killing an enemy while The Hunter is present has a 15% chance to instantly reset its Cooldown and cause your next cast within 8 seconds to repeat its 7 strikes an additional time, up to 4 times."
-          ]
-        }
-      ]
-    },
-    {
-      "name": "The Devourer",
-      "class": "Spiritborn",
-      "tags": ["Ultimate", "Centipede"],
-      "cooldown": 45,
-      "lucky_hit": "10%",
-      "description": [
-        "The Centipede Spirit emerges, blasting enemies in a line for 140% damage and spitting at others for 40% damage. Lasts for 15 seconds."
-      ],
-      "runes": [
-        {
-          "name": "Harmonious",
-          "description": [
-            "As it emerges, The Devourer launches 10 toxic globs that apply 105% Poisoning damage over 6 seconds wherever they land."
-          ]
-        },
-        {
-          "name": "Exalted",
-          "description": [
-            "While The Devourer is active, if a Non-Boss enemy's remaining Life becomes Poisoned they die instantly and unleash a Pestilent Swarm that deals 30% damage per hit to enemies it passes through."
-          ]
-        }
-      ]
-    },
-    {
       "name": "Vital Strikes",
       "class": "Spiritborn",
       "description": [
-        "You deal 100% increased damage to Vulnerable enemies.",
+        "You deal x45% increased damage to Vulnerable enemies.",
         "After making an enemy Vulnerable, your next Direct damage dealt to them:"
       ],
       "description_list": [
@@ -6297,29 +6728,29 @@
     {
       "name": "Adaptive Stances",
       "class": "Spiritborn",
-      "description": ["The Base of a Spirit cast grants:"],
+      "description": ["The Base Spirit of a Skill cast cast grants:"],
       "description_list": [
-        "Eagle: 30% Movement Speed",
+        "Eagle: +30% Movement Speed",
         "Gorilla: 30% Damage Reduction",
-        "Jaguar: 30% Attack Speed",
-        "Centipede: 30% Life Steal"
+        "Jaguar: +30% Attack Speed",
+        "Centipede: +30% Life Steal"
       ],
       "description2": ["Casting a Skill of a different Base Spirit:"],
-      "description_list2": ["Swaps to the new bonus", "Increases all damage by 30% for 5 seconds"]
+      "description_list2": ["Swaps to the new bonus", "Increases Core Stats by +50% for 5 seconds"]
     },
     {
       "name": "Prodigy's Tempo",
       "class": "Spiritborn",
       "description": [
-        "Every 3rd consecutive cast of the same Basic Skill increases all Skill Ranks by 2 for 5 seconds.",
-        "Every 3rd consecutive cast of the same Core or Potency Skill reduces all Skills' active Cooldowns by 10%, increased by 2% for each of their skill Ranks."
+        "Every 3rd consecutive cast of the same Basic Skill increases all purchased Skills' Ranks by 2 for 5 seconds.",
+        "Every 3rd consecutive cast of the same Core or Potency Skill reduces all Skills' active Cooldowns by 10%, increased by 2% for each of their Skill Ranks."
       ]
     },
     {
       "name": "Noxious Resonance",
       "class": "Spiritborn",
       "description": [
-        "Your Critical Strikes cause enemies to burst 100% of the Total Poisoning on them as Poison damage to those around them."
+        "Your Critical Strikes cause enemies to burst 100% of their total Poisoning as Direct Poison damage to themselves and surrounding enemies."
       ]
     },
     {
@@ -6330,7 +6761,7 @@
         "All Skills are now also Eagle Skills."
       ],
       "description2": [
-        "For every 4 meters you move, your Critical Strike Chance increases by 4%. This bonus is reset 2 seconds after you Critically Strike."
+        "For every 4 meters you move, your Critical Strike Chance increases by +4%. This bonus is reset 2 seconds after you Critically Strike."
       ]
     },
     {
@@ -6365,7 +6796,605 @@
         "All Skills are now also Centipede Skills."
       ],
       "description2": [
-        "Heal for 1% of your Maximum Life, for every Nearby enemy you've Poisoned in the last 3 seonds, up to 5%."
+        "Heal for 1% of your Maximum Life, for every Nearby enemy you've Poisoned in the last 3 seconds, up to 5%."
+      ]
+    },
+    {
+      "name": "Shield Charge",
+      "class": "Raheir, The Shieldbearer",
+      "tags": ["Mercenary Core"],
+      "cooldown": 11,
+      "filters": ["Fortify"],
+      "weapon": "Tower Shield",
+      "basic_attack": "Shield Bash",
+      "basic_attack_description": [
+        "Raheir bashes enemies with a tower shield, dealing 80% Physical damage and Fortifying you for 5% of your Maximum Life."
+      ],
+      "description": [
+        "Raheir rushes forward aggressively, dealing 110% Physical damage and Taunting nearby enemies for 4 seconds.",
+        "Selecting a Mercenary Core Skill alters their wielded Weapon and Basic Attack."
+      ]
+    },
+    {
+      "name": "Ground Slam",
+      "class": "Raheir, The Shieldbearer",
+      "tags": ["Mercenary Core"],
+      "cooldown": 11,
+      "filters": ["Heal", "Slow"],
+      "weapon": "Round Shield",
+      "basic_attack": "Shield Strike",
+      "basic_attack_description": [
+        "Raheir swings a round shield at enemies, dealing 85% Physical damage. Every 3 swings, Raheir Heals you for 2% of your Maximum Life."
+      ],
+      "description": [
+        "Raheir brutalizes the ground, dealing 160% Physical damage and Slowing enemies by 30% for 6 seconds. Targets in the center of the slam are Slowed by 60% instead.",
+        "Selecting a Mercenary Core Skill alters their wielded Weapon and Basic Attack."
+      ]
+    },
+    {
+      "name": "Raheir's Guard",
+      "class": "Raheir, The Shieldbearer",
+      "description": ["Raheir grants you +15% Armor."]
+    },
+    {
+      "name": "Vanguard",
+      "class": "Raheir, The Shieldbearer",
+      "description": ["Raheir Slows surrounding enemies by 40%."]
+    },
+    {
+      "name": "Raheir's Aegis",
+      "class": "Raheir, The Shieldbearer",
+      "description": ["Raheir grants you 15% Resistance to All Elements."]
+    },
+    {
+      "name": "Draw Fire",
+      "class": "Raheir, The Shieldbearer",
+      "description": [
+        "When you use a Healing Potion, Raheir Taunts enemies around him for 4 seconds. Can only occur once every 20 seconds."
+      ]
+    },
+    {
+      "name": "Provoke",
+      "class": "Raheir, The Shieldbearer",
+      "tags": ["Mercenary Iconic"],
+      "cooldown": 25,
+      "filters": ["Taunt", "Damage Reduction"],
+      "description": [
+        "Raheir Taunts enemies around you for 5 seconds. You gain 5% Damage Reduction for each target, up to 20%."
+      ]
+    },
+    {
+      "name": "Crater",
+      "class": "Raheir, The Shieldbearer",
+      "tags": ["Mercenary Iconic"],
+      "cooldown": 22,
+      "filters": ["Stun"],
+      "description": [
+        "Raheir strikes the ground 3 times, each burst dealing 30% Physical damage and Pulling In enemies. The final burst additionally deals [X] Physical damage and Stuns enemies for 2 seconds."
+      ]
+    },
+    {
+      "name": "Bastion-v2",
+      "class": "Raheir, The Shieldbearer",
+      "tags": ["Mercenary Iconic"],
+      "cooldown": 30,
+      "filters": ["Unstoppable"],
+      "description": [
+        "Raheir takes a protective position for 5 seconds, redirecting 90% of the damage that would be dealt to surrounding allies to himself for 5 seconds.",
+        "Bastion's initial cast also grants surrounding allies Unstoppable for 1.0 second."
+      ]
+    },
+    {
+      "name": "Shield Throw",
+      "class": "Raheir, The Shieldbearer",
+      "tags": ["Mercenary Iconic"],
+      "cooldown": 22,
+      "filters": ["Taunt"],
+      "description": [
+        "Raheir throws his shield, dealing 225% Physical damage and Taunting enemies for 3 seconds. The shield bounces up to 3 times and cannot bounce to the same target twice."
+      ]
+    },
+    {
+      "name": "Mocking Lure",
+      "class": "Raheir, The Shieldbearer",
+      "description": ["You deal x10% increased damage to enemies Taunted by Raheir."]
+    },
+    {
+      "name": "Iron Wolf's Ward",
+      "class": "Raheir, The Shieldbearer",
+      "filters": ["Knock Back", "Taunt"],
+      "description": [
+        "When Raheir's Valiance is triggered, he Knocks Back Close enemies and Taunts Distant enemies for 4 seconds.",
+        "Raheir's Valiance Cooldown is reduced by 25%."
+      ]
+    },
+    {
+      "name": "Iron Wolf's Call",
+      "class": "Raheir, The Shieldbearer",
+      "description": [
+        "When Raheir's Valiance is triggered, your next 2 Core Skills within 10 seconds deal x25% increased damage and cost no Resource.",
+        "Raheir's Valiance Cooldown is reduced by 25%."
+      ]
+    },
+    {
+      "name": "Sundering Shield",
+      "class": "Raheir, The Shieldbearer",
+      "description": ["Raheir's final Crater burst inflicts Vulnerable on enemies for 4 seconds."]
+    },
+    {
+      "name": "Inspiration",
+      "class": "Raheir, The Shieldbearer",
+      "description": [
+        "Enemies affected by Raheir's Ground Slam take x10% increased damage.",
+        "Allies affected by Raheir's Bastion deal x25% increased damage."
+      ]
+    },
+    {
+      "name": "Iron Wolf's Virtue",
+      "class": "Raheir, The Shieldbearer",
+      "filters": ["Heal"],
+      "description": [
+        "When Raheir's Valiance is triggered, he Heals you for 25% of your Maximum Life.",
+        "Raheir's Valiance Cooldown is reduced by 25%."
+      ]
+    },
+    {
+      "name": "Iron Wolf's Arrival",
+      "class": "Raheir, The Shieldbearer",
+      "description": [
+        "When Raheir's Valiance is triggered, he also casts Ground Slam and Shield Throw.",
+        "Raheir's Valiance's Cooldown is reduced by 25%."
+      ]
+    },
+    {
+      "name": "Consecrated Shield",
+      "class": "Raheir, The Shieldbearer",
+      "filters": ["Heal"],
+      "description": [
+        "Raheir's Shield Throw Consecrates enemies for 6 seconds. Directly damaging a Consecrated enemy Heals you for 6% of your Maximum Life, once per target."
+      ]
+    },
+    {
+      "name": "Cleave",
+      "class": "Varyana, The Berserker Crone",
+      "tags": ["Mercenary Core"],
+      "cooldown": 8,
+      "filters": ["Bleed"],
+      "weapon": "Dual Axes",
+      "basic_attack": "Double Strike",
+      "basic_attack_description": [
+        "Varyana slashes enemies with dual axes, dealing 58% Physical damage. She has a 45% chance to also deal 400% Bleeding damage over 3 seconds."
+      ],
+      "description": [
+        "Varyana swings two axes in an arc in front of her, dealing 60% Physical damage and 400% Bleeding damage over 4 seconds.",
+        "Selecting a Mercenary Core Skill alters their wielded Weapon and Basic Attack."
+      ]
+    },
+    {
+      "name": "Shockwave",
+      "class": "Varyana, The Berserker Crone",
+      "tags": ["Mercenary Core"],
+      "cooldown": 8,
+      "filters": ["Knock Down"],
+      "weapon": "Two-Handed Mace",
+      "basic_attack": "Heavy Strike",
+      "basic_attack_description": [
+        "Varyana batters enemies with a mace, dealing 80% Physical damage with 20% increased Critical Strike Chance."
+      ],
+      "description": [
+        "Varyana slams the ground for a brutal shockwave in front of her, dealing 80% Physical damage and Knocking Down enemies for 1.5 seconds.",
+        "Selecting a Mercenary Core Skill alters their wielded Weapon and Basic Attack."
+      ]
+    },
+    {
+      "name": "Hysteria",
+      "class": "Varyana, The Berserker Crone",
+      "filters": ["Attack Speed"],
+      "description": ["You gain 1.5% Attack Speed for 5 seconds whenever Varyana damages an enemy, up to 12%."]
+    },
+    {
+      "name": "Recklessness",
+      "class": "Varyana, The Berserker Crone",
+      "filters": ["Vulnerable"],
+      "description": ["Varyana's Cleave inflicts Vulnerable on enemies for 3 seconds."]
+    },
+    {
+      "name": "Crushing Force",
+      "class": "Varyana, The Berserker Crone",
+      "filters": ["Knock Down"],
+      "description": ["When Varyana deals damage to an enemy, she has a 30% chance to Knock them Down for 1.5 seconds."]
+    },
+    {
+      "name": "Reprisal",
+      "class": "Varyana, The Berserker Crone",
+      "filters": ["Knock Down"],
+      "description": [
+        "If you become Crowd Controlled, Varyana leaps towards the enemy that inflicted it, dealing 128% Physical damage and Knocking Down surrounding enemies for 2.28 seconds on impact. This can only occur once every 12 seconds."
+      ]
+    },
+    {
+      "name": "Bloodthirst",
+      "class": "Varyana, The Berserker Crone",
+      "tags": ["Mercenary Iconic"],
+      "cooldown": 22,
+      "filters": ["Attack Speed"],
+      "description": [
+        "Varyana enters Bloodthirst, gaining 30% Attack Speed, 200% Movement Speed, and Unstoppable for 7 seconds.",
+        "Varyana's Bloodthirst grants 10% Attack Speed to you for the same duration."
+      ]
+    },
+    {
+      "name": "Whirlwind-v2",
+      "class": "Varyana, The Berserker Crone",
+      "tags": ["Mercenary Iconic"],
+      "cooldown": 9,
+      "filters": ["Bleed"],
+      "description": [
+        "Varyana spins violently in a line, repeatedly dealing 65% Physical damage and 30% Bleeding damage over 5 seconds."
+      ]
+    },
+    {
+      "name": "Earth Breaker",
+      "class": "Varyana, The Berserker Crone",
+      "tags": ["Mercenary Iconic"],
+      "cooldown": 17,
+      "filters": ["Knock Down"],
+      "description": [
+        "Varyana crushes the ground with her mace, leaving a tremor that deals 180% Physical damage over 3 seconds and Knocks enemies Down repeatedly."
+      ]
+    },
+    {
+      "name": "Ancient Harpoons",
+      "class": "Varyana, The Berserker Crone",
+      "tags": ["Mercenary Iconic"],
+      "cooldown": 17,
+      "filters": ["Stun"],
+      "description": [
+        "Varyana launches three harpoons ahead of her, piercing enemies for 140% Physical damage. She then rips them back, Pulling In and Stunning enemies for 2 seconds."
+      ]
+    },
+    {
+      "name": "Intimidated",
+      "class": "Varyana, The Berserker Crone",
+      "description": ["While Varyana has Bloodthirst, enemies around her deal 10% reduced damage."]
+    },
+    {
+      "name": "Bloodlust",
+      "class": "Varyana, The Berserker Crone",
+      "description": ["Varyana's Bloodthirst further increases your Attack Speed by 15%."]
+    },
+    {
+      "name": "No Escape",
+      "class": "Varyana, The Berserker Crone",
+      "description": ["Varyana's Whirlwind Pulls In enemies every 1.5 seconds and gains 60% Size."]
+    },
+    {
+      "name": "Taste of Flesh",
+      "class": "Varyana, The Berserker Crone",
+      "filters": ["Heal"],
+      "description": [
+        "When you or Varyana deal direct damage to an enemy inflicted with any of her Bleeding effects, you Heal for 1% of your Maximum Life."
+      ]
+    },
+    {
+      "name": "Rampage",
+      "class": "Varyana, The Berserker Crone",
+      "description": ["You deal x15% increased damage to enemies afflicted by any of Varyana's Crowd Control effects."]
+    },
+    {
+      "name": "Dismembering",
+      "class": "Varyana, The Berserker Crone",
+      "filters": ["Overpower"],
+      "description": [
+        "Enemies damaged by Varyana's Earth Breaker are left exposed, causing your next hit against them within 3 seconds to be a guaranteed Overpower. This may only occur on the same target once every 5 seconds."
+      ]
+    },
+    {
+      "name": "Annihilator",
+      "class": "Varyana, The Berserker Crone",
+      "filters": ["Lucky Hit"],
+      "description": [
+        "Varyana's Ancient Harpoons additionally Slow enemies by 40% for 3 seconds. During this time, you gain 30% Lucky Hit Chance against those targets."
+      ]
+    },
+    {
+      "name": "Iron Grip",
+      "class": "Varyana, The Berserker Crone",
+      "description": [
+        "Varyana's Ancient Harpoons travel 33% farther and reduce enemies' Impairment Resistance by 50% for 5 seconds."
+      ]
+    },
+    {
+      "name": "Haunt",
+      "class": "Aldkin, The Cursed Child",
+      "tags": ["Mercenary Core"],
+      "cooldown": 14,
+      "weapon": "Foredoomed",
+      "basic_attack": "Shadow Strike",
+      "basic_attack_description": ["Aldkin shoots a burst of dark bolts at an enemy, dealing 30% Shadow damage."],
+      "description": [
+        "Aldkin emits 3 ghostly souls at enemies, each Haunting their victims and dealing 90% Shadow damage over 10 seconds. If a target dies while being Haunted, its soul jumps to another target.",
+        "Aldkin's Mercenary Core Skill alters his Fate and Basic Attack."
+      ]
+    },
+    {
+      "name": "Flame Surge",
+      "class": "Aldkin, The Cursed Child",
+      "tags": ["Mercenary Core"],
+      "cooldown": 11,
+      "weapon": "Aflame",
+      "basic_attack": "Fire Shot",
+      "basic_attack_description": [
+        "Aldkin hurls a flaming bolt at an enemy, dealing 40% Fire damage and 55% Burning damage over 4 seconds."
+      ],
+      "description": [
+        "Aldkin channels a cone of flame for 4 seconds, repeatedly dealing 80% Fire damage.",
+        "Aldkin's Mercenary Core Skill alters his Fate and Basic Attack."
+      ]
+    },
+    {
+      "name": "Terrify",
+      "class": "Aldkin, The Cursed Child",
+      "filters": ["Vulnerable"],
+      "description": ["Hits of Aldkin's Haunt have a 30% chance to inflict Vulnerable on enemies for 4 seconds."]
+    },
+    {
+      "name": "Exhaustion",
+      "class": "Aldkin, The Cursed Child",
+      "filters": ["Daze"],
+      "description": ["Aldkin's Shadow damage has a 5% chance to Daze enemies for 2 seconds."]
+    },
+    {
+      "name": "Covered in Ash",
+      "class": "Aldkin, The Cursed Child",
+      "filters": ["Slow", "Burning"],
+      "description": [
+        "Hits of Aldkin's Flame Surge Slows enemies by 20% and deal an additional 60% Burning damage over 3 seconds."
+      ]
+    },
+    {
+      "name": "Raging Violence",
+      "class": "Aldkin, The Cursed Child",
+      "description": ["Allies gain 10% Critical Strike Chance against enemies affected by Flame Surge."]
+    },
+    {
+      "name": "Field of Languish",
+      "class": "Aldkin, The Cursed Child",
+      "tags": ["Mercenary Iconic"],
+      "cooldown": 20,
+      "filters": ["Slow"],
+      "description": [
+        "Aldkin desiccates an area for 6 seconds, Slowing enemies within by 40% and reducing their damage dealt by 20%."
+      ]
+    },
+    {
+      "name": "Chain of Souls",
+      "class": "Aldkin, The Cursed Child",
+      "tags": ["Mercenary Iconic"],
+      "cooldown": 21,
+      "filters": ["Stun"],
+      "description": [
+        "Aldkin chains up to 10 enemies to himself, Tethering to them and dealing 84% Shadow damage over 2.5 seconds.",
+        "When the chains expire, they deal 35% Shadow damage and Stun their victims for 2.5 seconds."
+      ]
+    },
+    {
+      "name": "Storm of Fire",
+      "class": "Aldkin, The Cursed Child",
+      "tags": ["Mercenary Iconic"],
+      "cooldown": 20,
+      "filters": ["Stun", "Burn"],
+      "description": [
+        "Aldkin rains a Fire Storm down from the sky that deals 300% Fire damage on impact and remains on the ground for 10 seconds. Every second, the Fire Storm Burns enemies within for 55% damage over 2.5 seconds.",
+        "Enemies hit by Fire Storm's impact or aftershocks have a 30% chance to be Stunned for 1 second."
+      ]
+    },
+    {
+      "name": "Wave of Flame",
+      "class": "Aldkin, The Cursed Child",
+      "tags": ["Mercenary Iconic"],
+      "cooldown": 25,
+      "filters": ["Knock Back"],
+      "description": [
+        "Aldkin conjures a mass of flames forward, repeatedly dealing 300% Fire damage, Knocking Back enemies, and destroying small missiles."
+      ]
+    },
+    {
+      "name": "Paranoia",
+      "class": "Aldkin, The Cursed Child",
+      "filters": ["Daze"],
+      "description": [
+        "Languishing enemies take x15% increased damage from you.",
+        "Lucky Hit: Attacks against Languishing enemies have up to a 20% chance to Daze them for 1 second."
+      ]
+    },
+    {
+      "name": "Condemned",
+      "class": "Aldkin, The Cursed Child",
+      "description": ["You instantly kill Languishing enemies with less than 40% Life. Does not work on Elites."]
+    },
+    {
+      "name": "Amplified Suffering",
+      "class": "Aldkin, The Cursed Child",
+      "description": ["Damaging a Soul Chained enemy detonates the chain early, dealing 50% Shadow damage around them."]
+    },
+    {
+      "name": "Shared Pain",
+      "class": "Aldkin, The Cursed Child",
+      "description": ["Aldkin's Chain of Souls Cooldown is reduced by 1.5 seconds when a chained target dies."]
+    },
+    {
+      "name": "Eradication",
+      "class": "Aldkin, The Cursed Child",
+      "description": ["Enemies killed within Aldkin's Fire Storm explode for 120% Fire damage."]
+    },
+    {
+      "name": "Ember's Gift",
+      "class": "Aldkin, The Cursed Child",
+      "description": ["You restore 15% of your Primary Resource per second while inside Aldkin's Fire Storm."]
+    },
+    {
+      "name": "Burning Chaos",
+      "class": "Aldkin, The Cursed Child",
+      "description": ["Aldkin's Wave of Flame Cooldown resets when you cast an Ultimate Skill."]
+    },
+    {
+      "name": "Raging Havoc",
+      "class": "Aldkin, The Cursed Child",
+      "description": ["Enemies damaged by Aldkin's Wave of Flame take x15% increased Damage Over Time for 4 seconds."]
+    },
+    {
+      "name": "Wire Trap",
+      "class": "Subo, The Drunken Archer",
+      "tags": ["Mercenary Core"],
+      "cooldown": 10,
+      "filters": ["Stun"],
+      "weapon": "Bow",
+      "basic_attack": "Heavy Shot",
+      "basic_attack_description": [
+        "Subo fires a toughened arrow at an enemy, dealing 80% Physical damage with a 30% chance to Stun for 1 second."
+      ],
+      "description": [
+        "Subo places a concussive trap that arms after 0.8 seconds. When an enemy moves within range, it explodes for 80% Physical damage and Stuns enemies for 2 seconds.",
+        "Selecting a Mercenary Core Skill alters their wielded Weapon and Basic Attack."
+      ]
+    },
+    {
+      "name": "Molotov",
+      "class": "Subo, The Drunken Archer",
+      "tags": ["Mercenary Core"],
+      "cooldown": 11,
+      "filters": ["Slow", "Stun", "Burn"],
+      "weapon": "Crossbow",
+      "basic_attack": "Salvo",
+      "basic_attack_description": [
+        "Subo launches 5 bolts at an enemy, each dealing 30% Physical damage. The final bolt explodes, Slowing enemies by 50% for 2 seconds."
+      ],
+      "description": [
+        "Subo tosses an incendiary at an enemy, dealing 10% Physical damage and Stunning them for 1 second before exploding into flames. For the next 5 seconds, enemies within the area repeatedly take 36% Burning damage over 3 seconds.",
+        "Selecting a Mercenary Core Skill alters their wielded Weapon and Basic Attack."
+      ]
+    },
+    {
+      "name": "Piercing Arrows",
+      "class": "Subo, The Drunken Archer",
+      "description": ["Subo's Heavy Shot now pierces through enemies."]
+    },
+    {
+      "name": "Ready At Hand",
+      "class": "Subo, The Drunken Archer",
+      "filters": ["Movement Speed"],
+      "description": ["Damaging an Elite grants you 20% Movement Speed for 2 seconds if Subo is around you."]
+    },
+    {
+      "name": "Scorched Earth",
+      "class": "Subo, The Drunken Archer",
+      "filters": ["Damage Over Time"],
+      "description": [
+        "Subo's initial Molotov explosions cause enemies to take x30% increased Damage Over Time from you for 3 seconds."
+      ]
+    },
+    {
+      "name": "Share a Drink",
+      "class": "Subo, The Drunken Archer",
+      "description": ["When one of Subo's Molotovs explodes, it has a 50% chance to drop a Healing Potion for you."]
+    },
+    {
+      "name": "Cover Fire",
+      "class": "Subo, The Drunken Archer",
+      "tags": ["Mercenary Iconic"],
+      "cooldown": 20,
+      "filters": ["Slow"],
+      "description": [
+        "Subo charges a countless volley of arrows, then unleashes it over your position for 140% Physical damage that Slows enemies by 50% for 4 seconds."
+      ]
+    },
+    {
+      "name": "Trip Mines",
+      "class": "Subo, The Drunken Archer",
+      "tags": ["Mercenary Iconic"],
+      "cooldown": 18,
+      "filters": ["Knock Down"],
+      "description": [
+        "Subo scatters 3 explosive traps that each arm after 1 second. When an enemy moves within range of one, it explodes for 300% Physical damage and Knocks Down enemies for 1.5 seconds."
+      ]
+    },
+    {
+      "name": "Snipe",
+      "class": "Subo, The Drunken Archer",
+      "tags": ["Mercenary Iconic"],
+      "cooldown": 20,
+      "filters": ["Knock Down"],
+      "description": [
+        "Subo charges a massive piercing bolt, then unleashes it forwards for 300% Physical damage that Knocks Back enemies."
+      ]
+    },
+    {
+      "name": "Explosive Charge",
+      "class": "Subo, The Drunken Archer",
+      "tags": ["Mercenary Iconic"],
+      "cooldown": 22,
+      "filters": ["Overpower"],
+      "description": [
+        "Subo fires 4 Explosive Charges that stick to enemies. Each explodes after 6.5 seconds, dealing 60% Physical damage.",
+        "Explosive Charges detonate early if their target dies or takes Overpower damage."
+      ]
+    },
+    {
+      "name": "Pin Cushion",
+      "class": "Subo, The Drunken Archer",
+      "filters": ["Immobilize"],
+      "description": ["Subo's Cover Fire also Immobilizes enemies for 2 seconds."]
+    },
+    {
+      "name": "Opening Fire",
+      "class": "Subo, The Drunken Archer",
+      "filters": ["Critical Strike Damage", "Slow"],
+      "description": ["You deal x25% increased Critical Strike Damage to enemies Slowed by Subo's Cover Fire."]
+    },
+    {
+      "name": "Loaded Munitions",
+      "class": "Subo, The Drunken Archer",
+      "filters": ["Vulnerable"],
+      "description": ["Subo's Wire Traps and Trip Mines inflict Vulnerable on enemies for 5 seconds."]
+    },
+    {
+      "name": "Mastermind",
+      "class": "Subo, The Drunken Archer",
+      "description": [
+        "Subo's Wire Trap and Trip Mines gain 60% Size.",
+        "You and Subo gain x15% Crowd Control Duration."
+      ]
+    },
+    {
+      "name": "Incendiary Bolt",
+      "class": "Subo, The Drunken Archer",
+      "description": ["If Subo's Snipe hits the target he originally aimed at, a Molotov explodes on them."]
+    },
+    {
+      "name": "Ambusher",
+      "class": "Subo, The Drunken Archer",
+      "filters": ["Lucky Hit"],
+      "description": [
+        "You gain x20% Lucky Hit Chance against enemies damaged by Subo's Salvo within the last 3 seconds."
+      ]
+    },
+    {
+      "name": "Thrillseeker",
+      "class": "Subo, The Drunken Archer",
+      "filters": ["Cooldown"],
+      "description": [
+        "Your active Cooldowns are reduced by 0.5 seconds when an Explosive Charge explodes.",
+        "Explosive Charges now detonate after only 3 seconds."
+      ]
+    },
+    {
+      "name": "Bargaining Chips",
+      "class": "Subo, The Drunken Archer",
+      "filters": ["Overpower"],
+      "description": [
+        "Targets stuck with Explosive Charges take x2% increased Overpower Damage per Explosive Charge stuck.",
+        "Each Explosive Charge can be detonated by an additional 2 Overpowers before expiring."
       ]
     }
   ]

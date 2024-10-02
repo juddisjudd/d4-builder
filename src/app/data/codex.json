@@ -7,7 +7,7 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Attack Speed", "Core"],
-      "description": "Critical Strikes with Core Skills increase your Attack Speed by [10-25%] for 5 seconds."
+      "description": "Critical Strikes with Core Skills increase your Attack Speed by [10-30%] for 5 seconds."
     },
     {
       "name": "Aphotic Aspect",
@@ -17,7 +17,7 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Minions", "Shadow", "Stun"],
-      "description": "Skeletal Priests empower your Skeletal Warriors' attacks to deal Shadow Damage and have a [5-20%] chance to Stun enemies for 1.5 seconds."
+      "description": "Skeletal Priests empower your Skeletal Warriors' attacks to deal Shadow Damage and have a [5-25%] chance to Stun enemies for 1.5 seconds."
     },
     {
       "name": "Aspect of Abundant Energy",
@@ -27,7 +27,7 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Crackling Energy"],
-      "description": "Crackling Energy has a [35-50%] chance to deal x40% increased damage and chain to an additional enemy."
+      "description": "Crackling Energy has a [35-55%] chance to deal x40% increased damage and chain to an additional enemy."
     },
     {
       "name": "Aspect of Accursed Touch",
@@ -36,7 +36,7 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Lucky Hit", "Vulnerable"],
-      "description": "Lucky Hit: Up to a [20-35%] chance for your Skills to inflict Vampiric Curse on enemies. Enemies afflicted with Vampiric Curse are also Vulnerable.\n\nVampiric Curse's stored souls deal x [20-50%] increased damage."
+      "description": "Lucky Hit: Up to a [20-40%] chance for your Skills to inflict Vampiric Curse on enemies. Enemies afflicted with Vampiric Curse are also Vulnerable.\n\nVampiric Curse's stored souls deal [20-60%] increased damage."
     },
     {
       "name": "Aspect of Adaptability",
@@ -44,8 +44,8 @@
       "type": "Resource",
       "legendary": true,
       "campaign": false,
-      "filters": ["Resource"],
-      "description": "When cast below 50% Maximum Resource, Basic Skills generate 3 of your\r\nPrimary Resource, once per cast.\n\r\nWhen cast at or above 50% Maximum Resource, Basic Skills deal x [20-80%] increased damage."
+      "filters": ["Essence", "Spirit", "Energy", "Mana", "Fury"],
+      "description": "When cast below 50% Maximum Resource, Basic Skills generate 3 of your\nPrimary Resource, once per cast.\n\nWhen cast at or above 50% Maximum Resource, Basic Skills deal x [20-100%] increased damage."
     },
     {
       "name": "Aspect of Alacrity",
@@ -55,7 +55,7 @@
       "legendary": false,
       "campaign": false,
       "filters": ["Cooldown Reduction"],
-      "description": "Your Skills Cooldown [10-40%] faster while moving."
+      "description": "Your Defensive Skills Cooldown [10-70%] faster while moving."
     },
     {
       "name": "Aspect of Ancestral Charge",
@@ -64,7 +64,7 @@
       "type": "Offensive",
       "legendary": true,
       "campaign": false,
-      "description": "Charge calls forth 4 Ancients who also Charge, dealing x [20-35%] of normal damage."
+      "description": "Charge calls forth 4 Ancients who also Charge, dealing x [20-40%] of normal damage."
     },
     {
       "name": "Aspect of Ancestral Echoes",
@@ -76,7 +76,7 @@
       "dungeon": "Ancient Reservoir",
       "location": "Hawezar",
       "filters": ["Lucky Hit"],
-      "description": "Lucky Hit: Damaging enemies with Leap, Upheaval, or Whirlwind have up to a [45-60%] chance to summon an Ancient to perform the same Skill. Can only occur once every 5 seconds."
+      "description": "Lucky Hit: Damaging enemies with Leap, Upheaval, or Whirlwind have up to a [45-65%] chance to summon an Ancient to perform the same Skill. Can only occur once every 5 seconds."
     },
     {
       "name": "Aspect of Ancestral Force",
@@ -87,7 +87,7 @@
       "campaign": false,
       "dungeon": "Sunken Ruins",
       "location": "Scosglen",
-      "description": "Hammer of the Ancients quakes outward for x [5-20%] increased damage. This bonus is doubled against Bosses."
+      "description": "Hammer of the Ancients quakes outward for x [5-25%] increased damage. This bonus is doubled against Bosses."
     },
     {
       "name": "Aspect of Ancient Flame",
@@ -97,7 +97,7 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Attack Speed"],
-      "description": "While both bonuses from Esu's Ferocity Key Passive are active, your Attack Speed is increased by [35-50%] ."
+      "description": "While both bonuses from Esu's Ferocity Key Passive are active, your Attack Speed is increased by [35-55%] ."
     },
     {
       "name": "Aspect of Anemia",
@@ -109,7 +109,7 @@
       "dungeon": "Kor Dragan Barracks",
       "location": "Fractured Peaks",
       "filters": ["Lucky Hit", "Bleed", "Stun"],
-      "description": "Lucky Hit: Damaging Bleeding or Vulnerable enemies has a [15-30%] chance to Stun them for 2 seconds."
+      "description": "Lucky Hit: Damaging Bleeding or Vulnerable enemies has a [15-35%] chance to Stun them for 2 seconds."
     },
     {
       "name": "Aspect of Anger Management",
@@ -122,6 +122,16 @@
       "description": "While above [55-40] Fury, you are Berserk, but lose 2 Fury per second."
     },
     {
+      "name": "Aspect of Anticline Burst",
+      "class": "Druid",
+      "new": true,
+      "type": "Offensive",
+      "legendary": true,
+      "campaign": false,
+      "filters": ["Spirit"],
+      "description": "Stone Burst deals x [15-35%] increased damage and when Cast at or above 75 Spirit, it is immediately at its maximum size."
+    },
+    {
       "name": "Aspect of Apprehension",
       "class": "Spiritborn",
       "new": true,
@@ -129,7 +139,7 @@
       "legendary": false,
       "campaign": false,
       "filters": ["Slow", "Fear"],
-      "description": "Once an enemy is Slowed by at least 80%, they also become Feared for 3 seconds. You deal x [25-40%] increased damage to Feared enemies."
+      "description": "Once an enemy is Slowed by at least 80%, they also become Feared for 3 seconds. You deal [25-40%] increased damage to Feared enemies."
     },
     {
       "name": "Aspect of Armageddon",
@@ -151,7 +161,7 @@
       "dungeon": "Howling Warren",
       "location": "Scosglen",
       "filters": ["Lucky Hit"],
-      "description": "Lucky Hit: Your Marksman and Cutthroat Skills have up to a 25% chance to create an Arrow Storm at the enemy's location, dealing Physical damage over 3 seconds.\n\nYour Arrow Storms deal x [45-60%] increased damage."
+      "description": "Lucky Hit: Your Marksman and Cutthroat Skills have up to a 25% chance to create an Arrow Storm at the enemy's location, dealing Physical damage over 3 seconds. Your Arrow Storms deal [45-65%] increased damage."
     },
     {
       "name": "Aspect of Artful Initiative",
@@ -160,7 +170,7 @@
       "type": "Offensive",
       "legendary": true,
       "campaign": false,
-      "description": "When you spend 75 Energy you release a cluster of exploding Stun Grenades that deal [X] total Physical damage and Stun enemies for 1 second.\n\nYour Stun Grenades deal x [25-40%] increased damage."
+      "description": "When you spend 75 Energy you release a cluster of exploding Stun Grenades that deal [X] total Physical damage and Stun enemies for 1 second.\n\nYour Stun Grenades deal [25-45%] increased damage."
     },
     {
       "name": "Aspect of Audacity",
@@ -169,7 +179,7 @@
       "legendary": false,
       "campaign": false,
       "filters": ["Close Enemies", "Stun"],
-      "description": "When there are at least 5 Close enemies, Stun them for [3-4] seconds. Can only occur once every 20 seconds."
+      "description": "When there are at least 5 Close enemies, Stun them for [2.5-4.5] seconds. Can only occur once every 20 seconds."
     },
     {
       "name": "Aspect of Avoidance",
@@ -179,7 +189,7 @@
       "legendary": false,
       "campaign": false,
       "filters": ["Dodge"],
-      "description": "Whenever an enemy hits you, your Dodge Chance against that enemy increases by [4-7%] . Successfully Dodging resets this bonus."
+      "description": "Whenever an enemy hits you, your Dodge Chance against that enemy increases by [4-8%] . Successfully Dodging resets this bonus."
     },
     {
       "name": "Aspect of Berserk Fury",
@@ -189,7 +199,7 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Berserking"],
-      "description": "You gain [1-6] Fury per second while Berserking."
+      "description": "You gain [1-8] Fury per second while Berserking."
     },
     {
       "name": "Aspect of Berserk Ripping",
@@ -201,7 +211,7 @@
       "dungeon": "Mournfield",
       "location": "Dry Steppes",
       "filters": ["Berserking", "Bleed"],
-      "description": "Dealing direct damage while Berserking inflicts [15-30%] of the Base damage as additional Bleeding damage over 5 seconds."
+      "description": "Dealing direct damage while Berserking inflicts [15-35%] of the Base damage as additional Bleeding damage over 5 seconds."
     },
     {
       "name": "Aspect of Binding Embers",
@@ -211,17 +221,17 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Immobilized"],
-      "description": "Flame Shield grants you unhindered for its duration. Enemies you move through while Flame Shield is active are Immobilized for [X] seconds."
+      "description": "Flame Shield grants you unhindered for its duration. Enemies you move through while Flame Shield is active are Immobilized for [1.5-3.5] seconds."
     },
     {
       "name": "Aspect of Binding Morass",
       "class": "Spiritborn",
       "new": true,
       "type": "Utility",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "filters": ["Slow"],
-      "description": "Dealing indirect damage to an enemy progressively Slows them by [5-20%] for 3 seconds, up to 80%."
+      "description": "Close enemies or those you deal indirect damage to are Slowed by [30-70]% for 3 seconds. You deal 20% increased damage to Slowed enemies."
     },
     {
       "name": "Aspect of Biting Cold",
@@ -233,7 +243,7 @@
       "dungeon": "Forgotten Depths",
       "location": "Dry Steppes",
       "filters": ["Freeze", "Vulnerable"],
-      "description": "When you Freeze an enemy there is a [25-40%] chance to make them Vulnerable for 3 seconds."
+      "description": "When you Freeze an enemy there is a [25-45%] chance to make them Vulnerable for 3 seconds."
     },
     {
       "name": "Aspect of Branching Volleys",
@@ -244,17 +254,17 @@
       "campaign": false,
       "dungeon": "Shadowed Plunge",
       "location": "Hawezar",
-      "description": "Increase the damage of arrows that ricochet from Barrage from 40% to [50-80%] . Barrage's arrows have a [30-60%] chance to split into 2 arrows whenever they ricochet."
+      "description": "Increase the damage of arrows that ricochet from Barrage from 40% to [50-90%] . Barrage's arrows have a [30-70%] chance to split into 2 arrows whenever they ricochet."
     },
     {
       "name": "Aspect of Bristling Vengeance",
       "class": "Spiritborn",
       "new": true,
       "type": "Offensive",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "filters": ["Payback", "Thorns"],
-      "description": "Payback now echoes forward and additionally deals [100-130%] of your Thorns damage to enemies."
+      "description": "Payback now echoes forward and additionally deals [100-140%] of your Thorns damage to enemies."
     },
     {
       "name": "Aspect of Bul-Kathos",
@@ -266,7 +276,7 @@
       "dungeon": "Light's Refuge",
       "location": "Hawezar",
       "filters": ["Damage Reduction"],
-      "description": "Leap creates an Earthquake that deals [X] Physical damage over 4 seconds. While standing in Earthquakes, you gain [10-25%] increased Damage Reduction."
+      "description": "Leap creates an Earthquake that deals [X] Physical damage over 4 seconds. While standing in Earthquakes, you gain [10-30%] increased Damage Reduction."
     },
     {
       "name": "Aspect of Burning Rage",
@@ -300,14 +310,24 @@
       "description": "Lucky Hit: Poison Imbued Skills have up to a 15% chance to create a toxic pool that deals [X] Poisoning damage over 3 seconds to enemies within. While standing in the pool, your Poison Imbuement Skill has no Cooldown and no charge limit."
     },
     {
+      "name": "Aspect of Charged Flash",
+      "class": "Sorcerer",
+      "new": true,
+      "type": "Offensive",
+      "legendary": true,
+      "campaign": false,
+      "filters": ["Shock", "Critical Strike"],
+      "description": "After Charged Bolts hits enemies 50 times, your next 3 casts of Charged Bolts becomes waves that pierce and deal [X] Critical Shock Damage."
+    },
+    {
       "name": "Aspect of Combined Strikes",
       "class": "Spiritborn",
       "new": true,
       "type": "Offensive",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "filters": ["Basic Skill"],
-      "description": "Each different Basic Skill you cast increases all of your damage by [10-25%] for 10 seconds."
+      "description": "Each different Basic Skill you cast increases all of your damage by [10-30%] for 10 seconds."
     },
     {
       "name": "Aspect of Concentration",
@@ -325,7 +345,7 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Daze"],
-      "description": "Lucky Hit: Damaging an enemy has up to a 20% chance to Daze them for 2 seconds.\n\nYou deal x [5-20%] increased damage to Dazed enemies."
+      "description": "Lucky Hit: Damaging an enemy has up to a 20% chance to Daze them for 2 seconds.\n\nYou deal x [5-25%] increased damage to Dazed enemies."
     },
     {
       "name": "Aspect of Conflagration",
@@ -361,13 +381,13 @@
       "dungeon": "Renegade's Retreat",
       "location": "Kehjistan",
       "filters": ["Vulnerable", "Imbuement"],
-      "description": "Your Imbuement Skill effects have x [25-40%] increased potency against Vulnerable enemies."
+      "description": "Your Imbuement Skill effects have x [25-45%] increased potency against Vulnerable enemies."
     },
     {
       "name": "Aspect of Creeping Death",
       "new": true,
       "type": "Offensive",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "filters": ["Damage Over Time"],
       "description": "You deal x [5-20%] increased damage over time to enemies for each different Crowd Control effect they're afflicted by. Unstoppable enemies and Staggered Bosses take x [10-40%] increased damage over time from you instead."
@@ -377,9 +397,10 @@
       "class": "Necromancer",
       "new": true,
       "type": "Mobility",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
-      "description": "Gain [20-35%] Evade Cooldown Reduction. You can now Evade during Blood Mist, traveling twice as far. Entering or exiting Blood Mist resets your Evade Cooldown."
+      "filters": ["Evade", "Cooldown"],
+      "description": "Gain [20-40%] Evade Cooldown Reduction. You can now Evade during Blood Mist, traveling twice as far. Entering or exiting Blood Mist resets your Evade Cooldown."
     },
     {
       "name": "Aspect of Cruel Sustenance",
@@ -410,16 +431,16 @@
       "type": "Offensive",
       "legendary": true,
       "campaign": false,
-      "description": "Each time the Shadowblight Key Passive deals damage to enemies, it increases the next Shadowblight's damage within 10 seconds by x [30-45%] , stacking up to 5 times."
+      "description": "Each time the Shadowblight Key Passive deals damage to enemies, it increases the next Shadowblight's damage within 10 seconds by x [30-50%] , stacking up to 5 times."
     },
     {
       "name": "Aspect of Deflection",
       "class": "Spiritborn",
       "new": true,
       "type": "Defensive",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
-      "description": "While active, Counterattack reflects incoming Razor Wings back out again. Other Small Missiles arer also deflected back at enemies and deal [25-30%] of Counterattack's Base damage on impact."
+      "description": "While active, Counterattack reflects incoming Razor Wings back out again. Other Small Missiles arer also deflected back at enemies and deal [25-32%] of Counterattack's Base damage on impact."
     },
     {
       "name": "Aspect of Disobedience",
@@ -429,7 +450,16 @@
       "campaign": false,
       "dungeon": "Halls of the Damned",
       "location": "Kehjistan",
-      "description": "You gain [0.4-0.7%] increased Armor for 4 seconds when you deal any form of damage, stacking up to [25-40%] ."
+      "description": "You gain [0.4-0.8%] increased Armor for 4 seconds when you deal any form of damage, stacking up to [25-40%] ."
+    },
+    {
+      "name": "Aspect of Earthquakes",
+      "class": "Barbarian",
+      "new": false,
+      "type": "Offensive",
+      "legendary": true,
+      "campaign": false,
+      "description": "Ground Stomp creates an Earthquake damaging enemies for [X] Physical Damage over 4 seconds. While standing in Earthquakes, you deal x [10-30%] increased damage."
     },
     {
       "name": "Aspect of Efficiency",
@@ -441,16 +471,27 @@
       "dungeon": "Domhainne Tunnels",
       "location": "Scosglen",
       "filters": ["Core"],
-      "description": "Casting a Basic Skill reduces the Mana cost of your next Core or Mastery Skill by [35-50%] ."
+      "description": "Casting a Basic Skill reduces the Mana cost of your next Core or Mastery Skill by [35-55%] ."
     },
     {
       "name": "Aspect Of Elemental Acuity",
       "class": "Sorcerer",
       "new": true,
       "type": "Resource",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
-      "description": "Casting a Pyromancy, Shock, or Frost Skill increases your Mana Regeneration by [10-20%] for 5 seconds, once per Element. At maximum stacks, the total bonus is increased to [60-120%] for 10 seconds, but all stacks expire after the duration."
+      "filters": ["Pyromancy", "Shock", "Frost", "Mana"],
+      "description": "Casting a Pyromancy, Shock, or Frost Skill increases your Mana Regeneration by [10-25%] for 5 seconds, once per Element. At maximum stacks, the total bonus is increased to [60-150%] for 10 seconds, but all stacks expire after the duration."
+    },
+    {
+      "name": "Aspect of Elemental Constellation",
+      "class": "Sorcerer",
+      "new": true,
+      "type": "Offensive",
+      "legendary": true,
+      "campaign": false,
+      "filters": ["Pyromancy", "Shock", "Frost"],
+      "description": "Casting Pyromancy, Shock, and Frost Skills conjures a matching Elemental Dagger around you that pierces through enemies dealing [X] damage after 3 seconds. The damage increases by 100% per matching elemental skill you cast."
     },
     {
       "name": "Aspect of Elements",
@@ -458,7 +499,8 @@
       "type": "Offensive",
       "legendary": true,
       "campaign": false,
-      "description": "Gain x [20-30%] increased damage to a set of damage types for 7 seconds. This effect alternates between 2 sets:\n• Fire, Lightning, and Physical.\n• Cold, Poison, and Shadow."
+      "filters": ["Fire", "Lightning", "Physical", "Cold", "Poison", "Shadow"],
+      "description": "Gain x [15-35%] increased damage to a set of damage types for 7 seconds. This effect alternates between 2 sets:\n• Fire, Lightning, and Physical.\n• Cold, Poison, and Shadow."
     },
     {
       "name": "Aspect of Elusive Menace",
@@ -468,17 +510,17 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Dodge", "Close Enemies"],
-      "description": "While you have both bonuses from the Close Quarters Combat Key Passive active, your Dodge Chance increases by [4-7%] whenever you're hit by an enemy. Successfully Dodging resets this bonus."
+      "description": "While you have both bonuses from the Close Quarters Combat Key Passive active, your Dodge Chance increases by [4-8%] whenever you're hit by an enemy. Successfully Dodging resets this bonus."
     },
     {
       "name": "Aspect of Empowered Feathers",
       "class": "Spiritborn",
       "new": true,
       "type": "Resource",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "filters": ["Eagle Skill", "Mobility Skill"],
-      "description": "Lucky Hit: Eagle Skills have up to a [25-30%] chance to summon a Spirit Feather. You can collect Spirit Feathers to reduce your Mobility Skill Cooldowns by 0.5 seconds."
+      "description": "Lucky Hit: Eagle Skills have up to a [25-32%] chance to summon a Spirit Feather. You can collect Spirit Feathers to reduce your Mobility Skill Cooldowns by 0.5 seconds."
     },
     {
       "name": "Aspect of Empowering Reaper",
@@ -489,7 +531,7 @@
       "campaign": false,
       "dungeon": "Flooded Depths",
       "location": "Scosglen",
-      "description": "Damaging enemies with Sever has a [15-30%] chance to spawn a pool of Blight under the target that deals x [60-120%] bonus damage. This effect can only happen once every 3 seconds."
+      "description": "Damaging enemies with Sever has a [15-35%] chance to spawn a pool of Blight under the target that deals x [60-140%] bonus damage. This effect can only happen once every 3 seconds."
     },
     {
       "name": "Aspect of Encircling Blades",
@@ -500,7 +542,7 @@
       "campaign": false,
       "dungeon": "Forsaken Quarry",
       "location": "Fractured Peaks",
-      "description": "Flurry damages enemies in a circle around you and deals x [15-30%] increased damage."
+      "description": "Flurry damages enemies in a circle around you and deals x [25-45%] increased damage."
     },
     {
       "name": "Aspect of Encroaching Wrath",
@@ -509,17 +551,18 @@
       "type": "Offensive",
       "legendary": true,
       "campaign": false,
-      "description": "After spending 100 Fury, your next Weapon Mastery Skills within 5 seconds deals x [40-70%] increased damage."
+      "filters": ["Fury", "Weapon Mastery"],
+      "description": "After spending 100 Fury, your next Weapon Mastery Skills within 5 seconds deals x [40-80%] increased damage."
     },
     {
       "name": "Aspect of Endurance",
       "class": "Spiritborn",
       "new": true,
       "type": "Defensive",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "filters": ["Resolve", "Ferocity"],
-      "description": "Your Resolve has a [2-5%] chance to not be lost when you are hit for each stack of Ferocity you have."
+      "description": "Your Resolve has a [2-6%] chance to not be lost when you are hit for each stack of Ferocity you have."
     },
     {
       "name": "Aspect of Engulfing Flames",
@@ -529,17 +572,17 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Burn"],
-      "description": "You deal [30-45%] increased Burning damage to enemies below 50% Life. Additionally, you deal [70-100%] increased Burning damage to enemies while they are affected by more Damage Over Time than their total Life."
+      "description": "You deal x6% increased Burning damage to enemies for each second they remain Burning, up to x30% after 5 seconds. Additionally, you deal x [10-30%] increased Burning damage to enemies that are not Healthy."
     },
     {
       "name": "Aspect of Exhilaration",
       "class": "Spiritborn",
       "new": true,
       "type": "Resource",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "filters": ["Vulnerable", "Ferocity"],
-      "description": "Lucky Hit: Hitting a Vulnerable enemy has up to a [25-32%] chance to reduce your Evade Cooldown by 5 seconds. Each stack of Ferocity you have increases this chance by 5%."
+      "description": "Lucky Hit: Hitting a Vulnerable enemy has up to a [15-35%] chance to reduce your Evade Cooldown by 5 seconds. Each stack of Ferocity you have increases this chance by 3%."
     },
     {
       "name": "Aspect of Explosive Mist",
@@ -548,7 +591,7 @@
       "type": "Utility",
       "legendary": true,
       "campaign": false,
-      "description": "Blood Mist triggers Corpse Explosion on surrounding Corpses. When Blood Mist detonates a Corpse, its Cooldown is reduced by [0.1-0.6] seconds."
+      "description": "Blood Mist triggers Corpse Explosion on surrounding Corpses. When Blood Mist detonates a Corpse, its Cooldown is reduced by [0.1-0.8] seconds."
     },
     {
       "name": "Aspect of Explosive Verve",
@@ -560,7 +603,7 @@
       "dungeon": "Derelict Lodge",
       "location": "Fractured Peaks",
       "filters": ["Movement Speed"],
-      "description": "Your Grenade Skills count as Trap Skills. Whenever you arm a Trap or drop Grenades, you gain [10-25%] increased Movement speed for 3 seconds."
+      "description": "Your Grenade Skills count as Trap Skills. Whenever you arm a Trap or drop Grenades, you gain [10-30%] increased Movement speed for 3 seconds."
     },
     {
       "name": "Aspect of Exposed Flesh",
@@ -570,47 +613,66 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Lucky Hit", "Vulnerable"],
-      "description": "Lucky Hit: Up to a 10% chance to generate [35-50] Essence when hitting a Vulnerable enemy."
+      "description": "Lucky Hit: Up to a 10% chance to generate [35-55] Essence when hitting a Vulnerable enemy."
     },
     {
       "name": "Aspect of Falling Feathers",
       "class": "Spiritborn",
       "new": true,
       "type": "Offensive",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "filters": ["Mobility Skill", "Evade"],
       "description": "Moving with a Mobility Skill or Evade drops Spirit Feathers along you which each deal [X] Lightning damage on impact."
+    },
+    {
+      "name": "Aspect of Fel Gluttony",
+      "class": "Necromancer",
+      "new": true,
+      "type": "Offensive",
+      "legendary": true,
+      "campaign": false,
+      "filters": ["Corpse", "Golem", "Minion"],
+      "description": "Your Golem Active also causes your Golem to erupt, dealing [X] Physical damage to surrounding enemies. Your Golem consumes Corpses to reduce its remaining Cooldown by 1 second."
     },
     {
       "name": "Aspect of Fevered Mauling",
       "class": "Druid",
       "new": false,
       "type": "Defensive",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "filters": ["Damage Reduction"],
-      "description": "When you hit at least 1 enemy with Maul, increase its Attack Speed by [1-2.5%] and you gain [1-4%] Damage reduction for 5 seconds, stacking up to 5 times."
+      "description": "When you hit at least 1 enemy with Maul, increase its Attack Speed by [1-3%] and you gain [1-5%] Damage reduction for 5 seconds, stacking up to 5 times."
     },
     {
       "name": "Aspect of Fierce Winds",
       "class": "Barbarian",
       "new": false,
       "type": "Offensive",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "filters": ["Shout", "Dust Devils"],
-      "description": "Your Shout Skills create 3 Dust Devils that deal [X] damage to enemies along their path.\nYour Dust Devils are [5-20%] bigger and deal x1% increased damage for each 1% their size is increased."
+      "description": "Your Shout Skills create 3 Dust Devils that deal [X] damage to enemies along their path.\nYour Dust Devils are [5-25%] bigger and deal 1% increased damage for each 1% their size is increased."
+    },
+    {
+      "name": "Aspect of the Flaming Rampage",
+      "class": "Barbarian",
+      "new": true,
+      "type": "Offensive",
+      "legendary": true,
+      "campaign": false,
+      "description": "Charge gains an additional Charge. Each target hit by it explodes for [X] Fire damage to surrounding enemies."
     },
     {
       "name": "Aspect of Fleet Wings",
       "class": "Spiritborn",
       "new": true,
       "type": "Mobility",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "filters": ["Movement Speed", "Incarnate Skill"],
-      "description": "Razor Wings is now also an Incarnate Skill with:\nPassive: You are Unhindered.\nActive: You gain [15-30%] increased Movement Speed per active Razor Wing."
+      "description": "Razor Wings is now also an Incarnate Skill with:\nPassive: You are Unhindered.\nActive: You gain [15-35%] increased Movement Speed per active Razor Wing."
     },
     {
       "name": "Aspect of Forest Power",
@@ -620,7 +682,7 @@
       "legendary": false,
       "campaign": false,
       "filters": ["Gorilla", "Barrier", "Armor", "Resistance"],
-      "description": "Lucky Hit: Up to a 25% chance to create a Mystic Circle for 10 seconds. Casting a Gorilla Skill in Mystic Circles empowers them to periodically grant you a Barrier for 25% of your Maximum Life which increases your Armor and Maximum Resistances by [5-15%] while active."
+      "description": "Lucky Hit: Up to a 25% chance to create a Mystic Circle for 10 seconds. Casting a Gorilla Skill in Mystic Circles empowers them to periodically grant you a Barrier for 25% of your Maximum Life which increases your Armor and Maximum Resistances by [5-25%] while active."
     },
     {
       "name": "Aspect of Fortune",
@@ -630,17 +692,17 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Lucky Hit", "Barrier"],
-      "description": "Your Lucky Hit Chance is increased by [10-25%] while you have a Barrier active."
+      "description": "Your Lucky Hit Chance is increased by [10-30%] while you have a Barrier active."
     },
     {
       "name": "Aspect of Forward Momentum",
       "class": "Barbarian",
       "new": true,
       "type": "Mobility",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "filters": ["Movement Speed"],
-      "description": "Knocking back an enemy grants [25-40%] Movement Speed for 3 seconds."
+      "description": "Knocking Back an enemy grants [25-45%] Movement Speed for 3 seconds."
     },
     {
       "name": "Aspect of Frenzied Dead",
@@ -650,16 +712,16 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Attack Speed"],
-      "description": "Each time one of your Minions damages an enemy, they gain [10-15%] Attack Speed for 3 seconds, up to [30-45%] ."
+      "description": "Each time one of your Minions damages an enemy, they gain [10-18%] Attack Speed for 3 seconds, up to [30-54%] ."
     },
     {
       "name": "Aspect of Frosty Strides",
       "new": false,
       "type": "Utility",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "filters": ["Vulnerable", "Freeze", "Cold Damage"],
-      "description": "While below [45-55%] Life, Evade Freezes Close enemies, deals [X] Cold Damage to them, and makes them Vulnerable for 3 seconds."
+      "description": "While below [45-60%] Life, Evade Freezes Close enemies, deals [X] Cold Damage to them, and makes them Vulnerable for 3 seconds."
     },
     {
       "name": "Aspect of Frozen Memories",
@@ -677,7 +739,7 @@
       "type": "Offensive",
       "legendary": true,
       "campaign": false,
-      "description": "Frozen Orb explodes 2 additional times at its destination for [45-60%] of its damage."
+      "description": "Frozen Orb explodes 2 additional times at its destination for [45-65%] of its damage."
     },
     {
       "name": "Aspect of Giant Strides",
@@ -686,7 +748,7 @@
       "type": "Resource",
       "legendary": true,
       "campaign": false,
-      "description": "Reduces the Cooldown of Leap by [2.5-5] seconds per enemy hit, up to a maximum of 9 seconds. Hitting a Boss with Leap provides the maximum cooldown reduction."
+      "description": "Reduces the Cooldown of Leap by [1.3-3.5] seconds per enemy hit, up to a maximum of 7 seconds. Hitting a Boss with Leap provides the maximum cooldown reduction."
     },
     {
       "name": "Aspect of Gore Quills",
@@ -696,7 +758,7 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Blood Orb"],
-      "description": "Casting Blood Lance will consume Blood Orbs to also conjure lances from them. Each additional Blood Lance deals [20-50%] of normal damage and prioritizes targeting un-lanced enemies."
+      "description": "Casting Blood Lance will consume Blood Orbs to also conjure lances from them. Each additional Blood Lance deals [20-60%] of normal damage and prioritizes targeting un-lanced enemies."
     },
     {
       "name": "Aspect of Grasping Veins",
@@ -707,7 +769,7 @@
       "campaign": false,
       "dungeon": "Corrupted Grotto",
       "location": "Kehjistan",
-      "description": "Gain [5-20%] increased Critical Strike Chance for 6 seconds when you cast Corpse Tendrils. You deal x [10-40%] bonus Critical Strike Damage to enemies damaged by Corpse Tendrils for 6 seconds."
+      "description": "Gain [5-25%] increased Critical Strike Chance for 6 seconds when you cast Corpse Tendrils. You deal x [10-50%] bonus Critical Strike Damage to enemies damaged by Corpse Tendrils for 6 seconds."
     },
     {
       "name": "Aspect of Grasping Whirlwind",
@@ -727,17 +789,26 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Damage Reduction"],
-      "description": "You and your Minions gain [10-25%] increased Damage Reduction."
+      "description": "You and your Minions gain [10-30%] increased Damage Reduction."
     },
     {
       "name": "Aspect of Haste",
       "class": "Spiritborn",
       "new": true,
       "type": "Mobility",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "filters": ["Movement Speed"],
-      "description": "Every second while moving gain [10-25%] Bonus Movement Speed for 2 seconds, up to [30-75%] ."
+      "description": "Every second while moving gain [10-30%] Bonus Movement Speed for 2 seconds, up to [30-90%] ."
+    },
+    {
+      "name": "Aspect of Herculean Spectacle",
+      "class": "Barbarian",
+      "new": true,
+      "type": "Offensive",
+      "legendary": false,
+      "campaign": false,
+      "description": "Mighty Throw deals [15-35%] increased damage and hurls another 2 weapons."
     },
     {
       "name": "Aspect of Hungry Blood",
@@ -746,7 +817,7 @@
       "type": "Offensive",
       "legendary": true,
       "campaign": false,
-      "description": "Each cast of Blood Lance will launch an additional Blood Lance at a Nearby enemy when it first hits an enemy that is already lanced, dealing [40-70%] of normal damage."
+      "description": "Each cast of Blood Lance will launch an additional Blood Lance at a Nearby enemy when it first hits an enemy that is already lanced, dealing [40-80%] of normal damage."
     },
     {
       "name": "Aspect of Imitated Imbuement",
@@ -755,23 +826,23 @@
       "type": "Offensive",
       "legendary": true,
       "campaign": false,
-      "description": "Your Shadow Clones also mimic the Imbuements applied to your Skills. Casting an Imbuement Skill grants your active Shadow Clone x [5-20%] increased damage for 9 seconds."
+      "description": "Your Shadow Clones also mimic the Imbuements applied to your Skills. Casting an Imbuement Skill grants your active Shadow Clone x [5-25%] increased damage for 9 seconds."
     },
     {
       "name": "Aspect of Inevitable Fate",
       "new": true,
       "type": "Offensive",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "filters": ["Damage Over Time"],
-      "description": "When an enemy falls below 35% Life while afflicted with any of your Damage Over Time effects, an explosion occurs every 7 seconds, dealing [X] damage for each element they're afflicted by."
+      "description": "When an enemy falls below 35% Life while afflicted with any of your damage over time effects, an explosion occurs every 7 seconds, dealing [X] damage for each element they're afflicted by."
     },
     {
       "name": "Aspect of Infestation",
       "class": "Spiritborn",
       "new": true,
       "type": "Offensive",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "filters": ["Centipede Skill", "Poison"],
       "description": "Lucky Hit: Centipede Skills have up to a 35% chance to spawn a Pestilent Swarm from the target which deals [X] Poison damage per hit. Pestilent Swarms now also deal 100% of their Base damage as Poisoning damage over 6 seconds."
@@ -784,57 +855,57 @@
       "campaign": true,
       "dungeon": "Raethwind Wilds",
       "location": "Scosglen",
-      "description": "Deal x [5-10%] increased damage. Triple this bonus after standing still for 3 seconds."
+      "description": "Deal x [5-13%] increased damage. Triple this bonus after standing still for 3 seconds."
     },
     {
       "name": "Aspect of Interdiction",
       "class": "Spiritborn",
       "new": true,
       "type": "Defensive",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "filters": ["Block Chance", "Resolve"],
-      "description": "Gain [1-10%] Block Chance per Resolve stack."
+      "description": "Gain [1-15%] Block Chance per Resolve stack."
     },
     {
-      "name": "Aspect of Invigoration Will",
+      "name": "Aspect of Invigorating Will",
       "class": "Spiritborn",
       "new": true,
       "type": "Defensive",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "filters": ["Resolve", "Maximum Life"],
-      "description": "Losing a stack of Resolve has a 10% chance to Heal you for [5-10%] of your Maximum Life."
+      "description": "Losing a stack of Resolve has a 10% chance to Heal you for [5-11%] of your Maximum Life."
     },
     {
       "name": "Aspect of Iron Rain",
       "class": "Rogue",
       "new": true,
       "type": "Offensive",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "filters": ["Vulnerable"],
-      "description": "Smoke Grenade has a [35-50%] chance to create an Arrow Storm where it explodes, dealing [X] Physical damage over 3 seconds. Your Arrow Storms continuously apply Vulnerable."
+      "description": "Smoke Grenade has a [35-55%] chance to create an Arrow Storm where it explodes, dealing [X] Physical damage over 3 seconds. Your Arrow Storms continuously apply Vulnerable."
     },
     {
       "name": "Aspect of Kinetic Suppression",
       "class": "Spiritborn",
       "new": true,
       "type": "Defensive",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "filters": ["Resolve", "Mobility"],
-      "description": "Casting a Non-Basic Mobility Skill grants [1-6] Resolve and causes your next Concussive Stomp to strike in a circle."
+      "description": "Casting a Non-Basic Mobility Skill grants [1-8] Resolve and causes your next Concussive Stomp to strike in a circle."
     },
     {
       "name": "Aspect of Layered Wards",
       "class": "Spiritborn",
       "new": true,
       "type": "Defensive",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "filters": ["Block Reduction", "Barrier"],
-      "description": "Your Block Reduction is increased by [25-40%] while you have a Barrier."
+      "description": "Your Block Reduction is increased by [10-30%] while you have a Barrier."
     },
     {
       "name": "Aspect of Lethal Dusk",
@@ -844,7 +915,7 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Evade", "Stealth"],
-      "description": "Evading through an enemy infected by Shadow Imbuement grants Stealth for 4 seconds. Breaking Stealth Heals you for [10-25%] of your Maximum Life."
+      "description": "Evading through an enemy infected by Shadow Imbuement grants Stealth for 4 seconds. Breaking Stealth Heals you for [10-30%] of your Maximum Life."
     },
     {
       "name": "Aspect of Limitless Rage",
@@ -854,7 +925,7 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Core"],
-      "description": "Each point of Fury you generate while at Maximum Fury grants your next Core Skill within 5 seconds x [1-2%] increased damage, up to 15 times."
+      "description": "Each point of Fury you generate while at Maximum Fury grants your next Core Skill within 5 seconds x [1-3%] increased damage, up to 15 times."
     },
     {
       "name": "Aspect of Mending Stone",
@@ -876,7 +947,7 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Core"],
-      "description": "Boulder is now a Core Skill and costs 40 Spirit to cast dealing [90-120%] of normal damage."
+      "description": "Boulder is now a Core Skill and costs 40 Spirit to cast dealing [90-130%] of normal damage."
     },
     {
       "name": "Aspect of Metamorphosis",
@@ -885,7 +956,7 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Unstoppable"],
-      "description": "When you Evade you turn into a cloud of bats, becoming Unstoppable for 2.5 seconds. Enemies along your path take [X] Physical damage and are inflicted with Vampiric Curse. Evade's Cooldown is increased by [10-5] seconds."
+      "description": "When you Evade you turn into a cloud of bats, becoming Unstoppable for 2.5 seconds. Enemies along your path take [X] Physical damage and are inflicted with Vampiric Curse. Evade's Cooldown is increased by [10-4] seconds."
     },
     {
       "name": "Aspect of Might",
@@ -896,17 +967,17 @@
       "dungeon": "Dark Ravine",
       "location": "Dry Steppes",
       "filters": ["Damage Reduction"],
-      "description": "Basic Skills grant 20% Damage Reduction for [2-7] seconds."
+      "description": "Basic Skills grant 20% Damage Reduction for [2-10] seconds."
     },
     {
       "name": "Aspect of Momentum",
       "class": "Spiritborn",
       "new": true,
       "type": "Mobility",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "filters": ["Core Skill"],
-      "description": "After you Evade, your next Core Skill dashes to your target and does x [5-20%] increased damage."
+      "description": "After you Evade, your next Core Skill dashes to your target and does [15-35%] increased damage."
     },
     {
       "name": "Aspect of Natural Balance",
@@ -915,7 +986,8 @@
       "type": "Offensive",
       "legendary": true,
       "campaign": false,
-      "description": "Casting a Storm Skill grants your Earth Skills [30-45%] Critical Strike Damage for 4 seconds.\n\nCasting an Earth Skill increases the Critical Strike Chance of Storm Skills by [8-12%] for 4 seconds."
+      "filters": ["Storm", "Earth", "Critical Strike"],
+      "description": "Casting a Storm Skill grants your Earth Skills [30-50%] Critical Strike Damage for 4 seconds.\n\nCasting an Earth Skill increases the Critical Strike Chance of Storm Skills by [8-13%] for 4 seconds."
     },
     {
       "name": "Aspect of Nature's Savagery",
@@ -924,6 +996,7 @@
       "type": "Offensive",
       "legendary": true,
       "campaign": false,
+      "filters": ["Werewolf", "Storm", "Earth"],
       "description": "Werewolf Skills function as Storm Skills and Werebear Skills function as Earth Skills for the Nature's Fury Key Passive."
     },
     {
@@ -931,10 +1004,10 @@
       "class": "Rogue",
       "new": true,
       "type": "Mobility",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "filters": ["Movement Speed"],
-      "description": "Using a Healing Potion grants [35-50%] Movement Speed for 3 seconds. After moving 20 meters, you spawn a Healing Potion."
+      "description": "Using a Healing Potion grants [35-55%] Movement Speed for 3 seconds. After moving 20 meters, you spawn a Healing Potion."
     },
     {
       "name": "Aspect of Noxious Ice",
@@ -944,7 +1017,7 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Chill", "Poison", "Freeze"],
-      "description": "Chilled enemies Poisoned by Poison Imbuement will be further Chilled for 20% per second. You deal x [20-35%] additional Poison damage to Frozen enemies."
+      "description": "Chilled enemies Poisoned by Poison Imbuement will be further Chilled for 20% per second. You deal x [20-40%] additional Poison damage to Frozen enemies."
     },
     {
       "name": "Aspect of Numbing Wrath",
@@ -968,13 +1041,24 @@
       "description": "Your maximum number of Skeletal Warriors and Skeletal Mages is increased by 2."
     },
     {
+      "name": "Aspect of Overheating",
+      "class": "Sorcerer",
+      "new": true,
+      "type": "Offensive",
+      "legendary": true,
+      "campaign": false,
+      "filters": ["Critical Strike", "Fire"],
+      "description": "After channeling Incinerate for 2 seconds it deals [X] Critical Fire damage per second for 5 seconds. Casting Incinerate refreshes and maintains this bonus."
+    },
+    {
       "name": "Aspect of Overwhelming Currents",
       "class": "Sorcerer",
       "new": false,
       "type": "Offensive",
       "legendary": true,
       "campaign": false,
-      "description": "Unstable Currents has a [25-40%] chance to cast an additional Shock Skill."
+      "filters": ["Shock"],
+      "description": "Unstable Currents has a [25-45%] chance to cast an additional Shock Skill."
     },
     {
       "name": "Aspect of Perpetual Stomping",
@@ -985,6 +1069,7 @@
       "campaign": false,
       "dungeon": "Charnel House",
       "location": "Dry Steppes",
+      "filters": ["Cooldown"],
       "description": "Damaging an enemy with Kick or Ground Stomp resets Leap's Cooldown."
     },
     {
@@ -994,7 +1079,7 @@
       "type": "Offensive",
       "legendary": false,
       "campaign": false,
-      "description": "Stinger spawns a Pestilence Swarm at its target location which deals [35-65%] of Stinger's Base damage per hit. Pestilent Swarms now last 100% longer and spiral outwards."
+      "description": "Stinger spawns a Pestilence Swarm at its target location which deals [35-75%] of Stinger's Base damage per hit. Pestilent Swarms now last 100% longer and spiral outwards."
     },
     {
       "name": "Aspect of Pestilent Points",
@@ -1004,7 +1089,7 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Basic", "Imbuement"],
-      "description": "Every 3rd cast of Puncture is Poison Imbued with [105-150%] of normal potency."
+      "description": "Every 3rd cast of Puncture is Poison Imbued with [105-165%] of normal potency."
     },
     {
       "name": "Aspect of Piercing Cold",
@@ -1015,7 +1100,7 @@
       "campaign": false,
       "dungeon": "Dead Man's Dredge",
       "location": "Fractured Peaks",
-      "description": "Ice Shards pierce [3-9] times, dealing [25-10%] less damage per subsequent enemy hit."
+      "description": "Ice Shards pierce [3-19] times, dealing [25-5%] less damage per subsequent enemy hit."
     },
     {
       "name": "Aspect of Piercing Static",
@@ -1026,17 +1111,17 @@
       "campaign": false,
       "dungeon": "Wretched Delve",
       "location": "Scosglen",
-      "description": "Charged Bolts pierce, but deal x [70-40%] less damage to targets hit after the first."
+      "description": "Charged Bolts pierce, but deal x [70-30%] less damage to targets hit after the first."
     },
     {
       "name": "Aspect of Plains Power",
       "class": "Spiritborn",
       "new": true,
       "type": "Offensive",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
-      "filters": ["Ferocity"],
-      "description": "Lucky Hit: Up to a 25% chance to create a Mystic Circle for 10 seconds. Casting a Jaguar Skill in Mystic Circles empowers them to keep your Ferocity at Maximum and increase your damage by [3-6%] per stack while you remain within."
+      "filters": ["Ferocity", "Lucky Hit"],
+      "description": "Lucky Hit: Up to a 25% chance to create a Mystic Circle for 10 seconds. Casting a Jaguar Skill in Mystic Circles empowers them to keep your Ferocity at Maximum and increase your damage by [3-7%] per stack while you remain within."
     },
     {
       "name": "Aspect of Plunging Darkness",
@@ -1047,7 +1132,7 @@
       "campaign": false,
       "dungeon": "Rimescar Cavern",
       "location": "Fractured Peaks",
-      "description": "Bone Prison spawns a pool of Blight that deals x [80-125%] bonus damage over 6 seconds."
+      "description": "Bone Prison spawns a pool of Blight that deals x [80-140%] bonus damage over 6 seconds."
     },
     {
       "name": "Aspect of Potent Blood",
@@ -1058,17 +1143,18 @@
       "campaign": false,
       "dungeon": "Betrayer's Row",
       "location": "Dry Steppes",
-      "description": "Blood Orbs grant [10-25] Essence."
+      "filters": ["Essence"],
+      "description": "Blood Orbs grant [10-30] Essence."
     },
     {
       "name": "Aspect of Potent Exchange",
       "class": "Spiritborn",
       "new": true,
       "type": "Offensive",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "filters": ["Resolve", "Ferocity", "Dodge"],
-      "description": "Gain 1 Resolve when you Dodge an attack. Your Potency Skills consume 2 Resolve to deal x [10-25%] increased damage."
+      "description": "Gain 1 Resolve when you Dodge an attack. Your Potency Skills consume 2 Resolve to deal [15-55%] increased damage."
     },
     {
       "name": "Aspect of Quickening Fog",
@@ -1078,7 +1164,7 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Daze"],
-      "description": "You automatically drop a Smoke Grenade at the end of Dash. Smoke Grenades reduce Dash's cooldown by [0.5-0.65] seconds for each enemy hit, up to [1.50-1.95] seconds."
+      "description": "You automatically drop a Smoke Grenade at the end of Dash. Smoke Grenades reduce Dash's cooldown by [0.5-0.7] seconds for each enemy hit, up to [1.50-2.10] seconds."
     },
     {
       "name": "Aspect of Quicksand",
@@ -1090,7 +1176,7 @@
       "dungeon": "Feral's Den",
       "location": "Scosglen",
       "filters": ["Slow"],
-      "description": "Damage from Earth Skills Slow enemies hit by [20-50%] for 5 seconds."
+      "description": "Damage from Earth Skills Slow enemies hit by [20-60%] for 5 seconds."
     },
     {
       "name": "Aspect of Rallying Reversal",
@@ -1100,7 +1186,7 @@
       "legendary": false,
       "campaign": false,
       "filters": ["Ferocity"],
-      "description": "You have [25-100%] chance to gain 1 Ferocity when you Crowd Control an enemy."
+      "description": "You have [25-60%] chance to gain 1 Ferocity when you Crowd Control an enemy."
     },
     {
       "name": "Aspect of Rathma's Chosen",
@@ -1110,7 +1196,7 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Overpower", "Attack Speed"],
-      "description": "Whenever your Blood Skills Overpower you gain [35-50%] Attack Speed for 4 seconds."
+      "description": "Whenever your Blood Skills Overpower you gain [35-55%] Attack Speed for 4 seconds."
     },
     {
       "name": "Aspect of Reactive Armor",
@@ -1120,7 +1206,7 @@
       "legendary": false,
       "campaign": false,
       "filters": ["Block Chance"],
-      "description": "Gain 10% Block Chance. Blocking an attack from a Close enemy has a [30-60%] chance to cast a free Concussive Stomp at them."
+      "description": "Gain 10% Block Chance. Blocking an attack from a Close enemy has a [30-70%] chance to cast a free Concussive Stomp at them."
     },
     {
       "name": "Aspect of Reanimation",
@@ -1131,7 +1217,7 @@
       "campaign": true,
       "dungeon": "Aldurwood",
       "location": "Scosglen",
-      "description": "Your Minions gain increased damage while alive, up to x [25-40%] after 10 seconds."
+      "description": "Your Minions gain increased damage while alive, up to x [25-45%] after 10 seconds."
     },
     {
       "name": "Aspect of Recalling Feathers",
@@ -1141,17 +1227,17 @@
       "legendary": false,
       "campaign": false,
       "filters": ["Focus Skill"],
-      "description": "Casting a Focus Skill recalls Nearby Spirit Feathers which deal [X] Lightning damage to enemies along their way. If there are no Nearby Spirit Feathers, the cast instead spawns 10 randomly around you."
+      "description": "Casting a Focus Skill recalls Nearby Spirit Feathers which deal [X] Lightning damage to enemies along their way. If there are no Nearby Spirit Feathers, the cast instead spawns 15 randomly around you."
     },
     {
-      "name": "Aspect of Redirecting Force",
+      "name": "Aspect of Redirected Force",
       "class": "Spiritborn",
       "new": true,
       "type": "Offensive",
       "legendary": false,
       "campaign": false,
       "filters": ["Critical Strike Damage", "Block Chance"],
-      "description": "Gain increased Critical Strike Damage equal [50-190%] of your Block Chance. Blocking doubles this bonus for 10 seconds."
+      "description": "Gain increased Critical Strike Damage equal [30-70%] of your Block Chance. Blocking doubles this bonus for 10 seconds."
     },
     {
       "name": "Aspect of Repeating",
@@ -1160,7 +1246,7 @@
       "type": "Offensive",
       "legendary": true,
       "campaign": false,
-      "description": "Rapid Fire has a [30-45%] chance to ricochet to another target."
+      "description": "Rapid Fire has a [30-50%] chance to ricochet to another target."
     },
     {
       "name": "Aspect of Retaliation",
@@ -1172,7 +1258,7 @@
       "dungeon": "Seaside Descent",
       "location": "Dry Steppes",
       "filters": ["Fortify", "Core"],
-      "description": "Your Core Skills deal up to x [25-40%] increased damage based on your amount of Fortify."
+      "description": "Your Core Skills deal up to [25-45%] increased damage based on your amount of Fortify."
     },
     {
       "name": "Aspect of Retribution",
@@ -1183,7 +1269,7 @@
       "dungeon": "Abandoned Mineworks",
       "location": "Kehjistan",
       "filters": ["Stun"],
-      "description": "Distant enemies have a 10% chance to be Stunned for 2 seconds when they hit you.\n\nYou deal x [15-30%] increased damage to Stunned and Knocked Down enemies."
+      "description": "Distant enemies have a 10% chance to be Stunned for 2 seconds when they hit you.\n\nYou deal x [15-35%] increased damage to Stunned and Knocked Down enemies."
     },
     {
       "name": "Aspect of Searing Wards",
@@ -1193,7 +1279,7 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Mana"],
-      "description": "After spending [125-80] Mana your next Firewall is free to cast and will destroy incoming Small Missiles."
+      "description": "After spending [125-65] Mana your next Firewall is free to cast and will destroy incoming Small Missiles."
     },
     {
       "name": "Aspect of Serration",
@@ -1202,7 +1288,7 @@
       "type": "Offensive",
       "legendary": true,
       "campaign": false,
-      "description": "The Ossified Essence Key Passive also increases the Critical Strike Damage of your Bone Skills by x1% per Essence above 50, up to x [25-40%] ."
+      "description": "The Ossified Essence Key Passive also increases the Critical Strike Damage of your Bone Skills by x1% per Essence above 50, up to x [25-45%] ."
     },
     {
       "name": "Aspect of Shared Misery",
@@ -1213,7 +1299,17 @@
       "dungeon": "Oblivion",
       "location": "Hawezar",
       "filters": ["Lucky Hit"],
-      "description": "Lucky Hit: When you hit a Crowd Controlled enemy, there is up to a [35-50%] chance for that Crowd Control effect to spread to another unaffected enemy."
+      "description": "Lucky Hit: When you hit a Crowd Controlled enemy, there is up to a [35-55%] chance for that Crowd Control effect to spread to another unaffected enemy."
+    },
+    {
+      "name": "Aspect of Shattered Defenses",
+      "class": "Druid",
+      "new": true,
+      "type": "Offensive",
+      "legendary": true,
+      "campaign": false,
+      "filters": ["Spirit"],
+      "description": "Stone Burst causes enemies to take x [30-50%] increased damage from your other Skills for 5 seconds. Stone Burst's Spirit cost is reduced by 10."
     },
     {
       "name": "Aspect of Shattered Stars",
@@ -1223,7 +1319,16 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Burn"],
-      "description": "Meteorites fall around Meteor, dealing [30-45%] of Meteor's damage. Your Meteorites additionally Burn enemies they hit for [X] damage over 6 seconds."
+      "description": "Meteorites fall around Meteor, dealing [30-50%] of Meteor's damage. Your Meteorites additionally Burn enemies they hit for [X] damage over 6 seconds."
+    },
+    {
+      "name": "Aspect of Shattering Steel",
+      "class": "Barbarian",
+      "new": true,
+      "type": "Offensive",
+      "legendary": true,
+      "campaign": false,
+      "description": "Steel Grasp and Iron Maelstrom launch up to 10 metal shards that deal [X] Physical damage."
     },
     {
       "name": "Aspect of Shielding Storm",
@@ -1233,27 +1338,27 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Barrier"],
-      "description": "Each time that Bone Storm damages an enemy, gain a Barrier equal to [1-6%] of your Maximum Life for 10 seconds."
+      "description": "Each time that Bone Storm damages an enemy, gain a Barrier equal to [1-8%] of your Maximum Life for 10 seconds."
     },
     {
       "name": "Aspect of Shredding Blades",
       "class": "Sorcerer",
       "new": false,
       "type": "Offensive",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "filters": ["Vulnerable"],
-      "description": "Ice Blades' chance to apply Vulnerable is increased by 20% and the Vulnerable duration is increased by 4 seconds. You gain x [15-30%] Vulnerable Damage."
+      "description": "Ice Blades' chance to apply Vulnerable is increased by 20% and the Vulnerable duration is increased by 4 seconds. You gain x [15-35%] Vulnerable Damage."
     },
     {
       "name": "Aspect of Simple Reprisal",
       "class": "Spiritborn",
       "new": true,
       "type": "Offensive",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "filters": ["Basic Skill", "Payback"],
-      "description": "When you cast the 3rd attack of your Basic Skills you have a [10-25%] chance to unleash Payback."
+      "description": "When you cast the 3rd attack of your Basic Skills you have a [10-30%] chance to unleash Payback."
     },
     {
       "name": "Aspect of Singed Extremities",
@@ -1265,7 +1370,7 @@
       "dungeon": "Earthen Wound",
       "location": "Hawezar",
       "filters": ["Immobilize", "Slow"],
-      "description": "After lmmobilize or Stun wears off, enemies are Slowed by [45-60%] for 4 seconds."
+      "description": "After lmmobilize or Stun wears off, enemies are Slowed by [45-65%] for 4 seconds."
     },
     {
       "name": "Aspect of Siphoned Victuals",
@@ -1277,14 +1382,14 @@
       "dungeon": "Leviathan's Maw",
       "location": "Hawezar",
       "filters": ["Lucky Hit", "Vulnerable", "Core"],
-      "description": "Lucky Hit: Damaging a Vulnerable enemy with a Non-Basic Skill has a [5-20%] chance to drop a Healing Potion."
+      "description": "Lucky Hit: Damaging a Vulnerable enemy with a Non-Basic Skill has a [5-25%] chance to drop a Healing Potion."
     },
     {
       "name": "Aspect of Sky Power",
       "class": "Spiritborn",
       "new": true,
       "type": "Mobility",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "description": "Lucky Hit: Up to a 25% chance to create a Mystical Circle for 10 seconds.\nCasting an Eagle Skill in Mystic Circles empowers them to move with you and explode for [X] Lightning damage when you Evade."
     },
@@ -1294,14 +1399,14 @@
       "type": "Mobility",
       "legendary": true,
       "campaign": false,
-      "filters": ["Movement Speed"],
-      "description": "You gain 20% Movement Speed. Lose this bonus for [5.0-2.5] seconds after taking damage."
+      "filters": ["Movement Speed", "Close"],
+      "description": "You gain 20% Movement speed. Lose this bonus for [5.0-2.0] seconds after taking damage from a Close Enemy."
     },
     {
       "name": "Aspect of Sly Steps",
       "new": true,
       "type": "Defensive",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "filters": ["Defensive", "Subterfuge", "Macabre"],
       "description": "When you would accumulate 50% of your Maximum Life lost, you automatically cast an equipped Defensive, Subterfuge or Macabre Skill before receiving damage. Can only occur once every [45-30] seconds and cannot cast Mobility Skills."
@@ -1311,7 +1416,7 @@
       "class": "Spiritborn",
       "new": true,
       "type": "Utility",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "filters": ["Centipede Skill", "Poison", "Crowd Control"],
       "description": "Lucky Hit: Up to a 25% chance to create a Mystic Circle for 10 seconds. Casting a Centipede Skill in Mystic Circles empowers them to periodically apply [X] Poisoning damage over 6 seconds to enemies within while extending any Crowd Controls affecting them."
@@ -1325,7 +1430,28 @@
       "campaign": false,
       "dungeon": "Crumbling Hekma",
       "location": "Kehjistan",
+      "filters": ["Critical Strike"],
       "description": "Critical Hits with Lightning Spear cause Lightning to arc from it dealing [X] damage to its target and up to 5 other enemies. This damage is increased by your Critical Strike Damage Bonus."
+    },
+    {
+      "name": "Aspect of Splintering Shards",
+      "class": "Rogue",
+      "new": true,
+      "type": "Offensive",
+      "legendary": true,
+      "campaign": false,
+      "filters": ["Lucky Hit", "Freeze", "Cold", "Chill"],
+      "description": "Lucky Hit: Up to a 100% chance when hitting or killing a Frozen enemy to create an ice splinter that fires away from them dealing [X] Cold damage and Chilling for 20-30%."
+    },
+    {
+      "name": "Aspect of Star Shards",
+      "class": "Rogue",
+      "new": true,
+      "type": "Offensive",
+      "legendary": true,
+      "campaign": false,
+      "filters": ["Combo Points"],
+      "description": "Knives from Dance of Knives have a 50% chance to shatter into 6 shards of metal on hit, dealing [X Physical damage. Dance of Knives now spends Combo Points, granting up to 3 additional Charges that can exceed the Maximum."
     },
     {
       "name": "Aspect of Stolen Vigor",
@@ -1335,16 +1461,17 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Heal"],
-      "description": "While at maximum stacks of the Momentum Key Passive, your Cutthroat Skills deal x [30-45%] increased damage and you become Unstoppable for 3 seconds every 8 seconds."
+      "description": "While at maximum stacks of the Momentum Key Passive, your Cutthroat Skills deal [30-50%] increased damage and you become Unstoppable for 3 seconds every 8 seconds."
     },
     {
       "name": "Aspect of Sundered Ground",
       "class": "Barbarian",
       "new": false,
       "type": "Offensive",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
-      "description": "Every 20 seconds, your next Upheaval cast is guaranteed to Overpower and deals x [15-30%] increased damage. Critical Strikes with Upheaval against Elites reduce this timer by 1 second."
+      "filters": ["Overpower", "Critical Strike", "Elite"],
+      "description": "Every 20 seconds, your next Upheaval cast is guaranteed to Overpower and deals x [15-35%] increased damage. Critical Strikes with Upheaval against Elites reduce this timer by 1 second."
     },
     {
       "name": "Aspect of Surprise",
@@ -1354,7 +1481,7 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Evade", "Stun"],
-      "description": "When you Evade or Shadow Step, you leave behind a cluster of exploding Stun Grenades that deal [X] total Physical damage and Stun enemies for 1 second.\n\nYour Stun Grenades deal [25-40%] more damage."
+      "description": "When you Evade or Shadow Step, you leave behind a cluster of exploding Stun Grenades that deal [X] total Physical damage and Stun enemies for 1 second.\n\nYour Stun Grenades deal [25-45%] more damage."
     },
     {
       "name": "Aspect of Swelling Curse",
@@ -1365,7 +1492,8 @@
       "campaign": false,
       "dungeon": "Hive",
       "location": "Scosglen",
-      "description": "Bone Spirit's Critical Strike Chance is increased by + [10-25%] . Your Maximum Essence is increased by 2 for each enemy hit for 15 seconds."
+      "filters": ["Critical Strike", "Essence"],
+      "description": "Bone Spirit's Critical Strike Chance is increased by + [10-30%] . Your Maximum Essence is increased by 2 for each enemy hit for 15 seconds."
     },
     {
       "name": "Aspect of Synergy",
@@ -1374,7 +1502,8 @@
       "type": "Offensive",
       "legendary": true,
       "campaign": false,
-      "description": "Using an Agility Skill reduces the Cooldown of your next Subterfuge Skill by 20%. Using a Subterfuge Skill increases the damage of your next Agility Skill by x [35-50%] ."
+      "filters": ["Agility", "Cooldown", "Subterfuge"],
+      "description": "Using an Agility Skill reduces the Cooldown of your next Subterfuge Skill by 20%. Using a Subterfuge Skill increases the damage of your next Agility Skill by x [35-55%] ."
     },
     {
       "name": "Aspect of Tempering Blows",
@@ -1393,39 +1522,39 @@
       "class": "Spiritborn",
       "new": true,
       "type": "Defensive",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "filters": ["Incarnate"],
-      "description": "Casting Rushing Claw extends the durations of your active Incarnate Skill effects by [0.5-2] seconds."
+      "description": "Casting Rushing Claw extends the durations of your active Incarnate Skill effects by [0.25-1.25] seconds, up to [2-10] seconds."
     },
     {
       "name": "Aspect of Tenacity",
       "class": "Spiritborn",
       "new": true,
       "type": "Defensive",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "filters": ["Resolve"],
-      "description": "You gain Resolve for each [30-15] Vigor you gain over 100."
+      "description": "You gain Resolve for each [30-10] Vigor you gain over 100."
     },
     {
       "name": "Aspect Of Tenuous Agility",
       "class": "Sorcerer",
       "new": true,
       "type": "Mobility",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "filters": ["Movement Speed"],
-      "description": "Gain [5-15%] increased Movement Speed. This bonus is doubled if you haven't used a Defensive Skill in 8 seconds."
+      "description": "Gain [5-20%] increased Movement Speed. This bonus is doubled if you haven't used a Defensive Skill in 8 seconds."
     },
     {
       "name": "Aspect Of Tenuous Destruction",
       "class": "Sorcerer",
       "new": false,
       "type": "Offensive",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
-      "description": "Deal x [25-40%] increased damage while you have no Defensive Skills on your Action Bar."
+      "description": "Deal [25-45%] increased damage while you have no Defensive Skills on your Action Bar."
     },
     {
       "name": "Aspect of The Aftershock",
@@ -1434,7 +1563,17 @@
       "type": "Offensive",
       "legendary": true,
       "campaign": false,
-      "description": "Landslide's earth pillars each strike a second time and deal an additional [5.5-13%] bonus damage per hit."
+      "description": "Landslide's earth pillars each strike a second time and deal an additional [5.5-15.5%] bonus damage per hit."
+    },
+    {
+      "name": "Aspect of the Agile Wolf",
+      "class": "Druid",
+      "new": true,
+      "type": "Utility",
+      "legendary": true,
+      "campaign": false,
+      "filters": ["Knock Down"],
+      "description": "Shred gains a 4th attack that hits all surrounding enemies, deals x [20-60%] increased damage and Knocks Down enemies for 2 seconds."
     },
     {
       "name": "Aspect of the Alpha",
@@ -1443,7 +1582,7 @@
       "type": "Offensive",
       "legendary": true,
       "campaign": false,
-      "description": "Your Wolf Companions are now Werewolf Companions. Werewolf Companions deal x [100-130%] additional damage and can spread Rabies."
+      "description": "Your Wolf Companions are now Werewolf Companions. Werewolf Companions deal x [100-140%] additional damage and can spread Rabies."
     },
     {
       "name": "Aspect of the Blurred Beast",
@@ -1453,7 +1592,7 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Poison"],
-      "description": "While dashing, Shred seeks out Nearby Poisoned enemies and deals x [40-55%] increased damage to them."
+      "description": "While dashing, Shred seeks out Nearby Poisoned enemies and deals x [40-60%] increased damage to them."
     },
     {
       "name": "Aspect of the Bounding Conduit",
@@ -1465,7 +1604,7 @@
       "dungeon": "Komdor Temple",
       "location": "Dry Steppes",
       "filters": ["Movement Speed"],
-      "description": "Teleport's Cooldown is reduced by [1.0-2.5] seconds. After Teleporting, Crackling Energy hits 2 additional enemies for 5 seconds."
+      "description": "Teleport's Cooldown is reduced by [1.0-3.0] seconds. After Teleporting, Crackling Energy hits 2 additional enemies for 5 seconds."
     },
     {
       "name": "Aspect of the Calm Breeze",
@@ -1477,7 +1616,7 @@
       "dungeon": "Grinning Labyrinth",
       "location": "Dry Steppes",
       "filters": ["Lucky Hit"],
-      "description": "Wind Shear now deals [X] Poisoning damage over 4 seconds.\nLucky Hit: Wind Shear has up to a [6-12%] chance to fully restore your Spirit."
+      "description": "Wind Shear now deals [X] Poisoning damage over 4 seconds.\nLucky Hit: Wind Shear has up to a [6-14%] chance to fully restore your Spirit."
     },
     {
       "name": "Aspect of the Changeling's Debt",
@@ -1489,7 +1628,7 @@
       "dungeon": "Conclave",
       "location": "Kehjistan",
       "filters": ["Poison", "Werebear", "Werewolf", "Crowd Controlled"],
-      "description": "You deal x [25-55%] increased damage while hitting a Poisoned enemy as a Werebear or a Crowd Controlled enemy as a Werewolf."
+      "description": "You deal x [25-65%] increased damage while hitting a Poisoned enemy as a Werebear or a Crowd Controlled enemy as a Werewolf."
     },
     {
       "name": "Aspect of the Crowded Sage",
@@ -1498,17 +1637,17 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Close Enemies"],
-      "description": "You have 8% increased Dodge Chance. Successful Dodges restore [5-20%] of your Maximum Life."
+      "description": "You have 8% increased Dodge Chance. Successful Dodges restore [5-25%] of your Maximum Life."
     },
     {
       "name": "Aspect of the Cursed Aura",
       "class": "Necromancer",
       "new": true,
       "type": "Utility",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "filters": ["Curse"],
-      "description": "You automatically Curse enemies around you with Decrepify and Iron Maiden. Curses inflicted this way spread to surrounding targets every [2.5-0.3] seconds and last 4 seconds outside of the aura."
+      "description": "A dark aura surrounds you, inflicting Decrepify and Iron Maiden on enemies who touch it.\nCurses inflicted this way spread to surrounding targets every [2.5-0.3] seconds and last 4 seconds outside the aura."
     },
     {
       "name": "Aspect of the Damned",
@@ -1519,16 +1658,16 @@
       "campaign": false,
       "dungeon": "Uldur's Cave",
       "location": "Kehjistan",
-      "description": "You deal x [ 35-50%] increased Shadow damage to enemies afflicted by any Curse."
+      "description": "You deal x [ 35-55%] increased Shadow damage to enemies afflicted by any Curse."
     },
     {
       "name": "Aspect of the Dark Dance",
       "new": true,
       "type": "Resource",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "filters": ["Core"],
-      "description": "Every 5 seconds, your next Core Skill costs [X] Life instead of Primary Resource. Will only occur if you have 60% of your Maximum Life.\n\nSkills that consume Life deal x80% increased damage."
+      "description": "Every 5 seconds, your next Core Skill costs [X] Life instead of Primary Resource. Will only occur if you have at least 60% of your Maximum Life. Skills that spend Life deal x [60-80%] bonus damage."
     },
     {
       "name": "Aspect of the Dark Howl",
@@ -1538,7 +1677,7 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Immobilize", "Poison"],
-      "description": "Debilitating Roar is now a Werewolf Skill. In addition, Debilitating Roar will Immobilize Poisoned enemies for [2.5-4] seconds."
+      "description": "Debilitating Roar is now a Werewolf Skill. In addition, Debilitating Roar will Immobilize Poisoned enemies for [2.5-4.5] seconds."
     },
     {
       "name": "Aspect of the Deflecting Barrier",
@@ -1548,8 +1687,8 @@
       "campaign": false,
       "dungeon": "Lost Keep",
       "location": "Hawezar",
-      "filters": ["Barrier"],
-      "description": "While you have a Barrier active, there is a [5-15%] chance to ignore incoming direct damage from Distant enemies."
+      "filters": ["Barrier", "Distant", "Maximum Life"],
+      "description": "You have a [5-12%] chance after taking direct damage to gain a Barrier equal to 20% of your Maximum Life. This chance is doubled against Distant enemies."
     },
     {
       "name": "Aspect of the Dire Whirlwind",
@@ -1560,7 +1699,7 @@
       "campaign": false,
       "dungeon": "Garan Hold",
       "location": "Scosglen",
-      "description": "Whirlwind's Critical Strike Chance is increased by [3-8%] for each second it is channeled, up to [9-24%] ."
+      "description": "Whirlwind's Critical Strike Chance is increased by [3-12%] for each second it is channeled, up to [9-36%] ."
     },
     {
       "name": "Aspect of the Embalmer",
@@ -1569,7 +1708,7 @@
       "type": "Defensive",
       "legendary": true,
       "campaign": false,
-      "description": "Consuming a Corpse has a [15-30%] chance to spawn a Blood Orb."
+      "description": "Consuming a Corpse has a [15-35%] chance to spawn a Blood Orb."
     },
     {
       "name": "Aspect of the Expectant",
@@ -1580,23 +1719,24 @@
       "dungeon": "Underroot",
       "location": "Scosglen",
       "filters": ["Core"],
-      "description": "After attacking enemies with a Basic Skill, increase the damage of your next Core Skill cast within 5 seconds by x [5-10%] , up to x30%."
+      "description": "After attacking enemies with a Basic Skill, increase the damage of your next Core Skill cast within 5 seconds by x [5-12%] , up to x30%."
     },
     {
       "name": "Aspect Of the Firebird",
       "class": "Sorcerer",
       "new": true,
       "type": "Offensive",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
-      "description": "Gain the Flame Shield Enchantment for free. When Flame Shield activates, Meteorites fall around you dealing [50-70%] Fire damage."
+      "filters": ["Fire"],
+      "description": "Gain the Flame Shield Enchantment for free. When Flame Shield activates, Meteorites fall around you dealing [X] Fire damage."
     },
     {
       "name": "Aspect of the Fortress",
       "class": "Barbarian",
       "new": true,
       "type": "Defensive",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "filters": ["Damage Reduction"],
       "description": "For every 10% Life you are missing, gain [1-5%] Damage Reduction."
@@ -1608,6 +1748,7 @@
       "type": "Offensive",
       "legendary": true,
       "campaign": false,
+      "filters": ["Ice Spike"],
       "description": "While Deep Freeze is active, exploding Ice Spikes form in the area, dealing [X] Cold Damage. Your Ice Spikes have 50% increased explosion radius."
     },
     {
@@ -1617,16 +1758,18 @@
       "type": "Offensive",
       "legendary": true,
       "campaign": false,
-      "description": "While Ice Armor is active, you leave behind exploding Ice Spikes that deal [X] damage. Your Ice Spikes deal x15% increased damage to Frozen enemies."
+      "filters": ["Freeze"],
+      "description": "While Ice Armor is active, you leave behind exploding Ice Spikes that deal [X] damage. Your Ice Spikes deal 15% increased damage to Frozen enemies."
     },
     {
       "name": "Aspect of the Great Feast",
       "class": "Necromancer",
       "new": true,
       "type": "Offensive",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
-      "description": "Your Minions deal x [30-45%] increased damage, but each one drains 1 Essence from you per second. If you have no active Minions, the damage increase applies to you instead, and you lose 7 Essence per second."
+      "filters": ["Minion", "Essence"],
+      "description": "Your Minions deal [30-45%] increased damage, but each one drains 1 Essence from you per second. If you have no active Minions, the damage increase applies to you instead, and you lose 7 Essence per second."
     },
     {
       "name": "Aspect of the Iron Warrior",
@@ -1638,7 +1781,7 @@
       "dungeon": "Carrion Fields",
       "location": "Dry Steppes",
       "filters": ["Unstoppable", "Damage Reduction"],
-      "description": "Iron Skin grants Unstoppable, and [25-35%] Damage Reduction."
+      "description": "Iron Skin grants Unstoppable, and [20-40%] Damage Reduction."
     },
     {
       "name": "Aspect of the Long Shadow",
@@ -1647,7 +1790,8 @@
       "type": "Resource",
       "legendary": true,
       "campaign": false,
-      "description": "Lucky Hit: Your Shadow Damage Over Time effects have a [15-30%] chance to generate 3 Essence. Damage from your Shadowblight Key Passive will always generate 2 Essence."
+      "filters": ["Lucky Hit", "Shadow", "Essence"],
+      "description": "Lucky Hit: Your Shadow Damage Over Time effects have a [15-35%] chance to generate 3 Essence. Damage from your Shadowblight Key Passive will always generate 2 Essence."
     },
     {
       "name": "Aspect of the Moonrise",
@@ -1656,16 +1800,27 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Basic Skill", "Attack Speed", "Movement Speed"],
-      "description": "Damaging an enemy with a Basic Skill grants you 4% Attack Speed for 10 seconds, stacking up to 5 times. Upon reaching maximum stacks, you enter a Vampiric Bloodrage, gaining x [40-80%] Basic Skill damage and 15% Movement Speed for 10 seconds."
+      "description": "Damaging an enemy with a Basic Skill grants you 4% Attack Speed for 10 seconds, stacking up to 5 times. Upon reaching maximum stacks, you enter a Vampiric Bloodrage, gaining x [40-100%] Basic Skill damage and 15% Movement Speed for 10 seconds."
     },
     {
-      "name": "Aspect Of the Orange Herald",
+      "name": "Aspect of the Orange Herald",
       "class": "Sorcerer",
       "new": true,
       "type": "Utility",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
-      "description": "Lucky Hit: Up to a [5-10%] Chance when you damage an enemy with a Skill to reduce the Cooldown of your Ultimate Skill by 2 seconds. Can only happen once per Skill cast."
+      "filters": ["Lucky Hit", "Cooldown", "Ultimate"],
+      "description": "Lucky Hit: Up to a [5-13%] Chance when you damage an enemy with a Skill to reduce the Cooldown of your Ultimate Skill by 2 seconds. Can only happen once per Skill cast."
+    },
+    {
+      "name": "Aspect of Poisonous Clouds",
+      "class": "Rogue",
+      "new": true,
+      "type": "Offensive",
+      "legendary": true,
+      "campaign": false,
+      "filters": ["Stealth", "Poison"],
+      "description": "When entering Stealth, create a cloud that deals [X] Poison damage over 6 seconds."
     },
     {
       "name": "Aspect of the Protector",
@@ -1682,10 +1837,20 @@
       "name": "Aspect of the Prudent Heart",
       "new": true,
       "type": "Defensive",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "filters": ["Immune"],
-      "description": "After being damaged for at least 20% of your Maximum Life at once, you become Immune for [2.5-4] seconds. Can only occur once every 20 seconds."
+      "description": "After being damaged for at least 20% of your Maximum Life at once, you become Immune for [2.5--4.0] seconds. Can only occur once every 20 seconds."
+    },
+    {
+      "name": "Aspect of the Rabid Bear",
+      "class": "Druid",
+      "new": true,
+      "type": "Offensive",
+      "legendary": true,
+      "campaign": false,
+      "filters": ["Poison", "Critical Strike"],
+      "description": "While Grizzly Rage is active, Skills that Critically Strike apply Rabies and your Poison damage is increased by x [30-90%] ."
     },
     {
       "name": "Aspect of the Rampaging Werebeast",
@@ -1696,7 +1861,8 @@
       "campaign": false,
       "dungeon": "Endless Gates",
       "location": "Hawezar",
-      "description": "The duration of Grizzly Rage is increased by [3-8] seconds. In addition, Critical Strikes while Grizzly Rage is active increase your Critical Strike Damage by 10% for the duration, up to  a maximum of 200%."
+      "filters": ["Critical Strike"],
+      "description": "The duration of Grizzly Rage is increased by [3-10] seconds. In addition, Critical Strikes while Grizzly Rage is active increase your Critical Strike Damage by 10% for the duration, up to  a maximum of 200%."
     },
     {
       "name": "Aspect of the Relentless Armsmaster",
@@ -1707,7 +1873,8 @@
       "campaign": false,
       "dungeon": "Calibel's Mine",
       "location": "Scosglen",
-      "description": "Gain [35-65%] increased Fury Generation and 15% reduced Fury cost to your Skills while all damage bonuses from the Walking Arsenal Key Passive are active."
+      "filters": ["Fury"],
+      "description": "Gain [35-75%] increased Fury Generation and 15% reduced Fury cost to your Skills while all damage bonuses from the Walking Arsenal Key Passive are active."
     },
     {
       "name": "Aspect of the Rushing Wilds",
@@ -1717,7 +1884,7 @@
       "legendary": false,
       "campaign": false,
       "filters": ["Movement Speed"],
-      "description": "Casting a Companion Skill grants [5-15%] Movement Speed for 5 seconds, up to [15-45%] ."
+      "description": "Casting a Companion Skill grants [5-20%] Movement Speed for 5 seconds, up to [15-60%] ."
     },
     {
       "name": "Aspect of the Stampede",
@@ -1726,7 +1893,8 @@
       "type": "Offensive",
       "legendary": true,
       "campaign": false,
-      "description": "Gain 1 additional Companion. In addition, your Companion Skills deal [15-30%] bonus damage."
+      "filters": ["Companion"],
+      "description": "Gain 1 additional Companion. In addition, your Companion Skills deal x [15-35%] bonus damage."
     },
     {
       "name": "Aspect of the Tempest",
@@ -1737,7 +1905,7 @@
       "campaign": false,
       "dungeon": "Blind Burrows",
       "location": "Hawezar",
-      "description": "Hurricane damage is increased by [10.5-18%] each second while active."
+      "description": "Hurricane damage is increased by x [10.5-20.5%] each second while active."
     },
     {
       "name": "Aspect of the Trampled Earth",
@@ -1746,7 +1914,8 @@
       "type": "Offensive",
       "legendary": true,
       "campaign": false,
-      "description": "Trample now summons 6 Landslide pillars of earth during its duration that deal [70-100%] normal damage. Trample is now also a Nature Magic and Earth Skill."
+      "filters": ["Nature Magic", "Earth"],
+      "description": "Trample now summons 6 Landslide pillars of earth during its duration that deal [70-110%] normal damage. Trample is now also a Nature Magic and Earth Skill."
     },
     {
       "name": "Aspect of the Umbral",
@@ -1756,7 +1925,8 @@
       "campaign": false,
       "dungeon": "Champion's Demise",
       "location": "Dry Steppes",
-      "description": "Restore [1-6] of your Primary Resource when you Crowd Control an enemy."
+      "filters": ["Fury", "Spirit", "Essence", "Mana", "Energy", "Crowd Control"],
+      "description": "Restore [1-8] of your Primary Resource when you Crowd Control an enemy."
     },
     {
       "name": "Aspect of the Unbroken Tether",
@@ -1765,7 +1935,7 @@
       "type": "Offensive",
       "legendary": true,
       "campaign": false,
-      "description": "Chain Lightning has a [25-40%] chance to chain 5 additional times."
+      "description": "Chain Lightning has a [25-45%] chance to chain 5 additional times."
     },
     {
       "name": "Aspect of the Unholy Tether",
@@ -1775,7 +1945,7 @@
       "legendary": false,
       "campaign": false,
       "filters": ["Movement Speed", "Golem"],
-      "description": "Casting Golem's active Skill creates a bond between you for 6 seconds. While the bond is active, both of you are Unhindered and gain [25-40%] Movement Speed."
+      "description": "Casting Golem's active Skill creates a bond between you for 6 seconds. While the bond is active, both of you are Unhindered and gain [25-45%] Movement Speed."
     },
     {
       "name": "Aspect of the Unsatiated",
@@ -1786,7 +1956,8 @@
       "campaign": false,
       "dungeon": "Tormented Ruins",
       "location": "Fractured Peaks",
-      "description": "After killing an enemy with Shred, you gain 20 Spirit. Your Werewolf Skills deal x [20-35%] increased damage when cast above 50 Spirit."
+      "filters": ["Spirit", "Werewolf"],
+      "description": "After killing an enemy with Shred, you gain 20 Spirit. Your Werewolf Skills deal x [20-40%] increased damage when cast above 50 Spirit."
     },
     {
       "name": "Aspect of the Unwavering",
@@ -1797,7 +1968,8 @@
       "campaign": false,
       "dungeon": "Putrid Aquifer",
       "location": "Kehjistan",
-      "description": "Taking direct damage has a [2-7%] chance to reset the Cooldown of one of your Defensive Skills."
+      "filters": ["Cooldown", "Defensive"],
+      "description": "Taking direct damage has a [2-10%] chance to reset the Cooldown of one of your Defensive Skills."
     },
     {
       "name": "Aspect of the Ursine Horror",
@@ -1808,6 +1980,7 @@
       "campaign": false,
       "dungeon": "Belfry Zakara",
       "location": "Hawezar",
+      "filters": ["Earth"],
       "description": "Pulverize is now also an Earth Skill. After casting Pulverize, tectonic spikes continue to deal [X] damage over 2 seconds."
     },
     {
@@ -1827,6 +2000,7 @@
       "type": "Offensive",
       "legendary": true,
       "campaign": false,
+      "filters": ["Companion"],
       "description": "Your Companions gain the bonuses from the Bestial Rampage Key Passive."
     },
     {
@@ -1839,7 +2013,7 @@
       "dungeon": "Serpent's Lair",
       "location": "Hawezar",
       "filters": ["Healthy"],
-      "description": "Increases the Critical Strike Damage of Meteor and Fireball by x [25-40%] . Double this bonus against Healthy targets."
+      "description": "Increases the Critical Strike Damage of Meteor and Fireball by x [25-45%] . Double this bonus against Healthy targets."
     },
     {
       "name": "Aspect of Torment",
@@ -1850,26 +2024,27 @@
       "campaign": false,
       "dungeon": "Black Asylum",
       "location": "Zones",
-      "description": "Critical Strikes with Bone Skills increase your Essence Regeneration by x [95-170%] for 4 seconds."
+      "filters": ["Critical Strike", "Bone", "Essence"],
+      "description": "Critical Strikes with Bone Skills increase your Essence Regeneration by x [95-195%] for 4 seconds."
     },
     {
       "name": "Aspect of True Sight",
       "class": "Rogue",
       "new": true,
       "type": "Offensive",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "filters": ["Critical Strike Damage"],
-      "description": "You deal x [70-100%]increased Critical Strike Damage to enemies marked by Inner Sight."
+      "description": "You deal [70-100%] Critical Strike Damage to enemies marked by Inner Sight. While Inner Sight is full, you gain x [21-30%] increased damage."
     },
     {
       "name": "Aspect of Turbulence",
       "class": "Spiritborn",
       "new": true,
       "type": "Utility",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
-      "description": "Soar casts Vortex at its landing location and deals x [15-30%] increased damage."
+      "description": "Soar casts Vortex at its landing location and deals x [25-45%] increased damage."
     },
     {
       "name": "Aspect of Ultimate Shadow",
@@ -1890,7 +2065,7 @@
       "dungeon": "Demon's Wake",
       "location": "Scosglen",
       "filters": ["Daze", "Stealth"],
-      "description": "Dealing damage to a Dazed enemy with an Agility Skill grants Stealth for 4 seconds.\n\nWhen Stealth breaks, you gain [10-15%] Dodge Chance for 2 seconds."
+      "description": "Dealing direct damage with a non-Agility Skill after casting an Agility skill grants Stealth for 2 seconds.\n\nWhen Stealth breaks you gain [10-18%] dodge chance for 2 seconds."
     },
     {
       "name": "Aspect of Unstable Imbuements",
@@ -1911,17 +2086,17 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Heal", "Overpower"],
-      "description": "Each percent of your Maximum Life you Heal beyond 100% grants you x0.5% bonus Critical Strike Damage on your next Critical Strike, up to a x [30-60%] bonus."
+      "description": "Each percent of your Maximum Life you Heal beyond 100% grants you x0.5% bonus Critical Strike Damage on your next Critical Strike, up to a x [30-70%] bonus."
     },
     {
       "name": "Aspect of Unyielding Hits",
       "class": "Spiritborn",
       "new": true,
       "type": "Offensive",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "filters": ["Gorilla Skill", "Armor"],
-      "description": "Casting a Gorilla Skill adds [21-36%] of your Armor to all attacks for 3 seconds."
+      "description": "Casting a Gorilla Skill adds [21-40%] of your Armor to all attacks for 3 seconds."
     },
     {
       "name": "Aspect of Vocalized Empowerment",
@@ -1932,7 +2107,7 @@
       "campaign": false,
       "dungeon": "Sirocco Caverns",
       "location": "Kehjistan",
-      "description": "Your Shout Skills generate [5-10] Primary Resource per second while active."
+      "description": "Your Shout Skills generate [5-12] Primary Resource per second while active."
     },
     {
       "name": "Aspect of Vocalized Empowerment",
@@ -1943,7 +2118,7 @@
       "campaign": false,
       "dungeon": "Sirocco Caverns",
       "location": "Kehjistan",
-      "description": "Your Shout Skills generate [5-10] Primary Resource per second while active."
+      "description": "Your Shout Skills generate [5-12] Primary Resource per second while active."
     },
     {
       "name": "Aspect of Volatile Shadows",
@@ -1958,7 +2133,7 @@
     },
     {
       "name": "Aspect of Voracious Rage",
-      "class": "Barbarian",
+      "class": "All",
       "new": false,
       "type": "Resource",
       "legendary": false,
@@ -1966,16 +2141,16 @@
       "dungeon": "Hallowed Ossuary",
       "location": "Fractured Peaks",
       "filters": ["Core"],
-      "description": "Killing an enemy or hitting a Boss with a Core Skill refunds [15-30%] of its base Fury cost. Can only happen once per Skill cast."
+      "description": "Killing an enemy or hitting a Boss with a Core Skill refunds [15-35%] of its base Fury cost. Can only happen once per Skill cast."
     },
     {
       "name": "Aspect of Wild Claws",
       "class": "Spiritborn",
       "new": true,
       "type": "Offensive",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
-      "description": "Rake manifests a Spirit Jaguar which also casts Rake at a random enemy, dealing [35-45%] Base damage."
+      "description": "Rake manifests a Spirit Jaguar which also casts Rake at a random enemy, dealing [45-65%] Base damage."
     },
     {
       "name": "Assimilation Aspect",
@@ -1984,7 +2159,7 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Dodge"],
-      "description": "You have 8% increased Dodge Chance. When you Dodge, Fortify for [5-10%] of your Maximum Life."
+      "description": "You have 8% increased Dodge Chance. When you Dodge, Fortify for [5-12%] of your Maximum Life."
     },
     {
       "name": "Balanced Aspect",
@@ -1993,7 +2168,7 @@
       "type": "Resource",
       "legendary": true,
       "campaign": false,
-      "description": "Increases your Maximum Spirit by [50-80] and Spirit Generation by 50% while Grizzly Rage is active."
+      "description": "Increases your Maximum Spirit by [50-90] and Spirit Generation by 50% while Grizzly Rage is active."
     },
     {
       "name": "Ballistic Aspect",
@@ -2014,7 +2189,7 @@
       "type": "Offensive",
       "legendary": true,
       "campaign": false,
-      "description": "Lucky Hit: When your Conjuration Skills hit you have up to a [25-40%] chance to gain +1 Rank to your Conjuration skills for 12 seconds. This can stack up to 5 times."
+      "description": "Lucky Hit: When your Conjuration Skills hit you have up to a [25-45%] chance to gain +1 Rank to your Conjuration skills for 12 seconds. This can stack up to 5 times."
     },
     {
       "name": "Battle-Mad Aspect",
@@ -2024,7 +2199,7 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Berserking", "Weapon Swap"],
-      "description": "Gain Berserking for [1.5-4.0] seconds after swapping weapons 8 times."
+      "description": "Gain Berserking for [1.5-5.0] seconds after swapping weapons 8 times."
     },
     {
       "name": "Bear Clan Berserker's Aspect",
@@ -2034,7 +2209,7 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Berserking"],
-      "description": "Killing an enemy while Berserking has a 40% chance to grant [17-32%] increased Cooldown Reduction to your Brawling Skills for 2 seconds."
+      "description": "Killing an enemy while Berserking has a 40% chance to grant [17-40%] increased Cooldown Reduction to your Brawling Skills for 2 seconds."
     },
     {
       "name": "Bladedancer's Aspect",
@@ -2045,7 +2220,7 @@
       "campaign": true,
       "dungeon": "Jalal's Vigil",
       "location": "Scosglen",
-      "description": "Twisting Blades orbit for a short time after they return to you, dealing x [50-80%] of Twisting Blade's return damage per hit."
+      "description": "Twisting Blades orbit for a short time after they return to you, dealing x [25-45%] of Twisting Blade's return damage per hit."
     },
     {
       "name": "Blast-Trapper's Aspect",
@@ -2057,7 +2232,7 @@
       "dungeon": "Kor Valar Ramparts",
       "location": "Fractured Peaks",
       "filters": ["Lucky Hit", "Vulnerable"],
-      "description": "Lucky Hit: Dealing damage to enemies affected by your Trap skills has a [15-30%] chance to cause an explosion that deals [X] Shadow Damage and applies Vulnerable for 2 seconds."
+      "description": "Lucky Hit: Dealing damage to enemies affected by your Trap skills has a [15-35%] chance to cause an explosion that deals [X] Shadow Damage and applies Vulnerable for 2 seconds."
     },
     {
       "name": "Blighted Aspect",
@@ -2068,7 +2243,7 @@
       "campaign": false,
       "dungeon": "Akkhan's Grasp",
       "location": "Hawezar",
-      "description": "You deal x [35-50%] increased damage for 6 seconds after the Shadowblight Key Passive damages enemies 10 times."
+      "description": "You deal [35-55%] increased damage for 6 seconds after the Shadowblight Key Passive damages enemies 10 times."
     },
     {
       "name": "Blood Boiling Aspect",
@@ -2086,7 +2261,7 @@
       "type": "Utility",
       "legendary": true,
       "campaign": false,
-      "description": "Your Skeletal Priests also empower you at [55-70%] effectiveness."
+      "description": "Your Skeletal Priests also empower you at [55-75%] effectiveness."
     },
     {
       "name": "Blood Seeker's Aspect",
@@ -2097,7 +2272,7 @@
       "campaign": false,
       "dungeon": "Mercy's Reach",
       "location": "Fractured Peaks",
-      "description": "Blood Lance deals x [10-25%] increased damage to its primary target per lanced enemy."
+      "description": "Blood Lance deals x [10-30%] increased damage to its primary target per lanced enemy."
     },
     {
       "name": "Blood-bathed Aspect",
@@ -2108,7 +2283,7 @@
       "campaign": false,
       "dungeon": "Hoarfrost Demise",
       "location": "Fractured Peaks",
-      "description": "Blood Surge's nova echoes again after a short delay, dealing x [30-15%] less damage."
+      "description": "Blood Surge's nova echoes again after a short delay, dealing x [30-10%] less damage."
     },
     {
       "name": "Blood-soaked Aspect",
@@ -2127,7 +2302,7 @@
       "type": "Resource",
       "legendary": true,
       "campaign": false,
-      "description": "Whenever you cast a Shout Skill, its Cooldown is reduced by [1.0-2.0] seconds per Nearby enemy, up to a maximum of 6 seconds."
+      "description": "Whenever you cast a Shout Skill, its Cooldown is reduced by [1.0-3.0] seconds per Nearby enemy, up to a maximum of 6 seconds."
     },
     {
       "name": "Bold Chieftain's Aspect",
@@ -2136,7 +2311,7 @@
       "type": "Resource",
       "legendary": true,
       "campaign": false,
-      "description": "Whenever you cast a Shout Skill, its Cooldown is reduced by [1.0-2.0] seconds per Nearby enemy, up to a maximum of 6 seconds."
+      "description": "Whenever you cast a Shout Skill, its Cooldown is reduced by [1.0-3.0] seconds per Nearby enemy, up to a maximum of 6 seconds."
     },
     {
       "name": "Brawler's Aspect",
@@ -2156,7 +2331,7 @@
       "type": "Offensive",
       "legendary": false,
       "campaign": false,
-      "description": "Flurry deals x [25-40%] increased damage and has a 20% chance to Stun enemies for 3 seconds with each hit."
+      "description": "Flurry deals [25-45%] increased damage and has a 20% chance to Stun enemies for 3 seconds with each hit."
     },
     {
       "name": "Bristleback Aspect",
@@ -2166,7 +2341,7 @@
       "legendary": false,
       "campaign": false,
       "filters": ["Dodge", "Block", "Thorns"],
-      "description": "When you Dodge or Block an attack you trigger [200-350%] Thorns attacks against the attacker."
+      "description": "When you Dodge or Block an attack you trigger [100-160%] Thorns attacks against the attacker."
     },
     {
       "name": "Bruiser's Aspect",
@@ -2176,7 +2351,7 @@
       "legendary": false,
       "campaign": false,
       "filters": ["Armor", "Thorns"],
-      "description": "Gain [5%] increased Armor and [7-60] Thorns per [1%] missing Maximum Health."
+      "description": "Gain [5%] increased Armor and [4-17] Thorns per [1%] missing Maximum Health."
     },
     {
       "name": "Cadaverous Aspect",
@@ -2186,7 +2361,7 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Core"],
-      "description": "Consuming a Corpse increases the damage of your Core Skills by [3.5-6%] for 5 seconds, up to [17.5-30%] ."
+      "description": "Consuming a Corpse increases the damage of your Core Skills by [3.5-7%] for 5 seconds, up to [17.5-35%] ."
     },
     {
       "name": "Charged Aspect",
@@ -2198,7 +2373,7 @@
       "dungeon": "Maddux Watch",
       "location": "Scosglen",
       "filters": ["Movement Speed", "Crackling Energy"],
-      "description": "Collecting Crackling Energy increases your Movement Speed by [15-25%] for 8 seconds."
+      "description": "Collecting Crackling Energy increases your Movement Speed by [15-30%] for 8 seconds."
     },
     {
       "name": "Cheat's Aspect",
@@ -2210,7 +2385,7 @@
       "dungeon": "Luban's Rest",
       "location": "Scosglen",
       "filters": ["Movement Speed"],
-      "description": "You take [10-25%] less damage from Crowd Controlled enemies. Whenever a Crowd Controlled enemy deals direct damage to you, gain 15% Movement Speed for 2 seconds."
+      "description": "You take [10-30%] less damage from Crowd Controlled enemies. Whenever a Crowd Controlled enemy deals direct damage to you, gain 15% Movement Speed for 2 seconds."
     },
     {
       "name": "Clandestine Aspect",
@@ -2220,7 +2395,7 @@
       "legendary": false,
       "campaign": false,
       "filters": ["Agility", "Subterfuge"],
-      "description": "Gain +1 to Agility and Subterfuge Skills."
+      "description": "Gain +1Ranks to Agility and Subterfuge Skills."
     },
     {
       "name": "Coldbringer's Aspect",
@@ -2240,7 +2415,7 @@
       "legendary": false,
       "campaign": false,
       "filters": ["Basic Skills", "Chilled", "Frozen"],
-      "description": "Your Basic Skills are always Cold Imbued.\n\nYou deal x [5-20%] increased damage to enemies who are Chilled or Frozen."
+      "description": "Your Basic Skills are always Cold Imbued. You deal x [5-20%] increased damage to enemies who are Chilled or Frozen."
     },
     {
       "name": "Conceited Aspect",
@@ -2249,7 +2424,7 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Barrier"],
-      "description": "Deal x [10-25%] increased damage while you have a Barrier active."
+      "description": "Deal x [10-30%] increased damage while you have a Barrier active."
     },
     {
       "name": "Crashstone Aspect",
@@ -2260,7 +2435,7 @@
       "campaign": true,
       "dungeon": "Stockades",
       "location": "Scosglen",
-      "description": "Earth Skills deal [25-40%] more Critical Strike Damage to Crowd Controlled enemies."
+      "description": "Earth Skills deal [25-45%] more Critical Strike Damage to Crowd Controlled enemies."
     },
     {
       "name": "Craven Aspect",
@@ -2269,7 +2444,7 @@
       "legendary": false,
       "campaign": false,
       "filters": ["Movement Speed"],
-      "description": "You gain [25-40%] increased Movement Speed when moving away from Slowed or Chilled enemies."
+      "description": "You gain [25-45%] increased Movement Speed when moving away from Slowed or Chilled enemies."
     },
     {
       "name": "Death Wish Aspect",
@@ -2301,7 +2476,7 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Movement Speed", "Heal"],
-      "description": "Grizzly Rage now Shapeshifts you into a Dire Werewolf. As a Dire Werewolf you gain [10-25%] Movement Speed instead of Damage Reduction and [20-50%] Spirit cost reduction bonus. In addition, kills Heal you for 10% of your Maximum Life."
+      "description": "Grizzly Rage now Shapeshifts you into a Dire Werewolf. As a Dire Werewolf you gain [10-30%] Movement Speed instead of Damage Reduction and [20-60%] Spirit cost reduction bonus. In addition, kills Heal you for 10% of your Maximum Life."
     },
     {
       "name": "Duelist's Aspect",
@@ -2311,7 +2486,7 @@
       "legendary": false,
       "campaign": false,
       "filters": ["Ferocity"],
-      "description": "Maximum Ferocity increased by [1-4] ."
+      "description": "Maximum Ferocity increased by [1-5] ."
     },
     {
       "name": "Dust Devil's Aspect",
@@ -2329,16 +2504,7 @@
       "type": "Defensive",
       "legendary": true,
       "campaign": false,
-      "description": "Gain [10-25%] bonus amount to your next Earthen Bulwark for each enemy you Crowd Control up to a maximum of 100%."
-    },
-    {
-      "name": "Earthquake Aspect",
-      "class": "Barbarian",
-      "new": false,
-      "type": "Offensive",
-      "legendary": true,
-      "campaign": false,
-      "description": "Ground Stomp creates an Earthquake damaging enemies for [X] Physical Damage over 4 seconds. While standing in Earthquakes, you deal x [10-25%] increased damage."
+      "description": "Gain [10-30%] bonus amount to your next Earthen Bulwark for each enemy you Crowd Control up to a maximum of 100%."
     },
     {
       "name": "Earthstriker's Aspect",
@@ -2350,7 +2516,7 @@
       "dungeon": "Maugan's Works",
       "location": "Hawezar",
       "filters": ["Overpower", "Weapon Swap"],
-      "description": "After swapping weapons 8 times, your next non-Basic Skill will Overpower and deal x [15-30%] increased Overpower damage."
+      "description": "After swapping weapons 8 times, your next non-Basic Skill will Overpower and deal x [15-35%] increased Overpower damage."
     },
     {
       "name": "Edgemaster's Aspect",
@@ -2360,7 +2526,7 @@
       "campaign": false,
       "dungeon": "Oldstones",
       "location": "Scosglen",
-      "description": "Skills deal up to x [5-20%] increased damage based on your available Primary Resource when cast, receiving the maximum benefit while you have full Primary Resource."
+      "description": "Skills deal up to x [5-25%] increased damage based on your available Primary Resource when cast, receiving the maximum benefit while you have full Primary Resource."
     },
     {
       "name": "Elementalist's Aspect",
@@ -2372,7 +2538,7 @@
       "dungeon": "Pallid Delve",
       "location": "Dry Steppes",
       "filters": ["Core", "Mastery", "Critical Strike Chance"],
-      "description": "Core Skills cast at or above 100 Mana gain a [25-40%] increased Critical Strike Chance."
+      "description": "Core Skills cast at or above 100 Mana gain a [25-45%] increased Critical Strike Chance."
     },
     {
       "name": "Eluding Aspect",
@@ -2383,7 +2549,7 @@
       "dungeon": "Caldera Gate",
       "location": "Fractured Peaks",
       "filters": ["Injured", "Unstoppable"],
-      "description": "Becoming lnjured while Crowd Controlled grants you Unstoppable for 4 seconds. This effect has a [40-25] second Cooldown."
+      "description": "Becoming lnjured while Crowd Controlled grants you Unstoppable for 4 seconds. This effect has a [40-20] second Cooldown."
     },
     {
       "name": "Encased Aspect",
@@ -2393,7 +2559,7 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Heal"],
-      "description": "While Deep Freeze is active, you restore [15-30%] of your Maximum Life and Mana per second."
+      "description": "While Deep Freeze is active, you restore [15-35%] of your Maximum Life and Mana per second."
     },
     {
       "name": "Energizing Aspect",
@@ -2404,7 +2570,7 @@
       "campaign": false,
       "dungeon": "Sanguine Chapel",
       "location": "Fractured Peaks",
-      "description": "Damaging an Elite enemy with a Basic Skill generates 4 Energy.\n\nGain [25-40] Energy after killing an Elite enemy with a Basic Skill."
+      "description": "Damaging an Elite enemy with a Basic Skill generates 4 Energy.\n\nGain [25-45] Energy after killing an Elite enemy with a Basic Skill."
     },
     {
       "name": "Enshrouding Aspect",
@@ -2416,7 +2582,7 @@
       "dungeon": "Ghoa Ruins",
       "location": "Hawezar",
       "filters": ["Damage Reduction"],
-      "description": "Using a Healing Potion makes a free Dark Shroud shadow. Each shadow grants [2.5-4.0%] increased Damage Reduction."
+      "description": "Using a Healing Potion makes a free Dark Shroud shadow. Each shadow grants [2.5-4.5%] increased Damage Reduction."
     },
     {
       "name": "Escape Artist's Aspect",
@@ -2426,7 +2592,7 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Dodge"],
-      "description": "Upon taking damage from surrounding enemies, you drop a Smoke Grenade and Dodge the next [2-7] attacks within 10 seconds. This effect can only occur once every 20 seconds."
+      "description": "Upon taking damage from surrounding enemies, you drop a Smoke Grenade and Dodge the next [2-10] attacks within 10 seconds. This effect can only occur once every 20 seconds."
     },
     {
       "name": "Everliving Aspect",
@@ -2436,7 +2602,7 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Vulnerable"],
-      "description": "You take [10-25%] less damage from Crowd Controlled or Vulnerable enemies."
+      "description": "You take [10-30%] less damage from Crowd Controlled or Vulnerable enemies."
     },
     {
       "name": "Executioner's Aspect",
@@ -2466,7 +2632,7 @@
       "campaign": false,
       "dungeon": "Iron Hold",
       "location": "Hawezar",
-      "description": "Blood Orbs reduce your Ultimate Cooldown by [1-2.5] seconds."
+      "description": "Blood Orbs reduce your Ultimate Cooldown by [1-3] seconds."
     },
     {
       "name": "Fell Soothsayer's Aspect",
@@ -2476,7 +2642,7 @@
       "legendary": false,
       "campaign": false,
       "filters": ["Incarnate Skill", "Invulnerable"],
-      "description": "When you cast an Incarnate Skill enemies around you become Vulnerable for [2-5] seconds."
+      "description": "When you cast an Incarnate Skill enemies around you become Vulnerable for 5 seconds. Killing a Vulnerable enemy echoes [15-55%] of the killing blow's Base damage to another Nearby enemy."
     },
     {
       "name": "Firestarter Aspect",
@@ -2495,7 +2661,7 @@
       "type": "Offensive",
       "legendary": false,
       "campaign": false,
-      "description": "Incinerate splits into 3 beams, each dealing [70-85%] of normal damage."
+      "description": "Incinerate splits into 3 beams, each dealing [70-90%] of normal damage."
     },
     {
       "name": "Flamewalker's Aspect",
@@ -2507,7 +2673,7 @@
       "dungeon": "Cultist Refuge",
       "location": "Fractured Peaks",
       "filters": ["Movement Speed"],
-      "description": "Coming in contact with your Firewall grants you [10-25%] Movement Speed for 6 seconds."
+      "description": "Coming in contact with your Firewall grants you [10-30%] Movement Speed for 6 seconds."
     },
     {
       "name": "Flesh-Rending Aspect",
@@ -2518,7 +2684,7 @@
       "campaign": false,
       "dungeon": "Nostrava Deepwood",
       "location": "Fractured Peaks",
-      "description": "When Decompose explodes, gain [25-40] Essence."
+      "description": "When Decompose explodes, gain [25-45] Essence."
     },
     {
       "name": "Frostbitten Aspect",
@@ -2528,7 +2694,7 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Chill", "Freeze"],
-      "description": "Enemies hit by your Grenade Skills have a chance equal to your Critical Strike Chance to be Frozen for 2 seconds.\n\nYou deal x [10-25%] increased Critical Strike Damage against Frozen or Stunned enemies."
+      "description": "Enemies hit by your Grenade Skills have a chance equal to your Critical Strike Chance to be Frozen for 2 seconds.\n\nYou deal x [10-30%] increased Critical Strike Damage against Frozen or Stunned enemies."
     },
     {
       "name": "Frostblitz Aspect",
@@ -2537,7 +2703,7 @@
       "type": "Defensive",
       "legendary": true,
       "campaign": false,
-      "description": "Frost Nova gains an additional Charge but the Cooldown per Charge is increased by [55-30%] ."
+      "description": "Frost Nova gains an additional Charge but the Cooldown per Charge is increased by [55-35%] ."
     },
     {
       "name": "Galvanized Slasher's Aspect",
@@ -2546,7 +2712,7 @@
       "type": "Resource",
       "legendary": false,
       "campaign": false,
-      "description": "Lucky Hit: Damaging an enemy with a Mobility Skill has a [15-30%] chance to fully restore your Energy. Your Maximum Energy is increased by [15-30] ."
+      "description": "Lucky Hit: Damaging an enemy with a Mobility Skill has a [15-35%] chance to fully restore your Energy. Your Maximum Energy is increased by [15-35] ."
     },
     {
       "name": "Ghostwalker Aspect",
@@ -2557,7 +2723,7 @@
       "dungeon": "Broken Bulwark",
       "location": "Scosglen",
       "filters": ["Unstoppable", "Movement Speed"],
-      "description": "While Unstoppable and for 4 seconds after, you gain [10-25%] increased Movement Speed and are Unhindered."
+      "description": "While Unstoppable and for 4 seconds after, you gain [10-30%] increased Movement Speed and are Unhindered."
     },
     {
       "name": "Glacial Aspect",
@@ -2575,7 +2741,7 @@
       "type": "Offensive",
       "legendary": true,
       "campaign": false,
-      "description": "Ball Lightning orbits around you and deals x [10-25%] increased damage."
+      "description": "Ball Lightning orbits around you and deals x [10-30%] increased damage."
     },
     {
       "name": "Hectic Aspect",
@@ -2583,7 +2749,7 @@
       "type": "Utility",
       "legendary": true,
       "campaign": false,
-      "description": "After casting 5 Basic Skills, one of your active Cooldowns is reduced by [1-2] seconds."
+      "description": "After casting 5 Basic Skills, one of your active Cooldowns is reduced by [1-2.5] seconds."
     },
     {
       "name": "High Velocity Aspect",
@@ -2592,7 +2758,7 @@
       "type": "Offensive",
       "legendary": false,
       "campaign": false,
-      "description": "Barrage arrows now pierce through 1 enemy. Barrage has [10-25%] increased Attack Speed."
+      "description": "Barrage arrows now pierce through 1 enemy. Barrage has [10-30%] increased Attack Speed."
     },
     {
       "name": "Hulking Aspect",
@@ -2603,7 +2769,7 @@
       "campaign": false,
       "dungeon": "Sepulcher of The Forsworn",
       "location": "Kehjistan",
-      "description": "Your Golem has a [2-12%] chance to reduce its active Cooldown by 2 seconds and a [1-6%] chance to spawn a Corpse each time it damages an enemy with its normal attack."
+      "description": "Your Golem has a [2-18%] chance to reduce its active Cooldown by 2 seconds and a [1-9%] chance to spawn a Corpse each time it damages an enemy with its normal attack."
     },
     {
       "name": "Icy Alchemist's Aspect",
@@ -2622,7 +2788,7 @@
       "type": "Offensive",
       "legendary": false,
       "campaign": false,
-      "description": "When Bone Spirit explodes inside a Bone Prison, it explodes an additional time, dealing [40-70%] of normal damage. Bone Spirit now prioritizes enemies inside a Bone Prison."
+      "description": "When Bone Spirit explodes inside a Bone Prison, it explodes an additional time, dealing [40-80%] of normal damage. Bone Spirit now prioritizes enemies inside a Bone Prison."
     },
     {
       "name": "Incendiary Aspect",
@@ -2634,7 +2800,7 @@
       "dungeon": "Tomb of the Saints",
       "location": "Kehjistan",
       "filters": ["Lucky Hit", "Burn"],
-      "description": "Lucky Hit: Damage from your Pyromancy skills has up to a [7-22%] chance to restore 10 Mana."
+      "description": "Lucky Hit: Damage from your Pyromancy skills has up to a [7-27%] chance to restore 10 Mana."
     },
     {
       "name": "Inexorable Reaper's Aspect",
@@ -2643,7 +2809,7 @@
       "type": "Mobility",
       "legendary": false,
       "campaign": false,
-      "description": "Sever now dashes you forward to attack instead. It becomes a Mobility Skill and costs no Essence, but has a [13.5-6] second cooldown."
+      "description": "Sever now dashes you forward to attack instead. It becomes a Mobility Skill and costs no Essence, but has a [13.5-3.5] second cooldown."
     },
     {
       "name": "Infiltrator's Aspect",
@@ -2653,7 +2819,7 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Poison", "Stealth"],
-      "description": "Poison Trap no longer breaks Stealth and triggers no Cooldown or arm time while you are in Stealth. All Poision Traps activate when you exit Stealth and Poison Trap's Cooldown will be [8-5] seconds per trap placed."
+      "description": "Poison Trap no longer breaks Stealth and triggers no Cooldown or arm time while you are in Stealth. All Poision Traps activate when you exit Stealth and Poison Trap's Cooldown will be [8-4] seconds per trap placed."
     },
     {
       "name": "Insatiable Aspect",
@@ -2663,7 +2829,7 @@
       "legendary": false,
       "campaign": false,
       "filters": ["Touch of Death"],
-      "description": "Kills extend the duration of your active Touch of Death swarms by 0.5 seconds. When a swarm is replaced early it bursts for [1-2%] of the damage it would have done."
+      "description": "Kills extend the duration of your active Touch of Death swarms by 0.2 seconds. When a swarm is replaced early it bursts for [100-300%] of the damage it would have done."
     },
     {
       "name": "Iron Blood Aspect",
@@ -2675,7 +2841,7 @@
       "dungeon": "Forgotten Ruins",
       "location": "Kehjistan",
       "filters": ["Damage Reduction", "Bleed"],
-      "description": "Gain [2-5%] Damage Reduction for each Nearby Bleeding enemy up to [10-25%] maximum."
+      "description": "Gain [2-6%] Damage Reduction for each Nearby Bleeding enemy up to [10-30%] maximum."
     },
     {
       "name": "Jolting Aspect",
@@ -2711,7 +2877,7 @@
       "type": "Offensive",
       "legendary": false,
       "campaign": false,
-      "description": "Chain Lightning has a 25% chance to deal x [50-80%] increased damage. This chance is doubled against Bosses or Crowd Controlled enemies and prefers them as targets."
+      "description": "Chain Lightning has a 25% chance to deal [50-90%] increased damage. This chance is doubled against Bosses or Crowd Controlled enemies and prefers them as targets."
     },
     {
       "name": "Luckbringer Aspect",
@@ -2721,7 +2887,7 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Lucky Hit", ""],
-      "description": "Gain [10-25%] increased Lucky Hit Chance while all damage bonuses from the Walking Arsenal Key Passive are active."
+      "description": "Gain [10-30%] increased Lucky Hit Chance while all damage bonuses from the Walking Arsenal Key Passive are active."
     },
     {
       "name": "Mage-Lord's Aspect",
@@ -2731,7 +2897,7 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Damage Reduction"],
-      "description": "The Vyr's Mastery Key Passive also grants x [6.0-9.0%] Damage Reduction, tripled while fighting a Close enemy."
+      "description": "The Vyr's Mastery Key Passive also grants x [6.0-10.0%] Damage Reduction, tripled while fighting a Close enemy."
     },
     {
       "name": "Mangled Aspect",
@@ -2742,7 +2908,7 @@
       "campaign": false,
       "dungeon": "Immortal Emanation",
       "location": "Fractured Peaks",
-      "description": "While in Werebear form, you gain [10-25] Spirit every 8 seconds."
+      "description": "While in Werebear form, you gain [10-30] Spirit every 8 seconds."
     },
     {
       "name": "Mangler's Aspect",
@@ -2752,7 +2918,7 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Lucky Hit", "Vulnerable"],
-      "description": "Lucky Hit: Dealing direct damage to a Vulnerable enemy has up to a [30-45%] chance to Daze them for 2 seconds."
+      "description": "Lucky Hit: Dealing direct damage to a Vulnerable enemy has up to a [30-50%] chance to Daze them for 2 seconds."
     },
     {
       "name": "Menacing Aspect",
@@ -2761,7 +2927,7 @@
       "type": "Utility",
       "legendary": false,
       "campaign": false,
-      "description": "Scourge continuously affects enemies around you for [3-6] seconds."
+      "description": "Scourge continuously affects enemies around you for [5-9] seconds."
     },
     {
       "name": "Mighty Storm's Aspect",
@@ -2780,7 +2946,7 @@
       "legendary": false,
       "campaign": false,
       "filters": ["Vulnerable"],
-      "description": "Caltrops is now a Marksman Skill that periodically throws [5-20] piercing daggers over its Duration, each dealing Shadow damage and applying Vulnerable for 3 seconds."
+      "description": "Caltrops is now a Marksman Skill that periodically throws [5-25] piercing daggers over its Duration, each dealing Shadow damage and applying Vulnerable for 3 seconds."
     },
     {
       "name": "Moonrage Aspect",
@@ -2800,7 +2966,7 @@
       "campaign": true,
       "dungeon": "Yshari Sanctum",
       "location": "Kehjistan",
-      "description": "Thorns damage dealt has a [25-40%] chance to deal damage to all enemies around you and your Minions."
+      "description": "Thorns damage dealt has a [25-45%] chance to deal damage to all enemies around you and your Minions."
     },
     {
       "name": "Nighthowler's Aspect",
@@ -2812,7 +2978,7 @@
       "dungeon": "Forbidden City",
       "location": "Fractured Peaks",
       "filters": ["Shout", "Critical Strike Chance", "Companion"],
-      "description": "Blood Howl increases Critical Strike Chance by [10-15%] . In addition, Blood Howl also affects Nearby Companions and Players for 3 seconds."
+      "description": "Blood Howl increases Critical Strike Chance by [10-18%] . In addition, Blood Howl also affects Nearby Companions and Players for 3 seconds."
     },
     {
       "name": "Opportunist's Aspect",
@@ -2824,7 +2990,7 @@
       "dungeon": "Prison of Caldeum",
       "location": "Kehjistan",
       "filters": ["Stealth", "Stun"],
-      "description": "When you enter or break Stealth, you drop a cluster of exploding Stun Grenades around you that deal [X] Physical damage and Stun enemies for 1 second.\n\nYour Stun Grenades deal [25-40%] more damage."
+      "description": "When you enter or break Stealth, you drop a cluster of exploding Stun Grenades around you that deal [X] Physical damage and Stun enemies for 1 second.\n\nYour Stun Grenades deal [25-45%] more damage."
     },
     {
       "name": "Osseous Gale Aspect",
@@ -2833,7 +2999,7 @@
       "type": "Offensive",
       "legendary": true,
       "campaign": false,
-      "description": "Bone Storm consumes up to 8 Corpses to increase its duration by up to [5-12.5] seconds."
+      "description": "Bone Storm consumes up to 8 Corpses to increase its duration by up to [5-15] seconds."
     },
     {
       "name": "Overcharged Aspect",
@@ -2845,7 +3011,16 @@
       "dungeon": "Mariner's Refuge",
       "location": "Scosglen",
       "filters": ["Lucky Hit"],
-      "description": "Lucky Hit: Up to a [15-25%] chance when dealing Lightning damage to overload the target for 3 seconds, causing any direct damage you deal to them to pulse [X] additional damage to surrounding enemies."
+      "description": "Lucky Hit: Up to a [15-31%] chance when dealing Lightning damage to overload the target for 3 seconds, causing any direct damage you deal to them to pulse [X] additional damage to surrounding enemies."
+    },
+    {
+      "name": "Phasing Poltergeist's Aspect",
+      "class": "Necromancer",
+      "new": true,
+      "type": "Offensive",
+      "legendary": true,
+      "campaign": false,
+      "description": "When Bone Spirit explodes, it spawns 3 spirits that seek nearby enemies and deal [20-40%] of its damage. This effect can only occur once per cast."
     },
     {
       "name": "Prodigy's Aspect",
@@ -2856,7 +3031,7 @@
       "campaign": false,
       "dungeon": "Witchwater",
       "location": "Hawezar",
-      "description": "Using a Cooldown restores [10-25] Mana."
+      "description": "Using a Cooldown restores [10-30] Mana."
     },
     {
       "name": "Protecting Aspect",
@@ -2865,17 +3040,17 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Healthy"],
-      "description": "When hit while not Healthy, a magical bubble is summoned around you for [2.5-5.0] seconds. While standing in the bubble, Players are Immune. Can only occur once every 90 seconds."
+      "description": "When hit while not Healthy, a magical bubble is summoned around you for [2.5-6.0] seconds. While standing in the bubble, Players are Immune. Can only occur once every 90 seconds."
     },
     {
       "name": "Raider's Aspect",
       "class": "Spiritborn",
       "new": true,
       "type": "Defensive",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "filters": ["Poison", "Heal", "Maximum Life"],
-      "description": "Heal for [1-16%] Maximum Life when you Poison a Healthy enemy."
+      "description": "Heal for [1-21%] Maximum Life when you Poison a Healthy enemy."
     },
     {
       "name": "Rapid Aspect",
@@ -2886,7 +3061,7 @@
       "dungeon": "Buried Halls",
       "location": "Dry Steppes",
       "filters": ["Attack Speed"],
-      "description": "Basic Skills gain [15-30%] Attack Speed."
+      "description": "Basic Skills gain [15-35%] Attack Speed."
     },
     {
       "name": "Ravager's Aspect",
@@ -2895,7 +3070,7 @@
       "type": "Mobility",
       "legendary": true,
       "campaign": false,
-      "description": "Shadow Step has an additional Charge. Killing an enemy with Shadow Step refunds a Charge and increases the damage of Shadow Step by x [4.5-12%] for 2 seconds, up to x [10-40%] ."
+      "description": "Shadow Step has an additional Charge. Killing an enemy with Shadow Step refunds a Charge and increases the damage of Shadow Step by x [4.5-14.5%] for 2 seconds, up to x [18-58%] ."
     },
     {
       "name": "Ravenous Aspect",
@@ -2907,7 +3082,7 @@
       "dungeon": "Shifting City",
       "location": "Dry Steppes",
       "filters": ["Vulnerable"],
-      "description": "Killing a Vulnerable enemy grants you x [55-70%] increased Energy Regeneration for 4 seconds."
+      "description": "Killing a Vulnerable enemy grants you x [55-75%] increased Energy Regeneration for 4 seconds."
     },
     {
       "name": "Raw Might Aspect",
@@ -2916,26 +3091,35 @@
       "type": "Offensive",
       "legendary": true,
       "campaign": false,
-      "description": "After you hit 15 enemies with your Shapeshifting Skills, your next Werebear Skill will deal x [40-55%] more damage and Stun enemies for 3 seconds."
+      "description": "After you hit 15 enemies with your Shapeshifting Skills, your next Werebear Skill will deal x [40-60%] more damage and Stun enemies for 3 seconds."
     },
     {
       "name": "Reaper's Aspect",
       "class": "Spiritborn",
       "new": true,
       "type": "Offensive",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "filters": ["Poison", "Critical Strike Chance", "Eagle Skill"],
-      "description": "Enemies you Poison have 100% Reduced Healing and your Eagle Skills gain [10-25%] increased Critical Strike Chance against them."
+      "description": "Enemies you Poison have 100% Reduced Healing and your Eagle Skills gain [10-30%] increased Critical Strike Chance against them."
+    },
+    {
+      "name": "Reaping Lotus' Aspect",
+      "class": "Necromancer",
+      "new": true,
+      "type": "Offensive",
+      "legendary": true,
+      "campaign": false,
+      "description": "Sever no longer returns and instead splits into 3 specters that expand out and back from its apex. Sever deals [80-120%] of normal damage."
     },
     {
       "name": "Rebounding Aspect",
       "class": "Spiritborn",
       "new": true,
       "type": "Offensive",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
-      "description": "Quill Volley's feathers explode upon reaching their apex for [25-39%] of its Base damage then return to where they were cast."
+      "description": "Quill Volley's feathers explode at their apex and return to where they were cast, dealing [25-45%] of their normal damage both times."
     },
     {
       "name": "Recharging Aspect",
@@ -2946,14 +3130,14 @@
       "campaign": false,
       "dungeon": "Zenith",
       "location": "Fractured Peaks",
-      "description": "Each time Chain Lightning bounces, gain [1-3] Mana."
+      "description": "Each time Chain Lightning bounces, gain [1-5] Mana."
     },
     {
       "name": "Rejuvenating Aspect",
       "class": "Druid",
       "new": true,
       "type": "Resource",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "filters": ["Spirit"],
       "description": "When falling below 20 Spirit, there is a [15-30%] chance to fully restore your Spirit."
@@ -2968,7 +3152,7 @@
       "dungeon": "Hakan's Refuge",
       "location": "Kehjistan",
       "filters": ["Lucky Hit", "Berserking", "Core"],
-      "description": "Lucky Hit: Damaging an enemy with a Core Skill has up to a [15-30%] chance to extend the duration of Berserking by 2 second. Double this duration if it was a Critical Strike."
+      "description": "Lucky Hit: Damaging an enemy with a Core Skill has up to a [15-35%] chance to extend the duration of Berserking by 2 second. Double this duration if it was a Critical Strike."
     },
     {
       "name": "Requiem Aspect",
@@ -2979,17 +3163,17 @@
       "campaign": true,
       "dungeon": "Vault of the Forsaken",
       "location": "Scosglen",
-      "description": "You gain [2.0-7.0] Maximum Essence per active Minion."
+      "description": "You gain [2.0-10.0] Maximum Essence per active Minion."
     },
     {
       "name": "Resistant Assailant's Aspect",
       "class": "Rogue",
       "new": false,
       "type": "Defensive",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "filters": ["Resistance", "Elite"],
-      "description": "Breaking Concealment grants 10% Resistance and Maximum Resistance to all elements for 6 seconds.\n\nKilling an Elite enemy reduces Concealment's cooldown by [6-12] seconds."
+      "description": "Casting Concealment grants 10% Resistance and Maximum Resistance to all elements for 6 seconds.\n\nKilling an Elite enemy reduces Concealment's cooldown by [6-14] seconds."
     },
     {
       "name": "Rotting Aspect",
@@ -2998,7 +3182,7 @@
       "type": "Offensive",
       "legendary": true,
       "campaign": false,
-      "description": "Decompose can chain and burst up to 2 additional targets. Explosions from Decompose deals x [15-30%] increased damage."
+      "description": "Decompose can chain and burst up to 2 additional targets. Explosions from Decompose deals x [15-35%] increased damage."
     },
     {
       "name": "Runeworker's Conduit Aspect",
@@ -3007,17 +3191,17 @@
       "type": "Offensive",
       "legendary": true,
       "campaign": false,
-      "description": "Critical Strikes with Storm Skills that you cast charge the air around you for 3 seconds causing a Lightning Bolt to periodically hit an enemy in the area for [X] Lightning damage. Your Lightning Bolts deal x [20-40%] increased damage."
+      "description": "Critical Strikes with Storm Skills that you cast charge the air around you for 3 seconds causing a Lightning Bolt to periodically hit an enemy in the area for [X] Lightning damage. Your Lightning Bolts deal x [20-50%] increased damage."
     },
     {
       "name": "Ruthless Aspect",
       "class": "Spiritborn",
       "new": true,
       "type": "Offensive",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "filters": ["Critical Strike Chance", "Jaguar Skill"],
-      "description": "Your Critical Strike Chance with Jaguar Skills is increased against enemies by [1-8.5%] for each 10% of their missing Life."
+      "description": "Your Critical Strike Chance with Jaguar Skills is increased against enemies by [1-11%] for each 10% of their missing Life."
     },
     {
       "name": "Sacrificial Aspect",
@@ -3028,7 +3212,7 @@
       "campaign": false,
       "dungeon": "Ruins of Eridu",
       "location": "Hawezar",
-      "description": "Your Sacrifice bonuses are increased by x [35-50%] ."
+      "description": "Your Sacrifice bonuses are increased by x [35-55%] ."
     },
     {
       "name": "Seismic-shift Aspect",
@@ -3037,7 +3221,7 @@
       "type": "Offensive",
       "legendary": true,
       "campaign": false,
-      "description": "Earth Spike gains x [35-50%] bonus damage, launches spikes in a line."
+      "description": "Earth Spike gains x [35-59%] bonus damage, launches spikes in a line."
     },
     {
       "name": "Serpentine Aspect",
@@ -3046,16 +3230,16 @@
       "type": "Offensive",
       "legendary": true,
       "campaign": false,
-      "description": "You may have 1 additional Hydra active, and Hydra's duration is increased by [10-25%] ."
+      "description": "You may have 1 additional Hydra active, and Hydra's duration is increased by [10-30%] ."
     },
     {
       "name": "Shademist Aspect",
       "class": "Necromancer",
       "new": true,
       "type": "Offensive",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
-      "description": "Your Minions deal [X] Shadow damage per second to enemies around them. The damage over time lasts for [2-5] seconds after leaving the aura."
+      "description": "Your Minions deal [X] Shadow damage per second to enemies around them. The damage over time lasts for [2.0 -5.0] seconds after leaving the aura."
     },
     {
       "name": "Shadowslicer Aspect",
@@ -3066,7 +3250,7 @@
       "campaign": false,
       "dungeon": "Twisted Hollow",
       "location": "Scosglen",
-      "description": "Dash spawns a Shadow Clone that also casts Dash, dealing [150-300%] of the Base damage."
+      "description": "Dash spawns a Shadow Clone that also casts Dash, dealing [150-350%] of the Base damage."
     },
     {
       "name": "Shattered Aspect",
@@ -3076,17 +3260,17 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Freeze"],
-      "description": "Explosions from the Shatter Key Passive deal x [30-45%] increased damage."
+      "description": "Explosions from the Shatter Key Passive deal [30-50%] increased damage."
     },
     {
       "name": "Shattered Spirit's Aspect",
       "class": "Necromancer",
       "new": false,
       "type": "Resource",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "filters": ["Essence"],
-      "description": "Casting Bone Spirit also launches 18 Bone Splinters in all directions, dealing x [200-500%] increased damage and generating 6 Essence per enemy hit."
+      "description": "Casting Bone Spirit also launches 18 Bone Splinters in all directions, dealing x [200-600%] increased damage and generating 6 Essence per enemy hit."
     },
     {
       "name": "Shepherd's Aspect",
@@ -3098,7 +3282,7 @@
       "dungeon": "Bloodsoaked Crag",
       "location": "Dry Steppes",
       "filters": ["Core", "Companion"],
-      "description": "Companion Skills deal an additional [5-10%] damage per Companion you have."
+      "description": "Companion Skills deal an additional [5-13%] damage per Companion you have."
     },
     {
       "name": "Shockwave Aspect",
@@ -3107,7 +3291,7 @@
       "type": "Offensive",
       "legendary": true,
       "campaign": false,
-      "description": "Pulverize creates a shockwave that travels forward, dealing [70-100%] of its damage to targets in the path."
+      "description": "Pulverize creates a shockwave that travels forward, dealing [70-110%] of its damage to targets in the path."
     },
     {
       "name": "Skinwalker's Aspect",
@@ -3118,7 +3302,7 @@
       "campaign": true,
       "location": "Kehjistan",
       "filters": ["Fortify"],
-      "description": "When you use a Shapeshifting Skill that changes your form, gain [5-20%] Life. If you are at full Life, gain the same amount as Fortify."
+      "description": "When you use a Shapeshifting Skill that changes your form, gain [5-25%] Life. If you are at full Life, gain the same amount as Fortify."
     },
     {
       "name": "Skullbreaker's Aspect",
@@ -3128,7 +3312,7 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Stun", "Bleed"],
-      "description": "Stunning a Bleeding enemy deals [25-40%] of their total Bleeding amount to them as Physical damage."
+      "description": "Stunning a Bleeding enemy deals [25-45%] of their total Bleeding amount to them as Physical damage."
     },
     {
       "name": "Slaking Aspect",
@@ -3140,7 +3324,7 @@
       "dungeon": "Maulwood",
       "location": "Fractured Peaks",
       "filters": ["Lucky Hit", "Bleed"],
-      "description": "Lucky Hit: You have up to a [45-60%] chance to gain 20 Fury when a Core Skill deals direct damage to at least one Bleeding enemy. Your Maximum Fury is increased by [5-20] ."
+      "description": "Lucky Hit: You have up to a [45-65%] chance to gain 20 Fury when a Core Skill deals direct damage to at least one Bleeding enemy. Your Maximum Fury is increased by [5-25] ."
     },
     {
       "name": "Smiting Aspect",
@@ -3149,7 +3333,7 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Healthy", "Injured"],
-      "description": "You have + [13-20%] increased Critical Strike Chance against Injured enemies. While you are Healthy, you gain + [25-40%] increased Crowd Control Duration."
+      "description": "You have + [13-23%] increased Critical Strike Chance against Injured enemies. While you are Healthy, you gain + [25-45%] increased Crowd Control Duration."
     },
     {
       "name": "Snap Frozen Aspect",
@@ -3170,7 +3354,7 @@
       "campaign": true,
       "location": "Hawezar",
       "filters": ["Damage Reduction"],
-      "description": "While within your own Blizzard and for 3 seconds after leaving it, you take [15-30%] less damage."
+      "description": "While within your own Blizzard and for 3 seconds after leaving it, you take [15-35%] less damage."
     },
     {
       "name": "Snowveiled Aspect",
@@ -3182,14 +3366,14 @@
       "dungeon": "Sarat's Lair",
       "location": "Scosglen",
       "filters": ["Unstoppable"],
-      "description": "Ice armor makes you unstoppable and grants you 25% Damage Reduction for [3.5-5.0] seconds."
+      "description": "Ice armor makes you unstoppable and grants you 25% Damage Reduction for [3.5-5.5] seconds."
     },
     {
       "name": "Spirit Bond Aspect",
       "class": "Druid",
       "new": true,
       "type": "Defensive",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "filters": ["Damage Reduction"],
       "description": "[10-17.5%] of the damage you would take is redirected across your Companions. In addition, your Companions cannot die."
@@ -3203,7 +3387,7 @@
       "campaign": true,
       "location": "Dry Steppes",
       "filters": ["Vulnerable"],
-      "description": "Bone Spear's primary attack makes enemies hit beyond the first Vulnerable for 3 seconds. Bone Shards from Bone Spear deal [30-60%] bonus damage to Vulnerable enemies and pierce them."
+      "description": "Bone Spear's primary attack makes enemies hit beyond the first Vulnerable for 3 seconds. Bone Shards from Bone Spear deal [30-70%] bonus damage to Vulnerable enemies and pierce them."
     },
     {
       "name": "Stable Aspect",
@@ -3212,7 +3396,7 @@
       "type": "Offensive",
       "legendary": true,
       "campaign": false,
-      "description": "While Unstable Currents is not active, your Shock Skills have a [6.5-114%] chance to trigger a free cast from it."
+      "description": "While Unstable Currents is not active, your Shock Skills have a [6.5-17%] chance to trigger a free cast from it."
     },
     {
       "name": "Starlight Aspect",
@@ -3220,17 +3404,17 @@
       "type": "Resource",
       "legendary": true,
       "campaign": false,
-      "filters": ["Heal"],
-      "description": "Gain [25-40] of your Primary Resource for every 20% of your Life that you Heal."
+      "filters": ["Heal", "Essence", "Spirit", "Energy", "Mana", "Fury"],
+      "description": "Gain [25-45] Primary Resource for every 20% Life that you Heal or every 200% Life that you Overheal when at Maximum Life."
     },
     {
       "name": "Starving Ravager's Aspect",
       "class": "Spiritborn",
       "new": true,
       "type": "Offensive",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
-      "description": "Ravager no longer has a duration and instead drains [25-10] Vigor every second. When you do not have enough Vigor then Ravager ends."
+      "description": "Ravager no longer has a duration and instead drains [25-5] Vigor every second until depleted. Effects that extend Ravager instead generate Vigor."
     },
     {
       "name": "Steadfast Berserker's Aspect",
@@ -3246,7 +3430,7 @@
       "name": "Sticker-thought Aspect",
       "new": true,
       "type": "Utility",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "filters": ["Thorns"],
       "description": "Gain [X] Thorns while Channeling and for 3 seconds afterwards."
@@ -3260,8 +3444,8 @@
       "campaign": false,
       "dungeon": "Onyx Hold",
       "location": "Dry Steppes",
-      "filters": ["Vulnerable"],
-      "description": "You deal x [15-30%] increased damage to Vulnerable enemies while you have a Barrier."
+      "filters": ["Freeze"],
+      "description": "You deal x [15-35%] increased damage while Ice Armor is active. This amount is increased by another 15% against Frozen enemies."
     },
     {
       "name": "Stormchaser's Aspect",
@@ -3270,7 +3454,7 @@
       "type": "Offensive",
       "legendary": true,
       "campaign": false,
-      "description": "Tornado will seek up to [1-3] targets."
+      "description": "Tornado will seek up to [1-5] targets."
     },
     {
       "name": "Stormclaw's Aspect",
@@ -3281,7 +3465,17 @@
       "campaign": false,
       "dungeon": "Anica's Claim",
       "location": "Fractured Peaks",
-      "description": "Critical Strikes with Shred deal [25-40%] of the damage dealt as Lightning damage to the target and surrounding enemies."
+      "description": "Critical Strikes with Shred deal [25-45%] of the damage dealt as Lightning damage to the target and surrounding enemies."
+    },
+    {
+      "name": "Stormcrow's Aspect",
+      "class": "Druid",
+      "new": true,
+      "type": "Offensive",
+      "legendary": true,
+      "campaign": false,
+      "filters": ["Stun"],
+      "description": "Ravens now deal Lightning damage which is increased by x [30-50%] . Ravens Active deals its full damage in half the time, and enemies inside it are Stunned."
     },
     {
       "name": "Stormshifter's Aspect",
@@ -3302,7 +3496,7 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Earth Skill", "Poison"],
-      "description": "Poison Creeper's active also casts Landslide in a circle around you. Earth Skills deal x [15-30%] increased damage to Poisoned enemies."
+      "description": "Poison Creeper's active also casts Landslide in a circle around you. Earth Skills deal x [15-35%] increased damage to Poisoned enemies."
     },
     {
       "name": "Symbiotic Aspect",
@@ -3311,7 +3505,7 @@
       "type": "Utility",
       "legendary": true,
       "campaign": false,
-      "description": "When the Nature's Fury Key Passive triggers a free Skill, your non Ultimate Cooldowns of the opposite type are reduced by [2.5-5] seconds."
+      "description": "When the Nature's Fury Key Passive triggers a free Skill, your non Ultimate Cooldowns of the opposite type are reduced by [2.5-6] seconds."
     },
     {
       "name": "Tidal Aspect",
@@ -3320,17 +3514,17 @@
       "type": "Offensive",
       "legendary": true,
       "campaign": false,
-      "description": "Blood Wave fires two additional waves, each dealing [50-35%] less damage then the previous."
+      "description": "Blood Wave fires two additional waves, each dealing [100-120%] of normal damage."
     },
     {
       "name": "Tormentor's Aspect",
       "class": "Spiritborn",
       "new": true,
       "type": "Offensive",
-      "legendary": false,
+      "legendary": true,
       "campaign": false,
       "filters": ["Thorns", "Poison"],
-      "description": "Enemies who move while Poisoned by you additionally take [50-190%] of your Thorns damage per second."
+      "description": "Enemies who move while Poisoned by you additionally take [50-250%] of your Thorns damage per second."
     },
     {
       "name": "Torturous Aspect",
@@ -3342,7 +3536,7 @@
       "dungeon": "Deserted Underpass",
       "location": "Kehjistan",
       "filters": ["Stun"],
-      "description": "Iron Maiden is now also a Darkness Skill and deals Shadow damage. Enemies have a [10-25%] chance to be Stunned for 1 second when they take damage from Iron Maiden."
+      "description": "Iron Maiden is now also a Darkness Skill and deals Shadow damage. Enemies have a [10-30%] chance to be Stunned for 1 second when they take damage from Iron Maiden."
     },
     {
       "name": "Toxic Alchemist's Aspect",
@@ -3363,7 +3557,7 @@
       "campaign": false,
       "dungeon": "Bastion of Faith",
       "location": "Hawezar",
-      "description": "Whenever Penetrating Shot damages an enemy, 2 additional arrows split off to either side. These side arrows deal [10-25%] of Penetrating Shot's Base damage and do not split."
+      "description": "Whenever Penetrating Shot damages an enemy, 2 additional arrows split off to either side. These side arrows deal [10-30%] of Penetrating Shot's Base damage and do not split."
     },
     {
       "name": "Trickster's Aspect",
@@ -3374,7 +3568,7 @@
       "campaign": true,
       "location": "Dry Steppes",
       "filters": ["Stun"],
-      "description": "Caltrops and Smoke Grenade receive Stun Grenade benefits and throw Stun Grenades that deal [X] Physical damage and Stun enemies for 1 second.\n\nYour Stun Grenades deal x [25-40%] increased damage."
+      "description": "Caltrops and Smoke Grenade receive Stun Grenade benefits and throw Stun Grenades that deal [X] Physical damage and Stun enemies for 1 second. Your Stun Grenades deal [25-45%] increased damage."
     },
     {
       "name": "Umbrous Aspect",
@@ -3384,7 +3578,7 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Lucky Hit"],
-      "description": "Lucky Hit: Critical Strikes have up to a [45-60%] chance to grant a free Dark Shroud shadow."
+      "description": "Lucky Hit: Critical Strikes have up to a [45-65%] chance to grant a free Dark Shroud shadow."
     },
     {
       "name": "Undying Aspect",
@@ -3393,7 +3587,7 @@
       "legendary": true,
       "campaign": true,
       "filters": ["Heal"],
-      "description": "When you cast a Skill, you heal for [0.5-2.0%] Life. Double this bonus while below 50% Life."
+      "description": "When you cast a Skill, you heal for [0.5-2.5%] Life. Double this bonus while below 50% Life."
     },
     {
       "name": "Unrelenting Aspect",
@@ -3402,7 +3596,7 @@
       "type": "Offensive",
       "legendary": false,
       "campaign": false,
-      "description": "Every 3rd consecutive Crushing Hand smashes an additional 10 times around you dealing [25-40%] of its Base damage per hit."
+      "description": "Every 3rd consecutive Crushing Hand smashes an additional 10 times around you dealing [25-45%] of its Base damage per hit."
     },
     {
       "name": "Unyielding Commander's Aspect",
@@ -3414,7 +3608,7 @@
       "dungeon": "Faceless Shrine",
       "location": "Hawezar",
       "filters": ["Damage Reduction", "Attack Speed"],
-      "description": "While Army of the Dead is active, your Minions gain x [70-100%] increased damage and take 90% reduced damage."
+      "description": "While Army of the Dead is active, your Minions gain [70-110%] increased damage and take 90% reduced damage."
     },
     {
       "name": "Vengeful Aspect",
@@ -3426,7 +3620,7 @@
       "dungeon": "Inferno",
       "location": "Kehjistan",
       "filters": ["Lucky Hit", "Vulnerable"],
-      "description": "Lucky Hit: Damaging a Vulnerable enemy has a 25% chance to create an Arrow Storm at the enemy's location, dealing [X] Physical damage over 3 seconds.\n\nYour Arrow Storms deal x [45-60%] more damage."
+      "description": "Lucky Hit: Damaging a Vulnerable enemy has a 25% chance to create an Arrow Storm at the enemy's location, dealing [X] Physical damage over 3 seconds.\n\nYour Arrow Storms deal x [45-65%] more damage."
     },
     {
       "name": "Veteran Brawler's Aspect",
@@ -3438,7 +3632,7 @@
       "dungeon": "Heretics Asylum",
       "location": "Kehjistan",
       "filters": ["Core"],
-      "description": "Each time a Core Skill deals direct damage to an enemy, your next Charge, Leap, or Kick deals x [4-8%] increased damage, up to x [20-40%] ."
+      "description": "Each time a Core Skill deals direct damage to an enemy, your next Charge, Leap, or Kick deals x [4-10%] increased damage, up to x [20-50%] ."
     },
     {
       "name": "Vigorous Aspect",
@@ -3450,7 +3644,7 @@
       "dungeon": "Steadfast Barracks",
       "location": "Hawezar",
       "filters": ["Damage Reduction"],
-      "description": "Gain [7.5-15%] Damage Reduction while Shapeshifted into a Werewolf."
+      "description": "Gain [7.5-17.5%] Damage Reduction while Shapeshifted into a Werewolf."
     },
     {
       "name": "Virulent Aspect",
@@ -3460,7 +3654,7 @@
       "legendary": false,
       "campaign": false,
       "filters": ["Cooldown"],
-      "description": "When Rabies infects an enemy, reduce its cooldown by [0.2-0.8] seconds. This cooldown reduction is tripled when infecting Elites."
+      "description": "When Rabies infects an enemy, reduce its cooldown by [0.2-1] seconds. This cooldown reduction is tripled when infecting Elites."
     },
     {
       "name": "Wanton Rupture Aspect",
@@ -3469,7 +3663,7 @@
       "type": "Offensive",
       "legendary": true,
       "campaign": false,
-      "description": "Your Rupture does not remove the Bleeding damage from enemies. This can occur once every [30-15] seconds."
+      "description": "Your Rupture does not remove the Bleeding damage from enemies. This can occur once every [30-10] seconds."
     },
     {
       "name": "Weapon Master's Aspect",
@@ -3479,7 +3673,7 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Lucky Hit", "Stun"],
-      "description": "Your Weapon Mastery Skills have an additional Charge. Lucky Hit: Damaging an enemy with a Weapon Mastery Skill has up to a [40-55%] chance to Stun them for 2 seconds."
+      "description": "Your Weapon Mastery Skills have an additional Charge. Lucky Hit: Damaging an enemy with a Weapon Mastery Skill has up to a [40-60%] chance to Stun them for 2 seconds."
     },
     {
       "name": "Wildbolt Aspect",
@@ -3487,7 +3681,7 @@
       "type": "Utility",
       "legendary": false,
       "campaign": false,
-      "description": "Every [3.5-2] seconds, Distant enemies are Pulled in to you and take x10% increased damage for 3 seconds."
+      "description": "Every [3.5.2.0] seconds, Distant enemies are Pulled in to you and take 10% increased damage for 3 seconds."
     },
     {
       "name": "Wind Striker Aspect",
@@ -3498,16 +3692,7 @@
       "dungeon": "Shivta Ruins",
       "location": "Kehjistan",
       "filters": ["Movement Speed"],
-      "description": "Critical Strikes grant [8.5-16.0%] Movement Speed for 1 second, up to 6 seconds."
-    },
-    {
-      "name": "Windlasher Aspect",
-      "class": "Barbarian",
-      "new": true,
-      "type": "Offensive",
-      "legendary": true,
-      "campaign": false,
-      "description": "Casting Double Swing creates a Dust Devil that deals [X] damage to enemies in its path."
+      "description": "Critical Strikes grant [8.5-19.0%] Movement Speed for 1 second, up to 6 seconds."
     },
     {
       "name": "Windlasher Aspect",

@@ -10,7 +10,6 @@ export interface UniqueData {
   filters?: string[];
   effect: string;
   flavor?: string;
-  icon?: boolean;
 }
 
-export const uniques: UniqueData[] = uniqueData.uniques;
+export const uniques: UniqueData[] = uniqueData;

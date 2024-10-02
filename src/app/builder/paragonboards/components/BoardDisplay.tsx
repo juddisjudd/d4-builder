@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { TransformWrapper, TransformComponent, ReactZoomPanPinchRef } from 'react-zoom-pan-pinch';
 import BoardNode from './BoardNode';
 import { Board, Node } from '../types';
+import BoardControls from './BoardControls';
 
 interface BoardDisplayProps {
   boards: Board[];
@@ -9,6 +10,10 @@ interface BoardDisplayProps {
   onNodeDeselect: (boardId: string, nodeId: string) => void;
   onGateClick: (boardId: string, gatePosition: 'top' | 'right' | 'bottom' | 'left') => void;
   selectedClass: string;
+  onRotateBoard: (boardId: string) => void;
+  onChangeBoard: (boardId: string) => void;
+  onDeleteBoard: (boardId: string) => void;
+  onClearBoard: (boardId: string) => void;
 }
 
 const BoardDisplay: React.FC<BoardDisplayProps> = ({
@@ -17,6 +22,10 @@ const BoardDisplay: React.FC<BoardDisplayProps> = ({
   onNodeDeselect,
   onGateClick,
   selectedClass,
+  onRotateBoard,
+  onChangeBoard,
+  onDeleteBoard,
+  onClearBoard,
 }) => {
   const transformComponentRef = useRef<ReactZoomPanPinchRef | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -25,6 +34,8 @@ const BoardDisplay: React.FC<BoardDisplayProps> = ({
   const boardSize = 1201;
   const gridSize = 21;
   const gateSize = 60;
+
+  const [rotatingBoards, setRotatingBoards] = useState<Record<string, number>>({});
 
   useEffect(() => {
     if (containerRef.current && transformComponentRef.current) {
@@ -39,66 +50,105 @@ const BoardDisplay: React.FC<BoardDisplayProps> = ({
     }
   }, [boards]);
 
-  const isAdjacentToSelected = (node: Node, board: Board) => {
+  const isAdjacentToSelected = (node: Node, board: Board, rotation: number) => {
+    const [adjustedRow, adjustedColumn] = adjustCoordinates(node.row, node.column, rotation);
     const adjacentPositions = [
-      { row: node.row - 1, col: node.column },
-      { row: node.row + 1, col: node.column },
-      { row: node.row, col: node.column - 1 },
-      { row: node.row, col: node.column + 1 },
+      { row: adjustedRow - 1, col: adjustedColumn },
+      { row: adjustedRow + 1, col: adjustedColumn },
+      { row: adjustedRow, col: adjustedColumn - 1 },
+      { row: adjustedRow, col: adjustedColumn + 1 },
     ];
 
     return board.selectedNodes.some((selectedId) => {
       const selectedNode = board.nodes.find((n) => n.id === selectedId);
-      return (
-        selectedNode && adjacentPositions.some((pos) => pos.row === selectedNode.row && pos.col === selectedNode.column)
-      );
+      if (selectedNode) {
+        const [selectedAdjustedRow, selectedAdjustedColumn] = adjustCoordinates(
+          selectedNode.row,
+          selectedNode.column,
+          rotation
+        );
+        return adjacentPositions.some((pos) => pos.row === selectedAdjustedRow && pos.col === selectedAdjustedColumn);
+      }
+      return false;
     });
   };
 
-  const canSelectNode = (node: Node, board: Board) => {
+  const canSelectNode = (node: Node, board: Board, rotationAngle: number) => {
     const isStartingNode = board.title === 'Starting Board' && node.row === 15 && node.column === 11;
 
     if (board.selectedNodes.length === 0) {
       if (board.title === 'Starting Board') {
+        const [adjustedRow, adjustedColumn] = adjustCoordinates(node.row, node.column, rotationAngle);
         return (
-          (node.row === 15 && node.column === 10) ||
-          (node.row === 14 && node.column === 11) ||
-          (node.row === 15 && node.column === 12)
+          (adjustedRow === 15 && adjustedColumn === 10) ||
+          (adjustedRow === 14 && adjustedColumn === 11) ||
+          (adjustedRow === 15 && adjustedColumn === 12)
         );
       } else {
         const connectedGate = Object.entries(board.gates).find(([_, value]) => value !== null);
         if (connectedGate) {
           const [gatePosition] = connectedGate;
-          return isNodeAdjacentToGate(node, gatePosition as 'top' | 'right' | 'bottom' | 'left');
+          return isNodeAdjacentToGate(node, gatePosition as 'top' | 'right' | 'bottom' | 'left', rotationAngle);
         }
       }
     }
 
-    return !isStartingNode && isAdjacentToSelected(node, board) && !board.selectedNodes.includes(node.id);
+    return (
+      !isStartingNode && isAdjacentToSelected(node, board, rotationAngle) && !board.selectedNodes.includes(node.id)
+    );
   };
 
-  const isNodeAdjacentToGate = (node: Node, gatePosition: 'top' | 'right' | 'bottom' | 'left') => {
-    switch (gatePosition) {
-      case 'top':
-        return node.row === 2 && node.column === 11;
-      case 'right':
-        return node.row === 11 && node.column === 20;
-      case 'bottom':
-        return node.row === 20 && node.column === 11;
-      case 'left':
-        return node.row === 11 && node.column === 2;
+  const adjustCoordinates = (row: number, column: number, rotation: number): [number, number] => {
+    switch (rotation) {
+      case 90:
+        return [column, gridSize + 1 - row];
+      case 180:
+        return [gridSize + 1 - row, gridSize + 1 - column];
+      case 270:
+        return [gridSize + 1 - column, row];
+      default:
+        return [row, column];
     }
   };
 
-  const canClickGate = (board: Board, gatePosition: 'top' | 'right' | 'bottom' | 'left') => {
+  const isNodeAdjacentToGate = (node: Node, gatePosition: 'top' | 'right' | 'bottom' | 'left', rotation: number) => {
+    const [adjustedRow, adjustedColumn] = adjustCoordinates(node.row, node.column, rotation);
+    switch (gatePosition) {
+      case 'top':
+        return adjustedRow === 2 && adjustedColumn === 11;
+      case 'right':
+        return adjustedRow === 11 && adjustedColumn === 20;
+      case 'bottom':
+        return adjustedRow === 20 && adjustedColumn === 11;
+      case 'left':
+        return adjustedRow === 11 && adjustedColumn === 2;
+    }
+  };
+
+  const canClickGate = (board: Board, gatePosition: 'top' | 'right' | 'bottom' | 'left', rotationAngle: number) => {
     const result = board.selectedNodes.some((nodeId) => {
       const node = board.nodes.find((n) => n.id === nodeId);
-      const isAdjacent = node && isNodeAdjacentToGate(node, gatePosition);
+      const isAdjacent = node && isNodeAdjacentToGate(node, gatePosition, rotationAngle);
       console.log(`Node ${nodeId} adjacent to ${gatePosition} gate: ${isAdjacent}`);
       return isAdjacent;
     });
     console.log(`Can click ${gatePosition} gate: ${result}`);
     return result;
+  };
+
+  const handleRotateBoard = (boardId: string) => {
+    setRotatingBoards((prev) => ({
+      ...prev,
+      [boardId]: ((prev[boardId] || 0) + 90) % 360,
+    }));
+
+    setTimeout(() => {
+      onRotateBoard(boardId);
+      setRotatingBoards((prev) => {
+        const { [boardId]: _, ...rest } = prev;
+        return rest;
+      });
+    }, 300);
   };
 
   const renderBoard = (board: Board, position: { x: number; y: number }) => {
@@ -121,7 +171,7 @@ const BoardDisplay: React.FC<BoardDisplayProps> = ({
       }
 
       const isActive = board.gates[position] !== null;
-      const canClick = canClickGate(board, position);
+      const canClick = canClickGate(board, position, rotationAngle);
 
       const gatePositions = {
         top: { top: offset - gateSize / 2, left: boardSize / 2 - gateSize / 2 },
@@ -142,56 +192,78 @@ const BoardDisplay: React.FC<BoardDisplayProps> = ({
             backgroundImage: `url('/images/paragon/nodes/${isActive ? 'gate_active' : 'gate_inactive'}.png')`,
             backgroundSize: 'cover',
             pointerEvents: canClick ? 'auto' : 'none',
+            transform: `rotate(${-board.rotation}deg)`,
           }}
           onClick={() => canClick && onGateClick(board.id, position)}
         />
       );
     };
 
+    const isRotating = board.id in rotatingBoards;
+    const rotationAngle = isRotating ? rotatingBoards[board.id] : board.rotation;
+
     return (
       <div
-        className="absolute bg-cover bg-center bg-no-repeat"
+        className="absolute"
         style={{
           width: `${boardSize}px`,
           height: `${boardSize}px`,
           top: `${position.y}px`,
           left: `${position.x}px`,
-          backgroundImage: `url('/images/paragon/board_bg.png')`,
-          transform: `rotate(${board.rotation}deg)`,
         }}
         key={board.id}
       >
-        {grid.map((row, rowIndex) =>
-          row.map((node, colIndex) => (
-            <div
-              key={`${rowIndex}-${colIndex}`}
-              className="absolute"
-              style={{
-                top: `${rowIndex * (nodeSize + nodeSpacing) + offset}px`,
-                left: `${colIndex * (nodeSize + nodeSpacing) + offset}px`,
-                width: `${nodeSize}px`,
-                height: `${nodeSize}px`,
-              }}
-            >
-              {node && (
-                <BoardNode
-                  node={node}
-                  boardId={board.id}
-                  isSelected={board.selectedNodes.includes(node.id)}
-                  canSelect={canSelectNode(node, board)}
-                  isStartingNode={board.title === 'Starting Board' && node.row === 15 && node.column === 11}
-                  selectedClass={selectedClass}
-                  onSelect={() => onNodeSelect(board.id, node.id)}
-                  onDeselect={() => onNodeDeselect(board.id, node.id)}
-                />
-              )}
-            </div>
-          ))
+        <div
+          className={`absolute bg-cover bg-center bg-no-repeat transition-transform duration-300 ease-in-out`}
+          style={{
+            width: '100%',
+            height: '100%',
+            backgroundImage: `url('/images/paragon/board_bg.png')`,
+            transform: `rotate(${rotationAngle}deg)`,
+          }}
+        >
+          {grid.map((row, rowIndex) =>
+            row.map((node, colIndex) => (
+              <div
+                key={`${rowIndex}-${colIndex}`}
+                className="absolute"
+                style={{
+                  top: `${rowIndex * (nodeSize + nodeSpacing) + offset}px`,
+                  left: `${colIndex * (nodeSize + nodeSpacing) + offset}px`,
+                  width: `${nodeSize}px`,
+                  height: `${nodeSize}px`,
+                }}
+              >
+                {node && (
+                  <BoardNode
+                    node={node}
+                    boardId={board.id}
+                    isSelected={board.selectedNodes.includes(node.id)}
+                    canSelect={canSelectNode(node, board, rotationAngle)}
+                    isStartingNode={board.title === 'Starting Board' && node.row === 15 && node.column === 11}
+                    selectedClass={selectedClass}
+                    onSelect={() => onNodeSelect(board.id, node.id)}
+                    onDeselect={() => onNodeDeselect(board.id, node.id)}
+                    boardRotation={rotationAngle}
+                  />
+                )}
+              </div>
+            ))
+          )}
+          {renderGate('top')}
+          {renderGate('right')}
+          {renderGate('bottom')}
+          {renderGate('left')}
+        </div>
+        {board.showControls && (
+          <BoardControls
+            onRotate={() => handleRotateBoard(board.id)}
+            onChangeBoard={() => onChangeBoard(board.id)}
+            onDeleteBoard={() => onDeleteBoard(board.id)}
+            onClearBoard={() => onClearBoard(board.id)}
+            canRotate={board.selectedNodes.length === 0 && !isRotating}
+          />
         )}
-        {renderGate('top')}
-        {renderGate('right')}
-        {renderGate('bottom')}
-        {renderGate('left')}
       </div>
     );
   };

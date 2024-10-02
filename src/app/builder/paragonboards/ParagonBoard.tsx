@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 
 interface CurrentGate {
   boardId: string;
-  position: 'top' | 'right' | 'bottom' | 'left';
+  position: 'top' | 'right' | 'bottom' | 'left' | 'change';
 }
 
 const ParagonBoard: React.FC = () => {
@@ -34,6 +34,7 @@ const ParagonBoard: React.FC = () => {
               selectedNodes: [],
               gates: { top: null, right: null, bottom: null, left: null },
               rotation: 0,
+              showControls: false,
             },
           ]);
         }
@@ -70,25 +71,44 @@ const ParagonBoard: React.FC = () => {
   const handleBoardAttachment = (newBoard: Board) => {
     if (currentGate) {
       const { boardId, position } = currentGate;
-      const oppositePosition = getOppositePosition(position);
-
-      const updatedNewBoard: Board = {
-        ...newBoard,
-        selectedNodes: [],
-        gates: { top: null, right: null, bottom: null, left: null, [oppositePosition]: boardId },
-        rotation: 0,
-        attachedTo: {
-          parentId: boardId,
-          position: position,
-        },
-      };
-
-      setBoards((prev) => {
-        const updatedBoards = prev.map((board) =>
-          board.id === boardId ? { ...board, gates: { ...board.gates, [position]: updatedNewBoard.id } } : board
+      if (position === 'change') {
+        setBoards((prevBoards) =>
+          prevBoards.map((board) =>
+            board.id === boardId
+              ? {
+                  ...newBoard,
+                  id: board.id,
+                  selectedNodes: [],
+                  gates: board.gates,
+                  rotation: 0,
+                  attachedTo: board.attachedTo,
+                  showControls: true,
+                }
+              : board
+          )
         );
-        return [...updatedBoards, updatedNewBoard];
-      });
+      } else {
+        const oppositePosition = getOppositePosition(position);
+
+        const updatedNewBoard: Board = {
+          ...newBoard,
+          selectedNodes: [],
+          gates: { top: null, right: null, bottom: null, left: null, [oppositePosition]: boardId },
+          rotation: 0,
+          attachedTo: {
+            parentId: boardId,
+            position: position,
+          },
+          showControls: true,
+        };
+
+        setBoards((prev) => {
+          const updatedBoards = prev.map((board) =>
+            board.id === boardId ? { ...board, gates: { ...board.gates, [position]: updatedNewBoard.id } } : board
+          );
+          return [...updatedBoards, updatedNewBoard];
+        });
+      }
       setIsGateDialogOpen(false);
     }
   };
@@ -104,6 +124,41 @@ const ParagonBoard: React.FC = () => {
       case 'left':
         return 'right';
     }
+  };
+
+  const handleRotateBoard = (boardId: string) => {
+    setBoards((prevBoards) =>
+      prevBoards.map((board) =>
+        board.id === boardId ? { ...board, rotation: ((board.rotation + 90) % 360) as 0 | 90 | 180 | 270 } : board
+      )
+    );
+  };
+
+  const handleChangeBoard = (boardId: string) => {
+    setIsGateDialogOpen(true);
+    setCurrentGate({ boardId, position: 'change' });
+  };
+
+  const handleDeleteBoard = (boardId: string) => {
+    setBoards((prevBoards) => {
+      const boardToDelete = prevBoards.find((board) => board.id === boardId);
+      if (boardToDelete) {
+        setRemainingPoints((prev) => prev + boardToDelete.selectedNodes.length);
+      }
+      return prevBoards.filter((board) => board.id !== boardId);
+    });
+  };
+
+  const handleClearBoard = (boardId: string) => {
+    setBoards((prevBoards) =>
+      prevBoards.map((board) => {
+        if (board.id === boardId) {
+          setRemainingPoints((prev) => prev + board.selectedNodes.length);
+          return { ...board, selectedNodes: [] };
+        }
+        return board;
+      })
+    );
   };
 
   return (
@@ -127,6 +182,10 @@ const ParagonBoard: React.FC = () => {
           onNodeDeselect={handleNodeDeselection}
           onGateClick={handleGateClick}
           selectedClass={buildState.selectedClass || ''}
+          onRotateBoard={handleRotateBoard}
+          onChangeBoard={handleChangeBoard}
+          onDeleteBoard={handleDeleteBoard}
+          onClearBoard={handleClearBoard}
         />
       </div>
       <Dialog open={isGateDialogOpen} onOpenChange={setIsGateDialogOpen}>

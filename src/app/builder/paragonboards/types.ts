@@ -32,6 +32,7 @@ export interface Board {
     left: string | null;
   };
   rotation: 0 | 90 | 180 | 270;
+  showControls: boolean;
 }
 
 export interface BoardConnection {

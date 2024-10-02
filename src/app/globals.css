@@ -91,3 +91,7 @@ height: 100%;
 .flex-grow {
 flex-grow: 1;
 }
+
+.board-rotate {
+  transition: transform 0.3s ease-in-out;
+}

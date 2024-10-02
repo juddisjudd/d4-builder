@@ -11,6 +11,7 @@ interface BoardNodeProps {
   selectedClass: string;
   onSelect: () => void;
   onDeselect: () => void;
+  boardRotation: number;
 }
 
 const BoardNode: React.FC<BoardNodeProps> = ({
@@ -22,6 +23,7 @@ const BoardNode: React.FC<BoardNodeProps> = ({
   selectedClass,
   onSelect,
   onDeselect,
+  boardRotation,
 }) => {
   const getNodeImage = () => {
     if (isStartingNode) {
@@ -74,7 +76,10 @@ const BoardNode: React.FC<BoardNodeProps> = ({
             className={`absolute inset-0 rounded-full bg-cover bg-center bg-no-repeat ${
               !isSelected && !isStartingNode ? 'opacity-50' : ''
             }`}
-            style={{ backgroundImage: `url(${getNodeImage()})` }}
+            style={{
+              backgroundImage: `url(${getNodeImage()})`,
+              transform: `rotate(${-boardRotation}deg)`,
+            }}
           />
         </div>
       </HoverCardTrigger>

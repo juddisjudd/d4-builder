@@ -24,7 +24,7 @@ const TechniqueButton: React.FC = () => {
         <DialogTrigger asChild>
           <Button variant="outline" className="h-16 w-16 p-0">
             {selectedTechnique ? (
-              <img src={selectedTechnique.icon} alt={selectedTechnique.name} className="h-12 w-12" />
+              <img src={selectedTechnique.icon} alt={selectedTechnique.name} className="h-14 w-14" />
             ) : (
               <div className="h-12 w-12 rounded-md">
                 <img src="/images/skills/empty.png" alt="Empty Skill" className="h-12 w-12 object-contain" />

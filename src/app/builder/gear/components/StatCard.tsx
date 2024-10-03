@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Image from 'next/image';
 import StatCombobox from './StatCombobox';
 import { useBuildContext } from '@/contexts/BuildContext';
 import {
@@ -10,10 +11,28 @@ import {
 } from '../utils/statUtils';
 import { getWeaponTypesForClass, getWeaponAttribute } from '../utils/weaponUtils';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { cn } from '@/lib/utils';
 
 interface StatCardProps {
   slot: string;
 }
+
+interface StatSelection {
+  greaterAffix: boolean;
+  circleValue: string | null;
+}
+
+const GreaterAffixImage: React.FC<{ selected: boolean; onClick: () => void }> = ({ selected, onClick }) => (
+  <Image
+    src="/images/misc/ga.png"
+    width={27}
+    height={27}
+    alt="Greater Affix"
+    className={`cursor-pointer transition-all ${selected ? '' : 'grayscale'}`}
+    onClick={onClick}
+  />
+);
 
 const StatCard: React.FC<StatCardProps> = ({ slot }) => {
   const { buildState, updateItemStat } = useBuildContext();
@@ -22,6 +41,9 @@ const StatCard: React.FC<StatCardProps> = ({ slot }) => {
     label: type,
   }));
   const [offhandType, setOffhandType] = useState<string>(offhandTypes[0].value);
+  const [statSelections, setStatSelections] = useState<StatSelection[]>(
+    Array(5).fill({ greaterAffix: false, circleValue: null })
+  );
 
   const isOffhandSlot = slot.toLowerCase() === 'offhand';
   const isWeaponSlot = slot.toLowerCase().includes('weapon');
@@ -40,6 +62,25 @@ const StatCard: React.FC<StatCardProps> = ({ slot }) => {
       }))
     : [];
   const slotHasImplicit = hasImplicit(currentSlot, offhandType);
+
+  const handleGreaterAffixClick = (index: number) => {
+    setStatSelections((prev) => {
+      const newSelections = [...prev];
+      newSelections[index] = { ...newSelections[index], greaterAffix: !newSelections[index].greaterAffix };
+      return newSelections;
+    });
+  };
+
+  const handleCircleChange = (statIndex: number, value: string) => {
+    setStatSelections((prev) => {
+      const newSelections = [...prev];
+      newSelections[statIndex] = {
+        ...newSelections[statIndex],
+        circleValue: newSelections[statIndex].circleValue === value ? null : value,
+      };
+      return newSelections;
+    });
+  };
 
   const renderStatComboboxes = (type: string) => (
     <>
@@ -82,25 +123,35 @@ const StatCard: React.FC<StatCardProps> = ({ slot }) => {
         </>
       )}
 
-      {[0, 1, 2].map((index) => (
-        <div key={`regular-${index}`} className="mb-2">
+      {[0, 1, 2, 3, 4].map((index) => (
+        <div key={`stat-${index}`} className="mb-2 flex items-center space-x-2">
           <StatCombobox
-            options={regularStats}
+            options={index < 3 ? regularStats : temperingStats}
             value={buildState.itemStats[`${slot}-${type}`]?.[slotHasImplicit ? index + 1 : index] || ''}
             onChange={(value) => updateItemStat(`${slot}-${type}`, slotHasImplicit ? index + 1 : index, value)}
-            placeholder={`Stat ${index + 1}`}
+            placeholder={index < 3 ? `Stat ${index + 1}` : `Tempering Stat ${index - 2}`}
           />
-        </div>
-      ))}
-
-      {[0, 1].map((index) => (
-        <div key={`tempering-${index}`} className="mb-2">
-          <StatCombobox
-            options={temperingStats}
-            value={buildState.itemStats[`${slot}-${type}`]?.[slotHasImplicit ? index + 4 : index + 3] || ''}
-            onChange={(value) => updateItemStat(`${slot}-${type}`, slotHasImplicit ? index + 4 : index + 3, value)}
-            placeholder={`Tempering Stat ${index + 1}`}
+          <GreaterAffixImage
+            selected={statSelections[index].greaterAffix}
+            onClick={() => handleGreaterAffixClick(index)}
           />
+          <RadioGroup
+            value={statSelections[index].circleValue || ''}
+            onValueChange={(value) => handleCircleChange(index, value)}
+            className="flex space-x-1"
+          >
+            {['blue', 'yellow', 'orange'].map((color) => (
+              <RadioGroupItem
+                key={color}
+                value={color}
+                className={cn('h-5 w-5 cursor-pointer rounded-full border-2 border-gray-400', {
+                  'border-blue-500 bg-blue-500': color === 'blue' && statSelections[index].circleValue === color,
+                  'border-yellow-500 bg-yellow-500': color === 'yellow' && statSelections[index].circleValue === color,
+                  'border-orange-700 bg-orange-700': color === 'orange' && statSelections[index].circleValue === color,
+                })}
+              />
+            ))}
+          </RadioGroup>
         </div>
       ))}
     </>

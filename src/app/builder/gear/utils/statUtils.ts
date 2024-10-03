@@ -36,8 +36,12 @@ export function getOffhandTypes(className: string | null): string[] {
   if (className === 'Necromancer') {
     return ['Offhand', 'Shield'];
   }
+  if (className === 'Druid') {
+    return ['Offhand', 'Totem'];
+  }
   return ['Offhand'];
 }
+
 
 export function getStatsForSlot(slot: string, className: string | null, offhandType?: string): StatOption[] {
   const normalizedSlot = normalizeSlotName(slot, offhandType);

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import Image from 'next/image';
 import StatCombobox from './StatCombobox';
 import { useBuildContext } from '@/contexts/BuildContext';
@@ -11,7 +11,6 @@ import {
 } from '../utils/statUtils';
 import { getWeaponTypesForClass, getWeaponAttribute } from '../utils/weaponUtils';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { cn } from '@/lib/utils';
 
 interface StatCardProps {
@@ -20,7 +19,7 @@ interface StatCardProps {
 
 interface StatSelection {
   greaterAffix: boolean;
-  circleValue: string | null;
+  circleValues: string[];
 }
 
 const GreaterAffixImage: React.FC<{ selected: boolean; onClick: () => void }> = ({ selected, onClick }) => (
@@ -34,6 +33,37 @@ const GreaterAffixImage: React.FC<{ selected: boolean; onClick: () => void }> = 
   />
 );
 
+const ColorCircle: React.FC<{
+  color: string;
+  checked: boolean;
+  disabled: boolean;
+  onCheckedChange: (checked: boolean) => void;
+}> = ({ color, checked, disabled, onCheckedChange }) => {
+  const baseClasses = 'h-5 w-5 rounded-full border-2 cursor-pointer transition-all duration-200';
+  const colorClasses = {
+    blue: 'border-blue-500',
+    yellow: 'border-yellow-500',
+    orange: 'border-orange-700',
+  };
+  const checkedClasses = {
+    blue: 'bg-blue-500',
+    yellow: 'bg-yellow-500',
+    orange: 'bg-orange-700',
+  };
+
+  return (
+    <div
+      className={cn(
+        baseClasses,
+        colorClasses[color as keyof typeof colorClasses],
+        checked && checkedClasses[color as keyof typeof checkedClasses],
+        disabled && 'cursor-not-allowed opacity-50'
+      )}
+      onClick={() => !disabled && onCheckedChange(!checked)}
+    />
+  );
+};
+
 const StatCard: React.FC<StatCardProps> = ({ slot }) => {
   const { buildState, updateItemStat } = useBuildContext();
   const offhandTypes = getOffhandTypes(buildState.selectedClass).map((type) => ({
@@ -42,7 +72,7 @@ const StatCard: React.FC<StatCardProps> = ({ slot }) => {
   }));
   const [offhandType, setOffhandType] = useState<string>(offhandTypes[0].value);
   const [statSelections, setStatSelections] = useState<StatSelection[]>(
-    Array(5).fill({ greaterAffix: false, circleValue: null })
+    Array(5).fill({ greaterAffix: false, circleValues: [] })
   );
 
   const isOffhandSlot = slot.toLowerCase() === 'offhand';
@@ -63,6 +93,10 @@ const StatCard: React.FC<StatCardProps> = ({ slot }) => {
     : [];
   const slotHasImplicit = hasImplicit(currentSlot, offhandType);
 
+  const getTotalSelectedCheckboxes = useCallback(() => {
+    return statSelections.reduce((total, stat) => total + stat.circleValues.length, 0);
+  }, [statSelections]);
+
   const handleGreaterAffixClick = (index: number) => {
     setStatSelections((prev) => {
       const newSelections = [...prev];
@@ -71,15 +105,41 @@ const StatCard: React.FC<StatCardProps> = ({ slot }) => {
     });
   };
 
-  const handleCircleChange = (statIndex: number, value: string) => {
+  const handleCircleChange = (statIndex: number, color: string, checked: boolean) => {
     setStatSelections((prev) => {
       const newSelections = [...prev];
-      newSelections[statIndex] = {
-        ...newSelections[statIndex],
-        circleValue: newSelections[statIndex].circleValue === value ? null : value,
-      };
+      const currentValues = [...newSelections[statIndex].circleValues];
+      const colorOrder = ['blue', 'yellow', 'orange'];
+      const colorIndex = colorOrder.indexOf(color);
+
+      if (checked) {
+        if (colorIndex === 0 || currentValues.includes(colorOrder[colorIndex - 1])) {
+          if (!currentValues.includes(color)) {
+            currentValues.push(color);
+          }
+        }
+      } else {
+        const removeIndex = currentValues.indexOf(color);
+        if (removeIndex !== -1) {
+          currentValues.splice(removeIndex);
+        }
+      }
+
+      newSelections[statIndex].circleValues = currentValues;
       return newSelections;
     });
+  };
+
+  const isCircleDisabled = (index: number, color: string) => {
+    const currentValues = statSelections[index].circleValues;
+    const totalSelected = getTotalSelectedCheckboxes();
+    const colorOrder = ['blue', 'yellow', 'orange'];
+    const colorIndex = colorOrder.indexOf(color);
+
+    if (currentValues.includes(color)) return false;
+    if (totalSelected >= 3) return true;
+    if (colorIndex === 0) return false;
+    return !currentValues.includes(colorOrder[colorIndex - 1]);
   };
 
   const renderStatComboboxes = (type: string) => (
@@ -135,23 +195,17 @@ const StatCard: React.FC<StatCardProps> = ({ slot }) => {
             selected={statSelections[index].greaterAffix}
             onClick={() => handleGreaterAffixClick(index)}
           />
-          <RadioGroup
-            value={statSelections[index].circleValue || ''}
-            onValueChange={(value) => handleCircleChange(index, value)}
-            className="flex space-x-1"
-          >
+          <div className="flex space-x-1">
             {['blue', 'yellow', 'orange'].map((color) => (
-              <RadioGroupItem
+              <ColorCircle
                 key={color}
-                value={color}
-                className={cn('h-5 w-5 cursor-pointer rounded-full border-2 border-gray-400', {
-                  'border-blue-500 bg-blue-500': color === 'blue' && statSelections[index].circleValue === color,
-                  'border-yellow-500 bg-yellow-500': color === 'yellow' && statSelections[index].circleValue === color,
-                  'border-orange-700 bg-orange-700': color === 'orange' && statSelections[index].circleValue === color,
-                })}
+                color={color}
+                checked={statSelections[index].circleValues.includes(color)}
+                onCheckedChange={(checked) => handleCircleChange(index, color, checked)}
+                disabled={isCircleDisabled(index, color)}
               />
             ))}
-          </RadioGroup>
+          </div>
         </div>
       ))}
     </>

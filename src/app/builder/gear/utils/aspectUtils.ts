@@ -48,8 +48,16 @@ export const getWeaponTypes = (slotType: string, className: string): string[] =>
           return [];
       }
     case 'druid':
-      if (lowerSlotType === 'weapon') return ['Staff', '1h Sword', '1h Mace', '1h Axe'];
-      return [];
+      switch (lowerSlotType) {
+        case 'weapon':
+          return ['Staff', '1h Sword', '1h Mace', '1h Axe'];
+        case 'offhand':
+          return ['Totem'];
+        default:
+          return [];
+      }
+      //if (lowerSlotType === 'weapon') return ['Staff', '1h Sword', '1h Mace', '1h Axe'];
+      //return [];
     case 'necromancer':
       switch (lowerSlotType) {
         case 'weapon':

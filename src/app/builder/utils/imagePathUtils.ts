@@ -1,48 +1,31 @@
 export const getUniqueImagePath = (type: string, name: string): string => {
-  let folder = '';
-  switch (type) {
-    case 'Amulet':
-      folder = 'amulets';
-      break;
-    case 'Ring':
-      folder = 'rings';
-      break;
-    case 'Boots':
-      folder = 'boots';
-      break;
-    case 'Helm':
-      folder = 'helms';
-      break;
-    case 'Pants':
-      folder = 'pants';
-      break;
-    case 'Chest Armor':
-      folder = 'chestarmor';
-      break;
-    case 'Gloves':
-      folder = 'gloves';
-      break;
-    case 'Shield':
-      folder = 'offhand';
-      break;
-    case 'Bow':
-    case 'Staff':
-    case '2h Axe':
-    case '1h Dagger':
-    case '1h Sword':
-    case '1h Scythe':
-    case '2h Scythe':
-    case '2h Sword':
-    case 'Wand':
-    case '1h Mace':
-    case '2h Mace':
-    case 'Quarterstaff':
-    case '1h Axe':
-      folder = 'weapons';
-      break;
-    default:
-      folder = 'weapons';
-  }
+  const typeToFolderMap: { [key: string]: string } = {
+    Amulet: 'amulets',
+    Ring: 'rings',
+    Boots: 'boots',
+    Helm: 'helms',
+    Pants: 'pants',
+    'Chest Armor': 'chestarmor',
+    Gloves: 'gloves',
+    Shield: 'offhand',
+    Totem: 'offhand',
+    Bow: 'weapons',
+    Staff: 'weapons',
+    '2h Axe': 'weapons',
+    '1h Dagger': 'weapons',
+    '1h Sword': 'weapons',
+    '1h Scythe': 'weapons',
+    '2h Scythe': 'weapons',
+    '2h Sword': 'weapons',
+    Wand: 'weapons',
+    '1h Mace': 'weapons',
+    '2h Mace': 'weapons',
+    Quarterstaff: 'weapons',
+    Glaive: 'weapons',
+    '1h Axe': 'weapons',
+  };
+
+  const folder = typeToFolderMap[type] || 'weapons';
 
   const fileName = name
     .toLowerCase()

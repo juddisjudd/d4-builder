@@ -90,9 +90,6 @@ const BoardNode: React.FC<BoardNodeProps> = ({
         {node.intelligence && <p>Intelligence: {node.intelligence}</p>}
         {node.willpower && <p>Willpower: {node.willpower}</p>}
         {node.effects && <p>Effects: {node.effects.join(', ')}</p>}
-        {node.radius_stat && <p>Radius Stat: {node.radius_stat}</p>}
-        {node.radius_value && <p>Radius Value: {node.radius_value}</p>}
-        {node.glyph_radius && <p>Glyph Radius: Yes</p>}
       </HoverCardContent>
     </HoverCard>
   );

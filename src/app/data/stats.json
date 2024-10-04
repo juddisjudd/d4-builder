@@ -573,6 +573,74 @@
         "Thorns"
       ],
       "necromancer": ["Intelligence", "Essence on Kill"]
+    },
+    {
+      "slot": "Totem",
+      "implicit": ["Totem: 7% Cooldown Reduction"],
+      "all": [
+        "All Stats",
+        "Strength",
+        "Dexterity",
+        "Intelligence",
+        "Willpower",
+        "Healing Received",
+        "Life On Kill",
+        "Resource Generation",
+        "Cooldown Reduction",
+        "Basic Skill Attack Speed",
+        "Critical Strike Chance",
+        "Critical Strike Chance Against Injured Enemies",
+        "Lucky Hit Chance",
+        "Basic Skill Damage",
+        "Crowd Control Duration",
+        "Lucky Hit: Up to a [X]% Chance to Heal",
+        "Lucky Hit: Chance to Restore [X]% Primary Resource",
+        "Lucky Hit: Up to [X]% Chance to Slow"
+      ],
+      "druid": [
+        "Spirit Cost Reduction",
+        "Barrier Generation",
+        "Fortify Generation",
+        "Damage Reduction from Enemies That Are Poisoned",
+        "Damage Reduction while Fortified"
+      ]
+    },
+    {
+      "slot": "Focus",
+      "implicit": ["Focus: 7% Cooldown Reduction"],
+      "all": [
+        "All Stats",
+        "Strength",
+        "Dexterity",
+        "Intelligence",
+        "Willpower",
+        "Healing Received",
+        "Life On Kill",
+        "Resource Generation",
+        "Cooldown Reduction",
+        "Basic Skill Attack Speed",
+        "Critical Strike Chance",
+        "Critical Strike Chance Against Injured Enemies",
+        "Lucky Hit Chance",
+        "Basic Skill Damage",
+        "Crowd Control Duration",
+        "Lucky Hit: Up to a [X]% Chance to Heal",
+        "Lucky Hit: Chance to Restore [X]% Primary Resource"
+      ],
+      "sorcerer": [
+        "Mana Cost Reduction",
+        "Barrier Generation",
+        "Lucky Hit Chance while You Have a Barrier",
+        "Crackling Energy Damage",
+        "Damage Reduction from Enemies That Are Burning"
+      ],
+      "necromancer": [
+        "Spirit Cost Reduction",
+        "Barrier Generation",
+        "Fortify Generation",
+        "Damage Reduction from Enemies That Are Poisoned",
+        "Damage Reduction while Fortified"
+      ]
     }
   ]
 }

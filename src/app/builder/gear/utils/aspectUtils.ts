@@ -56,14 +56,12 @@ export const getWeaponTypes = (slotType: string, className: string): string[] =>
         default:
           return [];
       }
-      //if (lowerSlotType === 'weapon') return ['Staff', '1h Sword', '1h Mace', '1h Axe'];
-      //return [];
     case 'necromancer':
       switch (lowerSlotType) {
         case 'weapon':
           return ['Staff', '1h Sword', '1h Scythe', '2h Scythe', '2h Sword', '1h Dagger'];
         case 'offhand':
-          return ['Shield'];
+          return ['Shield', 'Focus'];
         default:
           return [];
       }
@@ -78,8 +76,14 @@ export const getWeaponTypes = (slotType: string, className: string): string[] =>
           return [];
       }
     case 'sorcerer':
-      if (lowerSlotType === 'weapon') return ['Staff', '1h Sword', 'Wand'];
-      return [];
+      switch (lowerSlotType) {
+        case 'weapon':
+          return ['Staff', '1h Sword', 'Wand'];
+        case 'offhand':
+          return ['Focus'];
+        default:
+          return [];
+      }
     case 'spiritborn':
       if (lowerSlotType === 'weapon') return ['Quarterstaff', 'Glaive'];
       return [];

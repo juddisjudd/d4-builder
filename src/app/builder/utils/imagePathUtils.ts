@@ -9,6 +9,7 @@ export const getUniqueImagePath = (type: string, name: string): string => {
     Gloves: 'gloves',
     Shield: 'offhand',
     Totem: 'offhand',
+    Focus: 'offhand',
     Bow: 'weapons',
     Staff: 'weapons',
     '2h Axe': 'weapons',

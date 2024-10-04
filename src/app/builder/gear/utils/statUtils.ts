@@ -34,14 +34,16 @@ function normalizeSlotName(slot: string, offhandType?: string): string {
 
 export function getOffhandTypes(className: string | null): string[] {
   if (className === 'Necromancer') {
-    return ['Offhand', 'Shield'];
+    return ['Focus', 'Shield'];
   }
   if (className === 'Druid') {
-    return ['Offhand', 'Totem'];
+    return ['Totem'];
+  }
+  if (className === 'Sorcerer') {
+    return ['Focus'];
   }
   return ['Offhand'];
 }
-
 
 export function getStatsForSlot(slot: string, className: string | null, offhandType?: string): StatOption[] {
   const normalizedSlot = normalizeSlotName(slot, offhandType);
@@ -85,7 +87,13 @@ export function getTemperingStatsForSlot(slot: string, className: string | null)
 
 function getAllowedTemperTypes(slot: string): string[] {
   const lowerSlot = slot.toLowerCase();
-  if (lowerSlot.includes('weapon') || lowerSlot === 'offhand' || lowerSlot === 'shield')
+  if (
+    lowerSlot.includes('weapon') ||
+    lowerSlot === 'offhand' ||
+    lowerSlot === 'shield' ||
+    lowerSlot === 'totem' ||
+    lowerSlot === 'focus'
+  )
     return ['Weapons', 'Offensive'];
   if (['amulet'].includes(lowerSlot)) return ['Offensive', 'Defensive', 'Utility', 'Mobility', 'Resource'];
   if (['gloves'].includes(lowerSlot)) return ['Offensive', 'Utility'];

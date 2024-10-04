@@ -36,6 +36,11 @@ interface SocketItem {
   item: GemData | RuneData | null;
 }
 
+interface StatSelection {
+  greaterAffix: boolean;
+  circleValues: ('blue' | 'yellow' | 'orange')[];
+}
+
 export interface BuildState {
   selectedClass: string | null;
   aspects: (AspectData | UniqueData | null)[];
@@ -49,6 +54,9 @@ export interface BuildState {
   spiritHall?: SpiritHallState;
   itemStats: {
     [slot: string]: (string | null)[];
+  };
+  statSelections?: {
+    [slot: string]: StatSelection[];
   };
 }
 
@@ -65,6 +73,7 @@ interface BuildContextType {
   updateBookOfTheDead: (type: ValidMinionType, name: string, upgrade: string | null) => void;
   updateSpiritHall: (spirit: string, isPrimary: boolean) => void;
   updateItemStat: (slot: string, index: number, value: string) => void;
+  updateStatSelection: (slot: string, index: number, selection: StatSelection) => void;
   resetBuild: () => void;
   saveBuild: () => string;
   loadBuild: (encodedState: string) => void;
@@ -116,6 +125,7 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
     bookOfTheDead: undefined,
     spiritHall: undefined,
     itemStats: {},
+    statSelections: {},
   });
 
   const setSelectedClass = (className: ZodBuildState['selectedClass']) => {
@@ -144,6 +154,7 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
           : undefined,
       sockets: getInitialSockets(className),
       itemStats: {},
+      statSelections: {},
     }));
   };
 
@@ -283,6 +294,24 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
     });
   };
 
+  const updateStatSelection = (slot: string, index: number, selection: StatSelection) => {
+    setBuildState((prev) => {
+      const currentStatSelections = prev.statSelections || {};
+      const newStatSelections = { ...currentStatSelections };
+
+      if (!newStatSelections[slot]) {
+        newStatSelections[slot] = Array(5).fill({ greaterAffix: false, circleValues: [] });
+      }
+
+      newStatSelections[slot][index] = selection;
+
+      return {
+        ...prev,
+        statSelections: newStatSelections,
+      };
+    });
+  };
+
   const resetBuild = () => {
     setBuildState({
       selectedClass: null,
@@ -296,6 +325,7 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
       bookOfTheDead: undefined,
       spiritHall: undefined,
       itemStats: {},
+      statSelections: {},
     });
   };
 
@@ -340,6 +370,7 @@ export const BuildProvider: React.FC<{ children: ReactNode }> = ({ children }) =
         updateBookOfTheDead,
         updateSpiritHall,
         updateItemStat,
+        updateStatSelection,
         resetBuild,
         saveBuild,
         loadBuild,

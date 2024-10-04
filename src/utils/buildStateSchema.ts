@@ -16,6 +16,11 @@ const SocketItemSchema = z.object({
 
 const SkillDataSchema = z.custom<SkillData>();
 
+const StatSelectionSchema = z.object({
+  greaterAffix: z.boolean(),
+  circleValues: z.array(z.enum(['blue', 'yellow', 'orange'])),
+});
+
 export const BuildStateSchema = z.object({
   selectedClass: z.enum(validClasses).nullable(),
   aspects: z.array(AspectOrUniqueSchema).length(14),
@@ -39,6 +44,7 @@ export const BuildStateSchema = z.object({
     })
     .optional(),
   itemStats: z.record(z.array(z.string().nullable().optional())),
+  statSelections: z.record(z.array(StatSelectionSchema).length(5)).optional(),
 });
 
 export type BuildState = z.infer<typeof BuildStateSchema>;

@@ -17,11 +17,6 @@ interface StatCardProps {
   slot: string;
 }
 
-interface StatSelection {
-  greaterAffix: boolean;
-  circleValues: string[];
-}
-
 const GreaterAffixImage: React.FC<{ selected: boolean; onClick: () => void }> = ({ selected, onClick }) => (
   <Image
     src="/images/misc/ga.png"
@@ -33,8 +28,10 @@ const GreaterAffixImage: React.FC<{ selected: boolean; onClick: () => void }> = 
   />
 );
 
+type ColorType = 'blue' | 'yellow' | 'orange';
+
 const ColorCircle: React.FC<{
-  color: string;
+  color: ColorType;
   checked: boolean;
   disabled: boolean;
   onCheckedChange: (checked: boolean) => void;
@@ -65,15 +62,12 @@ const ColorCircle: React.FC<{
 };
 
 const StatCard: React.FC<StatCardProps> = ({ slot }) => {
-  const { buildState, updateItemStat } = useBuildContext();
+  const { buildState, updateItemStat, updateStatSelection } = useBuildContext();
   const offhandTypes = getOffhandTypes(buildState.selectedClass).map((type) => ({
     value: type,
     label: type,
   }));
   const [offhandType, setOffhandType] = useState<string>(offhandTypes[0].value);
-  const [statSelections, setStatSelections] = useState<StatSelection[]>(
-    Array(5).fill({ greaterAffix: false, circleValues: [] })
-  );
 
   const isOffhandSlot = slot.toLowerCase() === 'offhand';
   const isWeaponSlot = slot.toLowerCase().includes('weapon');
@@ -94,46 +88,49 @@ const StatCard: React.FC<StatCardProps> = ({ slot }) => {
   const slotHasImplicit = hasImplicit(currentSlot, offhandType);
 
   const getTotalSelectedCheckboxes = useCallback(() => {
-    return statSelections.reduce((total, stat) => total + stat.circleValues.length, 0);
-  }, [statSelections]);
+    return (buildState.statSelections?.[slot] || []).reduce((total, stat) => total + stat.circleValues.length, 0);
+  }, [buildState.statSelections, slot]);
 
   const handleGreaterAffixClick = (index: number) => {
-    setStatSelections((prev) => {
-      const newSelections = [...prev];
-      newSelections[index] = { ...newSelections[index], greaterAffix: !newSelections[index].greaterAffix };
-      return newSelections;
+    const currentSelection = buildState.statSelections?.[slot]?.[index] || { greaterAffix: false, circleValues: [] };
+    updateStatSelection(slot, index, {
+      ...currentSelection,
+      greaterAffix: !currentSelection.greaterAffix,
     });
   };
 
-  const handleCircleChange = (statIndex: number, color: string, checked: boolean) => {
-    setStatSelections((prev) => {
-      const newSelections = [...prev];
-      const currentValues = [...newSelections[statIndex].circleValues];
-      const colorOrder = ['blue', 'yellow', 'orange'];
-      const colorIndex = colorOrder.indexOf(color);
+  const handleCircleChange = (statIndex: number, color: ColorType, checked: boolean) => {
+    const currentSelection = buildState.statSelections?.[slot]?.[statIndex] || {
+      greaterAffix: false,
+      circleValues: [],
+    };
+    const currentValues = [...currentSelection.circleValues] as ColorType[];
+    const colorOrder: ColorType[] = ['blue', 'yellow', 'orange'];
+    const colorIndex = colorOrder.indexOf(color);
 
-      if (checked) {
-        if (colorIndex === 0 || currentValues.includes(colorOrder[colorIndex - 1])) {
-          if (!currentValues.includes(color)) {
-            currentValues.push(color);
-          }
-        }
-      } else {
-        const removeIndex = currentValues.indexOf(color);
-        if (removeIndex !== -1) {
-          currentValues.splice(removeIndex);
+    if (checked) {
+      if (colorIndex === 0 || currentValues.includes(colorOrder[colorIndex - 1])) {
+        if (!currentValues.includes(color)) {
+          currentValues.push(color);
         }
       }
+    } else {
+      const removeIndex = currentValues.indexOf(color);
+      if (removeIndex !== -1) {
+        currentValues.splice(removeIndex);
+      }
+    }
 
-      newSelections[statIndex].circleValues = currentValues;
-      return newSelections;
+    updateStatSelection(slot, statIndex, {
+      ...currentSelection,
+      circleValues: currentValues,
     });
   };
 
-  const isCircleDisabled = (index: number, color: string) => {
-    const currentValues = statSelections[index].circleValues;
+  const isCircleDisabled = (index: number, color: ColorType) => {
+    const currentValues = (buildState.statSelections?.[slot]?.[index]?.circleValues as ColorType[]) || [];
     const totalSelected = getTotalSelectedCheckboxes();
-    const colorOrder = ['blue', 'yellow', 'orange'];
+    const colorOrder: ColorType[] = ['blue', 'yellow', 'orange'];
     const colorIndex = colorOrder.indexOf(color);
 
     if (currentValues.includes(color)) return false;
@@ -192,15 +189,15 @@ const StatCard: React.FC<StatCardProps> = ({ slot }) => {
             placeholder={index < 3 ? `Stat ${index + 1}` : `Tempering Stat ${index - 2}`}
           />
           <GreaterAffixImage
-            selected={statSelections[index].greaterAffix}
+            selected={buildState.statSelections?.[slot]?.[index]?.greaterAffix || false}
             onClick={() => handleGreaterAffixClick(index)}
           />
           <div className="flex space-x-1">
-            {['blue', 'yellow', 'orange'].map((color) => (
+            {(['blue', 'yellow', 'orange'] as ColorType[]).map((color) => (
               <ColorCircle
                 key={color}
                 color={color}
-                checked={statSelections[index].circleValues.includes(color)}
+                checked={buildState.statSelections?.[slot]?.[index]?.circleValues.includes(color) || false}
                 onCheckedChange={(checked) => handleCircleChange(index, color, checked)}
                 disabled={isCircleDisabled(index, color)}
               />

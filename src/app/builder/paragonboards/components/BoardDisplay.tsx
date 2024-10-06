@@ -14,6 +14,8 @@ interface BoardDisplayProps {
   onChangeBoard: (boardId: string) => void;
   onDeleteBoard: (boardId: string) => void;
   onClearBoard: (boardId: string) => void;
+  onGlyphSelect: (boardId: string, glyph: any) => void;
+  selectedGlyphs: Record<string, any>;
 }
 
 const BoardDisplay: React.FC<BoardDisplayProps> = ({
@@ -26,6 +28,8 @@ const BoardDisplay: React.FC<BoardDisplayProps> = ({
   onChangeBoard,
   onDeleteBoard,
   onClearBoard,
+  onGlyphSelect,
+  selectedGlyphs,
 }) => {
   const transformComponentRef = useRef<ReactZoomPanPinchRef | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -151,6 +155,8 @@ const BoardDisplay: React.FC<BoardDisplayProps> = ({
     }, 300);
   };
 
+  const [usedGlyphs, setUsedGlyphs] = useState<string[]>([]);
+
   const renderBoard = (board: Board, position: { x: number; y: number }) => {
     const grid = Array(gridSize)
       .fill(null)
@@ -245,6 +251,16 @@ const BoardDisplay: React.FC<BoardDisplayProps> = ({
                     onSelect={() => onNodeSelect(board.id, node.id)}
                     onDeselect={() => onNodeDeselect(board.id, node.id)}
                     boardRotation={rotationAngle}
+                    onGlyphSelect={(glyph) => {
+                      onGlyphSelect(board.id, glyph);
+                      if (glyph) {
+                        setUsedGlyphs([...usedGlyphs, glyph.name]);
+                      } else {
+                        setUsedGlyphs(usedGlyphs.filter((name) => name !== selectedGlyphs[board.id]?.name));
+                      }
+                    }}
+                    selectedGlyph={selectedGlyphs[board.id]}
+                    usedGlyphs={usedGlyphs}
                   />
                 )}
               </div>

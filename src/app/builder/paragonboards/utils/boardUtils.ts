@@ -11,6 +11,8 @@ export const loadBoardData = async (className: string): Promise<Board[]> => {
       gates: { top: null, right: null, bottom: null, left: null },
       rotation: 0,
       attachedTo: title === 'Starting Board' ? undefined : { parentId: '', position: 'top' as const },
+      selectedGlyph: null,
+      showControls: false,
     }));
   } catch (error) {
     console.error(`Failed to load board data for class ${className}:`, error);

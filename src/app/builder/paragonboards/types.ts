@@ -17,6 +17,7 @@ export interface Node {
 }
 
 export interface Board {
+  selectedGlyph: any;
   id: string;
   title: string;
   nodes: Node[];

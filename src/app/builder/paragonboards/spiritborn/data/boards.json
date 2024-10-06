@@ -72,58 +72,81 @@
     },
     {
       "name": "Magic Node",
-      "icon": "Damage",
+      "icon": "Int",
       "board": "Starting Board",
       "id": "startingboard_r4c9",
       "glyph_radius": true,
       "row": 4,
       "column": 9,
       "requires": ["startingboard_r3c9", "startingboard_r5c9", "startingboard_r4c8", "startingboard_r4c10"],
-      "effects": ["5% Damage"]
+      "intelligence": 7,
+      "effects": ["7 Intelligence"],
+      "radius_stat": "Intelligence",
+      "radius_value": 7
     },
     {
       "name": "Magic Node",
-      "icon": "Armor",
+      "icon": "Damage",
       "board": "Starting Board",
       "id": "startingboard_r4c10",
       "glyph_radius": true,
       "row": 4,
       "column": 10,
       "requires": ["startingboard_r3c10", "startingboard_r5c10", "startingboard_r4c9", "startingboard_r4c11"],
-      "effects": ["10 Armor"]
+      "effects": ["10% Damage"]
     },
     {
       "name": "Magic Node",
-      "icon": "Armor",
+      "icon": "DamageToElite",
       "board": "Starting Board",
       "id": "startingboard_r4c12",
       "glyph_radius": true,
       "row": 4,
       "column": 12,
       "requires": ["startingboard_r3c12", "startingboard_r5c12", "startingboard_r4c11", "startingboard_r4c13"],
-      "effects": ["10 Armor"]
+      "effects": ["15% Damage to Elites"]
     },
     {
       "name": "Magic Node",
-      "icon": "Damage",
+      "icon": "Str",
       "board": "Starting Board",
       "id": "startingboard_r4c13",
       "glyph_radius": true,
       "row": 4,
       "column": 13,
       "requires": ["startingboard_r3c13", "startingboard_r5c13", "startingboard_r4c12", "startingboard_r4c14"],
-      "effects": ["5% Damage"]
+      "strength": 7,
+      "effects": ["7 Strength"],
+      "radius_stat": "Strength",
+      "radius_value": 7
+    },
+    {
+      "name": "Normal Node",
+      "icon": "Str",
+      "board": "Starting Board",
+      "id": "startingboard_r5c8",
+      "glyph_radius": true,
+      "row": 5,
+      "column": 8,
+      "requires": ["startingboard_r4c8", "startingboard_r6c8", "startingboard_r5c7", "startingboard_r5c9"],
+      "strength": 5,
+      "effects": ["5 Strength"],
+      "radius_stat": "Strength",
+      "radius_value": 5
     },
     {
       "name": "Magic Node",
-      "icon": "Damage",
+      "icon": "Int",
       "board": "Starting Board",
       "id": "startingboard_r5c9",
       "glyph_radius": true,
       "row": 5,
       "column": 9,
       "requires": ["startingboard_r4c9", "startingboard_r6c9", "startingboard_r5c8", "startingboard_r5c10"],
-      "effects": ["5% Damage"]
+      "intelligence": 7,
+      "effects": ["7 Intelligence"],
+      "radius_stat": "Intelligence",
+      "radius_value": 7
     },
     {
       "name": "Rare Node",
@@ -136,36 +159,70 @@
       "column": 10,
       "requires": ["startingboard_r4c10", "startingboard_r6c10", "startingboard_r5c9", "startingboard_r5c11"],
       "dexterity": 10,
-      "effects": ["10% Damage", "10 Dexterity"],
+      "effects": ["20% Damage", "10 Dexterity"],
       "radius_stat": "Dexterity",
       "radius_value": 10,
-      "bonus_amount": [170],
+      "bonus_amount": ["210*75"],
       "bonus_stat": ["Intelligence"]
     },
     {
       "name": "Rare Node",
-      "title": "Lawless",
-      "icon": "Armor",
+      "title": "Spiritual",
+      "icon": "DamageToElite",
       "board": "Starting Board",
       "id": "startingboard_r5c12",
       "glyph_radius": true,
       "row": 5,
       "column": 12,
       "requires": ["startingboard_r4c12", "startingboard_r6c12", "startingboard_r5c11", "startingboard_r5c13"],
-      "effects": ["20 Armor", "4% Maximum Health"],
-      "bonus_amount": ["160*60"],
+      "dexterity": 10,
+      "effects": ["30% Damage to Elites", "10 Dexterity"],
+      "radius_stat": "Dexterity",
+      "radius_value": 10,
+      "bonus_amount": ["190*75"],
       "bonus_stat": ["Strength"]
     },
     {
       "name": "Magic Node",
-      "icon": "Damage",
+      "icon": "Str",
       "board": "Starting Board",
       "id": "startingboard_r5c13",
       "glyph_radius": true,
       "row": 5,
       "column": 13,
       "requires": ["startingboard_r4c13", "startingboard_r6c13", "startingboard_r5c12", "startingboard_r5c14"],
-      "effects": ["5% Damage"]
+      "strength": 7,
+      "effects": ["7 Strength"],
+      "radius_stat": "Strength",
+      "radius_value": 7
+    },
+    {
+      "name": "Normal Node",
+      "icon": "Will",
+      "board": "Starting Board",
+      "id": "startingboard_r5c14",
+      "glyph_radius": true,
+      "row": 5,
+      "column": 14,
+      "requires": ["startingboard_r4c14", "startingboard_r6c14", "startingboard_r5c13", "startingboard_r5c15"],
+      "willpower": 5,
+      "effects": ["5 Willpower"],
+      "radius_stat": "Willpower",
+      "radius_value": 5
+    },
+    {
+      "name": "Normal Node",
+      "icon": "Int",
+      "board": "Starting Board",
+      "id": "startingboard_r6c7",
+      "glyph_radius": true,
+      "row": 6,
+      "column": 7,
+      "requires": ["startingboard_r5c7", "startingboard_r7c7", "startingboard_r6c6", "startingboard_r6c8"],
+      "intelligence": 5,
+      "effects": ["5 Intelligence"],
+      "radius_stat": "Intelligence",
+      "radius_value": 5
     },
     {
       "name": "Normal Node",
@@ -183,47 +240,47 @@
     },
     {
       "name": "Magic Node",
-      "icon": "Armor",
+      "icon": "Damage",
       "board": "Starting Board",
       "id": "startingboard_r6c9",
       "glyph_radius": true,
       "row": 6,
       "column": 9,
       "requires": ["startingboard_r5c9", "startingboard_r7c9", "startingboard_r6c8", "startingboard_r6c10"],
-      "effects": ["10 Armor"]
+      "effects": ["10% Damage"]
     },
     {
       "name": "Magic Node",
-      "icon": "Armor",
+      "icon": "Damage",
       "board": "Starting Board",
       "id": "startingboard_r6c10",
       "glyph_radius": true,
       "row": 6,
       "column": 10,
       "requires": ["startingboard_r5c10", "startingboard_r7c10", "startingboard_r6c9", "startingboard_r6c11"],
-      "effects": ["10 Armor"]
+      "effects": ["10% Damage"]
     },
     {
       "name": "Magic Node",
-      "icon": "Armor",
+      "icon": "DamageToElite",
       "board": "Starting Board",
       "id": "startingboard_r6c12",
       "glyph_radius": true,
       "row": 6,
       "column": 12,
       "requires": ["startingboard_r5c12", "startingboard_r7c12", "startingboard_r6c11", "startingboard_r6c13"],
-      "effects": ["10 Armor"]
+      "effects": ["15% Damage to Elites"]
     },
     {
       "name": "Magic Node",
-      "icon": "Armor",
+      "icon": "DamageToElite",
       "board": "Starting Board",
       "id": "startingboard_r6c13",
       "glyph_radius": true,
       "row": 6,
       "column": 13,
       "requires": ["startingboard_r5c13", "startingboard_r7c13", "startingboard_r6c12", "startingboard_r6c14"],
-      "effects": ["10 Armor"]
+      "effects": ["15% Damage to Elites"]
     },
     {
       "name": "Normal Node",
@@ -237,6 +294,34 @@
       "strength": 5,
       "effects": ["5 Strength"],
       "radius_stat": "Strength",
+      "radius_value": 5
+    },
+    {
+      "name": "Normal Node",
+      "icon": "Dex",
+      "board": "Starting Board",
+      "id": "startingboard_r6c15",
+      "glyph_radius": true,
+      "row": 6,
+      "column": 15,
+      "requires": ["startingboard_r5c15", "startingboard_r7c15", "startingboard_r6c14", "startingboard_r6c16"],
+      "dexterity": 5,
+      "effects": ["5 Dexterity"],
+      "radius_stat": "Dexterity",
+      "radius_value": 5
+    },
+    {
+      "name": "Normal Node",
+      "icon": "Dex",
+      "board": "Starting Board",
+      "id": "startingboard_r7c6",
+      "glyph_radius": true,
+      "row": 7,
+      "column": 6,
+      "requires": ["startingboard_r6c6", "startingboard_r8c6", "startingboard_r7c5", "startingboard_r7c7"],
+      "dexterity": 5,
+      "effects": ["5 Dexterity"],
+      "radius_stat": "Dexterity",
       "radius_value": 5
     },
     {
@@ -362,6 +447,34 @@
     },
     {
       "name": "Normal Node",
+      "icon": "Int",
+      "board": "Starting Board",
+      "id": "startingboard_r7c16",
+      "glyph_radius": true,
+      "row": 7,
+      "column": 16,
+      "requires": ["startingboard_r6c16", "startingboard_r8c16", "startingboard_r7c15", "startingboard_r7c17"],
+      "intelligence": 5,
+      "effects": ["5 Intelligence"],
+      "radius_stat": "Intelligence",
+      "radius_value": 5
+    },
+    {
+      "name": "Normal Node",
+      "icon": "Int",
+      "board": "Starting Board",
+      "id": "startingboard_r8c7",
+      "glyph_radius": true,
+      "row": 8,
+      "column": 7,
+      "requires": ["startingboard_r7c7", "startingboard_r9c7", "startingboard_r8c6", "startingboard_r8c8"],
+      "intelligence": 5,
+      "effects": ["5 Intelligence"],
+      "radius_stat": "Intelligence",
+      "radius_value": 5
+    },
+    {
+      "name": "Normal Node",
       "icon": "Dex",
       "board": "Starting Board",
       "id": "startingboard_r8c8",
@@ -460,6 +573,34 @@
     },
     {
       "name": "Normal Node",
+      "icon": "Int",
+      "board": "Starting Board",
+      "id": "startingboard_r8c15",
+      "glyph_radius": true,
+      "row": 8,
+      "column": 15,
+      "requires": ["startingboard_r7c15", "startingboard_r9c15", "startingboard_r8c14", "startingboard_r8c16"],
+      "intelligence": 5,
+      "effects": ["5 Intelligence"],
+      "radius_stat": "Intelligence",
+      "radius_value": 5
+    },
+    {
+      "name": "Normal Node",
+      "icon": "Dex",
+      "board": "Starting Board",
+      "id": "startingboard_r9c8",
+      "glyph_radius": true,
+      "row": 9,
+      "column": 8,
+      "requires": ["startingboard_r8c8", "startingboard_r10c8", "startingboard_r9c7", "startingboard_r9c9"],
+      "dexterity": 5,
+      "effects": ["5 Dexterity"],
+      "radius_stat": "Dexterity",
+      "radius_value": 5
+    },
+    {
+      "name": "Normal Node",
       "icon": "Str",
       "board": "Starting Board",
       "id": "startingboard_r9c9",
@@ -530,6 +671,20 @@
     },
     {
       "name": "Normal Node",
+      "icon": "Will",
+      "board": "Starting Board",
+      "id": "startingboard_r9c14",
+      "glyph_radius": true,
+      "row": 9,
+      "column": 14,
+      "requires": ["startingboard_r8c14", "startingboard_r10c14", "startingboard_r9c13", "startingboard_r9c15"],
+      "willpower": 5,
+      "effects": ["5 Willpower"],
+      "radius_stat": "Willpower",
+      "radius_value": 5
+    },
+    {
+      "name": "Normal Node",
       "icon": "Dex",
       "board": "Starting Board",
       "id": "startingboard_r10c9",
@@ -586,14 +741,14 @@
     },
     {
       "name": "Magic Node",
-      "icon": "Damage",
+      "icon": "HPPercent",
       "board": "Starting Board",
       "id": "startingboard_r11c9",
       "glyph_radius": false,
       "row": 11,
       "column": 9,
       "requires": ["startingboard_r10c9", "startingboard_r12c9", "startingboard_r11c8", "startingboard_r11c10"],
-      "effects": ["5% Damage"]
+      "effects": ["2% Maximum Life"]
     },
     {
       "name": "Normal Node",
@@ -632,7 +787,7 @@
       "row": 11,
       "column": 13,
       "requires": ["startingboard_r10c13", "startingboard_r12c13", "startingboard_r11c12", "startingboard_r11c14"],
-      "effects": ["5% Damage"]
+      "effects": ["10% Damage"]
     },
     {
       "name": "Magic Node",
@@ -643,7 +798,7 @@
       "row": 12,
       "column": 8,
       "requires": ["startingboard_r11c8", "startingboard_r13c8", "startingboard_r12c7", "startingboard_r12c9"],
-      "effects": ["10 Armor"]
+      "effects": ["15 Armor"]
     },
     {
       "name": "Rare Node",
@@ -655,20 +810,20 @@
       "row": 12,
       "column": 9,
       "requires": ["startingboard_r11c9", "startingboard_r13c9", "startingboard_r12c8", "startingboard_r12c10"],
-      "effects": ["4% Maximum Life", "20 Armor"],
-      "bonus_amount": ["160*60"],
+      "effects": ["4% Maximum Life", "30 Armor"],
+      "bonus_amount": ["190*75"],
       "bonus_stat": ["Strength"]
     },
     {
       "name": "Magic Node",
-      "icon": "Damage",
+      "icon": "HPPercent",
       "board": "Starting Board",
       "id": "startingboard_r12c10",
       "glyph_radius": false,
       "row": 12,
       "column": 10,
       "requires": ["startingboard_r11c10", "startingboard_r13c10", "startingboard_r12c9", "startingboard_r12c11"],
-      "effects": ["5% Damage"]
+      "effects": ["2% Maximum Life"]
     },
     {
       "name": "Magic Node",
@@ -679,7 +834,7 @@
       "row": 12,
       "column": 12,
       "requires": ["startingboard_r11c12", "startingboard_r13c12", "startingboard_r12c11", "startingboard_r12c13"],
-      "effects": ["5% Damage"]
+      "effects": ["10% Damage"]
     },
     {
       "name": "Rare Node",
@@ -691,20 +846,20 @@
       "row": 12,
       "column": 13,
       "requires": ["startingboard_r11c13", "startingboard_r13c13", "startingboard_r12c12", "startingboard_r12c14"],
-      "effects": ["10% Damage", "4% Maximum Life"],
-      "bonus_amount": [160],
+      "effects": ["20% Damage", "4% Maximum Life"],
+      "bonus_amount": ["630*455"],
       "bonus_stat": ["Intelligence"]
     },
     {
       "name": "Magic Node",
-      "icon": "Armor",
+      "icon": "HPPercent",
       "board": "Starting Board",
       "id": "startingboard_r12c14",
       "glyph_radius": false,
       "row": 12,
       "column": 14,
       "requires": ["startingboard_r11c14", "startingboard_r13c14", "startingboard_r12c13", "startingboard_r12c15"],
-      "effects": ["10 Armor"]
+      "effects": ["2% Maximum Life"]
     },
     {
       "name": "Magic Node",
@@ -715,18 +870,18 @@
       "row": 13,
       "column": 9,
       "requires": ["startingboard_r12c9", "startingboard_r14c9", "startingboard_r13c8", "startingboard_r13c10"],
-      "effects": ["10 Armor"]
+      "effects": ["15 Armor"]
     },
     {
       "name": "Magic Node",
-      "icon": "Armor",
+      "icon": "HPPercent",
       "board": "Starting Board",
       "id": "startingboard_r13c13",
       "glyph_radius": false,
       "row": 13,
       "column": 13,
       "requires": ["startingboard_r12c13", "startingboard_r14c13", "startingboard_r13c12", "startingboard_r13c14"],
-      "effects": ["10 Armor"]
+      "effects": ["2% Maximum Life"]
     },
     {
       "name": "Normal Node",
@@ -840,6 +995,20 @@
   "In-Fighter": [
     {
       "name": "Normal Node",
+      "icon": "Dex",
+      "board": "In-Fighter",
+      "id": "in-fighter_r1c16",
+      "glyph_radius": true,
+      "row": 1,
+      "column": 16,
+      "requires": ["in-fighter_r0c16", "in-fighter_r2c16", "in-fighter_r1c15", "in-fighter_r1c17"],
+      "dexterity": 5,
+      "effects": ["5 Dexterity"],
+      "radius_stat": "Dexterity",
+      "radius_value": 5
+    },
+    {
+      "name": "Normal Node",
       "icon": "Int",
       "board": "In-Fighter",
       "id": "in-fighter_r2c11",
@@ -910,14 +1079,28 @@
     },
     {
       "name": "Magic Node",
-      "icon": "HPPercent",
+      "icon": "Damage",
       "board": "In-Fighter",
       "id": "in-fighter_r2c16",
       "glyph_radius": true,
       "row": 2,
       "column": 16,
       "requires": ["in-fighter_r1c16", "in-fighter_r3c16", "in-fighter_r2c15", "in-fighter_r2c17"],
-      "effects": ["2% Maximum Life"]
+      "effects": ["10% Damage"]
+    },
+    {
+      "name": "Normal Node",
+      "icon": "Str",
+      "board": "In-Fighter",
+      "id": "in-fighter_r2c17",
+      "glyph_radius": true,
+      "row": 2,
+      "column": 17,
+      "requires": ["in-fighter_r1c17", "in-fighter_r3c17", "in-fighter_r2c16", "in-fighter_r2c18"],
+      "strength": 5,
+      "effects": ["5 Strength"],
+      "radius_stat": "Strength",
+      "radius_value": 5
     },
     {
       "name": "Normal Node",
@@ -977,27 +1160,30 @@
     },
     {
       "name": "Magic Node",
-      "icon": "HPPercent",
+      "icon": "Damage",
       "board": "In-Fighter",
       "id": "in-fighter_r3c15",
       "glyph_radius": true,
       "row": 3,
       "column": 15,
       "requires": ["in-fighter_r2c15", "in-fighter_r4c15", "in-fighter_r3c14", "in-fighter_r3c16"],
-      "effects": ["2% Maximum Life"]
+      "effects": ["10% Damage"]
     },
     {
       "name": "Rare Node",
-      "title": "Training",
-      "icon": "HPPercent",
+      "title": "Rampage",
+      "icon": "Damage",
       "board": "In-Fighter",
       "id": "in-fighter_r3c16",
       "glyph_radius": true,
       "row": 3,
       "column": 16,
       "requires": ["in-fighter_r2c16", "in-fighter_r4c16", "in-fighter_r3c15", "in-fighter_r3c17"],
-      "effects": ["4% Maximum Life", "10% Poison Resistance"],
-      "bonus_amount": ["170*60"],
+      "dexterity": 10,
+      "effects": ["20% Damage", "10 Dexterity"],
+      "radius_stat": "Dexterity",
+      "radius_value": 10,
+      "bonus_amount": ["210*75"],
       "bonus_stat": ["Strength"]
     },
     {
@@ -1013,6 +1199,20 @@
       "effects": ["7 Strength"],
       "radius_stat": "Strength",
       "radius_value": 7
+    },
+    {
+      "name": "Normal Node",
+      "icon": "Dex",
+      "board": "In-Fighter",
+      "id": "in-fighter_r3c18",
+      "glyph_radius": true,
+      "row": 3,
+      "column": 18,
+      "requires": ["in-fighter_r2c18", "in-fighter_r4c18", "in-fighter_r3c17", "in-fighter_r3c19"],
+      "dexterity": 5,
+      "effects": ["5 Dexterity"],
+      "radius_stat": "Dexterity",
+      "radius_value": 5
     },
     {
       "name": "Normal Node",
@@ -1058,14 +1258,42 @@
     },
     {
       "name": "Magic Node",
-      "icon": "HPPercent",
+      "icon": "Damage",
       "board": "In-Fighter",
       "id": "in-fighter_r4c16",
       "glyph_radius": true,
       "row": 4,
       "column": 16,
       "requires": ["in-fighter_r3c16", "in-fighter_r5c16", "in-fighter_r4c15", "in-fighter_r4c17"],
-      "effects": ["2% Maximum Life"]
+      "effects": ["10% Damage"]
+    },
+    {
+      "name": "Normal Node",
+      "icon": "Str",
+      "board": "In-Fighter",
+      "id": "in-fighter_r4c17",
+      "glyph_radius": true,
+      "row": 4,
+      "column": 17,
+      "requires": ["in-fighter_r3c17", "in-fighter_r5c17", "in-fighter_r4c16", "in-fighter_r4c18"],
+      "strength": 5,
+      "effects": ["5 Strength"],
+      "radius_stat": "Strength",
+      "radius_value": 5
+    },
+    {
+      "name": "Normal Node",
+      "icon": "Int",
+      "board": "In-Fighter",
+      "id": "in-fighter_r4c19",
+      "glyph_radius": true,
+      "row": 4,
+      "column": 19,
+      "requires": ["in-fighter_r3c19", "in-fighter_r5c19", "in-fighter_r4c18", "in-fighter_r4c20"],
+      "intelligence": 5,
+      "effects": ["5 Intelligence"],
+      "radius_stat": "Intelligence",
+      "radius_value": 5
     },
     {
       "name": "Normal Node",
@@ -1152,18 +1380,46 @@
       "radius_value": 5
     },
     {
+      "name": "Normal Node",
+      "icon": "Dex",
+      "board": "In-Fighter",
+      "id": "in-fighter_r5c18",
+      "glyph_radius": true,
+      "row": 5,
+      "column": 18,
+      "requires": ["in-fighter_r4c18", "in-fighter_r6c18", "in-fighter_r5c17", "in-fighter_r5c19"],
+      "dexterity": 5,
+      "effects": ["5 Dexterity"],
+      "radius_stat": "Dexterity",
+      "radius_value": 5
+    },
+    {
       "name": "Magic Node",
-      "icon": "Will",
+      "icon": "Int",
       "board": "In-Fighter",
       "id": "in-fighter_r5c19",
       "glyph_radius": true,
       "row": 5,
       "column": 19,
       "requires": ["in-fighter_r4c19", "in-fighter_r6c19", "in-fighter_r5c18", "in-fighter_r5c20"],
-      "willpower": 7,
-      "effects": ["7 Willpower"],
-      "radius_stat": "Willpower",
+      "intelligence": 7,
+      "effects": ["7 Intelligence"],
+      "radius_stat": "Intelligence",
       "radius_value": 7
+    },
+    {
+      "name": "Normal Node",
+      "icon": "Str",
+      "board": "In-Fighter",
+      "id": "in-fighter_r5c20",
+      "glyph_radius": true,
+      "row": 5,
+      "column": 20,
+      "requires": ["in-fighter_r4c20", "in-fighter_r6c20", "in-fighter_r5c19", "in-fighter_r5c21"],
+      "strength": 5,
+      "effects": ["5 Strength"],
+      "radius_stat": "Strength",
+      "radius_value": 5
     },
     {
       "name": "Normal Node",
@@ -1309,11 +1565,11 @@
       "row": 6,
       "column": 18,
       "requires": ["in-fighter_r5c18", "in-fighter_r7c18", "in-fighter_r6c17", "in-fighter_r6c19"],
-      "effects": ["5% Damage"]
+      "effects": ["10% Damage"]
     },
     {
       "name": "Rare Node",
-      "title": "Skillful",
+      "title": "Master",
       "icon": "Damage",
       "board": "In-Fighter",
       "id": "in-fighter_r6c19",
@@ -1322,11 +1578,11 @@
       "column": 19,
       "requires": ["in-fighter_r5c19", "in-fighter_r7c19", "in-fighter_r6c18", "in-fighter_r6c20"],
       "dexterity": 10,
-      "effects": ["10% Damage", "10 Dexterity"],
+      "effects": ["20% Damage", "10 Dexterity"],
       "radius_stat": "Dexterity",
       "radius_value": 10,
-      "bonus_amount": ["215*130"],
-      "bonus_stat": ["Dexterity"]
+      "bonus_amount": ["210*75"],
+      "bonus_stat": ["Intelligence"]
     },
     {
       "name": "Magic Node",
@@ -1337,18 +1593,32 @@
       "row": 6,
       "column": 20,
       "requires": ["in-fighter_r5c20", "in-fighter_r7c20", "in-fighter_r6c19", "in-fighter_r6c21"],
-      "effects": ["5% Damage"]
+      "effects": ["10% Damage"]
+    },
+    {
+      "name": "Normal Node",
+      "icon": "Dex",
+      "board": "In-Fighter",
+      "id": "in-fighter_r6c21",
+      "glyph_radius": true,
+      "row": 6,
+      "column": 21,
+      "requires": ["in-fighter_r5c21", "in-fighter_r7c21", "in-fighter_r6c20", "in-fighter_r6c22"],
+      "dexterity": 5,
+      "effects": ["5 Dexterity"],
+      "radius_stat": "Dexterity",
+      "radius_value": 5
     },
     {
       "name": "Magic Node",
-      "icon": "DamageToElite",
+      "icon": "ResistanceAll",
       "board": "In-Fighter",
       "id": "in-fighter_r7c7",
       "glyph_radius": false,
       "row": 7,
       "column": 7,
       "requires": ["in-fighter_r6c7", "in-fighter_r8c7", "in-fighter_r7c6", "in-fighter_r7c8"],
-      "effects": ["8% Damage to Elites"]
+      "effects": ["1.5% Resistance to All Elements"]
     },
     {
       "name": "Normal Node",
@@ -1485,20 +1755,20 @@
       "row": 7,
       "column": 19,
       "requires": ["in-fighter_r6c19", "in-fighter_r8c19", "in-fighter_r7c18", "in-fighter_r7c20"],
-      "effects": ["5% Damage"]
+      "effects": ["10% Damage"]
     },
     {
       "name": "Magic Node",
-      "icon": "Will",
+      "icon": "Int",
       "board": "In-Fighter",
       "id": "in-fighter_r7c20",
       "glyph_radius": true,
       "row": 7,
       "column": 20,
       "requires": ["in-fighter_r6c20", "in-fighter_r8c20", "in-fighter_r7c19", "in-fighter_r7c21"],
-      "willpower": 7,
-      "effects": ["7 Willpower"],
-      "radius_stat": "Willpower",
+      "intelligence": 7,
+      "effects": ["7 Intelligence"],
+      "radius_stat": "Intelligence",
       "radius_value": 7
     },
     {
@@ -1545,39 +1815,39 @@
     },
     {
       "name": "Magic Node",
-      "icon": "Damage",
+      "icon": "HPPercent",
       "board": "In-Fighter",
       "id": "in-fighter_r8c5",
       "glyph_radius": false,
       "row": 8,
       "column": 5,
       "requires": ["in-fighter_r7c5", "in-fighter_r9c5", "in-fighter_r8c4", "in-fighter_r8c6"],
-      "effects": ["17.5% Gorilla Damage"]
+      "effects": ["2% Maximum Life"]
     },
     {
       "name": "Rare Node",
-      "title": "Rampage",
-      "icon": "Damage",
+      "title": "Training",
+      "icon": "HPPercent",
       "board": "In-Fighter",
       "id": "in-fighter_r8c6",
       "glyph_radius": false,
       "row": 8,
       "column": 6,
       "requires": ["in-fighter_r7c6", "in-fighter_r9c6", "in-fighter_r8c5", "in-fighter_r8c7"],
-      "effects": ["35% Gorilla Damage", "16% Damage to Elites"],
-      "bonus_amount": ["230*130"],
-      "bonus_stat": ["Dexterity"]
+      "effects": ["4% Maximum Life", "3% Resistance to All Elements"],
+      "bonus_amount": ["210*75"],
+      "bonus_stat": ["Strength"]
     },
     {
       "name": "Magic Node",
-      "icon": "Damage",
+      "icon": "HPPercent",
       "board": "In-Fighter",
       "id": "in-fighter_r8c7",
       "glyph_radius": false,
       "row": 8,
       "column": 7,
       "requires": ["in-fighter_r7c7", "in-fighter_r9c7", "in-fighter_r8c6", "in-fighter_r8c8"],
-      "effects": ["17.5% Gorilla Damage"]
+      "effects": ["2% Maximum Life"]
     },
     {
       "name": "Normal Node",
@@ -1721,25 +1991,25 @@
     },
     {
       "name": "Magic Node",
-      "icon": "Damage",
+      "icon": "HPPercent",
       "board": "In-Fighter",
       "id": "in-fighter_r9c6",
       "glyph_radius": false,
       "row": 9,
       "column": 6,
       "requires": ["in-fighter_r8c6", "in-fighter_r10c6", "in-fighter_r9c5", "in-fighter_r9c7"],
-      "effects": ["17.5% Gorilla Damage"]
+      "effects": ["2% Maximum Life"]
     },
     {
       "name": "Magic Node",
-      "icon": "DamageToElite",
+      "icon": "ResistanceAll",
       "board": "In-Fighter",
       "id": "in-fighter_r9c7",
       "glyph_radius": false,
       "row": 9,
       "column": 7,
       "requires": ["in-fighter_r8c7", "in-fighter_r10c7", "in-fighter_r9c6", "in-fighter_r9c8"],
-      "effects": ["8% Damage to Elites"]
+      "effects": ["1.5% Resistance to All Elements"]
     },
     {
       "name": "Normal Node",
@@ -1785,25 +2055,25 @@
     },
     {
       "name": "Magic Node",
-      "icon": "DamagePhysical",
+      "icon": "Armor",
       "board": "In-Fighter",
       "id": "in-fighter_r9c12",
       "glyph_radius": false,
       "row": 9,
       "column": 12,
       "requires": ["in-fighter_r8c12", "in-fighter_r10c12", "in-fighter_r9c11", "in-fighter_r9c13"],
-      "effects": ["5% Physical Damage"]
+      "effects": ["2% Block Chance"]
     },
     {
       "name": "Magic Node",
-      "icon": "Armor",
+      "icon": "ResistanceAll",
       "board": "In-Fighter",
       "id": "in-fighter_r9c13",
       "glyph_radius": false,
       "row": 9,
       "column": 13,
       "requires": ["in-fighter_r8c13", "in-fighter_r10c13", "in-fighter_r9c12", "in-fighter_r9c14"],
-      "effects": ["2% Block Chance"]
+      "effects": ["1.5% Resistance to All Elements"]
     },
     {
       "name": "Normal Node",
@@ -1975,39 +2245,39 @@
     },
     {
       "name": "Magic Node",
-      "icon": "Armor",
+      "icon": "ResistanceAll",
       "board": "In-Fighter",
       "id": "in-fighter_r10c11",
       "glyph_radius": false,
       "row": 10,
       "column": 11,
       "requires": ["in-fighter_r9c11", "in-fighter_r11c11", "in-fighter_r10c10", "in-fighter_r10c12"],
-      "effects": ["2% Block Chance"]
+      "effects": ["1.5% Resistance to All Elements"]
     },
     {
       "name": "Rare Node",
       "title": "Primal Rage",
-      "icon": "DamagePhysical",
+      "icon": "Armor",
       "board": "In-Fighter",
       "id": "in-fighter_r10c12",
       "glyph_radius": false,
       "row": 10,
       "column": 12,
       "requires": ["in-fighter_r9c12", "in-fighter_r11c12", "in-fighter_r10c11", "in-fighter_r10c13"],
-      "effects": ["10% Physical Damage", "5% Block Chance"],
-      "bonus_amount": ["160*60"],
+      "effects": ["5% Block Chance", "3% Resistance to All Elements"],
+      "bonus_amount": ["190*75"],
       "bonus_stat": ["Strength"]
     },
     {
       "name": "Magic Node",
-      "icon": "DamagePhysical",
+      "icon": "Armor",
       "board": "In-Fighter",
       "id": "in-fighter_r10c13",
       "glyph_radius": false,
       "row": 10,
       "column": 13,
       "requires": ["in-fighter_r9c13", "in-fighter_r11c13", "in-fighter_r10c12", "in-fighter_r10c14"],
-      "effects": ["5% Physical Damage"]
+      "effects": ["2% Block Chance"]
     },
     {
       "name": "Normal Node",
@@ -2095,14 +2365,14 @@
     },
     {
       "name": "Magic Node",
-      "icon": "DamagePhysical",
+      "icon": "Armor",
       "board": "In-Fighter",
       "id": "in-fighter_r11c12",
       "glyph_radius": false,
       "row": 11,
       "column": 12,
       "requires": ["in-fighter_r10c12", "in-fighter_r12c12", "in-fighter_r11c11", "in-fighter_r11c13"],
-      "effects": ["5% Physical Damage"]
+      "effects": ["2% Block Chance"]
     },
     {
       "name": "Normal Node",
@@ -2719,14 +2989,14 @@
     },
     {
       "name": "Magic Node",
-      "icon": "HPPercent",
+      "icon": "Armor",
       "board": "In-Fighter",
       "id": "in-fighter_r15c14",
       "glyph_radius": false,
       "row": 15,
       "column": 14,
       "requires": ["in-fighter_r14c14", "in-fighter_r16c14", "in-fighter_r15c13", "in-fighter_r15c15"],
-      "effects": ["5 Life On Hit"]
+      "effects": ["15 Armor"]
     },
     {
       "name": "Magic Node",
@@ -2824,14 +3094,14 @@
     },
     {
       "name": "Magic Node",
-      "icon": "HPPercent",
+      "icon": "Armor",
       "board": "In-Fighter",
       "id": "in-fighter_r16c13",
       "glyph_radius": false,
       "row": 16,
       "column": 13,
       "requires": ["in-fighter_r15c13", "in-fighter_r17c13", "in-fighter_r16c12", "in-fighter_r16c14"],
-      "effects": ["5 Life On Hit"]
+      "effects": ["15 Armor"]
     },
     {
       "name": "Rare Node",
@@ -2843,8 +3113,8 @@
       "row": 16,
       "column": 14,
       "requires": ["in-fighter_r15c14", "in-fighter_r17c14", "in-fighter_r16c13", "in-fighter_r16c15"],
-      "effects": ["4% Dodge Chance", "10 Life On Hit"],
-      "bonus_amount": ["220*130", "170*60"],
+      "effects": ["4% Dodge Chance", "30 Armor"],
+      "bonus_amount": ["700*455", "190*70"],
       "bonus_stat": ["Dexterity", "Intelligence"]
     },
     {
@@ -2980,14 +3250,14 @@
     },
     {
       "name": "Magic Node",
-      "icon": "DamageToCC",
+      "icon": "ResistanceAll",
       "board": "In-Fighter",
       "id": "in-fighter_r19c2",
       "glyph_radius": false,
       "row": 19,
       "column": 2,
       "requires": ["in-fighter_r18c2", "in-fighter_r20c2", "in-fighter_r19c1", "in-fighter_r19c3"],
-      "effects": ["7.5% Damage to Crowd Controlled Enemies"]
+      "effects": ["1% Maximum Fire Resistance"]
     },
     {
       "name": "Rare Node",
@@ -2999,20 +3269,20 @@
       "row": 19,
       "column": 3,
       "requires": ["in-fighter_r18c3", "in-fighter_r20c3", "in-fighter_r19c2", "in-fighter_r19c4"],
-      "effects": ["10% Fire Resistance", "15% Damage to Crowd Controlled Enemies"],
-      "bonus_amount": ["170*60"],
+      "effects": ["10% Fire Resistance", "2% Maximum Fire Resistance"],
+      "bonus_amount": ["210*75"],
       "bonus_stat": ["Intelligence"]
     },
     {
       "name": "Magic Node",
-      "icon": "DamageToCC",
+      "icon": "ResistanceAll",
       "board": "In-Fighter",
       "id": "in-fighter_r19c4",
       "glyph_radius": false,
       "row": 19,
       "column": 4,
       "requires": ["in-fighter_r18c4", "in-fighter_r20c4", "in-fighter_r19c3", "in-fighter_r19c5"],
-      "effects": ["7.5% Damage to Crowd Controlled Enemies"]
+      "effects": ["1% Maximum Fire Resistance"]
     },
     {
       "name": "Normal Node",
@@ -3452,7 +3722,7 @@
       "column": 15,
       "requires": ["spineyskin_r3c15", "spineyskin_r5c15", "spineyskin_r4c14", "spineyskin_r4c16"],
       "effects": ["2% Cooldown Reduction", "4% Maximum Life"],
-      "bonus_amount": ["220*130", "170*60"],
+      "bonus_amount": ["700*455", "190*70"],
       "bonus_stat": ["Strength", "Intelligence"]
     },
     {
@@ -3468,14 +3738,14 @@
     },
     {
       "name": "Magic Node",
-      "icon": "DamageToCC",
+      "icon": "HPPercent",
       "board": "Spiney Skin",
       "id": "spineyskin_r5c7",
       "glyph_radius": false,
       "row": 5,
       "column": 7,
       "requires": ["spineyskin_r4c7", "spineyskin_r6c7", "spineyskin_r5c6", "spineyskin_r5c8"],
-      "effects": ["7.5% Damage to Crowd Controlled Enemies"]
+      "effects": ["2% Maximum Life"]
     },
     {
       "name": "Normal Node",
@@ -3543,39 +3813,39 @@
     },
     {
       "name": "Magic Node",
-      "icon": "DamageToCC",
+      "icon": "HPPercent",
       "board": "Spiney Skin",
       "id": "spineyskin_r6c5",
       "glyph_radius": false,
       "row": 6,
       "column": 5,
       "requires": ["spineyskin_r5c5", "spineyskin_r7c5", "spineyskin_r6c4", "spineyskin_r6c6"],
-      "effects": ["7.5% Damage to Crowd Controlled Enemies"]
+      "effects": ["2% Maximum Life"]
     },
     {
       "name": "Rare Node",
       "title": "Decay",
-      "icon": "DamageToCC",
+      "icon": "HPPercent",
       "board": "Spiney Skin",
       "id": "spineyskin_r6c6",
       "glyph_radius": false,
       "row": 6,
       "column": 6,
       "requires": ["spineyskin_r5c6", "spineyskin_r7c6", "spineyskin_r6c5", "spineyskin_r6c7"],
-      "effects": ["15% Damage to Crowd Controlled Enemies", "8% Crowd Control Duration"],
-      "bonus_amount": ["160*60"],
+      "effects": ["4% Maximum Life", "10% Thorns"],
+      "bonus_amount": ["190*75"],
       "bonus_stat": ["Intelligence"]
     },
     {
       "name": "Magic Node",
-      "icon": "DamageToCC",
+      "icon": "MinionDamage",
       "board": "Spiney Skin",
       "id": "spineyskin_r6c7",
       "glyph_radius": false,
       "row": 6,
       "column": 7,
       "requires": ["spineyskin_r5c7", "spineyskin_r7c7", "spineyskin_r6c6", "spineyskin_r6c8"],
-      "effects": ["4% Crowd Control Duration"]
+      "effects": ["5% Thorns"]
     },
     {
       "name": "Normal Node",
@@ -3635,25 +3905,25 @@
     },
     {
       "name": "Magic Node",
-      "icon": "DamageToCC",
+      "icon": "HPPercent",
       "board": "Spiney Skin",
       "id": "spineyskin_r7c5",
       "glyph_radius": false,
       "row": 7,
       "column": 5,
       "requires": ["spineyskin_r6c5", "spineyskin_r8c5", "spineyskin_r7c4", "spineyskin_r7c6"],
-      "effects": ["7.5% Damage to Crowd Controlled Enemies"]
+      "effects": ["2% Maximum Life"]
     },
     {
       "name": "Magic Node",
-      "icon": "DamageToCC",
+      "icon": "MinionDamage",
       "board": "Spiney Skin",
       "id": "spineyskin_r7c6",
       "glyph_radius": false,
       "row": 7,
       "column": 6,
       "requires": ["spineyskin_r6c6", "spineyskin_r8c6", "spineyskin_r7c5", "spineyskin_r7c7"],
-      "effects": ["4% Crowd Control Duration"]
+      "effects": ["5% Thorns"]
     },
     {
       "name": "Normal Node",
@@ -3825,20 +4095,6 @@
     },
     {
       "name": "Normal Node",
-      "icon": "Int",
-      "board": "Spiney Skin",
-      "id": "spineyskin_r8c14",
-      "glyph_radius": false,
-      "row": 8,
-      "column": 14,
-      "requires": ["spineyskin_r7c14", "spineyskin_r9c14", "spineyskin_r8c13", "spineyskin_r8c15"],
-      "intelligence": 5,
-      "effects": ["5 Intelligence"],
-      "radius_stat": "Intelligence",
-      "radius_value": 5
-    },
-    {
-      "name": "Normal Node",
       "icon": "Dex",
       "board": "Spiney Skin",
       "id": "spineyskin_r9c3",
@@ -3951,28 +4207,42 @@
     },
     {
       "name": "Magic Node",
-      "icon": "Will",
+      "icon": "Int",
       "board": "Spiney Skin",
       "id": "spineyskin_r9c12",
       "glyph_radius": true,
       "row": 9,
       "column": 12,
       "requires": ["spineyskin_r8c12", "spineyskin_r10c12", "spineyskin_r9c11", "spineyskin_r9c13"],
-      "willpower": 7,
-      "effects": ["7 Willpower"],
-      "radius_stat": "Willpower",
+      "intelligence": 7,
+      "effects": ["7 Intelligence"],
+      "radius_stat": "Intelligence",
       "radius_value": 7
     },
     {
       "name": "Magic Node",
-      "icon": "Armor",
+      "icon": "MinionDamage",
       "board": "Spiney Skin",
       "id": "spineyskin_r9c13",
       "glyph_radius": true,
       "row": 9,
       "column": 13,
       "requires": ["spineyskin_r8c13", "spineyskin_r10c13", "spineyskin_r9c12", "spineyskin_r9c14"],
-      "effects": ["10 Armor"]
+      "effects": ["5% Thorns"]
+    },
+    {
+      "name": "Normal Node",
+      "icon": "Will",
+      "board": "Spiney Skin",
+      "id": "spineyskin_r9c14",
+      "glyph_radius": true,
+      "row": 9,
+      "column": 14,
+      "requires": ["spineyskin_r8c14", "spineyskin_r10c14", "spineyskin_r9c13", "spineyskin_r9c15"],
+      "willpower": 5,
+      "effects": ["5 Willpower"],
+      "radius_stat": "Willpower",
+      "radius_value": 5
     },
     {
       "name": "Normal Node",
@@ -4031,19 +4301,19 @@
     },
     {
       "name": "Magic Node",
-      "icon": "Armor",
+      "icon": "MinionDamage",
       "board": "Spiney Skin",
       "id": "spineyskin_r10c12",
       "glyph_radius": true,
       "row": 10,
       "column": 12,
       "requires": ["spineyskin_r9c12", "spineyskin_r11c12", "spineyskin_r10c11", "spineyskin_r10c13"],
-      "effects": ["10 Armor"]
+      "effects": ["5% Thorns"]
     },
     {
       "name": "Rare Node",
-      "title": "Defiance",
-      "icon": "Armor",
+      "title": "Bristles",
+      "icon": "MinionDamage",
       "board": "Spiney Skin",
       "id": "spineyskin_r10c13",
       "glyph_radius": true,
@@ -4051,25 +4321,39 @@
       "column": 13,
       "requires": ["spineyskin_r9c13", "spineyskin_r11c13", "spineyskin_r10c12", "spineyskin_r10c14"],
       "dexterity": 10,
-      "effects": ["20 Armor", "10 Dexterity"],
+      "effects": ["10% Thorns", "10 Dexterity"],
       "radius_stat": "Dexterity",
       "radius_value": 10,
-      "bonus_amount": ["230*130"],
-      "bonus_stat": ["Dexterity"]
+      "bonus_amount": ["210*75"],
+      "bonus_stat": ["Intelligence"]
     },
     {
       "name": "Magic Node",
-      "icon": "Will",
+      "icon": "Int",
       "board": "Spiney Skin",
       "id": "spineyskin_r10c14",
       "glyph_radius": true,
       "row": 10,
       "column": 14,
       "requires": ["spineyskin_r9c14", "spineyskin_r11c14", "spineyskin_r10c13", "spineyskin_r10c15"],
-      "willpower": 7,
-      "effects": ["7 Willpower"],
-      "radius_stat": "Willpower",
+      "intelligence": 7,
+      "effects": ["7 Intelligence"],
+      "radius_stat": "Intelligence",
       "radius_value": 7
+    },
+    {
+      "name": "Normal Node",
+      "icon": "Dex",
+      "board": "Spiney Skin",
+      "id": "spineyskin_r10c15",
+      "glyph_radius": true,
+      "row": 10,
+      "column": 15,
+      "requires": ["spineyskin_r9c15", "spineyskin_r11c15", "spineyskin_r10c14", "spineyskin_r10c16"],
+      "dexterity": 5,
+      "effects": ["5 Dexterity"],
+      "radius_stat": "Dexterity",
+      "radius_value": 5
     },
     {
       "name": "Normal Node",
@@ -4128,15 +4412,43 @@
       "radius_value": 5
     },
     {
+      "name": "Normal Node",
+      "icon": "Dex",
+      "board": "Spiney Skin",
+      "id": "spineyskin_r11c11",
+      "glyph_radius": true,
+      "row": 11,
+      "column": 11,
+      "requires": ["spineyskin_r10c11", "spineyskin_r12c11", "spineyskin_r11c10", "spineyskin_r11c12"],
+      "dexterity": 5,
+      "effects": ["5 Dexterity"],
+      "radius_stat": "Dexterity",
+      "radius_value": 5
+    },
+    {
+      "name": "Normal Node",
+      "icon": "Str",
+      "board": "Spiney Skin",
+      "id": "spineyskin_r11c12",
+      "glyph_radius": true,
+      "row": 11,
+      "column": 12,
+      "requires": ["spineyskin_r10c12", "spineyskin_r12c12", "spineyskin_r11c11", "spineyskin_r11c13"],
+      "strength": 5,
+      "effects": ["5 Strength"],
+      "radius_stat": "Strength",
+      "radius_value": 5
+    },
+    {
       "name": "Magic Node",
-      "icon": "Armor",
+      "icon": "MinionDamage",
       "board": "Spiney Skin",
       "id": "spineyskin_r11c13",
       "glyph_radius": true,
       "row": 11,
       "column": 13,
       "requires": ["spineyskin_r10c13", "spineyskin_r12c13", "spineyskin_r11c12", "spineyskin_r11c14"],
-      "effects": ["10 Armor"]
+      "effects": ["5% Thorns"]
     },
     {
       "name": "Normal Node",
@@ -4294,14 +4606,42 @@
     },
     {
       "name": "Magic Node",
-      "icon": "DamageToElite",
+      "icon": "Damage",
       "board": "Spiney Skin",
       "id": "spineyskin_r12c10",
       "glyph_radius": true,
       "row": 12,
       "column": 10,
       "requires": ["spineyskin_r11c10", "spineyskin_r13c10", "spineyskin_r12c9", "spineyskin_r12c11"],
-      "effects": ["5% Damage Over Time"]
+      "effects": ["10% Damage"]
+    },
+    {
+      "name": "Normal Node",
+      "icon": "Int",
+      "board": "Spiney Skin",
+      "id": "spineyskin_r12c11",
+      "glyph_radius": true,
+      "row": 12,
+      "column": 11,
+      "requires": ["spineyskin_r11c11", "spineyskin_r13c11", "spineyskin_r12c10", "spineyskin_r12c12"],
+      "intelligence": 5,
+      "effects": ["5 Intelligence"],
+      "radius_stat": "Intelligence",
+      "radius_value": 5
+    },
+    {
+      "name": "Normal Node",
+      "icon": "Will",
+      "board": "Spiney Skin",
+      "id": "spineyskin_r12c12",
+      "glyph_radius": true,
+      "row": 12,
+      "column": 12,
+      "requires": ["spineyskin_r11c12", "spineyskin_r13c12", "spineyskin_r12c11", "spineyskin_r12c13"],
+      "willpower": 5,
+      "effects": ["5 Willpower"],
+      "radius_stat": "Willpower",
+      "radius_value": 5
     },
     {
       "name": "Normal Node",
@@ -4487,14 +4827,14 @@
     },
     {
       "name": "Magic Node",
-      "icon": "DamageToElite",
+      "icon": "Damage",
       "board": "Spiney Skin",
       "id": "spineyskin_r13c9",
       "glyph_radius": true,
       "row": 13,
       "column": 9,
       "requires": ["spineyskin_r12c9", "spineyskin_r14c9", "spineyskin_r13c8", "spineyskin_r13c10"],
-      "effects": ["5% Damage Over Time"]
+      "effects": ["10% Damage"]
     },
     {
       "name": "Rare Node",
@@ -4507,22 +4847,22 @@
       "column": 10,
       "requires": ["spineyskin_r12c10", "spineyskin_r14c10", "spineyskin_r13c9", "spineyskin_r13c11"],
       "dexterity": 10,
-      "effects": ["10% Damage Over Time", "10 Dexterity"],
+      "effects": ["20% Damage", "10 Dexterity"],
       "radius_stat": "Dexterity",
       "radius_value": 10,
-      "bonus_amount": ["230*130"],
-      "bonus_stat": ["Dexterity"]
+      "bonus_amount": ["210*75"],
+      "bonus_stat": ["Strength"]
     },
     {
       "name": "Magic Node",
-      "icon": "DamageToElite",
+      "icon": "Damage",
       "board": "Spiney Skin",
       "id": "spineyskin_r13c11",
       "glyph_radius": true,
       "row": 13,
       "column": 11,
       "requires": ["spineyskin_r12c11", "spineyskin_r14c11", "spineyskin_r13c10", "spineyskin_r13c12"],
-      "effects": ["5% Damage Over Time"]
+      "effects": ["10% Damage"]
     },
     {
       "name": "Normal Node",
@@ -4633,25 +4973,25 @@
     },
     {
       "name": "Magic Node",
-      "icon": "DamageToElite",
+      "icon": "Armor",
       "board": "Spiney Skin",
       "id": "spineyskin_r14c4",
       "glyph_radius": false,
       "row": 14,
       "column": 4,
       "requires": ["spineyskin_r13c4", "spineyskin_r15c4", "spineyskin_r14c3", "spineyskin_r14c5"],
-      "effects": ["5% Thorns"]
+      "effects": ["15 Armor"]
     },
     {
       "name": "Magic Node",
-      "icon": "DamageToElite",
+      "icon": "Armor",
       "board": "Spiney Skin",
       "id": "spineyskin_r14c5",
       "glyph_radius": false,
       "row": 14,
       "column": 5,
       "requires": ["spineyskin_r13c5", "spineyskin_r15c5", "spineyskin_r14c4", "spineyskin_r14c6"],
-      "effects": ["5% Thorns"]
+      "effects": ["15 Armor"]
     },
     {
       "name": "Normal Node",
@@ -4683,16 +5023,16 @@
     },
     {
       "name": "Normal Node",
-      "icon": "Dex",
+      "icon": "Str",
       "board": "Spiney Skin",
-      "id": "spineyskin_r14c8",
-      "glyph_radius": false,
+      "id": "spineyskin_r14c9",
+      "glyph_radius": true,
       "row": 14,
-      "column": 8,
-      "requires": ["spineyskin_r13c8", "spineyskin_r15c8", "spineyskin_r14c7", "spineyskin_r14c9"],
-      "dexterity": 5,
-      "effects": ["5 Dexterity"],
-      "radius_stat": "Dexterity",
+      "column": 9,
+      "requires": ["spineyskin_r13c9", "spineyskin_r15c9", "spineyskin_r14c8", "spineyskin_r14c10"],
+      "strength": 5,
+      "effects": ["5 Strength"],
+      "radius_stat": "Strength",
       "radius_value": 5
     },
     {
@@ -4837,39 +5177,53 @@
     },
     {
       "name": "Magic Node",
-      "icon": "DamageToPoison",
+      "icon": "ResistanceAll",
       "board": "Spiney Skin",
       "id": "spineyskin_r15c3",
       "glyph_radius": false,
       "row": 15,
       "column": 3,
       "requires": ["spineyskin_r14c3", "spineyskin_r16c3", "spineyskin_r15c2", "spineyskin_r15c4"],
-      "effects": ["5% Damage to Poisoned Enemies"]
+      "effects": ["1.5% Resistance to All Elements"]
     },
     {
       "name": "Rare Node",
-      "title": "Toxic Mantle",
-      "icon": "CCDurationReduction",
+      "title": "Defiance",
+      "icon": "Armor",
       "board": "Spiney Skin",
       "id": "spineyskin_r15c4",
       "glyph_radius": false,
       "row": 15,
       "column": 4,
       "requires": ["spineyskin_r14c4", "spineyskin_r16c4", "spineyskin_r15c3", "spineyskin_r15c5"],
-      "effects": ["15% Thorns", "10% Damage to Poisoned Enemies"],
-      "bonus_amount": ["230*130"],
+      "effects": ["30 Armor", "3% Resistance to All Elements"],
+      "bonus_amount": ["630*585"],
       "bonus_stat": ["Dexterity"]
     },
     {
       "name": "Magic Node",
-      "icon": "DamageToPoison",
+      "icon": "ResistanceAll",
       "board": "Spiney Skin",
       "id": "spineyskin_r15c5",
       "glyph_radius": false,
       "row": 15,
       "column": 5,
       "requires": ["spineyskin_r14c5", "spineyskin_r16c5", "spineyskin_r15c4", "spineyskin_r15c6"],
-      "effects": ["5% Damage to Poisoned Enemies"]
+      "effects": ["1.5% Resistance to All Elements"]
+    },
+    {
+      "name": "Normal Node",
+      "icon": "Dex",
+      "board": "Spiney Skin",
+      "id": "spineyskin_r15c10",
+      "glyph_radius": true,
+      "row": 15,
+      "column": 10,
+      "requires": ["spineyskin_r14c10", "spineyskin_r16c10", "spineyskin_r15c9", "spineyskin_r15c11"],
+      "dexterity": 5,
+      "effects": ["5 Dexterity"],
+      "radius_stat": "Dexterity",
+      "radius_value": 5
     },
     {
       "name": "Normal Node",
@@ -4957,14 +5311,14 @@
     },
     {
       "name": "Magic Node",
-      "icon": "DamageToElite",
+      "icon": "Armor",
       "board": "Spiney Skin",
       "id": "spineyskin_r16c4",
       "glyph_radius": false,
       "row": 16,
       "column": 4,
       "requires": ["spineyskin_r15c4", "spineyskin_r17c4", "spineyskin_r16c3", "spineyskin_r16c5"],
-      "effects": ["5% Thorns"]
+      "effects": ["15 Armor"]
     },
     {
       "name": "Normal Node",
@@ -5144,7 +5498,7 @@
     },
     {
       "name": "Magic Node",
-      "icon": "DamageToElite",
+      "icon": "MinionDamage",
       "board": "Spiney Skin",
       "id": "spineyskin_r17c18",
       "glyph_radius": false,
@@ -5222,7 +5576,7 @@
     },
     {
       "name": "Magic Node",
-      "icon": "DamageToElite",
+      "icon": "MinionDamage",
       "board": "Spiney Skin",
       "id": "spineyskin_r18c17",
       "glyph_radius": false,
@@ -5241,8 +5595,8 @@
       "row": 18,
       "column": 18,
       "requires": ["spineyskin_r17c18", "spineyskin_r19c18", "spineyskin_r18c17", "spineyskin_r18c19"],
-      "effects": ["3% Resistance to All Elements", "15% Thorns"],
-      "bonus_amount": ["160*60"],
+      "effects": ["3% Resistance to All Elements", "10% Thorns"],
+      "bonus_amount": ["190*75"],
       "bonus_stat": ["Strength"]
     },
     {
@@ -5466,7 +5820,7 @@
       "row": 3,
       "column": 15,
       "requires": ["viscousshield_r2c15", "viscousshield_r4c15", "viscousshield_r3c14", "viscousshield_r3c16"],
-      "effects": ["2% Barrier Generation"]
+      "effects": ["3% Barrier Generation"]
     },
     {
       "name": "Magic Node",
@@ -5477,7 +5831,7 @@
       "row": 3,
       "column": 16,
       "requires": ["viscousshield_r2c16", "viscousshield_r4c16", "viscousshield_r3c15", "viscousshield_r3c17"],
-      "effects": ["7.5% Critical Strike Damage"]
+      "effects": ["15% Critical Strike Damage"]
     },
     {
       "name": "Normal Node",
@@ -5502,7 +5856,7 @@
       "row": 4,
       "column": 15,
       "requires": ["viscousshield_r3c15", "viscousshield_r5c15", "viscousshield_r4c14", "viscousshield_r4c16"],
-      "effects": ["2% Barrier Generation"]
+      "effects": ["3% Barrier Generation"]
     },
     {
       "name": "Rare Node",
@@ -5514,8 +5868,8 @@
       "row": 4,
       "column": 16,
       "requires": ["viscousshield_r3c16", "viscousshield_r5c16", "viscousshield_r4c15", "viscousshield_r4c17"],
-      "effects": ["4% Barrier Generation", "15% Critical Strike Damage"],
-      "bonus_amount": ["230*130"],
+      "effects": ["6% Barrier Generation", "30% Critical Strike Damage"],
+      "bonus_amount": ["630*455"],
       "bonus_stat": ["Dexterity"]
     },
     {
@@ -5583,7 +5937,7 @@
       "row": 5,
       "column": 15,
       "requires": ["viscousshield_r4c15", "viscousshield_r6c15", "viscousshield_r5c14", "viscousshield_r5c16"],
-      "effects": ["2% Barrier Generation"]
+      "effects": ["3% Barrier Generation"]
     },
     {
       "name": "Magic Node",
@@ -5594,7 +5948,7 @@
       "row": 5,
       "column": 16,
       "requires": ["viscousshield_r4c16", "viscousshield_r6c16", "viscousshield_r5c15", "viscousshield_r5c17"],
-      "effects": ["7.5% Critical Strike Damage"]
+      "effects": ["15% Critical Strike Damage"]
     },
     {
       "name": "Normal Node",
@@ -5640,17 +5994,17 @@
     },
     {
       "name": "Rare Node",
-      "title": "Unflinching",
-      "icon": "DamageReductionFromDot",
+      "title": "Slayer",
+      "icon": "Armor",
       "board": "Viscous Shield",
       "id": "viscousshield_r7c5",
       "glyph_radius": false,
       "row": 7,
       "column": 5,
       "requires": ["viscousshield_r6c5", "viscousshield_r8c5", "viscousshield_r7c4", "viscousshield_r7c6"],
-      "effects": ["5.3% Damage Reduction while Moving", "4% Maximum Life"],
-      "bonus_amount": ["230*130"],
-      "bonus_stat": ["Dexterity"]
+      "effects": ["30 Armor", "4% Maximum Life"],
+      "bonus_amount": ["210*75"],
+      "bonus_stat": ["Strength"]
     },
     {
       "name": "Magic Node",
@@ -5665,14 +6019,14 @@
     },
     {
       "name": "Magic Node",
-      "icon": "DamageReductionFromDot",
+      "icon": "Armor",
       "board": "Viscous Shield",
       "id": "viscousshield_r7c7",
       "glyph_radius": false,
       "row": 7,
       "column": 7,
       "requires": ["viscousshield_r6c7", "viscousshield_r8c7", "viscousshield_r7c6", "viscousshield_r7c8"],
-      "effects": ["1% Damage Reduction while Moving"]
+      "effects": ["15 Armor"]
     },
     {
       "name": "Normal Node",
@@ -5734,6 +6088,20 @@
       "name": "Normal Node",
       "icon": "Str",
       "board": "Viscous Shield",
+      "id": "viscousshield_r7c12",
+      "glyph_radius": false,
+      "row": 7,
+      "column": 12,
+      "requires": ["viscousshield_r6c12", "viscousshield_r8c12", "viscousshield_r7c11", "viscousshield_r7c13"],
+      "strength": 5,
+      "effects": ["5 Strength"],
+      "radius_stat": "Strength",
+      "radius_value": 5
+    },
+    {
+      "name": "Normal Node",
+      "icon": "Str",
+      "board": "Viscous Shield",
       "id": "viscousshield_r7c13",
       "glyph_radius": true,
       "row": 7,
@@ -5774,14 +6142,14 @@
     },
     {
       "name": "Magic Node",
-      "icon": "DamageReductionFromDot",
+      "icon": "Armor",
       "board": "Viscous Shield",
       "id": "viscousshield_r8c5",
       "glyph_radius": false,
       "row": 8,
       "column": 5,
       "requires": ["viscousshield_r7c5", "viscousshield_r9c5", "viscousshield_r8c4", "viscousshield_r8c6"],
-      "effects": ["1% Damage Reduction while Moving"]
+      "effects": ["15 Armor"]
     },
     {
       "name": "Magic Node",
@@ -5852,14 +6220,14 @@
     },
     {
       "name": "Magic Node",
-      "icon": "Barrier",
+      "icon": "CriticalDamage",
       "board": "Viscous Shield",
       "id": "viscousshield_r8c12",
       "glyph_radius": true,
       "row": 8,
       "column": 12,
       "requires": ["viscousshield_r7c12", "viscousshield_r9c12", "viscousshield_r8c11", "viscousshield_r8c13"],
-      "effects": ["2% Barrier Generation"]
+      "effects": ["15% Critical Strike Damage"]
     },
     {
       "name": "Normal Node",
@@ -5933,14 +6301,14 @@
     },
     {
       "name": "Magic Node",
-      "icon": "DamageReductionFromDot",
+      "icon": "Armor",
       "board": "Viscous Shield",
       "id": "viscousshield_r9c5",
       "glyph_radius": false,
       "row": 9,
       "column": 5,
       "requires": ["viscousshield_r8c5", "viscousshield_r10c5", "viscousshield_r9c4", "viscousshield_r9c6"],
-      "effects": ["1% Damage Reduction while Moving"]
+      "effects": ["15 Armor"]
     },
     {
       "name": "Normal Node",
@@ -5971,9 +6339,23 @@
       "radius_value": 5
     },
     {
+      "name": "Normal Node",
+      "icon": "Dex",
+      "board": "Viscous Shield",
+      "id": "viscousshield_r9c10",
+      "glyph_radius": true,
+      "row": 9,
+      "column": 10,
+      "requires": ["viscousshield_r8c10", "viscousshield_r10c10", "viscousshield_r9c9", "viscousshield_r9c11"],
+      "dexterity": 5,
+      "effects": ["5 Dexterity"],
+      "radius_stat": "Dexterity",
+      "radius_value": 5
+    },
+    {
       "name": "Rare Node",
-      "title": "Sentinel",
-      "icon": "Barrier",
+      "title": "Raptor",
+      "icon": "CriticalDamage",
       "board": "Viscous Shield",
       "id": "viscousshield_r9c11",
       "glyph_radius": true,
@@ -5981,22 +6363,22 @@
       "column": 11,
       "requires": ["viscousshield_r8c11", "viscousshield_r10c11", "viscousshield_r9c10", "viscousshield_r9c12"],
       "dexterity": 10,
-      "effects": ["4% Barrier Generation", "10 Dexterity"],
+      "effects": ["30% Critical Strike Damage", "10 Dexterity"],
       "radius_stat": "Dexterity",
       "radius_value": 10,
-      "bonus_amount": ["230*130"],
-      "bonus_stat": ["Dexterity"]
+      "bonus_amount": ["230*75"],
+      "bonus_stat": ["Intelligence"]
     },
     {
       "name": "Magic Node",
-      "icon": "Barrier",
+      "icon": "CriticalDamage",
       "board": "Viscous Shield",
       "id": "viscousshield_r9c12",
       "glyph_radius": true,
       "row": 9,
       "column": 12,
       "requires": ["viscousshield_r8c12", "viscousshield_r10c12", "viscousshield_r9c11", "viscousshield_r9c13"],
-      "effects": ["2% Barrier Generation"]
+      "effects": ["15% Critical Strike Damage"]
     },
     {
       "name": "Normal Node",
@@ -6021,6 +6403,20 @@
       "row": 9,
       "column": 15,
       "requires": ["viscousshield_r8c15", "viscousshield_r10c15", "viscousshield_r9c14", "viscousshield_r9c16"],
+      "dexterity": 5,
+      "effects": ["5 Dexterity"],
+      "radius_stat": "Dexterity",
+      "radius_value": 5
+    },
+    {
+      "name": "Normal Node",
+      "icon": "Dex",
+      "board": "Viscous Shield",
+      "id": "viscousshield_r9c16",
+      "glyph_radius": true,
+      "row": 9,
+      "column": 16,
+      "requires": ["viscousshield_r8c16", "viscousshield_r10c16", "viscousshield_r9c15", "viscousshield_r9c17"],
       "dexterity": 5,
       "effects": ["5 Dexterity"],
       "radius_stat": "Dexterity",
@@ -6112,14 +6508,14 @@
     },
     {
       "name": "Magic Node",
-      "icon": "Barrier",
+      "icon": "CriticalDamage",
       "board": "Viscous Shield",
       "id": "viscousshield_r10c11",
       "glyph_radius": true,
       "row": 10,
       "column": 11,
       "requires": ["viscousshield_r9c11", "viscousshield_r11c11", "viscousshield_r10c10", "viscousshield_r10c12"],
-      "effects": ["2% Barrier Generation"]
+      "effects": ["15% Critical Strike Damage"]
     },
     {
       "name": "Normal Node",
@@ -6290,6 +6686,20 @@
     },
     {
       "name": "Normal Node",
+      "icon": "Int",
+      "board": "Viscous Shield",
+      "id": "viscousshield_r11c9",
+      "glyph_radius": true,
+      "row": 11,
+      "column": 9,
+      "requires": ["viscousshield_r10c9", "viscousshield_r12c9", "viscousshield_r11c8", "viscousshield_r11c10"],
+      "intelligence": 5,
+      "effects": ["5 Intelligence"],
+      "radius_stat": "Intelligence",
+      "radius_value": 5
+    },
+    {
+      "name": "Normal Node",
       "icon": "Str",
       "board": "Viscous Shield",
       "id": "viscousshield_r11c12",
@@ -6355,6 +6765,20 @@
     },
     {
       "name": "Normal Node",
+      "icon": "Will",
+      "board": "Viscous Shield",
+      "id": "viscousshield_r11c17",
+      "glyph_radius": true,
+      "row": 11,
+      "column": 17,
+      "requires": ["viscousshield_r10c17", "viscousshield_r12c17", "viscousshield_r11c16", "viscousshield_r11c18"],
+      "willpower": 5,
+      "effects": ["5 Willpower"],
+      "radius_stat": "Willpower",
+      "radius_value": 5
+    },
+    {
+      "name": "Normal Node",
       "icon": "Dex",
       "board": "Viscous Shield",
       "id": "viscousshield_r11c18",
@@ -6362,20 +6786,6 @@
       "row": 11,
       "column": 18,
       "requires": ["viscousshield_r10c18", "viscousshield_r12c18", "viscousshield_r11c17", "viscousshield_r11c19"],
-      "dexterity": 5,
-      "effects": ["5 Dexterity"],
-      "radius_stat": "Dexterity",
-      "radius_value": 5
-    },
-    {
-      "name": "Normal Node",
-      "icon": "Dex",
-      "board": "Viscous Shield",
-      "id": "viscousshield_r11c19",
-      "glyph_radius": false,
-      "row": 11,
-      "column": 19,
-      "requires": ["viscousshield_r10c19", "viscousshield_r12c19", "viscousshield_r11c18", "viscousshield_r11c20"],
       "dexterity": 5,
       "effects": ["5 Dexterity"],
       "radius_stat": "Dexterity",
@@ -6488,7 +6898,7 @@
       "row": 12,
       "column": 11,
       "requires": ["viscousshield_r11c11", "viscousshield_r13c11", "viscousshield_r12c10", "viscousshield_r12c12"],
-      "effects": ["2% Damage while Barriered"]
+      "effects": ["10% Damage while Barriered"]
     },
     {
       "name": "Normal Node",
@@ -6646,14 +7056,14 @@
     },
     {
       "name": "Magic Node",
-      "icon": "DamageToVulnerable",
+      "icon": "Barrier",
       "board": "Viscous Shield",
       "id": "viscousshield_r13c5",
       "glyph_radius": false,
       "row": 13,
       "column": 5,
       "requires": ["viscousshield_r12c5", "viscousshield_r14c5", "viscousshield_r13c4", "viscousshield_r13c6"],
-      "effects": ["5% Vulnerable Damage"]
+      "effects": ["3% Damage Reduction while You Have a Barrier"]
     },
     {
       "name": "Normal Node",
@@ -6684,6 +7094,20 @@
       "radius_value": 5
     },
     {
+      "name": "Normal Node",
+      "icon": "Will",
+      "board": "Viscous Shield",
+      "id": "viscousshield_r13c10",
+      "glyph_radius": true,
+      "row": 13,
+      "column": 10,
+      "requires": ["viscousshield_r12c10", "viscousshield_r14c10", "viscousshield_r13c9", "viscousshield_r13c11"],
+      "willpower": 5,
+      "effects": ["5 Willpower"],
+      "radius_stat": "Willpower",
+      "radius_value": 5
+    },
+    {
       "name": "Rare Node",
       "title": "Fearless",
       "icon": "Barrier",
@@ -6694,11 +7118,11 @@
       "column": 11,
       "requires": ["viscousshield_r12c11", "viscousshield_r14c11", "viscousshield_r13c10", "viscousshield_r13c12"],
       "dexterity": 10,
-      "effects": ["4% Damge while Barriered", "10 Dexterity"],
+      "effects": ["20% Damage while Barriered", "10 Dexterity"],
       "radius_stat": "Dexterity",
       "radius_value": 10,
-      "bonus_amount": ["230*130"],
-      "bonus_stat": ["Dexterity"]
+      "bonus_amount": ["210*75"],
+      "bonus_stat": ["Strength"]
     },
     {
       "name": "Magic Node",
@@ -6709,7 +7133,7 @@
       "row": 13,
       "column": 12,
       "requires": ["viscousshield_r12c12", "viscousshield_r14c12", "viscousshield_r13c11", "viscousshield_r13c13"],
-      "effects": ["2% Damage while Barriered"]
+      "effects": ["10% Damage while Barriered"]
     },
     {
       "name": "Normal Node",
@@ -6740,26 +7164,40 @@
       "radius_value": 5
     },
     {
+      "name": "Normal Node",
+      "icon": "Dex",
+      "board": "Viscous Shield",
+      "id": "viscousshield_r13c16",
+      "glyph_radius": true,
+      "row": 13,
+      "column": 16,
+      "requires": ["viscousshield_r12c16", "viscousshield_r14c16", "viscousshield_r13c15", "viscousshield_r13c17"],
+      "dexterity": 5,
+      "effects": ["5 Dexterity"],
+      "radius_stat": "Dexterity",
+      "radius_value": 5
+    },
+    {
       "name": "Magic Node",
-      "icon": "DamageToVulnerable",
+      "icon": "Barrier",
       "board": "Viscous Shield",
       "id": "viscousshield_r14c5",
       "glyph_radius": false,
       "row": 14,
       "column": 5,
       "requires": ["viscousshield_r13c5", "viscousshield_r15c5", "viscousshield_r14c4", "viscousshield_r14c6"],
-      "effects": ["5% Vulnerable Damage"]
+      "effects": ["3% Damage Reduction while You Have a Barrier"]
     },
     {
       "name": "Magic Node",
-      "icon": "DamageToElite",
+      "icon": "DamageToVulnerable",
       "board": "Viscous Shield",
       "id": "viscousshield_r14c6",
       "glyph_radius": false,
       "row": 14,
       "column": 6,
       "requires": ["viscousshield_r13c6", "viscousshield_r15c6", "viscousshield_r14c5", "viscousshield_r14c7"],
-      "effects": ["5% Thorns"]
+      "effects": ["12.5% Vulnerable Damage"]
     },
     {
       "name": "Normal Node",
@@ -6826,7 +7264,7 @@
       "row": 14,
       "column": 12,
       "requires": ["viscousshield_r13c12", "viscousshield_r15c12", "viscousshield_r14c11", "viscousshield_r14c13"],
-      "effects": ["2% Damage while Barriered"]
+      "effects": ["10% Damage while Barriered"]
     },
     {
       "name": "Normal Node",
@@ -6873,38 +7311,38 @@
     {
       "name": "Rare Node",
       "title": "Bristle",
-      "icon": "DamageToVulnerable",
+      "icon": "Barrier",
       "board": "Viscous Shield",
       "id": "viscousshield_r15c5",
       "glyph_radius": false,
       "row": 15,
       "column": 5,
       "requires": ["viscousshield_r14c5", "viscousshield_r16c5", "viscousshield_r15c4", "viscousshield_r15c6"],
-      "effects": ["10% Vulnerable Damage", "15% Thorns"],
-      "bonus_amount": ["215*130"],
+      "effects": ["6% Damage Reduction while You Have a Barrier", "25% Vulnerable Damage"],
+      "bonus_amount": ["630*585"],
       "bonus_stat": ["Dexterity"]
     },
     {
       "name": "Magic Node",
-      "icon": "DamageToElite",
+      "icon": "DamageToVulnerable",
       "board": "Viscous Shield",
       "id": "viscousshield_r15c6",
       "glyph_radius": false,
       "row": 15,
       "column": 6,
       "requires": ["viscousshield_r14c6", "viscousshield_r16c6", "viscousshield_r15c5", "viscousshield_r15c7"],
-      "effects": ["5% Thorns"]
+      "effects": ["12.5% Vulnerable Damage"]
     },
     {
       "name": "Magic Node",
-      "icon": "DamageToVulnerable",
+      "icon": "Barrier",
       "board": "Viscous Shield",
       "id": "viscousshield_r15c7",
       "glyph_radius": false,
       "row": 15,
       "column": 7,
       "requires": ["viscousshield_r14c7", "viscousshield_r16c7", "viscousshield_r15c6", "viscousshield_r15c8"],
-      "effects": ["5% Vulnerable Damage"]
+      "effects": ["3% Damage Reduction while You Have a Barrier"]
     },
     {
       "name": "Normal Node",
@@ -6960,6 +7398,20 @@
       "dexterity": 5,
       "effects": ["5 Dexterity"],
       "radius_stat": "Dexterity",
+      "radius_value": 5
+    },
+    {
+      "name": "Normal Node",
+      "icon": "Int",
+      "board": "Viscous Shield",
+      "id": "viscousshield_r15c12",
+      "glyph_radius": true,
+      "row": 15,
+      "column": 12,
+      "requires": ["viscousshield_r14c12", "viscousshield_r16c12", "viscousshield_r15c11", "viscousshield_r15c13"],
+      "intelligence": 5,
+      "effects": ["5 Intelligence"],
+      "radius_stat": "Intelligence",
       "radius_value": 5
     },
     {
@@ -7104,25 +7556,25 @@
     },
     {
       "name": "Magic Node",
-      "icon": "Damage",
+      "icon": "Barrier",
       "board": "Viscous Shield",
       "id": "viscousshield_r17c15",
       "glyph_radius": false,
       "row": 17,
       "column": 15,
       "requires": ["viscousshield_r16c15", "viscousshield_r18c15", "viscousshield_r17c14", "viscousshield_r17c16"],
-      "effects": ["17.5% Eagle Damage"]
+      "effects": ["3% Barrier Generation"]
     },
     {
       "name": "Magic Node",
-      "icon": "CriticalDamage",
+      "icon": "ResistanceLightning",
       "board": "Viscous Shield",
       "id": "viscousshield_r17c16",
       "glyph_radius": false,
       "row": 17,
       "column": 16,
       "requires": ["viscousshield_r16c16", "viscousshield_r18c16", "viscousshield_r17c15", "viscousshield_r17c17"],
-      "effects": ["7.5% Critical Strike Damage"]
+      "effects": ["5% Lightning Resistance"]
     },
     {
       "name": "Normal Node",
@@ -7140,28 +7592,28 @@
     },
     {
       "name": "Magic Node",
-      "icon": "Damage",
+      "icon": "Barrier",
       "board": "Viscous Shield",
       "id": "viscousshield_r18c15",
       "glyph_radius": false,
       "row": 18,
       "column": 15,
       "requires": ["viscousshield_r17c15", "viscousshield_r19c15", "viscousshield_r18c14", "viscousshield_r18c16"],
-      "effects": ["17.5% Eagle Damage"]
+      "effects": ["3% Barrier Generation"]
     },
     {
       "name": "Rare Node",
-      "title": "Raptor",
-      "icon": "Damage",
+      "title": "Sentinel",
+      "icon": "LuckyHitBonus",
       "board": "Viscous Shield",
       "id": "viscousshield_r18c16",
       "glyph_radius": false,
       "row": 18,
       "column": 16,
       "requires": ["viscousshield_r17c16", "viscousshield_r19c16", "viscousshield_r18c15", "viscousshield_r18c17"],
-      "effects": ["35% Eagle Damage", "15% Critical Strike Damage"],
-      "bonus_amount": ["220*130", "170*60"],
-      "bonus_stat": ["Dexterity", "Strength"]
+      "effects": ["5% Lucky Hit Chance", "10% Lightning Resistance"],
+      "bonus_amount": ["630*455"],
+      "bonus_stat": ["Dexterity"]
     },
     {
       "name": "Normal Node",
@@ -7207,25 +7659,25 @@
     },
     {
       "name": "Magic Node",
-      "icon": "Damage",
+      "icon": "Barrier",
       "board": "Viscous Shield",
       "id": "viscousshield_r19c15",
       "glyph_radius": false,
       "row": 19,
       "column": 15,
       "requires": ["viscousshield_r18c15", "viscousshield_r20c15", "viscousshield_r19c14", "viscousshield_r19c16"],
-      "effects": ["17.5% Eagle Damage"]
+      "effects": ["3% Barrier Generation"]
     },
     {
       "name": "Magic Node",
-      "icon": "CriticalDamage",
+      "icon": "ResistanceLightning",
       "board": "Viscous Shield",
       "id": "viscousshield_r19c16",
       "glyph_radius": false,
       "row": 19,
       "column": 16,
       "requires": ["viscousshield_r18c16", "viscousshield_r20c16", "viscousshield_r19c15", "viscousshield_r19c17"],
-      "effects": ["7.5% Critical Strike Damage"]
+      "effects": ["5% Lightning Resistance"]
     },
     {
       "name": "Normal Node",
@@ -7455,6 +7907,20 @@
     },
     {
       "name": "Normal Node",
+      "icon": "Dex",
+      "board": "Bitter Medicine",
+      "id": "bittermedicine_r6c9",
+      "glyph_radius": true,
+      "row": 6,
+      "column": 9,
+      "requires": ["bittermedicine_r5c9", "bittermedicine_r7c9", "bittermedicine_r6c8", "bittermedicine_r6c10"],
+      "dexterity": 5,
+      "effects": ["5 Dexterity"],
+      "radius_stat": "Dexterity",
+      "radius_value": 5
+    },
+    {
+      "name": "Normal Node",
       "icon": "Int",
       "board": "Bitter Medicine",
       "id": "bittermedicine_r6c10",
@@ -7490,6 +7956,34 @@
       "row": 6,
       "column": 12,
       "requires": ["bittermedicine_r5c12", "bittermedicine_r7c12", "bittermedicine_r6c11", "bittermedicine_r6c13"],
+      "dexterity": 5,
+      "effects": ["5 Dexterity"],
+      "radius_stat": "Dexterity",
+      "radius_value": 5
+    },
+    {
+      "name": "Normal Node",
+      "icon": "Str",
+      "board": "Bitter Medicine",
+      "id": "bittermedicine_r6c13",
+      "glyph_radius": true,
+      "row": 6,
+      "column": 13,
+      "requires": ["bittermedicine_r5c13", "bittermedicine_r7c13", "bittermedicine_r6c12", "bittermedicine_r6c14"],
+      "strength": 5,
+      "effects": ["5 Strength"],
+      "radius_stat": "Strength",
+      "radius_value": 5
+    },
+    {
+      "name": "Normal Node",
+      "icon": "Dex",
+      "board": "Bitter Medicine",
+      "id": "bittermedicine_r7c8",
+      "glyph_radius": true,
+      "row": 7,
+      "column": 8,
+      "requires": ["bittermedicine_r6c8", "bittermedicine_r8c8", "bittermedicine_r7c7", "bittermedicine_r7c9"],
       "dexterity": 5,
       "effects": ["5 Dexterity"],
       "radius_stat": "Dexterity",
@@ -7566,17 +8060,45 @@
       "radius_value": 5
     },
     {
-      "name": "Magic Node",
+      "name": "Normal Node",
       "icon": "Dex",
+      "board": "Bitter Medicine",
+      "id": "bittermedicine_r7c14",
+      "glyph_radius": true,
+      "row": 7,
+      "column": 14,
+      "requires": ["bittermedicine_r6c14", "bittermedicine_r8c14", "bittermedicine_r7c13", "bittermedicine_r7c15"],
+      "dexterity": 5,
+      "effects": ["5 Dexterity"],
+      "radius_stat": "Dexterity",
+      "radius_value": 5
+    },
+    {
+      "name": "Normal Node",
+      "icon": "Int",
+      "board": "Bitter Medicine",
+      "id": "bittermedicine_r8c7",
+      "glyph_radius": true,
+      "row": 8,
+      "column": 7,
+      "requires": ["bittermedicine_r7c7", "bittermedicine_r9c7", "bittermedicine_r8c6", "bittermedicine_r8c8"],
+      "intelligence": 5,
+      "effects": ["5 Intelligence"],
+      "radius_stat": "Intelligence",
+      "radius_value": 5
+    },
+    {
+      "name": "Magic Node",
+      "icon": "Str",
       "board": "Bitter Medicine",
       "id": "bittermedicine_r8c8",
       "glyph_radius": true,
       "row": 8,
       "column": 8,
       "requires": ["bittermedicine_r7c8", "bittermedicine_r9c8", "bittermedicine_r8c7", "bittermedicine_r8c9"],
-      "dexterity": 7,
-      "effects": ["7 Dexterity"],
-      "radius_stat": "Dexterity",
+      "strength": 7,
+      "effects": ["7 Strength"],
+      "radius_stat": "Strength",
       "radius_value": 7
     },
     {
@@ -7637,6 +8159,20 @@
     },
     {
       "name": "Normal Node",
+      "icon": "Int",
+      "board": "Bitter Medicine",
+      "id": "bittermedicine_r8c15",
+      "glyph_radius": true,
+      "row": 8,
+      "column": 15,
+      "requires": ["bittermedicine_r7c15", "bittermedicine_r9c15", "bittermedicine_r8c14", "bittermedicine_r8c16"],
+      "intelligence": 5,
+      "effects": ["5 Intelligence"],
+      "radius_stat": "Intelligence",
+      "radius_value": 5
+    },
+    {
+      "name": "Normal Node",
       "icon": "Dex",
       "board": "Bitter Medicine",
       "id": "bittermedicine_r9c6",
@@ -7658,11 +8194,11 @@
       "row": 9,
       "column": 7,
       "requires": ["bittermedicine_r8c7", "bittermedicine_r10c7", "bittermedicine_r9c6", "bittermedicine_r9c8"],
-      "effects": ["5% Damage"]
+      "effects": ["10% Damage"]
     },
     {
       "name": "Rare Node",
-      "title": "Skillful",
+      "title": "Gifted",
       "icon": "Damage",
       "board": "Bitter Medicine",
       "id": "bittermedicine_r9c8",
@@ -7671,11 +8207,11 @@
       "column": 8,
       "requires": ["bittermedicine_r8c8", "bittermedicine_r10c8", "bittermedicine_r9c7", "bittermedicine_r9c9"],
       "dexterity": 10,
-      "effects": ["10% Damage", "10 Dexterity"],
+      "effects": ["20% Damage", "10 Dexterity"],
       "radius_stat": "Dexterity",
       "radius_value": 10,
-      "bonus_amount": ["215*130"],
-      "bonus_stat": ["Dexterity"]
+      "bonus_amount": ["210*75"],
+      "bonus_stat": ["Strength"]
     },
     {
       "name": "Magic Node",
@@ -7686,7 +8222,7 @@
       "row": 9,
       "column": 9,
       "requires": ["bittermedicine_r8c9", "bittermedicine_r10c9", "bittermedicine_r9c8", "bittermedicine_r9c10"],
-      "effects": ["5% Damage"]
+      "effects": ["10% Damage"]
     },
     {
       "name": "Normal Node",
@@ -7727,19 +8263,19 @@
     },
     {
       "name": "Magic Node",
-      "icon": "HealingBonus",
+      "icon": "DamageToNear",
       "board": "Bitter Medicine",
       "id": "bittermedicine_r9c13",
       "glyph_radius": true,
       "row": 9,
       "column": 13,
       "requires": ["bittermedicine_r8c13", "bittermedicine_r10c13", "bittermedicine_r9c12", "bittermedicine_r9c14"],
-      "effects": ["2% Healing Received"]
+      "effects": ["12% Damage to Close Enemies"]
     },
     {
       "name": "Rare Node",
-      "title": "Natural Vitality",
-      "icon": "HealingBonus",
+      "title": "Ambush",
+      "icon": "Damage",
       "board": "Bitter Medicine",
       "id": "bittermedicine_r9c14",
       "glyph_radius": true,
@@ -7747,22 +8283,22 @@
       "column": 14,
       "requires": ["bittermedicine_r8c14", "bittermedicine_r10c14", "bittermedicine_r9c13", "bittermedicine_r9c15"],
       "dexterity": 10,
-      "effects": ["4% Healing Received", "10 Dexterity"],
+      "effects": ["24% Damage to Close Enemies", "10 Dexterity"],
       "radius_stat": "Dexterity",
       "radius_value": 10,
-      "bonus_amount": ["230*130"],
-      "bonus_stat": ["Dexterity"]
+      "bonus_amount": ["210*75"],
+      "bonus_stat": ["Intelligence"]
     },
     {
       "name": "Magic Node",
-      "icon": "HealingBonus",
+      "icon": "DamageToNear",
       "board": "Bitter Medicine",
       "id": "bittermedicine_r9c15",
       "glyph_radius": true,
       "row": 9,
       "column": 15,
       "requires": ["bittermedicine_r8c15", "bittermedicine_r10c15", "bittermedicine_r9c14", "bittermedicine_r9c16"],
-      "effects": ["2% Healing Received"]
+      "effects": ["12% Damage to Close Enemies"]
     },
     {
       "name": "Normal Node",
@@ -7808,16 +8344,16 @@
     },
     {
       "name": "Magic Node",
-      "icon": "Dex",
+      "icon": "Str",
       "board": "Bitter Medicine",
       "id": "bittermedicine_r10c7",
       "glyph_radius": true,
       "row": 10,
       "column": 7,
       "requires": ["bittermedicine_r9c7", "bittermedicine_r11c7", "bittermedicine_r10c6", "bittermedicine_r10c8"],
-      "dexterity": 7,
-      "effects": ["7 Dexterity"],
-      "radius_stat": "Dexterity",
+      "strength": 7,
+      "effects": ["7 Strength"],
+      "radius_stat": "Strength",
       "radius_value": 7
     },
     {
@@ -7829,7 +8365,7 @@
       "row": 10,
       "column": 8,
       "requires": ["bittermedicine_r9c8", "bittermedicine_r11c8", "bittermedicine_r10c7", "bittermedicine_r10c9"],
-      "effects": ["5% Damage"]
+      "effects": ["10% Damage"]
     },
     {
       "name": "Normal Node",
@@ -7875,14 +8411,14 @@
     },
     {
       "name": "Magic Node",
-      "icon": "HealingBonus",
+      "icon": "DamageToNear",
       "board": "Bitter Medicine",
       "id": "bittermedicine_r10c14",
       "glyph_radius": true,
       "row": 10,
       "column": 14,
       "requires": ["bittermedicine_r9c14", "bittermedicine_r11c14", "bittermedicine_r10c13", "bittermedicine_r10c15"],
-      "effects": ["2% Healing Received"]
+      "effects": ["12% Damage to Close Enemies"]
     },
     {
       "name": "Magic Node",
@@ -8506,7 +9042,7 @@
       "row": 13,
       "column": 17,
       "requires": ["bittermedicine_r12c17", "bittermedicine_r14c17", "bittermedicine_r13c16", "bittermedicine_r13c18"],
-      "effects": ["5 Life On Hit"]
+      "effects": ["2% Maximum Life"]
     },
     {
       "name": "Normal Node",
@@ -8538,14 +9074,14 @@
     },
     {
       "name": "Magic Node",
-      "icon": "HPRegen",
+      "icon": "ResistanceAll",
       "board": "Bitter Medicine",
       "id": "bittermedicine_r14c4",
       "glyph_radius": false,
       "row": 14,
       "column": 4,
       "requires": ["bittermedicine_r13c4", "bittermedicine_r15c4", "bittermedicine_r14c3", "bittermedicine_r14c5"],
-      "effects": ["25 Life per 5 Seconds"]
+      "effects": ["1% Maximum Poison Resistance"]
     },
     {
       "name": "Magic Node",
@@ -8721,33 +9257,33 @@
       "row": 14,
       "column": 17,
       "requires": ["bittermedicine_r13c17", "bittermedicine_r15c17", "bittermedicine_r14c16", "bittermedicine_r14c18"],
-      "effects": ["5 Life On Hit"]
+      "effects": ["2% Maximum Life"]
     },
     {
       "name": "Magic Node",
-      "icon": "HPPercent",
+      "icon": "HealingBonus",
       "board": "Bitter Medicine",
       "id": "bittermedicine_r14c18",
       "glyph_radius": false,
       "row": 14,
       "column": 18,
       "requires": ["bittermedicine_r13c18", "bittermedicine_r15c18", "bittermedicine_r14c17", "bittermedicine_r14c19"],
-      "effects": ["2% Maximum Life"]
+      "effects": ["3% Healing Received"]
     },
     {
       "name": "Magic Node",
-      "icon": "HPRegen",
+      "icon": "ResistanceAll",
       "board": "Bitter Medicine",
       "id": "bittermedicine_r15c3",
       "glyph_radius": false,
       "row": 15,
       "column": 3,
       "requires": ["bittermedicine_r14c3", "bittermedicine_r16c3", "bittermedicine_r15c2", "bittermedicine_r15c4"],
-      "effects": ["25 Life per 5 Seconds"]
+      "effects": ["1% Maximum Poison Resistance"]
     },
     {
       "name": "Rare Node",
-      "title": "Inoculation",
+      "title": "Poison Resilience",
       "icon": "ResistancePoison",
       "board": "Bitter Medicine",
       "id": "bittermedicine_r15c4",
@@ -8755,9 +9291,9 @@
       "row": 15,
       "column": 4,
       "requires": ["bittermedicine_r14c4", "bittermedicine_r16c4", "bittermedicine_r15c3", "bittermedicine_r15c5"],
-      "effects": ["10% Poison Resistance", "50 Life per 5 Seconds"],
-      "bonus_amount": ["160*60"],
-      "bonus_stat": ["Intelligence"]
+      "effects": ["10% Poison Resistance", "2% Maximum Poison Resistance"],
+      "bonus_amount": ["190*75"],
+      "bonus_stat": ["Strength"]
     },
     {
       "name": "Magic Node",
@@ -8877,46 +9413,43 @@
       "row": 15,
       "column": 17,
       "requires": ["bittermedicine_r14c17", "bittermedicine_r16c17", "bittermedicine_r15c16", "bittermedicine_r15c18"],
-      "effects": ["5 Life On Hit"]
+      "effects": ["2% Maximum Life"]
     },
     {
       "name": "Rare Node",
-      "title": "Hematophagy",
-      "icon": "HealingBonus",
+      "title": "Restorative",
+      "icon": "HPPercent",
       "board": "Bitter Medicine",
       "id": "bittermedicine_r15c18",
       "glyph_radius": false,
       "row": 15,
       "column": 18,
       "requires": ["bittermedicine_r14c18", "bittermedicine_r16c18", "bittermedicine_r15c17", "bittermedicine_r15c19"],
-      "dexterity": 10,
-      "effects": ["20 Life On Hit", "10 Dexterity"],
-      "radius_stat": "Dexterity",
-      "radius_value": 10,
-      "bonus_amount": ["230*130"],
-      "bonus_stat": ["Dexterity"]
+      "effects": ["4% Maximum Life", "6% Healing Received"],
+      "bonus_amount": ["210*75"],
+      "bonus_stat": ["Intelligence"]
     },
     {
       "name": "Magic Node",
-      "icon": "HPPercent",
+      "icon": "HealingBonus",
       "board": "Bitter Medicine",
       "id": "bittermedicine_r15c19",
       "glyph_radius": false,
       "row": 15,
       "column": 19,
       "requires": ["bittermedicine_r14c19", "bittermedicine_r16c19", "bittermedicine_r15c18", "bittermedicine_r15c20"],
-      "effects": ["2% Maximum Life"]
+      "effects": ["3% Healing Received"]
     },
     {
       "name": "Magic Node",
-      "icon": "CriticalDamage",
+      "icon": "ResistanceFire",
       "board": "Bitter Medicine",
       "id": "bittermedicine_r16c7",
       "glyph_radius": false,
       "row": 16,
       "column": 7,
       "requires": ["bittermedicine_r15c7", "bittermedicine_r17c7", "bittermedicine_r16c6", "bittermedicine_r16c8"],
-      "effects": ["7.5% Critical Strike Damage"]
+      "effects": ["5% Fire Resistance"]
     },
     {
       "name": "Normal Node",
@@ -8943,7 +9476,7 @@
       "column": 11,
       "requires": ["bittermedicine_r15c11", "bittermedicine_r17c11", "bittermedicine_r16c10", "bittermedicine_r16c12"],
       "filters": ["Maximum Life", "Heal", "Close"],
-      "description": "When you Heal for 100% of your Maximum Life, deal 30% damage to Close enemies. This damage is increased by your Healing Received bonus."
+      "description": "When you Heal for 100% of your Maximum Life, deal [X] damage to Close enemies. This damage is increased by your Healing Received bonus."
     },
     {
       "name": "Normal Node",
@@ -8961,50 +9494,50 @@
     },
     {
       "name": "Magic Node",
-      "icon": "AttackSpeed",
+      "icon": "Damage",
       "board": "Bitter Medicine",
       "id": "bittermedicine_r16c15",
       "glyph_radius": false,
       "row": 16,
       "column": 15,
       "requires": ["bittermedicine_r15c15", "bittermedicine_r17c15", "bittermedicine_r16c14", "bittermedicine_r16c16"],
-      "effects": ["1.3% Attack Speed"]
+      "effects": ["10% Damage"]
     },
     {
       "name": "Magic Node",
-      "icon": "Damage",
+      "icon": "HealingBonus",
       "board": "Bitter Medicine",
       "id": "bittermedicine_r17c6",
       "glyph_radius": false,
       "row": 17,
       "column": 6,
       "requires": ["bittermedicine_r16c6", "bittermedicine_r18c6", "bittermedicine_r17c5", "bittermedicine_r17c7"],
-      "effects": ["17.5% Jaguar Damage"]
+      "effects": ["3% Healing Received"]
     },
     {
       "name": "Rare Node",
-      "title": "Ambush",
-      "icon": "Damage",
+      "title": "Natural Vitality",
+      "icon": "HealingBonus",
       "board": "Bitter Medicine",
       "id": "bittermedicine_r17c7",
       "glyph_radius": false,
       "row": 17,
       "column": 7,
       "requires": ["bittermedicine_r16c7", "bittermedicine_r18c7", "bittermedicine_r17c6", "bittermedicine_r17c8"],
-      "effects": ["35% Jaguar Damage", "15% Critical Strike Damage"],
-      "bonus_amount": ["220*130", "170*60"],
-      "bonus_stat": ["Dexterity", "Strength"]
+      "effects": ["6% Healing Received", "10% Fire Resistance"],
+      "bonus_amount": ["630*585"],
+      "bonus_stat": ["Dexterity"]
     },
     {
       "name": "Magic Node",
-      "icon": "CriticalDamage",
+      "icon": "ResistanceFire",
       "board": "Bitter Medicine",
       "id": "bittermedicine_r17c8",
       "glyph_radius": false,
       "row": 17,
       "column": 8,
       "requires": ["bittermedicine_r16c8", "bittermedicine_r18c8", "bittermedicine_r17c7", "bittermedicine_r17c9"],
-      "effects": ["7.5% Critical Strike Damage"]
+      "effects": ["5% Fire Resistance"]
     },
     {
       "name": "Normal Node",
@@ -9036,61 +9569,61 @@
     },
     {
       "name": "Magic Node",
-      "icon": "AttackSpeed",
+      "icon": "Damage",
       "board": "Bitter Medicine",
       "id": "bittermedicine_r17c14",
       "glyph_radius": false,
       "row": 17,
       "column": 14,
       "requires": ["bittermedicine_r16c14", "bittermedicine_r18c14", "bittermedicine_r17c13", "bittermedicine_r17c15"],
-      "effects": ["1.3% Attack Speed"]
+      "effects": ["10% Damage"]
     },
     {
       "name": "Rare Node",
       "title": "Flash Fire",
-      "icon": "DamageFire",
+      "icon": "AttackSpeed",
       "board": "Bitter Medicine",
       "id": "bittermedicine_r17c15",
       "glyph_radius": false,
       "row": 17,
       "column": 15,
       "requires": ["bittermedicine_r16c15", "bittermedicine_r18c15", "bittermedicine_r17c14", "bittermedicine_r17c16"],
-      "effects": ["10% Fire Damage", "2.5% Attack Speed"],
-      "bonus_amount": ["180*60"],
+      "effects": ["2.5% Attack Speed", "20% Damage"],
+      "bonus_amount": ["230*75"],
       "bonus_stat": ["Strength"]
     },
     {
       "name": "Magic Node",
-      "icon": "DamageFire",
+      "icon": "AttackSpeed",
       "board": "Bitter Medicine",
       "id": "bittermedicine_r17c16",
       "glyph_radius": false,
       "row": 17,
       "column": 16,
       "requires": ["bittermedicine_r16c16", "bittermedicine_r18c16", "bittermedicine_r17c15", "bittermedicine_r17c17"],
-      "effects": ["5% Fire Damage"]
+      "effects": ["2.5% Attack Speed"]
     },
     {
       "name": "Magic Node",
-      "icon": "Damage",
+      "icon": "HealingBonus",
       "board": "Bitter Medicine",
       "id": "bittermedicine_r18c7",
       "glyph_radius": false,
       "row": 18,
       "column": 7,
       "requires": ["bittermedicine_r17c7", "bittermedicine_r19c7", "bittermedicine_r18c6", "bittermedicine_r18c8"],
-      "effects": ["17.5% Jaguar Damage"]
+      "effects": ["3% Healing Received"]
     },
     {
       "name": "Magic Node",
-      "icon": "Damage",
+      "icon": "HealingBonus",
       "board": "Bitter Medicine",
       "id": "bittermedicine_r18c8",
       "glyph_radius": false,
       "row": 18,
       "column": 8,
       "requires": ["bittermedicine_r17c8", "bittermedicine_r19c8", "bittermedicine_r18c7", "bittermedicine_r18c9"],
-      "effects": ["17.5% Jaguar Damage"]
+      "effects": ["3% Healing Received"]
     },
     {
       "name": "Normal Node",
@@ -9122,25 +9655,25 @@
     },
     {
       "name": "Magic Node",
-      "icon": "DamageFire",
+      "icon": "AttackSpeed",
       "board": "Bitter Medicine",
       "id": "bittermedicine_r18c14",
       "glyph_radius": false,
       "row": 18,
       "column": 14,
       "requires": ["bittermedicine_r17c14", "bittermedicine_r19c14", "bittermedicine_r18c13", "bittermedicine_r18c15"],
-      "effects": ["5% Fire Damage"]
+      "effects": ["2.5% Attack Speed"]
     },
     {
       "name": "Magic Node",
-      "icon": "DamageFire",
+      "icon": "AttackSpeed",
       "board": "Bitter Medicine",
       "id": "bittermedicine_r18c15",
       "glyph_radius": false,
       "row": 18,
       "column": 15,
       "requires": ["bittermedicine_r17c15", "bittermedicine_r19c15", "bittermedicine_r18c14", "bittermedicine_r18c16"],
-      "effects": ["5% Fire Damage"]
+      "effects": ["2.5% Attack Speed"]
     },
     {
       "name": "Normal Node",
@@ -9621,25 +10154,25 @@
     },
     {
       "name": "Magic Node",
-      "icon": "Barrier",
+      "icon": "HPPercent",
       "board": "Revealing",
       "id": "revealing_r5c15",
       "glyph_radius": false,
       "row": 5,
       "column": 15,
       "requires": ["revealing_r4c15", "revealing_r6c15", "revealing_r5c14", "revealing_r5c16"],
-      "effects": ["2% Barrier Generation"]
+      "effects": ["2% Maximum Life"]
     },
     {
       "name": "Magic Node",
-      "icon": "DamagePoison",
+      "icon": "Armor",
       "board": "Revealing",
       "id": "revealing_r5c16",
       "glyph_radius": false,
       "row": 5,
       "column": 16,
       "requires": ["revealing_r4c16", "revealing_r6c16", "revealing_r5c15", "revealing_r5c17"],
-      "effects": ["5% Poison Damage"]
+      "effects": ["15 Armor"]
     },
     {
       "name": "Normal Node",
@@ -9727,64 +10260,64 @@
     },
     {
       "name": "Magic Node",
-      "icon": "DamagePoison",
+      "icon": "Armor",
       "board": "Revealing",
       "id": "revealing_r6c15",
       "glyph_radius": false,
       "row": 6,
       "column": 15,
       "requires": ["revealing_r5c15", "revealing_r7c15", "revealing_r6c14", "revealing_r6c16"],
-      "effects": ["5% Poison Damage"]
+      "effects": ["15 Armor"]
     },
     {
       "name": "Rare Node",
-      "title": "Acrid Shield",
-      "icon": "Barrier",
+      "title": "Haven",
+      "icon": "HPPercent",
       "board": "Revealing",
       "id": "revealing_r6c16",
       "glyph_radius": false,
       "row": 6,
       "column": 16,
       "requires": ["revealing_r5c16", "revealing_r7c16", "revealing_r6c15", "revealing_r6c17"],
-      "effects": ["4% Barrier Generation", "10% Poison Damage"],
-      "bonus_amount": ["170*60"],
-      "bonus_stat": ["Strength"]
+      "effects": ["4% Maximum Life", "30 Armor"],
+      "bonus_amount": ["210*75"],
+      "bonus_stat": ["Intelligence"]
     },
     {
       "name": "Magic Node",
-      "icon": "Barrier",
+      "icon": "HPPercent",
       "board": "Revealing",
       "id": "revealing_r6c17",
       "glyph_radius": false,
       "row": 6,
       "column": 17,
       "requires": ["revealing_r5c17", "revealing_r7c17", "revealing_r6c16", "revealing_r6c18"],
-      "effects": ["2% Barrier Generation"]
+      "effects": ["2% Maximum Life"]
     },
     {
       "name": "Rare Node",
       "title": "Patience",
-      "icon": "HealingBonus",
+      "icon": "Armor",
       "board": "Revealing",
       "id": "revealing_r7c8",
       "glyph_radius": false,
       "row": 7,
       "column": 8,
       "requires": ["revealing_r6c8", "revealing_r8c8", "revealing_r7c7", "revealing_r7c9"],
-      "effects": ["100 Life per 5 Seconds", "2% Dodge Chance"],
-      "bonus_amount": ["220*130", "170*60"],
+      "effects": ["30 Armor", "2% Dodge Chance"],
+      "bonus_amount": [470, 465],
       "bonus_stat": ["Strength", "Intelligence"]
     },
     {
       "name": "Magic Node",
-      "icon": "HPRegen",
+      "icon": "Armor",
       "board": "Revealing",
       "id": "revealing_r7c9",
       "glyph_radius": false,
       "row": 7,
       "column": 9,
       "requires": ["revealing_r6c9", "revealing_r8c9", "revealing_r7c8", "revealing_r7c10"],
-      "effects": ["25 Life per 5 Seconds"]
+      "effects": ["15 Armor"]
     },
     {
       "name": "Normal Node",
@@ -9858,14 +10391,14 @@
     },
     {
       "name": "Magic Node",
-      "icon": "Barrier",
+      "icon": "HPPercent",
       "board": "Revealing",
       "id": "revealing_r7c17",
       "glyph_radius": false,
       "row": 7,
       "column": 17,
       "requires": ["revealing_r6c17", "revealing_r8c17", "revealing_r7c16", "revealing_r7c18"],
-      "effects": ["2% Barrier Generation"]
+      "effects": ["2% Maximum Life"]
     },
     {
       "name": "Normal Node",
@@ -9922,14 +10455,14 @@
     },
     {
       "name": "Magic Node",
-      "icon": "HPRegen",
+      "icon": "Armor",
       "board": "Revealing",
       "id": "revealing_r8c8",
       "glyph_radius": false,
       "row": 8,
       "column": 8,
       "requires": ["revealing_r7c8", "revealing_r9c8", "revealing_r8c7", "revealing_r8c9"],
-      "effects": ["25 Life per 5 Seconds"]
+      "effects": ["15 Armor"]
     },
     {
       "name": "Magic Node",
@@ -10098,14 +10631,14 @@
     },
     {
       "name": "Magic Node",
-      "icon": "HPRegen",
+      "icon": "Armor",
       "board": "Revealing",
       "id": "revealing_r9c8",
       "glyph_radius": false,
       "row": 9,
       "column": 8,
       "requires": ["revealing_r8c8", "revealing_r10c8", "revealing_r9c7", "revealing_r9c9"],
-      "effects": ["25 Life per 5 Seconds"]
+      "effects": ["15 Armor"]
     },
     {
       "name": "Normal Node",
@@ -10291,25 +10824,25 @@
     },
     {
       "name": "Magic Node",
-      "icon": "DamageToCC",
+      "icon": "AttackSpeed",
       "board": "Revealing",
       "id": "revealing_r10c11",
       "glyph_radius": false,
       "row": 10,
       "column": 11,
       "requires": ["revealing_r9c11", "revealing_r11c11", "revealing_r10c10", "revealing_r10c12"],
-      "effects": ["7.5% Damage to Crowd Controlled Enemies"]
+      "effects": ["2.5% Attack Speed"]
     },
     {
       "name": "Magic Node",
-      "icon": "ResistanceLightning",
+      "icon": "ResistancePoison",
       "board": "Revealing",
       "id": "revealing_r10c12",
       "glyph_radius": false,
       "row": 10,
       "column": 12,
       "requires": ["revealing_r9c12", "revealing_r11c12", "revealing_r10c11", "revealing_r10c13"],
-      "effects": ["5% Lightning Resistance"]
+      "effects": ["5% Poison Resistance"]
     },
     {
       "name": "Normal Node",
@@ -10425,39 +10958,39 @@
     },
     {
       "name": "Magic Node",
-      "icon": "ResistanceLightning",
+      "icon": "ResistancePoison",
       "board": "Revealing",
       "id": "revealing_r11c10",
       "glyph_radius": false,
       "row": 11,
       "column": 10,
       "requires": ["revealing_r10c10", "revealing_r12c10", "revealing_r11c9", "revealing_r11c11"],
-      "effects": ["5% Lightning Resistance"]
+      "effects": ["5% Poison Resistance"]
     },
     {
       "name": "Rare Node",
       "title": "Grounded",
-      "icon": "DamageToCC",
+      "icon": "AttackSpeed",
       "board": "Revealing",
       "id": "revealing_r11c11",
       "glyph_radius": false,
       "row": 11,
       "column": 11,
       "requires": ["revealing_r10c11", "revealing_r12c11", "revealing_r11c10", "revealing_r11c12"],
-      "effects": ["15% Damage to Crowd Controlled Enemies", "10% Lightning Resistance"],
-      "bonus_amount": ["215*130"],
+      "effects": ["2.5% Attack Speed", "10% Poison Resistance"],
+      "bonus_amount": ["630*585"],
       "bonus_stat": ["Dexterity"]
     },
     {
       "name": "Magic Node",
-      "icon": "DamageToCC",
+      "icon": "AttackSpeed",
       "board": "Revealing",
       "id": "revealing_r11c12",
       "glyph_radius": false,
       "row": 11,
       "column": 12,
       "requires": ["revealing_r10c12", "revealing_r12c12", "revealing_r11c11", "revealing_r11c13"],
-      "effects": ["7.5% Damage to Crowd Controlled Enemies"]
+      "effects": ["2.5% Attack Speed"]
     },
     {
       "name": "Normal Node",
@@ -10657,14 +11190,14 @@
     },
     {
       "name": "Magic Node",
-      "icon": "DamageToCC",
+      "icon": "AttackSpeed",
       "board": "Revealing",
       "id": "revealing_r12c11",
       "glyph_radius": false,
       "row": 12,
       "column": 11,
       "requires": ["revealing_r11c11", "revealing_r13c11", "revealing_r12c10", "revealing_r12c12"],
-      "effects": ["7.5% Damage to Crowd Controlled Enemies"]
+      "effects": ["2.5% Attack Speed"]
     },
     {
       "name": "Normal Node",
@@ -10850,25 +11383,25 @@
     },
     {
       "name": "Magic Node",
-      "icon": "DamageToVulnerable",
+      "icon": "ResistanceLightning",
       "board": "Revealing",
       "id": "revealing_r13c14",
       "glyph_radius": false,
       "row": 13,
       "column": 14,
       "requires": ["revealing_r12c14", "revealing_r14c14", "revealing_r13c13", "revealing_r13c15"],
-      "effects": ["5% Vulnerable Damage"]
+      "effects": ["5% Lightning Resistance"]
     },
     {
       "name": "Magic Node",
-      "icon": "Damage",
+      "icon": "LuckyHitBonus",
       "board": "Revealing",
       "id": "revealing_r13c15",
       "glyph_radius": false,
       "row": 13,
       "column": 15,
       "requires": ["revealing_r12c15", "revealing_r14c15", "revealing_r13c14", "revealing_r13c16"],
-      "effects": ["17.5% Centipede Damage"]
+      "effects": ["2.5% Lucky Hit Chance"]
     },
     {
       "name": "Normal Node",
@@ -10882,6 +11415,20 @@
       "dexterity": 5,
       "effects": ["5 Dexterity"],
       "radius_stat": "Dexterity",
+      "radius_value": 5
+    },
+    {
+      "name": "Normal Node",
+      "icon": "Int",
+      "board": "Revealing",
+      "id": "revealing_r14c3",
+      "glyph_radius": true,
+      "row": 14,
+      "column": 3,
+      "requires": ["revealing_r13c3", "revealing_r15c3", "revealing_r14c2", "revealing_r14c4"],
+      "intelligence": 5,
+      "effects": ["5 Intelligence"],
+      "radius_stat": "Intelligence",
       "radius_value": 5
     },
     {
@@ -10984,52 +11531,52 @@
     },
     {
       "name": "Magic Node",
-      "icon": "Damage",
+      "icon": "LuckyHitBonus",
       "board": "Revealing",
       "id": "revealing_r14c13",
       "glyph_radius": false,
       "row": 14,
       "column": 13,
       "requires": ["revealing_r13c13", "revealing_r15c13", "revealing_r14c12", "revealing_r14c14"],
-      "effects": ["17.5% Centipede Damage"]
+      "effects": ["2.5% Lucky Hit Chance"]
     },
     {
       "name": "Magic Node",
-      "icon": "Damage",
+      "icon": "LuckyHitBonus",
       "board": "Revealing",
       "id": "revealing_r14c14",
       "glyph_radius": false,
       "row": 14,
       "column": 14,
       "requires": ["revealing_r13c14", "revealing_r15c14", "revealing_r14c13", "revealing_r14c15"],
-      "effects": ["17.5% Centipede Damage"]
+      "effects": ["2.5% Lucky Hit Chance"]
     },
     {
       "name": "Rare Node",
-      "title": "Venom Weaver",
-      "icon": "Damage",
+      "title": "Sentinel",
+      "icon": "LuckyHitBonus",
       "board": "Revealing",
       "id": "revealing_r14c15",
       "glyph_radius": false,
       "row": 14,
       "column": 15,
       "requires": ["revealing_r13c15", "revealing_r15c15", "revealing_r14c14", "revealing_r14c16"],
-      "effects": ["35% Centipede Damage", "10% Vulnerable Damage"],
-      "bonus_amount": ["220*130", "170*60"],
-      "bonus_stat": ["Dexterity", "Intelligence"]
+      "effects": ["5% Lucky Hit Chance", "10% Lightning Resistance"],
+      "bonus_amount": ["630*455"],
+      "bonus_stat": ["Dexterity"]
     },
     {
       "name": "Magic Node",
-      "icon": "Will",
+      "icon": "Int",
       "board": "Revealing",
       "id": "revealing_r15c2",
       "glyph_radius": true,
       "row": 15,
       "column": 2,
       "requires": ["revealing_r14c2", "revealing_r16c2", "revealing_r15c1", "revealing_r15c3"],
-      "willpower": 7,
-      "effects": ["7 Willpower"],
-      "radius_stat": "Willpower",
+      "intelligence": 7,
+      "effects": ["7 Intelligence"],
+      "radius_stat": "Intelligence",
       "radius_value": 7
     },
     {
@@ -11041,7 +11588,7 @@
       "row": 15,
       "column": 3,
       "requires": ["revealing_r14c3", "revealing_r16c3", "revealing_r15c2", "revealing_r15c4"],
-      "effects": ["5% Vulnerable Damage"]
+      "effects": ["12.5% Vulnerable Damage"]
     },
     {
       "name": "Normal Node",
@@ -11157,14 +11704,28 @@
     },
     {
       "name": "Magic Node",
-      "icon": "DamageToVulnerable",
+      "icon": "ResistanceLightning",
       "board": "Revealing",
       "id": "revealing_r15c14",
       "glyph_radius": false,
       "row": 15,
       "column": 14,
       "requires": ["revealing_r14c14", "revealing_r16c14", "revealing_r15c13", "revealing_r15c15"],
-      "effects": ["5% Vulnerable Damage"]
+      "effects": ["5% Lightning Resistance"]
+    },
+    {
+      "name": "Normal Node",
+      "icon": "Str",
+      "board": "Revealing",
+      "id": "revealing_r16c1",
+      "glyph_radius": true,
+      "row": 16,
+      "column": 1,
+      "requires": ["revealing_r15c1", "revealing_r17c1", "revealing_r16c0", "revealing_r16c2"],
+      "strength": 5,
+      "effects": ["5 Strength"],
+      "radius_stat": "Strength",
+      "radius_value": 5
     },
     {
       "name": "Magic Node",
@@ -11175,7 +11736,7 @@
       "row": 16,
       "column": 2,
       "requires": ["revealing_r15c2", "revealing_r17c2", "revealing_r16c1", "revealing_r16c3"],
-      "effects": ["5% Vulnerable Damage"]
+      "effects": ["12.5% Vulnerable Damage"]
     },
     {
       "name": "Rare Node",
@@ -11188,10 +11749,10 @@
       "column": 3,
       "requires": ["revealing_r15c3", "revealing_r17c3", "revealing_r16c2", "revealing_r16c4"],
       "dexterity": 10,
-      "effects": ["10% Vulnerable Damage", "10 Dexterity"],
+      "effects": ["25% Vulnerable Damage", "10 Dexterity"],
       "radius_stat": "Dexterity",
       "radius_value": 10,
-      "bonus_amount": ["200*130"],
+      "bonus_amount": ["630*455"],
       "bonus_stat": ["Dexterity"]
     },
     {
@@ -11302,17 +11863,31 @@
       "radius_value": 5
     },
     {
+      "name": "Normal Node",
+      "icon": "Dex",
+      "board": "Revealing",
+      "id": "revealing_r17c2",
+      "glyph_radius": true,
+      "row": 17,
+      "column": 2,
+      "requires": ["revealing_r16c2", "revealing_r18c2", "revealing_r17c1", "revealing_r17c3"],
+      "dexterity": 5,
+      "effects": ["5 Dexterity"],
+      "radius_stat": "Dexterity",
+      "radius_value": 5
+    },
+    {
       "name": "Magic Node",
-      "icon": "Will",
+      "icon": "Int",
       "board": "Revealing",
       "id": "revealing_r17c3",
       "glyph_radius": true,
       "row": 17,
       "column": 3,
       "requires": ["revealing_r16c3", "revealing_r18c3", "revealing_r17c2", "revealing_r17c4"],
-      "willpower": 7,
-      "effects": ["7 Willpower"],
-      "radius_stat": "Willpower",
+      "intelligence": 7,
+      "effects": ["7 Intelligence"],
+      "radius_stat": "Intelligence",
       "radius_value": 7
     },
     {
@@ -11324,7 +11899,7 @@
       "row": 17,
       "column": 4,
       "requires": ["revealing_r16c4", "revealing_r18c4", "revealing_r17c3", "revealing_r17c5"],
-      "effects": ["5% Vulnerable Damage"]
+      "effects": ["12.5% Vulnerable Damage"]
     },
     {
       "name": "Normal Node",
@@ -11454,6 +12029,20 @@
     },
     {
       "name": "Normal Node",
+      "icon": "Int",
+      "board": "Revealing",
+      "id": "revealing_r18c4",
+      "glyph_radius": true,
+      "row": 18,
+      "column": 4,
+      "requires": ["revealing_r17c4", "revealing_r19c4", "revealing_r18c3", "revealing_r18c5"],
+      "intelligence": 5,
+      "effects": ["5 Intelligence"],
+      "radius_stat": "Intelligence",
+      "radius_value": 5
+    },
+    {
+      "name": "Normal Node",
       "icon": "Dex",
       "board": "Revealing",
       "id": "revealing_r18c4",
@@ -11468,14 +12057,14 @@
     },
     {
       "name": "Magic Node",
-      "icon": "Barrier",
+      "icon": "DamageToCC",
       "board": "Revealing",
       "id": "revealing_r18c5",
       "glyph_radius": true,
       "row": 18,
       "column": 5,
       "requires": ["revealing_r17c5", "revealing_r19c5", "revealing_r18c4", "revealing_r18c6"],
-      "effects": ["2% Barrier Generation"]
+      "effects": ["17.5% Damage to Crowd Controlled Enemies"]
     },
     {
       "name": "Normal Node",
@@ -11548,6 +12137,20 @@
       "radius_value": 5
     },
     {
+      "name": "Normal Node",
+      "icon": "Dex",
+      "board": "Revealing",
+      "id": "revealing_r19c4",
+      "glyph_radius": true,
+      "row": 19,
+      "column": 4,
+      "requires": ["revealing_r18c4", "revealing_r20c4", "revealing_r19c3", "revealing_r19c5"],
+      "dexterity": 5,
+      "effects": ["5 Dexterity"],
+      "radius_stat": "Dexterity",
+      "radius_value": 5
+    },
+    {
       "name": "Magic Node",
       "icon": "Str",
       "board": "Revealing",
@@ -11563,8 +12166,8 @@
     },
     {
       "name": "Rare Node",
-      "title": "Sentinel",
-      "icon": "Barrier",
+      "title": "Venom Weaver",
+      "icon": "Damage",
       "board": "Revealing",
       "id": "revealing_r19c6",
       "glyph_radius": true,
@@ -11572,22 +12175,36 @@
       "column": 6,
       "requires": ["revealing_r18c6", "revealing_r20c6", "revealing_r19c5", "revealing_r19c7"],
       "dexterity": 10,
-      "effects": ["4% Barrier Generation", "10 Dexterity"],
+      "effects": ["35% Damage to Crowd Controlled Enemies", "10 Dexterity"],
       "radius_stat": "Dexterity",
       "radius_value": 10,
-      "bonus_amount": ["230*130"],
-      "bonus_stat": ["Dexterity"]
+      "bonus_amount": ["210*75"],
+      "bonus_stat": ["Strength"]
     },
     {
       "name": "Magic Node",
-      "icon": "Barrier",
+      "icon": "DamageToCC",
       "board": "Revealing",
       "id": "revealing_r19c7",
       "glyph_radius": true,
       "row": 19,
       "column": 7,
       "requires": ["revealing_r18c7", "revealing_r20c7", "revealing_r19c6", "revealing_r19c8"],
-      "effects": ["2% Barrier Generation"]
+      "effects": ["17.5% Damage to Crowd Controlled Enemies"]
+    },
+    {
+      "name": "Normal Node",
+      "icon": "Str",
+      "board": "Revealing",
+      "id": "revealing_r19c8",
+      "glyph_radius": true,
+      "row": 19,
+      "column": 8,
+      "requires": ["revealing_r18c8", "revealing_r20c8", "revealing_r19c7", "revealing_r19c9"],
+      "strength": 5,
+      "effects": ["5 Strength"],
+      "radius_stat": "Strength",
+      "radius_value": 5
     },
     {
       "name": "Normal Node",
@@ -11618,15 +12235,29 @@
       "radius_value": 5
     },
     {
+      "name": "Normal Node",
+      "icon": "Str",
+      "board": "Revealing",
+      "id": "revealing_r20c5",
+      "glyph_radius": true,
+      "row": 20,
+      "column": 5,
+      "requires": ["revealing_r19c5", "revealing_r21c5", "revealing_r20c4", "revealing_r20c6"],
+      "strength": 5,
+      "effects": ["5 Strength"],
+      "radius_stat": "Strength",
+      "radius_value": 5
+    },
+    {
       "name": "Magic Node",
-      "icon": "Barrier",
+      "icon": "DamageToCC",
       "board": "Revealing",
       "id": "revealing_r20c6",
       "glyph_radius": true,
       "row": 20,
       "column": 6,
       "requires": ["revealing_r19c6", "revealing_r21c6", "revealing_r20c5", "revealing_r20c7"],
-      "effects": ["2% Barrier Generation"]
+      "effects": ["17.5% Damage to Crowd Controlled Enemies"]
     },
     {
       "name": "Magic Node",
@@ -11668,6 +12299,20 @@
       "intelligence": 5,
       "effects": ["5 Intelligence"],
       "radius_stat": "Intelligence",
+      "radius_value": 5
+    },
+    {
+      "name": "Normal Node",
+      "icon": "Dex",
+      "board": "Revealing",
+      "id": "revealing_r21c6",
+      "glyph_radius": true,
+      "row": 21,
+      "column": 6,
+      "requires": ["revealing_r20c6", "revealing_r22c6", "revealing_r21c5", "revealing_r21c7"],
+      "dexterity": 5,
+      "effects": ["5 Dexterity"],
+      "radius_stat": "Dexterity",
       "radius_value": 5
     }
   ],
@@ -11800,25 +12445,25 @@
     },
     {
       "name": "Magic Node",
-      "icon": "ResistanceAll",
+      "icon": "HealingBonus",
       "board": "Drive",
       "id": "drive_r3c6",
       "glyph_radius": false,
       "row": 3,
       "column": 6,
       "requires": ["drive_r2c6", "drive_r4c6", "drive_r3c5", "drive_r3c7"],
-      "effects": ["1.5% Resistance to All Elements"]
+      "effects": ["3% Healing Received"]
     },
     {
       "name": "Magic Node",
-      "icon": "DamageToVulnerable",
+      "icon": "HPPercent",
       "board": "Drive",
       "id": "drive_r3c7",
       "glyph_radius": false,
       "row": 3,
       "column": 7,
       "requires": ["drive_r2c7", "drive_r4c7", "drive_r3c6", "drive_r3c8"],
-      "effects": ["5% Vulnerable Damage"]
+      "effects": ["2% Maximum Life"]
     },
     {
       "name": "Normal Node",
@@ -11928,28 +12573,28 @@
     },
     {
       "name": "Rare Node",
-      "title": "Tolerance",
-      "icon": "ResistanceAll",
+      "title": "Restorative",
+      "icon": "HPPercent",
       "board": "Drive",
       "id": "drive_r4c6",
       "glyph_radius": false,
       "row": 4,
       "column": 6,
       "requires": ["drive_r3c6", "drive_r5c6", "drive_r4c5", "drive_r4c7"],
-      "effects": ["3% Resistance to All Elements", "10% Vulnerable Damage"],
-      "bonus_amount": ["170*60"],
-      "bonus_stat": ["Strength"]
+      "effects": ["4% Maximum Life", "6% Healing Received"],
+      "bonus_amount": ["210*75"],
+      "bonus_stat": ["Intelligence"]
     },
     {
       "name": "Magic Node",
-      "icon": "DamageToVulnerable",
+      "icon": "HPPercent",
       "board": "Drive",
       "id": "drive_r4c7",
       "glyph_radius": false,
       "row": 4,
       "column": 7,
       "requires": ["drive_r3c7", "drive_r5c7", "drive_r4c6", "drive_r4c8"],
-      "effects": ["5% Vulnerable Damage"]
+      "effects": ["2% Maximum Life"]
     },
     {
       "name": "Magic Node",
@@ -11972,31 +12617,31 @@
       "row": 4,
       "column": 16,
       "requires": ["drive_r3c16", "drive_r5c16", "drive_r4c15", "drive_r4c17"],
-      "effects": ["4% Dodge Chance", "5% Lucky Hit Chance"],
-      "bonus_amount": ["220*130", "170*60"],
+      "effects": ["2% Dodge Chance", "5% Lucky Hit Chance"],
+      "bonus_amount": ["700*455", "190*70"],
       "bonus_stat": ["Dexterity", "Intelligence"]
     },
     {
       "name": "Magic Node",
-      "icon": "ResistanceAll",
+      "icon": "HealingBonus",
       "board": "Drive",
       "id": "drive_r5c6",
       "glyph_radius": false,
       "row": 5,
       "column": 6,
       "requires": ["drive_r4c6", "drive_r6c6", "drive_r5c5", "drive_r5c7"],
-      "effects": ["1.5% Resistance to All Elements"]
+      "effects": ["3% Healing Received"]
     },
     {
       "name": "Magic Node",
-      "icon": "DamageToVulnerable",
+      "icon": "HPPercent",
       "board": "Drive",
       "id": "drive_r5c7",
       "glyph_radius": false,
       "row": 5,
       "column": 7,
       "requires": ["drive_r4c7", "drive_r6c7", "drive_r5c6", "drive_r5c8"],
-      "effects": ["5% Vulnerable Damage"]
+      "effects": ["2% Maximum Life"]
     },
     {
       "name": "Normal Node",
@@ -12047,6 +12692,20 @@
       "column": 16,
       "requires": ["drive_r4c16", "drive_r6c16", "drive_r5c15", "drive_r5c17"],
       "effects": ["2.5% Lucky Hit Chance"]
+    },
+    {
+      "name": "Normal Node",
+      "icon": "Int",
+      "board": "Drive",
+      "id": "drive_r5c17",
+      "glyph_radius": false,
+      "row": 5,
+      "column": 17,
+      "requires": ["drive_r4c17", "drive_r6c17", "drive_r5c16", "drive_r5c18"],
+      "intelligence": 5,
+      "effects": ["5 Intelligence"],
+      "radius_stat": "Intelligence",
+      "radius_value": 5
     },
     {
       "name": "Normal Node",
@@ -12388,7 +13047,7 @@
       "row": 8,
       "column": 5,
       "requires": ["drive_r7c5", "drive_r9c5", "drive_r8c4", "drive_r8c6"],
-      "effects": ["3.5% Movement Speed"]
+      "effects": ["1.75% Movement Speed"]
     },
     {
       "name": "Rare Node",
@@ -12400,8 +13059,8 @@
       "row": 8,
       "column": 6,
       "requires": ["drive_r7c6", "drive_r9c6", "drive_r8c5", "drive_r8c7"],
-      "effects": ["7% Movement Speed", "2% Critical Strike Chance"],
-      "bonus_amount": ["220*130", "170*60"],
+      "effects": ["3.5% Movement Speed", "2% Critical Strike Chance"],
+      "bonus_amount": ["700*455", "190*70"],
       "bonus_stat": ["Dexterity", "Strength"]
     },
     {
@@ -12456,8 +13115,8 @@
       "row": 8,
       "column": 16,
       "requires": ["drive_r7c16", "drive_r9c16", "drive_r8c15", "drive_r8c17"],
-      "effects": ["5.3% Damage Reduction while Moving", "4% Maximum Life"],
-      "bonus_amount": ["200*130"],
+      "effects": ["8% Damage Reduction while Moving", "4% Maximum Life"],
+      "bonus_amount": ["630*455"],
       "bonus_stat": ["Dexterity"]
     },
     {
@@ -12469,7 +13128,7 @@
       "row": 8,
       "column": 17,
       "requires": ["drive_r7c17", "drive_r9c17", "drive_r8c16", "drive_r8c18"],
-      "effects": ["1% Damage Reduction while Moving"]
+      "effects": ["4% Damage Reduction while Moving"]
     },
     {
       "name": "Magic Node",
@@ -12519,7 +13178,7 @@
       "row": 9,
       "column": 5,
       "requires": ["drive_r8c5", "drive_r10c5", "drive_r9c4", "drive_r9c6"],
-      "effects": ["3.5% Movement Speed"]
+      "effects": ["1.75% Movement Speed"]
     },
     {
       "name": "Magic Node",
@@ -12541,7 +13200,7 @@
       "row": 9,
       "column": 7,
       "requires": ["drive_r8c7", "drive_r10c7", "drive_r9c6", "drive_r9c8"],
-      "effects": ["3.5% Movement Speed"]
+      "effects": ["1.75% Movement Speed"]
     },
     {
       "name": "Normal Node",
@@ -12608,7 +13267,7 @@
       "row": 9,
       "column": 15,
       "requires": ["drive_r8c15", "drive_r10c15", "drive_r9c14", "drive_r9c16"],
-      "effects": ["1% Damage Reduction while Moving"]
+      "effects": ["4% Damage Reduction while Moving"]
     },
     {
       "name": "Magic Node",
@@ -12630,7 +13289,7 @@
       "row": 9,
       "column": 17,
       "requires": ["drive_r8c17", "drive_r10c17", "drive_r9c16", "drive_r9c18"],
-      "effects": ["1% Damage Reduction while Moving"]
+      "effects": ["4% Damage Reduction while Moving"]
     },
     {
       "name": "Normal Node",
@@ -12970,6 +13629,20 @@
     },
     {
       "name": "Normal Node",
+      "icon": "Str",
+      "board": "Drive",
+      "id": "drive_r11c8",
+      "glyph_radius": true,
+      "row": 11,
+      "column": 8,
+      "requires": ["drive_r10c8", "drive_r12c8", "drive_r11c7", "drive_r11c9"],
+      "strength": 5,
+      "effects": ["5 Strength"],
+      "radius_stat": "Strength",
+      "radius_value": 5
+    },
+    {
+      "name": "Normal Node",
       "icon": "Int",
       "board": "Drive",
       "id": "drive_r11c9",
@@ -13022,6 +13695,20 @@
       "strength": 5,
       "effects": ["5 Strength"],
       "radius_stat": "Strength",
+      "radius_value": 5
+    },
+    {
+      "name": "Normal Node",
+      "icon": "Dex",
+      "board": "Drive",
+      "id": "drive_r11c14",
+      "glyph_radius": true,
+      "row": 11,
+      "column": 14,
+      "requires": ["drive_r10c14", "drive_r12c14", "drive_r11c13", "drive_r11c15"],
+      "dexterity": 5,
+      "effects": ["5 Dexterity"],
+      "radius_stat": "Dexterity",
       "radius_value": 5
     },
     {
@@ -13137,29 +13824,43 @@
       "radius_value": 5
     },
     {
+      "name": "Normal Node",
+      "icon": "Int",
+      "board": "Drive",
+      "id": "drive_r12c7",
+      "glyph_radius": true,
+      "row": 12,
+      "column": 7,
+      "requires": ["drive_r11c7", "drive_r13c7", "drive_r12c6", "drive_r12c8"],
+      "intelligence": 5,
+      "effects": ["5 Intelligence"],
+      "radius_stat": "Intelligence",
+      "radius_value": 5
+    },
+    {
       "name": "Magic Node",
-      "icon": "Dex",
+      "icon": "Str",
       "board": "Drive",
       "id": "drive_r12c8",
       "glyph_radius": true,
       "row": 12,
       "column": 8,
       "requires": ["drive_r11c8", "drive_r13c8", "drive_r12c7", "drive_r12c9"],
-      "dexterity": 7,
-      "effects": ["7 Dexterity"],
-      "radius_stat": "Dexterity",
+      "strength": 7,
+      "effects": ["7 Strength"],
+      "radius_stat": "Strength",
       "radius_value": 7
     },
     {
       "name": "Magic Node",
-      "icon": "HPPercent",
+      "icon": "DamageToVulnerable",
       "board": "Drive",
       "id": "drive_r12c9",
       "glyph_radius": true,
       "row": 12,
       "column": 9,
       "requires": ["drive_r11c9", "drive_r13c9", "drive_r12c8", "drive_r12c10"],
-      "effects": ["5 Life On Hit"]
+      "effects": ["12.5% Vulnerable Damage"]
     },
     {
       "name": "Normal Node",
@@ -13212,7 +13913,7 @@
       "row": 12,
       "column": 13,
       "requires": ["drive_r11c13", "drive_r13c13", "drive_r12c12", "drive_r12c14"],
-      "effects": ["7.5% Critical Strike Damage"]
+      "effects": ["15% Critical Strike Damage"]
     },
     {
       "name": "Magic Node",
@@ -13227,6 +13928,20 @@
       "effects": ["7 Intelligence"],
       "radius_stat": "Intelligence",
       "radius_value": 7
+    },
+    {
+      "name": "Normal Node",
+      "icon": "Int",
+      "board": "Drive",
+      "id": "drive_r12c15",
+      "glyph_radius": true,
+      "row": 12,
+      "column": 15,
+      "requires": ["drive_r11c15", "drive_r13c15", "drive_r12c14", "drive_r12c16"],
+      "intelligence": 5,
+      "effects": ["5 Intelligence"],
+      "radius_stat": "Intelligence",
+      "radius_value": 5
     },
     {
       "name": "Normal Node",
@@ -13300,19 +14015,19 @@
     },
     {
       "name": "Magic Node",
-      "icon": "HPPercent",
+      "icon": "DamageToVulnerable",
       "board": "Drive",
       "id": "drive_r13c7",
       "glyph_radius": true,
       "row": 13,
       "column": 7,
       "requires": ["drive_r12c7", "drive_r14c7", "drive_r13c6", "drive_r13c8"],
-      "effects": ["5 Life On Hit"]
+      "effects": ["12.5% Vulnerable Damage"]
     },
     {
       "name": "Rare Node",
-      "title": "Hematophagy",
-      "icon": "HealingBonus",
+      "title": "Tolerance",
+      "icon": "DamageToVulnerable",
       "board": "Drive",
       "id": "drive_r13c8",
       "glyph_radius": true,
@@ -13320,11 +14035,11 @@
       "column": 8,
       "requires": ["drive_r12c8", "drive_r14c8", "drive_r13c7", "drive_r13c9"],
       "dexterity": 10,
-      "effects": ["20 Life On Hit", "10 Dexterity"],
+      "effects": ["25% Vulnerable Damage", "10 Dexterity"],
       "radius_stat": "Dexterity",
       "radius_value": 10,
-      "bonus_amount": ["230*130"],
-      "bonus_stat": ["Dexterity"]
+      "bonus_amount": ["210*75"],
+      "bonus_stat": ["Strength"]
     },
     {
       "name": "Normal Node",
@@ -13366,7 +14081,7 @@
     {
       "name": "Rare Node",
       "title": "Peerless",
-      "icon": "CriticalDamage",
+      "icon": "Damage",
       "board": "Drive",
       "id": "drive_r13c14",
       "glyph_radius": true,
@@ -13374,11 +14089,11 @@
       "column": 14,
       "requires": ["drive_r12c14", "drive_r14c14", "drive_r13c13", "drive_r13c15"],
       "dexterity": 10,
-      "effects": ["15% Critical Strike Damage", "10 Dexterity"],
+      "effects": ["20% Damage", "10 Dexterity"],
       "radius_stat": "Dexterity",
       "radius_value": 10,
-      "bonus_amount": ["215*130"],
-      "bonus_stat": ["Dexterity"]
+      "bonus_amount": ["210*75"],
+      "bonus_stat": ["Intelligence"]
     },
     {
       "name": "Magic Node",
@@ -13389,7 +14104,7 @@
       "row": 13,
       "column": 15,
       "requires": ["drive_r12c15", "drive_r14c15", "drive_r13c14", "drive_r13c16"],
-      "effects": ["7.5% Critical Strike Damage"]
+      "effects": ["15% Critical Strike Damage"]
     },
     {
       "name": "Normal Node",
@@ -13421,28 +14136,28 @@
     },
     {
       "name": "Magic Node",
-      "icon": "Dex",
+      "icon": "Str",
       "board": "Drive",
       "id": "drive_r14c7",
       "glyph_radius": true,
       "row": 14,
       "column": 7,
       "requires": ["drive_r13c7", "drive_r15c7", "drive_r14c6", "drive_r14c8"],
-      "dexterity": 7,
-      "effects": ["7 Dexterity"],
-      "radius_stat": "Dexterity",
+      "strength": 7,
+      "effects": ["7 Strength"],
+      "radius_stat": "Strength",
       "radius_value": 7
     },
     {
       "name": "Magic Node",
-      "icon": "HPPercent",
+      "icon": "DamageToVulnerable",
       "board": "Drive",
       "id": "drive_r14c8",
       "glyph_radius": true,
       "row": 14,
       "column": 8,
       "requires": ["drive_r13c8", "drive_r15c8", "drive_r14c7", "drive_r14c9"],
-      "effects": ["5 Life On Hit"]
+      "effects": ["12.5% Vulnerable Damage"]
     },
     {
       "name": "Normal Node",
@@ -13523,7 +14238,7 @@
       "row": 14,
       "column": 14,
       "requires": ["drive_r13c14", "drive_r15c14", "drive_r14c13", "drive_r14c15"],
-      "effects": ["7.5% Critical Strike Damage"]
+      "effects": ["15% Critical Strike Damage"]
     },
     {
       "name": "Magic Node",
@@ -13538,6 +14253,20 @@
       "effects": ["7 Intelligence"],
       "radius_stat": "Intelligence",
       "radius_value": 7
+    },
+    {
+      "name": "Normal Node",
+      "icon": "Str",
+      "board": "Drive",
+      "id": "drive_r15c8",
+      "glyph_radius": true,
+      "row": 15,
+      "column": 8,
+      "requires": ["drive_r14c8", "drive_r16c8", "drive_r15c7", "drive_r15c9"],
+      "strength": 5,
+      "effects": ["5 Strength"],
+      "radius_stat": "Strength",
+      "radius_value": 5
     },
     {
       "name": "Normal Node",
@@ -13597,6 +14326,34 @@
     },
     {
       "name": "Normal Node",
+      "icon": "Will",
+      "board": "Drive",
+      "id": "drive_r15c14",
+      "glyph_radius": true,
+      "row": 15,
+      "column": 14,
+      "requires": ["drive_r14c14", "drive_r16c14", "drive_r15c13", "drive_r15c15"],
+      "willpower": 5,
+      "effects": ["5 Willpower"],
+      "radius_stat": "Willpower",
+      "radius_value": 5
+    },
+    {
+      "name": "Normal Node",
+      "icon": "Dex",
+      "board": "Drive",
+      "id": "drive_r16c9",
+      "glyph_radius": true,
+      "row": 16,
+      "column": 9,
+      "requires": ["drive_r15c9", "drive_r17c9", "drive_r16c8", "drive_r16c10"],
+      "dexterity": 5,
+      "effects": ["5 Dexterity"],
+      "radius_stat": "Dexterity",
+      "radius_value": 5
+    },
+    {
+      "name": "Normal Node",
       "icon": "Dex",
       "board": "Drive",
       "id": "drive_r16c10",
@@ -13635,6 +14392,20 @@
       "willpower": 5,
       "effects": ["5 Willpower"],
       "radius_stat": "Willpower",
+      "radius_value": 5
+    },
+    {
+      "name": "Normal Node",
+      "icon": "Str",
+      "board": "Drive",
+      "id": "drive_r16c13",
+      "glyph_radius": true,
+      "row": 16,
+      "column": 13,
+      "requires": ["drive_r15c13", "drive_r17c13", "drive_r16c12", "drive_r16c14"],
+      "strength": 5,
+      "effects": ["5 Strength"],
+      "radius_stat": "Strength",
       "radius_value": 5
     },
     {
@@ -13984,7 +14755,7 @@
       "row": 5,
       "column": 13,
       "requires": ["convergence_r4c13", "convergence_r6c13", "convergence_r5c12", "convergence_r5c14"],
-      "effects": ["5% Non-Physical Damage"]
+      "effects": ["10% Non-Physical Damage"]
     },
     {
       "name": "Normal Node",
@@ -14037,7 +14808,7 @@
       "row": 6,
       "column": 12,
       "requires": ["convergence_r5c12", "convergence_r7c12", "convergence_r6c11", "convergence_r6c13"],
-      "effects": ["5% Non-Physical Damage"]
+      "effects": ["10% Non-Physical Damage"]
     },
     {
       "name": "Magic Node",
@@ -14052,47 +14823,47 @@
     },
     {
       "name": "Magic Node",
-      "icon": "Armor",
+      "icon": "ResistanceAll",
       "board": "Convergence",
       "id": "convergence_r7c5",
       "glyph_radius": false,
       "row": 7,
       "column": 5,
       "requires": ["convergence_r6c5", "convergence_r8c5", "convergence_r7c4", "convergence_r7c6"],
-      "effects": ["10 Armor"]
+      "effects": ["1.5% Resistance to All Elements"]
     },
     {
       "name": "Magic Node",
-      "icon": "DamageToFar",
+      "icon": "HPPercent",
       "board": "Convergence",
       "id": "convergence_r7c6",
       "glyph_radius": false,
       "row": 7,
       "column": 6,
       "requires": ["convergence_r6c6", "convergence_r8c6", "convergence_r7c5", "convergence_r7c7"],
-      "effects": ["12.5% Damage to Healthy Enemies"]
+      "effects": ["2% Maximum Life"]
     },
     {
       "name": "Magic Node",
-      "icon": "Armor",
+      "icon": "ResistanceAll",
       "board": "Convergence",
       "id": "convergence_r7c7",
       "glyph_radius": false,
       "row": 7,
       "column": 7,
       "requires": ["convergence_r6c7", "convergence_r8c7", "convergence_r7c6", "convergence_r7c8"],
-      "effects": ["10 Armor"]
+      "effects": ["1.5% Resistance to All Elements"]
     },
     {
       "name": "Magic Node",
-      "icon": "DamageToFar",
+      "icon": "HPPercent",
       "board": "Convergence",
       "id": "convergence_r7c8",
       "glyph_radius": false,
       "row": 7,
       "column": 8,
       "requires": ["convergence_r6c8", "convergence_r8c8", "convergence_r7c7", "convergence_r7c9"],
-      "effects": ["12.5% Damage to Healthy Enemies"]
+      "effects": ["2% Maximum Life"]
     },
     {
       "name": "Normal Node",
@@ -14131,7 +14902,7 @@
       "row": 7,
       "column": 12,
       "requires": ["convergence_r6c12", "convergence_r8c12", "convergence_r7c11", "convergence_r7c13"],
-      "effects": ["5% Non-Physical Damage"]
+      "effects": ["10% Non-Physical Damage"]
     },
     {
       "name": "Rare Node",
@@ -14143,8 +14914,8 @@
       "row": 7,
       "column": 13,
       "requires": ["convergence_r6c13", "convergence_r8c13", "convergence_r7c12", "convergence_r7c14"],
-      "effects": ["10% Non-Physical Damage", "4% Maximum Life"],
-      "bonus_amount": ["200*130"],
+      "effects": ["20% Non-Physical Damage", "4% Maximum Life"],
+      "bonus_amount": ["230*75"],
       "bonus_stat": ["Intelligence"]
     },
     {
@@ -14177,28 +14948,28 @@
     },
     {
       "name": "Magic Node",
-      "icon": "DamageToFar",
+      "icon": "HPPercent",
       "board": "Convergence",
       "id": "convergence_r8c6",
       "glyph_radius": false,
       "row": 8,
       "column": 6,
       "requires": ["convergence_r7c6", "convergence_r9c6", "convergence_r8c5", "convergence_r8c7"],
-      "effects": ["12.5% Damage to Healthy Enemies"]
+      "effects": ["2% Maximum Life"]
     },
     {
       "name": "Rare Node",
-      "title": "Spearhead",
-      "icon": "DamageToHigh",
+      "title": "Training",
+      "icon": "HPPercent",
       "board": "Convergence",
       "id": "convergence_r8c7",
       "glyph_radius": false,
       "row": 8,
       "column": 7,
       "requires": ["convergence_r7c7", "convergence_r9c7", "convergence_r8c6", "convergence_r8c8"],
-      "effects": ["25% Damage to Healthy Enemies", "20 Armor"],
-      "bonus_amount": ["160*60"],
-      "bonus_stat": ["Intelligence"]
+      "effects": ["4% Maximum Life", "3% Resistance to All Elements"],
+      "bonus_amount": ["210*75"],
+      "bonus_stat": ["Strength"]
     },
     {
       "name": "Normal Node",
@@ -14297,17 +15068,17 @@
     },
     {
       "name": "Rare Node",
-      "title": "Culler",
-      "icon": "Execute",
+      "title": "Ruinous",
+      "icon": "DamageElemental",
       "board": "Convergence",
       "id": "convergence_r9c15",
       "glyph_radius": false,
       "row": 9,
       "column": 15,
       "requires": ["convergence_r8c15", "convergence_r10c15", "convergence_r9c14", "convergence_r9c16"],
-      "effects": ["35% Ultimate Damage", "2.5% Attack Speed"],
-      "bonus_amount": ["180*60"],
-      "bonus_stat": ["Strength"]
+      "effects": ["20% Non-Physical Damage", "2.5% Attack Speed"],
+      "bonus_amount": ["230*75"],
+      "bonus_stat": ["Intelligence"]
     },
     {
       "name": "Magic Node",
@@ -14318,18 +15089,18 @@
       "row": 9,
       "column": 16,
       "requires": ["convergence_r8c16", "convergence_r10c16", "convergence_r9c15", "convergence_r9c17"],
-      "effects": ["1.3% Attack Speed"]
+      "effects": ["2.5% Attack Speed"]
     },
     {
       "name": "Magic Node",
-      "icon": "DamageToHigh",
+      "icon": "DamageElemental",
       "board": "Convergence",
       "id": "convergence_r9c17",
       "glyph_radius": false,
       "row": 9,
       "column": 17,
       "requires": ["convergence_r8c17", "convergence_r10c17", "convergence_r9c16", "convergence_r9c18"],
-      "effects": ["17.5% Ultimate Damage"]
+      "effects": ["10% Non-Physical Damage"]
     },
     {
       "name": "Normal Node",
@@ -14382,29 +15153,29 @@
       "row": 10,
       "column": 14,
       "requires": ["convergence_r9c14", "convergence_r11c14", "convergence_r10c13", "convergence_r10c15"],
-      "effects": ["1.3% Attack Speed"]
+      "effects": ["2.5% Attack Speed"]
     },
     {
       "name": "Magic Node",
-      "icon": "DamageToHigh",
+      "icon": "DamageElemental",
       "board": "Convergence",
       "id": "convergence_r10c15",
       "glyph_radius": false,
       "row": 10,
       "column": 15,
       "requires": ["convergence_r9c15", "convergence_r11c15", "convergence_r10c14", "convergence_r10c16"],
-      "effects": ["17.5% Ultimate Damage"]
+      "effects": ["10% Non-Physical Damage"]
     },
     {
       "name": "Magic Node",
-      "icon": "DamageToHigh",
+      "icon": "DamageElemental",
       "board": "Convergence",
       "id": "convergence_r10c16",
       "glyph_radius": false,
       "row": 10,
       "column": 16,
       "requires": ["convergence_r9c16", "convergence_r11c16", "convergence_r10c15", "convergence_r10c17"],
-      "effects": ["17.5% Ultimate Damage"]
+      "effects": ["10% Non-Physical Damage"]
     },
     {
       "name": "Normal Node",
@@ -15105,15 +15876,29 @@
       "radius_value": 5
     },
     {
+      "name": "Normal Node",
+      "icon": "Dex",
+      "board": "Convergence",
+      "id": "convergence_r14c8",
+      "glyph_radius": true,
+      "row": 14,
+      "column": 8,
+      "requires": ["convergence_r13c8", "convergence_r15c8", "convergence_r14c7", "convergence_r14c9"],
+      "dexterity": 5,
+      "effects": ["5 Dexterity"],
+      "radius_stat": "Dexterity",
+      "radius_value": 5
+    },
+    {
       "name": "Magic Node",
-      "icon": "DamageReductionFromDot",
+      "icon": "ResistanceAll",
       "board": "Convergence",
       "id": "convergence_r14c15",
       "glyph_radius": false,
       "row": 14,
       "column": 15,
       "requires": ["convergence_r13c15", "convergence_r15c15", "convergence_r14c14", "convergence_r14c16"],
-      "effects": ["1% Damage Reduction while Moving"]
+      "effects": ["1.5% Resistance to All Elements"]
     },
     {
       "name": "Normal Node",
@@ -15131,28 +15916,28 @@
     },
     {
       "name": "Magic Node",
-      "icon": "Will",
+      "icon": "Str",
       "board": "Convergence",
       "id": "convergence_r15c2",
       "glyph_radius": true,
       "row": 15,
       "column": 2,
       "requires": ["convergence_r14c2", "convergence_r16c2", "convergence_r15c1", "convergence_r15c3"],
-      "willpower": 7,
-      "effects": ["7 Willpower"],
-      "radius_stat": "Willpower",
+      "strength": 7,
+      "effects": ["7 Strength"],
+      "radius_stat": "Strength",
       "radius_value": 7
     },
     {
       "name": "Magic Node",
-      "icon": "HPPercent",
+      "icon": "Damage",
       "board": "Convergence",
       "id": "convergence_r15c3",
       "glyph_radius": true,
       "row": 15,
       "column": 3,
       "requires": ["convergence_r14c3", "convergence_r16c3", "convergence_r15c2", "convergence_r15c4"],
-      "effects": ["2% Maximum Life"]
+      "effects": ["10% Damage"]
     },
     {
       "name": "Normal Node",
@@ -15226,52 +16011,69 @@
     },
     {
       "name": "Rare Node",
-      "title": "Unflinching",
-      "icon": "DamageReductionFromDot",
+      "title": "Denial",
+      "icon": "ResistanceAll",
       "board": "Convergence",
       "id": "convergence_r15c14",
       "glyph_radius": false,
       "row": 15,
       "column": 14,
       "requires": ["convergence_r14c14", "convergence_r16c14", "convergence_r15c13", "convergence_r15c15"],
-      "effects": ["5.3% Damage Reduction while Moving", "4% Maximum Life"],
-      "bonus_amount": ["230*130"],
-      "bonus_stat": ["Dexterity"]
+      "effects": ["3% Resistance to All Elements", "30 Armor"],
+      "bonus_amount": ["190*75"],
+      "bonus_stat": ["Strength"]
     },
     {
       "name": "Magic Node",
-      "icon": "HPPercent",
+      "icon": "Armor",
       "board": "Convergence",
       "id": "convergence_r15c15",
       "glyph_radius": false,
       "row": 15,
       "column": 15,
       "requires": ["convergence_r14c15", "convergence_r16c15", "convergence_r15c14", "convergence_r15c16"],
-      "effects": ["2% Maximum Life"]
+      "effects": ["15 Armor"]
+    },
+    {
+      "name": "Normal Node",
+      "icon": "Str",
+      "board": "Convergence",
+      "id": "convergence_r16c1",
+      "glyph_radius": true,
+      "row": 16,
+      "column": 1,
+      "requires": ["convergence_r15c1", "convergence_r17c1", "convergence_r16c0", "convergence_r16c2"],
+      "strength": 5,
+      "effects": ["5 Strength"],
+      "radius_stat": "Strength",
+      "radius_value": 5
     },
     {
       "name": "Magic Node",
-      "icon": "HPPercent",
+      "icon": "Damage",
       "board": "Convergence",
       "id": "convergence_r16c2",
       "glyph_radius": true,
       "row": 16,
       "column": 2,
       "requires": ["convergence_r15c2", "convergence_r17c2", "convergence_r16c1", "convergence_r16c3"],
-      "effects": ["2% Maximum Life"]
+      "effects": ["10% Damage"]
     },
     {
       "name": "Rare Node",
-      "title": "Training",
-      "icon": "HPPercent",
+      "title": "Spearhead",
+      "icon": "Damage",
       "board": "Convergence",
       "id": "convergence_r16c3",
       "glyph_radius": true,
       "row": 16,
       "column": 3,
       "requires": ["convergence_r15c3", "convergence_r17c3", "convergence_r16c2", "convergence_r16c4"],
-      "effects": ["4% Maximum Life", "10% Poison Resistance"],
-      "bonus_amount": ["170*60"],
+      "dexterity": 10,
+      "effects": ["20% Damage", "10 Dexterity"],
+      "radius_stat": "Dexterity",
+      "radius_value": 10,
+      "bonus_amount": ["210*75"],
       "bonus_stat": ["Strength"]
     },
     {
@@ -15383,50 +16185,64 @@
     },
     {
       "name": "Magic Node",
-      "icon": "DamageReductionFromDot",
+      "icon": "ResistanceAll",
       "board": "Convergence",
       "id": "convergence_r16c14",
       "glyph_radius": false,
       "row": 16,
       "column": 14,
       "requires": ["convergence_r15c14", "convergence_r17c14", "convergence_r16c13", "convergence_r16c15"],
-      "effects": ["1% Damage Reduction while Moving"]
+      "effects": ["1.5% Resistance to All Elements"]
     },
     {
       "name": "Magic Node",
-      "icon": "DamageReductionFromDot",
+      "icon": "ResistanceAll",
       "board": "Convergence",
       "id": "convergence_r16c15",
       "glyph_radius": false,
       "row": 16,
       "column": 15,
       "requires": ["convergence_r15c15", "convergence_r17c15", "convergence_r16c14", "convergence_r16c16"],
-      "effects": ["1% Damage Reduction while Moving"]
+      "effects": ["1.5% Resistance to All Elements"]
+    },
+    {
+      "name": "Normal Node",
+      "icon": "Dex",
+      "board": "Convergence",
+      "id": "convergence_r17c2",
+      "glyph_radius": true,
+      "row": 17,
+      "column": 2,
+      "requires": ["convergence_r16c2", "convergence_r18c2", "convergence_r17c1", "convergence_r17c3"],
+      "dexterity": 5,
+      "effects": ["5 Dexterity"],
+      "radius_stat": "Dexterity",
+      "radius_value": 5
     },
     {
       "name": "Magic Node",
-      "icon": "Will",
+      "icon": "Str",
       "board": "Convergence",
       "id": "convergence_r17c3",
       "glyph_radius": true,
       "row": 17,
       "column": 3,
       "requires": ["convergence_r16c3", "convergence_r18c3", "convergence_r17c2", "convergence_r17c4"],
-      "willpower": 7,
-      "effects": ["7 Willpower"],
-      "radius_stat": "Willpower",
+      "strength": 7,
+      "effects": ["7 Strength"],
+      "radius_stat": "Strength",
       "radius_value": 7
     },
     {
       "name": "Magic Node",
-      "icon": "HPPercent",
+      "icon": "Damage",
       "board": "Convergence",
       "id": "convergence_r17c4",
       "glyph_radius": true,
       "row": 17,
       "column": 4,
       "requires": ["convergence_r16c4", "convergence_r18c4", "convergence_r17c3", "convergence_r17c5"],
-      "effects": ["2% Maximum Life"]
+      "effects": ["10% Damage"]
     },
     {
       "name": "Normal Node",
@@ -15552,6 +16368,34 @@
       "effects": ["2% Maximum Life"]
     },
     {
+      "name": "Normal Node",
+      "icon": "Int",
+      "board": "Convergence",
+      "id": "convergence_r18c3",
+      "glyph_radius": true,
+      "row": 18,
+      "column": 3,
+      "requires": ["convergence_r17c3", "convergence_r19c3", "convergence_r18c2", "convergence_r18c4"],
+      "intelligence": 5,
+      "effects": ["5 Intelligence"],
+      "radius_stat": "Intelligence",
+      "radius_value": 5
+    },
+    {
+      "name": "Normal Node",
+      "icon": "Dex",
+      "board": "Convergence",
+      "id": "convergence_r18c4",
+      "glyph_radius": true,
+      "row": 18,
+      "column": 4,
+      "requires": ["convergence_r17c4", "convergence_r19c4", "convergence_r18c3", "convergence_r18c5"],
+      "dexterity": 5,
+      "effects": ["5 Dexterity"],
+      "radius_stat": "Dexterity",
+      "radius_value": 5
+    },
+    {
       "name": "Magic Node",
       "icon": "Damage",
       "board": "Convergence",
@@ -15560,7 +16404,7 @@
       "row": 18,
       "column": 5,
       "requires": ["convergence_r17c5", "convergence_r19c5", "convergence_r18c4", "convergence_r18c6"],
-      "effects": ["5% Damage"]
+      "effects": ["10% Damage"]
     },
     {
       "name": "Normal Node",
@@ -15675,6 +16519,20 @@
       "radius_value": 5
     },
     {
+      "name": "Normal Node",
+      "icon": "Dex",
+      "board": "Convergence",
+      "id": "convergence_r19c4",
+      "glyph_radius": true,
+      "row": 19,
+      "column": 4,
+      "requires": ["convergence_r18c4", "convergence_r20c4", "convergence_r19c3", "convergence_r19c5"],
+      "dexterity": 5,
+      "effects": ["5 Dexterity"],
+      "radius_stat": "Dexterity",
+      "radius_value": 5
+    },
+    {
       "name": "Magic Node",
       "icon": "Int",
       "board": "Convergence",
@@ -15699,11 +16557,11 @@
       "column": 6,
       "requires": ["convergence_r18c6", "convergence_r20c6", "convergence_r19c5", "convergence_r19c7"],
       "dexterity": 10,
-      "effects": ["10% Damage", "10 Dexterity"],
+      "effects": ["20% Damage", "10 Dexterity"],
       "radius_stat": "Dexterity",
       "radius_value": 10,
-      "bonus_amount": ["215*130"],
-      "bonus_stat": ["Dexterity"]
+      "bonus_amount": ["210*75"],
+      "bonus_stat": ["Intelligence"]
     },
     {
       "name": "Magic Node",
@@ -15714,7 +16572,7 @@
       "row": 19,
       "column": 7,
       "requires": ["convergence_r18c7", "convergence_r20c7", "convergence_r19c6", "convergence_r19c8"],
-      "effects": ["5% Damage"]
+      "effects": ["10% Damage"]
     },
     {
       "name": "Normal Node",
@@ -15759,6 +16617,20 @@
       "radius_value": 5
     },
     {
+      "name": "Normal Node",
+      "icon": "Str",
+      "board": "Convergence",
+      "id": "convergence_r20c5",
+      "glyph_radius": true,
+      "row": 20,
+      "column": 5,
+      "requires": ["convergence_r19c5", "convergence_r21c5", "convergence_r20c4", "convergence_r20c6"],
+      "strength": 5,
+      "effects": ["5 Strength"],
+      "radius_stat": "Strength",
+      "radius_value": 5
+    },
+    {
       "name": "Magic Node",
       "icon": "Damage",
       "board": "Convergence",
@@ -15767,7 +16639,7 @@
       "row": 20,
       "column": 6,
       "requires": ["convergence_r19c6", "convergence_r21c6", "convergence_r20c5", "convergence_r20c7"],
-      "effects": ["5% Damage"]
+      "effects": ["10% Damage"]
     },
     {
       "name": "Magic Node",
@@ -15810,9 +16682,37 @@
       "effects": ["5 Intelligence"],
       "radius_stat": "Intelligence",
       "radius_value": 5
+    },
+    {
+      "name": "Normal Node",
+      "icon": "Dex",
+      "board": "Convergence",
+      "id": "convergence_r21c6",
+      "glyph_radius": true,
+      "row": 21,
+      "column": 6,
+      "requires": ["convergence_r20c6", "convergence_r22c6", "convergence_r21c5", "convergence_r21c7"],
+      "dexterity": 5,
+      "effects": ["5 Dexterity"],
+      "radius_stat": "Dexterity",
+      "radius_value": 5
     }
   ],
   "Sapping": [
+    {
+      "name": "Normal Node",
+      "icon": "Dex",
+      "board": "Sapping",
+      "id": "sapping_r1c6",
+      "glyph_radius": true,
+      "row": 1,
+      "column": 6,
+      "requires": ["sapping_r0c6", "sapping_r2c6", "sapping_r1c5", "sapping_r1c7"],
+      "dexterity": 5,
+      "effects": ["5 Dexterity"],
+      "radius_stat": "Dexterity",
+      "radius_value": 5
+    },
     {
       "name": "Normal Node",
       "icon": "Str",
@@ -15927,6 +16827,20 @@
     },
     {
       "name": "Normal Node",
+      "icon": "Int",
+      "board": "Sapping",
+      "id": "sapping_r3c4",
+      "glyph_radius": true,
+      "row": 3,
+      "column": 4,
+      "requires": ["sapping_r2c4", "sapping_r4c4", "sapping_r3c3", "sapping_r3c5"],
+      "intelligence": 5,
+      "effects": ["5 Intelligence"],
+      "radius_stat": "Intelligence",
+      "radius_value": 5
+    },
+    {
+      "name": "Normal Node",
       "icon": "Will",
       "board": "Sapping",
       "id": "sapping_r3c5",
@@ -15955,16 +16869,16 @@
     },
     {
       "name": "Magic Node",
-      "icon": "Dex",
+      "icon": "Int",
       "board": "Sapping",
       "id": "sapping_r3c7",
       "glyph_radius": true,
       "row": 3,
       "column": 7,
       "requires": ["sapping_r2c7", "sapping_r4c7", "sapping_r3c6", "sapping_r3c8"],
-      "dexterity": 7,
-      "effects": ["7 Dexterity"],
-      "radius_stat": "Dexterity",
+      "intelligence": 7,
+      "effects": ["7 Intelligence"],
+      "radius_stat": "Intelligence",
       "radius_value": 7
     },
     {
@@ -15997,6 +16911,34 @@
     },
     {
       "name": "Normal Node",
+      "icon": "Dex",
+      "board": "Sapping",
+      "id": "sapping_r4c3",
+      "glyph_radius": true,
+      "row": 4,
+      "column": 3,
+      "requires": ["sapping_r3c3", "sapping_r5c3", "sapping_r4c2", "sapping_r4c4"],
+      "dexterity": 5,
+      "effects": ["5 Dexterity"],
+      "radius_stat": "Dexterity",
+      "radius_value": 5
+    },
+    {
+      "name": "Normal Node",
+      "icon": "Str",
+      "board": "Sapping",
+      "id": "sapping_r4c5",
+      "glyph_radius": true,
+      "row": 4,
+      "column": 5,
+      "requires": ["sapping_r3c5", "sapping_r5c5", "sapping_r4c4", "sapping_r4c6"],
+      "strength": 5,
+      "effects": ["5 Strength"],
+      "radius_stat": "Strength",
+      "radius_value": 5
+    },
+    {
+      "name": "Normal Node",
       "icon": "Int",
       "board": "Sapping",
       "id": "sapping_r4c6",
@@ -16011,19 +16953,19 @@
     },
     {
       "name": "Magic Node",
-      "icon": "Armor",
+      "icon": "Damage",
       "board": "Sapping",
       "id": "sapping_r4c7",
       "glyph_radius": true,
       "row": 4,
       "column": 7,
       "requires": ["sapping_r3c7", "sapping_r5c7", "sapping_r4c6", "sapping_r4c8"],
-      "effects": ["10 Armor"]
+      "effects": ["10% Damage"]
     },
     {
       "name": "Rare Node",
-      "title": "Blessing",
-      "icon": "Armor",
+      "title": "Concentrated",
+      "icon": "Damage",
       "board": "Sapping",
       "id": "sapping_r4c8",
       "glyph_radius": true,
@@ -16031,24 +16973,24 @@
       "column": 8,
       "requires": ["sapping_r3c8", "sapping_r5c8", "sapping_r4c7", "sapping_r4c9"],
       "dexterity": 10,
-      "effects": ["20 Armor", "10 Dexterity"],
+      "effects": ["20% Damage", "10 Dexterity"],
       "radius_stat": "Dexterity",
       "radius_value": 10,
-      "bonus_amount": ["230*130"],
-      "bonus_stat": ["Dexterity"]
+      "bonus_amount": ["210*75"],
+      "bonus_stat": ["Intelligence"]
     },
     {
       "name": "Magic Node",
-      "icon": "Dex",
+      "icon": "Int",
       "board": "Sapping",
       "id": "sapping_r4c9",
       "glyph_radius": true,
       "row": 4,
       "column": 9,
       "requires": ["sapping_r3c9", "sapping_r5c9", "sapping_r4c8", "sapping_r4c10"],
-      "dexterity": 7,
-      "effects": ["7 Dexterity"],
-      "radius_stat": "Dexterity",
+      "intelligence": 7,
+      "effects": ["7 Intelligence"],
+      "radius_stat": "Intelligence",
       "radius_value": 7
     },
     {
@@ -16109,6 +17051,20 @@
     },
     {
       "name": "Normal Node",
+      "icon": "Int",
+      "board": "Sapping",
+      "id": "sapping_r5c4",
+      "glyph_radius": true,
+      "row": 5,
+      "column": 4,
+      "requires": ["sapping_r4c4", "sapping_r6c4", "sapping_r5c3", "sapping_r5c5"],
+      "intelligence": 5,
+      "effects": ["5 Intelligence"],
+      "radius_stat": "Intelligence",
+      "radius_value": 5
+    },
+    {
+      "name": "Normal Node",
       "icon": "Dex",
       "board": "Sapping",
       "id": "sapping_r5c6",
@@ -16137,25 +17093,25 @@
     },
     {
       "name": "Magic Node",
-      "icon": "Armor",
+      "icon": "Damage",
       "board": "Sapping",
       "id": "sapping_r5c8",
       "glyph_radius": true,
       "row": 5,
       "column": 8,
       "requires": ["sapping_r4c8", "sapping_r6c8", "sapping_r5c7", "sapping_r5c9"],
-      "effects": ["10 Armor"]
+      "effects": ["10% Damage"]
     },
     {
       "name": "Magic Node",
-      "icon": "Armor",
+      "icon": "Damage",
       "board": "Sapping",
       "id": "sapping_r5c9",
       "glyph_radius": true,
       "row": 5,
       "column": 9,
       "requires": ["sapping_r4c9", "sapping_r6c9", "sapping_r5c8", "sapping_r5c10"],
-      "effects": ["10 Armor"]
+      "effects": ["10% Damage"]
     },
     {
       "name": "Normal Node",
@@ -16169,6 +17125,20 @@
       "intelligence": 5,
       "effects": ["5 Intelligence"],
       "radius_stat": "Intelligence",
+      "radius_value": 5
+    },
+    {
+      "name": "Normal Node",
+      "icon": "Dex",
+      "board": "Sapping",
+      "id": "sapping_r6c1",
+      "glyph_radius": true,
+      "row": 6,
+      "column": 1,
+      "requires": ["sapping_r5c1", "sapping_r7c1", "sapping_r6c0", "sapping_r6c2"],
+      "dexterity": 5,
+      "effects": ["5 Dexterity"],
+      "radius_stat": "Dexterity",
       "radius_value": 5
     },
     {
@@ -16364,14 +17334,14 @@
     },
     {
       "name": "Magic Node",
-      "icon": "DamageToCC",
+      "icon": "ResourceTotal",
       "board": "Sapping",
       "id": "sapping_r7c4",
       "glyph_radius": true,
       "row": 7,
       "column": 4,
       "requires": ["sapping_r6c4", "sapping_r8c4", "sapping_r7c3", "sapping_r7c5"],
-      "effects": ["7.5% Damage to Crowd Controlled Enemies"]
+      "effects": ["4 Maximum Resource"]
     },
     {
       "name": "Normal Node",
@@ -16452,7 +17422,7 @@
       "row": 7,
       "column": 13,
       "requires": ["sapping_r6c13", "sapping_r8c13", "sapping_r7c12", "sapping_r7c14"],
-      "effects": ["1.3% Attack Speed"]
+      "effects": ["2.5% Attack Speed"]
     },
     {
       "name": "Normal Node",
@@ -16470,8 +17440,8 @@
     },
     {
       "name": "Rare Node",
-      "title": "Devious",
-      "icon": "DamageToCC",
+      "title": "Eager Prey",
+      "icon": "ResourceTotal",
       "board": "Sapping",
       "id": "sapping_r8c4",
       "glyph_radius": true,
@@ -16479,22 +17449,22 @@
       "column": 4,
       "requires": ["sapping_r7c4", "sapping_r9c4", "sapping_r8c3", "sapping_r8c5"],
       "dexterity": 10,
-      "effects": ["15% Damage to Crowd Controlled Enemies", "10 Dexterity"],
+      "effects": ["8 Maximum Resource", "10 Dexterity"],
       "radius_stat": "Dexterity",
       "radius_value": 10,
-      "bonus_amount": ["180*60"],
-      "bonus_stat": ["Intelligence"]
+      "bonus_amount": ["210*75"],
+      "bonus_stat": ["Strength"]
     },
     {
       "name": "Magic Node",
-      "icon": "DamageToCC",
+      "icon": "ResourceTotal",
       "board": "Sapping",
       "id": "sapping_r8c5",
       "glyph_radius": true,
       "row": 8,
       "column": 5,
       "requires": ["sapping_r7c5", "sapping_r9c5", "sapping_r8c4", "sapping_r8c6"],
-      "effects": ["7.5% Damage to Crowd Controlled Enemies"]
+      "effects": ["4 Maximum Resource"]
     },
     {
       "name": "Normal Node",
@@ -16526,6 +17496,20 @@
     },
     {
       "name": "Normal Node",
+      "icon": "Str",
+      "board": "Sapping",
+      "id": "sapping_r8c9",
+      "glyph_radius": true,
+      "row": 8,
+      "column": 9,
+      "requires": ["sapping_r7c9", "sapping_r9c9", "sapping_r8c8", "sapping_r8c10"],
+      "strength": 5,
+      "effects": ["5 Strength"],
+      "radius_stat": "Strength",
+      "radius_value": 5
+    },
+    {
+      "name": "Normal Node",
       "icon": "Dex",
       "board": "Sapping",
       "id": "sapping_r8c10",
@@ -16549,7 +17533,7 @@
       "column": 12,
       "requires": ["sapping_r7c12", "sapping_r9c12", "sapping_r8c11", "sapping_r8c13"],
       "effects": ["2.5% Attack Speed", "2% Dodge Chance"],
-      "bonus_amount": ["180*60"],
+      "bonus_amount": ["230*75"],
       "bonus_stat": ["Intelligence"]
     },
     {
@@ -16593,14 +17577,14 @@
     },
     {
       "name": "Magic Node",
-      "icon": "DamageToCC",
+      "icon": "ResourceTotal",
       "board": "Sapping",
       "id": "sapping_r9c5",
       "glyph_radius": true,
       "row": 9,
       "column": 5,
       "requires": ["sapping_r8c5", "sapping_r10c5", "sapping_r9c4", "sapping_r9c6"],
-      "effects": ["7.5% Damage to Crowd Controlled Enemies"]
+      "effects": ["4 Maximum Resource"]
     },
     {
       "name": "Normal Node",
@@ -16634,6 +17618,20 @@
       "name": "Normal Node",
       "icon": "Dex",
       "board": "Sapping",
+      "id": "sapping_r9c8",
+      "glyph_radius": true,
+      "row": 9,
+      "column": 8,
+      "requires": ["sapping_r8c8", "sapping_r10c8", "sapping_r9c7", "sapping_r9c9"],
+      "dexterity": 5,
+      "effects": ["5 Dexterity"],
+      "radius_stat": "Dexterity",
+      "radius_value": 5
+    },
+    {
+      "name": "Normal Node",
+      "icon": "Dex",
+      "board": "Sapping",
       "id": "sapping_r9c10",
       "glyph_radius": false,
       "row": 9,
@@ -16653,7 +17651,7 @@
       "row": 9,
       "column": 12,
       "requires": ["sapping_r8c12", "sapping_r10c12", "sapping_r9c11", "sapping_r9c13"],
-      "effects": ["1.3% Attack Speed"]
+      "effects": ["2.5% Attack Speed"]
     },
     {
       "name": "Magic Node",
@@ -16664,7 +17662,7 @@
       "row": 9,
       "column": 13,
       "requires": ["sapping_r8c13", "sapping_r10c13", "sapping_r9c12", "sapping_r9c14"],
-      "effects": ["1.3% Attack Speed"]
+      "effects": ["2.5% Attack Speed"]
     },
     {
       "name": "Magic Node",
@@ -17152,28 +18150,28 @@
     },
     {
       "name": "Rare Node",
-      "title": "Hunter Killer",
-      "icon": "DamageToElite",
+      "title": "Denial",
+      "icon": "ResistanceAll",
       "board": "Sapping",
       "id": "sapping_r12c8",
       "glyph_radius": false,
       "row": 12,
       "column": 8,
       "requires": ["sapping_r11c8", "sapping_r13c8", "sapping_r12c7", "sapping_r12c9"],
-      "effects": ["16% Damage to Elites", "14% Movement Speed for 4 Seconds After Killing an Elite"],
-      "bonus_amount": ["215*130"],
-      "bonus_stat": ["Dexterity"]
+      "effects": ["3% Resistance to All Elements", "30 Armor"],
+      "bonus_amount": ["190*75"],
+      "bonus_stat": ["Strength"]
     },
     {
       "name": "Magic Node",
-      "icon": "DamageToElite",
+      "icon": "ResistanceAll",
       "board": "Sapping",
       "id": "sapping_r12c9",
       "glyph_radius": false,
       "row": 12,
       "column": 9,
       "requires": ["sapping_r11c9", "sapping_r13c9", "sapping_r12c8", "sapping_r12c10"],
-      "effects": ["8% Damage to Elites"]
+      "effects": ["1.5% Resistance to All Elements"]
     },
     {
       "name": "Normal Node",
@@ -17228,7 +18226,7 @@
       "column": 16,
       "requires": ["sapping_r11c16", "sapping_r13c16", "sapping_r12c15", "sapping_r12c17"],
       "effects": ["3% Resistance to All Elements", "4% Maximum Life"],
-      "bonus_amount": [170],
+      "bonus_amount": ["210*75"],
       "bonus_stat": ["Strength"]
     },
     {
@@ -17286,36 +18284,36 @@
     },
     {
       "name": "Magic Node",
-      "icon": "DamageToElite",
+      "icon": "ResistanceAll",
       "board": "Sapping",
       "id": "sapping_r13c7",
       "glyph_radius": false,
       "row": 13,
       "column": 7,
       "requires": ["sapping_r12c7", "sapping_r14c7", "sapping_r13c6", "sapping_r13c8"],
-      "effects": ["8% Damage to Elites"]
+      "effects": ["1.5% Resistance to All Elements"]
     },
     {
       "name": "Magic Node",
-      "icon": "MoveSpeedEliteKill",
+      "icon": "Armor",
       "board": "Sapping",
       "id": "sapping_r13c8",
       "glyph_radius": false,
       "row": 13,
       "column": 8,
       "requires": ["sapping_r12c8", "sapping_r14c8", "sapping_r13c7", "sapping_r13c9"],
-      "effects": ["7% Movement Speed for 4 Seconds After Killing an Elite"]
+      "effects": ["15 Armor"]
     },
     {
       "name": "Magic Node",
-      "icon": "DamageToElite",
+      "icon": "ResistanceAll",
       "board": "Sapping",
       "id": "sapping_r13c9",
       "glyph_radius": false,
       "row": 13,
       "column": 9,
       "requires": ["sapping_r12c9", "sapping_r14c9", "sapping_r13c8", "sapping_r13c10"],
-      "effects": ["8% Damage to Elites"]
+      "effects": ["1.5% Resistance to All Elements"]
     },
     {
       "name": "Normal Node",
@@ -17450,14 +18448,14 @@
     },
     {
       "name": "Magic Node",
-      "icon": "MoveSpeedEliteKill",
+      "icon": "Armor",
       "board": "Sapping",
       "id": "sapping_r14c9",
       "glyph_radius": false,
       "row": 14,
       "column": 9,
       "requires": ["sapping_r13c9", "sapping_r15c9", "sapping_r14c8", "sapping_r14c10"],
-      "effects": ["7% Movement Speed for 4 Seconds After Killing an Elite"]
+      "effects": ["15 Armor"]
     },
     {
       "name": "Normal Node",
@@ -17517,14 +18515,14 @@
     },
     {
       "name": "Magic Node",
-      "icon": "CriticalDamage",
+      "icon": "ResourceTotal",
       "board": "Sapping",
       "id": "sapping_r15c13",
       "glyph_radius": false,
       "row": 15,
       "column": 13,
       "requires": ["sapping_r14c13", "sapping_r16c13", "sapping_r15c12", "sapping_r15c14"],
-      "effects": ["7.5% Critical Strike Damage"]
+      "effects": ["4 Maximum Resource"]
     },
     {
       "name": "Normal Node",
@@ -17599,27 +18597,27 @@
     {
       "name": "Rare Node",
       "title": "Opportunist",
-      "icon": "Dodge",
+      "icon": "ResourceUp",
       "board": "Sapping",
       "id": "sapping_r16c12",
       "glyph_radius": false,
       "row": 16,
       "column": 12,
       "requires": ["sapping_r15c12", "sapping_r17c12", "sapping_r16c11", "sapping_r16c13"],
-      "effects": ["4% Dodge Chance", "15% Critical Strike Damage"],
-      "bonus_amount": ["220*130", "170*60"],
+      "effects": ["4% Resource Generation", "8 Maximum Resource"],
+      "bonus_amount": [400, 395],
       "bonus_stat": ["Strength", "Intelligence"]
     },
     {
       "name": "Magic Node",
-      "icon": "Dodge",
+      "icon": "ResourceUp",
       "board": "Sapping",
       "id": "sapping_r16c13",
       "glyph_radius": false,
       "row": 16,
       "column": 13,
       "requires": ["sapping_r15c13", "sapping_r17c13", "sapping_r16c12", "sapping_r16c14"],
-      "effects": ["1% Dodge Chance"]
+      "effects": ["2% Resource Generation"]
     },
     {
       "name": "Normal Node",
@@ -17707,36 +18705,36 @@
     },
     {
       "name": "Magic Node",
-      "icon": "Dodge",
+      "icon": "ResourceUp",
       "board": "Sapping",
       "id": "sapping_r17c11",
       "glyph_radius": false,
       "row": 17,
       "column": 11,
       "requires": ["sapping_r16c11", "sapping_r18c11", "sapping_r17c10", "sapping_r17c12"],
-      "effects": ["1% Dodge Chance"]
+      "effects": ["2% Resource Generation"]
     },
     {
       "name": "Magic Node",
-      "icon": "CriticalDamage",
+      "icon": "ResourceTotal",
       "board": "Sapping",
       "id": "sapping_r17c12",
       "glyph_radius": false,
       "row": 17,
       "column": 12,
       "requires": ["sapping_r16c12", "sapping_r18c12", "sapping_r17c11", "sapping_r17c13"],
-      "effects": ["7.5% Critical Strike Damage"]
+      "effects": ["4 Maximum Resource"]
     },
     {
       "name": "Magic Node",
-      "icon": "Dodge",
+      "icon": "ResourceUp",
       "board": "Sapping",
       "id": "sapping_r17c13",
       "glyph_radius": false,
       "row": 17,
       "column": 13,
       "requires": ["sapping_r16c13", "sapping_r18c13", "sapping_r17c12", "sapping_r17c14"],
-      "effects": ["1% Dodge Chance"]
+      "effects": ["2% Resource Generation"]
     },
     {
       "name": "Normal Node",
@@ -17817,20 +18815,6 @@
       "row": 18,
       "column": 13,
       "requires": ["sapping_r17c13", "sapping_r19c13", "sapping_r18c12", "sapping_r18c14"],
-      "dexterity": 5,
-      "effects": ["5 Dexterity"],
-      "radius_stat": "Dexterity",
-      "radius_value": 5
-    },
-    {
-      "name": "Normal Node",
-      "icon": "Dex",
-      "board": "Sapping",
-      "id": "sapping_r18c16",
-      "glyph_radius": false,
-      "row": 18,
-      "column": 16,
-      "requires": ["sapping_r17c16", "sapping_r19c16", "sapping_r18c15", "sapping_r18c17"],
       "dexterity": 5,
       "effects": ["5 Dexterity"],
       "radius_stat": "Dexterity",

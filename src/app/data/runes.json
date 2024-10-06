@@ -19,7 +19,7 @@
       "type": "Ritual",
       "rarity": "Legendary",
       "gain": 25,
-      "bonus": "Stand still for 0.3 seconds."
+      "bonus": "Stand still while fighting for 0.3 seconds."
     },
     {
       "name": "Tam",
@@ -47,69 +47,55 @@
       "type": "Ritual",
       "rarity": "Rare",
       "gain": 1000,
-      "bonus": "Become Injured or Crowd Controlled (Cooldown: 20 seconds)."
-    },
-    {
-      "name": "Kaa",
-      "type": "Ritual",
-      "rarity": "Rare",
-      "gain": 2,
-      "bonus": "Lose 1% of your Maximum Life."
+      "bonus": "Become Injured or Crowd Controlled (Cooldown: 10 seconds)."
     },
     {
       "name": "Neo",
       "type": "Ritual",
       "rarity": "Rare",
-      "gain": 300,
-      "bonus": "Deal damage after not taking any within 5 seconds. (Resets if Invulnerable.)"
+      "gain": 200,
+      "bonus": "Deal damage after not taking any within 2 seconds. (Resets if Invulnerable.)"
     },
     {
       "name": "Noc",
       "type": "Ritual",
       "rarity": "Rare",
-      "gain": 5,
+      "gain": 10,
       "bonus": "Inflict a Crowd Control that isn't Slow or Chill."
     },
     {
       "name": "Poc",
       "type": "Ritual",
       "rarity": "Rare",
-      "gain": 2,
+      "gain": 5,
       "bonus": "Spend 5% of your Maximum Resource."
     },
     {
       "name": "Cem",
       "type": "Ritual",
       "rarity": "Magic",
-      "gain": 50,
+      "gain": 75,
       "bonus": "Cast Evade."
     },
     {
       "name": "Cir",
       "type": "Ritual",
       "rarity": "Magic",
-      "gain": 25,
+      "gain": 30,
       "bonus": "Cast the same non-Channeled Skill 3 times in a row."
     },
     {
       "name": "Moni",
       "type": "Ritual",
       "rarity": "Magic",
-      "gain": 10,
-      "bonus": "Cast a Skill after moving. (Cooldown: 0.2 seconds)"
-    },
-    {
-      "name": "Ur",
-      "type": "Ritual",
-      "rarity": "Magic",
-      "gain": 10,
-      "bonus": "Your Minion or Companion kills an enemy or dies."
+      "gain": 25,
+      "bonus": "Cast a Skill after moving. (Cooldown: 0.25 seconds)"
     },
     {
       "name": "Yax",
       "type": "Ritual",
       "rarity": "Magic",
-      "gain": 100,
+      "gain": 200,
       "bonus": "Drink a Healing Potion."
     },
     {
@@ -126,13 +112,13 @@
       "requires": 100,
       "overflow": "Further Reduced Cooldowns",
       "cooldown": 1,
-      "bonus": "Reduce your active Cooldowns by 0.25 seconds."
+      "bonus": "Reduce your active Cooldowns by 0.1 seconds."
     },
     {
       "name": "Jah",
       "type": "Invocation",
       "rarity": "Legendary",
-      "requires": 500,
+      "requires": 400,
       "cooldown": 2,
       "bonus": "Replace your next Evade with the Sorcerer's Teleport, blinking further, dealing damage, and becoming Unstoppable."
     },
@@ -140,25 +126,25 @@
       "name": "Ohm",
       "type": "Invocation",
       "rarity": "Legendary",
-      "requires": 500,
+      "requires": 600,
       "overflow": "Increased Duration",
       "cooldown": 2,
-      "bonus": "Evoke the Barbarian's Enhanced War Cry, increasing your Movement Speed and damage dealt."
+      "bonus": "Evoke the Barbarian's War Cry, increasing your Movement Speed and damage dealt."
     },
     {
       "name": "Vex",
       "type": "Invocation",
       "rarity": "Legendary",
-      "requires": 400,
+      "requires": 1000,
       "overflow": "Increased Duration",
       "cooldown": 1,
-      "bonus": "Gain +3 to all Skills for 5 seconds."
+      "bonus": "Gain +3 to all Skills for 7 seconds."
     },
     {
       "name": "Xan",
       "type": "Invocation",
       "rarity": "Legendary",
-      "requires": 700,
+      "requires": 800,
       "cooldown": 1,
       "bonus": "Your next Skill cast will be a guaranteed Critical Strike and Overpower."
     },
@@ -174,7 +160,7 @@
       "name": "Kry",
       "type": "Invocation",
       "rarity": "Rare",
-      "requires": 500,
+      "requires": 300,
       "cooldown": 3,
       "bonus": "Evoke the Spiritborn's Vortex, dealing damage and Pulling In enemies."
     },
@@ -182,10 +168,10 @@
       "name": "Lac",
       "type": "Invocation",
       "rarity": "Rare",
-      "requires": 800,
+      "requires": 400,
       "overflow": "Increased Duration",
       "cooldown": 1,
-      "bonus": "Evoke the Barbarian's Challenging Shout, reducing your damage taken."
+      "bonus": "Evoke the Barbarian's Challenging Shout, reducing your damage taken for 3 seconds."
     },
     {
       "name": "Mot",
@@ -200,7 +186,7 @@
       "name": "Ner",
       "type": "Invocation",
       "rarity": "Rare",
-      "requires": 700,
+      "requires": 600,
       "overflow": "Increased Duration",
       "cooldown": 6,
       "bonus": "Evoke the Rogue's Countering Concealment, gaining Dodge Chance, Movement Speed, Unstoppable, and Stealth."
@@ -218,16 +204,16 @@
       "name": "Qua",
       "type": "Invocation",
       "rarity": "Rare",
-      "requires": 400,
+      "requires": 50,
       "overflow": "Increased Duration",
       "cooldown": 1,
-      "bonus": "Restore an Evade charge and gain 6% Movement Speed for 5 seconds, up to 30%."
+      "bonus": "Gain 7% Movement Speed for 5 seconds, up to 35%."
     },
     {
       "name": "Que",
       "type": "Invocation",
       "rarity": "Rare",
-      "requires": 800,
+      "requires": 300,
       "overflow": "Increased Duration",
       "cooldown": 1,
       "bonus": "Evoke the Druid's Earthen Bulwark, granting yourself a Barrier."
@@ -264,7 +250,7 @@
       "requires": 200,
       "overflow": "Increased Duration",
       "cooldown": 1,
-      "bonus": "Gain 20% Maximum Life for 4 seconds."
+      "bonus": "Gain 20% Maximum Life for 6 seconds."
     },
     {
       "name": "Zec",
@@ -273,7 +259,7 @@
       "requires": 200,
       "overflow": "Further Reduced Cooldown",
       "cooldown": 2,
-      "bonus": "Reduce your active Ultimate Cooldown by 4 seconds."
+      "bonus": "Reduce your active Ultimate Cooldown by 2 seconds."
     },
     {
       "name": "Ceh",
@@ -297,28 +283,10 @@
       "name": "Lum",
       "type": "Invocation",
       "rarity": "Magic",
-      "requires": "?",
+      "requires": 5,
       "overflow": "Increased Resource Restored",
       "cooldown": 1,
       "bonus": "Restore 1 Primary Resource."
-    },
-    {
-      "name": "Met",
-      "type": "Invocation",
-      "rarity": "Magic",
-      "requires": 100,
-      "overflow": "Increased Duration",
-      "cooldown": 1,
-      "bonus": "You leave the Necromancer's Desecrated Ground behind you for 3 seconds, dealing damage to enemies within."
-    },
-    {
-      "name": "Ono",
-      "type": "Invocation",
-      "rarity": "Magic",
-      "requires": 25,
-      "overflow": "Increased Bolts Spawned",
-      "cooldown": 1,
-      "bonus": "Evoke the Druid's Dancing Bolts, seeking and dealing damage to enemies."
     },
     {
       "name": "Tal",
@@ -350,7 +318,7 @@
       "name": "Ton",
       "type": "Invocation",
       "rarity": "Magic",
-      "requires": 25,
+      "requires": 20,
       "overflow": "Increased Meteorites Spawned",
       "cooldown": 1,
       "bonus": "Evoke the Sorcerer's Meteorites, dealing damage to enemies."

@@ -20,6 +20,7 @@ const ParagonBoard: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [isGateDialogOpen, setIsGateDialogOpen] = useState(false);
   const [currentGate, setCurrentGate] = useState<CurrentGate | null>(null);
+  const [selectedGlyphs, setSelectedGlyphs] = useState<Record<string, any>>({});
 
   useEffect(() => {
     const initializeBoards = async () => {
@@ -63,6 +64,16 @@ const ParagonBoard: React.FC = () => {
     setRemainingPoints((prev) => prev + 1);
   };
 
+  const handleGlyphSelect = (boardId: string, glyph: any) => {
+    setSelectedGlyphs((prev) => ({
+      ...prev,
+      [boardId]: glyph,
+    }));
+    setBoards((prevBoards) =>
+      prevBoards.map((board) => (board.id === boardId ? { ...board, selectedGlyph: glyph } : board))
+    );
+  };
+
   const handleGateClick = (boardId: string, gatePosition: 'top' | 'right' | 'bottom' | 'left') => {
     setIsGateDialogOpen(true);
     setCurrentGate({ boardId, position: gatePosition });
@@ -100,6 +111,7 @@ const ParagonBoard: React.FC = () => {
             position: position,
           },
           showControls: true,
+          selectedGlyph: null,
         };
 
         setBoards((prev) => {
@@ -147,6 +159,10 @@ const ParagonBoard: React.FC = () => {
       }
       return prevBoards.filter((board) => board.id !== boardId);
     });
+    setSelectedGlyphs((prev) => {
+      const { [boardId]: _, ...rest } = prev;
+      return rest;
+    });
   };
 
   const handleClearBoard = (boardId: string) => {
@@ -154,11 +170,15 @@ const ParagonBoard: React.FC = () => {
       prevBoards.map((board) => {
         if (board.id === boardId) {
           setRemainingPoints((prev) => prev + board.selectedNodes.length);
-          return { ...board, selectedNodes: [] };
+          return { ...board, selectedNodes: [], selectedGlyph: null };
         }
         return board;
       })
     );
+    setSelectedGlyphs((prev) => ({
+      ...prev,
+      [boardId]: null,
+    }));
   };
 
   return (
@@ -186,6 +206,8 @@ const ParagonBoard: React.FC = () => {
           onChangeBoard={handleChangeBoard}
           onDeleteBoard={handleDeleteBoard}
           onClearBoard={handleClearBoard}
+          onGlyphSelect={handleGlyphSelect}
+          selectedGlyphs={selectedGlyphs}
         />
       </div>
       <Dialog open={isGateDialogOpen} onOpenChange={setIsGateDialogOpen}>

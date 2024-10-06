@@ -173,6 +173,14 @@
       "description": "When you spend 75 Energy you release a cluster of exploding Stun Grenades that deal [X] total Physical damage and Stun enemies for 1 second.\n\nYour Stun Grenades deal [25-45%] increased damage."
     },
     {
+      "name": "Aspect of Assistance",
+      "new": false,
+      "type": "Utility",
+      "legendary": true,
+      "campaign": false,
+      "description": "Your Reinforcement Cooldown is reduced by [22-33%] . After casting your Ultimate Skill, call your Mercenary for Reinforcement."
+    },
+    {
       "name": "Aspect of Audacity",
       "new": false,
       "type": "Utility",
@@ -542,7 +550,7 @@
       "campaign": false,
       "dungeon": "Forsaken Quarry",
       "location": "Fractured Peaks",
-      "description": "Flurry damages enemies in a circle around you and deals x [25-45%] increased damage."
+      "description": "Flurry damages enemies in a circle around you and deals x [35-55%] increased damage."
     },
     {
       "name": "Aspect of Encroaching Wrath",
@@ -885,7 +893,7 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Vulnerable"],
-      "description": "Smoke Grenade has a [35-55%] chance to create an Arrow Storm where it explodes, dealing [X] Physical damage over 3 seconds. Your Arrow Storms continuously apply Vulnerable."
+      "description": "Smoke Grenade has a [80-100%] chance to create an Arrow Storm where it explodes, dealing [X] Physical damage over 3 seconds. Your Arrow Storms continuously apply Vulnerable."
     },
     {
       "name": "Aspect of Kinetic Suppression",
@@ -1258,7 +1266,7 @@
       "dungeon": "Seaside Descent",
       "location": "Dry Steppes",
       "filters": ["Fortify", "Core"],
-      "description": "Your Core Skills deal up to [25-45%] increased damage based on your amount of Fortify."
+      "description": "Your Core Skills deal up to [35-75%] increased damage based on your amount of Fortify."
     },
     {
       "name": "Aspect of Retribution",
@@ -1471,7 +1479,7 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Overpower", "Critical Strike", "Elite"],
-      "description": "Every 20 seconds, your next Upheaval cast is guaranteed to Overpower and deals x [15-35%] increased damage. Critical Strikes with Upheaval against Elites reduce this timer by 1 second."
+      "description": "Every 20 seconds, your next Upheaval cast is guaranteed to Overpower and deals x [30-45%] increased damage. Critical Strikes with Upheaval against Elites reduce this timer by 1 second."
     },
     {
       "name": "Aspect of Surprise",
@@ -1573,7 +1581,7 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Knock Down"],
-      "description": "Shred gains a 4th attack that hits all surrounding enemies, deals x [20-60%] increased damage and Knocks Down enemies for 2 seconds."
+      "description": "Shred gains a 4th dash attack that hits all surrounding enemies, deals x [20-60%] increased damage and Knocks Down enemies for 2 seconds."
     },
     {
       "name": "Aspect of the Alpha",
@@ -1592,7 +1600,7 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Poison"],
-      "description": "While dashing, Shred seeks out Nearby Poisoned enemies and deals x [40-60%] increased damage to them."
+      "description": "While dashing, Shred seeks out Nearby Poisoned enemies and deals x [55-75%] increased damage to them."
     },
     {
       "name": "Aspect of the Bounding Conduit",
@@ -1658,7 +1666,7 @@
       "campaign": false,
       "dungeon": "Uldur's Cave",
       "location": "Kehjistan",
-      "description": "You deal x [ 35-55%] increased Shadow damage to enemies afflicted by any Curse."
+      "description": "You and your minions deal x [ 35-55%] increased Shadow damage to enemies afflicted by any Curse."
     },
     {
       "name": "Aspect of the Dark Dance",
@@ -2220,7 +2228,7 @@
       "campaign": true,
       "dungeon": "Jalal's Vigil",
       "location": "Scosglen",
-      "description": "Twisting Blades orbit for a short time after they return to you, dealing x [25-45%] of Twisting Blade's return damage per hit."
+      "description": "Twisting Blades orbit for a short time after they return to you, dealing x [40-60%] of Twisting Blade's return damage per hit."
     },
     {
       "name": "Blast-Trapper's Aspect",
@@ -2302,7 +2310,7 @@
       "type": "Resource",
       "legendary": true,
       "campaign": false,
-      "description": "Whenever you cast a Shout Skill, its Cooldown is reduced by [1.0-3.0] seconds per Nearby enemy, up to a maximum of 6 seconds."
+      "description": "Whenever you cast a Shout Skill, its active Cooldown is reduced by [10-30%] per Nearby enemy, up to a maximum of 50%."
     },
     {
       "name": "Bold Chieftain's Aspect",
@@ -2311,7 +2319,7 @@
       "type": "Resource",
       "legendary": true,
       "campaign": false,
-      "description": "Whenever you cast a Shout Skill, its Cooldown is reduced by [1.0-3.0] seconds per Nearby enemy, up to a maximum of 6 seconds."
+      "description": "Whenever you cast a Shout Skill, its active Cooldown is reduced by [10-30%] per Nearby enemy, up to a maximum of 50%."
     },
     {
       "name": "Brawler's Aspect",
@@ -2435,7 +2443,7 @@
       "campaign": true,
       "dungeon": "Stockades",
       "location": "Scosglen",
-      "description": "Earth Skills deal [25-45%] more Critical Strike Damage to Crowd Controlled enemies."
+      "description": "Earth Skills deal x [35-75%] increased damage to Crowd Controlled enemies."
     },
     {
       "name": "Craven Aspect",
@@ -2592,7 +2600,7 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Dodge"],
-      "description": "Upon taking damage from surrounding enemies, you drop a Smoke Grenade and Dodge the next [2-10] attacks within 10 seconds. This effect can only occur once every 20 seconds."
+      "description": "Upon taking damage from surrounding enemies, you drop a Smoke Grenade and Dodge the next [2-10] attacks within 5 seconds. This effect can only occur once every 10 seconds."
     },
     {
       "name": "Everliving Aspect",
@@ -2886,7 +2894,7 @@
       "type": "Utility",
       "legendary": true,
       "campaign": false,
-      "filters": ["Lucky Hit", ""],
+      "filters": ["Lucky Hit"],
       "description": "Gain [10-30%] increased Lucky Hit Chance while all damage bonuses from the Walking Arsenal Key Passive are active."
     },
     {
@@ -3070,7 +3078,7 @@
       "type": "Mobility",
       "legendary": true,
       "campaign": false,
-      "description": "Shadow Step has an additional Charge. Killing an enemy with Shadow Step refunds a Charge and increases the damage of Shadow Step by x [4.5-14.5%] for 2 seconds, up to x [18-58%] ."
+      "description": "Shadow Step has an additional Charge. Killing an enemy with Shadow Step refunds a Charge and increases the damage of Shadow Step by x [4.5-14.5%] for 2 seconds, up to x [18-87%] ."
     },
     {
       "name": "Ravenous Aspect",
@@ -3221,7 +3229,7 @@
       "type": "Offensive",
       "legendary": true,
       "campaign": false,
-      "description": "Earth Spike gains x [35-59%] bonus damage, launches spikes in a line."
+      "description": "Earth Spike gains x [50-70%] bonus damage, launches spikes in a line."
     },
     {
       "name": "Serpentine Aspect",
@@ -3291,7 +3299,7 @@
       "type": "Offensive",
       "legendary": true,
       "campaign": false,
-      "description": "Pulverize creates a shockwave that travels forward, dealing [70-110%] of its damage to targets in the path."
+      "description": "Pulverize creates a shockwave that travels forward, dealing [80-120%] of its damage to targets in the path."
     },
     {
       "name": "Skinwalker's Aspect",
@@ -3405,7 +3413,7 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Heal", "Essence", "Spirit", "Energy", "Mana", "Fury"],
-      "description": "Gain [25-45] Primary Resource for every 20% Life that you Heal or every 200% Life that you Overheal when at Maximum Life."
+      "description": "Gain [25-45] Primary Resource for every 20% Life that you Heal or every 120% Life that you Overheal when at Maximum Life."
     },
     {
       "name": "Starving Ravager's Aspect",
@@ -3465,7 +3473,7 @@
       "campaign": false,
       "dungeon": "Anica's Claim",
       "location": "Fractured Peaks",
-      "description": "Critical Strikes with Shred deal [25-45%] of the damage dealt as Lightning damage to the target and surrounding enemies."
+      "description": "Critical Strikes with Shred deal [40-60%] of the damage dealt as Lightning damage to the target and surrounding enemies."
     },
     {
       "name": "Stormcrow's Aspect",
@@ -3475,7 +3483,7 @@
       "legendary": true,
       "campaign": false,
       "filters": ["Stun"],
-      "description": "Ravens now deal Lightning damage which is increased by x [30-50%] . Ravens Active deals its full damage in half the time, and enemies inside it are Stunned."
+      "description": "Ravens now deal Lightning damage which is increased by x [60-100%] . Ravens Active deals its full damage in half the time, and enemies inside it are Stunned."
     },
     {
       "name": "Stormshifter's Aspect",
@@ -3486,7 +3494,7 @@
       "campaign": true,
       "location": "Kehjistan",
       "filters": ["Skill Rank"],
-      "description": "While Hurricane is active, gain +2 Ranks to your Shapeshifting Skills."
+      "description": "While Hurricane is active, gain +5 Ranks to your Shapeshifting Skills."
     },
     {
       "name": "Subterranean Aspect",

@@ -33,7 +33,7 @@
     "class": "Druid",
     "type": "Ring",
     "secondary_stats": ["Resistance to All Elements", "Lightning Resistance"],
-    "terciary_stats": ["Willpower", "Lucky Hit Chance", "Damage to Close Enemies", "Ultimate Skill Cooldown Reduction"],
+    "terciary_stats": ["Willpower", "Damage to Close Enemies", "Lucky Hit Chance", "Ultimate Skill Cooldown Reduction"],
     "filters": ["Distant Enemies", "Pull"],
     "effect": "When casting an Ultimate Skill and again 5 seconds after, you Pull in Distant enemies and deal [X] Physical damage to them. This damage is increased by x2% per 1 point of Willpower you have.",
     "flavor": "\"When I was born, I breathed in the wind and the storm and they gave me life. When I die, I will breath out, and return that gift to the skies.\" - Journal excerpt"
@@ -43,7 +43,7 @@
     "class": "Barbarian",
     "type": "2h Axe",
     "secondary_stats": ["Vulnerable Damage"],
-    "terciary_stats": ["Strength", "Damage to Close Enemies", "Cooldown Reduction", "Ranks to Steel Grasp"],
+    "terciary_stats": ["Damage to Close Enemies", "Cooldown Reduction", "Strength", "Ranks to Steel Grasp"],
     "filters": ["Pull"],
     "effect": "Steel Grasp launches 2 additional chains. Enemies hit by Steel Grasp take x [40-60%] increased damage from you for 5 seconds.",
     "flavor": "\"Weapons wielded by the fiercest warriors often catch the eye of the Ancient spirits. If the wielder is worthy, the spirits may bless the steel with their strength.\" - Gerti, Oxen Tribe Forgemaster"
@@ -53,7 +53,7 @@
     "mythic": true,
     "type": "Helm",
     "secondary_stats": ["666% Poison Resistance"],
-    "terciary_stats": ["77 All Stats", "86 Life On Hit", "30% Attack Speed", "10% Maximum Resistance"],
+    "terciary_stats": ["30% Attack Speed", "77 All Stats", "86 Life On Hit", "10% Maximum Resistance"],
     "filters": ["Lucky Hit", "Poison"],
     "effect": "Lucky Hit: Up to a 20% chance to trigger a poison nova that applies [X] Poisoning damage over 5 seconds to enemies in the area.",
     "flavor": "The horrific whispers of the Maiden of Anguish flicker through your mind, pushing you ever closer to madness..."
@@ -63,10 +63,10 @@
     "class": "Barbarian",
     "type": "Pants",
     "terciary_stats": [
-      "Maximum Life",
       "Ultimate Damage",
-      "Resistance to All Elements",
-      "Call of the Ancients Cooldown Reduction"
+      "Call of the Ancients Cooldown Reduction",
+      "Maximum Life",
+      "Resistance to All Elements"
     ],
     "effect": "Ancients you summon are empowered.\nKorlic creates an Earthquake that deals [X] Physical damage over 4 seconds when he leaps.\nTalic leaves behind Dust Devils that deal [X] damage while he whirlwinds.\nMawdac ignites the ground Burning enemies for an additional [X] damage over 4 seconds when he upheaves the ground.",
     "flavor": "\"Rise clansmen and reclaim our trampled honor! Ancients' blood runs through us all! We are storms - earth breaking, maelstrom wielding. The fire of the gods burn still! They are with us!\" - Ealda"
@@ -76,7 +76,7 @@
     "class": "Rogue",
     "type": "1h Dagger",
     "secondary_stats": ["Damage"],
-    "terciary_stats": ["Maximum Life", "Critical Strike Chance", "Lucky Hit Chance", "Ranks to Weapon Mastery"],
+    "terciary_stats": ["Critical Strike Chance", "Lucky Hit Chance", "Maximum Life", "Ranks to Weapon Mastery"],
     "filters": ["Attack Speed"],
     "effect": "Hits with this weapon increase your Attack Speed by [4-8%] for 4 seconds, up to [20-40%] .",
     "flavor": "When Caldeum's gates closed, Asheara led her Iron Wolves out of the city knowing full well they would never return. Instead they roamed Kehjistan pledging their blades to any who were in need."
@@ -86,9 +86,9 @@
     "class": "Sorcerer",
     "type": "Pants",
     "terciary_stats": [
+      "Resource Generation",
       "Chance for Chain Lightning to Hit Twice",
       "Damage Reduction",
-      "Resource Generation",
       "Ranks to Chain Lightning"
     ],
     "effect": "Chain Lightning alternates between orbiting you and seeking up to 3 enemies. When it returns, it drains 6 Mana from you for each active Chain Lightning. After draining 66 total Mana, the bolt explodes for [X] Lightning Damage. Chain Lightning expires if you don't have enough Mana for it to drain.",
@@ -99,10 +99,10 @@
     "type": "1h Sword",
     "secondary_stats": ["Cold Damage"],
     "terciary_stats": [
+      "Lucky Hit: Up to a 40% Chance to Deal [X] Cold Damage",
       "All Stats",
       "Attack Speed",
-      "Cold Resistance",
-      "Lucky Hit: Up to a 40% Chance to Deal [X] Cold Damage"
+      "Cold Resistance"
     ],
     "filters": ["Lucky Hit", "Freeze", "Cold"],
     "effect": "Lucky Hit: Up to a 20% chance to Freeze enemies for 3 seconds and deal [X] Cold damage to them.",
@@ -112,17 +112,22 @@
     "name": "Band of First Breath",
     "class": "Spiritborn",
     "type": "Ring",
-    "secondary_stats": ["Resistance to All Elements", "Resistance to All Elements"],
-    "terciary_stats": ["Ranks to Auspicious", "Lucky Hit Chance while You Have a Barrier", "Damage", "Maximum Life"],
+    "secondary_stats": ["Lightning Resistance", "Armor"],
+    "terciary_stats": [
+      "Damage for 4 Seconds After Gainiing Resolve",
+      "Lucky Hit Chance while You Have a Barrier",
+      "Maximum Life",
+      "Ranks to Auspicious"
+    ],
     "filters": ["Evade", "Resolve"],
-    "effect": "Evading consumes 1 stack of Resolve to generate [20-40] Vigor.\r\n\r\nGain Armored Hide's Passive Effect.",
+    "effect": "Evading consumes 1 stack of Resolve to generate [20-40] Vigor.\n\nGain Armored Hide's Passive Effect.",
     "flavor": "A gentle whisper glides on the wind, words eluding mortal ken. It weaves through the soul like a melody forgotten, leaving naught but a name: Adarja, the First-Breather."
   },
   {
     "name": "Banished Lord's Talisman",
     "type": "Amulet",
     "secondary_stats": ["Resistance to All Elements"],
-    "terciary_stats": ["Maximum Life", "Attack Speed", "Overpower Damage", "Ranks to Core Skills"],
+    "terciary_stats": ["Maximum Life", "Overpower Damage", "Attack Speed", "Ranks to Core Skills"],
     "filters": ["Overpower"],
     "effect": "After you spend 275 of your Primary Resource, your next Core Skill is guaranteed to Overpower. Your Critical Strikes that Overpower deal [20-60%] increased damage.",
     "flavor": "\"His name has been lost to history, but to have been exiled from a land as cursed as Hawezar, his deeds must have been truly depraved.\" - Scholar's Notes"
@@ -135,8 +140,8 @@
     "terciary_stats": [
       "Critical Strike Chance",
       "Damage Reduction from Close Enemies",
-      "Ranks to Frenzy",
-      "Ranks to Duelist"
+      "Ranks to Duelist",
+      "Ranks to Frenzy"
     ],
     "filters": ["Attack Speed"],
     "effect": "Increase Frenzy's maximum stacks by 2 . While at maximum stacks, you deal [15-30%] increased damage and your other Skills gain [35-55%] increased Attack Speed.",
@@ -147,7 +152,7 @@
     "class": "Rogue",
     "type": "Boots",
     "secondary_stats": ["Maximum Evade Charges"],
-    "terciary_stats": ["Maximum Resource", "Movement Speed", "Ultimate Cooldown Reduction", "Ranks to Agile"],
+    "terciary_stats": ["Ranks to Agile", "Maximum Resource", "Ultimate Cooldown Reduction", "Movement Speed"],
     "filters": ["Ultimate", "Core", "Energy"],
     "effect": "When you cast an Ultimate Skill, your next Core Skill consumes all of your energy and deals [0.25-0.75%] increased damage per Energy consumed. Using a Cooldown restores 25 Energy.",
     "flavor": "\"Genai grew proud and fond of boasting of her hunting prowess. She claimed she was fast enough to catch even the spirit Leraye, who cursed her for such an insult.\" - Fable of Genai's Twenty Trials"
@@ -159,11 +164,11 @@
     "secondary_stats": ["Attack Speed"],
     "terciary_stats": [
       "Chance for Corpse Explosion to Deal Double Damage",
-      "Ranks of All Corpse Skills",
-      "Ranks of the Hewed Flesh",
-      "Ranks of the Fueled by Death"
+      "Ranks to Corpse Skills",
+      "Ranks to Hewed Flesh",
+      "Ranks to Fueled by Death"
     ],
-    "effect": "Corpse Explosion consumes up to 4 additonal Corpses around the initial Corpse, gaining [120-160%] damage and [10.5-12.5%] Size per additional Corpse consumed.",
+    "effect": "Corpse Explosion consumes up to 4 additonal Corpses around the initial Corpse, gaining [120-160%] damage and [42-50%] Size per additional Corpse consumed.",
     "flavor": "\"The scrolls describe a river of tar that separated the living from the land of the dead. Any unfortunate soul who tried to cross would be dragged down into oblivion.\" - Notes of Scholar Kamien"
   },
   {
@@ -171,9 +176,9 @@
     "class": "Necromancer",
     "type": "Chest Armor",
     "terciary_stats": [
-      "Maximum Life",
-      "Damage for 4 Seconds After Picking up a Blood Orb",
       "Blood Orbs Restore [X] Essence",
+      "Damage for 4 Seconds After Picking up a Blood Orb",
+      "Maximum Life",
       "Ranks to Bone Spirit"
     ],
     "filters": ["Blood Orb"],
@@ -185,7 +190,7 @@
     "class": "Necromancer",
     "type": "Pants",
     "secondary_stats": ["While Injured, Your Potion Also Grants 30% Movement Speed for 2 Seconds"],
-    "terciary_stats": ["Maximum Life", "Overpower Damage", "Curse Duration", "Ranks to Curse Skills"],
+    "terciary_stats": ["Overpower Damage", "Curse Duration", "Maximum Life", "Ranks to Curse Skills"],
     "filters": ["Overpower"],
     "effect": "Your Minions' attacks have a [3-7%] to randomly inflict Decrepify or Iron Maiden. You deal [100-150%] increased Overpower damage to enemies affected by your Curses.",
     "flavor": "A naturally occurring curiosity, the blood moon persists as a sign of woe for the most superstitious Zakarum faithful. Children born under it are often considered cursed and cast out, lest it spread."
@@ -195,7 +200,7 @@
     "class": "Necromancer",
     "type": "2h Scythe",
     "secondary_stats": ["Non-Physical Damage"],
-    "terciary_stats": ["Intelligence", "Lucky Hit Chance", "Freeze Duration", "Ranks to Darkness Skills"],
+    "terciary_stats": ["Lucky Hit Chance", "Intelligence", "Ranks to Darkness Skills", "Freeze Duration"],
     "filters": ["Lucky Hit", "Chill"],
     "effect": "Your Darkness Skills Chill enemies for up to 100% and deal [100-200%] increased damage to Frozen enemies.\n\nLucky Hit: Your Darkness Skills have up to a 100% chance to generate [15-25] additonal Essence against Frozen targets.",
     "flavor": "\"My companion swung her odd weapon in a wide arc, and our pursuer stopped short. The look of horror on his face as his body fell to pieces will haunt me forever.\" - The Ebon Pages, Canto II, Verse XI"
@@ -206,9 +211,9 @@
     "type": "Ring",
     "secondary_stats": ["Resistance to All Elements", "Cold Resistance"],
     "terciary_stats": [
-      "Critical Strike Chance",
-      "Cold Damage",
       "Ice Spike Damage",
+      "Cold Damage",
+      "Critical Strike Chance",
       "Chance for Ice Spikes to Explode Twice"
     ],
     "filters": ["Frozen"],
@@ -221,10 +226,10 @@
     "type": "1h Dagger",
     "secondary_stats": ["Damage"],
     "terciary_stats": [
-      "Dexterity",
       "Basic Attack Speed",
+      "Lucky Hit: Up to a [X%] Chance to Make Enemies Vulnerable for 2 Seconds",
       "Damage per Combo Point Spent",
-      "Lucky Hit: Up to a [X%] Chance to Make Enemies Vulnerable for 2 Seconds"
+      "Dexterity"
     ],
     "effect": "Your Core Skills deal [20-40%] increased damage when spending 3 Combo Points. Your Skills using this weapon have a 50% chance to generate 3 Combo Points.",
     "flavor": "\"I've never seen such ruthless butchery. He deserves to be be shipped off to die in the swamps with the rest of the godless murderers.\" - Witness to the murder of Sergeant Walcot"
@@ -234,10 +239,10 @@
     "class": "Rogue",
     "type": "Helm",
     "terciary_stats": [
-      "Crowd Control Duration",
-      "Ranks to Rapid Gambits",
       "Ranks to Unstable Elixirs",
-      "Ranks to Trick Attacks"
+      "Ranks to Trick Attacks",
+      "Ranks to Rapid Gambits",
+      "Crowd Control Duration"
     ],
     "filters": ["Lucky Hit", "Crowd Control"],
     "effect": "You gain [20-40%] increased Lucky Hit Chance against Crowd Controlled enemies.",
@@ -249,17 +254,17 @@
     "type": "Gloves",
     "terciary_stats": [
       "Ranks to Antivenom",
-      "Poison Damage Over Time",
-      "Damage to Poisoned Enemies",
-      "Healing Received"
+      "Ranks to Nourishment",
+      "Ranks to Touch of Death",
+      "Critical Strike Chance"
     ],
-    "effect": "When you take direct damage you instead receive [150-100]% of it in the form of Poisoning over 10 seconds.\n\nBased your Poisoned Life amount, dealing direct damage has up to a 10% chance to infect an enemy with Touch of Death and clear the Poisoning from you.",
+    "effect": "When you would take direct damage, it is instead distributed as Poisoning over the next 10 seconds but increased by [30-0%] .\n\nLucky Hit: Direct damage has up to a 25% chance based on your Poisoned Life percentage to infect an enemy with Touch of Death.",
     "flavor": "T'an seized a spear and drove it thrice into his mad brother Tan. Alas, the craftier of the twin gods wove one last cunning snare. In place of blood, the wound wept venom and consumed all in its wake."
   },
   {
     "name": "Crown of Lucion",
     "type": "Helm",
-    "terciary_stats": ["Maximum Life", "Lucky Hit", "Shadow Resistance", "Cooldown Reduction"],
+    "terciary_stats": ["Maximum Life", "Cooldown Reduction", "Lucky Hit", "Shadow Resistance"],
     "filters": ["Resource Cost"],
     "effect": "Each time you use a Skill with a Resource Cost, gain x [5-15%] increased damage and Resource Cost is increased by +30% for 4 seconds, stacking up to 5 times.",
     "flavor": "The prince of Hatred, fair as maggots over carrion. He claims no throne, crafts no realms, reigning over only a blackened, bitter heart. Some legends name him banished, while others dread his return."
@@ -270,9 +275,9 @@
     "type": "Gloves",
     "terciary_stats": [
       "Maximum Life",
+      "Ranks to Tides of Blood",
       "Blood Surge Drains + [X] Times from Elites",
-      "Ranks to Blood Surge",
-      "Ranks to Tides of Blood"
+      "Ranks to Blood Surge"
     ],
     "filters": ["Blood Surge", "Corpse"],
     "effect": "Casting Blood Surge consumes nearby Corpses to cause mini novas, dealing [X] damage. This damage is increased by x10% for each enemy drained by your initial cast, up to x50%, as well as by x20% for each Corpse consumed.",
@@ -283,10 +288,10 @@
     "class": "Necromancer",
     "type": "Helm",
     "terciary_stats": [
-      "Maximum Resource",
-      "Armor",
+      "Ranks to Bone Spear",
       "Chance for Bone Spear Projectiles to Cast Twice",
-      "Ranks to Bone Spear"
+      "Armor",
+      "Maximum Resource"
     ],
     "effect": "Bone Spear leaves behind echoes as it travels that explode dealing [X] damage, increased by x5% for every 30% of your Critical Strike Damage Bonus.",
     "flavor": "\"Rathma is endless. He was the first Ancient, and will remain at the end. He is the master of the Great Cycle of Being. When Death comes for him, why should he fear it?\" - Vauntus, Acolyte of Rathma"
@@ -297,10 +302,10 @@
     "type": "Amulet",
     "secondary_stats": ["Resistance to All Elements"],
     "terciary_stats": [
+      "Ranks to Coalesced Blood",
       "Attack Speed",
-      "+1 Essence per Enemy Drained by Blood Surge",
       "Ranks to Blood Surge",
-      "Ranks to Coalesced Blood"
+      "+1 Essence per Enemy Drained by Blood Surge"
     ],
     "effect": "Blood Surge casts a mini nova on your Minions, dealing [X] damage. Damage is increased by 10% per target drained by the initial cast, up to 50%.",
     "flavor": "Once a sanctum for Rathma's studies, the Temple of the Deathspeaker became a proving grounds for potential leaders of his priesthood. Its halls are filled with the corpses of those who failed."
@@ -311,10 +316,10 @@
     "type": "Amulet",
     "secondary_stats": ["Resistance to All Elements"],
     "terciary_stats": [
-      "Movement Speed while Hurricane is Active",
-      "Nature Magic Cooldown Reduction",
       "Ranks to Wrath Skills",
-      "Ranks to Crushing Earth"
+      "Nature Magic Cooldown Reduction",
+      "Ranks to Crushing Earth",
+      "Movement Speed while Hurricane is Active"
     ],
     "effect": "Casting Boulder while Hurricane is active will cause your boulders to rotate around you instead. Boulder's damage is increased by [10-30%] for each one currently rotating. You may have up to 10 Boulders active at a time.",
     "flavor": "\"As the hateful mob beat on his door, he gripped the pulsing shard tightly and screamed for calm. When he opened his eyes, all that greeted him was silence and the blood-smeared ruins of his cottage.\""
@@ -326,9 +331,9 @@
     "secondary_stats": ["100% Damage"],
     "terciary_stats": [
       "114 All Stats",
-      "35% Maximum Life",
       "10% Damage Reduction",
-      "Lucky Hit: Up to a 15% Chance to Heal for 530 Life"
+      "Lucky Hit: Up to a 15% Chance to Heal for 530 Life",
+      "35% Maximum Life"
     ],
     "filters": ["Lucky Hit", "Shadow"],
     "effect": "Lucky Hit: Up to a 25% chance to deal [X] Shadow damage to surrounding enemies and reduce their damage dealt by 20% for 5 seconds.",
@@ -340,10 +345,10 @@
     "type": "Bow",
     "secondary_stats": ["Vulnerable Damage"],
     "terciary_stats": [
-      "Attack Speed",
       "Chance for Penetrating Shot Projectiles to Cast Twice",
       "Ranks to Penetrating Shot",
-      "Ranks to Malice"
+      "Ranks to Malice",
+      "Attack Speed"
     ],
     "filters": ["Vulnerable"],
     "effect": "Penetrating Shot makes enemies Vulnerable for 3 seconds.\nEvery 4th cast of Penetrating Shot bouces off walls and deals [50-150%] more damage.",
@@ -355,10 +360,10 @@
     "type": "Ring",
     "secondary_stats": ["Resistance to All Elements", "Cold Resistance"],
     "terciary_stats": [
-      "Critical Strike Chance",
-      "Earth Attack Speed",
       "Chance for Landslide Projectiles to Cast Twice",
-      "Ranks to Landslide"
+      "Earth Attack Speed",
+      "Ranks to Landslide",
+      "Critical Strike Chance"
     ],
     "effect": "Casts of Landslide leave behind Tectonic Spikes that deal [X] Physical damage over 2 seconds. Spawning a Landslide pillar within Tectonic Spikes has a [20-30%] chance to spawn two instead.",
     "flavor": "When Arreat was sundered, the world quaked. The Druid Aglainn journeyed far to chronicle the aftermath. Grief-stricken by the great mountain king's fall, he rent the earth anew."
@@ -369,10 +374,10 @@
     "type": "Amulet",
     "secondary_stats": ["Resistance to All Elements"],
     "terciary_stats": [
-      "Chance for Blight Projectiles to Cast Twice",
       "Ranks to Blight",
+      "Ranks to Gloom",
       "Ranks to Reaper's Pursuit",
-      "Ranks to Gloom"
+      "Chance for Blight Projectiles to Cast Twice"
     ],
     "effect": "Blight also shoots 4 smaller projectiles that pierce enemies and deal [X] Shadow damage over 3 seconds.",
     "flavor": "This talisman was the life's work of Deathspeaker Jurdann. Following his premature demise, Jurdann's successor wore the amulet in tribute as they trialed against the Temple of the Deathspeaker."
@@ -380,7 +385,7 @@
   {
     "name": "Endurant Faith",
     "type": "Gloves",
-    "terciary_stats": ["All Stats", "Maximum Life", "Cooldown Reduction", "Healing Received"],
+    "terciary_stats": ["Maximum Life", "Lucky Hit Chance", "Healing Received", "All Stats"],
     "effect": "When you would be damaged for at least 40% of your Maximum Life at once, it is instead distributed over the next 2 seconds and reduced by x [10-30%] .",
     "flavor": "Despite the Light's blessings, countless Knights Penitent were hewn apart by the infernal hordes. Remnants of their steel lie scattered through the Hells – dwindling lights in the chaos."
   },
@@ -391,9 +396,9 @@
     "secondary_stats": ["Resistance to All Elements"],
     "terciary_stats": [
       "Intelligence",
-      "Crackling Energy Damage",
+      "Damage Reduction per Crackling Energy Charge",
       "Movement Speed for 4 Seconds After Picking Up Crackling Energy",
-      "Energy Charge"
+      "Crackling Energy Damage"
     ],
     "filters": ["Crackling Energy"],
     "effect": "Upon collecting Crackling Energy, there's a 15% chance to release a lightning nova, dealing [X] Lightning Damage, increased by 120% for every 100 Intelligence you have.",
@@ -406,8 +411,8 @@
     "secondary_stats": ["Evade Grants 125% Movement Speed for 3 Seconds"],
     "terciary_stats": [
       "Movement Speed",
-      "Movement Speed for 4 Seconds After Killing an Elite",
       "Critical Strike Damage",
+      "Movement Speed for 4 Seconds After Killing an Elite",
       "Resistance to All Elements"
     ],
     "filters": ["Movement Speed"],
@@ -420,10 +425,10 @@
     "type": "Pants",
     "secondary_stats": ["Traps Arm 1 Second Faster"],
     "terciary_stats": [
-      "Maximum Life",
       "Ultimate Damage",
-      "Damage Reduction from Enemies Affected by Trap Skills",
-      "Ranks to Aftermath"
+      "Ranks to Aftermath",
+      "Maximum Life",
+      "Damage Reduction from Enemies Affected by Trap Skills"
     ],
     "effect": "Death Trap deals [50-150%] increased damage and will re-arm iteself once after activating.",
     "flavor": "\"And so, when the sun dipped behind the hills each night, he knew that Ashen Jack would soon be near. Watching, and waiting.\" - Greenslade's Tales, Chapter 2: \"Each Long Night\""
@@ -434,9 +439,9 @@
     "type": "2h Sword",
     "secondary_stats": ["Vulnerable Damage"],
     "terciary_stats": [
-      "Strength",
       "Damage to Bleeding Enemies",
       "Enhanced Rupture Explosion Size",
+      "Strength",
       "Rupture Cooldown Reduction"
     ],
     "filters": ["Bleed"],
@@ -447,9 +452,9 @@
     "name": "Fists of Fate",
     "type": "Gloves",
     "terciary_stats": [
-      "Attack Speed",
-      "Critical Strike Chance",
       "Lucky Hit Chance",
+      "Critical Strike Chance",
+      "Attack Speed",
       "Lucky Hit: Up to a [X%] Chance to Apply a Random Crowd Control Effect for 2 Seconds"
     ],
     "effect": "Your attacks randomly deal 1% to [200-300%] of their normal damage.",
@@ -460,7 +465,12 @@
     "class": "Sorcerer",
     "type": "Wand",
     "secondary_stats": ["Life On Hit", "Lucky Hit: Up to a 40% Chance to Deal 6,000 Fire Damage"],
-    "terciary_stats": ["Intelligence", "Lucky Hit Chance", "Incinerate Size", "Ranks to Incinerate"],
+    "terciary_stats": [
+      "Intelligence",
+      "Lucky Hit Chance",
+      "[X%] Chance for Incinerate to Deal Double Damage",
+      "Ranks to Incinerate"
+    ],
     "filters": ["Fire"],
     "effect": "While Channeling Incinerate, you periodically shoot embers that are attracted to enemies, each dealing [X] Fire damage.",
     "flavor": "The burn may heal, but the pain is eternal."
@@ -470,10 +480,10 @@
     "class": "Sorcerer",
     "type": "Gloves",
     "terciary_stats": [
-      "Attack Speed",
-      "Firewall Size",
+      "Ranks to Pyromancy Skills",
       "Chance for Fire Bolt Projectiles to Cast Twice",
-      "Ranks to Pyromancy Skills"
+      "Attack Speed",
+      "Firewall Size"
     ],
     "effect": "Casting Fire Bolt through your Firewall causes it to split into 3 bolts, each dealing [30-100%] more damage.",
     "flavor": "Driven to surpass Esu, the wizard Naridan's reckless enchantments caused an inferno, devastating the ancient town of Cagrim. Only the gauntlets remained - a solemn warning to all who dare tame fire."
@@ -483,9 +493,9 @@
     "class": "Druid",
     "type": "1h Mace",
     "secondary_stats": ["Damage to Poisoned Enemies"],
-    "terciary_stats": ["Willpower", "Maximum Life", "Cooldown Reduction", "Ranks to Defensive Skills"],
+    "terciary_stats": ["Willpower", "Ranks to Backlash", "Defensive Cooldown Reduction", "Ranks to Defensive Skills"],
     "filters": ["Poison"],
-    "effect": "Casting a Defensive Skill deals [300-600%] damage to Nearby Poisoned enemies, increased by x50% for every 100 Willpower you have.",
+    "effect": "Casting a Defensive Skill deals [X] damage to Nearby Poisoned enemies, increased by x50% for every 100 Willpower you have.",
     "flavor": "\"This weapon is a reminder of the unbridled savagery of our druidic ancestors, the wisdom of which I see more clearly with every day that passes.\" - Moreg, Druidic Scholar"
   },
   {
@@ -497,9 +507,9 @@
     ],
     "terciary_stats": [
       "Movement Speed",
-      "Ultimate Damage",
       "Lightning Resistance",
-      "Damage Reduction from Close Enemies"
+      "Damage Reduction from Close Enemies",
+      "Ultimate Damage"
     ],
     "filters": ["Cooldown"],
     "effect": "Each enemy you Evade through reduces your active Ultimate Cooldown by [2.0-4.0] seconds, up to 10 seconds.",
@@ -509,12 +519,12 @@
     "name": "Fractured Winterglass",
     "class": "Sorcerer",
     "type": "Amulet",
-    "secondary_stats": ["Resistance to All Elements"],
+    "secondary_stats": ["Conjuration Cooldowns are Reduced by [X] Seconds when a Frozen Orb Explodes"],
     "terciary_stats": [
-      "Non-Physical Damage",
       "Chance for Frozen Orb Projectiles to Cast Twice",
-      "Conjuration Cooldowns are Reduced by [X] Seconds when a Frozen Orb Explodes",
-      "Ranks to Conjuration Mastery"
+      "Non-Physical Damage",
+      "Ranks to Conjuration Mastery",
+      "Resistance to All Elements"
     ],
     "filters": ["Conjuration"],
     "effect": "Casting Frozen Orb has a [35-65%] chance to spawn a random Conjuration when it explodes.\n\nLucky Hit: Your Conjurations have up to a [50-90%] chance to launch a Frozen Orb at Nearby enemies.",
@@ -525,10 +535,10 @@
     "type": "Gloves",
     "secondary_stats": ["Lucky Hit Chance"],
     "terciary_stats": [
-      "Attack Speed",
-      "Fire and Cold Damage",
       "Lucky Hit: Up to a 40% Chance to Deal [X] Fire Damage",
-      "Lucky Hit: Up to a 40% Chance to Deal [X] Cold Damage"
+      "Lucky Hit: Up to a 40% Chance to Deal [X] Cold Damage",
+      "Fire and Cold Damage",
+      "Attack Speed"
     ],
     "filters": ["Freeze", "Lucky Hit"],
     "effect": "Lucky Hit: Up to a [20-60%] chance to Freeze enemies for 3 seconds.",
@@ -550,7 +560,7 @@
   {
     "name": "Godslayer Crown",
     "type": "Helm",
-    "terciary_stats": ["All Stats", "Maximum Life", "Damage to Elites", "Cooldown Reduction"],
+    "terciary_stats": ["Damage to Elites", "Cooldown Reduction", "Maximum Life", "All Stats"],
     "filters": ["Stun", "Freeze", "Immobilize", "Elite"],
     "effect": "When you Stun, Freeze, or Immobilize an Elite, you Pull In all Nearby enemies and deal [30-60%] increased damage to them for 3 seconds. Can only occur once every 12 seconds. Against Bosses, this effect triggers when dealing damage instead.",
     "flavor": "\"The Sahptev faithful believe in a thousand and one gods. If it takes me as many lifetimes, I will find and kill them all.\" - Gaspar Stilbian, Veradani Outcast"
@@ -560,9 +570,9 @@
     "class": "Barbarian",
     "type": "Gloves",
     "terciary_stats": [
-      "Attack Speed",
-      "Movement Speed",
       "Critical Strike Chance Against Close Enemies",
+      "Movement Speed",
+      "Attack Speed",
       "Ranks to Whirlwind"
     ],
     "effect": "Whirlwind explodes every 2 seconds and after it ends, dealing [40-70%] of the base damage dealt to surrounding enemies as Fire damage.",
@@ -583,12 +593,12 @@
     "type": "Staff",
     "secondary_stats": ["Damage to Close Enemies"],
     "terciary_stats": [
-      "Critical Strike Damage",
       "Damage to Close Enemies",
       "Storm Strikes Chains to 2 Targets",
+      "Chance for Stormstrike to Hit Twice",
       "Ranks to Basic Skills"
     ],
-    "effect": "Claw is now a Storm Skill and also casts Storm Strike at [120-200%] normal damage.",
+    "effect": "Claw is now a Storm Skill and also casts Storm Strike at x [170-250%] normal damage.",
     "flavor": "\"She has existed in Scosglen since before Fiacla-Géar walked the land. Her purpose is a mystery to us all. However, approach her with deference; she may grant you her counsel.\" - Airidah, to Donan"
   },
   {
@@ -597,10 +607,10 @@
     "type": "Boots",
     "secondary_stats": ["Max Evade Charges", "Evade Leaves Behind Desecrated Ground for 2 Seconds"],
     "terciary_stats": [
-      "Sever Size",
+      "Movement Speed",
       "Chance for Sever Projectiles to Cast Twice",
-      "Damage Reduction from Shadow Damage Over-Time Affected Enemies",
-      "Ranks to Reaper's Pursuit"
+      "Sever Size",
+      "Damage Reduction from Shadow Damage Over-Time Affected Enemies"
     ],
     "filters": ["Shadow"],
     "effect": "Sever leaves behind Desecrated Ground that deals [X] Shadow damage over 2 seconds.",
@@ -610,7 +620,7 @@
     "name": "Harlequin Crest",
     "mythic": true,
     "type": "Helm",
-    "terciary_stats": ["365 Maximum Life", "18 Maximum Resource", "350 Armor", "20% Cooldown Reduction"],
+    "terciary_stats": ["20% Cooldown Reduction", "365 Maximum Life", "18 Maximum Resource", "350 Armor"],
     "filters": ["Damage Reduction", "Skill Rank"],
     "effect": "Gain 20% Damage Reduction. In addition, gain +4 Ranks to all Skills.",
     "flavor": "\"This headdress was once worn by an assassin disguised as a court mage. Her treachery was unveiled, but not before she used its magic to curse the king's entire lineage.\" - The Fall of House Aston"
@@ -619,8 +629,8 @@
     "name": "Harmony of Ebewaka",
     "class": "Spiritborn",
     "type": "Helm",
-    "terciary_stats": ["All Stats", "Damage", "Critical Strike Chance", "Damage Reduction"],
-    "effect": "Your Skills are all additionally Jaguar, Eagle, Gorilla or Centipede Skills based on your secondary Spirit Hall choice. Each Spirit type on a Skill increases its damage by [10-50%] .",
+    "terciary_stats": ["All Stats", "Movement Speed", "Damage Reduction", "Ranks to Velocity"],
+    "effect": "According to your secondary Spirit Hall choice, your Skills are all additionally Jaguar, Eagle, Gorilla, or Centipede Skills.\r\n\r\nYour Skills deal x [10-30]% increased damage per Spirit type they have.",
     "flavor": "Only Ebewaka has walked amid a dozen Guardians. In death, they waged war for his spirit, yet none prevailed. Thus, the Guardians shared dominion, granting Ebewaka to roam freely amid all their realms."
   },
   {
@@ -628,15 +638,14 @@
     "class": "Barbarian",
     "type": "2h Mace",
     "secondary_stats": ["Damage to Burning Enemies"],
-    "terciary_stats": ["Strength", "Upheaval Size", "Ranks to Upheaval", "Ranks to Wallop"],
+    "terciary_stats": ["Upheaval Size", "Ranks to Upheaval", "Ranks to Wallop", "Strength"],
     "filters": ["Burn"],
-    "effect": "Upheaval ignites the ground Burning enemies for an additonal [X] damage over 4 seconds increased by x20% for every 100 Strength you have.",
+    "effect": "Upheaval ignites the ground Burning enemies for an additonal [X] damage over 4 seconds increased by x25% for every 100 Strength you have.",
     "flavor": "The demon prince Ikonoth slew hundreds of the Heavenly Host with this infernal hammer before falling to none other than the Archangel Imperius himself."
   },
   {
     "name": "Heir of Perdition",
     "mythic": true,
-
     "type": "Helm",
     "secondary_stats": ["200% Damage to Angels and Demons"],
     "terciary_stats": ["20% Critical Strike Chance", "20% Lucky Hit Chance", "20% Movement Speed", "2 to Core Skills"],
@@ -648,10 +657,10 @@
     "class": "Necromancer",
     "type": "Gloves",
     "terciary_stats": [
-      "Lucky Hit Chance",
-      "Corpse Skill Attack Speed",
       "Corpse Explosion Fears and Slows for [X] Seconds",
-      "Ranks to Corpse Explosion"
+      "Ranks to Corpse Explosion",
+      "Corpse Skill Attack Speed",
+      "Lucky Hit Chance"
     ],
     "effect": "Instead of detonating immediately, Corpse Explosion summons a Volatile Skeleton that charges at a random enemy and explodes. Corpse Explosion's damage is increased by [30-50%] .",
     "flavor": "\"Can you not hear it? That endless scream from the cold earth beneath your feet!? They are down there, trapped, blind with rage! Waiting to drag us down into the sod!\" - Ravings of Madman Gustav"
@@ -661,7 +670,7 @@
     "class": "Druid",
     "type": "Ring",
     "secondary_stats": ["Resistance to All Elements", "Lightning Resistance"],
-    "terciary_stats": ["Willpower", "Quickshift", "Ranks to Heightened Senses", "Ranks to Predatory Instinct"],
+    "terciary_stats": ["Willpower", "Ranks to Predatory Instinct", "Ranks to Heightened Senses", "Ranks to Quickshift"],
     "filters": ["Heal"],
     "effect": "Every 30 seconds you spend in an animal form, your next Core Skill is guaranteed to Overpower and Critically Strike and deals x [30-60%] increased damage. Casting a Shapeshifting Skill reduces this timer by 1 second, or 2 seconds if you change to a new animal form.",
     "flavor": "\"By fang, claw, spear, or sword - send the bastards back to the flames from which they crawled! Soak the peat with their blood! For Fiacla-Géar! For Scosglen!\" - Nafain, during the Days of Ash"
@@ -671,7 +680,7 @@
     "class": "Sorcerer",
     "type": "Pants",
     "secondary_stats": ["Your Potion Also Restores X% Resource"],
-    "terciary_stats": ["Maximum Life", "Frost Nova Size", "Cold Resistance", "Shatter's Damage Echo"],
+    "terciary_stats": ["Cold Resistance", "Maximum Life", "Frost Nova Size", "Shatter's Damage Echo"],
     "filters": ["Freeze"],
     "effect": "Enemies that die while Frozen, have a [21-40%] chance to unleash a Frost Nova.",
     "flavor": "The mad artisan saw his fingers turn black from frostbite as he worked the cloth, but refused to stay the needle and thread for even a moment."
@@ -680,7 +689,7 @@
     "name": "Insatiable Fury",
     "class": "Druid",
     "type": "Chest Armor",
-    "terciary_stats": ["Maximum Life", "Werebear Overpower Damage", "Ursine Strength's Bonuses", "Ranks to Iron Fur"],
+    "terciary_stats": ["Maximum Life", "Ursine Strength's Bonuses", "Ranks to Iron Fur", "Werebear Overpower Damage"],
     "filters": ["Werebear"],
     "effect": "Werebear form is now your true form, and you gain [2-5] Ranks to all Werebear Skills.",
     "flavor": "When the Days of Ash began, the great druid Nafain reminded his disciples that nothing, not even the loss of their humanity, was too great a sacrifice to protect Túr Dúlra from Astaroth's flames."
@@ -689,8 +698,8 @@
     "name": "Jacinth Shell",
     "class": "Spiritborn",
     "type": "Chest Armor",
-    "terciary_stats": ["Damage Reduction while Injured", "Ranks to Endurance", "Damage", "Maximum Life"],
-    "effect": "Spending Vigor Heals you for [1-10%] of your Maximum Life.\r\n\r\nEvery second, your active Cooldowns now drain 10% of your Maximum Life to reduce their durations by 3 seconds.",
+    "terciary_stats": ["Damage Reduction while Injured", "Maximum Life", "Life On Hit", "Ranks to Endurance"],
+    "effect": "Spending Vigor Heals you for [1-10%] of your Maximum Life.\n\nEvery second, your active Cooldowns now drain 10% of your Maximum Life to reduce their durations by 3 seconds.",
     "flavor": "This ceremonial armor was once adorned during the He Sutsar Puchē, where sacred blood is drawn by jacinth lancets and offered to flames. It retains the scents of incensed smoke and scorched copper."
   },
   {
@@ -699,7 +708,12 @@
     "type": "Shield",
     "main_stat": "Total Armor",
     "secondary_stats": ["Blocked Damage Reduction", "Block Chance", "Main Hand Weapon Damage", "Total Armor"],
-    "terciary_stats": ["Armor", "Bone Storm Duration", "Cooldown Reduction", "Ranks to Bone Skills"],
+    "terciary_stats": [
+      "Bone Storm Duration",
+      "Chance for Bone Storm to Deal Double Damage",
+      "Ranks to Bone Skills",
+      "Cooldown Reduction"
+    ],
     "filters": ["Lucky Hit", "Bone"],
     "effect": "Lucky Hit: While you have an active Bone Storm, hitting an enemy outside of a Bone Storm has up to a [15-45%] chance to spawn an additional Bone Storm at their location. Each of your active Sacrifice bonuses increases the chance by 25% and the total number of additional Bone Storms you can have by 1.",
     "flavor": "Initially an unpopular choice to replace Mendeln as Deathspeaker, Daros quickly proved his worth with the creation of this masterpiece."
@@ -708,7 +722,7 @@
     "name": "Locran's Talisman",
     "type": "Amulet",
     "secondary_stats": ["Resistance to All Elements"],
-    "terciary_stats": ["All Stats", "Maximum Resource", "Critical Strike Damage", "Resistance to All Elements"],
+    "terciary_stats": ["Resistance to All Elements", "All Stats", "Critical Strike Damage", "Maximum Resource"],
     "filters": ["Critical Strike Chance", "Critical Strike Damage", "Primary Resource"],
     "effect": "Your skills gain + [0.10-0.40%] Critical Strike Chance bonus per point of Primary Resource you have, up to + [10-40%] . Each point of Primary Resource above 100 grants x0.2% Critical Strike Damage instead.",
     "flavor": "A single petal of the Mother's own blood, slowly wilting under glass."
@@ -717,8 +731,8 @@
     "name": "Loyalty's Mantle",
     "class": "Spiritborn",
     "type": "Helm",
-    "terciary_stats": ["All Stats", "Damage", "Critical Strike Chance", "Damage Reduction"],
-    "effect": "While your Spirit Hall choices match, their bonuses are 100% more potent and Skills with that Base Spirit cost [20-60%] less and have [20-60%] reduced Cooldowns.",
+    "terciary_stats": ["All Stats", "Movement Speed", "Damage Reduction", "Ranks to Velocity"],
+    "effect": "While your Spirit Hall choices match: \nTheir bonuses are 100% more potent.\n Skills of their Base Spirit gain [20-60%] Vigor Cost Reduction.\n Skills of their Base Spirit gain [20-60%] Cooldown Reduction.",
     "flavor": "During a Trial of Mists, a small spirit noticed an unclaimed boy. In pity, it spared him. \"I will follow you always,\" vowed the boy. He remained true even after Ah Bulan called the spirit home."
   },
   {
@@ -727,12 +741,12 @@
     "type": "Chest Armor",
     "terciary_stats": [
       "Maximum Life",
-      "Werewolf Attack Speed",
       "Lupine Ferocity's Damage Bonus",
+      "Werewolf Attack Speed",
       "Ranks to Digitigrade Gait"
     ],
     "filters": ["Werewolf"],
-    "effect": "Werewolf form is now your true form, and you gain [2-5] Ranks to all Werewolf Skills.",
+    "effect": "Werewolf form is now your true form, and you gain [4-7] Ranks to all Werewolf Skills.",
     "flavor": "\"He was not a victim of the curse - he sought it out. As his skin split and his bones cracked, his laughter never ceased.\" - Tale of the Mad Nobleman"
   },
   {
@@ -741,9 +755,9 @@
     "type": "Amulet",
     "secondary_stats": ["3% Maximum Resistance to All Elements", "30% Resistance to All Elements"],
     "terciary_stats": [
+      "15% Damage Reduction while Healthy",
       "15% Lucky Hit Chance",
       "25% Movement Speed",
-      "15% Damage Reduction while Healthy",
       "15% Resource Reduction"
     ],
     "effect": "Gain 60 maximum Resource. When taking damage, 75% is drained as 2 Resource for every 1% of Maximum Life you would have lost.",
@@ -753,13 +767,12 @@
     "name": "Mjölnic Ryng",
     "class": "Druid",
     "type": "Ring",
-    "secondary_stats": ["Resistance to All Elements"],
+    "secondary_stats": ["Resistance to All Elements", "Shadow Resistance"],
     "terciary_stats": [
-      "Shadow Resistance",
+      "Ranks to Endless Tempest",
       "Willpower",
-      "Critical Strike Chance",
       "Movement Speed while Cataclysm is Active",
-      "Ranks to Endless Tempest"
+      "Critical Strike Chance"
     ],
     "effect": "While Cataclysm is active, you gain unlimited Spirit and deal x [40-100%] increased damage.",
     "flavor": "A singed wedding band, faintly crackling. It evokes an old rhyme where a bride receives a ring from her beloved, causing them to be struck thrice by lightning. Only the bride was unscathed."
@@ -768,7 +781,7 @@
     "name": "Mother's Embrace",
     "type": "Ring",
     "secondary_stats": ["Resistance to All Elements", "Shadow Resistance"],
-    "terciary_stats": ["All Stats", "Attack Speed", "Critical Strike Chance", "Lucky Hit Chance"],
+    "terciary_stats": ["Attack Speed", "Critical Strike Chance", "Lucky Hit Chance", "All Stats"],
     "effect": "If a Core Skill hits 4 or more enemies, [30-60%] of the Resource is refunded.",
     "flavor": "\"Every tome, every scroll, every book in this temple produces the same answer. The only being willing to stand against the Eternal Conflict, against the Prime Evils, was Lilith.\" - Elias"
   },
@@ -777,10 +790,10 @@
     "class": "Necromancer",
     "type": "Chest Armor",
     "terciary_stats": [
-      "Maximum Life",
-      "Blood Lance Duration",
       "Damage Reduction from Enemies Affected by Blood Skills",
-      "Ranks to Blood Lance"
+      "Maximum Life",
+      "Ranks to Blood Lance",
+      "Chance for Blood Lance to Deal Double Damage"
     ],
     "effect": "You are Blood Lanced, and when Blood Lance would deal damage to you it instead Fortifies you for [1-4%] of your Maximum Life and has a 10% chance to form a Blood Orb. Blood Lance deals [10-40%] increased damage.",
     "flavor": "\"The Cathedral of Light's earliest attempts at crafting their penitent armor was to infuse the plate with painful blood magic, before such acts were deemed heretical.\" - Barrett's Book of Implements"
@@ -789,12 +802,11 @@
     "name": "Nesekem, The Herald",
     "class": "Spiritborn",
     "mythic": true,
-
     "type": "Glaive",
     "secondary_stats": ["223% Damage to Elites"],
-    "terciary_stats": ["[6] to Apex", "[10] to All Skills", "217% Critical Strike Damage", "[6] to Diminishment"],
+    "terciary_stats": ["200 All Stats", "464 Maximum Life", "250% Critical Strike Damage", "450% Overpower Damage"],
     "filters": ["Critical Strike", "Vulnerable", "Overpower"],
-    "effect": "Every 5 seconds an enemy is marked for your next [10] hits. Marked enemies are Vulnerable and your attacks against them are guaranteed to Critical Strike and Overpower.",
+    "effect": "Every 5 seconds, you randomly mark a Nearby enemy. Marked enemies are Vulnerable, and your attacks against them are guaranteed to Critically Strike and Overpower.\n\nHitting a marked enemy 10 times clears the mark from them.",
     "flavor": "In the days when Ajaw Y'ishich ruled Nahantu, the phoenix constellation's crown fell in burning glory. From it was forged a blade that withered valor, heralding an age of despair."
   },
   {
@@ -802,8 +814,8 @@
     "class": "Barbarian",
     "type": "2h Mace",
     "secondary_stats": ["Damage to Injured Enemies"],
-    "terciary_stats": ["Strength", "Vulnerable Damage", "Physical Damage", "Ranks to Death Blow"],
-    "effect": "Death Blow creates a shockwave, dealing [25-45%] of its Base damage to enemies. Enemies who die to this effect also reset Death Blow's Cooldown.",
+    "terciary_stats": ["Strength", "Physical Damage", "Vulnerable Damage", "Ranks to Death Blow"],
+    "effect": "Death Blow creates a shockwave, dealing [40-60%] of its Base damage to enemies. Enemies who die to this effect also reset Death Blow's Cooldown.",
     "flavor": "The malformed snake creatures that live in the swamps are not content with simply killing their prey. They seem to take a malicious pleasure from inflicting as much suffering as possible before death."
   },
   {
@@ -811,9 +823,9 @@
     "type": "Gloves",
     "terciary_stats": [
       "Attack Speed",
+      "Ranks to Basic Skills",
       "Cooldown Reduction",
-      "Lucky Hit: Up to a [X%] Chance to Stun for 2 Seconds",
-      "Ranks to Basic Skills"
+      "Lucky Hit: Up to a [X%] Chance to Stun for 2 Seconds"
     ],
     "effect": "Damaging enemies with a cast Non-Basic Skill marks them for 3 seconds. When a Basic Skill first hits a marked enemy, the Basic Skill's damage is echoed to all marked enemies, dealing [100-200%] increased damage.",
     "flavor": "Crafted from fragments of Duriel's carapace, wearing these gloves, or being struck by them, causes an agonizing sensation akin to pushing one's hands through a thousand shards of glass."
@@ -823,7 +835,7 @@
     "class": "Necromancer",
     "type": "Boots",
     "secondary_stats": ["Maximum Evade Charges"],
-    "terciary_stats": ["Armor", "Movement Speed", "Bone Prison Cooldown Reduction", "Ranks to Bone Skills"],
+    "terciary_stats": ["Movement Speed", "Ranks to Bone Skills", "Armor", "Bone Prison Cooldown Reduction"],
     "effect": "Bone Prison traps a larger area and fires [10-30] Bone Splinters at enemies trapped within. Increase your Maximum Essence by 2 for 10 seconds each time these Bone Splinters hit an enemy.",
     "flavor": "\"Essence flows endlessly, shifting between vessels. It is through Trag'Oul, keeper of all known and unknown, that we serve as custodians, directing essence to travel new paths.\" -Mendeln ul-Diomed"
   },
@@ -831,15 +843,15 @@
     "name": "Peacemonger's Signet",
     "class": "Spiritborn",
     "type": "Ring",
-    "secondary_stats": ["Resistance to All Elements", "Resistance to All Elements"],
+    "secondary_stats": ["Fire  Resistance", "Armor"],
     "terciary_stats": [
       "Dodge Chance",
-      "[X%] Damage fo 4 Seconds After Killing an Elite",
+      "All Stats per Ferocity or Resolve Stack",
       "Ranks to Perseverance",
       "Ranks to Fueled"
     ],
     "filters": ["Vigor", "Ferocity", "Resolve"],
-    "effect": "Generate [1-7] Vigor per second while you have at least 4 stacks of Ferocity.\r\n\r\nGaining Ferocity also grants Resolve.",
+    "effect": "While you have at least 4 stacks of Ferocity, you gain [1-7] Vigor per second.\n\nGaining Ferocity also grants Resolve.",
     "flavor": "\"In Natsalarwaka, no blood shall mar the earth. Even bitter enemies must forgo their blades before entering the haven. Breaking this accord will invoke Wasipotsu's wrath.\" - Oral Umbuntu Scripture"
   },
   {
@@ -848,8 +860,8 @@
     "secondary_stats": ["Evade Grants 125% Movement Speed for 2 Seconds", "Evade Grants Unhindered for 2 Seconds"],
     "terciary_stats": [
       "Movement Speed",
-      "Critical Strike Chance Against Chilled Enemies",
       "Chill Slow Potency",
+      "Critical Strike Chance Against Chilled Enemies",
       "Cold Resistance"
     ],
     "filters": ["Chill"],
@@ -857,13 +869,13 @@
     "flavor": "Remorseful devotees of the Cathedral of Light must undertake a grueling pilgrimage, journeying across the frigid glacier known as the Serac Rapture. Only then may their gravest sins be forgiven."
   },
   {
-    "name": "Pitfighter’s Gull",
+    "name": "Pitfighter's Gull",
     "class": "Rogue",
     "type": "Ring",
     "secondary_stats": ["Shadow Resistance", "Resistance to All Elements"],
     "terciary_stats": [
-      "Critical Strike Chance",
       "Damage on Next Attack After Entering Stealth",
+      "Critical Strike Chance",
       "Smoke Grenade Cooldown Reduction",
       "Ranks to Mending Obscurity"
     ],
@@ -875,13 +887,13 @@
     "class": "Spiritborn",
     "type": "Pants",
     "terciary_stats": [
-      "Damage while Healthy",
-      "Life per 5 Seconds",
-      "Maximum Resistance to All Elements",
-      "Maximum Life"
+      "Maximum Life",
+      "Damage for 4 Seconds After Dodging an Attack",
+      "Damage Reduction while Standing Still",
+      "Ranks to Defensive Skills"
     ],
     "filters": ["Dodge", "Unstoppable"],
-    "effect": "While moving you gain [10-20%] Dodge Chance or after standing still for 2 seconds you become Unstoppable.",
+    "effect": "While moving you gain [10-30%] Dodge Chance. After standing still for 2 seconds you become Unstoppable until you move.",
     "flavor": "\"To commune with spirits, listen to whispers unseen. Root yourself to the earth and let its pulse still the mind. Hear the ancient guardians. They rise to aid you.\" – Ysevete, the First Spiritborn"
   },
   {
@@ -890,9 +902,9 @@
     "type": "Chest Armor",
     "terciary_stats": [
       "Maximum Life",
+      "Damage Reduction from Bleeding Enemies",
       "Critical Strike Chance",
-      "Damage Over Time",
-      "Damage Reduction from Bleeding Enemies"
+      "Damage Over Time"
     ],
     "filters": ["Lucky Hit", "Bleed"],
     "effect": "Lucky Hit: Inflicting Bleeding on an enemy has up to a [20-60%] chance to reduce the Cooldowns of your Skills by 1 second.",
@@ -904,9 +916,9 @@
     "type": "Chest Armor",
     "terciary_stats": [
       "Intelligence",
-      "Ranks to Glass Cannon",
       "Ranks to Elemental Attunement",
-      "Ranks to Shocking Impact"
+      "Ranks to Shocking Impact",
+      "Ranks to Glass Cannon"
     ],
     "filters": ["Pull", "Stun"],
     "effect": "After using Teleport, Close enemies are Pulled to you and Stunned for [2-3] seconds, but Teleport's cooldown is increased by 20%.",
@@ -916,7 +928,7 @@
     "name": "Rakanoth's Wake",
     "type": "Boots",
     "secondary_stats": ["Attacks Reduce Evade's Cooldown by 1.5 Seconds"],
-    "terciary_stats": ["Movement Speed", "Non-Physical Damage", "Resistance to All Elements", "Cooldown Reduction"],
+    "terciary_stats": ["Movement Speed", "Cooldown Reduction", "Resistance to All Elements", "Non-Physical Damage"],
     "effect": "When you cast a Skill with a Cooldown, you explode, dealing [X] Fire damage.",
     "flavor": "Tread carefully on the plains of Hell, for each step sunders the soul and shatters the mind."
   },
@@ -925,7 +937,7 @@
     "class": "Barbarian",
     "type": "1h Sword",
     "secondary_stats": ["Damage"],
-    "terciary_stats": ["Strength", "Maximum Resource", "Critical Strike Damage", "Overpower Damage"],
+    "terciary_stats": ["Critical Strike Damage", "Strength", "Maximum Resource", "Overpower Damage"],
     "effect": "Skills using this weapon deal [0.2-0.5%] increased damage per point of Fury you have, but you lose 10 Fury every second.",
     "flavor": "\"Without him the wine is less sweet, the hearth less warm, and our blades less keen. Our blood brother is gone, but Bul-Kathos willing, we will meet again one day.\" - Sorrowsong for Ramaladni"
   },
@@ -942,9 +954,14 @@
     "class": "Spiritborn",
     "type": "Ring",
     "secondary_stats": ["Resistance to All Elements", "Resistance to All Elements"],
-    "terciary_stats": ["Cooldown Reduction", "Ranks to Nourishment", "Resource Generation", "Life On Kill"],
+    "terciary_stats": [
+      "Movement Speed for 2 Seconds After Killing an Enemy",
+      "Life On Kill",
+      "Attack Speed",
+      "Ranks to Nourishment"
+    ],
     "filters": ["Vigor", "Ferocity", "Poison"],
-    "effect": "Your Maximum Vigor is increased by 50% and every kill grants you [1-7] Vigor.\r\nWhile you have any Ferocity your Poisonings deal their damage in 33% of the normal duration.",
+    "effect": "Your Maximum Vigor is increased by 50% and every kill grants you [1-7] Vigor.\nWhile you have any Ferocity, your Poisoning effects deal their damage across 33% of the normal duration.",
     "flavor": "At midday thundered the first brother, Nyamoyo, lord of predators. Survival is his blessing, hunting is his prayer. Honor him and prowess shall be your reward.\" - The Nitī Sē, Verse IV"
   },
   {
@@ -952,20 +969,24 @@
     "class": "Spiritborn",
     "type": "Ring",
     "secondary_stats": ["Resistance to All Elements", "Resistance to All Elements"],
-    "terciary_stats": ["Damage to Elites", "Attack Speed", "Ranks to Mirage", "Critical Strike Damage"],
+    "terciary_stats": ["Dexterity", "Cooldown Reduction", "Critical Strike Damage", "Ranks to Mirage"],
     "filters": ["Critical Strike", "Critical Strike Damage"],
-    "effect": "Critical Strikes restore [10-30%] of the Vigor you have spent in the last 2 seconds, increased by your Critical Strike Damage Bonus. Gain Counterattack's Passive Effect.",
+    "effect": "When you Critically Strike, you regain [20-50%] of the Vigor you've spent in the last 2 seconds.\r\n\r\nGain Counterattack's Passive Effect.",
     "flavor": "\"At midnight laughed the second brother, Nebahayomo, spirit of cunning. Trickery is his blessing, suffering is his prayer. Honor him and shrewdness shall be your reward.\" - The Nitī Sē, Verse V"
   },
   {
     "name": "Wound Drinker",
     "class": "Spiritborn",
-
     "type": "Ring",
     "secondary_stats": ["Resistance to All Elements", "Resistance to All Elements"],
-    "terciary_stats": ["Total Armor", "Thorns", "Ranks to Patient Guard", "Damage Reduction from Poisoned Enemies"],
+    "terciary_stats": [
+      "Thorns",
+      "Damage Reduction from Poisoned Enemies",
+      "Damage to Poisoned Enemies",
+      "Ranks to Toxic Skin"
+    ],
     "filters": ["Thorns"],
-    "effect": "Generates [1-7] Vigor each time you deal Thorns damage. Gain Toxic Skin's Passive Effect.",
+    "effect": "Every time you deal Thorns damage, you gain [1-7] Vigor.\n\nGain Toxic Skin's Passive Effect.",
     "flavor": "The inner curve of this band is lined with thorns that tear the skin whenever it is unbound."
   },
   {
@@ -974,10 +995,10 @@
     "type": "Ring",
     "secondary_stats": ["Resistance to All Elements", "Shadow Resistance"],
     "terciary_stats": [
-      "Intelligence",
-      "Damage",
       "Minion Attack Speed",
-      "Ranks to Skeletal Warrior Mastery, Skeletal Mage Mastery, and Golem Mastery"
+      "Ranks to Skeletal Warrior Mastery, Skeletal Mage Mastery, and Golem Mastery",
+      "Damage",
+      "Intelligence"
     ],
     "effect": "Every 6th attack from each Minion is empowered, exploding for [X] Physical damage.",
     "flavor": "The signet of Mendeln ul-Diomed, the founder of the Priests of Rathma and the first Necromancer, was lost for over 3,000 years. The immense power over death held within, however, has not diminished."
@@ -989,7 +1010,7 @@
     "secondary_stats": ["Resistance to All Elements", "Fire Resistance"],
     "terciary_stats": ["Maximum Resource", "Attack Speed", "Critical Strike Damage", "Fire Resistance"],
     "filters": ["Critical Strike"],
-    "effect": "After spending 100 Fury within 3 seconds, your next cast of Hammer of the Ancients, Upheaval, or Death Blow within 5 seconds is a guaranteed Critical Strike and deals [10-40%] bonus Critical Strike Damage.",
+    "effect": "After spending 100 Fury within 3 seconds, your next cast of Hammer of the Ancients, Upheaval, or Death Blow within 5 seconds is a guaranteed Critical Strike and deals [30-60%] bonus Critical Strike Damage.",
     "flavor": "\"Anger brings strength but clouds the mind. You must learn to focus your fury, direct it with purpose. Keep our sacred duty at the forefront of your mind, always.\" -Talic, to Madawc"
   },
   {
@@ -1011,7 +1032,7 @@
     "class": "Barbarian",
     "type": "Ring",
     "secondary_stats": ["Resistance to All Elements", "Shadow Resistance"],
-    "terciary_stats": ["Critical Strike Chance", "Vulnerable Damage", "Ranks to Rend", "Ranks to Brawling Skills"],
+    "terciary_stats": ["Critical Strike Chance", "Vulnerable Damage", "Ranks to Brawling Skills", "Ranks to Rend"],
     "effect": "Rend's duration is increased by [4-8] seconds. Damaging enemies with Brawling Skills applies 2 stacks of Rend's Bleed. This can only affect each enemy once every 1 second.",
     "flavor": "\"The hunger, it starts so small, like a tickle in the back of your mind. You believe the lie that you still have control until you're so far gone you can't even recognize yourself.\" - Varyana"
   },
@@ -1020,7 +1041,7 @@
     "class": "Necromancer",
     "type": "Ring",
     "secondary_stats": ["Resistance to All Elements", "Poison Resistance"],
-    "terciary_stats": ["Lucky Hit Chance", "Movement Speed", "Ranks to Corpse Skills", "Ranks to Grim Harvest"],
+    "terciary_stats": ["Ranks to Grim Harvest", "Ranks to Corpse Skills", "Lucky Hit Chance", "Movement Speed"],
     "effect": "You automatically activate the following equipped Skills on Corpses around you:\nRaise Skeleton every [2-1] seconds.\nCorpse Explosion every [2-1] seconds.\nCorpse Tendrils every [12-6] seconds.",
     "flavor": "The mere proximity of a practitioner of such dark arts can rouse the dead and disturb those souls who have earned their rest."
   },
@@ -1029,16 +1050,21 @@
     "class": "Spiritborn",
     "type": "Quarterstaff",
     "secondary_stats": ["Block Chance"],
-    "terciary_stats": ["Maximum Vigor", "Vigor per Second", "Ranks to Core Skills", "Critical Strike Chance"],
+    "terciary_stats": [
+      "Critical Strike Damage",
+      "Maximum Resource",
+      "Ranks to Velocity",
+      "Chance for Core Skills to Hit Twice"
+    ],
     "filters": ["Core", "Basic", "Critical Strike Damage"],
-    "effect": "Your Core Skills are now additionally Basic Skills, free to cast, and deal up to 30% less damage based on their cost.\n\nAt Maximum Vigor your Core Skills instead deal normal damage and consume all Vigor to Critically Strike with [1.0-3.0%] increased Critical Strike Damage for each point spent.",
+    "effect": "Your Core Skills are now additionally Basic Skills, free to cast, and deal up to 30% less damage based on their Vigor Cost.\n\nWhen cast at Maximum Vigor, your Core Skills consume all Vigor to return to full damage, cast at their largest Size, and become guaranteed Critical Strikes, with x [1-3%] increased Critical Strike Damage for each point of Vigor spent this way.",
     "flavor": "\"Beyond the world disc doth lie the keeper serpent Kepeleke. Ceaseless the serpent grows, and thus must ever consume his own tail, lest the world be overtaken.\" - Lintel XII"
   },
   {
     "name": "Ring of Writhing Moon",
     "class": "Spiritborn",
     "type": "Ring",
-    "secondary_stats": ["Resistance to All Elements", "Resistance to All Elements"],
+    "secondary_stats": ["Lightning Resistance", "Poison Resistance"],
     "terciary_stats": [
       "Critical Strike Chance",
       "Movement Speed",
@@ -1046,7 +1072,7 @@
       "Ranks to Unrestrained"
     ],
     "filters": ["Poison", "Vigor"],
-    "effect": "Every 10 seconds a Pestilent Swarm spawns from you which deals [X] Poison damage per hit.\r\n\r\nPestilent Swarms now always spawn orbiting around you and generate 1 Vigor per hit.",
+    "effect": "A Pestilent Swarm spawns from you every 10 seconds, dealing [X] Poison damage per hit.\r\n\r\nYour Pestilent Swarms now orbit around you and generate 1 Vigor per hit.",
     "flavor": "\"Within this corpse-bound carapace we writhe. Chaotic winds converge to churn your bones. Our beat and breath a ceaseless war to break. The wretched cyclone black beyond the bounds.\" - Balazan's Dream"
   },
   {
@@ -1070,10 +1096,10 @@
     "type": "Ring",
     "secondary_stats": ["Resistance to All Elements", "Poison Resistance"],
     "terciary_stats": [
-      "Attack Speed",
       "Critical Strike Chance to each Enhanced Rapid Fire Bonus",
-      "Chance for Rapid Fire Projectiles",
-      "Ranks to Rapid Fire"
+      "Ranks to Rapid Fire",
+      "Chance for Rapid Fire Projectiles to Cast Twice",
+      "Attack Speed"
     ],
     "effect": "Rapid Fire now lobs exploding arrows that deal [15-35%] increased damage.",
     "flavor": "\"This'll blow your hair back.\" - Lyndon"
@@ -1083,10 +1109,10 @@
     "class": "Rogue",
     "type": "Chest Armor",
     "terciary_stats": [
-      "Maximum Life",
-      "Movement Speed while the Inner Sight Gauge is Full",
       "Inner Sight Duration",
-      "Damage Reduction from Enemies Affected by Trap Skills"
+      "Movement Speed while the Inner Sight Gauge is Full",
+      "Damage Reduction from Enemies Affected by Trap Skills",
+      "Maximum Life"
     ],
     "effect": "While you have unlimited Energy from Inner Sight, your Core Skills have a [60-80%] chance to spawn Caltrops, Poison Trap, or Death Trap.",
     "flavor": "\"Rumor has it he lost them in a game of Skull & Anchor, but the boss is a devil with the dice. I think he wanted to give the poor sod something to keep him warm without wounding his pride.\" - Elstir"
@@ -1094,19 +1120,23 @@
   {
     "name": "Sepazontec",
     "class": "Spiritborn",
-
     "type": "Quarterstaff",
     "secondary_stats": ["Block Chance"],
-    "terciary_stats": ["All Stats", "Damage while Healthy", "Cooldown Reduction", "Ranks to Follow Through"],
-    "filters": ["Basic Skill"],
-    "effect": "Your Basic Skills deal [100-200%] increased damage, always use their 3rd attack, and every 3rd cast unleashes triple strikes.",
+    "terciary_stats": [
+      "Chance for Basic Skills to Deal Double Damage",
+      "Ranks to Follow Through",
+      "Dexterity",
+      "Basic Skill Lucky Hit Chance"
+    ],
+    "filters": ["Basic"],
+    "effect": "Your Basic Skills deal [25-50%] increased damage and always use their 3rd attack.\nEvery 3rd cast of a Basic Skill strikes three times.",
     "flavor": "To the silent heavens, the hunter Etzlek raised his staff and smote the numen. \"Release her!\" came his cries as desecrated the hallowed ground. On the third strike, the spirit answered..."
   },
   {
     "name": "Shard of Verathiel",
     "type": "1h Sword",
     "secondary_stats": ["Damage"],
-    "terciary_stats": ["All Stats", "Maximum Resource", "Basic Attack Speed", "Ranks to Basic Skills"],
+    "terciary_stats": ["All Stats", "Ranks to Basic Skills", "Basic Attack Speed", "Maximum Resource"],
     "filters": ["Basic"],
     "effect": "Basic Skills deal x [50-200%] increased damage but additionally cost 25 Primary Resource.",
     "flavor": "This blade once bore divine purpose wielded by the angel Verathiel. Like its keeper, the sword fell to Infernal depths. Yet beneath this corruption, is a heartbeat of a past memory, holding steadfast."
@@ -1114,52 +1144,55 @@
   {
     "name": "Shattered Vow",
     "mythic": true,
-
+    "icon": true,
     "type": "Polearm",
     "secondary_stats": ["400% Damage to Healthy Enemies"],
     "terciary_stats": [
-      "444 Maximum Life",
+      "Lucky Hit: Up to a +44.4% Chance to Become Berserking",
       "29.6% Attack Speed while Berserking",
       "444.4% Damage Over Time",
-      "Lucky Hit: Up to a +44.4% Chance to Become Berserking"
+      "444 Maximum Life"
     ],
-    "effect": "Execute enemies afflicted by more Damage over Time than remaining Life."
+    "effect": "Enemies afflicted by more Damage over Time than remaining Life are Executed."
   },
   {
     "name": "Shroud of False Death",
     "mythic": true,
-
     "type": "Chest Armor",
     "secondary_stats": ["1 to All Passives"],
     "terciary_stats": [
       "111 All Stats",
-      "222 Maximum Life",
       "333% Damage on Next Attack After Entering Stealth",
+      "222 Maximum Life",
       "11.1% Resource Generation"
     ],
     "filters": ["Stealth", "Movement Speed"],
-    "effect": "If you haven't attacked in the last 2 seconds, gain Stealth and +40% Movement Speed.",
+    "effect": "If you haven't dealt damage in the last 2 seconds, gain Stealth and +40% Movement Speed.",
     "flavor": "Beware false prophets donned as sheep yet bearing the stench of wolves. Thou shalt know them by their fruits. For a tree of good cannot produce evil, nor thorns yield a harvest sweet and fair."
   },
   {
     "name": "Shroud of Khanduras",
     "class": "Rogue",
     "type": "Chest Armor",
-    "secondary_stats": ["Evade Grants Movement Speed for 1.5 seconds"],
-    "terciary_stats": ["Non-Physical Damage", "Shadow Resistance", "Ranks to Dark Shroud"],
+    "terciary_stats": [
+      "Evade Grants Movement Speed for 1.5 Seconds",
+      "Non-Physical Damage",
+      "Ranks to Dark Shroud",
+      "Shadow Resistance"
+    ],
     "filters": ["Immune"],
     "effect": "Casting Dark Shroud makes you Immune for 2 seconds but your Evade Cooldown is increased by [9-3] seconds. Evading while Dark Shroud is active leaves behind an explosion that deals [X] Shadow Damage and Pulls In enemies.",
     "flavor": "\"Auriel alone saw past Lucion's guise. With Al'maiesh aloft, she smote the vile prince. Hatred's seed feigned death and waited, loath to enter the Abyss again.\" - The Great\r\nConflict, Tome I"
   },
   {
-    "name": "Sidhe's Bindings",
+    "name": "Sidhe Bindings",
     "class": "Sorcerer",
-
+    "icon": true,
     "type": "Gloves",
     "terciary_stats": [
       "Non-Physical Damage",
-      "Familiar Explosion Size",
       "Chance for Familiar to Hit Twice",
+      "Familiar Explosion Size",
       "Ranks to Familiar"
     ],
     "filters": ["Cooldown"],
@@ -1172,10 +1205,10 @@
     "type": "Bow",
     "secondary_stats": ["Critical Strike Damage"],
     "terciary_stats": [
-      "Dexterity",
-      "Critical Strike Damage",
       "Chance for Marksman Projectiles to Cast Twice",
-      "Ranks to Stutter Step"
+      "Critical Strike Damage",
+      "Ranks to Stutter Step",
+      "Attack Speed"
     ],
     "filters": ["Critical Strike"],
     "effect": "The first direct damage you deal to an enemy is a guaranteed Critical Strike. When you consume Precision casting a Skill, that Skill gains x [20-60%] increased Critical Strike Damage and you gain [30-60] Energy.",
@@ -1187,19 +1220,19 @@
     "type": "Boots",
     "secondary_stats": ["Maximum Evade Charges"],
     "terciary_stats": [
-      "Attacks Reduce Evade's Cooldown by 1 Seconds",
-      "Resource Generation",
-      "Damage",
-      "Cooldown Reduction"
+      "Movement Speed",
+      "Ranks to Soar",
+      "Soar Deals up to [X%] Damage Based on Distance Traveled",
+      "Soar Grants [X%] Maximum Life as a Barrier for 1.5 Seconds"
     ],
     "filters": ["Evade"],
-    "effect": "Soar deals [10-50%] increased damage and your Evade is now Soar.",
+    "effect": "Your Evade is now Soar.\nSoar deals [10-50%] increased damage.",
     "flavor": "\"Sky Spirits weave the winds. Thunder is their laughter and auroras their crowns. Those they bless learn to scorn the earth, for from above, it is but a distant memory.\" - Lintel VII"
   },
   {
     "name": "Soulbrand",
     "type": "Chest Armor",
-    "terciary_stats": ["Maximum Life", "Potion Capacity", "Barrier Generation", "Damage Reduction while Healthy"],
+    "terciary_stats": ["Maximum Life", "Damage Reduction while Healthy", "Barrier Generation", "Potion Capacity"],
     "filters": ["Damage Reduction", "Barrier"],
     "effect": "Your Healing Potion no longer Heals instantly, instead it grants a Barrier for 200% of the healing for 4 seconds. You gain [10-30%] Damage Reduction while you have a Barrier and may drink your Healing Potion while at full Life.",
     "flavor": "\"To create such an artifact would require an impossible mastery over alchemy, transmutation and the subtle magics of the soul. By all rights, it should not exist, yet it does.\""
@@ -1210,10 +1243,9 @@
     "type": "Staff",
     "secondary_stats": ["Fire Damage"],
     "terciary_stats": [
-      "Intelligence",
-      "Fireball Projectile Speed",
       "Chance for Fireball Projectiles to Cast Twice",
-      "Ranks to Fireball"
+      "Fireball Projectile Speed",
+      "Ranks to Fireball\nIntelligence"
     ],
     "effect": "Every 3rd cast of Fireball launches 2 additional projectiles dealing [50-90%] increased damage.",
     "flavor": "\"Leaving even blackened bones for your kin to mourn is too good an end for you.\" - Josiah"
@@ -1224,10 +1256,10 @@
     "type": "Staff",
     "secondary_stats": ["Lightning Damage"],
     "terciary_stats": [
-      "Intelligence",
       "Chance for Charged Bolts Projectiles to Cast Twice",
-      "Resource Cost Reduction",
-      "Ranks to Charged Bolts"
+      "Intelligence",
+      "Ranks to Charged Bolts",
+      "Resource Cost Reduction"
     ],
     "effect": "Your cast of Charged Bolts have a [40-80%] chance to be attracted to enemies and last 300% longer.",
     "flavor": "\"Also known as the Greatstaff of the Old Religion, this powerful relic is one of only a small handful of Skatsimi artifacts that have survived to this day.\" - Barrett's Book of Implements"
@@ -1236,7 +1268,7 @@
     "name": "Starfall Coronet",
     "class": "Sorcerer",
     "type": "Helm",
-    "terciary_stats": ["Intelligence", "Meteor Size", "Cooldown Reduction", "Ranks to Meteor"],
+    "terciary_stats": ["Ranks to Meteor", "Cooldown Reduction", "Meteor Size", "Intelligence"],
     "effect": "Meteor's Mana cost is replaced with a [10-4] second Cooldown and 2 total Charges. Casting Meteor drops 3 additional Meteors around the target. Its Enchantment and Enhancement drop 1 additional Meteor instead.",
     "flavor": "\"The elders say they saw a star falling from the sky many years ago. A sign from the heavens that the end times were nigh. A rallying cry to take up arms and protect Sanctuary!\" - Crusader Hamilton"
   },
@@ -1246,10 +1278,10 @@
     "type": "Totem",
     "secondary_stats": ["Damage to Crowd Controlled Enemies"],
     "terciary_stats": [
-      "Willpower",
-      "Critical Strike Damage",
       "Chance for Stone Burst to Cast Twice",
-      "Ranks to Stone Burst"
+      "Ranks to Stone Burst",
+      "Critical Strike Damage",
+      "Willpower"
     ],
     "filters": ["Damage Reduction"],
     "effect": "While Channeling Stone Burst and for 2 seconds afterwards, you gain 15% Damage Reduction.\n\nStone Burst's final explosion deals x [10-15%] increased damage, further increased by x [10-15%] for each size increase.",
@@ -1261,9 +1293,9 @@
     "type": "Pants",
     "secondary_stats": ["Your Potion Also Briefly Grants Movement Speed"],
     "terciary_stats": [
-      "Wolves Attack Speed",
-      "[X]% to the Pack Leader Spirit Boon's Lucky Hit Chance",
       "Damage Reduction from Close Enemies",
+      "[X]% to the Pack Leader Spirit Boon's Lucky Hit Chance",
+      "Wolves Attack Speed",
       "Ranks to Wolves"
     ],
     "filters": ["Lightning"],
@@ -1275,9 +1307,9 @@
     "class": "Sorcerer",
     "type": "Ring",
     "secondary_stats": ["Resistance to All Elements", "Resistance to All Elements"],
-    "terciary_stats": ["Lucky Hit Chance", "Non-Physical Damage", "Cooldown Reduction", "Ranks to Potent Warding"],
+    "terciary_stats": ["Non-Physical Damage", "Cooldown Reduction", "Lucky Hit Chance", "Ranks to Potent Warding"],
     "filters": ["Pyromancy", "Shock", "Frost"],
-    "effect": "Casting a Pyromancy, Shock, or Frost Skill increases your damage by [10-25%] for 5 seconds, stacking once per element. Casting again refreshes all bonuses if the previous skill was a different Element.",
+    "effect": "Casting a Pyromancy, Shock, or Frost Skill increases your damage by [10-25%] for 8 seconds, stacking once per element. Casting again refreshes all bonuses if the previous skill was a different Element.",
     "flavor": "\"Fool said he dug it out of the sands near Lut Gholein with a few other 'worthless trinkets'. I hid my delight at receiving such a treasure in exchange for a meager handful of coins.\" Rakhaan"
   },
   {
@@ -1285,10 +1317,10 @@
     "type": "Pants",
     "secondary_stats": ["While Injured, Your Potion Also Grants 30% Movement Speed for 2 Seconds"],
     "terciary_stats": [
-      "All Stats",
-      "Movement Speed",
+      "Resistance to All Elements",
       "Maximum Resistance to All Elements",
-      "Resistance to All Elements"
+      "Movement Speed",
+      "All Stats"
     ],
     "filters": ["Resistance"],
     "effect": "When you take damage from a Non-Physical damage type, you gain [8-15%] Maximum Resistance to that damage type for 6 seconds. Can only apply to one damage type at a time.",
@@ -1299,11 +1331,10 @@
     "type": "Pants",
     "secondary_stats": ["Your Potion Also Briefly Grants Movement Speed"],
     "terciary_stats": [
-      "Maximum Life",
+      "Lucky Hit: Up to a 5% Chance to Heal [X] Life",
       "Healing Received",
       "Damage Reduction while Healthy",
-      "Lucky Hit: Up to a 5% Chance to Heal [X] Life",
-      ""
+      "Maximum Life"
     ],
     "filters": ["Heal", "Barrier"],
     "effect": "Effects that Heal you beyond 100% Life grant you a Barrier up to [40-100%] of your Maximum Life that lasts for 8 seconds. You may now drink your Healing Potion while at full Life.",
@@ -1313,7 +1344,7 @@
     "name": "Tempest Roar",
     "class": "Druid",
     "type": "Helm",
-    "terciary_stats": ["Willpower", "Maximum Resource", "Lightning Resistance", "Ranks to Wild Impulses"],
+    "terciary_stats": ["Maximum Resource", "Willpower", "Ranks to Wild Impulses", "Lightning Resistance"],
     "filters": ["Lucky Hit", "Storm", "Werewolf"],
     "effect": "Lucky Hit: Storm Skills have up to a [15-35%] chance to grant 4 Spirit. Your base Storm Skills are now also Werewolf Skills.",
     "flavor": "\"Listen, child, to the music of the storm. It has its own rhythm. Its own melody. Hear how beautifully it sings, and perhaps one day you will be able to join in its harmony.\" - Airidah"
@@ -1337,10 +1368,10 @@
     "type": "1h Axe",
     "secondary_stats": ["Damage to Injured Enemies"],
     "terciary_stats": [
-      "Attack Speed",
+      "Critical Strike Chance Against Feared Enemies",
       "Movement Speed",
-      "Physical Damage",
-      "Critical Strike Chance Against Feared Enemies"
+      "Attack Speed",
+      "Physical Damage"
     ],
     "filters": ["Slow", "Critical Strike", "Slow"],
     "effect": "Lucky Hit: Critically Striking an enemy has up to a 100% chance to Fear and Slow them by [61-90%] for 4 seconds.",
@@ -1351,7 +1382,7 @@
     "mythic": true,
     "type": "2h Sword",
     "secondary_stats": ["150% Damage", "Ignore Durability Loss"],
-    "terciary_stats": ["150 All Stats", "662 Maximum Life", "20 Maximum Resource", "300% Damage"],
+    "terciary_stats": ["150 All Stats", "300% Damage", "662 Maximum Life", "20 Maximum Resource"],
     "filters": ["Critical Strike Damage"],
     "effect": "Increases your Critical Strike Damage by 100%. The other properties of this weapon can roll higher than normal.",
     "flavor": "An unbroken lineage of unwavering strength."
@@ -1375,7 +1406,12 @@
     "class": "Sorcerer",
     "type": "Wand",
     "secondary_stats": ["Maximum Evade Charges", "Attacks Reduce Evade's Cooldown by 1.5 Seconds"],
-    "terciary_stats": ["Intelligence", "Teleport Damage", "Teleport Nova Size", "Ranks to Teleport"],
+    "terciary_stats": [
+      "Teleport Damage",
+      "[X%] Chance for Teleport to Deal Double Damage",
+      "Intelligence",
+      "Ranks to Teleport"
+    ],
     "effect": "Gain the effect of the Teleport Enchantment for free. When you Evade using Teleport Enchantment, you are taken to a random location.",
     "flavor": "\"The rhythm of the orb, which had pulsed steadily for five centuries, quickened as its owner took his final ragged breaths. It were as if some intelligence within reveled in the sight.\" - Master Eos"
   },
@@ -1384,7 +1420,7 @@
     "class": "Barbarian",
     "type": "1h Sword",
     "secondary_stats": ["Damage to Close Enemies"],
-    "terciary_stats": ["Strength", "Fury on Kill", "Vulnerable Damage", "Weapon Mastery Damage"],
+    "terciary_stats": ["Vulnerable Damage", "Strength", "Weapon Mastery Damage", "Fury on Kill"],
     "filters": ["Core Skill"],
     "effect": "Your Weapon Mastery Skills are now also Core Skills that have no Cooldowns but cost Fury, dealing [50-70%] of normal damage. Their Fury costs are reduced by 5 for any additional Charges the Skill would have had.",
     "flavor": "\"Restraint, mercy, honor...these are shackles, forged by the weak and the conquered.\" -Hephasto, the Armorer"
@@ -1403,10 +1439,10 @@
     "class": "Necromancer",
     "type": "Helm",
     "terciary_stats": [
-      "Damage Reduction while you Have a Barrier",
+      "Chance for Soulrift to Deal Double Damage",
       "Resource Generation",
-      "Ranks to Soulrift",
-      "Ranks to Imperfectly Balanced"
+      "Ranks to Imperfectly Balanced",
+      "Damage Reduction while you Have a Barrier"
     ],
     "filters": ["Essence", "Shadow"],
     "effect": "Soulrift's duration is increased by 0.5 seconds for every 30 Essence you spend while it is active, up to 8 seconds. Soulrift deals [100-200%] of its Shadow damage per second to surrounding enemies for every 30 Essence you gain while it is active."
@@ -1414,7 +1450,6 @@
   {
     "name": "Tibault's Will",
     "type": "Pants",
-    "secondary_stats": ["While Injured, Your Potion Also Restores 20% Resource"],
     "terciary_stats": ["All Stats", "Maximum Life", "Maximum Resource", "Damage Reduction while Unstoppable"],
     "filters": ["Unstoppable"],
     "effect": "You deal [10-20%] increased damage while Unstoppable and for 5 seconds after. When you become Unstoppable, gain 50 of your Primary Resource.",
@@ -1425,10 +1460,10 @@
     "class": "Barbarian",
     "type": "Helm",
     "terciary_stats": [
-      "Maximum Life",
-      "Attack Speed while Berserking",
       "Damage while Berserking",
-      "Movement Speed while Berserking"
+      "Attack Speed while Berserking",
+      "Movement Speed while Berserking",
+      "Maximum Life"
     ],
     "filters": ["Cooldown"],
     "effect": "When you gain Berserking while already Berserk, you have a [40-60%] chance to become more enraged granting x15% increased damage, 2 Fury per second, and 10% Cooldown Reduction.",
@@ -1438,8 +1473,8 @@
     "name": "Twin Strikes",
     "class": "Barbarian",
     "type": "Gloves",
-    "terciary_stats": ["Strength", "Attack Speed", "Critical Strike Chance", "Ranks to Double Swing"],
-    "effect": "After casting Double Swing 4 times, your next Double Swing will hit 2 additional times, each dealing [10-40%] increased damage.",
+    "terciary_stats": ["Attack Speed", "Critical Strike Chance", "Strength", "Ranks to Double Swing"],
+    "effect": "After casting Double Swing 4 times, your next Double Swing will hit 2 additional times, each dealing [30-60%] increased damage.",
     "flavor": "\"When hitting it once doesn't kill it, hit it twice.\" - Bear Tribe Proverb"
   },
   {
@@ -1448,10 +1483,10 @@
     "type": "Chest Armor",
     "secondary_stats": ["Ignore Durability Loss"],
     "terciary_stats": [
+      "20% Damage Reduction",
       "16.5% Movement Speed",
-      "7.5% Maximum Resistance to All Elements",
       "60% Resistance to All Elements",
-      "20% Damage Reduction"
+      "7.5% Maximum Resistance to All Elements"
     ],
     "filters": ["Damage Reduction", "Resistance"],
     "effect": "While at full Life, your Skills unleash a divine barrage dealing [X] damage.",
@@ -1461,14 +1496,15 @@
     "name": "Ugly Bastard Helm",
     "class": "Barbarian",
     "type": "Helm",
+    "secondary_stats": ["Fire Resistance"],
     "terciary_stats": [
-      "Resistance to All Elements",
+      "Ranks to Prolific Fury",
       "Wrath of the Berserker Cooldown Reduction",
-      "Lucky Hit: Up to a 40% Chance to Deal [X] Fire Damage",
-      "Ranks to Prolific Fury"
+      "Ranks to Agressive Resistance",
+      "Lucky Hit: Up to a 40% Chance to Deal [X] Fire Damage"
     ],
     "filters": ["Berserking"],
-    "effect": "Explode when activating Wrath of the Berserker, dealing [100-300%] Fire damage to enemies. While Berserking, damage you would deal is converted to Fire damage and deal x [10-30%] increased Fire damage.",
+    "effect": "Explode when activating Wrath of the Berserker, dealing [X] Fire damage to enemies. While Berserking, damage you would deal is converted to Fire damage and deal x [60-80%] increased Fire damage.",
     "flavor": "\"Ah, Burning Hells. You look like one of Zolmog's inbred bastards.\" - Varyana"
   },
   {
@@ -1476,7 +1512,7 @@
     "class": "Barbarian",
     "type": "Amulet",
     "secondary_stats": ["Resistance to All Elements"],
-    "terciary_stats": ["Movement Speed", "Ultimate Damage", "Steel Grasp Cooldown Reduction", "Ranks to Pit Fighter"],
+    "terciary_stats": ["Movement Speed", "Ranks to Pit Fighter", "Ultimate Damage", "Steel Grasp Cooldown Reduction"],
     "effect": "Casting Steel Grasp reduces Iron Maelstrom’s Cooldown by [3.3-10] seconds. Enemies damaged by Iron Maelstrom deal [10-30%] less damage for 6 seconds.",
     "flavor": "After the warmaster Raekor freed her people, the Oxen tribe continued to wear their collars and chains to honor those who died in thralldom under the Samauren Empire."
   },
@@ -1485,9 +1521,9 @@
     "class": "Druid",
     "type": "Gloves",
     "terciary_stats": [
-      "Critical Strike Chance",
-      "Damage to Distant Enemies",
       "Ranks to Lightning Storm",
+      "Damage to Distant Enemies",
+      "Critical Strike Chance",
       "Ranks to Defiance"
     ],
     "effect": "Lightning Storm gains 1 additional strike each times it grows.\nLightning Storm Critical Strikes cause lightning to strike twice, dealing [10-40%] increased damage.",
@@ -1497,7 +1533,7 @@
     "name": "Vasily's Prayer",
     "class": "Druid",
     "type": "Helm",
-    "terciary_stats": ["Willpower", "Maximum Life", "Armor", "Ranks to Defensive Posture"],
+    "terciary_stats": ["Maximum Life", "Willpower", "Ranks to Defensive Posture", "Armor"],
     "filters": ["Fortify", "Earth"],
     "effect": "Your Earth Skills are now also Werebear Skills and Fortify you for [2-5%] of your Maximum Health.",
     "flavor": "\"Roots from the Great Oak growing at the seaward statue of Vasily will, on rare occasions, be found twisted back upon themselves, suffused with ferocious magic.\" - Barrett's Book of Implements"
@@ -1507,7 +1543,7 @@
     "class": "Sorcerer",
     "type": "Staff",
     "secondary_stats": ["Lucky Hit Chance"],
-    "terciary_stats": ["Intelligence", "Core Attack Speed", "Non-Physical Damage", "Ranks to Basic Skills"],
+    "terciary_stats": ["Non-Physical Damage", "Ranks to Basic Skills", "Core Attack Speed", "Intelligence"],
     "effect": "Casting a Core Skill additionally fires 2 instances of Fire Bolt, Frost Bolt, or Spark, matching the elements of your last 2 non-Core Skill casts. These projectiles deal x [30-90%] increased damage.",
     "flavor": "Your incantations are echoed by a chorus of the damned. Wield their torment, their vengeance, their pain against the Hellborne that tortured them."
   },
@@ -1531,7 +1567,7 @@
     "class": "Druid",
     "type": "Boots",
     "secondary_stats": ["Attacks Reduce Evade's Cooldown by 1.5 Seconds"],
-    "terciary_stats": ["Movement Speed", "Shapeshifting Attack Speed", "Cold Resistance", "Ranks to Heightened Senses"],
+    "terciary_stats": ["Movement Speed", "Ranks to Heightened Senses", "Shapeshifting Attack Speed", "Cold Resistance"],
     "filters": ["Shapeshift", "Werewolf", "Werebear"],
     "effect": "Shapeshifting into a new animal form increases the value of your Bestial Rampage bonuses by + [2-5%] , up to + [20-50%] . This bonus decays by 2% per second.",
     "flavor": "Do not seek comfort in the shapes of the moon, beastwalker. Its pallid light awakens a yawning hunger. Call the beast, but do not tarry. Lest you never return to your own skin."
@@ -1542,10 +1578,10 @@
     "type": "Bow",
     "secondary_stats": ["Damage to Crowd Controlled Enemies"],
     "terciary_stats": [
-      "Movement Speed",
       "Chance for Barrage Projectiles to Cast Twice",
       "Ranks to Barrage",
-      "Ranks to Malice"
+      "Ranks to Malice",
+      "Movement Speed"
     ],
     "filters": ["Knock Down"],
     "effect": "Hits of Barrage have a [30-50%] chance to deal double damage and Knock Down enemies.",
@@ -1557,9 +1593,9 @@
     "type": "Amulet",
     "secondary_stats": ["Resistance to All Elements"],
     "terciary_stats": [
-      "Ultimate Skill Damage",
-      "Chance for Rain of Arrows Waves to Cast Twice",
       "Rain of Arrows Cooldown Reduction",
+      "Ultimate Skill Damage",
+      "Chance for Rain of Arrows to Deal Double Damage",
       "Ranks to Imbuement Skills"
     ],
     "effect": "Your Rain of Arrows is always Imbued with all Imbuements at once and receives your Arrow Storm benefits.",
@@ -1572,9 +1608,9 @@
     "secondary_stats": ["Resistance to All Elements", "Shadow Resistance"],
     "terciary_stats": [
       "Dexterity",
-      "Damage to Crowd Controlled Enemies",
+      "Subterfuge Cooldown Reduction",
       "Trap Damage",
-      "Subterfuge Cooldown Reduction"
+      "Damage to Crowd Controlled Enemies"
     ],
     "effect": "Casting a Subterfuge Skill leaves behind a Decoy Trap that continuously Taunts and lures enemies. After 2 seconds, it explodes, dealing [X] Shadow damage. This effect is treated as a Trap Skill and can only spawn one Decoy Trap every 6 seconds.",
     "flavor": "The ring shifts and spins on your finger as the forces within desperately attempt to escape."
@@ -1583,17 +1619,22 @@
     "name": "Wushe Nak Pa",
     "class": "Spiritborn",
     "type": "Glaive",
-    "secondary_stats": ["Damage to Elites"],
-    "terciary_stats": ["Ultimate Damage", "Vigor on Kill", "Ranks to Supremacy", "Critical Strike Chance"],
+    "secondary_stats": ["Attacks Reduce Ultimate Cooldown by 0.4 Seconds"],
+    "terciary_stats": [
+      "Ultimate Damage",
+      "Dexterity",
+      "Casting Ultimate Skills Restores [X] Primary Resource",
+      "Ranks to Supremacy"
+    ],
     "filters": ["Ultimate"],
-    "effect": "Casting an Ultimate Skill grants you its matching Primary Spirit Hall Bonus and increases All Skill Ranks by [5-10] for 15 seconds.\n\nYour Ultimate Skills each gain an additional Skill Type:\n The Seeker is a Focus Skill.\n The Hunter is a Mobility Skill.\n The Devourer is a Potency Skill.\n The Protector is a Defensive Skill.",
+    "effect": "Casting an Ultimate Skill grants or amplifies its matching Primary Spirit Hall Bonus with [50-100%] potency for 15 seconds.\n\nYour Ultimate Skills each gain an additional Skill Type:\n The Seeker is a Focus Skill.\n The Hunter is a Mobility Skill.\n The Devourer is a Potency Skill.\n The Protector is a Defensive Skill.",
     "flavor": "\"Fear not the limits of your flesh, Spiritborn!  As our ancestors said: wūshe nak pa! Transcend your being!\" - Maka"
   },
   {
     "name": "X'Fal's Corroded Signet",
     "type": "Ring",
     "secondary_stats": ["Resistance to All Elements", "Fire Resistance"],
-    "terciary_stats": ["All Stats", "Lucky Hit Chance", "Vulnerable Damage", "Damage Over Time"],
+    "terciary_stats": ["All Stats", "Damage Over Time", "Vulnerable Damage", "Lucky Hit Chance"],
     "filters": ["Lucky Hit"],
     "effect": "Lucky Hit: Your damage over time effects have up to a 75% chance to erupt, dealing [X] damage of the same type to surrounding enemies.",
     "flavor": "Skulking in the shadows of the Realm of Destruction, the Scarred Baron plots the downfall of the mortal who banished him here."
@@ -1602,7 +1643,7 @@
     "name": "Yen's Blessing",
     "type": "Boots",
     "secondary_stats": ["Maximum Evade Charges"],
-    "terciary_stats": ["All Stats", "Movement Speed", "Resistance to All Elements", "Resource Generation"],
+    "terciary_stats": ["Movement Speed", "All Stats", "Resource Generation", "Resistance to All Elements"],
     "effect": "Casting a Skill has a [40-60%] chance to cast a Non-Mobility, Non-Ultimate Skill that is currently on Cooldown. Can only occur once every 8 seconds.",
     "flavor": "These greaves are imbued with the divine blessing of Yen, the Veradani goddess of restoration. They bestow the wearer a revitalizing strength that enhances their own."
   }

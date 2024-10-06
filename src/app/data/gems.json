@@ -2,45 +2,45 @@
   "gems": [
     {
       "name": "Amethyst",
-      "weapon": "18% Damage Over Time",
-      "armor": "100 Strength",
-      "jewelry": "45% Shadow Resistance"
+      "weapon": "48% Damage Over Time",
+      "armor": "12% Barrier Generation",
+      "jewelry": "60% Shadow Resistance"
     },
     {
       "name": "Emerald",
-      "weapon": "25% Critical Strike Damage",
-      "armor": "100 Dexterity",
-      "jewelry": "45% Poison Resistance"
+      "weapon": "72% Critical Strike Damage",
+      "armor": "150 Dexterity",
+      "jewelry": "60% Poison Resistance"
     },
     {
       "name": "Ruby",
-      "weapon": "54% Overpower Damage",
-      "armor": "9% Maximum Life",
-      "jewelry": "45% Fire Resistance"
+      "weapon": "90% Overpower Damage",
+      "armor": "150 Strength",
+      "jewelry": "60% Fire Resistance"
     },
     {
       "name": "Topaz",
-      "weapon": "45% Basic Skill Damage",
-      "armor": "100 Intelligence",
-      "jewelry": "45% Lightning Resistance"
+      "weapon": "60% Basic Skill Damage",
+      "armor": "150 Intelligence",
+      "jewelry": "60% Lightning Resistance"
     },
     {
       "name": "Sapphire",
-      "weapon": "20% Vulnerable Damage",
-      "armor": "100 Willpower",
-      "jewelry": "45% Cold Resistance"
+      "weapon": "54% Vulnerable Damage",
+      "armor": "150 Willpower",
+      "jewelry": "60% Cold Resistance"
     },
     {
       "name": "Diamond",
-      "weapon": "35% Ultimate Damage",
-      "armor": "11% Barrier Generation",
-      "jewelry": "8% Resistance to All Elements"
+      "weapon": "60% Ultimate Damage",
+      "armor": "50 All Stats",
+      "jewelry": "12% Resistance to All Elements"
     },
     {
       "name": "Skull",
-      "weapon": "48 Life On Kill",
+      "weapon": "32 Life On Kill",
       "armor": "15% Healing Received",
-      "jewelry": "525 Armor"
+      "jewelry": "240 Armor"
     }
   ]
 }

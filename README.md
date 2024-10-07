@@ -10,8 +10,10 @@ A <strong>Diablo IV</strong> Class "Builder" Desktop Application.<br><br>
 <img src="https://img.shields.io/badge/Next.js-000000.svg?style=for-the-badge&logo=nextdotjs&logoColor=white"></img>
 <img src="https://img.shields.io/badge/shadcn/ui-000000.svg?style=for-the-badge&logo=shadcn/ui&logoColor=white"></img>
 <img src="https://img.shields.io/badge/Tauri-24C8D8.svg?style=for-the-badge&logo=Tauri&logoColor=white"></img>
-<img src="https://img.shields.io/badge/Bun-000000.svg?style=for-the-badge&logo=Bun&logoColor=white"</img>
+<img src="https://img.shields.io/badge/Bun-000000.svg?style=for-the-badge&logo=Bun&logoColor=white"</img><br><hr>
+</p>
+<p align="center">
+<strong>PREVIEW:</strong><br>
+<a href="https://youtu.be/auufKx9cDQA?si=rLc9palIedVW6gMj"><img src="https://img.shields.io/badge/YouTube-FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white"></a>
 </p>
 <hr>
-
-https://github.com/user-attachments/assets/d63cf539-f64a-4365-9d3f-182db9d1d3e3
